@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-25T13:23:58.941Z
+Generated: 2026-08-25T22:39:22.125Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,15 +16,15 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-25T13:23:57.244Z
+- Last activity: 2026-08-25T22:39:19.867Z
 ## Workspace Focus
-- Active file in focus: lib/useConfigurator.ts
-- Hottest files right now: components/Footer.tsx (13), lib/cms.ts (10), components/Header.tsx (6), lib/useConfigurator.ts (4)
-- Suggested starting points: lib/useConfigurator.ts, components/Footer.tsx, lib/cms.ts, components/Header.tsx, app/download/page.tsx, app/page.tsx
+- Active file in focus: app/layout.tsx
+- Hottest files right now: components/Footer.tsx (13), components/Header.tsx (6), lib/cms.ts (5), lib/useConfigurator.ts (4)
+- Suggested starting points: app/layout.tsx, components/Footer.tsx, components/Header.tsx, lib/cms.ts, lib/useConfigurator.ts, app/download/page.tsx
 ## Current Workspace
-- Active file: lib/useConfigurator.ts
-- Tracked files in snapshot: 58
-- Top-level areas: public (20), components (15), [root] (14), app (6), lib (3)
+- Active file: app/layout.tsx
+- Tracked files in snapshot: 59
+- Top-level areas: public (20), [root] (16), components (15), app (5), lib (3)
 - Primary file types: .tsx (18), .svg (11), .ts (6), .json (4), .md (4), .woff (4), .woff2 (4), .mjs (2)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
@@ -35,10 +35,19 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (40)
-- Remembered file snapshots: 32
-- Working tree summary: 7 modifieds, 9 untrackeds
+- Change mix: save (38), create (1), delete (1)
+- Remembered file snapshots: 33
+- Working tree summary: 4 modifieds, 1 deleted, 2 untrackeds
 ## Tracked Snapshots
+- .env.local | 5 lines | 165 chars | hash d41b2e03a08a
+  Last snapshot: 2026-08-25T19:24:08.152Z
+  Preview: "NEXT_PUBLIC_WORDPRESS_API_URL=http://tg-backend.development/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWORD="aXHQ 5Rqv eryS KDak uaBH EzZ6""
+- next.config.ts | 19 lines | 438 chars | hash 65abf67cbe71
+  Last snapshot: 2026-08-25T19:23:47.842Z
+  Preview: "import type { NextConfig } from 'next'; / const isDev = process.env.NODE_ENV === 'development'; / const nextConfig: NextConfig = { / output: 'standalone', / images: { / unoptimized: true, / remotePatterns: [ / { / pro..."
+- server.js | 26 lines | 757 chars | hash 57dee3a51b83
+  Last snapshot: 2026-08-25T14:13:01.783Z
+  Preview: "const { createServer } = require('http') / const { parse } = require('url') / const next = require('next') / const dev = process.env.NODE_ENV !== 'production' / const hostname = 'localhost' / const port = process.env...."
 - lib/useConfigurator.ts | 116 lines | 3342 chars | hash e826f930eae0
   Last snapshot: 2026-08-25T13:23:57.244Z
   Preview: "'use client'; / import { useState } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<ScreenType>(()..."
@@ -54,17 +63,33 @@ Structured manifest: workspace.json
 - app/page.tsx | 13 lines | 308 chars | hash e95adef2762a
   Last snapshot: 2026-08-25T10:29:49.468Z
   Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
-- components/MainContent.tsx | 125 lines | 4109 chars | hash fb6ac2b586cb
-  Last snapshot: 2026-08-25T10:27:16.997Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- app/download/page.tsx | 333 lines | 13133 chars | hash 9add2f45b96c
-  Last snapshot: 2026-08-25T09:56:47.421Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- lib/cms.ts | 153 lines | 3850 chars | hash fdcf4c9805fa
-  Last snapshot: 2026-08-25T09:12:47.605Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 
 ## Recent Changes
+### 2026-08-25T22:39:19.867Z | deleted | app/favicon.ico
+- Summary: Deleted file.
+
+### 2026-08-25T19:24:08.152Z | saved | .env.local
+- Summary: Saved without a textual diff.
+- Before: 5 lines | 165 chars | hash d41b2e03a08a | preview: "NEXT_PUBLIC_WORDPRESS_API_URL=http://tg-backend.development/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWORD="aXHQ 5Rqv eryS KDak uaBH EzZ6""
+- After: 5 lines | 165 chars | hash d41b2e03a08a | preview: "NEXT_PUBLIC_WORDPRESS_API_URL=http://tg-backend.development/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWORD="aXHQ 5Rqv eryS KDak uaBH EzZ6""
+
+### 2026-08-25T19:23:47.842Z | saved | next.config.ts
+- Summary: Line 3: replaced 13 lines with 10 lines.
+- Before: 22 lines | 539 chars | hash 31d18825387e | preview: "import type { NextConfig } from 'next'; / const nextConfig: NextConfig = { / images: { / // Altijd unoptimized in development om private IP / SSRF errors met lokaal WordPress te voorkomen / unoptimized: true, / remote..."
+- After: 19 lines | 438 chars | hash 65abf67cbe71 | preview: "import type { NextConfig } from 'next'; / const isDev = process.env.NODE_ENV === 'development'; / const nextConfig: NextConfig = { / output: 'standalone', / images: { / unoptimized: true, / remotePatterns: [ / { / pro..."
+- Previous fragment: "nextConfig: NextConfig = { / images: { / // Altijd unoptimized in development om private IP / SSRF errors met lokaal WordPress te voorkomen / unoptimized: true, / remotePatterns..."
+- Current fragment: "isDev = process.env.NODE_ENV === 'development'; / const nextConfig: NextConfig = { / output: 'standalone', / images: { / unoptimized: true, / remotePatterns: [ / { / protocol: i..."
+
+### 2026-08-25T14:13:01.783Z | saved | server.js
+- Summary: Line 1: inserted 26 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 26 lines | 757 chars | hash 57dee3a51b83 | preview: "const { createServer } = require('http') / const { parse } = require('url') / const next = require('next') / const dev = process.env.NODE_ENV !== 'production' / const hostname = 'localhost' / const port = process.env...."
+- Current fragment: "const { createServer } = require('http') / const { parse } = require('url') / const next = require('next') / const dev = process.env.NODE_ENV !== 'production' / const hostname =..."
+
+### 2026-08-25T14:12:54.616Z | created | server.js
+- Summary: Created file.
+- After: 0 lines | 0 chars | hash empty
+
 ### 2026-08-25T13:23:57.244Z | saved | lib/useConfigurator.ts
 - Summary: Line 5: replaced 35 lines with 40 lines.
 - Before: 111 lines | 3,134 chars | hash 0898c2ae3eda | preview: "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'u..."
@@ -130,72 +155,39 @@ Structured manifest: workspace.json
 - Before: 181 lines | 8,142 chars | hash 98f457a7e415 | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
 - After: 182 lines | 8,148 chars | hash b5778a9a52ad | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
 
-### 2026-08-25T10:29:38.987Z | saved | components/Header.tsx
-- Summary: Line 43: replaced 14 lines with 16 lines.
-- Before: 179 lines | 7,976 chars | hash e551f0900580 | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
-- After: 181 lines | 8,142 chars | hash 98f457a7e415 | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
-- Previous fragment: "Stuur mee dat we expliciet naar het welkomstscherm willen via een URL-parameter / window.location.href = '/?screen=welcome'; / } else { / localStorage.setItem('configuratorCurre..."
-- Current fragment: "Zet direct de localStorage op welcome en wis de stap / localStorage.setItem('current_screen', 'welcome'); / localStorage.removeItem('configuratorCurrentStep'); / window.location..."
-
-### 2026-08-25T10:28:19.235Z | saved | lib/useConfigurator.ts
-- Summary: Line 8: replaced 74 lines with 79 lines.
-- Before: 106 lines | 3,048 chars | hash 5bd5816f3646 | preview: "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<string>(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem(..."
-- After: 111 lines | 3,091 chars | hash ac1909e76e67 | preview: "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<string>(() => { / if (typeof window !== 'undefined') { / // Controleer of de URL expl..."
-- Previous fragment: "return localStorage.getItem('current_screen') || 'login'; / } / return 'login'; / }); / const [woningType, setWoningTypeState] = useState<string | null>(() => { / if (typeof win..."
-- Current fragment: "// Controleer of de URL expliciet om 'welcome' vraagt / const params = new URLSearchParams(window.location.search); / if (params.get('screen') === 'welcome') { / localStorage.se..."
-
-### 2026-08-25T10:27:16.997Z | saved | components/MainContent.tsx
-- Summary: Line 31: replaced 11 lines with 11 lines.
-- Before: 125 lines | 4,081 chars | hash 0f0f7fb7abe2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 125 lines | 4,109 chars | hash fb6ac2b586cb | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "useEffect(() => { / setIsMounted(true); / // Als de URL aangeeft dat we naar 'welcome' moeten, dwing dit dan direct af / if (initialScreen === 'welcome') { / setScreen('welcome'..."
-- Current fragment: "useEffect(() => { / setIsMounted(true); / // Als de URL aangeeft dat we naar 'welcome' moeten, dwing dit direct af bij de hook én ruim de stap op / if (initialScreen === 'welcom..."
-
-### 2026-08-25T10:25:29.653Z | saved | app/page.tsx
-- Summary: Line 4: replaced 7 lines with 13 lines.
-- Before: 13 lines | 308 chars | hash e95adef2762a | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
-- After: 19 lines | 438 chars | hash 5d36f9fb8c9c | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home({ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sectio..."
-- Previous fragment: ") { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configuratorData"
-- Current fragment: "{ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sections, configuratorData } = await getPageData(); / const screen = searchParams?.screen; / retur..."
-
-### 2026-08-25T10:25:18.399Z | saved | components/MainContent.tsx
-- Summary: Line 5: replaced 102 lines with 117 lines.
-- Before: 110 lines | 3,616 chars | hash 2e138056753e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; // <-- Deze ontbrak / import LoginScreen from '../components/L..."
-- After: 125 lines | 4,081 chars | hash 0f0f7fb7abe2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "// <-- Deze ontbrak / import LoginScreen from '../components/LoginScreen'; / import WelcomeScreen from '../components/WelcomeScreen'; / import ConfiguratorScreen from '../compon..."
-- Current fragment: "import LoginScreen from '../components/LoginScreen'; / import WelcomeScreen from '../components/WelcomeScreen'; / import ConfiguratorScreen from '../components/ConfiguratorScree..."
-
 
 ## Hot Files
 - components/Footer.tsx (13 tracked changes)
-- lib/cms.ts (10 tracked changes)
 - components/Header.tsx (6 tracked changes)
+- lib/cms.ts (5 tracked changes)
 - lib/useConfigurator.ts (4 tracked changes)
 - app/download/page.tsx (2 tracked changes)
 - app/page.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (1 tracked changes)
+- server.js (2 tracked changes)
 
 ## Git Snapshot
-- Branch: master
-- HEAD: 2026-07-13 1e3b6e4 Initial commit from Create Next App
-- Working tree summary: 7 modifieds, 9 untrackeds
-- M app/globals.css
-- M app/layout.tsx
-- M app/page.tsx
+- Branch: main
+- HEAD: 2026-08-25 92b8f72 Ready for production and deployment
+- Working tree summary: 4 modifieds, 1 deleted, 2 untrackeds
+- D app/favicon.ico
+- M graphify-out/WORKSPACE_MEMORY.md
 - M next.config.ts
-- M package-lock.json
-- M package.json
-- M tsconfig.json
-- ?? app/api/
-- ?? app/download/
-- ?? components/
-- ?? graphify-out/
-- ?? lib/
-- Additional git status lines were omitted for brevity.
+- M workspace.json
+- M workspacememory.md
+- ?? node_modules.zip
+- ?? server.js
 
 ## GitHub Snapshot
-GitHub context unavailable: Could not determine the GitHub repository from origin remote: error: No such remote 'origin'
+GitHub Repository: marketing-smartheads/nomi-configurator
+Visibility: public | Default branch: main
+Stars: 0 | Forks: 0 | Open issues: 0
+
+Latest commit on main:
+- 92b8f72 by Bas van Dooremalen on 2026-08-25
+  Ready for production and deployment
+
+URL: https://github.com/marketing-smartheads/nomi-configurator
 
 ## Graphify Snapshot
 Graphify report not found. Generate Graphify output if you want architecture-aware memory excerpts here.

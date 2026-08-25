@@ -1,18 +1,15 @@
 import type { NextConfig } from 'next';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
-    // Altijd unoptimized in development om private IP / SSRF errors met lokaal WordPress te voorkomen
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'tg-backend.development',
-        pathname: '/wp-content/uploads/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'tg-backend.development',
+        protocol: isDev ? 'http' : 'https',
+        hostname: isDev ? 'tg-backend.development' : 'cms.nomi-configurator.nl',
         pathname: '/wp-content/uploads/**',
       },
     ],
