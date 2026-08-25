@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T22:39:22.125Z",
-  "generatedAtEpochMs": 1787697562125,
+  "generatedAt": "2026-08-25T22:51:43.737Z",
+  "generatedAtEpochMs": 1787698303737,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,18 +25,18 @@
       "app/layout.tsx",
       "components/Footer.tsx",
       "components/Header.tsx",
-      "lib/cms.ts",
       "lib/useConfigurator.ts",
       "app/download/page.tsx",
       "app/page.tsx",
       "components/MainContent.tsx",
-      "server.js",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
-      "totalFiles": 59,
+      "totalFiles": 58,
       "topLevelAreas": [
         {
           "name": "public",
@@ -44,7 +44,7 @@
         },
         {
           "name": "[root]",
-          "count": 16
+          "count": 15
         },
         {
           "name": "components",
@@ -283,12 +283,6 @@
           "isKeyFile": false
         },
         {
-          "path": "node_modules.zip",
-          "topLevelArea": "[root]",
-          "extension": ".zip",
-          "isKeyFile": false
-        },
-        {
           "path": "package-lock.json",
           "topLevelArea": "[root]",
           "extension": ".json",
@@ -501,7 +495,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-25T22:39:19.867Z",
+    "lastActivityAt": "2026-08-25T22:51:42.028Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 33,
     "changeTypeCounts": {
@@ -512,6 +506,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/layout.tsx",
+      "updatedAt": 1787698302028,
+      "lineCount": 75,
+      "charCount": 1480,
+      "hash": "4bce9bf36449",
+      "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+    },
     {
       "filePath": ".env.local",
       "updatedAt": 1787685848152,
@@ -567,17 +569,105 @@
       "charCount": 5381,
       "hash": "b253ea39f865",
       "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-    },
-    {
-      "filePath": "app/page.tsx",
-      "updatedAt": 1787653789468,
-      "lineCount": 13,
-      "charCount": 308,
-      "hash": "e95adef2762a",
-      "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 57: replaced 1 line with 1 line.",
+      "recordedAt": "2026-08-25T22:51:42.028Z",
+      "recordedAtEpochMs": 1787698302028,
+      "before": {
+        "kind": "text",
+        "lineCount": 75,
+        "charCount": 1483,
+        "hash": "e4aec73f1175",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1787698302028
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 75,
+        "charCount": 1480,
+        "hash": "4bce9bf36449",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1787698302028
+      },
+      "diff": {
+        "lineStart": 57,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 57: replaced 1 line with 1 line.",
+        "beforeFragment": "null,",
+        "afterFragment": "[],"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 56: inserted 4 lines.",
+      "recordedAt": "2026-08-25T22:50:30.848Z",
+      "recordedAtEpochMs": 1787698230848,
+      "before": {
+        "kind": "text",
+        "lineCount": 72,
+        "charCount": 1450,
+        "hash": "f1f7c853144d",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1787698230848
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 75,
+        "charCount": 1483,
+        "hash": "e4aec73f1175",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1787698230848
+      },
+      "diff": {
+        "lineStart": 56,
+        "removedLines": 0,
+        "addedLines": 4,
+        "summary": "Line 56: inserted 4 lines.",
+        "beforeFragment": "",
+        "afterFragment": "icons: { / icon: null, / },"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 2: removed 1 line.",
+      "recordedAt": "2026-08-25T22:50:02.534Z",
+      "recordedAtEpochMs": 1787698202534,
+      "before": {
+        "kind": "text",
+        "lineCount": 72,
+        "charCount": 1452,
+        "hash": "36f8e6700e91",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local';`` / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600'...",
+        "updatedAt": 1787698202534
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 72,
+        "charCount": 1450,
+        "hash": "f1f7c853144d",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1787698202534
+      },
+      "diff": {
+        "lineStart": 2,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 2: removed 1 line.",
+        "beforeFragment": "``",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "delete",
       "path": "app/favicon.ico",
@@ -914,102 +1004,6 @@
         "beforeFragment": "a / href=\"https://www.nomi-utrecht.nl/\" / target=\"_blank\" / rel=\"noopener noreferrer\" / className=\"hover:opacity-80 transition-opacity\" / > / <Image / src=\"/assets/logo-nomi-whi...",
         "afterFragment": "Image / src=\"/assets/logo-nomi-white.svg\" / alt=\"Nomi Utrecht\" / width={90} / height={30} / className=\"object-contain\" / /> / <Image / src=\"/assets/x-symbol-white.svg\" / alt=\"X\"..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 134: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-08-25T10:30:31.732Z",
-      "recordedAtEpochMs": 1787653831732,
-      "before": {
-        "kind": "text",
-        "lineCount": 142,
-        "charCount": 6379,
-        "hash": "146187e25e9f",
-        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
-        "updatedAt": 1787653831732
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 142,
-        "charCount": 6361,
-        "hash": "956232258345",
-        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
-        "updatedAt": 1787653831732
-      },
-      "diff": {
-        "lineStart": 134,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 134: replaced 3 lines with 3 lines.",
-        "beforeFragment": "/privacy\" className=\"hover:text-white transition-colors\">Privacy</Link> / <span className=\"text-muted/60\">·</span> / <Link href=\"/voorwaarden",
-        "afterFragment": "#\" className=\"hover:text-white transition-colors\">Privacy</Link> / <span className=\"text-muted/60\">·</span> / <Link href=\"#"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/page.tsx",
-      "toPath": "",
-      "summary": "Line 4: replaced 13 lines with 7 lines.",
-      "recordedAt": "2026-08-25T10:29:49.468Z",
-      "recordedAtEpochMs": 1787653789468,
-      "before": {
-        "kind": "text",
-        "lineCount": 19,
-        "charCount": 438,
-        "hash": "5d36f9fb8c9c",
-        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home({ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sectio...",
-        "updatedAt": 1787653789468
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 13,
-        "charCount": 308,
-        "hash": "e95adef2762a",
-        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC...",
-        "updatedAt": 1787653789468
-      },
-      "diff": {
-        "lineStart": 4,
-        "removedLines": 13,
-        "addedLines": 7,
-        "summary": "Line 4: replaced 13 lines with 7 lines.",
-        "beforeFragment": "{ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sections, configuratorData } = await getPageData(); / const screen = searchParams?.screen; / retur...",
-        "afterFragment": ") { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configuratorData"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Header.tsx",
-      "toPath": "",
-      "summary": "Line 59: inserted 2 lines.",
-      "recordedAt": "2026-08-25T10:29:40.923Z",
-      "recordedAtEpochMs": 1787653780923,
-      "before": {
-        "kind": "text",
-        "lineCount": 181,
-        "charCount": 8142,
-        "hash": "98f457a7e415",
-        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
-        "updatedAt": 1787653780923
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 182,
-        "charCount": 8148,
-        "hash": "b5778a9a52ad",
-        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
-        "updatedAt": 1787653780923
-      },
-      "diff": {
-        "lineStart": 59,
-        "removedLines": 0,
-        "addedLines": 2,
-        "summary": "Line 59: inserted 2 lines.",
-        "beforeFragment": "",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1022,12 +1016,12 @@
       "count": 6
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 5
-    },
-    {
       "filePath": "lib/useConfigurator.ts",
       "count": 4
+    },
+    {
+      "filePath": "app/layout.tsx",
+      "count": 3
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1042,30 +1036,27 @@
       "count": 2
     },
     {
-      "filePath": "server.js",
+      "filePath": "lib/cms.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-25 92b8f72 Ready for production and deployment",
-    "statusSummary": "4 modifieds, 1 deleted, 2 untrackeds",
-    "changedFileCount": 7,
+    "headSummary": "2026-08-26 094c89e Update project without heavy files",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "D app/favicon.ico",
+      "M app/layout.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
-      "M next.config.ts",
       "M workspace.json",
-      "M workspacememory.md",
-      "?? node_modules.zip",
-      "?? server.js"
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 92b8f72 by Bas van Dooremalen on 2026-08-25\n  Ready for production and deployment\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 094c89e by Bas van Dooremalen on 2026-08-25\n  Update project without heavy files\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

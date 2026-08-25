@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-25T22:39:22.125Z
+Generated: 2026-08-25T22:51:43.737Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,15 +16,15 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-25T22:39:19.867Z
+- Last activity: 2026-08-25T22:51:42.028Z
 ## Workspace Focus
 - Active file in focus: app/layout.tsx
-- Hottest files right now: components/Footer.tsx (13), components/Header.tsx (6), lib/cms.ts (5), lib/useConfigurator.ts (4)
-- Suggested starting points: app/layout.tsx, components/Footer.tsx, components/Header.tsx, lib/cms.ts, lib/useConfigurator.ts, app/download/page.tsx
+- Hottest files right now: components/Footer.tsx (13), components/Header.tsx (6), lib/useConfigurator.ts (4), app/layout.tsx (3)
+- Suggested starting points: app/layout.tsx, components/Footer.tsx, components/Header.tsx, lib/useConfigurator.ts, app/download/page.tsx, app/page.tsx
 ## Current Workspace
 - Active file: app/layout.tsx
-- Tracked files in snapshot: 59
-- Top-level areas: public (20), [root] (16), components (15), app (5), lib (3)
+- Tracked files in snapshot: 58
+- Top-level areas: public (20), [root] (15), components (15), app (5), lib (3)
 - Primary file types: .tsx (18), .svg (11), .ts (6), .json (4), .md (4), .woff (4), .woff2 (4), .mjs (2)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (38), create (1), delete (1)
 - Remembered file snapshots: 33
-- Working tree summary: 4 modifieds, 1 deleted, 2 untrackeds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- app/layout.tsx | 75 lines | 1480 chars | hash 4bce9bf36449
+  Last snapshot: 2026-08-25T22:51:42.028Z
+  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 - .env.local | 5 lines | 165 chars | hash d41b2e03a08a
   Last snapshot: 2026-08-25T19:24:08.152Z
   Preview: "NEXT_PUBLIC_WORDPRESS_API_URL=http://tg-backend.development/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWORD="aXHQ 5Rqv eryS KDak uaBH EzZ6""
@@ -60,11 +63,27 @@ Structured manifest: workspace.json
 - components/Footer.tsx | 122 lines | 5381 chars | hash b253ea39f865
   Last snapshot: 2026-08-25T10:34:15.963Z
   Preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- app/page.tsx | 13 lines | 308 chars | hash e95adef2762a
-  Last snapshot: 2026-08-25T10:29:49.468Z
-  Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
 
 ## Recent Changes
+### 2026-08-25T22:51:42.028Z | saved | app/layout.tsx
+- Summary: Line 57: replaced 1 line with 1 line.
+- Before: 75 lines | 1,483 chars | hash e4aec73f1175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 75 lines | 1,480 chars | hash 4bce9bf36449 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Previous fragment: "null,"
+- Current fragment: "[],"
+
+### 2026-08-25T22:50:30.848Z | saved | app/layout.tsx
+- Summary: Line 56: inserted 4 lines.
+- Before: 72 lines | 1,450 chars | hash f1f7c853144d | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 75 lines | 1,483 chars | hash e4aec73f1175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Current fragment: "icons: { / icon: null, / },"
+
+### 2026-08-25T22:50:02.534Z | saved | app/layout.tsx
+- Summary: Line 2: removed 1 line.
+- Before: 72 lines | 1,452 chars | hash 36f8e6700e91 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local';`` / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600'..."
+- After: 72 lines | 1,450 chars | hash f1f7c853144d | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Previous fragment: "``"
+
 ### 2026-08-25T22:39:19.867Z | deleted | app/favicon.ico
 - Summary: Deleted file.
 
@@ -136,47 +155,25 @@ Structured manifest: workspace.json
 - Previous fragment: "a / href="https://www.nomi-utrecht.nl/" / target="_blank" / rel="noopener noreferrer" / className="hover:opacity-80 transition-opacity" / > / <Image / src="/assets/logo-nomi-whi..."
 - Current fragment: "Image / src="/assets/logo-nomi-white.svg" / alt="Nomi Utrecht" / width={90} / height={30} / className="object-contain" / /> / <Image / src="/assets/x-symbol-white.svg" / alt="X"..."
 
-### 2026-08-25T10:30:31.732Z | saved | components/Footer.tsx
-- Summary: Line 134: replaced 3 lines with 3 lines.
-- Before: 142 lines | 6,379 chars | hash 146187e25e9f | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- After: 142 lines | 6,361 chars | hash 956232258345 | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- Previous fragment: "/privacy" className="hover:text-white transition-colors">Privacy</Link> / <span className="text-muted/60">·</span> / <Link href="/voorwaarden"
-- Current fragment: "#" className="hover:text-white transition-colors">Privacy</Link> / <span className="text-muted/60">·</span> / <Link href="#"
-
-### 2026-08-25T10:29:49.468Z | saved | app/page.tsx
-- Summary: Line 4: replaced 13 lines with 7 lines.
-- Before: 19 lines | 438 chars | hash 5d36f9fb8c9c | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home({ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sectio..."
-- After: 13 lines | 308 chars | hash e95adef2762a | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
-- Previous fragment: "{ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sections, configuratorData } = await getPageData(); / const screen = searchParams?.screen; / retur..."
-- Current fragment: ") { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configuratorData"
-
-### 2026-08-25T10:29:40.923Z | saved | components/Header.tsx
-- Summary: Line 59: inserted 2 lines.
-- Before: 181 lines | 8,142 chars | hash 98f457a7e415 | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
-- After: 182 lines | 8,148 chars | hash b5778a9a52ad | preview: "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
-
 
 ## Hot Files
 - components/Footer.tsx (13 tracked changes)
 - components/Header.tsx (6 tracked changes)
-- lib/cms.ts (5 tracked changes)
 - lib/useConfigurator.ts (4 tracked changes)
+- app/layout.tsx (3 tracked changes)
 - app/download/page.tsx (2 tracked changes)
 - app/page.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
-- server.js (2 tracked changes)
+- lib/cms.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-08-25 92b8f72 Ready for production and deployment
-- Working tree summary: 4 modifieds, 1 deleted, 2 untrackeds
-- D app/favicon.ico
+- HEAD: 2026-08-26 094c89e Update project without heavy files
+- Working tree summary: 4 modifieds
+- M app/layout.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
-- M next.config.ts
 - M workspace.json
 - M workspacememory.md
-- ?? node_modules.zip
-- ?? server.js
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -184,8 +181,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 92b8f72 by Bas van Dooremalen on 2026-08-25
-  Ready for production and deployment
+- 094c89e by Bas van Dooremalen on 2026-08-25
+  Update project without heavy files
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

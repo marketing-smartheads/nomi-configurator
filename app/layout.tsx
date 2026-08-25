@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';``
+import localFont from 'next/font/local';
 import "./globals.css";
 
 const poppins = localFont({
@@ -53,6 +53,9 @@ const inter = localFont({
 export const metadata: Metadata = {
   title: "Interieur & Design Configurator",
   description: "Exclusieve designpakketten en woonstijlen configureren en downloaden.",
+  icons: {
+    icon: [],
+  },
 };
 
 export default function RootLayout({
