@@ -1,0 +1,1126 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T13:23:58.941Z",
+  "generatedAtEpochMs": 1787664238941,
+  "generator": {
+    "name": "Code Janitor",
+    "feature": "workspace-memory"
+  },
+  "handoffGuidance": [
+    "Read graphify-out/GRAPH_REPORT.md first for architecture and dependency questions.",
+    "Use workspace.json for machine-readable repo context before scanning broad parts of the repository.",
+    "Use graphify-out/WORKSPACE_MEMORY.md and workspacememory.md for human-readable handoff notes, recent changes, and Git-aware status."
+  ],
+  "workspace": {
+    "name": "tg-configurator",
+    "root": "c:\\Projects\\NextJS\\tg-configurator",
+    "activeFile": "lib/useConfigurator.ts",
+    "refreshReason": "tracked-change",
+    "outputFiles": {
+      "markdown": "graphify-out/WORKSPACE_MEMORY.md",
+      "markdownMirror": "workspacememory.md",
+      "structuredManifest": "workspace.json"
+    },
+    "suggestedStartingPoints": [
+      "lib/useConfigurator.ts",
+      "components/Footer.tsx",
+      "lib/cms.ts",
+      "components/Header.tsx",
+      "app/download/page.tsx",
+      "app/page.tsx",
+      "components/MainContent.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
+      ".gitignore",
+      "AGENTS.md",
+      "README.md",
+      "package-lock.json"
+    ],
+    "stats": {
+      "totalFiles": 58,
+      "topLevelAreas": [
+        {
+          "name": "public",
+          "count": 20
+        },
+        {
+          "name": "components",
+          "count": 15
+        },
+        {
+          "name": "[root]",
+          "count": 14
+        },
+        {
+          "name": "app",
+          "count": 6
+        },
+        {
+          "name": "lib",
+          "count": 3
+        }
+      ],
+      "primaryFileTypes": [
+        {
+          "name": ".tsx",
+          "count": 18
+        },
+        {
+          "name": ".svg",
+          "count": 11
+        },
+        {
+          "name": ".ts",
+          "count": 6
+        },
+        {
+          "name": ".json",
+          "count": 4
+        },
+        {
+          "name": ".md",
+          "count": 4
+        },
+        {
+          "name": ".woff",
+          "count": 4
+        },
+        {
+          "name": ".woff2",
+          "count": 4
+        },
+        {
+          "name": ".mjs",
+          "count": 2
+        }
+      ],
+      "keyFiles": [
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "package-lock.json",
+        "package.json",
+        "tsconfig.json"
+      ],
+      "fileInventory": [
+        {
+          "path": ".env.local",
+          "topLevelArea": "[root]",
+          "extension": ".local",
+          "isKeyFile": false
+        },
+        {
+          "path": ".gitignore",
+          "topLevelArea": "[root]",
+          "extension": "[no extension]",
+          "isKeyFile": true
+        },
+        {
+          "path": "AGENTS.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": true
+        },
+        {
+          "path": "app/api/download/route.ts",
+          "topLevelArea": "app",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/download/page.tsx",
+          "topLevelArea": "app",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/favicon.ico",
+          "topLevelArea": "app",
+          "extension": ".ico",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/globals.css",
+          "topLevelArea": "app",
+          "extension": ".css",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/layout.tsx",
+          "topLevelArea": "app",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/page.tsx",
+          "topLevelArea": "app",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "CLAUDE.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Button.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/configurator/StepFourConfirmation.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/configurator/StepOnewoning.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/configurator/StepThreeVisuals.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/configurator/StepTwoDesign.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/ConfiguratorScreen.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Cta.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Faq.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Footer.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Header.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Hero.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/LoginScreen.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/MainContent.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/Story.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/WelcomeScreen.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "eslint.config.mjs",
+          "topLevelArea": "[root]",
+          "extension": ".mjs",
+          "isKeyFile": false
+        },
+        {
+          "path": "lib/cms.ts",
+          "topLevelArea": "lib",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "lib/useConfigurator.ts",
+          "topLevelArea": "lib",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "lib/wordpress.ts",
+          "topLevelArea": "lib",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "next-env.d.ts",
+          "topLevelArea": "[root]",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "next.config.ts",
+          "topLevelArea": "[root]",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "package-lock.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "package.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "postcss.config.mjs",
+          "topLevelArea": "[root]",
+          "extension": ".mjs",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/bg-interior.jpg",
+          "topLevelArea": "public",
+          "extension": ".jpg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/logo-nomi-white.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/logo-nomi.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/logo-tdg-white.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/logo-tdg.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/x-symbol-white.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/x-symbol.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/file.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Inter24pt-Regular.woff",
+          "topLevelArea": "public",
+          "extension": ".woff",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Inter24pt-Regular.woff2",
+          "topLevelArea": "public",
+          "extension": ".woff2",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/PlayfairDisplay-Bold.woff",
+          "topLevelArea": "public",
+          "extension": ".woff",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/PlayfairDisplay-Bold.woff2",
+          "topLevelArea": "public",
+          "extension": ".woff2",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Poppins-SemiBold.woff",
+          "topLevelArea": "public",
+          "extension": ".woff",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Poppins-SemiBold.woff2",
+          "topLevelArea": "public",
+          "extension": ".woff2",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Roboto-Regular.woff",
+          "topLevelArea": "public",
+          "extension": ".woff",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/fonts/Roboto-Regular.woff2",
+          "topLevelArea": "public",
+          "extension": ".woff2",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/globe.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/next.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/vercel.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/window.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "README.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": true
+        },
+        {
+          "path": "tsconfig.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "workspace.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": false
+        },
+        {
+          "path": "workspacememory.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": false
+        }
+      ]
+    }
+  },
+  "package": {
+    "available": true,
+    "name": "tg-configurator",
+    "displayName": "",
+    "version": "0.1.0",
+    "description": "",
+    "license": "",
+    "homepage": "",
+    "packageManager": "",
+    "main": "",
+    "repository": {
+      "type": "",
+      "url": ""
+    },
+    "bugsUrl": "",
+    "engines": {},
+    "keywords": [],
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint"
+    },
+    "dependencies": {
+      "client-zip": "^2.5.0",
+      "next": "16.2.10",
+      "react": "19.2.4",
+      "react-dom": "19.2.4",
+      "react-player": "^3.4.0"
+    },
+    "devDependencies": {
+      "@tailwindcss/postcss": "^4",
+      "@types/node": "^20",
+      "@types/react": "^19",
+      "@types/react-dom": "^19",
+      "eslint": "^9",
+      "eslint-config-next": "16.2.10",
+      "tailwindcss": "^4",
+      "typescript": "^5"
+    }
+  },
+  "currentStack": {
+    "lastActivityAt": "2026-08-25T13:23:57.244Z",
+    "trackedChangeCount": 40,
+    "trackedFileSnapshotCount": 32,
+    "changeTypeCounts": {
+      "save": 40,
+      "create": 0,
+      "delete": 0,
+      "rename": 0
+    }
+  },
+  "trackedSnapshots": [
+    {
+      "filePath": "lib/useConfigurator.ts",
+      "updatedAt": 1787664237244,
+      "lineCount": 116,
+      "charCount": 3342,
+      "hash": "e826f930eae0",
+      "preview": "'use client'; / import { useState } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<ScreenType>(()..."
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1787660674039,
+      "lineCount": 226,
+      "charCount": 9568,
+      "hash": "8a16a1793c59",
+      "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { / stepTitle:..."
+    },
+    {
+      "filePath": "components/Header.tsx",
+      "updatedAt": 1787654162501,
+      "lineCount": 179,
+      "charCount": 7828,
+      "hash": "be2c0465cf4b",
+      "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome..."
+    },
+    {
+      "filePath": "components/Footer.tsx",
+      "updatedAt": 1787654055963,
+      "lineCount": 122,
+      "charCount": 5381,
+      "hash": "b253ea39f865",
+      "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
+    },
+    {
+      "filePath": "app/page.tsx",
+      "updatedAt": 1787653789468,
+      "lineCount": 13,
+      "charCount": 308,
+      "hash": "e95adef2762a",
+      "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
+    },
+    {
+      "filePath": "components/MainContent.tsx",
+      "updatedAt": 1787653636997,
+      "lineCount": 125,
+      "charCount": 4109,
+      "hash": "fb6ac2b586cb",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1787651807421,
+      "lineCount": 333,
+      "charCount": 13133,
+      "hash": "9add2f45b96c",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1787649167605,
+      "lineCount": 153,
+      "charCount": 3850,
+      "hash": "fdcf4c9805fa",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+    }
+  ],
+  "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 35 lines with 40 lines.",
+      "recordedAt": "2026-08-25T13:23:57.244Z",
+      "recordedAtEpochMs": 1787664237244,
+      "before": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3134,
+        "hash": "0898c2ae3eda",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'u...",
+        "updatedAt": 1787664237244
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 116,
+        "charCount": 3342,
+        "hash": "e826f930eae0",
+        "preview": "'use client'; / import { useState } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<ScreenType>(()...",
+        "updatedAt": 1787664237244
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 35,
+        "addedLines": 40,
+        "summary": "Line 5: replaced 35 lines with 40 lines.",
+        "beforeFragment": "export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'undefined') {...",
+        "afterFragment": "type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<ScreenType>(() => { / if (..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-08-25T13:23:09.452Z",
+      "recordedAtEpochMs": 1787664189452,
+      "before": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3134,
+        "hash": "0898c2ae3eda",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'u...",
+        "updatedAt": 1787664189452
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3134,
+        "hash": "0898c2ae3eda",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'u...",
+        "updatedAt": 1787664189452
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Line 6: replaced 1 line with 1 line.",
+      "recordedAt": "2026-08-25T13:06:13.939Z",
+      "recordedAtEpochMs": 1787663173939,
+      "before": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3091,
+        "hash": "ac1909e76e67",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<string>(() => { / if (typeof window !== 'undefined') { / // Controleer of de URL expl...",
+        "updatedAt": 1787663173938
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3134,
+        "hash": "0898c2ae3eda",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<'welcome' | 'configurator' | 'download' | 'login'>(() => { / if (typeof window !== 'u...",
+        "updatedAt": 1787663173939
+      },
+      "diff": {
+        "lineStart": 6,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 6: replaced 1 line with 1 line.",
+        "beforeFragment": "string",
+        "afterFragment": "'welcome' | 'configurator' | 'download' | 'login'"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 14: inserted 2 lines.",
+      "recordedAt": "2026-08-25T12:24:34.039Z",
+      "recordedAtEpochMs": 1787660674039,
+      "before": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 9541,
+        "hash": "7705596b2e05",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { / stepTitle:...",
+        "updatedAt": 1787660674039
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 226,
+        "charCount": 9568,
+        "hash": "8a16a1793c59",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { / stepTitle:...",
+        "updatedAt": 1787660674039
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 14: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": "onConfirm?: () => void;"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Header.tsx",
+      "toPath": "",
+      "summary": "Line 59: replaced 97 lines with 94 lines.",
+      "recordedAt": "2026-08-25T10:36:02.501Z",
+      "recordedAtEpochMs": 1787654162501,
+      "before": {
+        "kind": "text",
+        "lineCount": 182,
+        "charCount": 8148,
+        "hash": "b5778a9a52ad",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787654162501
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 179,
+        "charCount": 7828,
+        "hash": "be2c0465cf4b",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787654162501
+      },
+      "diff": {
+        "lineStart": 59,
+        "removedLines": 97,
+        "addedLines": 94,
+        "summary": "Line 59: replaced 97 lines with 94 lines.",
+        "beforeFragment": "return ( / <header className=\"w-full max-w-360 mx-auto h-24 sm:h-37.5 px-6 sm:px-16 flex items-center justify-between relative\"> / {/* LOGOS CONTAINER */} / <div className=\"flex...",
+        "afterFragment": "return ( / <header className=\"w-full max-w-360 mx-auto h-24 sm:h-37.5 px-6 sm:px-16 flex items-center justify-between relative\"> / <div className=\"flex items-center gap-3 sm:gap..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 58: replaced 59 lines with 52 lines.",
+      "recordedAt": "2026-08-25T10:34:15.963Z",
+      "recordedAtEpochMs": 1787654055963,
+      "before": {
+        "kind": "text",
+        "lineCount": 129,
+        "charCount": 5668,
+        "hash": "f4b93e592beb",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787654055963
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 122,
+        "charCount": 5381,
+        "hash": "b253ea39f865",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787654055963
+      },
+      "diff": {
+        "lineStart": 58,
+        "removedLines": 59,
+        "addedLines": 52,
+        "summary": "Line 58: replaced 59 lines with 52 lines.",
+        "beforeFragment": "<Image / src=\"/assets/x-symbol-white.svg\" / alt=\"X\" / width={16} / height={16} / className=\"object-contain opacity-60\" / /> / <Image / src=\"/assets/logo-tdg-white.svg\" / alt=\"Th...",
+        "afterFragment": "<Image / src=\"/assets/x-symbol-white.svg\" / alt=\"X\" / width={16} / height={16} / className=\"object-contain opacity-60\" / /> / <Image / src=\"/assets/logo-tdg-white.svg\" / alt=\"Th..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 52: replaced 37 lines with 24 lines.",
+      "recordedAt": "2026-08-25T10:33:46.162Z",
+      "recordedAtEpochMs": 1787654026162,
+      "before": {
+        "kind": "text",
+        "lineCount": 142,
+        "charCount": 6361,
+        "hash": "956232258345",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787654026162
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 129,
+        "charCount": 5668,
+        "hash": "f4b93e592beb",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787654026162
+      },
+      "diff": {
+        "lineStart": 52,
+        "removedLines": 37,
+        "addedLines": 24,
+        "summary": "Line 52: replaced 37 lines with 24 lines.",
+        "beforeFragment": "a / href=\"https://www.nomi-utrecht.nl/\" / target=\"_blank\" / rel=\"noopener noreferrer\" / className=\"hover:opacity-80 transition-opacity\" / > / <Image / src=\"/assets/logo-nomi-whi...",
+        "afterFragment": "Image / src=\"/assets/logo-nomi-white.svg\" / alt=\"Nomi Utrecht\" / width={90} / height={30} / className=\"object-contain\" / /> / <Image / src=\"/assets/x-symbol-white.svg\" / alt=\"X\"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 134: replaced 3 lines with 3 lines.",
+      "recordedAt": "2026-08-25T10:30:31.732Z",
+      "recordedAtEpochMs": 1787653831732,
+      "before": {
+        "kind": "text",
+        "lineCount": 142,
+        "charCount": 6379,
+        "hash": "146187e25e9f",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787653831732
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 142,
+        "charCount": 6361,
+        "hash": "956232258345",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1787653831732
+      },
+      "diff": {
+        "lineStart": 134,
+        "removedLines": 3,
+        "addedLines": 3,
+        "summary": "Line 134: replaced 3 lines with 3 lines.",
+        "beforeFragment": "/privacy\" className=\"hover:text-white transition-colors\">Privacy</Link> / <span className=\"text-muted/60\">·</span> / <Link href=\"/voorwaarden",
+        "afterFragment": "#\" className=\"hover:text-white transition-colors\">Privacy</Link> / <span className=\"text-muted/60\">·</span> / <Link href=\"#"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/page.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 13 lines with 7 lines.",
+      "recordedAt": "2026-08-25T10:29:49.468Z",
+      "recordedAtEpochMs": 1787653789468,
+      "before": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 438,
+        "hash": "5d36f9fb8c9c",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home({ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sectio...",
+        "updatedAt": 1787653789468
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 13,
+        "charCount": 308,
+        "hash": "e95adef2762a",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC...",
+        "updatedAt": 1787653789468
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 13,
+        "addedLines": 7,
+        "summary": "Line 4: replaced 13 lines with 7 lines.",
+        "beforeFragment": "{ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sections, configuratorData } = await getPageData(); / const screen = searchParams?.screen; / retur...",
+        "afterFragment": ") { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configuratorData"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Header.tsx",
+      "toPath": "",
+      "summary": "Line 59: inserted 2 lines.",
+      "recordedAt": "2026-08-25T10:29:40.923Z",
+      "recordedAtEpochMs": 1787653780923,
+      "before": {
+        "kind": "text",
+        "lineCount": 181,
+        "charCount": 8142,
+        "hash": "98f457a7e415",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787653780923
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 182,
+        "charCount": 8148,
+        "hash": "b5778a9a52ad",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787653780923
+      },
+      "diff": {
+        "lineStart": 59,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 59: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Header.tsx",
+      "toPath": "",
+      "summary": "Line 43: replaced 14 lines with 16 lines.",
+      "recordedAt": "2026-08-25T10:29:38.987Z",
+      "recordedAtEpochMs": 1787653778987,
+      "before": {
+        "kind": "text",
+        "lineCount": 179,
+        "charCount": 7976,
+        "hash": "e551f0900580",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787653778987
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 181,
+        "charCount": 8142,
+        "hash": "98f457a7e415",
+        "preview": "'use client'; / import React, { useState, useRef, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / interface HeaderProps { / onStart?: () => void; / currentScreen: 'welcome...",
+        "updatedAt": 1787653778987
+      },
+      "diff": {
+        "lineStart": 43,
+        "removedLines": 14,
+        "addedLines": 16,
+        "summary": "Line 43: replaced 14 lines with 16 lines.",
+        "beforeFragment": "Stuur mee dat we expliciet naar het welkomstscherm willen via een URL-parameter / window.location.href = '/?screen=welcome'; / } else { / localStorage.setItem('configuratorCurre...",
+        "afterFragment": "Zet direct de localStorage op welcome en wis de stap / localStorage.setItem('current_screen', 'welcome'); / localStorage.removeItem('configuratorCurrentStep'); / window.location..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Line 8: replaced 74 lines with 79 lines.",
+      "recordedAt": "2026-08-25T10:28:19.235Z",
+      "recordedAtEpochMs": 1787653699235,
+      "before": {
+        "kind": "text",
+        "lineCount": 106,
+        "charCount": 3048,
+        "hash": "5bd5816f3646",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<string>(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem(...",
+        "updatedAt": 1787653699235
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 3091,
+        "hash": "ac1909e76e67",
+        "preview": "'use client'; / import { useState } from 'react'; / export function useConfigurator() { / const [screen, setScreenState] = useState<string>(() => { / if (typeof window !== 'undefined') { / // Controleer of de URL expl...",
+        "updatedAt": 1787653699235
+      },
+      "diff": {
+        "lineStart": 8,
+        "removedLines": 74,
+        "addedLines": 79,
+        "summary": "Line 8: replaced 74 lines with 79 lines.",
+        "beforeFragment": "return localStorage.getItem('current_screen') || 'login'; / } / return 'login'; / }); / const [woningType, setWoningTypeState] = useState<string | null>(() => { / if (typeof win...",
+        "afterFragment": "// Controleer of de URL expliciet om 'welcome' vraagt / const params = new URLSearchParams(window.location.search); / if (params.get('screen') === 'welcome') { / localStorage.se..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/MainContent.tsx",
+      "toPath": "",
+      "summary": "Line 31: replaced 11 lines with 11 lines.",
+      "recordedAt": "2026-08-25T10:27:16.997Z",
+      "recordedAtEpochMs": 1787653636997,
+      "before": {
+        "kind": "text",
+        "lineCount": 125,
+        "charCount": 4081,
+        "hash": "0f0f7fb7abe2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1787653636997
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 125,
+        "charCount": 4109,
+        "hash": "fb6ac2b586cb",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1787653636997
+      },
+      "diff": {
+        "lineStart": 31,
+        "removedLines": 11,
+        "addedLines": 11,
+        "summary": "Line 31: replaced 11 lines with 11 lines.",
+        "beforeFragment": "useEffect(() => { / setIsMounted(true); / // Als de URL aangeeft dat we naar 'welcome' moeten, dwing dit dan direct af / if (initialScreen === 'welcome') { / setScreen('welcome'...",
+        "afterFragment": "useEffect(() => { / setIsMounted(true); / // Als de URL aangeeft dat we naar 'welcome' moeten, dwing dit direct af bij de hook én ruim de stap op / if (initialScreen === 'welcom..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/page.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 7 lines with 13 lines.",
+      "recordedAt": "2026-08-25T10:25:29.653Z",
+      "recordedAtEpochMs": 1787653529653,
+      "before": {
+        "kind": "text",
+        "lineCount": 13,
+        "charCount": 308,
+        "hash": "e95adef2762a",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC...",
+        "updatedAt": 1787653529653
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 438,
+        "hash": "5d36f9fb8c9c",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home({ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sectio...",
+        "updatedAt": 1787653529653
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 7,
+        "addedLines": 13,
+        "summary": "Line 4: replaced 7 lines with 13 lines.",
+        "beforeFragment": ") { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configuratorData",
+        "afterFragment": "{ / searchParams, / }: { / searchParams: { screen?: string }; / }) { / const { sections, configuratorData } = await getPageData(); / const screen = searchParams?.screen; / retur..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/MainContent.tsx",
+      "toPath": "",
+      "summary": "Line 5: replaced 102 lines with 117 lines.",
+      "recordedAt": "2026-08-25T10:25:18.399Z",
+      "recordedAtEpochMs": 1787653518399,
+      "before": {
+        "kind": "text",
+        "lineCount": 110,
+        "charCount": 3616,
+        "hash": "2e138056753e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; // <-- Deze ontbrak / import LoginScreen from '../components/L...",
+        "updatedAt": 1787653518399
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 125,
+        "charCount": 4081,
+        "hash": "0f0f7fb7abe2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1787653518399
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 102,
+        "addedLines": 117,
+        "summary": "Line 5: replaced 102 lines with 117 lines.",
+        "beforeFragment": "// <-- Deze ontbrak / import LoginScreen from '../components/LoginScreen'; / import WelcomeScreen from '../components/WelcomeScreen'; / import ConfiguratorScreen from '../compon...",
+        "afterFragment": "import LoginScreen from '../components/LoginScreen'; / import WelcomeScreen from '../components/WelcomeScreen'; / import ConfiguratorScreen from '../components/ConfiguratorScree..."
+      }
+    }
+  ],
+  "hotFiles": [
+    {
+      "filePath": "components/Footer.tsx",
+      "count": 13
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "count": 10
+    },
+    {
+      "filePath": "components/Header.tsx",
+      "count": 6
+    },
+    {
+      "filePath": "lib/useConfigurator.ts",
+      "count": 4
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "app/page.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/MainContent.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 1
+    }
+  ],
+  "git": {
+    "available": true,
+    "branch": "master",
+    "headSummary": "2026-07-13 1e3b6e4 Initial commit from Create Next App",
+    "statusSummary": "7 modifieds, 9 untrackeds",
+    "changedFileCount": 16,
+    "statusLines": [
+      "M app/globals.css",
+      "M app/layout.tsx",
+      "M app/page.tsx",
+      "M next.config.ts",
+      "M package-lock.json",
+      "M package.json",
+      "M tsconfig.json",
+      "?? app/api/",
+      "?? app/download/",
+      "?? components/",
+      "?? graphify-out/",
+      "?? lib/",
+      "?? public/assets/",
+      "?? public/fonts/",
+      "?? workspace.json",
+      "?? workspacememory.md"
+    ],
+    "error": ""
+  },
+  "github": {
+    "available": false,
+    "summary": "Could not determine the GitHub repository from origin remote: error: No such remote 'origin'"
+  },
+  "graphify": {
+    "reportAvailable": false,
+    "graphAvailable": false,
+    "reportPath": "",
+    "graphPath": "",
+    "highlights": ""
+  },
+  "projectPlanner": null,
+  "agentNotes": [
+    "For recent repo changes, check recentChanges, trackedSnapshots, hotFiles, and git.",
+    "For architecture questions, combine graphify highlights with the Graphify report.",
+    "For machine-readable repo context, prefer this workspace.json manifest before broad repo scans."
+  ]
+}
