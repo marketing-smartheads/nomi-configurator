@@ -17,28 +17,58 @@ export default function DownloadPage() {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
 
   useEffect(() => {
-    const storedWoning = sessionStorage.getItem('geselecteerdeWoning');
-    const storedPakket = sessionStorage.getItem('geselecteerdPakket');
-    
-    if (!storedWoning || !storedPakket) {
-      router.push('/');
-      return;
-    }
-
-    setWoningType(storedWoning);
-    setDesignPakket(storedPakket);
-    setIsAuthorized(true);
-
-    async function fetchData() {
+    async function initDownloadPage() {
       try {
-        const data = await getPageData();
-        setPageData(data);
+        const savedCode = localStorage.getItem('toegangscode');
+        
+        let targetWoning: string | null = null;
+        let targetPakket: string | null = null;
+
+        // 1. Haal ALTIJD eerst de echte keuzes op uit WordPress als er een vouchercode is
+        if (savedCode) {
+          try {
+            const res = await fetch('/api/vouchers');
+            const data = await res.json();
+            if (data.vouchers) {
+              const found = data.vouchers.find((v: any) => {
+                const details = v.voucherVelden || {};
+                const code = String(details.toegangscode || v.title || '').trim().toUpperCase();
+                return code === savedCode.trim().toUpperCase();
+              });
+
+              if (found) {
+                const details = found.voucherVelden || {};
+                if (details.gekozenTypeWoning) targetWoning = details.gekozenTypeWoning;
+                if (details.gekozenDesignpakket) targetPakket = details.gekozenDesignpakket;
+              }
+            }
+          } catch (apiErr) {
+            console.error('Fout bij ophalen voucherdetails uit WP:', apiErr);
+          }
+        }
+
+        // 2. Als WordPress niets opleverde, pas dan terugvallen op sessionStorage of localStorage
+        if (!targetWoning) targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType') || 'Type A';
+        if (!targetPakket) targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Pakket A';
+
+        // 3. Zet de juiste waardes vast in sessionStorage
+        sessionStorage.setItem('geselecteerdeWoning', targetWoning);
+        sessionStorage.setItem('geselecteerdPakket', targetPakket);
+
+        setWoningType(targetWoning);
+        setDesignPakket(targetPakket);
+        setIsAuthorized(true);
+
+        const cmsData = await getPageData();
+        setPageData(cmsData);
       } catch (err) {
-        console.error('Fout bij ophalen CMS data:', err);
+        console.error('Fout bij initialiseren downloadpagina:', err);
+        setIsAuthorized(true);
       }
     }
-    fetchData();
-  }, [router]);
+
+    initDownloadPage();
+  }, []);
 
   if (!isAuthorized || !woningType || !designPakket) {
     return (
@@ -53,12 +83,10 @@ export default function DownloadPage() {
   const designPakkettenLijst = configuratorData?.designPakketten || [];
   const woningTypenLijst = configuratorData?.woningTypen || [];
 
-  // Zoek het geselecteerde designpakket
   const huidigPakketObj = designPakkettenLijst.find(
     (p: any) => p?.pakketTitel?.toLowerCase() === designPakket.toLowerCase()
   ) || designPakkettenLijst[0];
 
-  // Zoek het geselecteerde woningtype op basis van sessionStorage
   const huidigWoningTypeObj = woningTypenLijst.find(
     (w: any) => w?.typeNaam?.toLowerCase() === woningType.toLowerCase()
   ) || woningTypenLijst[0];
@@ -71,7 +99,6 @@ export default function DownloadPage() {
     .replace('%type%', woningType)
     .replace('%designpakket%', designPakket);
 
-  // Veilig ophalen van categorieën (vangt eventuele naamverschillen op)
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
 
   const getFileUrl = (bestand: any) => {
@@ -97,7 +124,6 @@ export default function DownloadPage() {
     return url;
   };
 
-  // Check of er minimaal één geldig bestand aanwezig is
   const heeftBestanden = categorieen.some((cat: any) => 
     cat?.bestandenLijst && cat.bestandenLijst.length > 0 && 
     cat.bestandenLijst.some((bestand: any) => getFileUrl(bestand))

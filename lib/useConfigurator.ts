@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type ScreenType = 'welcome' | 'configurator' | 'download' | 'login';
 
 export function useConfigurator() {
   const [screen, setScreenState] = useState<ScreenType>(() => {
     if (typeof window !== 'undefined') {
-      // Controleer of de URL expliciet om 'welcome' vraagt
       const params = new URLSearchParams(window.location.search);
       if (params.get('screen') === 'welcome') {
         localStorage.setItem('current_screen', 'welcome');
@@ -16,7 +15,7 @@ export function useConfigurator() {
       
       const savedScreen = localStorage.getItem('current_screen');
       if (savedScreen === 'welcome' || savedScreen === 'configurator' || savedScreen === 'download' || savedScreen === 'login') {
-        return savedScreen;
+        return savedScreen as ScreenType;
       }
     }
     return 'login';
@@ -36,8 +35,20 @@ export function useConfigurator() {
     return null;
   });
 
-  const [toegangscode, setToegangscode] = useState('');
-  const [wachtwoord, setWachtwoord] = useState('');
+  const [toegangscode, setToegangscode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('toegangscode') || '';
+    }
+    return '';
+  });
+
+  const [klantEmail, setKlantEmail] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('klantEmail') || '';
+    }
+    return '';
+  });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -57,7 +68,6 @@ export function useConfigurator() {
       } else {
         localStorage.removeItem('selected_woningType');
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -69,19 +79,60 @@ export function useConfigurator() {
       } else {
         localStorage.removeItem('selected_designPakket');
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
+  // SLIMME INLOG-CONTROLE: Check direct in WordPress of de code al verzilverd is
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
+    const cleanCode = toegangscode.trim().toUpperCase();
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('toegangscode', cleanCode);
+      localStorage.setItem('klantEmail', klantEmail.trim());
+    }
+
+    try {
+      const res = await fetch('/api/vouchers');
+      const data = await res.json();
+
+      if (data.vouchers) {
+        const found = data.vouchers.find((v: any) => {
+          const details = v.voucherVelden || {};
+          const code = String(details.toegangscode || v.title || '').trim().toUpperCase();
+          return code === cleanCode;
+        });
+
+        if (found) {
+          const details = found.voucherVelden || {};
+          const statusVal = String(details.status || '');
+          const isVerzilverd = 
+            statusVal === 'bevestigd' || 
+            statusVal.toLowerCase().includes('bevestigd') || 
+            statusVal.toLowerCase().includes('verzilverd');
+
+          if (isVerzilverd) {
+            if (typeof window !== 'undefined') {
+              sessionStorage.setItem('configuratorConfirmed', 'true');
+            }
+            setScreen('configurator'); // Dit triggert de 'reeds verzilverd' melding in MainContent
+            setLoading(false);
+            return;
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Fout bij controleren voucher status:', err);
+    }
+
+    // Als hij niet verzilverd is, gewoon door naar de normale workflow
     setTimeout(() => {
       setLoading(false);
       setScreen('welcome');
-    }, 800);
+    }, 500);
   };
 
   const handleSaveChoices = () => {
@@ -89,6 +140,9 @@ export function useConfigurator() {
     setTimeout(() => {
       setLoading(false);
       alert('Uw keuzes zijn succesvol opgeslagen!');
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('configuratorConfirmed', 'true');
+      }
       localStorage.removeItem('selected_woningType');
       localStorage.removeItem('selected_designPakket');
       setScreen('welcome');
@@ -102,8 +156,8 @@ export function useConfigurator() {
     setScreen,
     toegangscode,
     setToegangscode,
-    wachtwoord,
-    setWachtwoord,
+    klantEmail,
+    setKlantEmail,
     loading,
     error,
     woningType,
