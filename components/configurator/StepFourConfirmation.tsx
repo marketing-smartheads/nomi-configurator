@@ -11,6 +11,7 @@ interface StepFourConfirmationProps {
   woningType: string | null;
   designPakket: string | null;
   onBack: () => void;
+  onConfirm?: () => void; // Toegevoegd om de TypeScript fout op te lossen
   loading: boolean;
 }
 
@@ -20,6 +21,7 @@ export default function StepFourConfirmation({
   woningType,
   designPakket,
   onBack,
+  onConfirm,
   loading,
 }: StepFourConfirmationProps) {
   const [showPopup, setShowPopup] = useState(false);
@@ -124,6 +126,11 @@ export default function StepFourConfirmation({
 
       sessionStorage.setItem('geselecteerdeWoning', storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '');
       sessionStorage.setItem('geselecteerdPakket', storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '');
+
+      // Trigger optionele externe onConfirm prop indien meegegeven vanuit de parent
+      if (onConfirm) {
+        onConfirm();
+      }
 
       router.push('/download');
     } catch (error: any) {
