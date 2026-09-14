@@ -92,7 +92,7 @@ export default function ConfiguratorScreen({
     <section className="w-full bg-secondary min-h-screen">
       {/* Als we op stap 4 zijn, halen we de max-w-6xl en padding hier weg zodat de hero full-width kan */}
       <div className={`w-full mx-auto flex flex-col justify-between min-h-screen ${
-        currentStep === 4 ? 'px-0' : 'max-w-6xl px-6 py-28'
+        currentStep === 4 ? 'px-0' : 'max-w-6xl py-28'
       }`}>
         
         <div className={currentStep === 4 ? 'w-full' : ''}>
