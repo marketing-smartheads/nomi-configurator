@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-09-14T20:40:34.490Z
+Generated: 2026-09-14T21:01:17.064Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-09-14T20:40:32.066Z
+- Last activity: 2026-09-14T21:01:14.388Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/MainContent.tsx (16), lib/useConfigurator.ts (5), app/download/page.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/MainContent.tsx, lib/useConfigurator.ts, app/download/page.tsx, components/LoginScreen.tsx, app/dashboard/page.tsx
+- Hottest files right now: components/MainContent.tsx (16), components/configurator/StepThreeVisuals.tsx (5), lib/useConfigurator.ts (5), app/download/page.tsx (4)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/MainContent.tsx, lib/useConfigurator.ts, app/download/page.tsx, components/LoginScreen.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 62
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 38
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 291 lines | 14555 chars | hash 26fc917063bb
-  Last snapshot: 2026-09-14T20:40:32.066Z
+- components/configurator/StepThreeVisuals.tsx | 291 lines | 14542 chars | hash 3f450dfec77e
+  Last snapshot: 2026-09-14T21:01:14.388Z
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 - components/ConfiguratorScreen.tsx | 207 lines | 8253 chars | hash c9eea385c9aa
   Last snapshot: 2026-09-14T20:18:37.108Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-09-14T21:01:14.388Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 116: removed 1 line.
+- Before: 291 lines | 14,555 chars | hash 26fc917063bb | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- After: 291 lines | 14,542 chars | hash 3f450dfec77e | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- Previous fragment: "px-4 sm:px-0"
+
 ### 2026-09-14T20:40:32.066Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 28: replaced 109 lines with 142 lines.
 - Before: 258 lines | 13,555 chars | hash e85e3537e8aa | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
@@ -148,33 +154,22 @@ Structured manifest: workspace.json
 - Before: 202 lines | 8,405 chars | hash af962c5b9001 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 - After: 202 lines | 8,405 chars | hash af962c5b9001 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
-### 2026-09-08T08:06:31.315Z | saved | components/MainContent.tsx
-- Summary: Line 155: replaced 9 lines with 6 lines.
-- Before: 204 lines | 8,396 chars | hash 58616399cfb9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 201 lines | 8,279 chars | hash 8cab645d03a6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "Geen FIXED meer! / - absolute inset-0 bedekt PRECIES de configurator (en dus niet de header/footer). / - sticky top-32 zorgt dat de melding mooi in beeld blijft plakken tijdens..."
-- Current fragment: "Absolute overlay met flex en verticale padding (py-24) zodat er zowel boven als onder ruimte overblijft */} / {isReedsBevestigd && ( / <div className="absolute inset-0 z-40 flex..."
-
 
 ## Hot Files
 - components/MainContent.tsx (16 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (5 tracked changes)
 - lib/useConfigurator.ts (5 tracked changes)
 - app/download/page.tsx (4 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/LoginScreen.tsx (3 tracked changes)
-- app/dashboard/page.tsx (2 tracked changes)
 - components/ConfiguratorScreen.tsx (2 tracked changes)
 - components/Header.tsx (2 tracked changes)
+- app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-09-08 174f9f7 some improvements
-- Working tree summary: 5 modifieds
-- M components/ConfiguratorScreen.tsx
+- HEAD: 2026-09-14 853b7d5 Fixed styles on mobile Carousel
+- Working tree summary: 1 modified
 - M components/configurator/StepThreeVisuals.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +177,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 174f9f7 by Bas van Dooremalen on 2026-09-08
-  some improvements
+- 853b7d5 by Bas van Dooremalen on 2026-09-14
+  Fixed styles on mobile Carousel
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

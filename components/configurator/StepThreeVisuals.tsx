@@ -113,7 +113,7 @@ export default function StepThreeVisuals({
       </div>
 
       {/* 3D Visuals Sectie */}
-      <div className="max-w-6xl mx-auto space-y-8 px-4 sm:px-0">
+      <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">
           {/* Witte hoofdkaart */}
           <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
