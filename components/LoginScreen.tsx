@@ -101,7 +101,6 @@ export default function LoginScreen({
 
     setIsChecking(false);
 
-    // 4. Als alles akkoord is, opslaan in storage en doorgaan met de standaard submit-logica
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('voucherCode', toegangscode.trim());
       sessionStorage.setItem('klantEmail', klantEmail.trim());
@@ -113,7 +112,7 @@ export default function LoginScreen({
   if (isReedsBevestigd) {
     return (
       <div 
-        className="w-full max-w-[33.75rem] relative border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between rounded-[2rem] px-5 py-8 sm:px-14 sm:py-12 text-center space-y-6"
+        className="w-full max-w-135 relative border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between rounded-4xl px-5 py-8 sm:px-14 sm:py-12 text-center space-y-6"
         style={{
           backgroundColor: 'rgba(235, 229, 222, 0.42)',
           backdropFilter: 'blur(44px)',
@@ -125,7 +124,7 @@ export default function LoginScreen({
           <p className="text-sm text-zinc-700 leading-relaxed">
             Deze vouchercode is al ingewisseld en kan niet meer opnieuw worden gebruikt. 
             Bij vragen kunt u contact opnemen met de makelaar: <strong className="text-dark">De Keizer Makelaarsgroep</strong> via{' '}
-            <a href="tel:0306008240" className="underline hover:opacity-80 font-medium text-dark">030-600 82 40</a> of mail naar{' '}
+            <a href="tel:0306008240" className="underline hover:opacity-80 font medium text-dark">030-600 82 40</a> of mail naar{' '}
             <a href="mailto:nieuwbouw@dekeizer.nl" className="underline hover:opacity-80 font-medium text-dark">nieuwbouw@dekeizer.nl</a>.
           </p>
         </div>
@@ -146,7 +145,7 @@ export default function LoginScreen({
 
   return (
     <div 
-      className="w-full max-w-[33.75rem] relative border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between rounded-[2rem] px-5 py-8 sm:px-14 sm:py-12"
+      className="w-full max-w-135 relative border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between rounded-4xl px-5 py-8 sm:px-14 sm:py-12"
       style={{
         backgroundColor: 'rgba(235, 229, 222, 0.42)',
         backdropFilter: 'blur(44px)',

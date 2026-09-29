@@ -88,8 +88,6 @@ export default function MainContent({ sections, configuratorData, initialScreen 
   if (loading && screen === 'login') {
     return <main className="w-full min-h-screen bg-dark" />;
   }
-
-  // Toon het inlogscherm met bewegende achtergrond
   if (screen === 'login') {
     return (
       <main className="w-full min-h-screen relative flex items-center justify-center font-sans text-zinc-100 px-6 py-8 sm:py-12 sm:px-0 overflow-hidden">
@@ -158,7 +156,7 @@ export default function MainContent({ sections, configuratorData, initialScreen 
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-all duration-500" />
                 
                 <div className="relative z-50 w-full max-w-lg p-8 md:p-12 bg-white/95 backdrop-blur-md rounded-4xl shadow-2xl text-dark text-center space-y-6 border border-white/25 animate-in fade-in zoom-in-95 duration-300">
-                  <h2 className="text-3xl font-serif text-dark">Vouchercode reeds gebruikt</h2>
+                  <h2 className="text-3xl font-serif text-dark">Voucher code reeds gebruikt.</h2>
                   <p className="text-sm leading-relaxed text-zinc-700">
                     Deze vouchercode is al ingewisseld en kan niet meer opnieuw worden gebruikt. 
                     Bij vragen kunt u contact opnemen met de makelaar: <strong className="text-dark">De Keizer Makelaarsgroep</strong> via{' '}
@@ -176,7 +174,7 @@ export default function MainContent({ sections, configuratorData, initialScreen 
                       }}
                       className="inline-block w-full py-4 bg-dark text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:opacity-90 transition text-center shadow-lg cursor-pointer"
                     >
-                      Ga naar mijn downloadpagina
+                    Ga naar mijn downloadpagina.  
                     </button>
                   </div>
                 </div>

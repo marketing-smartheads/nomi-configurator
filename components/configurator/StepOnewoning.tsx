@@ -21,7 +21,7 @@ export default function StepOneWoning({
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
         {woningTypenLijst.length > 0 ? (
           woningTypenLijst.map((item: any, index: number) => {
             const typeNaam = item.typeNaam || item.type_naam || `Type ${index + 1}`;

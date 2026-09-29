@@ -29,7 +29,7 @@ export default function Faq({ data }: FaqProps) {
     return (
         <section className="w-full bg-[#F4F1EA] py-28 px-6 md:px-16 text-dark">
             <div className="max-w-4xl mx-auto">
-                {/* Header */}
+            
                 <div className="text-center mb-16 flex flex-col items-center">
                     <span className="font-poppins text-xs uppercase tracking-[0.2em] text-primary mb-4">
                         {subtitel}

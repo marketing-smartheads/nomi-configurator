@@ -99,7 +99,7 @@ export default function StepThreeVisuals({
 
   return (
     <div className="space-y-16">
-      {/* Header */}
+      
       <div className="text-center space-y-4 max-w-2xl mx-auto px-4">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
           {`Stap 3 · ${stepTitle}`}
@@ -112,25 +112,23 @@ export default function StepThreeVisuals({
         </p>
       </div>
 
-      {/* 3D Visuals Sectie */}
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">
-          {/* Witte hoofdkaart */}
+        
           <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
             <div>
               <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
                 3D Visuals
               </span>
-              <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
+              <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket.</h3>
               <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit uw ontwerp is opgebouwd.</p>
             </div>
 
-            {/* Afbeelding container met Swipe Events */}
             <div 
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
-              className="w-full aspect-[4/3] sm:aspect-[16/10] relative overflow-hidden flex items-center justify-center rounded-[2rem] cursor-grab active:cursor-grabbing"
+              className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden flex items-center justify-center rounded-4xl cursor-grab active:cursor-grabbing"
             >
               {visuals.length > 0 ? (
                 visuals.map((vis: any, idx: number) => {
@@ -151,7 +149,7 @@ export default function StepThreeVisuals({
                           src={vis.sourceUrl} 
                           alt={`3D Visual ${idx + 1}`} 
                           fill 
-                          className="object-cover rounded-[2rem]"
+                          className="object-cover rounded-4xl"
                           draggable={false}
                         />
                       )}
@@ -164,7 +162,6 @@ export default function StepThreeVisuals({
             </div>
           </div>
 
-          {/* Pijlen onder het vlak op mobiel, los aan de zijkant op desktop */}
           {visuals.length > 1 && (
             <div className="flex justify-center items-center gap-4 mt-6 sm:mt-0">
               <button 
@@ -190,7 +187,6 @@ export default function StepThreeVisuals({
           )}
         </div>
 
-        {/* Thumbnails Grid - Verborgen op mobiel */}
         {visuals.length > 0 && (
           <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
             {currentThumbs.map((vis: any, relativeIdx: number) => {
@@ -203,7 +199,7 @@ export default function StepThreeVisuals({
                 <div
                   key={absoluteIdx}
                   onClick={() => handleThumbClick(absoluteIdx)}
-                  className={`relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
+                  className={`relative w-full aspect-4/3 rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
                     activeIndex === absoluteIdx ? 'ring-2 ring-primary' : ''
                   }`}
                 >
@@ -235,7 +231,7 @@ export default function StepThreeVisuals({
                       className="absolute inset-y-0 right-0 w-1/2 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium text-xs tracking-wider uppercase z-10 hover:bg-black/60 cursor-pointer"
                       title="Volgende pagina"
                     >
-                      Meer
+                      Volgende
                     </button>
                   )}
                 </div>
@@ -245,14 +241,13 @@ export default function StepThreeVisuals({
         )}
       </div>
 
-      {/* Materialen Overzicht & Moodboard Gallery */}
-      <div className="bg-white rounded-[2.5rem] max-w-6xl mx-auto overflow-hidden shadow-sm flex flex-col mx-4 sm:mx-auto">
+      <div className="bg-white rounded-[2.5rem] max-w-6xl mx-auto overflow-hidden shadow-sm flex flex-col sm:mx-auto">
         <div className="p-6 sm:p-12 pb-8 space-y-8">
           <div>
             <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
               {`Moodboard ${pakketTitel}`}
             </span>
-            <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
+            <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket.</h3>
             <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit uw ontwerp is opgebouwd.</p>
           </div>
 
@@ -273,7 +268,7 @@ export default function StepThreeVisuals({
               if (!imageUrl) return null;
 
               return (
-                <div key={`moodboard-${idx}`} className="relative overflow-hidden bg-secondary aspect-[4/5] rounded-2xl sm:rounded-none">
+                <div key={`moodboard-${idx}`} className="relative overflow-hidden bg-secondary aspect-4/5 rounded-2xl sm:rounded-none">
                   <Image 
                     src={imageUrl} 
                     alt={`Moodboard afbeelding ${idx + 1}`} 
