@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-09-30T10:11:00.033Z
+Generated: 2026-09-30T17:51:05.268Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-09-30T10:10:57.488Z
+- Last activity: 2026-09-30T17:51:03.537Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/CookieBanner.tsx (16), app/privacy/page.tsx (10), app/download/page.tsx (8), components/MainContent.tsx (3)
-- Suggested starting points: app/download/page.tsx, components/CookieBanner.tsx, app/privacy/page.tsx, components/MainContent.tsx, app/privacy, components/Footer.tsx
+- Hottest files right now: components/CookieBanner.tsx (16), app/privacy/page.tsx (10), app/download/page.tsx (5), components/configurator/StepThreeVisuals.tsx (3)
+- Suggested starting points: app/download/page.tsx, components/CookieBanner.tsx, app/privacy/page.tsx, components/configurator/StepThreeVisuals.tsx, components/MainContent.tsx, app/privacy
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 64
@@ -37,11 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (3)
 - Remembered file snapshots: 40
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 416 lines | 16222 chars | hash d4640913be71
-  Last snapshot: 2026-09-30T10:10:57.488Z
+- app/download/page.tsx | 445 lines | 17332 chars | hash 650eaf8f6392
+  Last snapshot: 2026-09-30T17:51:03.537Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- components/configurator/StepThreeVisuals.tsx | 286 lines | 14192 chars | hash f686682f55d5
+  Last snapshot: 2026-09-30T17:49:20.546Z
+  Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 - app/privacy/page.tsx | 150 lines | 8653 chars | hash f0b7c156a578
   Last snapshot: 2026-09-30T10:00:56.314Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -60,11 +63,49 @@ Structured manifest: workspace.json
 - lib/cms.ts | 164 lines | 4296 chars | hash 56ba0cfe67f1
   Last snapshot: 2026-09-29T20:42:36.811Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- components/configurator/StepOnewoning.tsx | 76 lines | 3448 chars | hash 568f8963cd5d
-  Last snapshot: 2026-09-29T11:22:14.750Z
-  Preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
 
 ## Recent Changes
+### 2026-09-30T17:51:03.537Z | saved | app/download/page.tsx
+- Summary: Line 38: replaced 1 line with 1 line.
+- Before: 445 lines | 17,332 chars | hash a08678c1c029 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 445 lines | 17,332 chars | hash 650eaf8f6392 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "3"
+- Current fragment: "6"
+
+### 2026-09-30T17:50:53.804Z | saved | app/download/page.tsx
+- Summary: Line 38: replaced 1 line with 1 line.
+- Before: 445 lines | 17,332 chars | hash 6f8a0c13957f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 445 lines | 17,332 chars | hash a08678c1c029 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "1"
+- Current fragment: "3"
+
+### 2026-09-30T17:49:20.546Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 131: removed 1 line.
+- Before: 286 lines | 14,205 chars | hash 515d0b2708b0 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- After: 286 lines | 14,192 chars | hash f686682f55d5 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- Previous fragment: "cursor-alias"
+
+### 2026-09-30T17:49:00.847Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 131: replaced 1 line with 1 line.
+- Before: 286 lines | 14,204 chars | hash f3842b3f5fa3 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- After: 286 lines | 14,205 chars | hash 515d0b2708b0 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- Previous fragment: "none"
+- Current fragment: "alias"
+
+### 2026-09-30T17:48:27.974Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 131: replaced 1 line with 1 line.
+- Before: 286 lines | 14,204 chars | hash cb600e2582ee | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- After: 286 lines | 14,204 chars | hash f3842b3f5fa3 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
+- Previous fragment: "grab"
+- Current fragment: "none"
+
+### 2026-09-30T17:43:50.847Z | saved | app/download/page.tsx
+- Summary: Line 19: replaced 138 lines with 167 lines.
+- Before: 416 lines | 16,222 chars | hash d4640913be71 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 445 lines | 17,332 chars | hash 6f8a0c13957f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
+- Current fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
+
 ### 2026-09-30T10:10:57.488Z | saved | app/download/page.tsx
 - Summary: Line 188: replaced 65 lines with 68 lines.
 - Before: 413 lines | 16,114 chars | hash d9fd4506eb50 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -125,53 +166,12 @@ Structured manifest: workspace.json
 - Previous fragment: "- Volledig responsive padding en max-w */} / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / {/* Paginatitel..."
 - Current fragment: "*/} / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / {/* Paginatitel */} / <div className="space-y-2 sm:spac..."
 
-### 2026-09-30T08:49:32.949Z | saved | components/CookieBanner.tsx
-- Summary: Line 5: replaced 165 lines with 162 lines.
-- Before: 199 lines | 9,337 chars | hash 37e9a956dce4 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow..."
-- After: 196 lines | 9,100 chars | hash 7f933c93c0eb | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow..."
-- Previous fragment: "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s..."
-- Current fragment: "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s..."
-
-### 2026-09-30T08:42:14.694Z | saved | components/Footer.tsx
-- Summary: Line 114: replaced 1 line with 1 line.
-- Before: 122 lines | 5,381 chars | hash b253ea39f865 | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- After: 122 lines | 5,388 chars | hash cc53b02a612e | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- Previous fragment: "#"
-- Current fragment: "/privacy"
-
-### 2026-09-30T08:41:19.144Z | saved | components/CookieBanner.tsx
-- Summary: Line 5: replaced 196 lines with 185 lines.
-- Before: 210 lines | 10,220 chars | hash d42e02fffc8b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 199 lines | 9,337 chars | hash 37e9a956dce4 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow..."
-- Previous fragment: "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s..."
-- Current fragment: "import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setSho..."
-
-### 2026-09-30T08:34:10.879Z | saved | components/CookieBanner.tsx
-- Summary: Line 91: replaced 110 lines with 110 lines.
-- Before: 210 lines | 10,210 chars | hash 67585ea982b9 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 210 lines | 10,220 chars | hash d42e02fffc8b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- Previous fragment: "xl border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center" / > / Voorkeuren instellen / </bu..."
-- Current fragment: "full border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center" / > / Voorkeuren instellen / </..."
-
-### 2026-09-30T08:33:58.138Z | saved | components/CookieBanner.tsx
-- Summary: Line 81: replaced 120 lines with 120 lines.
-- Before: 210 lines | 10,218 chars | hash 4309139e196b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 210 lines | 10,210 chars | hash 67585ea982b9 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- Previous fragment: "bold text-white text-base">Over cookies en privacy</p> / <p> / Wij gebruiken functionele cookies om de sessie en configurator goed te laten werken. Met uw toestemming plaatsen w..."
-- Current fragment: "medium text-white text-base">Over cookies en privacy</p> / <p> / Wij gebruiken functionele cookies om de sessie en configurator goed te laten werken. Met uw toestemming plaatsen..."
-
-### 2026-09-30T08:33:17.380Z | saved | components/CookieBanner.tsx
-- Summary: Line 81: replaced 1 line with 1 line.
-- Before: 210 lines | 10,220 chars | hash d42e02fffc8b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 210 lines | 10,218 chars | hash 4309139e196b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- Previous fragment: "medium"
-- Current fragment: "bold"
-
 
 ## Hot Files
 - components/CookieBanner.tsx (16 tracked changes)
 - app/privacy/page.tsx (10 tracked changes)
-- app/download/page.tsx (8 tracked changes)
+- app/download/page.tsx (5 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - components/MainContent.tsx (3 tracked changes)
 - app/privacy (1 tracked changes)
 - components/Footer.tsx (1 tracked changes)
@@ -179,9 +179,13 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-09-30 18a49a7 changed dummy email in privacy page
-- Working tree summary: 1 modified
+- HEAD: 2026-09-30 562c6d9 added .webp format
+- Working tree summary: 5 modifieds
 - M app/download/page.tsx
+- M components/configurator/StepThreeVisuals.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 18a49a7 by Bas van Dooremalen on 2026-09-30
-  changed dummy email in privacy page
+- 562c6d9 by Bas van Dooremalen on 2026-09-30
+  added .webp format
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

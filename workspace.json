@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T10:11:00.033Z",
-  "generatedAtEpochMs": 1790763060033,
+  "generatedAt": "2026-09-30T17:51:05.268Z",
+  "generatedAtEpochMs": 1790790665268,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,6 +25,7 @@
       "app/download/page.tsx",
       "components/CookieBanner.tsx",
       "app/privacy/page.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/MainContent.tsx",
       "app/privacy",
       "components/Footer.tsx",
@@ -32,8 +33,7 @@
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 64,
@@ -533,7 +533,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-09-30T10:10:57.488Z",
+    "lastActivityAt": "2026-09-30T17:51:03.537Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 40,
     "changeTypeCounts": {
@@ -546,11 +546,19 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1790763057488,
-      "lineCount": 416,
-      "charCount": 16222,
-      "hash": "d4640913be71",
+      "updatedAt": 1790790663537,
+      "lineCount": 445,
+      "charCount": 17332,
+      "hash": "650eaf8f6392",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1790790560546,
+      "lineCount": 286,
+      "charCount": 14192,
+      "hash": "f686682f55d5",
+      "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
     },
     {
       "filePath": "app/privacy/page.tsx",
@@ -599,17 +607,201 @@
       "charCount": 4296,
       "hash": "56ba0cfe67f1",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1790680934750,
-      "lineCount": 76,
-      "charCount": 3448,
-      "hash": "568f8963cd5d",
-      "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className=\"space-y-12\"> / <div..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 38: replaced 1 line with 1 line.",
+      "recordedAt": "2026-09-30T17:51:03.537Z",
+      "recordedAtEpochMs": 1790790663537,
+      "before": {
+        "kind": "text",
+        "lineCount": 445,
+        "charCount": 17332,
+        "hash": "a08678c1c029",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790663537
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 445,
+        "charCount": 17332,
+        "hash": "650eaf8f6392",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790663537
+      },
+      "diff": {
+        "lineStart": 38,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 38: replaced 1 line with 1 line.",
+        "beforeFragment": "3",
+        "afterFragment": "6"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 38: replaced 1 line with 1 line.",
+      "recordedAt": "2026-09-30T17:50:53.804Z",
+      "recordedAtEpochMs": 1790790653804,
+      "before": {
+        "kind": "text",
+        "lineCount": 445,
+        "charCount": 17332,
+        "hash": "6f8a0c13957f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790653804
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 445,
+        "charCount": 17332,
+        "hash": "a08678c1c029",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790653804
+      },
+      "diff": {
+        "lineStart": 38,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 38: replaced 1 line with 1 line.",
+        "beforeFragment": "1",
+        "afterFragment": "3"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 131: removed 1 line.",
+      "recordedAt": "2026-09-30T17:49:20.546Z",
+      "recordedAtEpochMs": 1790790560546,
+      "before": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14205,
+        "hash": "515d0b2708b0",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790560546
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14192,
+        "hash": "f686682f55d5",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790560546
+      },
+      "diff": {
+        "lineStart": 131,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 131: removed 1 line.",
+        "beforeFragment": "cursor-alias",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 131: replaced 1 line with 1 line.",
+      "recordedAt": "2026-09-30T17:49:00.847Z",
+      "recordedAtEpochMs": 1790790540847,
+      "before": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14204,
+        "hash": "f3842b3f5fa3",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790540847
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14205,
+        "hash": "515d0b2708b0",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790540847
+      },
+      "diff": {
+        "lineStart": 131,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 131: replaced 1 line with 1 line.",
+        "beforeFragment": "none",
+        "afterFragment": "alias"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 131: replaced 1 line with 1 line.",
+      "recordedAt": "2026-09-30T17:48:27.974Z",
+      "recordedAtEpochMs": 1790790507974,
+      "before": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14204,
+        "hash": "cb600e2582ee",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790507974
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 286,
+        "charCount": 14204,
+        "hash": "f3842b3f5fa3",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
+        "updatedAt": 1790790507974
+      },
+      "diff": {
+        "lineStart": 131,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 131: replaced 1 line with 1 line.",
+        "beforeFragment": "grab",
+        "afterFragment": "none"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 19: replaced 138 lines with 167 lines.",
+      "recordedAt": "2026-09-30T17:43:50.847Z",
+      "recordedAtEpochMs": 1790790230847,
+      "before": {
+        "kind": "text",
+        "lineCount": 416,
+        "charCount": 16222,
+        "hash": "d4640913be71",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790230846
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 445,
+        "charCount": 17332,
+        "hash": "6f8a0c13957f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1790790230847
+      },
+      "diff": {
+        "lineStart": 19,
+        "removedLines": 138,
+        "addedLines": 167,
+        "summary": "Line 19: replaced 138 lines with 167 lines.",
+        "beforeFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g...",
+        "afterFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -890,198 +1082,6 @@
         "beforeFragment": "- Volledig responsive padding en max-w */} / <main className=\"flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12\"> / {/* Paginatitel...",
         "afterFragment": "*/} / <main className=\"flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12\"> / {/* Paginatitel */} / <div className=\"space-y-2 sm:spac..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/CookieBanner.tsx",
-      "toPath": "",
-      "summary": "Line 5: replaced 165 lines with 162 lines.",
-      "recordedAt": "2026-09-30T08:49:32.949Z",
-      "recordedAtEpochMs": 1790758172949,
-      "before": {
-        "kind": "text",
-        "lineCount": 199,
-        "charCount": 9337,
-        "hash": "37e9a956dce4",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow...",
-        "updatedAt": 1790758172949
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 196,
-        "charCount": 9100,
-        "hash": "7f933c93c0eb",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow...",
-        "updatedAt": 1790758172949
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 165,
-        "addedLines": 162,
-        "summary": "Line 5: replaced 165 lines with 162 lines.",
-        "beforeFragment": "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s...",
-        "afterFragment": "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 114: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T08:42:14.694Z",
-      "recordedAtEpochMs": 1790757734694,
-      "before": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5381,
-        "hash": "b253ea39f865",
-        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
-        "updatedAt": 1790757734694
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5388,
-        "hash": "cc53b02a612e",
-        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
-        "updatedAt": 1790757734694
-      },
-      "diff": {
-        "lineStart": 114,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 114: replaced 1 line with 1 line.",
-        "beforeFragment": "#",
-        "afterFragment": "/privacy"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/CookieBanner.tsx",
-      "toPath": "",
-      "summary": "Line 5: replaced 196 lines with 185 lines.",
-      "recordedAt": "2026-09-30T08:41:19.144Z",
-      "recordedAtEpochMs": 1790757679144,
-      "before": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10220,
-        "hash": "d42e02fffc8b",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757679144
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 199,
-        "charCount": 9337,
-        "hash": "37e9a956dce4",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShow...",
-        "updatedAt": 1790757679144
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 196,
-        "addedLines": 185,
-        "summary": "Line 5: replaced 196 lines with 185 lines.",
-        "beforeFragment": "export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setShowSettings] = useState(false); / const [hasConsent, s...",
-        "afterFragment": "import { LiaCookieSolid } from 'react-icons/lia'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, setSho..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/CookieBanner.tsx",
-      "toPath": "",
-      "summary": "Line 91: replaced 110 lines with 110 lines.",
-      "recordedAt": "2026-09-30T08:34:10.879Z",
-      "recordedAtEpochMs": 1790757250879,
-      "before": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10210,
-        "hash": "67585ea982b9",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757250879
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10220,
-        "hash": "d42e02fffc8b",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757250879
-      },
-      "diff": {
-        "lineStart": 91,
-        "removedLines": 110,
-        "addedLines": 110,
-        "summary": "Line 91: replaced 110 lines with 110 lines.",
-        "beforeFragment": "xl border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center\" / > / Voorkeuren instellen / </bu...",
-        "afterFragment": "full border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center\" / > / Voorkeuren instellen / </..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/CookieBanner.tsx",
-      "toPath": "",
-      "summary": "Line 81: replaced 120 lines with 120 lines.",
-      "recordedAt": "2026-09-30T08:33:58.138Z",
-      "recordedAtEpochMs": 1790757238138,
-      "before": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10218,
-        "hash": "4309139e196b",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757238138
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10210,
-        "hash": "67585ea982b9",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757238138
-      },
-      "diff": {
-        "lineStart": 81,
-        "removedLines": 120,
-        "addedLines": 120,
-        "summary": "Line 81: replaced 120 lines with 120 lines.",
-        "beforeFragment": "bold text-white text-base\">Over cookies en privacy</p> / <p> / Wij gebruiken functionele cookies om de sessie en configurator goed te laten werken. Met uw toestemming plaatsen w...",
-        "afterFragment": "medium text-white text-base\">Over cookies en privacy</p> / <p> / Wij gebruiken functionele cookies om de sessie en configurator goed te laten werken. Met uw toestemming plaatsen..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/CookieBanner.tsx",
-      "toPath": "",
-      "summary": "Line 81: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T08:33:17.380Z",
-      "recordedAtEpochMs": 1790757197380,
-      "before": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10220,
-        "hash": "d42e02fffc8b",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757197380
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 210,
-        "charCount": 10218,
-        "hash": "4309139e196b",
-        "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se...",
-        "updatedAt": 1790757197380
-      },
-      "diff": {
-        "lineStart": 81,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 81: replaced 1 line with 1 line.",
-        "beforeFragment": "medium",
-        "afterFragment": "bold"
-      }
     }
   ],
   "hotFiles": [
@@ -1095,7 +1095,11 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 8
+      "count": 5
+    },
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 3
     },
     {
       "filePath": "components/MainContent.tsx",
@@ -1117,17 +1121,21 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-09-30 18a49a7 changed dummy email in privacy page",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-09-30 562c6d9 added .webp format",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M app/download/page.tsx",
+      "M components/configurator/StepThreeVisuals.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 18a49a7 by Bas van Dooremalen on 2026-09-30\n  changed dummy email in privacy page\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 562c6d9 by Bas van Dooremalen on 2026-09-30\n  added .webp format\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

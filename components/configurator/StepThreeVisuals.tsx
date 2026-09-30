@@ -128,7 +128,7 @@ export default function StepThreeVisuals({
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
-              className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden flex items-center justify-center rounded-4xl cursor-grab active:cursor-grabbing"
+              className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden flex items-center justify-center rounded-4xl active:cursor-grabbing"
             >
               {visuals.length > 0 ? (
                 visuals.map((vis: any, idx: number) => {

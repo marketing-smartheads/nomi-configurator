@@ -16,7 +16,7 @@ export default function DownloadPage() {
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
 
- useEffect(() => {
+  useEffect(() => {
     let isMounted = true;
 
     async function initDownloadPage() {
@@ -35,7 +35,7 @@ export default function DownloadPage() {
         // 2. Tijdslimiet check (10 seconden lokaal om snel te testen, 48 uur live)
         const timestamp = localStorage.getItem('download_timestamp');
         const maxTijd = process.env.NODE_ENV === 'development'
-          ? 10 * 1000                // 10 seconden lokaal
+          ? 60 * 1000                // 10 seconden lokaal
           : 48 * 60 * 60 * 1000;     // 48 uur live
 
         if (timestamp) {
@@ -48,7 +48,7 @@ export default function DownloadPage() {
           localStorage.setItem('download_timestamp', Date.now().toString());
         }
 
-        // 3. Actieve timer voor lokaal testen (zodat hij na 10 seconden automatisch teruggaat naar het loginscreen)
+        // 3. Actieve timer voor lokaal testen
         if (process.env.NODE_ENV === 'development') {
           const currentElapsed = timestamp ? Date.now() - Number(timestamp) : 0;
           const resterendeTijd = Math.max(0, maxTijd - currentElapsed);
@@ -72,7 +72,7 @@ export default function DownloadPage() {
           setDesignPakket(targetPakket);
         }
 
-        // 5. Haal CMS data op met een timeout van 5 seconden zodat hij nooit blijft hangen
+        // 5. Haal CMS data op met een timeout van 5 seconden
         let cmsData = null;
         try {
           const fetchPromise = getPageData();
@@ -96,7 +96,7 @@ export default function DownloadPage() {
 
         if (isMounted) {
           setPageData(cmsData);
-          setIsAuthorized(true); // Haalt de laadring weg
+          setIsAuthorized(true);
         }
       } catch (err) {
         console.error('Fout bij initialiseren downloadpagina:', err);
@@ -108,8 +108,8 @@ export default function DownloadPage() {
       localStorage.removeItem('configurator_bevestigd');
       localStorage.removeItem('configuratorConfirmed');
       localStorage.removeItem('download_timestamp');
-      localStorage.removeItem('toegangscode');  // Belangrijk: haalt de code weg
-      localStorage.removeItem('klantEmail');     // Haalt het emailadres weg
+      localStorage.removeItem('toegangscode');
+      localStorage.removeItem('klantEmail');
       localStorage.removeItem('selected_woningType');
       localStorage.removeItem('selected_designPakket');
       sessionStorage.clear();
@@ -153,7 +153,36 @@ export default function DownloadPage() {
     .replace('%type%', woningType)
     .replace('%designpakket%', designPakket);
 
-  const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
+  // 1. Haal de ruwe categorieën op uit het huidige woningtype
+  const ruweCategorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
+
+  // 2. Filter bestanden op basis van het gekozen designpakket (Hotel Chic of Modern Raw)
+  const categorieen = ruweCategorieen.map((cat: any) => {
+    const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => {
+      const titel = (bestand?.bestandTitel || '').toLowerCase();
+      const pakketKeuze = designPakket.toLowerCase(); // 'hotel chic' of 'modern raw'
+
+      const zoekwoorden = pakketKeuze.includes('hotel chic') 
+        ? ['hotel chic', 'chic', 'hotel'] 
+        : ['modern raw', 'raw', 'modern'];
+
+      const bevatAndereStijl = pakketKeuze.includes('hotel chic') 
+        ? (titel.includes('modern raw') || titel.includes('raw'))
+        : (titel.includes('hotel chic') || titel.includes('chic'));
+
+      if (bevatAndereStijl) return false;
+
+      const bevatOnzeStijl = zoekwoorden.some(woord => titel.includes(woord));
+      const isAlgemeenBestand = !titel.includes('hotel chic') && !titel.includes('modern raw') && !titel.includes('chic') && !titel.includes('raw');
+
+      return bevatOnzeStijl || isAlgemeenBestand;
+    });
+
+    return {
+      ...cat,
+      bestandenLijst: gefilterdeBestanden
+    };
+  }).filter((cat: any) => cat.bestandenLijst.length > 0);
 
   const getFileUrl = (bestand: any) => {
     let url = (
