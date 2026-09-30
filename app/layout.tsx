@@ -54,10 +54,12 @@ export const metadata: Metadata = {
   title: "Interieur & Design Configurator",
   description: "Exclusieve designpakketten en woonstijlen configureren en downloaden.",
   icons: {
-    icon: [],
+    icon: {
+      url: "/favicon.ico",
+      type: "image/x-icon",
+    },
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -71,4 +73,4 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
-}
+} 
