@@ -16,59 +16,113 @@ export default function DownloadPage() {
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
 
-  useEffect(() => {
+ useEffect(() => {
+    let isMounted = true;
+
     async function initDownloadPage() {
       try {
-        const savedCode = localStorage.getItem('toegangscode');
-        
-        let targetWoning: string | null = null;
-        let targetPakket: string | null = null;
+        // 1. Controleer of de configuratie is bevestigd
+        const isConfirmed = 
+          localStorage.getItem('configurator_bevestigd') === 'true' || 
+          localStorage.getItem('configuratorConfirmed') === 'true' ||
+          sessionStorage.getItem('configuratorConfirmed') === 'true';
 
-        // 1. Haal ALTIJD eerst de echte keuzes op uit WordPress als er een vouchercode is
-        if (savedCode) {
-          try {
-            const res = await fetch('/api/vouchers');
-            const data = await res.json();
-            if (data.vouchers) {
-              const found = data.vouchers.find((v: any) => {
-                const details = v.voucherVelden || {};
-                const code = String(details.toegangscode || v.title || '').trim().toUpperCase();
-                return code === savedCode.trim().toUpperCase();
-              });
-
-              if (found) {
-                const details = found.voucherVelden || {};
-                if (details.gekozenTypeWoning) targetWoning = details.gekozenTypeWoning;
-                if (details.gekozenDesignpakket) targetPakket = details.gekozenDesignpakket;
-              }
-            }
-          } catch (apiErr) {
-            console.error('Fout bij ophalen voucherdetails uit WP:', apiErr);
-          }
+        if (!isConfirmed) {
+          router.push('/');
+          return;
         }
 
-        // 2. Als WordPress niets opleverde, pas dan terugvallen op sessionStorage of localStorage
-        if (!targetWoning) targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType') || 'Type A';
-        if (!targetPakket) targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Pakket A';
+        // 2. Tijdslimiet check (10 seconden lokaal om snel te testen, 48 uur live)
+        const timestamp = localStorage.getItem('download_timestamp');
+        const maxTijd = process.env.NODE_ENV === 'development'
+          ? 10 * 1000                // 10 seconden lokaal
+          : 48 * 60 * 60 * 1000;     // 48 uur live
 
-        // 3. Zet de juiste waardes vast in sessionStorage
-        sessionStorage.setItem('geselecteerdeWoning', targetWoning);
-        sessionStorage.setItem('geselecteerdPakket', targetPakket);
+        if (timestamp) {
+          const elapsed = Date.now() - Number(timestamp);
+          if (elapsed > maxTijd) {
+            wisEnStuurTerug();
+            return;
+          }
+        } else {
+          localStorage.setItem('download_timestamp', Date.now().toString());
+        }
 
-        setWoningType(targetWoning);
-        setDesignPakket(targetPakket);
-        setIsAuthorized(true);
+        // 3. Actieve timer voor lokaal testen (zodat hij na 10 seconden automatisch teruggaat naar het loginscreen)
+        if (process.env.NODE_ENV === 'development') {
+          const currentElapsed = timestamp ? Date.now() - Number(timestamp) : 0;
+          const resterendeTijd = Math.max(0, maxTijd - currentElapsed);
 
-        const cmsData = await getPageData();
-        setPageData(cmsData);
+          setTimeout(() => {
+            if (isMounted) wisEnStuurTerug();
+          }, resterendeTijd);
+        }
+
+        // 4. Haal de keuzes op
+        const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType');
+        const targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket');
+
+        if (!targetWoning || !targetPakket) {
+          router.push('/');
+          return;
+        }
+
+        if (isMounted) {
+          setWoningType(targetWoning);
+          setDesignPakket(targetPakket);
+        }
+
+        // 5. Haal CMS data op met een timeout van 5 seconden zodat hij nooit blijft hangen
+        let cmsData = null;
+        try {
+          const fetchPromise = getPageData();
+          const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('CMS timeout')), 5000)
+          );
+          
+          cmsData = await Promise.race([fetchPromise, timeoutPromise]);
+        } catch (cmsErr) {
+          console.warn('Kon getPageData niet ophalen, probeert cache:', cmsErr);
+        }
+
+        if (!cmsData) {
+          const cachedData = sessionStorage.getItem('nomi_pagedata');
+          if (cachedData) {
+            cmsData = JSON.parse(cachedData);
+          }
+        } else {
+          sessionStorage.setItem('nomi_pagedata', JSON.stringify(cmsData));
+        }
+
+        if (isMounted) {
+          setPageData(cmsData);
+          setIsAuthorized(true); // Haalt de laadring weg
+        }
       } catch (err) {
         console.error('Fout bij initialiseren downloadpagina:', err);
-        setIsAuthorized(true);
+        router.push('/');
       }
     }
 
+    function wisEnStuurTerug() {
+      localStorage.removeItem('configurator_bevestigd');
+      localStorage.removeItem('configuratorConfirmed');
+      localStorage.removeItem('download_timestamp');
+      localStorage.removeItem('toegangscode');  // Belangrijk: haalt de code weg
+      localStorage.removeItem('klantEmail');     // Haalt het emailadres weg
+      localStorage.removeItem('selected_woningType');
+      localStorage.removeItem('selected_designPakket');
+      sessionStorage.clear();
+      
+      router.push('/');
+    }
+
     initDownloadPage();
-  }, []);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [router]);
 
   if (!isAuthorized || !woningType || !designPakket) {
     return (

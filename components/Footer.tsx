@@ -111,7 +111,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                     <p className="font-sans text-[13px] text-muted">© 2026 Thomas de Gier × Nomi Utrecht. Alle rechten voorbehouden.</p>
                     
                     <div className="flex items-center space-x-3 mt-4 md:mt-0 font-sans text-[13px] text-muted">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+                        <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
                         <span className="text-muted/60">·</span>
                         <Link href="#" className="hover:text-white transition-colors">Voorwaarden</Link>
                     </div>

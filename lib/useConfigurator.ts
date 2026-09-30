@@ -139,7 +139,7 @@ export function useConfigurator() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      alert('Uw keuzes zijn succesvol opgeslagen!');
+      
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('configuratorConfirmed', 'true');
       }

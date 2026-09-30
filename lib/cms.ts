@@ -73,7 +73,7 @@ export async function getPageData() {
                     target
                   }
                 }
-              }             
+              }            
               partnerLijst {
                 partnerNaam
                 partnerOmschrijving
@@ -133,7 +133,12 @@ export async function getPageData() {
     }
   `;
   
-  const res = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'http://tg-backend.development/graphql', {
+  // Bepaal automatisch het juiste GraphQL endpoint op basis van de omgeving
+  const graphqlEndpoint = process.env.NODE_ENV === 'development'
+    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
+    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+
+  const res = await fetch(graphqlEndpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query }),
