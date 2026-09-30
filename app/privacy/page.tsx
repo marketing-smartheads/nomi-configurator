@@ -136,7 +136,7 @@ export default function PrivacyPage() {
             </p>
             <div className="p-4 rounded-2xl bg-[#1a1a20] border border-zinc-800 space-y-1 text-zinc-300 text-xs sm:text-sm">
               <p className="font-medium text-white">NOMI &amp; Thomas de Gier</p>
-              <p className="text-zinc-400">E-mail: support@nomi.nl</p>
+              <p className="text-zinc-400">E-mail: email@adres.nl</p>
             </div>
           </div>
 

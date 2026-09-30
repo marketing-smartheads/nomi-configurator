@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-09-30T09:55:41.766Z
+Generated: 2026-09-30T10:00:58.641Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-09-30T09:55:39.402Z
+- Last activity: 2026-09-30T10:00:56.314Z
 ## Workspace Focus
 - Active file in focus: app/privacy/page.tsx
-- Hottest files right now: components/CookieBanner.tsx (16), app/privacy/page.tsx (9), app/download/page.tsx (8), components/MainContent.tsx (3)
+- Hottest files right now: components/CookieBanner.tsx (16), app/privacy/page.tsx (10), app/download/page.tsx (8), components/MainContent.tsx (3)
 - Suggested starting points: app/privacy/page.tsx, components/CookieBanner.tsx, app/download/page.tsx, components/MainContent.tsx, app/privacy, components/Footer.tsx
 ## Current Workspace
 - Active file: app/privacy/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 40
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/privacy/page.tsx | 150 lines | 8654 chars | hash 1fb8fd26c345
-  Last snapshot: 2026-09-30T09:55:39.402Z
+- app/privacy/page.tsx | 150 lines | 8653 chars | hash f0b7c156a578
+  Last snapshot: 2026-09-30T10:00:56.314Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
 - components/CookieBanner.tsx | 213 lines | 9503 chars | hash d679e25f6e7a
   Last snapshot: 2026-09-30T09:39:58.131Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
 
 ## Recent Changes
+### 2026-09-30T10:00:56.314Z | saved | app/privacy/page.tsx
+- Summary: Line 139: replaced 1 line with 1 line.
+- Before: 150 lines | 8,654 chars | hash 1fb8fd26c345 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- After: 150 lines | 8,653 chars | hash f0b7c156a578 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- Previous fragment: "support@nomi"
+- Current fragment: "email@adres"
+
 ### 2026-09-30T09:55:39.402Z | saved | app/privacy/page.tsx
 - Summary: Line 10: replaced 130 lines with 130 lines.
 - Before: 150 lines | 8,589 chars | hash a43e4525c321 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -160,27 +167,19 @@ Structured manifest: workspace.json
 - Previous fragment: "x"
 - Current fragment: "ful"
 
-### 2026-09-30T08:32:42.574Z | saved | components/CookieBanner.tsx
-- Summary: Line 91: replaced 7 lines with 7 lines.
-- Before: 210 lines | 10,214 chars | hash 24da76c70182 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 210 lines | 10,218 chars | hash 1e1145e51bca | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- Previous fragment: "xl border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center" / > / Voorkeuren instellen / </bu..."
-- Current fragment: "full border border-zinc-700 hover:border-zinc-500 text-zinc-300 text-xs font-bold uppercase tracking-wider transition cursor-pointer text-center" / > / Voorkeuren instellen / </..."
-
 
 ## Hot Files
 - components/CookieBanner.tsx (16 tracked changes)
-- app/privacy/page.tsx (9 tracked changes)
+- app/privacy/page.tsx (10 tracked changes)
 - app/download/page.tsx (8 tracked changes)
 - components/MainContent.tsx (3 tracked changes)
 - app/privacy (1 tracked changes)
 - components/Footer.tsx (1 tracked changes)
-- lib/cms.ts (1 tracked changes)
 - lib/useConfigurator.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-09-30 def6b93 Fixed download, created Cookiebanner and privacy page
+- HEAD: 2026-09-30 5531258 fixed build privacy page
 - Working tree summary: 1 modified
 - M app/privacy/page.tsx
 
@@ -190,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- def6b93 by Bas van Dooremalen on 2026-09-30
-  Fixed download, created Cookiebanner and privacy page
+- 5531258 by Bas van Dooremalen on 2026-09-30
+  fixed build privacy page
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
