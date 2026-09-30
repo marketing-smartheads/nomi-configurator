@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-[#111115] text-zinc-100 font-sans flex flex-col justify-between selection:bg-white selection:text-[#111115]">
-      {/* Header */}
-      <Header currentScreen="privacy" onStart={() => window.location.href = '/'} />
+      {/* Header - Aangepast naar een toegestane TypeScript prop zoals "welcome" */}
+      <Header currentScreen="welcome" onStart={() => window.location.href = '/'} />
 
       {/* Hoofdinhoud */}
       <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12">
@@ -114,7 +114,7 @@ export default function PrivacyPage() {
                     <td className="p-3 sm:p-4 font-mono text-white">Configuratie &amp; Sessiedata</td>
                     <td className="p-3 sm:p-4">Session Storage / Local Storage</td>
                     <td className="p-3 sm:p-4">Slaat tijdelijk uw actieve interieurkeuzes, ingevoerde vouchercode en sessiestatus op.</td>
-                    <td className="p-3 sm:p-4">Tijdens brwosersessie / tot sluiten van tabblad</td>
+                    <td className="p-3 sm:p-4">Tijdens browsersessie / tot sluiten van tabblad</td>
                   </tr>
                 </tbody>
               </table>
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
             </p>
             <div className="p-4 rounded-2xl bg-[#1a1a20] border border-zinc-800 space-y-1 text-zinc-300 text-xs sm:text-sm">
               <p className="font-medium text-white">NOMI &amp; Thomas de Gier</p>
-              <p className="text-zinc-400">E-mail: email@adres.nl</p>
+              <p className="text-zinc-400">E-mail: support@nomi.nl</p>
             </div>
           </div>
 
