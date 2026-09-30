@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-09-30T10:00:58.641Z
+Generated: 2026-09-30T10:11:00.033Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-09-30T10:00:56.314Z
+- Last activity: 2026-09-30T10:10:57.488Z
 ## Workspace Focus
-- Active file in focus: app/privacy/page.tsx
+- Active file in focus: app/download/page.tsx
 - Hottest files right now: components/CookieBanner.tsx (16), app/privacy/page.tsx (10), app/download/page.tsx (8), components/MainContent.tsx (3)
-- Suggested starting points: app/privacy/page.tsx, components/CookieBanner.tsx, app/download/page.tsx, components/MainContent.tsx, app/privacy, components/Footer.tsx
+- Suggested starting points: app/download/page.tsx, components/CookieBanner.tsx, app/privacy/page.tsx, components/MainContent.tsx, app/privacy, components/Footer.tsx
 ## Current Workspace
-- Active file: app/privacy/page.tsx
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 64
 - Top-level areas: public (20), components (16), [root] (15), app (10), lib (3)
 - Primary file types: .tsx (21), .svg (11), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .mjs (2)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 40
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/download/page.tsx | 416 lines | 16222 chars | hash d4640913be71
+  Last snapshot: 2026-09-30T10:10:57.488Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/privacy/page.tsx | 150 lines | 8653 chars | hash f0b7c156a578
   Last snapshot: 2026-09-30T10:00:56.314Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -54,9 +57,6 @@ Structured manifest: workspace.json
 - lib/useConfigurator.ts | 170 lines | 5088 chars | hash ca6f0728b2fd
   Last snapshot: 2026-09-29T21:15:24.097Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- app/download/page.tsx | 413 lines | 16114 chars | hash d9fd4506eb50
-  Last snapshot: 2026-09-29T21:11:17.208Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 164 lines | 4296 chars | hash 56ba0cfe67f1
   Last snapshot: 2026-09-29T20:42:36.811Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
 
 ## Recent Changes
+### 2026-09-30T10:10:57.488Z | saved | app/download/page.tsx
+- Summary: Line 188: replaced 65 lines with 68 lines.
+- Before: 413 lines | 16,114 chars | hash d9fd4506eb50 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 416 lines | 16,222 chars | hash d4640913be71 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "let ext = 'PDF'; / if (mimeType.includes('pdf') || fileUrl?.toLowerCase().includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') |..."
+- Current fragment: "const lowerUrl = fileUrl?.toLowerCase() || ''; / let ext = 'PDF'; / if (mimeType.includes('pdf') || lowerUrl.includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('w..."
+
 ### 2026-09-30T10:00:56.314Z | saved | app/privacy/page.tsx
 - Summary: Line 139: replaced 1 line with 1 line.
 - Before: 150 lines | 8,654 chars | hash 1fb8fd26c345 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -160,13 +167,6 @@ Structured manifest: workspace.json
 - Previous fragment: "medium"
 - Current fragment: "bold"
 
-### 2026-09-30T08:32:49.941Z | saved | components/CookieBanner.tsx
-- Summary: Line 103: replaced 1 line with 1 line.
-- Before: 210 lines | 10,218 chars | hash 1e1145e51bca | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- After: 210 lines | 10,220 chars | hash d42e02fffc8b | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function CookieBanner() { / const [showBanner, setShowBanner] = useState(false); / const [showSettings, se..."
-- Previous fragment: "x"
-- Current fragment: "ful"
-
 
 ## Hot Files
 - components/CookieBanner.tsx (16 tracked changes)
@@ -179,9 +179,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-09-30 5531258 fixed build privacy page
+- HEAD: 2026-09-30 18a49a7 changed dummy email in privacy page
 - Working tree summary: 1 modified
-- M app/privacy/page.tsx
+- M app/download/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 5531258 by Bas van Dooremalen on 2026-09-30
-  fixed build privacy page
+- 18a49a7 by Bas van Dooremalen on 2026-09-30
+  changed dummy email in privacy page
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

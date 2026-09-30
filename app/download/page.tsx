@@ -185,13 +185,16 @@ export default function DownloadPage() {
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
     const mimeType = bestand?.uploadBestand?.node?.mimeType || bestand?.uploadBestand?.mimeType || '';
+    const lowerUrl = fileUrl?.toLowerCase() || '';
     
     let ext = 'PDF';
-    if (mimeType.includes('pdf') || fileUrl?.toLowerCase().includes('.pdf')) {
+    if (mimeType.includes('pdf') || lowerUrl.includes('.pdf')) {
       ext = 'PDF';
-    } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') || fileUrl?.toLowerCase().includes('.jpg') || fileUrl?.toLowerCase().includes('.jpeg')) {
+    } else if (mimeType.includes('webp') || lowerUrl.includes('.webp')) {
+      ext = 'WEBP';
+    } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') || lowerUrl.includes('.jpg') || lowerUrl.includes('.jpeg')) {
       ext = 'JPG';
-    } else if (mimeType.includes('png') || fileUrl?.toLowerCase().includes('.png')) {
+    } else if (mimeType.includes('png') || lowerUrl.includes('.png')) {
       ext = 'PNG';
     }
     
@@ -219,7 +222,7 @@ export default function DownloadPage() {
     const cleanUrl = fileUrl.split('?')[0];
     const parts = cleanUrl.split('.');
     const extPart = parts[parts.length - 1].toLowerCase();
-    if (['jpg', 'jpeg', 'png', 'pdf'].includes(extPart)) {
+    if (['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(extPart)) {
       extension = extPart;
     }
 
@@ -249,7 +252,7 @@ export default function DownloadPage() {
               const cleanUrl = fileUrl.split('?')[0];
               const parts = cleanUrl.split('.');
               const extPart = parts[parts.length - 1].toLowerCase();
-              if (['jpg', 'jpeg', 'png', 'pdf'].includes(extPart)) {
+              if (['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(extPart)) {
                 extension = extPart;
               }
 
