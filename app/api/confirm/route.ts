@@ -7,22 +7,22 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Vang alle mogelijke benamingen uit de frontend request op
-    let toegangscode = body.toegangscode || body.voucherCode;
+    let toegangscode = body.toegangscode || body.voucherCode || '';
     let klantNaam = body.klantNaam || body.naam;
     let klantEmail = body.klantEmail || body.email;
     let woningType = body.woningType || body.selected_woningType || body.geselecteerdeWoning;
     let designPakket = body.designPakket || body.selected_designPakket || body.geselecteerdePakket;
-    let woningObject = body.woningObject;
+    let woningObject = body.woningObject || 'Nomi — Object';
     let partners = body.partners;
-    let bestanden = body.bestanden;
+    let bestanden = body.bestanden || body.bestandenLijst;
 
     console.log("📥 Ontvangen data in API route:", { 
       toegangscode, 
       klantNaam, 
       klantEmail, 
       woningType, 
-      designPakket 
+      designPakket,
+      bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden
     });
 
     if (!klantNaam || !klantEmail) {
@@ -40,7 +40,6 @@ export async function POST(request: Request) {
 
     let fallbackPartners: { naam: string; email: string }[] = [];
 
-    // Authenticatie header opbouwen op basis van je .env.local
     const wpUser = process.env.WORDPRESS_AUTH_USER;
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
@@ -94,8 +93,7 @@ export async function POST(request: Request) {
       const wpJson = await wpRes.json();
       let voucherNode = wpJson?.data?.vouchers?.nodes?.[0];
 
-      // Fallback: probeer op Titel te zoeken als metaQuery niets oplevert
-      if (!voucherNode) {
+      if (!voucherNode && schoneToegangscode) {
         const titleQuery = `
           query GetByTitle($toegangscode: String!) {
             vouchers(where: { title: $toegangscode }) {
@@ -118,28 +116,21 @@ export async function POST(request: Request) {
       const rawWpPartners = wpJson?.data?.page?.homePaginaVelden?.partnerLijst;
       if (Array.isArray(rawWpPartners)) {
         fallbackPartners = rawWpPartners.map((p: any) => ({
-          naam: p?.partnerNaam || 'Partner',
+          naam: p?.partnerNaam || p?.partner_naam || 'Partner',
           email: p?.partnerEMail || p?.partnerEmail || p?.email
         })).filter((p: any) => p.email);
       }
 
       if (voucherNode) {
         const voucherId = voucherNode.databaseId;
-        console.log(`✅ Voucher gevonden met ID ${voucherId}. Bezig met updaten via REST API...`);
-
         try {
           const wpBaseUrl = endpoint.replace(/\/(graphql|wp-json)\/?$/, '');
-          
           const restUrlsToTry = [
             `${wpBaseUrl}/wp-json/wp/v2/vouchers/${voucherId}`,
             `${wpBaseUrl}/wp-json/wp/v2/voucher/${voucherId}`
           ];
 
-          let updateSuccess = false;
-
           for (const restUrl of restUrlsToTry) {
-            console.log(`📡 Probeer REST API update via: ${restUrl}`);
-
             const updateRes = await fetch(restUrl, {
               method: 'POST',
               headers,
@@ -155,25 +146,11 @@ export async function POST(request: Request) {
               })
             });
 
-            if (updateRes.ok) {
-              console.log(`✅ WordPress Voucher succesvol bijgewerkt via REST API op URL: ${restUrl}`);
-              updateSuccess = true;
-              break;
-            } else {
-              const errText = await updateRes.text();
-              console.warn(`⚠️ Poging mislukt op ${restUrl}, respons:`, errText);
-            }
+            if (updateRes.ok) break;
           }
-
-          if (!updateSuccess) {
-            console.error("❌ Alle REST API URL varianten voor de update zijn mislukt.");
-          }
-
         } catch (updateErr) {
           console.warn("⚠️ Kon WordPress post niet updaten via REST API:", updateErr);
         }
-      } else {
-        console.warn(`⚠️ Geen enkele voucher node gevonden in WordPress voor code: ${schoneToegangscode}`);
       }
 
       return true;
@@ -188,13 +165,13 @@ export async function POST(request: Request) {
       }
     }
 
-    // --- STAP 2: Partners verzamelen ---
+    // --- STAP 2: Partners verzamelen (als schone platte tekst) ---
     let frontendPartners = Array.isArray(partners) ? partners : [];
     
     const allePartnersMap = new Map();
     [...frontendPartners, ...fallbackPartners].forEach((p: any) => {
-      const email = p?.partnerEMail || p?.partnerEmail || p?.email;
-      const naam = p?.partnerNaam || p?.naam || 'Partner';
+      const email = p?.partnerEMail || p?.partnerEmail || p?.email || (typeof p === 'string' && p.includes('@') ? p : '');
+      const naam = p?.partnerNaam || p?.partner_naam || p?.naam || (typeof p === 'string' && !p.includes('@') ? p : 'Partner');
       if (email) {
         allePartnersMap.set(email.toLowerCase(), { naam, email });
       }
@@ -205,118 +182,131 @@ export async function POST(request: Request) {
       .map(p => p.email)
       .filter((email) => typeof email === 'string' && email.trim() !== '' && email.toLowerCase() !== klantEmail.toLowerCase());
 
-    const partnersNamenString = uniekePartners.map(p => p.naam).join(' & ');
+    // GEEN HTML-tags zoals &bull; hierin zodat het schone platte tekst blijft in de mail
+    const partnersNamenString = uniekePartners.length > 0
+      ? uniekePartners.map(p => p.naam).join(' • ')
+      : 'Nomi Utrecht • Thomas de Gier';
 
     // --- STAP 3: Datum & Tijd ---
     const nu = new Date();
     const datumString = nu.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
     const tijdString = nu.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
-    const tijdStempel = `${datumString} om ${tijdString}`;
 
-    // --- STAP 4: Bestanden robuust extraheren ---
+    // --- STAP 4: Diepgaande Bestanden Parser ---
     let actieveBestanden: { naam: string; url: string }[] = [];
 
-    const processItem = (item: any) => {
-      if (!item) return;
-      const fileNaam = item?.bestandTitel || item?.titel || item?.title || item?.naam || item?.name || item?.filename || 'Document';
+    const extractFileUrlAndName = (obj: any) => {
+      if (!obj || typeof obj !== 'object') return;
+
+      const fileNaam = obj?.bestandTitel || obj?.titel || obj?.title || obj?.naam || obj?.name || obj?.filename || obj?.postTitle || 'Document';
       
       let fileUrl = '#';
-      if (typeof item === 'string') {
-        fileUrl = item;
-      } else if (item?.sourceUrl) {
-        fileUrl = item.sourceUrl;
-      } else if (item?.mediaItemUrl) {
-        fileUrl = item.mediaItemUrl;
-      } else if (item?.bestandLink) {
-        fileUrl = typeof item.bestandLink === 'string' ? item.bestandLink : (item.bestandLink?.sourceUrl || item.bestandLink?.mediaItemUrl || item.bestandLink?.url || item.bestandLink?.uri || '#');
-      } else if (item?.uploadBestand) {
-        if (typeof item.uploadBestand === 'string') {
-          fileUrl = item.uploadBestand;
+      if (typeof obj === 'string' && obj.startsWith('http')) {
+        fileUrl = obj;
+      } else if (obj?.sourceUrl) {
+        fileUrl = obj.sourceUrl;
+      } else if (obj?.mediaItemUrl) {
+        fileUrl = obj.mediaItemUrl;
+      } else if (obj?.bestandLink) {
+        fileUrl = typeof obj.bestandLink === 'string' ? obj.bestandLink : (obj.bestandLink?.sourceUrl || obj.bestandLink?.mediaItemUrl || obj.bestandLink?.url || obj.bestandLink?.uri || '#');
+      } else if (obj?.uploadBestand) {
+        if (typeof obj.uploadBestand === 'string') {
+          fileUrl = obj.uploadBestand;
         } else {
-          fileUrl = item.uploadBestand?.sourceUrl || item.uploadBestand?.node?.sourceUrl || item.uploadBestand?.node?.mediaItemUrl || item.uploadBestand?.mediaItemUrl || item.uploadBestand?.url || '#';
+          fileUrl = obj.uploadBestand?.sourceUrl || obj.uploadBestand?.node?.sourceUrl || obj.uploadBestand?.node?.mediaItemUrl || obj.uploadBestand?.mediaItemUrl || obj.uploadBestand?.url || '#';
         }
       } else {
-        fileUrl = item?.url || item?.link || item?.uri || '#';
+        fileUrl = obj?.url || obj?.link || obj?.uri || '#';
       }
 
       if (fileUrl && fileUrl !== '#') {
-        actieveBestanden.push({ naam: fileNaam, url: fileUrl });
+        if (!actieveBestanden.some(b => b.url === fileUrl)) {
+          actieveBestanden.push({ naam: fileNaam, url: fileUrl });
+        }
       }
     };
 
-    if (Array.isArray(bestanden)) {
-      bestanden.forEach((entry: any) => {
-        if (Array.isArray(entry?.bestandenLijst)) {
-          entry.bestandenLijst.forEach(processItem);
-        } else if (Array.isArray(entry?.bestanden)) {
-          entry.bestanden.forEach(processItem);
-        } else {
-          processItem(entry);
+    const parseBestandenStructure = (item: any) => {
+      if (!item) return;
+
+      if (Array.isArray(item)) {
+        item.forEach(parseBestandenStructure);
+      } else if (typeof item === 'object') {
+        if (Array.isArray(item.bestandenLijst)) {
+          item.bestandenLijst.forEach(parseBestandenStructure);
         }
-      });
+        if (Array.isArray(item.bestanden)) {
+          item.bestanden.forEach(parseBestandenStructure);
+        }
+        if (Array.isArray(item.files)) {
+          item.files.forEach(parseBestandenStructure);
+        }
+        extractFileUrlAndName(item);
+      }
+    };
+
+    if (bestanden) {
+      parseBestandenStructure(bestanden);
     }
 
     if (actieveBestanden.length === 0) {
       actieveBestanden = [
-        { naam: `Moodboard — ${designPakket}`, url: '#' },
-        { naam: 'Woonkamer', url: '#' },
-        { naam: 'Slaapkamer', url: '#' }
+        { naam: `MOODBOARD — HOTEL CHIC`, url: '#' },
+        { naam: 'WOONKAMER', url: '#' }
       ];
     }
 
-    // --- STAP 5: Platte tekst / eenvoudige e-mail opbouw zonder tabellen of poespas ---
-    const bestandenHtmlList = actieveBestanden.map((b) => `
-      <li><a href="${b.url}" target="_blank">${b.naam}</a></li>
-    `).join('');
+      let bestandenHtml = actieveBestanden.map((b) => 
+        `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:20px;margin:0 8px 10px 0;letter-spacing:0.5px;">${b.naam}</a>&nbsp;`
+      ).join('');
+0
+    // --- STAP 5: Versturen via Resend ---
+    const templateId = process.env.RESEND_TEMPLATE_ID || 'd532cedb-3f4b-4315-bf51-c3fcdf348fcc';
 
-    const createEmailHtml = (introTekst: string) => `
-      <div style="font-family: Arial, sans-serif; font-size: 14px; color: #333333; line-height: 1.5;">
-        <p>${introTekst}</p>
-        <p>De interieurconfiguratie is definitief bevestigd op ${tijdStempel}. Hieronder vind je een overzicht van de gegevens:</p>
-        
-        <ul>
-          <li><strong>Klant:</strong> ${klantNaam}</li>
-          <li><strong>E-mailadres:</strong> ${klantEmail}</li>
-          <li><strong>Woningobject:</strong> Nomi — ${woningObject || woningType}</li>
-          <li><strong>Type woning:</strong> ${woningType}</li>
-          <li><strong>Designpakket:</strong> ${designPakket}</li>
-          <li><strong>Status cheque:</strong> Verzilverd</li>
-        </ul>
-
-        <p><strong>Bijbehorende downloads / bestanden:</strong></p>
-        <ul>
-          ${bestandenHtmlList}
-        </ul>
-
-        <p style="margin-top: 30px; font-size: 12px; color: #666666;">
-          Verstuurd naar: ${partnersNamenString || 'Nomi Utrecht · Thomas de Gier'}
-        </p>
-      </div>
-    `;
-
-    // --- STAP 6: Verstuur e-mails via Resend ---
-    const klantEmailPromise = resend.emails.send({
-      from: 'Nomi Configurator <noreply@nomi-configurator.nl>',
-      to: [klantEmail],
-      subject: `Keuze bevestigd — ${woningType} · ${designPakket}`,
-      html: createEmailHtml(`Beste ${klantNaam},`),
-    });
-
-    const partnerEmailPromises = schonePartnersEmails.map((pEmail) => 
-      resend.emails.send({
+    const stuurResendMail = async (ontvangerEmail: string, aanhefTekst: string) => {
+      const response = await resend.emails.send({
         from: 'Nomi Configurator <noreply@nomi-configurator.nl>',
-        to: [pEmail],
-        subject: `Keuze bevestigd — ${woningType} · ${designPakket}`,
-        html: createEmailHtml('Beste partners,'),
-      })
-    );
+        to: [ontvangerEmail],
+        subject: `Jouw keuze bevestigd — ${woningType}`,
+        template: {
+          id: templateId,
+          variables: {
+            klantNaam: klantNaam,
+            voucherCode: toegangscode || 'N.v.t.',
+            toegangscode: toegangscode || 'N.v.t.',
+            woningObject: woningObject,
+            woningType: woningType,
+            designPakket: designPakket,
+            datumString: datumString,
+            tijdString: tijdString,
+            chequeStatus: 'Verzilverd',
+            aanhef: aanhefTekst,
+            bestandenHtml: bestandenHtml,
+            verstuurdNaar: partnersNamenString
+          }
+        }
+      });
 
-    await Promise.all([klantEmailPromise, ...partnerEmailPromises]);
+      if (response.error) {
+        console.error(`❌ Resend weigerde e-mail voor ${ontvangerEmail}:`, response.error);
+        throw new Error(response.error.message);
+      }
 
-    return NextResponse.json({ success: true });
+      console.log(`✅ E-mail succesvol verzonden naar ${ontvangerEmail}`);
+      return response;
+    };
 
-  } catch (error) {
-    console.error('Resend & API server error:', error);
-    return NextResponse.json({ success: false, error: 'E-mail kon niet worden verzonden' }, { status: 500 });
+    const finalEmailPromises = [
+      stuurResendMail(klantEmail, `Beste ${klantNaam},`),
+      ...schonePartnersEmails.map((pEmail) => stuurResendMail(pEmail, 'Beste partners,'))
+    ];
+
+    await Promise.all(finalEmailPromises);
+
+    return NextResponse.json({ success: true, message: 'Alles succesvol verzonden!' });
+
+  } catch (error: any) {
+    console.error('❌ Resend & API server critical error:', error);
+    return NextResponse.json({ success: false, error: error.message || 'E-mail kon niet worden verzonden' }, { status: 500 });
   }
-}
+} 

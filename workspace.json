@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-30T18:26:52.808Z",
-  "generatedAtEpochMs": 1790792812808,
+  "generatedAt": "2026-10-02T08:57:58.884Z",
+  "generatedAtEpochMs": 1790931478884,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,33 +14,33 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/layout.tsx",
-    "refreshReason": "tracked-change",
+    "activeFile": ".env.local",
+    "refreshReason": "startup",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
       "markdownMirror": "workspacememory.md",
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      ".env.local",
+      "app/api/confirm/route.ts",
       "app/layout.tsx",
-      "components/CookieBanner.tsx",
-      "app/privacy/page.tsx",
       "app/download/page.tsx",
-      "components/configurator/StepThreeVisuals.tsx",
       "app/favicon.ico",
-      "app/privacy",
-      "components/Footer.tsx",
+      "public/next.svg",
+      "public/vercel.svg",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
-      "totalFiles": 63,
+      "totalFiles": 66,
       "topLevelAreas": [
         {
           "name": "public",
-          "count": 18
+          "count": 21
         },
         {
           "name": "components",
@@ -89,8 +89,8 @@
           "count": 4
         },
         {
-          "name": ".mjs",
-          "count": 2
+          "name": ".png",
+          "count": 3
         }
       ],
       "keyFiles": [
@@ -355,6 +355,12 @@
           "isKeyFile": false
         },
         {
+          "path": "public/assets/logo-nomi.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/logo-nomi.svg",
           "topLevelArea": "public",
           "extension": ".svg",
@@ -367,6 +373,12 @@
           "isKeyFile": false
         },
         {
+          "path": "public/assets/logo-tdg-word.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/logo-tdg.svg",
           "topLevelArea": "public",
           "extension": ".svg",
@@ -376,6 +388,12 @@
           "path": "public/assets/x-symbol-white.svg",
           "topLevelArea": "public",
           "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/x-symbol.png",
+          "topLevelArea": "public",
+          "extension": ".png",
           "isKeyFile": false
         },
         {
@@ -527,17 +545,33 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-09-30T18:26:49.696Z",
+    "lastActivityAt": "2026-10-01T13:28:00.041Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
-      "save": 35,
-      "create": 2,
+      "save": 37,
+      "create": 0,
       "delete": 2,
       "rename": 1
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/confirm/route.ts",
+      "updatedAt": 1790861280041,
+      "lineCount": 312,
+      "charCount": 11765,
+      "hash": "e15d2b6fb49d",
+      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+    },
+    {
+      "filePath": ".env.local",
+      "updatedAt": 1790845767816,
+      "lineCount": 10,
+      "charCount": 370,
+      "hash": "58cf12c6dc42",
+      "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER=\"webmaster-msh\" / WORDPRESS_AUTH_PASSWO..."
+    },
     {
       "filePath": "app/layout.tsx",
       "updatedAt": 1790792426953,
@@ -585,475 +619,516 @@
       "charCount": 9503,
       "hash": "d679e25f6e7a",
       "preview": "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
-    },
-    {
-      "filePath": "components/Footer.tsx",
-      "updatedAt": 1790757734694,
-      "lineCount": 122,
-      "charCount": 5388,
-      "hash": "cc53b02a612e",
-      "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-    },
-    {
-      "filePath": "components/MainContent.tsx",
-      "updatedAt": 1790716770341,
-      "lineCount": 227,
-      "charCount": 9623,
-      "hash": "f904222d275d",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
     }
   ],
   "recentChanges": [
     {
-      "type": "rename",
-      "path": "public/favicon.ico",
-      "toPath": "app/favicon.ico",
-      "summary": "Renamed file.",
-      "recordedAt": "2026-09-30T18:26:49.696Z",
-      "recordedAtEpochMs": 1790792809696,
-      "before": null,
-      "after": {
-        "kind": "file",
-        "extension": ".ico",
-        "sizeBytes": 15086,
-        "preview": "Binary or large file; content preview omitted.",
-        "updatedAt": 1790784574000
-      },
-      "diff": null
-    },
-    {
       "type": "save",
-      "path": "app/layout.tsx",
+      "path": "app/api/confirm/route.ts",
       "toPath": "",
-      "summary": "",
-      "recordedAt": "2026-09-30T18:23:30.366Z",
-      "recordedAtEpochMs": 1790792610366,
-      "before": null,
-      "after": null,
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/layout.tsx",
-      "toPath": "",
-      "summary": "Line 74: inserted 1 line.",
-      "recordedAt": "2026-09-30T18:20:26.953Z",
-      "recordedAtEpochMs": 1790792426953,
+      "summary": "Line 259: replaced 3 lines with 3 lines.",
+      "recordedAt": "2026-10-01T13:28:00.041Z",
+      "recordedAtEpochMs": 1790861280041,
       "before": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1492,
-        "hash": "3eda4f9f0d4a",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792426953
+        "lineCount": 312,
+        "charCount": 11759,
+        "hash": "8850ba77e5b6",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790861280041
       },
       "after": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1493,
-        "hash": "0beae626997f",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792426953
+        "lineCount": 312,
+        "charCount": 11765,
+        "hash": "e15d2b6fb49d",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790861280041
       },
       "diff": {
-        "lineStart": 74,
+        "lineStart": 259,
+        "removedLines": 3,
+        "addedLines": 3,
+        "summary": "Line 259: replaced 3 lines with 3 lines.",
+        "beforeFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig...",
+        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 259: replaced 5 lines with 4 lines.",
+      "recordedAt": "2026-10-01T13:26:07.611Z",
+      "recordedAtEpochMs": 1790861167611,
+      "before": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11841,
+        "hash": "baca773bc7ad",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790861167611
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 312,
+        "charCount": 11759,
+        "hash": "8850ba77e5b6",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790861167611
+      },
+      "diff": {
+        "lineStart": 259,
+        "removedLines": 5,
+        "addedLines": 4,
+        "summary": "Line 259: replaced 5 lines with 4 lines.",
+        "beforeFragment": "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"dis...",
+        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-01T13:13:32.330Z",
+      "recordedAtEpochMs": 1790860412330,
+      "before": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11841,
+        "hash": "baca773bc7ad",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790860412330
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11841,
+        "hash": "baca773bc7ad",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790860412330
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 259: replaced 4 lines with 11 lines.",
+      "recordedAt": "2026-10-01T13:09:32.822Z",
+      "recordedAtEpochMs": 1790860172822,
+      "before": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11835,
+        "hash": "50f18a8aa70a",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790860172822
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 320,
+        "charCount": 11958,
+        "hash": "cecc37b956d6",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790860172822
+      },
+      "diff": {
+        "lineStart": 259,
+        "removedLines": 4,
+        "addedLines": 11,
+        "summary": "Line 259: replaced 4 lines with 11 lines.",
+        "beforeFragment": "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"dis...",
+        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => ` / <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin-bottom: 8px;\"> / <tr> / <td style=\"background-color: #dcd7ce;..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 259: replaced 16 lines with 4 lines.",
+      "recordedAt": "2026-10-01T13:02:46.437Z",
+      "recordedAtEpochMs": 1790859766437,
+      "before": {
+        "kind": "text",
+        "lineCount": 325,
+        "charCount": 12465,
+        "hash": "958d2370d3b3",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859766437
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11835,
+        "hash": "50f18a8aa70a",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859766437
+      },
+      "diff": {
+        "lineStart": 259,
+        "removedLines": 16,
+        "addedLines": 4,
+        "summary": "Line 259: replaced 16 lines with 4 lines.",
+        "beforeFragment": "// Gecomprimeerde HTML zonder overbodige enters om onder de 2000 tekens te blijven / let bestandenHtml = actieveBestanden.map((b) => ` / <div style=\"display: inline-block; margi...",
+        "afterFragment": "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"dis..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 260: replaced 3 lines with 15 lines.",
+      "recordedAt": "2026-10-01T12:59:59.942Z",
+      "recordedAtEpochMs": 1790859599942,
+      "before": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11855,
+        "hash": "c82cd24aa4d8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859599942
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 325,
+        "charCount": 12465,
+        "hash": "958d2370d3b3",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859599942
+      },
+      "diff": {
+        "lineStart": 260,
+        "removedLines": 3,
+        "addedLines": 15,
+        "summary": "Line 260: replaced 3 lines with 15 lines.",
+        "beforeFragment": "`<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:n...",
+        "afterFragment": "` / <div style=\"display: inline-block; margin-right: 8px; margin-bottom: 10px;\"> / <!--[if mso]> / <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-micr..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 195: replaced 82 lines with 68 lines.",
+      "recordedAt": "2026-10-01T12:55:50.797Z",
+      "recordedAtEpochMs": 1790859350797,
+      "before": {
+        "kind": "text",
+        "lineCount": 327,
+        "charCount": 12572,
+        "hash": "9d7a0c597425",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859350797
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 313,
+        "charCount": 11855,
+        "hash": "c82cd24aa4d8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859350797
+      },
+      "diff": {
+        "lineStart": 195,
+        "removedLines": 82,
+        "addedLines": 68,
+        "summary": "Line 195: replaced 82 lines with 68 lines.",
+        "beforeFragment": "(leest alle categorieën & lijsten uit) --- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj...",
+        "afterFragment": "--- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj !== 'object') return; / const fileNaam..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 327: inserted 1 line.",
+      "recordedAt": "2026-10-01T12:51:23.353Z",
+      "recordedAtEpochMs": 1790859083353,
+      "before": {
+        "kind": "text",
+        "lineCount": 327,
+        "charCount": 12571,
+        "hash": "0f393c6a6ce7",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859083353
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 327,
+        "charCount": 12572,
+        "hash": "9d7a0c597425",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790859083353
+      },
+      "diff": {
+        "lineStart": 327,
         "removedLines": 0,
         "addedLines": 1,
-        "summary": "Line 74: inserted 1 line.",
+        "summary": "Line 327: inserted 1 line.",
         "beforeFragment": "",
         "afterFragment": ""
       }
     },
     {
       "type": "save",
-      "path": "app/layout.tsx",
+      "path": "app/api/confirm/route.ts",
       "toPath": "",
-      "summary": "Line 57: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T18:20:06.613Z",
-      "recordedAtEpochMs": 1790792406613,
+      "summary": "Line 24: replaced 241 lines with 253 lines.",
+      "recordedAt": "2026-10-01T12:24:22.539Z",
+      "recordedAtEpochMs": 1790857462539,
       "before": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1480,
-        "hash": "4bce9bf36449",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792406613
+        "lineCount": 315,
+        "charCount": 12158,
+        "hash": "05336f9580f8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790857462538
       },
       "after": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1492,
-        "hash": "3eda4f9f0d4a",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792406613
+        "lineCount": 327,
+        "charCount": 12571,
+        "hash": "0f393c6a6ce7",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790857462539
       },
       "diff": {
-        "lineStart": 57,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 57: replaced 1 line with 1 line.",
-        "beforeFragment": "[]",
-        "afterFragment": "'/favicon.ico'"
+        "lineStart": 24,
+        "removedLines": 241,
+        "addedLines": 253,
+        "summary": "Line 24: replaced 241 lines with 253 lines.",
+        "beforeFragment": "}); / if (!klantNaam || !klantEmail) { / return NextResponse.json( / { error: 'Ontbrekende verplichte klantgegevens.' }, / { status: 400 } / ); / } / // --- AUTOMATISCHE ENDPOIN...",
+        "afterFragment": ", / bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden / }); / if (!klantNaam || !klantEmail) { / return NextResponse.json(..."
       }
     },
     {
       "type": "save",
-      "path": "app/layout.tsx",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 185: replaced 68 lines with 72 lines.",
+      "recordedAt": "2026-10-01T12:18:34.336Z",
+      "recordedAtEpochMs": 1790857114336,
+      "before": {
+        "kind": "text",
+        "lineCount": 311,
+        "charCount": 11794,
+        "hash": "b4f89b45694b",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790857114335
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 315,
+        "charCount": 12158,
+        "hash": "05336f9580f8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790857114336
+      },
+      "diff": {
+        "lineStart": 185,
+        "removedLines": 68,
+        "addedLines": 72,
+        "summary": "Line 185: replaced 68 lines with 72 lines.",
+        "beforeFragment": "&bull; ') / : 'Nomi Utrecht &bull; Thomas de Gier'; / // --- STAP 3: Datum & Tijd --- / const nu = new Date(); / const datumString = nu.toLocaleDateString('nl-NL', { day: 'numer...",
+        "afterFragment": "• ') / : 'Nomi Utrecht • Thomas de Gier'; / // --- STAP 3: Datum & Tijd --- / const nu = new Date(); / const datumString = nu.toLocaleDateString('nl-NL', { day: 'numeric', month..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
       "toPath": "",
       "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-09-30T18:19:31.452Z",
-      "recordedAtEpochMs": 1790792371452,
+      "recordedAt": "2026-10-01T12:10:31.195Z",
+      "recordedAtEpochMs": 1790856631195,
       "before": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1480,
-        "hash": "4bce9bf36449",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792371452
+        "lineCount": 311,
+        "charCount": 11794,
+        "hash": "b4f89b45694b",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790856631195
       },
       "after": {
         "kind": "text",
-        "lineCount": 75,
-        "charCount": 1480,
-        "hash": "4bce9bf36449",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1790792371452
+        "lineCount": 311,
+        "charCount": 11794,
+        "hash": "b4f89b45694b",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790856631195
       },
       "diff": null
     },
     {
-      "type": "delete",
-      "path": "public/vercel.svg",
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
       "toPath": "",
-      "summary": "Deleted file.",
-      "recordedAt": "2026-09-30T18:18:29.799Z",
-      "recordedAtEpochMs": 1790792309799,
-      "before": null,
-      "after": null,
+      "summary": "Line 193: replaced 103 lines with 117 lines.",
+      "recordedAt": "2026-10-01T12:08:35.108Z",
+      "recordedAtEpochMs": 1790856515108,
+      "before": {
+        "kind": "text",
+        "lineCount": 303,
+        "charCount": 11376,
+        "hash": "0555c9e85283",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790856515108
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 317,
+        "charCount": 12103,
+        "hash": "bb235b3965a5",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790856515108
+      },
+      "diff": {
+        "lineStart": 193,
+        "removedLines": 103,
+        "addedLines": 117,
+        "summary": "Line 193: replaced 103 lines with 117 lines.",
+        "beforeFragment": "HTML Badges met lengtebewaking --- / let actieveBestanden: { naam: string; url: string }[] = []; / const processItem = (item: any) => { / if (!item) return; / const fileNaam = i...",
+        "afterFragment": "Outlook-veilige HTML Badges --- / let actieveBestanden: { naam: string; url: string }[] = []; / const processItem = (item: any) => { / if (!item) return; / const fileNaam = item..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 250: replaced 42 lines with 40 lines.",
+      "recordedAt": "2026-10-01T11:58:50.118Z",
+      "recordedAtEpochMs": 1790855930118,
+      "before": {
+        "kind": "text",
+        "lineCount": 305,
+        "charCount": 11435,
+        "hash": "52a4723c52d8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855930118
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 303,
+        "charCount": 11376,
+        "hash": "0555c9e85283",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855930118
+      },
+      "diff": {
+        "lineStart": 250,
+        "removedLines": 42,
+        "addedLines": 40,
+        "summary": "Line 250: replaced 42 lines with 40 lines.",
+        "beforeFragment": "// **BELANGRIJK:** Beveiliging tegen de 2000-tekens limiet van Resend / if (bestandenHtml.length > 1900) { / bestandenHtml = bestandenHtml.substring(0, 1900) + '...'; / } / // -...",
+        "afterFragment": "if (bestandenHtml.length > 1900) { / bestandenHtml = bestandenHtml.substring(0, 1900) + '...'; / } / // --- STAP 5: Versturen via Resend --- / const templateId = process.env.RES..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 10: replaced 288 lines with 279 lines.",
+      "recordedAt": "2026-10-01T11:54:18.174Z",
+      "recordedAtEpochMs": 1790855658174,
+      "before": {
+        "kind": "text",
+        "lineCount": 314,
+        "charCount": 11762,
+        "hash": "41ec10e47a4a",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855658174
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 305,
+        "charCount": 11435,
+        "hash": "52a4723c52d8",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855658174
+      },
+      "diff": {
+        "lineStart": 10,
+        "removedLines": 288,
+        "addedLines": 279,
+        "summary": "Line 10: replaced 288 lines with 279 lines.",
+        "beforeFragment": "// Vang alle mogelijke benamingen uit de frontend request op / let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = body.klantNaam || body.naam; / l...",
+        "afterFragment": "let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = body.klantNaam || body.naam; / let klantEmail = body.klantEmail || body.email; / let woningType..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-01T11:49:25.563Z",
+      "recordedAtEpochMs": 1790855365563,
+      "before": {
+        "kind": "text",
+        "lineCount": 314,
+        "charCount": 11762,
+        "hash": "41ec10e47a4a",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855365563
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 314,
+        "charCount": 11762,
+        "hash": "41ec10e47a4a",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1790855365563
+      },
       "diff": null
-    },
-    {
-      "type": "delete",
-      "path": "public/next.svg",
-      "toPath": "",
-      "summary": "Deleted file.",
-      "recordedAt": "2026-09-30T18:18:29.795Z",
-      "recordedAtEpochMs": 1790792309795,
-      "before": null,
-      "after": null,
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 38: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T17:51:03.537Z",
-      "recordedAtEpochMs": 1790790663537,
-      "before": {
-        "kind": "text",
-        "lineCount": 445,
-        "charCount": 17332,
-        "hash": "a08678c1c029",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790663537
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 445,
-        "charCount": 17332,
-        "hash": "650eaf8f6392",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790663537
-      },
-      "diff": {
-        "lineStart": 38,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 38: replaced 1 line with 1 line.",
-        "beforeFragment": "3",
-        "afterFragment": "6"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 38: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T17:50:53.804Z",
-      "recordedAtEpochMs": 1790790653804,
-      "before": {
-        "kind": "text",
-        "lineCount": 445,
-        "charCount": 17332,
-        "hash": "6f8a0c13957f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790653804
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 445,
-        "charCount": 17332,
-        "hash": "a08678c1c029",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790653804
-      },
-      "diff": {
-        "lineStart": 38,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 38: replaced 1 line with 1 line.",
-        "beforeFragment": "1",
-        "afterFragment": "3"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 131: removed 1 line.",
-      "recordedAt": "2026-09-30T17:49:20.546Z",
-      "recordedAtEpochMs": 1790790560546,
-      "before": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14205,
-        "hash": "515d0b2708b0",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790560546
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14192,
-        "hash": "f686682f55d5",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790560546
-      },
-      "diff": {
-        "lineStart": 131,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 131: removed 1 line.",
-        "beforeFragment": "cursor-alias",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 131: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T17:49:00.847Z",
-      "recordedAtEpochMs": 1790790540847,
-      "before": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14204,
-        "hash": "f3842b3f5fa3",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790540847
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14205,
-        "hash": "515d0b2708b0",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790540847
-      },
-      "diff": {
-        "lineStart": 131,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 131: replaced 1 line with 1 line.",
-        "beforeFragment": "none",
-        "afterFragment": "alias"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 131: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T17:48:27.974Z",
-      "recordedAtEpochMs": 1790790507974,
-      "before": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14204,
-        "hash": "cb600e2582ee",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790507974
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 286,
-        "charCount": 14204,
-        "hash": "f3842b3f5fa3",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi...",
-        "updatedAt": 1790790507974
-      },
-      "diff": {
-        "lineStart": 131,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 131: replaced 1 line with 1 line.",
-        "beforeFragment": "grab",
-        "afterFragment": "none"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 19: replaced 138 lines with 167 lines.",
-      "recordedAt": "2026-09-30T17:43:50.847Z",
-      "recordedAtEpochMs": 1790790230847,
-      "before": {
-        "kind": "text",
-        "lineCount": 416,
-        "charCount": 16222,
-        "hash": "d4640913be71",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790230846
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 445,
-        "charCount": 17332,
-        "hash": "6f8a0c13957f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790790230847
-      },
-      "diff": {
-        "lineStart": 19,
-        "removedLines": 138,
-        "addedLines": 167,
-        "summary": "Line 19: replaced 138 lines with 167 lines.",
-        "beforeFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g...",
-        "afterFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 188: replaced 65 lines with 68 lines.",
-      "recordedAt": "2026-09-30T10:10:57.488Z",
-      "recordedAtEpochMs": 1790763057488,
-      "before": {
-        "kind": "text",
-        "lineCount": 413,
-        "charCount": 16114,
-        "hash": "d9fd4506eb50",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790763057488
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 416,
-        "charCount": 16222,
-        "hash": "d4640913be71",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1790763057488
-      },
-      "diff": {
-        "lineStart": 188,
-        "removedLines": 65,
-        "addedLines": 68,
-        "summary": "Line 188: replaced 65 lines with 68 lines.",
-        "beforeFragment": "let ext = 'PDF'; / if (mimeType.includes('pdf') || fileUrl?.toLowerCase().includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') |...",
-        "afterFragment": "const lowerUrl = fileUrl?.toLowerCase() || ''; / let ext = 'PDF'; / if (mimeType.includes('pdf') || lowerUrl.includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('w..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/privacy/page.tsx",
-      "toPath": "",
-      "summary": "Line 139: replaced 1 line with 1 line.",
-      "recordedAt": "2026-09-30T10:00:56.314Z",
-      "recordedAtEpochMs": 1790762456314,
-      "before": {
-        "kind": "text",
-        "lineCount": 150,
-        "charCount": 8654,
-        "hash": "1fb8fd26c345",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1790762456314
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 150,
-        "charCount": 8653,
-        "hash": "f0b7c156a578",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1790762456314
-      },
-      "diff": {
-        "lineStart": 139,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 139: replaced 1 line with 1 line.",
-        "beforeFragment": "support@nomi",
-        "afterFragment": "email@adres"
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/CookieBanner.tsx",
-      "count": 13
-    },
-    {
-      "filePath": "app/privacy/page.tsx",
-      "count": 10
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "count": 4
+      "filePath": "app/api/confirm/route.ts",
+      "count": 30
     },
     {
       "filePath": "app/layout.tsx",
       "count": 4
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 3
+      "filePath": "app/download/page.tsx",
+      "count": 2
+    },
+    {
+      "filePath": ".env.local",
+      "count": 1
     },
     {
       "filePath": "app/favicon.ico",
       "count": 1
     },
     {
-      "filePath": "app/privacy",
+      "filePath": "public/next.svg",
       "count": 1
     },
     {
-      "filePath": "components/Footer.tsx",
+      "filePath": "public/vercel.svg",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-09-30 3eb66f4 Filter package name hotel chic or modern raw and some improvements",
-    "statusSummary": "4 modifieds, 2 deleteds, 1 untracked",
-    "changedFileCount": 7,
+    "headSummary": "2026-10-01 8f9f51e Voeg png logo's en symbolen toe voor e-mailtemplate",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/layout.tsx",
+      "M app/api/confirm/route.ts",
       "M graphify-out/WORKSPACE_MEMORY.md",
-      "D public/next.svg",
-      "D public/vercel.svg",
       "M workspace.json",
-      "M workspacememory.md",
-      "?? app/favicon.ico"
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3eb66f4 by Bas van Dooremalen on 2026-09-30\n  Filter package name hotel chic or modern raw and some improvements\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8f9f51e by Bas van Dooremalen on 2026-10-01\n  Voeg png logo's en symbolen toe voor e-mailtemplate\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

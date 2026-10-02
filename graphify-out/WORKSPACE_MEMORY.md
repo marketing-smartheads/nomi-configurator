@@ -1,9 +1,9 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-09-30T18:26:52.808Z
+Generated: 2026-10-02T08:57:58.884Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
-Refresh reason: tracked-change
+Refresh reason: startup
 Output path: graphify-out/WORKSPACE_MEMORY.md
 Shared mirror: workspacememory.md
 Structured manifest: workspace.json
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-09-30T18:26:49.696Z
+- Last activity: 2026-10-01T13:28:00.041Z
 ## Workspace Focus
-- Active file in focus: app/layout.tsx
-- Hottest files right now: components/CookieBanner.tsx (13), app/privacy/page.tsx (10), app/download/page.tsx (4), app/layout.tsx (4)
-- Suggested starting points: app/layout.tsx, components/CookieBanner.tsx, app/privacy/page.tsx, app/download/page.tsx, components/configurator/StepThreeVisuals.tsx, app/favicon.ico
+- Active file in focus: .env.local
+- Hottest files right now: app/api/confirm/route.ts (30), app/layout.tsx (4), app/download/page.tsx (2), .env.local (1)
+- Suggested starting points: .env.local, app/api/confirm/route.ts, app/layout.tsx, app/download/page.tsx, app/favicon.ico, public/next.svg
 ## Current Workspace
-- Active file: app/layout.tsx
-- Tracked files in snapshot: 63
-- Top-level areas: public (18), components (16), [root] (15), app (11), lib (3)
-- Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .mjs (2)
+- Active file: .env.local
+- Tracked files in snapshot: 66
+- Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
+- Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -35,10 +35,16 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (35), create (2), delete (2), rename (1)
+- Change mix: save (37), delete (2), rename (1)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds, 2 deleteds, 1 untracked
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- app/api/confirm/route.ts | 312 lines | 11765 chars | hash e15d2b6fb49d
+  Last snapshot: 2026-10-01T13:28:00.041Z
+  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- .env.local | 10 lines | 370 chars | hash 58cf12c6dc42
+  Last snapshot: 2026-10-01T09:09:27.816Z
+  Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 - app/layout.tsx | 75 lines | 1493 chars | hash 0beae626997f
   Last snapshot: 2026-09-30T18:20:26.953Z
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
@@ -57,120 +63,123 @@ Structured manifest: workspace.json
 - components/CookieBanner.tsx | 213 lines | 9503 chars | hash d679e25f6e7a
   Last snapshot: 2026-09-30T09:39:58.131Z
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
-- components/Footer.tsx | 122 lines | 5388 chars | hash cc53b02a612e
-  Last snapshot: 2026-09-30T08:42:14.694Z
-  Preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- components/MainContent.tsx | 227 lines | 9623 chars | hash f904222d275d
-  Last snapshot: 2026-09-29T21:19:30.341Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
-### 2026-09-30T18:26:49.696Z | renamed | public/favicon.ico -> app/favicon.ico
-- Summary: Renamed file.
-- After: .ico | 15,086 bytes | Binary or large file; content preview omitted.
+### 2026-10-01T13:28:00.041Z | saved | app/api/confirm/route.ts
+- Summary: Line 259: replaced 3 lines with 3 lines.
+- Before: 312 lines | 11,759 chars | hash 8850ba77e5b6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 312 lines | 11,765 chars | hash e15d2b6fb49d | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
 
-### 2026-09-30T18:23:30.366Z | saved | app/layout.tsx
+### 2026-10-01T13:26:07.611Z | saved | app/api/confirm/route.ts
+- Summary: Line 259: replaced 5 lines with 4 lines.
+- Before: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 312 lines | 11,759 chars | hash 8850ba77e5b6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
+- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
 
-### 2026-09-30T18:20:26.953Z | saved | app/layout.tsx
-- Summary: Line 74: inserted 1 line.
-- Before: 75 lines | 1,492 chars | hash 3eda4f9f0d4a | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 75 lines | 1,493 chars | hash 0beae626997f | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-
-### 2026-09-30T18:20:06.613Z | saved | app/layout.tsx
-- Summary: Line 57: replaced 1 line with 1 line.
-- Before: 75 lines | 1,480 chars | hash 4bce9bf36449 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 75 lines | 1,492 chars | hash 3eda4f9f0d4a | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- Previous fragment: "[]"
-- Current fragment: "'/favicon.ico'"
-
-### 2026-09-30T18:19:31.452Z | saved | app/layout.tsx
+### 2026-10-01T13:13:32.330Z | saved | app/api/confirm/route.ts
 - Summary: Saved without a textual diff.
-- Before: 75 lines | 1,480 chars | hash 4bce9bf36449 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 75 lines | 1,480 chars | hash 4bce9bf36449 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Before: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
-### 2026-09-30T18:18:29.799Z | deleted | public/vercel.svg
-- Summary: Deleted file.
+### 2026-10-01T13:09:32.822Z | saved | app/api/confirm/route.ts
+- Summary: Line 259: replaced 4 lines with 11 lines.
+- Before: 313 lines | 11,835 chars | hash 50f18a8aa70a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 320 lines | 11,958 chars | hash cecc37b956d6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
+- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => ` / <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;"> / <tr> / <td style="background-color: #dcd7ce;..."
 
-### 2026-09-30T18:18:29.795Z | deleted | public/next.svg
-- Summary: Deleted file.
+### 2026-10-01T13:02:46.437Z | saved | app/api/confirm/route.ts
+- Summary: Line 259: replaced 16 lines with 4 lines.
+- Before: 325 lines | 12,465 chars | hash 958d2370d3b3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 313 lines | 11,835 chars | hash 50f18a8aa70a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "// Gecomprimeerde HTML zonder overbodige enters om onder de 2000 tekens te blijven / let bestandenHtml = actieveBestanden.map((b) => ` / <div style="display: inline-block; margi..."
+- Current fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
 
-### 2026-09-30T17:51:03.537Z | saved | app/download/page.tsx
-- Summary: Line 38: replaced 1 line with 1 line.
-- Before: 445 lines | 17,332 chars | hash a08678c1c029 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 445 lines | 17,332 chars | hash 650eaf8f6392 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "3"
-- Current fragment: "6"
+### 2026-10-01T12:59:59.942Z | saved | app/api/confirm/route.ts
+- Summary: Line 260: replaced 3 lines with 15 lines.
+- Before: 313 lines | 11,855 chars | hash c82cd24aa4d8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 325 lines | 12,465 chars | hash 958d2370d3b3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "`<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:n..."
+- Current fragment: "` / <div style="display: inline-block; margin-right: 8px; margin-bottom: 10px;"> / <!--[if mso]> / <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-micr..."
 
-### 2026-09-30T17:50:53.804Z | saved | app/download/page.tsx
-- Summary: Line 38: replaced 1 line with 1 line.
-- Before: 445 lines | 17,332 chars | hash 6f8a0c13957f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 445 lines | 17,332 chars | hash a08678c1c029 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "1"
-- Current fragment: "3"
+### 2026-10-01T12:55:50.797Z | saved | app/api/confirm/route.ts
+- Summary: Line 195: replaced 82 lines with 68 lines.
+- Before: 327 lines | 12,572 chars | hash 9d7a0c597425 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 313 lines | 11,855 chars | hash c82cd24aa4d8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "(leest alle categorieën & lijsten uit) --- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj..."
+- Current fragment: "--- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj !== 'object') return; / const fileNaam..."
 
-### 2026-09-30T17:49:20.546Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 131: removed 1 line.
-- Before: 286 lines | 14,205 chars | hash 515d0b2708b0 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- After: 286 lines | 14,192 chars | hash f686682f55d5 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- Previous fragment: "cursor-alias"
+### 2026-10-01T12:51:23.353Z | saved | app/api/confirm/route.ts
+- Summary: Line 327: inserted 1 line.
+- Before: 327 lines | 12,571 chars | hash 0f393c6a6ce7 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 327 lines | 12,572 chars | hash 9d7a0c597425 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
-### 2026-09-30T17:49:00.847Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 131: replaced 1 line with 1 line.
-- Before: 286 lines | 14,204 chars | hash f3842b3f5fa3 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- After: 286 lines | 14,205 chars | hash 515d0b2708b0 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- Previous fragment: "none"
-- Current fragment: "alias"
+### 2026-10-01T12:24:22.539Z | saved | app/api/confirm/route.ts
+- Summary: Line 24: replaced 241 lines with 253 lines.
+- Before: 315 lines | 12,158 chars | hash 05336f9580f8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 327 lines | 12,571 chars | hash 0f393c6a6ce7 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "}); / if (!klantNaam || !klantEmail) { / return NextResponse.json( / { error: 'Ontbrekende verplichte klantgegevens.' }, / { status: 400 } / ); / } / // --- AUTOMATISCHE ENDPOIN..."
+- Current fragment: ", / bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden / }); / if (!klantNaam || !klantEmail) { / return NextResponse.json(..."
 
-### 2026-09-30T17:48:27.974Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 131: replaced 1 line with 1 line.
-- Before: 286 lines | 14,204 chars | hash cb600e2582ee | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- After: 286 lines | 14,204 chars | hash f3842b3f5fa3 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- Previous fragment: "grab"
-- Current fragment: "none"
+### 2026-10-01T12:18:34.336Z | saved | app/api/confirm/route.ts
+- Summary: Line 185: replaced 68 lines with 72 lines.
+- Before: 311 lines | 11,794 chars | hash b4f89b45694b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 315 lines | 12,158 chars | hash 05336f9580f8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "&bull; ') / : 'Nomi Utrecht &bull; Thomas de Gier'; / // --- STAP 3: Datum & Tijd --- / const nu = new Date(); / const datumString = nu.toLocaleDateString('nl-NL', { day: 'numer..."
+- Current fragment: "• ') / : 'Nomi Utrecht • Thomas de Gier'; / // --- STAP 3: Datum & Tijd --- / const nu = new Date(); / const datumString = nu.toLocaleDateString('nl-NL', { day: 'numeric', month..."
 
-### 2026-09-30T17:43:50.847Z | saved | app/download/page.tsx
-- Summary: Line 19: replaced 138 lines with 167 lines.
-- Before: 416 lines | 16,222 chars | hash d4640913be71 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 445 lines | 17,332 chars | hash 6f8a0c13957f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
-- Current fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / // 1. Controleer of de configuratie is bevestigd / const isConfirmed = / localStorage.g..."
+### 2026-10-01T12:10:31.195Z | saved | app/api/confirm/route.ts
+- Summary: Saved without a textual diff.
+- Before: 311 lines | 11,794 chars | hash b4f89b45694b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 311 lines | 11,794 chars | hash b4f89b45694b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
-### 2026-09-30T10:10:57.488Z | saved | app/download/page.tsx
-- Summary: Line 188: replaced 65 lines with 68 lines.
-- Before: 413 lines | 16,114 chars | hash d9fd4506eb50 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 416 lines | 16,222 chars | hash d4640913be71 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "let ext = 'PDF'; / if (mimeType.includes('pdf') || fileUrl?.toLowerCase().includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') |..."
-- Current fragment: "const lowerUrl = fileUrl?.toLowerCase() || ''; / let ext = 'PDF'; / if (mimeType.includes('pdf') || lowerUrl.includes('.pdf')) { / ext = 'PDF'; / } else if (mimeType.includes('w..."
+### 2026-10-01T12:08:35.108Z | saved | app/api/confirm/route.ts
+- Summary: Line 193: replaced 103 lines with 117 lines.
+- Before: 303 lines | 11,376 chars | hash 0555c9e85283 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 317 lines | 12,103 chars | hash bb235b3965a5 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "HTML Badges met lengtebewaking --- / let actieveBestanden: { naam: string; url: string }[] = []; / const processItem = (item: any) => { / if (!item) return; / const fileNaam = i..."
+- Current fragment: "Outlook-veilige HTML Badges --- / let actieveBestanden: { naam: string; url: string }[] = []; / const processItem = (item: any) => { / if (!item) return; / const fileNaam = item..."
 
-### 2026-09-30T10:00:56.314Z | saved | app/privacy/page.tsx
-- Summary: Line 139: replaced 1 line with 1 line.
-- Before: 150 lines | 8,654 chars | hash 1fb8fd26c345 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 150 lines | 8,653 chars | hash f0b7c156a578 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: "support@nomi"
-- Current fragment: "email@adres"
+### 2026-10-01T11:58:50.118Z | saved | app/api/confirm/route.ts
+- Summary: Line 250: replaced 42 lines with 40 lines.
+- Before: 305 lines | 11,435 chars | hash 52a4723c52d8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 303 lines | 11,376 chars | hash 0555c9e85283 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "// **BELANGRIJK:** Beveiliging tegen de 2000-tekens limiet van Resend / if (bestandenHtml.length > 1900) { / bestandenHtml = bestandenHtml.substring(0, 1900) + '...'; / } / // -..."
+- Current fragment: "if (bestandenHtml.length > 1900) { / bestandenHtml = bestandenHtml.substring(0, 1900) + '...'; / } / // --- STAP 5: Versturen via Resend --- / const templateId = process.env.RES..."
+
+### 2026-10-01T11:54:18.174Z | saved | app/api/confirm/route.ts
+- Summary: Line 10: replaced 288 lines with 279 lines.
+- Before: 314 lines | 11,762 chars | hash 41ec10e47a4a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 305 lines | 11,435 chars | hash 52a4723c52d8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "// Vang alle mogelijke benamingen uit de frontend request op / let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = body.klantNaam || body.naam; / l..."
+- Current fragment: "let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = body.klantNaam || body.naam; / let klantEmail = body.klantEmail || body.email; / let woningType..."
+
+### 2026-10-01T11:49:25.563Z | saved | app/api/confirm/route.ts
+- Summary: Saved without a textual diff.
+- Before: 314 lines | 11,762 chars | hash 41ec10e47a4a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 314 lines | 11,762 chars | hash 41ec10e47a4a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
 
 ## Hot Files
-- components/CookieBanner.tsx (13 tracked changes)
-- app/privacy/page.tsx (10 tracked changes)
-- app/download/page.tsx (4 tracked changes)
+- app/api/confirm/route.ts (30 tracked changes)
 - app/layout.tsx (4 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- app/download/page.tsx (2 tracked changes)
+- .env.local (1 tracked changes)
 - app/favicon.ico (1 tracked changes)
-- app/privacy (1 tracked changes)
-- components/Footer.tsx (1 tracked changes)
+- public/next.svg (1 tracked changes)
+- public/vercel.svg (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-09-30 3eb66f4 Filter package name hotel chic or modern raw and some improvements
-- Working tree summary: 4 modifieds, 2 deleteds, 1 untracked
-- M app/layout.tsx
+- HEAD: 2026-10-01 8f9f51e Voeg png logo's en symbolen toe voor e-mailtemplate
+- Working tree summary: 4 modifieds
+- M app/api/confirm/route.ts
 - M graphify-out/WORKSPACE_MEMORY.md
-- D public/next.svg
-- D public/vercel.svg
 - M workspace.json
 - M workspacememory.md
-- ?? app/favicon.ico
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -178,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 3eb66f4 by Bas van Dooremalen on 2026-09-30
-  Filter package name hotel chic or modern raw and some improvements
+- 8f9f51e by Bas van Dooremalen on 2026-10-01
+  Voeg png logo's en symbolen toe voor e-mailtemplate
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
