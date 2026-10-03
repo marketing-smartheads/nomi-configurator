@@ -256,9 +256,9 @@ export async function POST(request: Request) {
       ];
     }
 
-      let bestandenHtml = actieveBestanden.map((b) => 
-        `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:20px;margin:0 8px 10px 0;letter-spacing:0.5px;">${b.naam}</a>&nbsp;`
-      ).join('');
+    // let bestandenHtml = actieveBestanden.map((b) => 
+    //   `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:20px;margin:0 8px 10px 0;letter-spacing:0.5px;">${b.naam}</a>&nbsp;`
+    // ).join('');
 0
     // --- STAP 5: Versturen via Resend ---
     const templateId = process.env.RESEND_TEMPLATE_ID || 'd532cedb-3f4b-4315-bf51-c3fcdf348fcc';
@@ -281,7 +281,7 @@ export async function POST(request: Request) {
             tijdString: tijdString,
             chequeStatus: 'Verzilverd',
             aanhef: aanhefTekst,
-            bestandenHtml: bestandenHtml,
+            // bestandenHtml: bestandenHtml,
             verstuurdNaar: partnersNamenString
           }
         }
