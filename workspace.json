@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T16:29:46.767Z",
-  "generatedAtEpochMs": 1791044986767,
+  "generatedAt": "2026-10-05T15:19:11.727Z",
+  "generatedAtEpochMs": 1791213551727,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/confirm/route.ts",
+    "activeFile": "app/privacy/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "app/privacy/page.tsx",
       "app/api/confirm/route.ts",
-      "app/layout.tsx",
       ".env.local",
-      "app/favicon.ico",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -543,17 +542,25 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-03T16:29:45.035Z",
+    "lastActivityAt": "2026-10-05T15:19:10.017Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
-      "save": 39,
+      "save": 40,
       "create": 0,
       "delete": 0,
-      "rename": 1
+      "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/privacy/page.tsx",
+      "updatedAt": 1791213550017,
+      "lineCount": 135,
+      "charCount": 8229,
+      "hash": "1fa058bba875",
+      "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
+    },
     {
       "filePath": "app/api/confirm/route.ts",
       "updatedAt": 1791044985035,
@@ -603,14 +610,6 @@
       "preview": "Binary or large file; content preview omitted."
     },
     {
-      "filePath": "app/privacy/page.tsx",
-      "updatedAt": 1790762456314,
-      "lineCount": 150,
-      "charCount": 8653,
-      "hash": "f0b7c156a578",
-      "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
-    },
-    {
       "filePath": "components/CookieBanner.tsx",
       "updatedAt": 1790761198131,
       "lineCount": 213,
@@ -620,6 +619,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/privacy/page.tsx",
+      "toPath": "",
+      "summary": "Line 10: replaced 137 lines with 122 lines.",
+      "recordedAt": "2026-10-05T15:19:10.017Z",
+      "recordedAtEpochMs": 1791213550017,
+      "before": {
+        "kind": "text",
+        "lineCount": 150,
+        "charCount": 8649,
+        "hash": "99d551e017d4",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213550017
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 135,
+        "charCount": 8229,
+        "hash": "1fa058bba875",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213550017
+      },
+      "diff": {
+        "lineStart": 10,
+        "removedLines": 137,
+        "addedLines": 122,
+        "summary": "Line 10: replaced 137 lines with 122 lines.",
+        "beforeFragment": "{/* Header - Aangepast naar een toegestane TypeScript prop zoals \"welcome\" */} / <Header currentScreen=\"welcome\" onStart={() => window.location.href = '/'} /> / {/* Hoofdinhoud...",
+        "afterFragment": "<Header currentScreen=\"welcome\" onStart={() => window.location.href = '/'} /> / <main className=\"flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/privacy/page.tsx",
+      "toPath": "",
+      "summary": "Line 139: removed 1 line.",
+      "recordedAt": "2026-10-05T15:17:57.425Z",
+      "recordedAtEpochMs": 1791213477425,
+      "before": {
+        "kind": "text",
+        "lineCount": 150,
+        "charCount": 8651,
+        "hash": "b9466bbbc377",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213477425
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 150,
+        "charCount": 8649,
+        "hash": "99d551e017d4",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213477425
+      },
+      "diff": {
+        "lineStart": 139,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 139: removed 1 line.",
+        "beforeFragment": ",",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/privacy/page.tsx",
+      "toPath": "",
+      "summary": "Line 138: replaced 2 lines with 2 lines.",
+      "recordedAt": "2026-10-05T15:17:37.439Z",
+      "recordedAtEpochMs": 1791213457439,
+      "before": {
+        "kind": "text",
+        "lineCount": 150,
+        "charCount": 8653,
+        "hash": "f0b7c156a578",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213457439
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 150,
+        "charCount": 8651,
+        "hash": "b9466bbbc377",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1791213457439
+      },
+      "diff": {
+        "lineStart": 138,
+        "removedLines": 2,
+        "addedLines": 2,
+        "summary": "Line 138: replaced 2 lines with 2 lines.",
+        "beforeFragment": "NOMI &amp; Thomas de Gier</p> / <p className=\"text-zinc-400\">E-mail: email@adres.nl",
+        "afterFragment": "Thomas de Gier</p> / <p className=\"text-zinc-400\">E-mail: info@thomasdegier.com,"
+      }
+    },
     {
       "type": "save",
       "path": "app/api/confirm/route.ts",
@@ -989,102 +1084,6 @@
         "beforeFragment": "`<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:n...",
         "afterFragment": "` / <div style=\"display: inline-block; margin-right: 8px; margin-bottom: 10px;\"> / <!--[if mso]> / <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-micr..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 195: replaced 82 lines with 68 lines.",
-      "recordedAt": "2026-10-01T12:55:50.797Z",
-      "recordedAtEpochMs": 1790859350797,
-      "before": {
-        "kind": "text",
-        "lineCount": 327,
-        "charCount": 12572,
-        "hash": "9d7a0c597425",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790859350797
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 313,
-        "charCount": 11855,
-        "hash": "c82cd24aa4d8",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790859350797
-      },
-      "diff": {
-        "lineStart": 195,
-        "removedLines": 82,
-        "addedLines": 68,
-        "summary": "Line 195: replaced 82 lines with 68 lines.",
-        "beforeFragment": "(leest alle categorieën & lijsten uit) --- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj...",
-        "afterFragment": "--- / let actieveBestanden: { naam: string; url: string }[] = []; / const extractFileUrlAndName = (obj: any) => { / if (!obj || typeof obj !== 'object') return; / const fileNaam..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 327: inserted 1 line.",
-      "recordedAt": "2026-10-01T12:51:23.353Z",
-      "recordedAtEpochMs": 1790859083353,
-      "before": {
-        "kind": "text",
-        "lineCount": 327,
-        "charCount": 12571,
-        "hash": "0f393c6a6ce7",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790859083353
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 327,
-        "charCount": 12572,
-        "hash": "9d7a0c597425",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790859083353
-      },
-      "diff": {
-        "lineStart": 327,
-        "removedLines": 0,
-        "addedLines": 1,
-        "summary": "Line 327: inserted 1 line.",
-        "beforeFragment": "",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 24: replaced 241 lines with 253 lines.",
-      "recordedAt": "2026-10-01T12:24:22.539Z",
-      "recordedAtEpochMs": 1790857462539,
-      "before": {
-        "kind": "text",
-        "lineCount": 315,
-        "charCount": 12158,
-        "hash": "05336f9580f8",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790857462538
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 327,
-        "charCount": 12571,
-        "hash": "0f393c6a6ce7",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790857462539
-      },
-      "diff": {
-        "lineStart": 24,
-        "removedLines": 241,
-        "addedLines": 253,
-        "summary": "Line 24: replaced 241 lines with 253 lines.",
-        "beforeFragment": "}); / if (!klantNaam || !klantEmail) { / return NextResponse.json( / { error: 'Ontbrekende verplichte klantgegevens.' }, / { status: 400 } / ); / } / // --- AUTOMATISCHE ENDPOIN...",
-        "afterFragment": ", / bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden / }); / if (!klantNaam || !klantEmail) { / return NextResponse.json(..."
-      }
     }
   ],
   "hotFiles": [
@@ -1093,35 +1092,31 @@
       "count": 36
     },
     {
-      "filePath": "app/layout.tsx",
-      "count": 2
+      "filePath": "app/privacy/page.tsx",
+      "count": 3
     },
     {
       "filePath": ".env.local",
-      "count": 1
-    },
-    {
-      "filePath": "app/favicon.ico",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-02 b62607b added Resend mailtemplate to project",
+    "headSummary": "2026-10-03 8b220fb removed var bestandenHtml",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
-      "M  app/api/confirm/route.ts",
-      "MM graphify-out/WORKSPACE_MEMORY.md",
-      "MM workspace.json",
-      "MM workspacememory.md"
+      "M app/privacy/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b62607b by Bas van Dooremalen on 2026-10-02\n  added Resend mailtemplate to project\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8b220fb by Bas van Dooremalen on 2026-10-03\n  removed var bestandenHtml\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -7,13 +7,10 @@ import Footer from '@/components/Footer';
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-[#111115] text-zinc-100 font-sans flex flex-col justify-between selection:bg-white selection:text-[#111115]">
-      {/* Header - Aangepast naar een toegestane TypeScript prop zoals "welcome" */}
       <Header currentScreen="welcome" onStart={() => window.location.href = '/'} />
 
-      {/* Hoofdinhoud */}
       <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12">
         
-        {/* Paginatitel */}
         <div className="space-y-2 sm:space-y-3">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white tracking-tight">
             Privacy- en Cookieverklaring
@@ -23,17 +20,13 @@ export default function PrivacyPage() {
           </p>
         </div>
 
-        {/* Artikelen container */}
         <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed">
-          
-          {/* Introductie blok */}
           <section className="space-y-3 p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#1a1a20] border border-zinc-800/80 shadow-lg text-sm">
             <p>
               Welkom bij de interieur- en designconfigurator van NOMI in samenwerking met Thomas de Gier. Wij respecteren de privacy van al onze gebruikers en dragen er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld. In deze privacy- en cookieverklaring leggen wij uit welke gegevens wij verzamelen, waarom wij deze gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag.
             </p>
           </section>
 
-          {/* Sectie 1 */}
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">1. Welke persoonsgegevens verwerken wij?</h2>
             <p className="text-sm sm:text-base">
@@ -45,8 +38,6 @@ export default function PrivacyPage() {
               <li>Uw gekozen interieur- en designopties</li>
             </ul>
           </div>
-
-          {/* Sectie 2 */}
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">2. Waarom verwerken wij deze gegevens?</h2>
             <p className="text-sm sm:text-base">
@@ -58,8 +49,6 @@ export default function PrivacyPage() {
               <li>Het tijdelijk bewaren van uw sessiestatus en actieve keuzes.</li>
             </ul>
           </div>
-
-          {/* Sectie 3 */}
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">3. Over Cookies, Session Storage en Local Storage</h2>
             <p className="text-sm sm:text-base">
@@ -90,11 +79,10 @@ export default function PrivacyPage() {
             </div>
           </div>
 
-          {/* Sectie 4: Kloppende Tabel */}
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">4. Overzicht van geplaatste cookies en opslag</h2>
             <div className="w-full overflow-x-auto border border-zinc-800 rounded-2xl bg-[#1a1a20] shadow-sm">
-              <table className="w-full text-left text-xs text-zinc-300 min-w-[600px]">
+              <table className="w-full text-left text-xs text-zinc-300 min-w-150">
                 <thead className="bg-zinc-900/80 border-b border-zinc-800 text-zinc-400 uppercase tracking-wider">
                   <tr>
                     <th className="p-3 sm:p-4">Naam / Sleutel</th>
@@ -120,8 +108,6 @@ export default function PrivacyPage() {
               </table>
             </div>
           </div>
-
-          {/* Sectie 5 & 6 */}
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">5. Uw rechten en intrekken van toestemming</h2>
             <p className="text-sm sm:text-base">
@@ -135,15 +121,14 @@ export default function PrivacyPage() {
               Voor vragen over ons privacybeleid of deze verklaring kunt u contact opnemen:
             </p>
             <div className="p-4 rounded-2xl bg-[#1a1a20] border border-zinc-800 space-y-1 text-zinc-300 text-xs sm:text-sm">
-              <p className="font-medium text-white">NOMI &amp; Thomas de Gier</p>
-              <p className="text-zinc-400">E-mail: email@adres.nl</p>
+              <p className="font-medium text-white">Thomas de Gier</p>
+              <p className="text-zinc-400">E-mail: info@thomasdegier.com</p>
             </div>
           </div>
 
         </div>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
