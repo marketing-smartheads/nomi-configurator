@@ -169,11 +169,11 @@ export default function DownloadPage() {
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
 
-  // Strikte URL-ophaling zonder hardcoded fallbacks
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
     if (typeof bestand === 'string') return bestand;
 
+    // Check alle mogelijke plekken waar de URL of het bestandsobject kan staan
     const uploadObj = 
       bestand?.uploadBestand || 
       bestand?.upload_bestand || 
@@ -183,7 +183,13 @@ export default function DownloadPage() {
       bestand?.pdf_bestand ||
       {};
 
+    const linkObj = 
+      bestand?.bestandLink || 
+      bestand?.bestand_link || 
+      {};
+
     let url = (
+      // 1. Check vanuit uploadBestand / bestand objecten
       uploadObj?.mediaItemUrl ||
       uploadObj?.sourceUrl ||
       uploadObj?.node?.mediaItemUrl ||
@@ -193,14 +199,22 @@ export default function DownloadPage() {
       uploadObj?.uri ||
       uploadObj?.link ||
       uploadObj?.guid ||
+      // 2. Check vanuit bestandLink (ACF Link veld)
+      linkObj?.url ||
+      linkObj?.sourceUrl ||
+      // 3. Direct op het hoofdobject
+      bestand?.mediaItemUrl ||
+      bestand?.sourceUrl ||
+      bestand?.url ||
       null
     );
 
-    if (!url && uploadObj) {
-      url = uploadObj?.mediaItemUrl || uploadObj?.sourceUrl || uploadObj?.url;
+    // Als url een object blijkt te zijn (soms geeft WP dat zo terug), haal de url-property eruit
+    if (url && typeof url === 'object') {
+      url = url.mediaItemUrl || url.sourceUrl || url.url || null;
     }
 
-    if (url) {
+    if (url && typeof url === 'string') {
       url = url.replace(/-pdf\.jpg$/i, '.pdf');
       url = url.replace(/\.pdf\.jpg$/i, '.pdf');
       if (url.toLowerCase().endsWith('-pdf')) {
@@ -208,7 +222,7 @@ export default function DownloadPage() {
       }
     }
 
-    return url;
+    return typeof url === 'string' && url.startsWith('http') ? url : null;
   };
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
