@@ -77,13 +77,8 @@ export async function getPageData() {
                       mimeType
                     }
                   }
-                  bestandLink {
-                    url
-                    title
-                    target
-                  }
                 }
-              }            
+              }       
               partnerLijst {
                 partnerNaam
                 partnerOmschrijving

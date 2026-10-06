@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T11:11:52.926Z",
-  "generatedAtEpochMs": 1791285112926,
+  "generatedAt": "2026-10-06T11:16:41.814Z",
+  "generatedAtEpochMs": 1791285401814,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
       "lib/cms.ts",
+      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -541,7 +541,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T11:11:50.583Z",
+    "lastActivityAt": "2026-10-06T11:16:40.076Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -553,20 +553,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1791285400076,
+      "lineCount": 169,
+      "charCount": 4473,
+      "hash": "ae4e9878550f",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+    },
+    {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1791285110583,
       "lineCount": 599,
       "charCount": 23427,
       "hash": "9c9c4bfa4f63",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1791280296353,
-      "lineCount": 174,
-      "charCount": 4612,
-      "hash": "a009f5d976c4",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
     },
     {
       "filePath": "components/Story.tsx",
@@ -618,6 +618,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 80: replaced 7 lines with 2 lines.",
+      "recordedAt": "2026-10-06T11:16:40.076Z",
+      "recordedAtEpochMs": 1791285400076,
+      "before": {
+        "kind": "text",
+        "lineCount": 174,
+        "charCount": 4612,
+        "hash": "a009f5d976c4",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791285400076
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 169,
+        "charCount": 4473,
+        "hash": "ae4e9878550f",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791285400076
+      },
+      "diff": {
+        "lineStart": 80,
+        "removedLines": 7,
+        "addedLines": 2,
+        "summary": "Line 80: replaced 7 lines with 2 lines.",
+        "beforeFragment": "bestandLink { / url / title / target / } / } / }",
+        "afterFragment": "} / }"
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1058,58 +1090,26 @@
         "beforeFragment": "",
         "afterFragment": "# TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / }"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 146: replaced 402 lines with 430 lines.",
-      "recordedAt": "2026-10-06T09:43:23.999Z",
-      "recordedAtEpochMs": 1791279803999,
-      "before": {
-        "kind": "text",
-        "lineCount": 555,
-        "charCount": 21084,
-        "hash": "f794e1e54819",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791279803998
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 583,
-        "charCount": 22745,
-        "hash": "78b1d08e1cb2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791279803999
-      },
-      "diff": {
-        "lineStart": 146,
-        "removedLines": 402,
-        "addedLines": 430,
-        "summary": "Line 146: replaced 402 lines with 430 lines.",
-        "beforeFragment": "{}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || []; / const woningTypenLijst = configura...",
-        "afterFragment": "pageData?.configurator || {}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || configuratorDa..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 39
+      "count": 38
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 1
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 8ecccd7 new fixes for getFileUrl",
+    "headSummary": "2026-10-06 63a4e47 removed bestandenLink",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
