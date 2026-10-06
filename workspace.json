@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T13:34:52.069Z",
-  "generatedAtEpochMs": 1791293692069,
+  "generatedAt": "2026-10-06T13:40:58.178Z",
+  "generatedAtEpochMs": 1791294058178,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T13:34:49.719Z",
+    "lastActivityAt": "2026-10-06T13:40:55.719Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,11 +555,11 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791293689719,
-      "lineCount": 566,
-      "charCount": 24110,
-      "hash": "f2b9ac5f39be",
-      "preview": "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+      "updatedAt": 1791294055719,
+      "lineCount": 579,
+      "charCount": 22751,
+      "hash": "d8bdd06b6211",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 562 lines with 575 lines.",
+      "recordedAt": "2026-10-06T13:40:55.719Z",
+      "recordedAtEpochMs": 1791294055719,
+      "before": {
+        "kind": "text",
+        "lineCount": 566,
+        "charCount": 24110,
+        "hash": "f2b9ac5f39be",
+        "preview": "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo...",
+        "updatedAt": 1791294055719
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 579,
+        "charCount": 22751,
+        "hash": "d8bdd06b6211",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791294055719
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 562,
+        "addedLines": 575,
+        "summary": "Line 3: replaced 562 lines with 575 lines.",
+        "beforeFragment": ", Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'...",
+        "afterFragment": "} from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageData } f..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "",
         "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 151: replaced 373 lines with 377 lines.",
-      "recordedAt": "2026-10-06T10:26:21.051Z",
-      "recordedAtEpochMs": 1791282381051,
-      "before": {
-        "kind": "text",
-        "lineCount": 581,
-        "charCount": 22917,
-        "hash": "ec878aeb6131",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791282381051
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 585,
-        "charCount": 22852,
-        "hash": "1bf241607f8b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791282381051
-      },
-      "diff": {
-        "lineStart": 151,
-        "removedLines": 373,
-        "addedLines": 377,
-        "summary": "Line 151: replaced 373 lines with 377 lines.",
-        "beforeFragment": "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi...",
-        "afterFragment": "const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLijst.find((p: any) => { / const titel = (p?.pakketTite..."
-      }
     }
   ],
   "hotFiles": [
@@ -1117,20 +1117,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 db3f90f try to fixing getFileUrl PDF for download page",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-06 c1f01e2 created magic download link",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- db3f90f by Bas van Dooremalen on 2026-10-06\n  try to fixing getFileUrl PDF for download page\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c1f01e2 by Bas van Dooremalen on 2026-10-06\n  created magic download link\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

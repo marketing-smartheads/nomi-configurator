@@ -1,17 +1,14 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getPageData } from '@/lib/cms';
 import { downloadZip } from 'client-zip';
 
-function DownloadContent() {
+export default function DownloadPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const urlCode = searchParams.get('code');
-  const urlEmail = searchParams.get('email');
   
   const [woningType, setWoningType] = useState<string | null>(null);
   const [designPakket, setDesignPakket] = useState<string | null>(null);
@@ -19,11 +16,6 @@ function DownloadContent() {
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
-
-  // Extra state voor het handmatige inlogscherm (vouchercode + e-mail)
-  const [inputCode, setInputCode] = useState<string>('');
-  const [inputEmail, setInputEmail] = useState<string>('');
-  const [loginError, setLoginError] = useState<string | null>(null);
 
   // 1. Laad Pannellum scripts dynamisch in
   useEffect(() => {
@@ -56,28 +48,19 @@ function DownloadContent() {
     }
   }, []);
 
-  // 2. Initialiseer en valideer de downloadpagina (inclusief URL parameters & handmatige login)
+  // 2. Initialiseer en valideer de downloadpagina
   useEffect(() => {
     let isMounted = true;
 
     async function initDownloadPage() {
       try {
-        // Controleer of er al een actieve sessie/bevestiging is
-        let isConfirmed = 
+        const isConfirmed = 
           localStorage.getItem('configurator_bevestigd') === 'true' || 
           localStorage.getItem('configuratorConfirmed') === 'true' ||
           sessionStorage.getItem('configuratorConfirmed') === 'true';
 
-        // Als er een URL-parameter (code of email) meetuigt, autoriseer direct
-        if (urlCode || urlEmail) {
-          isConfirmed = true;
-          if (urlCode) localStorage.setItem('toegangscode', urlCode);
-          if (urlEmail) localStorage.setItem('klantEmail', urlEmail);
-          localStorage.setItem('configurator_bevestigd', 'true');
-        }
-
         if (!isConfirmed) {
-          if (isMounted) setIsAuthorized(false);
+          router.push('/');
           return;
         }
 
@@ -99,17 +82,14 @@ function DownloadContent() {
         const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType');
         const targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket');
 
-        // Als er geen opgeslagen woning/pakket is maar wel een URL-code, kun je hier eventueel defaults of CMS data aanspreken
         if (!targetWoning || !targetPakket) {
-          if (!urlCode && !urlEmail) {
-            if (isMounted) setIsAuthorized(false);
-            return;
-          }
+          router.push('/');
+          return;
         }
 
         if (isMounted) {
-          setWoningType(targetWoning || 'Type A'); // Standaard fallback indien direct via link
-          setDesignPakket(targetPakket || 'Hotel Chic');
+          setWoningType(targetWoning);
+          setDesignPakket(targetPakket);
         }
 
         let cmsData = null;
@@ -139,7 +119,7 @@ function DownloadContent() {
         }
       } catch (err) {
         console.error('Fout bij initialiseren downloadpagina:', err);
-        if (isMounted) setIsAuthorized(false);
+        router.push('/');
       }
     }
 
@@ -153,7 +133,7 @@ function DownloadContent() {
       localStorage.removeItem('selected_designPakket');
       sessionStorage.clear();
       
-      setIsAuthorized(false);
+      router.push('/');
     }
 
     initDownloadPage();
@@ -161,32 +141,8 @@ function DownloadContent() {
     return () => {
       isMounted = false;
     };
-  }, [urlCode, urlEmail]);
+  }, [router]);
 
-  // Handmatige login verwerken als ze de pagina in incognito openen en hun gegevens invullen
-  const handleManualLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputCode && !inputEmail) {
-      setLoginError('Vul alstublieft uw vouchercode of e-mailadres in.');
-      return;
-    }
-
-    // Sla de ingevoerde gegevens op en activeer de sessie
-    if (inputCode) localStorage.setItem('toegangscode', inputCode);
-    if (inputEmail) localStorage.setItem('klantEmail', inputEmail);
-    localStorage.setItem('configurator_bevestigd', 'true');
-    localStorage.setItem('download_timestamp', Date.now().toString());
-
-    // Als er nog geen woning/pakket in storage staat, zetten we veilige defaults of herladen we
-    if (!localStorage.getItem('selected_woningType')) {
-      localStorage.setItem('selected_woningType', 'Type A');
-      localStorage.setItem('selected_designPakket', 'Hotel Chic');
-    }
-
-    window.location.reload();
-  };
-
-  // --- CMS & Bestandslogica ---
   const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
   const designPakkettenLijst = configuratorData?.designPakketten || configuratorData?.design_pakketten || [];
@@ -224,6 +180,8 @@ function DownloadContent() {
       {};
 
     const node = uploadObj?.node || uploadObj;
+
+    // Prioriteit geven aan mediaItemUrl en sourceUrl uit de node
     let url = (
       node?.mediaItemUrl ||
       node?.sourceUrl ||
@@ -241,7 +199,11 @@ function DownloadContent() {
   };
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
-  const panoramaRendersLijst = huidigWoningTypeObj?.panoramaRenders || huidigWoningTypeObj?.panorama_renders || [];
+
+  const panoramaRendersLijst = 
+    huidigWoningTypeObj?.panoramaRenders || 
+    huidigWoningTypeObj?.panorama_renders || 
+    huidigWoningTypeObj?.panoramaRendersLijst || [];
 
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
@@ -252,11 +214,30 @@ function DownloadContent() {
   });
 
   const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
-  const rawMediaUrl = renderBestandObj?.mediaItemUrl || renderBestandObj?.node?.mediaItemUrl || renderBestandObj?.sourceUrl || null;
+  const rawMediaUrl = (
+    renderBestandObj?.mediaItemUrl ||
+    renderBestandObj?.node?.mediaItemUrl ||
+    renderBestandObj?.sourceUrl ||
+    renderBestandObj?.node?.sourceUrl ||
+    renderBestandObj?.url ||
+    null
+  );
 
   if (rawMediaUrl) {
     isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(rawMediaUrl);
-    geselecteerdeMediaUrl = isVideo ? rawMediaUrl : `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
+    if (isVideo) {
+      geselecteerdeMediaUrl = rawMediaUrl;
+    } else {
+      geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
+    }
+  } else if (panoramaRendersLijst.length > 0) {
+    const eersteItem = panoramaRendersLijst[0];
+    const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
+    const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
+    if (eersteUrl) {
+      isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(eersteUrl);
+      geselecteerdeMediaUrl = isVideo ? eersteUrl : `/api/download?url=${encodeURIComponent(eersteUrl)}&name=panorama.jpg`;
+    }
   }
 
   // Initialiseer Pannellum 360° viewer
@@ -277,8 +258,11 @@ function DownloadContent() {
         if (!isMounted) return;
 
         currentBlobUrl = URL.createObjectURL(blob);
+
         const container = document.getElementById('panorama-container');
-        if (container) container.innerHTML = '';
+        if (container) {
+          container.innerHTML = '';
+        }
 
         (window as any).pannellum.viewer('panorama-container', {
           type: 'equirectangular',
@@ -298,69 +282,53 @@ function DownloadContent() {
 
     return () => {
       isMounted = false;
-      if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);
+      if (currentBlobUrl) {
+        URL.revokeObjectURL(currentBlobUrl);
+      }
     };
   }, [isPannellumLoaded, geselecteerdeMediaUrl, isVideo]);
 
-  // Als de gebruiker NIET is ingelogd of geautoriseerd, tonen we het inlogscherm (ook in incognito)
-  if (!isAuthorized) {
+  if (!isAuthorized || !woningType || !designPakket) {
     return (
-      <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
-        <Header currentScreen="download" />
-        <main className="grow bg-[#F9F6F0] flex items-center justify-center px-6 py-16">
-          <div className="max-w-md w-full bg-white p-8 rounded-3xl shadow-sm border border-[#EFECE6] text-center space-y-6">
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
-                BEVEILIGDE TOEGANG
-              </span>
-              <h2 className="text-2xl font-serif text-dark mt-2">
-                Open uw downloadpagina
-              </h2>
-              <p className="text-sm text-[#666] mt-2">
-                Vul uw vouchercode of e-mailadres in om direct toegang te krijgen tot uw designpakket.
-              </p>
-            </div>
-
-            <form onSubmit={handleManualLogin} className="space-y-4 text-left">
-              <div>
-                <label className="block text-xs font-bold tracking-wider uppercase text-[#666] mb-1">
-                  Vouchercode of E-mailadres
-                </label>
-                <input 
-                  type="text" 
-                  value={inputCode}
-                  onChange={(e) => {
-                    setInputCode(e.target.value);
-                    setInputEmail(e.target.value);
-                  }}
-                  placeholder="Bijv. XX3043 of uw@email.nl" 
-                  className="w-full px-4 py-3 rounded-xl border border-[#D9D3CB] focus:outline-none focus:border-[#C5A880] text-sm"
-                  required
-                />
-              </div>
-
-              {loginError && (
-                <p className="text-xs text-red-600 font-medium">{loginError}</p>
-              )}
-
-              <button 
-                type="submit"
-                className="w-full py-3.5 bg-dark text-white rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer"
-              >
-                Bekijk mijn pakket
-              </button>
-            </form>
-          </div>
-        </main>
-        <Footer />
+      <div className="min-h-screen bg-dark flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
-  // --- Handlers voor downloads ---
-  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string) => {
+  const getFileMeta = (bestand: any, fileUrl: string | null) => {
+    const subObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand || bestand;
+    const mimeType = subObj?.node?.mimeType || subObj?.mimeType || '';
+    const lowerUrl = fileUrl?.toLowerCase() || '';
+    
+    let ext = 'PDF';
+    if (mimeType.includes('pdf') || lowerUrl.includes('.pdf')) {
+      ext = 'PDF';
+    } else if (mimeType.includes('webp') || lowerUrl.includes('.webp')) {
+      ext = 'WEBP';
+    } else if (mimeType.includes('jpeg') || mimeType.includes('jpg') || lowerUrl.includes('.jpg') || lowerUrl.includes('.jpeg')) {
+      ext = 'JPG';
+    } else if (mimeType.includes('png') || lowerUrl.includes('.png')) {
+      ext = 'PNG';
+    }
+    
+    const bytes = 
+      subObj?.node?.fileSize || 
+      subObj?.fileSize || 
+      bestand?.fileSize;
+
+    if (bytes) {
+      const mb = Number(bytes) / (1024 * 1024);
+      return `${ext} • ${mb < 1 ? mb.toFixed(2) : Math.round(mb)} MB`;
+    }
+
+    return ext;
+  };
+
+  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string, rawBestandObj: any) => {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
+      console.error('Geen URL gevonden voor bestand:', fileName, rawBestandObj);
       alert('Geen geldig bestand gekoppeld in het CMS.');
       return;
     }
@@ -395,6 +363,7 @@ function DownloadContent() {
           const fileNorm = fileName.toLowerCase().replace(/[^a-z0-9]/g, '');
           
           if (!fileNorm.includes(normPakket)) continue;
+
           const fileUrl = getFileUrl(bestand);
           
           if (fileUrl) {
@@ -403,7 +372,9 @@ function DownloadContent() {
               const cleanUrl = fileUrl.split('?')[0];
               const parts = cleanUrl.split('.');
               const extPart = parts[parts.length - 1].toLowerCase();
-              if (['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(extPart)) extension = extPart;
+              if (['jpg', 'jpeg', 'png', 'webp', 'pdf'].includes(extPart)) {
+                extension = extPart;
+              }
 
               const safeName = fileName.replace(/[^a-zA-Z0-9_-]/g, '_');
               const proxyUrl = `/api/download?url=${encodeURIComponent(fileUrl)}&name=${encodeURIComponent(`${safeName}.${extension}`)}`;
@@ -412,9 +383,14 @@ function DownloadContent() {
               if (!response.ok) throw new Error('Proxy download mislukt');
               
               const blob = await response.blob();
-              filesToZip.push({ name: `${safeName}.${extension}`, lastModified: new Date(), input: blob });
+
+              filesToZip.push({
+                name: `${safeName}.${extension}`,
+                lastModified: new Date(),
+                input: blob
+              });
             } catch (fetchErr) {
-              console.warn('Kon bestand niet ophalen:', fileUrl);
+              console.warn('Kon bestand niet ophalen via proxy voor zip:', fileUrl);
             }
           }
         }
@@ -433,7 +409,7 @@ function DownloadContent() {
       link.click();
       link.remove();
     } catch (error) {
-      console.error('Fout bij maken van de ZIP:', error);
+      console.error('Fout bij het genereren van de ZIP:', error);
       alert('Er is iets misgegaan bij het maken van het zip-bestand.');
     } finally {
       setIsDownloading(false);
@@ -453,28 +429,53 @@ function DownloadContent() {
             <h1 className="text-4xl md:text-6xl font-serif mt-3 text-dark">
               {downloadTitel}
             </h1>
-            <div className="text-[#666] text-base md:text-lg leading-relaxed pt-4 mx-auto" dangerouslySetInnerHTML={{ __html: formattedIntro }} />
+            
+            <div 
+              className="text-[#666] text-base md:text-lg leading-relaxed pt-4 mx-auto"
+              dangerouslySetInnerHTML={{ __html: formattedIntro }}
+            />
           </div>
 
           <div className="relative z-20 max-w-6xl mx-auto w-full flex flex-col sm:flex-row justify-center gap-3 mt-8">
-            <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">{woningType}</div>
-            <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">{designPakket}</div>
+            <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">
+              {woningType}
+            </div>
+            <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">
+              {designPakket}
+            </div>
           </div>
         </div>
 
+        {/* 360° Viewer & Stijlweergave sectie */}
         {geselecteerdeMediaUrl && (
           <div className="w-full pb-16 px-6 sm:px-12">
             <div className="max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#EFECE6] space-y-6">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">360° BELEVING & STIJLWEERGAVE</span>
-                <h3 className="text-2xl font-serif text-dark mt-1">Bekijk uw interieur in 360 graden ({designPakket})</h3>
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
+                  360° BELEVING & STIJLWEERGAVE
+                </span>
+                <h3 className="text-2xl font-serif text-dark mt-1">
+                  Bekijk uw interieur in 360 graden ({designPakket})
+                </h3>
               </div>
+
               {isVideo ? (
                 <div className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-black shadow-inner">
-                  <video src={geselecteerdeMediaUrl} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                  <video 
+                    src={geselecteerdeMediaUrl} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ) : (
-                <div id="panorama-container" style={{ width: '100%', height: '550px' }} className="rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative" />
+                <div 
+                  id="panorama-container" 
+                  style={{ width: '100%', height: '550px' }} 
+                  className="rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
+                />
               )}
             </div>
           </div>
@@ -485,7 +486,7 @@ function DownloadContent() {
             <button
               onClick={handleAutomaticZipDownload}
               disabled={isDownloading}
-              className="inline-block bg-dark text-white px-10 py-4 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-lg cursor-pointer disabled:opacity-50"
+              className="inline-block bg-dark text-white px-10 py-4 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isDownloading ? 'BEZIG MET GENEREREN...' : 'DOWNLOAD ALLES (.ZIP)'}
             </button>
@@ -500,7 +501,11 @@ function DownloadContent() {
                 if (!imgUrl) return null;
                 return (
                   <div key={idx} className="overflow-hidden rounded-2xl aspect-[4/3] shadow-sm bg-[#EFECE6]">
-                    <img src={imgUrl} alt={`Moodboard ${idx + 1}`} className="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                    <img 
+                      src={imgUrl} 
+                      alt={`Moodboard ${idx + 1}`} 
+                      className="w-full h-full object-cover hover:scale-105 transition duration-500" 
+                    />
                   </div>
                 );
               })}
@@ -513,6 +518,7 @@ function DownloadContent() {
             {categorieen?.map((cat: any, catIndex: number) => {
               const catTitel = cat?.categorieTitel || cat?.categorie_titel;
               const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+
               const gefilterdeBestanden = rawBestandenLijst.filter((bestand: any) => {
                 const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
                 return fileName.includes(normPakket);
@@ -522,25 +528,40 @@ function DownloadContent() {
 
               return (
                 <div key={catIndex} className="space-y-6">
-                  <h3 className="text-3xl font-serif text-dark">{catTitel}</h3>
+                  <h3 className="text-3xl font-serif text-dark">
+                    {catTitel}
+                  </h3>
+
                   <div className="space-y-2">
                     {gefilterdeBestanden.map((bestand: any, fileIndex: number) => {
                       const fileUrl = getFileUrl(bestand);
+                      const metaText = getFileMeta(bestand, fileUrl);
                       const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
+
                       return (
                         <a
                           key={fileIndex}
                           href={fileUrl && fileUrl !== '#' ? fileUrl : undefined}
-                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName)}
+                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName, bestand)}
                           className="flex items-center justify-between py-4 border-b border-[#EFECE6] hover:border-[#C5A880] transition group cursor-pointer"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-lg bg-[#EFECE6] shrink-0 flex items-center justify-center text-xs font-bold text-[#666]"></div>
+                            <div className="w-10 h-10 rounded-lg bg-[#EFECE6] shrink-0 flex items-center justify-center text-xs font-bold text-[#666]">
+                              {/* Icoon */}
+                            </div>
                             <div>
-                              <h4 className="font-medium text-dark text-base group-hover:text-[#C5A880] transition">{fileName}</h4>
+                              <h4 className="font-medium text-dark text-base group-hover:text-[#C5A880] transition">
+                                {fileName}
+                              </h4>
+                              <span className="text-[14px] text-muted mt-0.5 block font-normal">
+                                {metaText}
+                              </span>
                             </div>
                           </div>
-                          <div className="pr-2 text-[#C5A880] font-light text-xl">↓</div>
+
+                          <div className="pr-2 text-[#C5A880] font-light text-xl">
+                            ↓
+                          </div>
                         </a>
                       );
                     })}
@@ -554,13 +575,5 @@ function DownloadContent() {
 
       <Footer />
     </div>
-  );
-}
-
-export default function DownloadPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-dark flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div></div>}>
-      <DownloadContent />
-    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T13:34:52.069Z
+Generated: 2026-10-06T13:40:58.178Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T13:34:49.719Z
+- Last activity: 2026-10-06T13:40:55.719Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (33), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (3)
@@ -37,11 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 566 lines | 24110 chars | hash f2b9ac5f39be
-  Last snapshot: 2026-10-06T13:34:49.719Z
-  Preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- app/download/page.tsx | 579 lines | 22751 chars | hash d8bdd06b6211
+  Last snapshot: 2026-10-06T13:40:55.719Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 302 lines | 14641 chars | hash f97bde831204
   Last snapshot: 2026-10-06T12:58:31.921Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-06T13:40:55.719Z | saved | app/download/page.tsx
+- Summary: Line 3: replaced 562 lines with 575 lines.
+- Before: 566 lines | 24,110 chars | hash f2b9ac5f39be | preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- After: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: ", Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'..."
+- Current fragment: "} from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageData } f..."
+
 ### 2026-10-06T13:34:49.719Z | saved | app/download/page.tsx
 - Summary: Line 3: replaced 575 lines with 562 lines.
 - Before: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,13 +169,6 @@ Structured manifest: workspace.json
 - After: 594 lines | 23,235 chars | hash 376fbc27b032 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
 
-### 2026-10-06T10:26:21.051Z | saved | app/download/page.tsx
-- Summary: Line 151: replaced 373 lines with 377 lines.
-- Before: 581 lines | 22,917 chars | hash ec878aeb6131 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 585 lines | 22,852 chars | hash 1bf241607f8b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi..."
-- Current fragment: "const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLijst.find((p: any) => { / const titel = (p?.pakketTite..."
-
 
 ## Hot Files
 - app/download/page.tsx (33 tracked changes)
@@ -177,12 +177,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 db3f90f try to fixing getFileUrl PDF for download page
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-06 c1f01e2 created magic download link
+- Working tree summary: 1 modified
 - M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -190,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- db3f90f by Bas van Dooremalen on 2026-10-06
-  try to fixing getFileUrl PDF for download page
+- c1f01e2 by Bas van Dooremalen on 2026-10-06
+  created magic download link
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
