@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T09:18:47.813Z
+Generated: 2026-10-06T09:43:26.379Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T09:18:45.459Z
+- Last activity: 2026-10-06T09:43:23.999Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (27), app/api/confirm/route.ts (5), app/privacy/page.tsx (4), components/Story.tsx (3)
+- Hottest files right now: app/download/page.tsx (28), app/api/confirm/route.ts (4), app/privacy/page.tsx (4), components/Story.tsx (3)
 - Suggested starting points: app/download/page.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, components/Story.tsx, app/dashboard/page.tsx, .gitignore
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 555 lines | 21084 chars | hash f794e1e54819
-  Last snapshot: 2026-10-06T09:18:45.459Z
+- app/download/page.tsx | 583 lines | 22745 chars | hash 78b1d08e1cb2
+  Last snapshot: 2026-10-06T09:43:23.999Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/Story.tsx | 76 lines | 3174 chars | hash 9cb2cded37f2
   Last snapshot: 2026-10-06T07:46:54.095Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 
 ## Recent Changes
+### 2026-10-06T09:43:23.999Z | saved | app/download/page.tsx
+- Summary: Line 146: replaced 402 lines with 430 lines.
+- Before: 555 lines | 21,084 chars | hash f794e1e54819 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 583 lines | 22,745 chars | hash 78b1d08e1cb2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "{}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || []; / const woningTypenLijst = configura..."
+- Current fragment: "pageData?.configurator || {}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || configuratorDa..."
+
 ### 2026-10-06T09:18:45.459Z | saved | app/download/page.tsx
 - Summary: Line 51: replaced 403 lines with 384 lines.
 - Before: 574 lines | 21,818 chars | hash cf65fb260724 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -160,28 +167,19 @@ Structured manifest: workspace.json
 - Previous fragment: "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'..."
 - Current fragment: "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
 
-### 2026-10-06T08:39:26.921Z | saved | app/download/page.tsx
-- Summary: Line 56: inserted 1 line.
-- Before: 542 lines | 21,566 chars | hash 65f18417607a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 542 lines | 21,571 chars | hash fe6a29d52466 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Current fragment: "* 60"
-
 
 ## Hot Files
-- app/download/page.tsx (27 tracked changes)
-- app/api/confirm/route.ts (5 tracked changes)
+- app/download/page.tsx (28 tracked changes)
+- app/api/confirm/route.ts (4 tracked changes)
 - app/privacy/page.tsx (4 tracked changes)
 - components/Story.tsx (3 tracked changes)
 - app/dashboard/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 6e9ad7a Fixing code to get wright video ID
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-06 1a9c9c7 added 360 view to downloadpage
+- Working tree summary: 1 modified
 - M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 6e9ad7a by Bas van Dooremalen on 2026-10-06
-  Fixing code to get wright video ID
+- 1a9c9c7 by Bas van Dooremalen on 2026-10-06
+  added 360 view to downloadpage
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T09:18:47.813Z",
-  "generatedAtEpochMs": 1791278327813,
+  "generatedAt": "2026-10-06T09:43:26.379Z",
+  "generatedAtEpochMs": 1791279806379,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -544,7 +544,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T09:18:45.459Z",
+    "lastActivityAt": "2026-10-06T09:43:23.999Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,10 +557,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791278325459,
-      "lineCount": 555,
-      "charCount": 21084,
-      "hash": "f794e1e54819",
+      "updatedAt": 1791279803999,
+      "lineCount": 583,
+      "charCount": 22745,
+      "hash": "78b1d08e1cb2",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -621,6 +621,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 146: replaced 402 lines with 430 lines.",
+      "recordedAt": "2026-10-06T09:43:23.999Z",
+      "recordedAtEpochMs": 1791279803999,
+      "before": {
+        "kind": "text",
+        "lineCount": 555,
+        "charCount": 21084,
+        "hash": "f794e1e54819",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791279803998
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 583,
+        "charCount": 22745,
+        "hash": "78b1d08e1cb2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791279803999
+      },
+      "diff": {
+        "lineStart": 146,
+        "removedLines": 402,
+        "addedLines": 430,
+        "summary": "Line 146: replaced 402 lines with 430 lines.",
+        "beforeFragment": "{}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || []; / const woningTypenLijst = configura...",
+        "afterFragment": "pageData?.configurator || {}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || configuratorDa..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1068,48 +1100,16 @@
         "beforeFragment": "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'...",
         "afterFragment": "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 56: inserted 1 line.",
-      "recordedAt": "2026-10-06T08:39:26.921Z",
-      "recordedAtEpochMs": 1791275966921,
-      "before": {
-        "kind": "text",
-        "lineCount": 542,
-        "charCount": 21566,
-        "hash": "65f18417607a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791275966921
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 542,
-        "charCount": 21571,
-        "hash": "fe6a29d52466",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791275966921
-      },
-      "diff": {
-        "lineStart": 56,
-        "removedLines": 0,
-        "addedLines": 1,
-        "summary": "Line 56: inserted 1 line.",
-        "beforeFragment": "",
-        "afterFragment": "* 60"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 27
+      "count": 28
     },
     {
       "filePath": "app/api/confirm/route.ts",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "app/privacy/page.tsx",
@@ -1127,20 +1127,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 6e9ad7a Fixing code to get wright video ID",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-06 1a9c9c7 added 360 view to downloadpage",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6e9ad7a by Bas van Dooremalen on 2026-10-06\n  Fixing code to get wright video ID\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1a9c9c7 by Bas van Dooremalen on 2026-10-06\n  added 360 view to downloadpage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

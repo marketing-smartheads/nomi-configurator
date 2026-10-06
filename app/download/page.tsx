@@ -143,34 +143,36 @@ export default function DownloadPage() {
     };
   }, [router]);
 
-  const configuratorData = pageData?.configuratorData || {};
+  const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
-  const designPakkettenLijst = configuratorData?.designPakketten || [];
-  const woningTypenLijst = configuratorData?.woningTypen || [];
+  const designPakkettenLijst = configuratorData?.designPakketten || configuratorData?.design_pakketten || [];
+  const woningTypenLijst = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
 
   const huidigPakketObj = designPakkettenLijst.find(
-    (p: any) => p?.pakketTitel?.toLowerCase() === designPakket?.toLowerCase()
+    (p: any) => (p?.pakketTitel || p?.pakket_titel || '').toLowerCase() === designPakket?.toLowerCase()
   ) || designPakkettenLijst[0];
 
   const huidigWoningTypeObj = woningTypenLijst.find(
-    (w: any) => w?.typeNaam?.toLowerCase() === woningType?.toLowerCase()
+    (w: any) => (w?.typeNaam || w?.typenaam || '').toLowerCase() === woningType?.toLowerCase()
   ) || woningTypenLijst[0];
 
-  const moodboardGallery = huidigPakketObj?.moodboardGallery?.nodes || huidigPakketObj?.moodboardGallery || [];
-  const downloadTitel = downloadSectie?.downloadTitel || 'Download uw designpakket';
+  const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
+  const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
+  const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  const rawIntro = downloadSectie?.downloadIntroductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
-  const formattedIntro = rawIntro
+  const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
+  const formattedIntro = typeof rawIntro === 'string' ? rawIntro
     .replace('%type%', woningType || '')
-    .replace('%designpakket%', designPakket || '');
+    .replace('%designpakket%', designPakket || '') : '';
 
   const getFileUrl = (bestand: any) => {
+    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand;
     let url = (
-      bestand?.uploadBestand?.mediaItemUrl ||
-      bestand?.uploadBestand?.node?.mediaItemUrl ||
-      bestand?.uploadBestand?.sourceUrl ||
-      bestand?.uploadBestand?.node?.sourceUrl ||
-      bestand?.uploadBestand?.url ||
+      uploadObj?.mediaItemUrl ||
+      uploadObj?.node?.mediaItemUrl ||
+      uploadObj?.sourceUrl ||
+      uploadObj?.node?.sourceUrl ||
+      uploadObj?.url ||
       bestand?.bestandUrl ||
       bestand?.url ||
       null
@@ -187,18 +189,23 @@ export default function DownloadPage() {
     return url;
   };
 
-  const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
+  const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Zoek 360° render uit de nieuwe 'panorama_renders' repeater op basis van stijl naam
-  const panoramaRendersLijst = huidigWoningTypeObj?.panoramaRenders || huidigWoningTypeObj?.panorama_renders || [];
+  // Flexibel ophalen van de 360° renders repeater
+  const panoramaRendersLijst = 
+    huidigWoningTypeObj?.panoramaRenders || 
+    huidigWoningTypeObj?.panorama_renders || 
+    huidigWoningTypeObj?.panoramaRendersLijst || [];
+
   const pakketLower = (designPakket || '').toLowerCase();
 
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
 
+  // Zoek gerichte match op stijlnaam
   const gevondenRender = panoramaRendersLijst.find((item: any) => {
     const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase();
-    return stijlNaam && pakketLower.includes(stijlNaam);
+    return stijlNaam && (pakketLower.includes(stijlNaam) || stijlNaam.includes(pakketLower));
   });
 
   const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
@@ -219,13 +226,27 @@ export default function DownloadPage() {
       geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
     }
   } else if (panoramaRendersLijst.length > 0) {
-    const eersteBestand = panoramaRendersLijst[0]?.renderBestand || panoramaRendersLijst[0]?.render_bestand;
+    // Fallback naar de eerste als er geen directe naammatch is
+    const eersteItem = panoramaRendersLijst[0];
+    const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
     const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
     if (eersteUrl) {
       isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(eersteUrl);
       geselecteerdeMediaUrl = isVideo ? eersteUrl : `/api/download?url=${encodeURIComponent(eersteUrl)}&name=panorama.jpg`;
     }
   }
+
+  // Debugging in de browser console om te controleren wat er binnenkomt
+  useEffect(() => {
+    if (isAuthorized) {
+      console.log('--- NOMI DEBUG INFO ---');
+      console.log('Geselecteerd Woningtype:', woningType);
+      console.log('Geselecteerd Designpakket:', designPakket);
+      console.log('Huidig Woningtype Object:', huidigWoningTypeObj);
+      console.log('Gevonden Panorama Renders:', panoramaRendersLijst);
+      console.log('Geselecteerde Media URL:', geselecteerdeMediaUrl);
+    }
+  }, [isAuthorized, woningType, designPakket, huidigWoningTypeObj, panoramaRendersLijst, geselecteerdeMediaUrl]);
 
   // 3. Initialiseer Pannellum 360° viewer
   useEffect(() => {
@@ -273,7 +294,7 @@ export default function DownloadPage() {
         URL.revokeObjectURL(currentBlobUrl);
       }
     };
-  }, [isPannellumLoaded, geselecteerdeMediaUrl]);
+  }, [isPannellumLoaded, geselecteerdeMediaUrl, isVideo]);
 
   if (!isAuthorized || !woningType || !designPakket) {
     return (
@@ -283,13 +304,14 @@ export default function DownloadPage() {
     );
   }
 
-  const heeftBestanden = categorieen.some((cat: any) => 
-    cat?.bestandenLijst && cat.bestandenLijst.length > 0 && 
-    cat.bestandenLijst.some((bestand: any) => getFileUrl(bestand))
-  );
+  const heeftBestanden = categorieen.some((cat: any) => {
+    const lijst = cat?.bestandenLijst || cat?.bestanden_lijst;
+    return lijst && lijst.length > 0 && lijst.some((bestand: any) => getFileUrl(bestand));
+  });
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
-    const mimeType = bestand?.uploadBestand?.node?.mimeType || bestand?.uploadBestand?.mimeType || '';
+    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand;
+    const mimeType = uploadObj?.node?.mimeType || uploadObj?.mimeType || '';
     const lowerUrl = fileUrl?.toLowerCase() || '';
     
     let ext = 'PDF';
@@ -304,8 +326,8 @@ export default function DownloadPage() {
     }
     
     const bytes = 
-      bestand?.uploadBestand?.node?.fileSize || 
-      bestand?.uploadBestand?.fileSize || 
+      uploadObj?.node?.fileSize || 
+      uploadObj?.fileSize || 
       bestand?.fileSize;
 
     if (bytes) {
@@ -331,7 +353,7 @@ export default function DownloadPage() {
       extension = extPart;
     }
 
-    const safeName = fileName.replace(/[^a-zA-Z0-9_-]/g, '_');
+    const safeName = (fileName || 'download').replace(/[^a-zA-Z0-9_-]/g, '_');
     const proxyUrl = `/api/download?url=${encodeURIComponent(fileUrl)}&name=${encodeURIComponent(`${safeName}.${extension}`)}`;
 
     const link = document.createElement('a');
@@ -347,9 +369,10 @@ export default function DownloadPage() {
       const filesToZip: any[] = [];
 
       for (const cat of categorieen) {
-        for (const bestand of cat?.bestandenLijst || []) {
+        const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+        for (const bestand of bestandenLijst) {
           const fileUrl = getFileUrl(bestand);
-          const fileName = bestand?.bestandTitel || 'download-bestand';
+          const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
           
           if (fileUrl) {
             try {
@@ -481,10 +504,10 @@ export default function DownloadPage() {
           </div>
         </div>
 
-        {moodboardGallery.length > 0 && (
+        {moodboardNodes.length > 0 && (
           <div className="w-full pb-20 px-6 sm:px-12">
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {moodboardGallery.map((img: any, idx: number) => {
+              {moodboardNodes.map((img: any, idx: number) => {
                 const imgUrl = img?.sourceUrl || img?.node?.sourceUrl || img?.url;
                 if (!imgUrl) return null;
                 return (
@@ -503,48 +526,53 @@ export default function DownloadPage() {
 
         <div className="pt-6 pb-24">
           <div className="max-w-4xl mx-auto px-6 space-y-16">
-            {categorieen?.map((cat: any, catIndex: number) => (
-              <div key={catIndex} className="space-y-6">
-                <h3 className="text-3xl font-serif text-dark">
-                  {cat?.categorieTitel}
-                </h3>
+            {categorieen?.map((cat: any, catIndex: number) => {
+              const catTitel = cat?.categorieTitel || cat?.categorie_titel;
+              const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
 
-                <div className="space-y-2">
-                  {cat?.bestandenLijst?.map((bestand: any, fileIndex: number) => {
-                    const fileUrl = getFileUrl(bestand);
-                    const metaText = getFileMeta(bestand, fileUrl);
-                    const fileName = bestand?.bestandTitel || 'download-bestand';
+              return (
+                <div key={catIndex} className="space-y-6">
+                  <h3 className="text-3xl font-serif text-dark">
+                    {catTitel}
+                  </h3>
 
-                    return (
-                      <a
-                        key={fileIndex}
-                        href={fileUrl && fileUrl !== '#' ? fileUrl : undefined}
-                        onClick={(e) => handleSingleDownload(e, fileUrl, fileName)}
-                        className="flex items-center justify-between py-4 border-b border-[#EFECE6] hover:border-[#C5A880] transition group cursor-pointer"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-[#EFECE6] shrink-0 flex items-center justify-center text-xs font-bold text-[#666]">
-                            {/* Icoon */}
+                  <div className="space-y-2">
+                    {bestandenLijst.map((bestand: any, fileIndex: number) => {
+                      const fileUrl = getFileUrl(bestand);
+                      const metaText = getFileMeta(bestand, fileUrl);
+                      const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
+
+                      return (
+                        <a
+                          key={fileIndex}
+                          href={fileUrl && fileUrl !== '#' ? fileUrl : undefined}
+                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName)}
+                          className="flex items-center justify-between py-4 border-b border-[#EFECE6] hover:border-[#C5A880] transition group cursor-pointer"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-lg bg-[#EFECE6] shrink-0 flex items-center justify-center text-xs font-bold text-[#666]">
+                              {/* Icoon */}
+                            </div>
+                            <div>
+                              <h4 className="frontend-medium text-dark text-base group-hover:text-[#C5A880] transition">
+                                {fileName}
+                              </h4>
+                              <span className="text-[14px] text-muted mt-0.5 block font-normal">
+                                {metaText}
+                              </span>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="font-medium text-dark text-base group-hover:text-[#C5A880] transition">
-                              {fileName}
-                            </h4>
-                            <span className="text-[14px] text-muted mt-0.5 block font-normal">
-                              {metaText}
-                            </span>
-                          </div>
-                        </div>
 
-                        <div className="pr-2 text-[#C5A880] font-light text-xl">
-                          ↓
-                        </div>
-                      </a>
-                    );
-                  })}
+                          <div className="pr-2 text-[#C5A880] font-light text-xl">
+                            ↓
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>
