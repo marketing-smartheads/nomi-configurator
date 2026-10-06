@@ -169,37 +169,35 @@ export default function DownloadPage() {
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
 
-  // Ultra-flexibele URL-ophaling die alle mogelijke nesting in WordPress/ACF afvangt
+  // Strikte URL-ophaling zonder hardcoded fallbacks
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
     if (typeof bestand === 'string') return bestand;
 
-    // Doorzoek alle mogelijke plekken waar het bestandsobject of de URL kan staan
-    const subObj = 
+    const uploadObj = 
       bestand?.uploadBestand || 
       bestand?.upload_bestand || 
       bestand?.bestand || 
       bestand?.file ||
       bestand?.pdfBestand ||
       bestand?.pdf_bestand ||
-      bestand;
+      {};
 
     let url = (
-      subObj?.mediaItemUrl ||
-      subObj?.node?.mediaItemUrl ||
-      subObj?.sourceUrl ||
-      subObj?.node?.sourceUrl ||
-      subObj?.url ||
-      subObj?.media_item_url ||
-      subObj?.uri ||
-      subObj?.link ||
-      subObj?.guid ||
+      uploadObj?.mediaItemUrl ||
+      uploadObj?.sourceUrl ||
+      uploadObj?.node?.mediaItemUrl ||
+      uploadObj?.node?.sourceUrl ||
+      uploadObj?.url ||
+      uploadObj?.media_item_url ||
+      uploadObj?.uri ||
+      uploadObj?.link ||
+      uploadObj?.guid ||
       null
     );
 
-    // Als het subObj zelf een string is
-    if (!url && typeof subObj === 'string' && subObj.startsWith('http')) {
-      url = subObj;
+    if (!url && uploadObj) {
+      url = uploadObj?.mediaItemUrl || uploadObj?.sourceUrl || uploadObj?.url;
     }
 
     if (url) {
@@ -344,7 +342,7 @@ export default function DownloadPage() {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
       console.error('Geen URL gevonden voor bestand:', fileName, rawBestandObj);
-      alert('Geen geldig bestand gekoppeld in het CMS. Bekijk de console voor de structuur.');
+      alert('Geen geldig bestand gekoppeld in het CMS.');
       return;
     }
 

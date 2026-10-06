@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T10:33:56.921Z
+Generated: 2026-10-06T10:41:37.946Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T10:33:54.558Z
+- Last activity: 2026-10-06T10:41:36.234Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (36), components/Story.tsx (3), lib/cms.ts (1)
+- Hottest files right now: app/download/page.tsx (38), components/Story.tsx (1), lib/cms.ts (1)
 - Suggested starting points: app/download/page.tsx, components/Story.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 594 lines | 23235 chars | hash 376fbc27b032
-  Last snapshot: 2026-10-06T10:33:54.558Z
+- app/download/page.tsx | 592 lines | 23077 chars | hash bd5125c7451a
+  Last snapshot: 2026-10-06T10:41:36.234Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 174 lines | 4612 chars | hash a009f5d976c4
   Last snapshot: 2026-10-06T09:51:36.353Z
@@ -65,6 +65,20 @@ Structured manifest: workspace.json
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T10:41:36.234Z | saved | app/download/page.tsx
+- Summary: Line 172: replaced 187 lines with 174 lines.
+- Before: 605 lines | 23,926 chars | hash a51e51d3aa26 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 592 lines | 23,077 chars | hash bd5125c7451a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Ultra-flexibele URL-ophaling die alle mogelijke nesting in WordPress/ACF afvangt / const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === '..."
+- Current fragment: "Strikte URL-ophaling zonder hardcoded fallbacks / const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / const..."
+
+### 2026-10-06T10:40:31.824Z | saved | app/download/page.tsx
+- Summary: Line 173: replaced 30 lines with 41 lines.
+- Before: 594 lines | 23,235 chars | hash 376fbc27b032 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 605 lines | 23,926 chars | hash a51e51d3aa26 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / // Doorzoek alle mogelijke plekken waar het bestandsobje..."
+- Current fragment: "const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / const uploadObj = / bestand?.uploadBestand || / bestand?..."
+
 ### 2026-10-06T10:33:54.558Z | saved | app/download/page.tsx
 - Summary: Line 1: inserted 594 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -151,30 +165,20 @@ Structured manifest: workspace.json
 - Previous fragment: "useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (isVideo || !isPannellumLoaded || !geselecteerdeMedi..."
 - Current fragment: "(vaste omvang van de dependency array behouden) / useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (i..."
 
-### 2026-10-06T08:54:51.519Z | saved | app/download/page.tsx
-- Summary: Line 191: replaced 265 lines with 292 lines.
-- Before: 547 lines | 20,859 chars | hash d2e947bd218e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 574 lines | 21,792 chars | hash 712d53c2a33a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "de juiste panorama afbeelding op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pa..."
-- Current fragment: "media op per stijl (Hotel Chic / Modern Raw) / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower.includes('hotel chic') || pakketLower.in..."
-
-### 2026-10-06T08:52:39.029Z | saved | app/download/page.tsx
-- Summary: Line 68: inserted 1 line.
-- Before: 547 lines | 20,855 chars | hash f69ead43850f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 547 lines | 20,859 chars | hash d2e947bd218e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Current fragment: "* 60"
-
 
 ## Hot Files
-- app/download/page.tsx (36 tracked changes)
-- components/Story.tsx (3 tracked changes)
+- app/download/page.tsx (38 tracked changes)
+- components/Story.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 302238e fixing downloadpage
-- Working tree summary: 1 modified
-- M app/download/page.tsx
+- HEAD: 2026-10-06 8b50c28 added debugo log to file object
+- Working tree summary: 4 modifieds
+- MM app/download/page.tsx
+- M  graphify-out/WORKSPACE_MEMORY.md
+- M  workspace.json
+- M  workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 302238e by Bas van Dooremalen on 2026-10-06
-  fixing downloadpage
+- 8b50c28 by Bas van Dooremalen on 2026-10-06
+  added debugo log to file object
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
