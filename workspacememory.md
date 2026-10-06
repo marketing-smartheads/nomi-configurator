@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T10:26:22.786Z
+Generated: 2026-10-06T10:33:56.921Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T10:26:21.051Z
+- Last activity: 2026-10-06T10:33:54.558Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (35), components/Story.tsx (3), app/dashboard/page.tsx (1), lib/cms.ts (1)
-- Suggested starting points: app/download/page.tsx, components/Story.tsx, app/dashboard/page.tsx, lib/cms.ts, .gitignore, AGENTS.md
+- Hottest files right now: app/download/page.tsx (36), components/Story.tsx (3), lib/cms.ts (1)
+- Suggested starting points: app/download/page.tsx, components/Story.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 66
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 585 lines | 22852 chars | hash 1bf241607f8b
-  Last snapshot: 2026-10-06T10:26:21.051Z
+- app/download/page.tsx | 594 lines | 23235 chars | hash 376fbc27b032
+  Last snapshot: 2026-10-06T10:33:54.558Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 174 lines | 4612 chars | hash a009f5d976c4
   Last snapshot: 2026-10-06T09:51:36.353Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T10:33:54.558Z | saved | app/download/page.tsx
+- Summary: Line 1: inserted 594 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 594 lines | 23,235 chars | hash 376fbc27b032 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
+
 ### 2026-10-06T10:26:21.051Z | saved | app/download/page.tsx
 - Summary: Line 151: replaced 373 lines with 377 lines.
 - Before: 581 lines | 22,917 chars | hash ec878aeb6131 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -158,28 +164,17 @@ Structured manifest: workspace.json
 - After: 547 lines | 20,859 chars | hash d2e947bd218e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - Current fragment: "* 60"
 
-### 2026-10-06T08:52:21.135Z | saved | app/download/page.tsx
-- Summary: Line 18: replaced 481 lines with 437 lines.
-- Before: 591 lines | 22,950 chars | hash e5e95438bf4e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 547 lines | 20,855 chars | hash f69ead43850f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "actievePanoramaIndex, setActievePanoramaIndex] = useState<number>(0); / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum script..."
-- Current fragment: "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
-
 
 ## Hot Files
-- app/download/page.tsx (35 tracked changes)
+- app/download/page.tsx (36 tracked changes)
 - components/Story.tsx (3 tracked changes)
-- app/dashboard/page.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 d0150d4 Fix getFileUrl alert
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-06 302238e fixing downloadpage
+- Working tree summary: 1 modified
 - M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -187,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- d0150d4 by Bas van Dooremalen on 2026-10-06
-  Fix getFileUrl alert
+- 302238e by Bas van Dooremalen on 2026-10-06
+  fixing downloadpage
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

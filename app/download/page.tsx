@@ -169,30 +169,38 @@ export default function DownloadPage() {
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
 
-  // Super robuuste URL-ophaling voor zowel PDFs als afbeeldingen uit elk CMS veld
+  // Ultra-flexibele URL-ophaling die alle mogelijke nesting in WordPress/ACF afvangt
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
     if (typeof bestand === 'string') return bestand;
 
-    const uploadObj = 
+    // Doorzoek alle mogelijke plekken waar het bestandsobject of de URL kan staan
+    const subObj = 
       bestand?.uploadBestand || 
       bestand?.upload_bestand || 
       bestand?.bestand || 
       bestand?.file ||
       bestand?.pdfBestand ||
-      bestand?.pdf_bestand;
+      bestand?.pdf_bestand ||
+      bestand;
 
     let url = (
-      uploadObj?.mediaItemUrl ||
-      uploadObj?.node?.mediaItemUrl ||
-      uploadObj?.sourceUrl ||
-      uploadObj?.node?.sourceUrl ||
-      uploadObj?.url ||
-      uploadObj?.media_item_url ||
-      bestand?.bestandUrl ||
-      bestand?.bestand_url ||
+      subObj?.mediaItemUrl ||
+      subObj?.node?.mediaItemUrl ||
+      subObj?.sourceUrl ||
+      subObj?.node?.sourceUrl ||
+      subObj?.url ||
+      subObj?.media_item_url ||
+      subObj?.uri ||
+      subObj?.link ||
+      subObj?.guid ||
       null
     );
+
+    // Als het subObj zelf een string is
+    if (!url && typeof subObj === 'string' && subObj.startsWith('http')) {
+      url = subObj;
+    }
 
     if (url) {
       url = url.replace(/-pdf\.jpg$/i, '.pdf');
@@ -304,8 +312,8 @@ export default function DownloadPage() {
   }
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
-    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand;
-    const mimeType = uploadObj?.node?.mimeType || uploadObj?.mimeType || '';
+    const subObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand || bestand;
+    const mimeType = subObj?.node?.mimeType || subObj?.mimeType || '';
     const lowerUrl = fileUrl?.toLowerCase() || '';
     
     let ext = 'PDF';
@@ -320,8 +328,8 @@ export default function DownloadPage() {
     }
     
     const bytes = 
-      uploadObj?.node?.fileSize || 
-      uploadObj?.fileSize || 
+      subObj?.node?.fileSize || 
+      subObj?.fileSize || 
       bestand?.fileSize;
 
     if (bytes) {
@@ -332,10 +340,11 @@ export default function DownloadPage() {
     return ext;
   };
 
-  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string) => {
+  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string, rawBestandObj: any) => {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
-      alert('Geen geldig bestand gekoppeld in het CMS.');
+      console.error('Geen URL gevonden voor bestand:', fileName, rawBestandObj);
+      alert('Geen geldig bestand gekoppeld in het CMS. Bekijk de console voor de structuur.');
       return;
     }
 
@@ -548,7 +557,7 @@ export default function DownloadPage() {
                         <a
                           key={fileIndex}
                           href={fileUrl && fileUrl !== '#' ? fileUrl : undefined}
-                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName)}
+                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName, bestand)}
                           className="flex items-center justify-between py-4 border-b border-[#EFECE6] hover:border-[#C5A880] transition group cursor-pointer"
                         >
                           <div className="flex items-center gap-4">
