@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T09:43:26.379Z",
-  "generatedAtEpochMs": 1791279806379,
+  "generatedAt": "2026-10-06T09:51:38.674Z",
+  "generatedAtEpochMs": 1791280298674,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "lib/cms.ts",
       "app/download/page.tsx",
-      "app/api/confirm/route.ts",
       "app/privacy/page.tsx",
+      "app/api/confirm/route.ts",
       "components/Story.tsx",
       "app/dashboard/page.tsx",
       ".gitignore",
@@ -544,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T09:43:23.999Z",
+    "lastActivityAt": "2026-10-06T09:51:36.353Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,6 +556,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1791280296353,
+      "lineCount": 174,
+      "charCount": 4612,
+      "hash": "a009f5d976c4",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1791279803999,
@@ -610,17 +619,41 @@
       "charCount": 1493,
       "hash": "0beae626997f",
       "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1790790560546,
-      "lineCount": 286,
-      "charCount": 14192,
-      "hash": "f686682f55d5",
-      "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 59: inserted 11 lines.",
+      "recordedAt": "2026-10-06T09:51:36.353Z",
+      "recordedAtEpochMs": 1791280296353,
+      "before": {
+        "kind": "text",
+        "lineCount": 164,
+        "charCount": 4296,
+        "hash": "56ba0cfe67f1",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791280296353
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 174,
+        "charCount": 4612,
+        "hash": "a009f5d976c4",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791280296353
+      },
+      "diff": {
+        "lineStart": 59,
+        "removedLines": 0,
+        "addedLines": 11,
+        "summary": "Line 59: inserted 11 lines.",
+        "beforeFragment": "",
+        "afterFragment": "# TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / }"
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1068,38 +1101,6 @@
         "beforeFragment": "(Hotel Chic / Modern Raw) / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const...",
         "afterFragment": "const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const fileUrl = getFileUrl(bestand..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 19: replaced 428 lines with 446 lines.",
-      "recordedAt": "2026-10-06T08:39:34.795Z",
-      "recordedAtEpochMs": 1791275974795,
-      "before": {
-        "kind": "text",
-        "lineCount": 542,
-        "charCount": 21571,
-        "hash": "fe6a29d52466",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791275974795
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 560,
-        "charCount": 22429,
-        "hash": "3915500c7bef",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791275974795
-      },
-      "diff": {
-        "lineStart": 19,
-        "removedLines": 428,
-        "addedLines": 446,
-        "summary": "Line 19: replaced 428 lines with 446 lines.",
-        "beforeFragment": "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'...",
-        "afterFragment": "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
-      }
     }
   ],
   "hotFiles": [
@@ -1108,12 +1109,12 @@
       "count": 28
     },
     {
-      "filePath": "app/api/confirm/route.ts",
+      "filePath": "app/privacy/page.tsx",
       "count": 4
     },
     {
-      "filePath": "app/privacy/page.tsx",
-      "count": 4
+      "filePath": "app/api/confirm/route.ts",
+      "count": 3
     },
     {
       "filePath": "components/Story.tsx",
@@ -1122,22 +1123,26 @@
     {
       "filePath": "app/dashboard/page.tsx",
       "count": 1
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 1a9c9c7 added 360 view to downloadpage",
+    "headSummary": "2026-10-06 9f212ce some fixes",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1a9c9c7 by Bas van Dooremalen on 2026-10-06\n  added 360 view to downloadpage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9f212ce by Bas van Dooremalen on 2026-10-06\n  some fixes\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

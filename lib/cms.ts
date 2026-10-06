@@ -56,6 +56,16 @@ export async function getPageData() {
                   sourceUrl
                 }
               }
+              # TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS
+              panoramaRenders {
+                stijlNaam
+                renderBestand {
+                  node {
+                    sourceUrl
+                    mediaItemUrl
+                  }
+                }
+              }
               downloadCategorie {
                 categorieTitel
                 bestandenLijst {

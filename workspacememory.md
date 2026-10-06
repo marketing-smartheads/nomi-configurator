@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T09:43:26.379Z
+Generated: 2026-10-06T09:51:38.674Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T09:43:23.999Z
+- Last activity: 2026-10-06T09:51:36.353Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (28), app/api/confirm/route.ts (4), app/privacy/page.tsx (4), components/Story.tsx (3)
-- Suggested starting points: app/download/page.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, components/Story.tsx, app/dashboard/page.tsx, .gitignore
+- Active file in focus: lib/cms.ts
+- Hottest files right now: app/download/page.tsx (28), app/privacy/page.tsx (4), app/api/confirm/route.ts (3), components/Story.tsx (3)
+- Suggested starting points: lib/cms.ts, app/download/page.tsx, app/privacy/page.tsx, app/api/confirm/route.ts, components/Story.tsx, app/dashboard/page.tsx
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 174 lines | 4612 chars | hash a009f5d976c4
+  Last snapshot: 2026-10-06T09:51:36.353Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 - app/download/page.tsx | 583 lines | 22745 chars | hash 78b1d08e1cb2
   Last snapshot: 2026-10-06T09:43:23.999Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -60,11 +63,14 @@ Structured manifest: workspace.json
 - app/layout.tsx | 75 lines | 1493 chars | hash 0beae626997f
   Last snapshot: 2026-09-30T18:20:26.953Z
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- components/configurator/StepThreeVisuals.tsx | 286 lines | 14192 chars | hash f686682f55d5
-  Last snapshot: 2026-09-30T17:49:20.546Z
-  Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 
 ## Recent Changes
+### 2026-10-06T09:51:36.353Z | saved | lib/cms.ts
+- Summary: Line 59: inserted 11 lines.
+- Before: 164 lines | 4,296 chars | hash 56ba0cfe67f1 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- After: 174 lines | 4,612 chars | hash a009f5d976c4 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- Current fragment: "# TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / }"
+
 ### 2026-10-06T09:43:23.999Z | saved | app/download/page.tsx
 - Summary: Line 146: replaced 402 lines with 430 lines.
 - Before: 555 lines | 21,084 chars | hash f794e1e54819 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -160,26 +166,20 @@ Structured manifest: workspace.json
 - Previous fragment: "(Hotel Chic / Modern Raw) / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const..."
 - Current fragment: "const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const fileUrl = getFileUrl(bestand..."
 
-### 2026-10-06T08:39:34.795Z | saved | app/download/page.tsx
-- Summary: Line 19: replaced 428 lines with 446 lines.
-- Before: 542 lines | 21,571 chars | hash fe6a29d52466 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 560 lines | 22,429 chars | hash 3915500c7bef | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'..."
-- Current fragment: "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
-
 
 ## Hot Files
 - app/download/page.tsx (28 tracked changes)
-- app/api/confirm/route.ts (4 tracked changes)
 - app/privacy/page.tsx (4 tracked changes)
+- app/api/confirm/route.ts (3 tracked changes)
 - components/Story.tsx (3 tracked changes)
 - app/dashboard/page.tsx (1 tracked changes)
+- lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 1a9c9c7 added 360 view to downloadpage
+- HEAD: 2026-10-06 9f212ce some fixes
 - Working tree summary: 1 modified
-- M app/download/page.tsx
+- M lib/cms.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -187,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 1a9c9c7 by Bas van Dooremalen on 2026-10-06
-  added 360 view to downloadpage
+- 9f212ce by Bas van Dooremalen on 2026-10-06
+  some fixes
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
