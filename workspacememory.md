@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T10:13:05.736Z
+Generated: 2026-10-06T10:19:53.789Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T10:13:04.040Z
+- Last activity: 2026-10-06T10:19:52.065Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (31), app/privacy/page.tsx (4), components/Story.tsx (3), app/dashboard/page.tsx (1)
-- Suggested starting points: app/download/page.tsx, app/privacy/page.tsx, components/Story.tsx, app/dashboard/page.tsx, lib/cms.ts, .gitignore
+- Hottest files right now: app/download/page.tsx (33), components/Story.tsx (3), app/privacy/page.tsx (2), app/dashboard/page.tsx (1)
+- Suggested starting points: app/download/page.tsx, components/Story.tsx, app/privacy/page.tsx, app/dashboard/page.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 66
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 584 lines | 22801 chars | hash 501210992e33
-  Last snapshot: 2026-10-06T10:13:04.040Z
+- app/download/page.tsx | 580 lines | 22518 chars | hash 1c521ec47175
+  Last snapshot: 2026-10-06T10:19:52.065Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 174 lines | 4612 chars | hash a009f5d976c4
   Last snapshot: 2026-10-06T09:51:36.353Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T10:19:52.065Z | saved | app/download/page.tsx
+- Summary: Saved without a textual diff.
+- Before: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+
+### 2026-10-06T10:19:22.411Z | saved | app/download/page.tsx
+- Summary: Line 159: replaced 400 lines with 396 lines.
+- Before: 584 lines | 22,801 chars | hash 501210992e33 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "PakketObj?.moodboard_gallery || []; / const moodboardNodes = moodboardGallery?.nodes || moodboardGallery; / const downloadTitel = downloadSectie?.downloadTitel || downloadSectie..."
+- Current fragment: "WoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || []; / const moodboardNodes = moodboardGallery?.nodes || moodboardGallery; / const downloadTitel = downlo..."
+
 ### 2026-10-06T10:13:04.040Z | saved | app/download/page.tsx
 - Summary: Line 471: inserted 1 line.
 - Before: 584 lines | 22,790 chars | hash abce7a7264fa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -152,31 +164,17 @@ Structured manifest: workspace.json
 - After: 551 lines | 21,032 chars | hash cecb36ef5269 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - Current fragment: "* 60"
 
-### 2026-10-06T08:47:28.108Z | saved | app/download/page.tsx
-- Summary: Line 69: replaced 147 lines with 483 lines.
-- Before: 215 lines | 7,905 chars | hash e9a6e9fec331 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 551 lines | 21,027 chars | hash 9300b1d626f2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc..."
-- Current fragment: ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
-
-### 2026-10-06T08:46:47.682Z | saved | app/download/page.tsx
-- Summary: Line 21: replaced 559 lines with 195 lines.
-- Before: 579 lines | 22,462 chars | hash d28881cadbe0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 215 lines | 7,905 chars | hash e9a6e9fec331 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "en houd bij wanneer het klaar is / useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!docum..."
-- Current fragment: "useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!document.getElementById('pannellum-css')..."
-
 
 ## Hot Files
-- app/download/page.tsx (31 tracked changes)
-- app/privacy/page.tsx (4 tracked changes)
+- app/download/page.tsx (33 tracked changes)
 - components/Story.tsx (3 tracked changes)
+- app/privacy/page.tsx (2 tracked changes)
 - app/dashboard/page.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 358822a Added renders to cms.ts file
+- HEAD: 2026-10-06 9d33ffb Addef fixed height to panorama container
 - Working tree summary: 4 modifieds
 - M app/download/page.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -189,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 358822a by Bas van Dooremalen on 2026-10-06
-  Added renders to cms.ts file
+- 9d33ffb by Bas van Dooremalen on 2026-10-06
+  Addef fixed height to panorama container
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

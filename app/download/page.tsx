@@ -156,7 +156,7 @@ export default function DownloadPage() {
     (w: any) => (w?.typeNaam || w?.typenaam || '').toLowerCase() === woningType?.toLowerCase()
   ) || woningTypenLijst[0];
 
-  const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
+  const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigWoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
   const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
@@ -165,15 +165,24 @@ export default function DownloadPage() {
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
 
+  // ROBUUSTE FIX: Haalt de bestand-URL flexibel op uit alle mogelijke CMS structuren
   const getFileUrl = (bestand: any) => {
-    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand;
+    if (!bestand) return null;
+    
+    // Als het bestand zelf direct een string (URL) is
+    if (typeof bestand === 'string') return bestand;
+
+    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.file;
+    
     let url = (
       uploadObj?.mediaItemUrl ||
       uploadObj?.node?.mediaItemUrl ||
       uploadObj?.sourceUrl ||
       uploadObj?.node?.sourceUrl ||
       uploadObj?.url ||
+      uploadObj?.media_item_url ||
       bestand?.bestandUrl ||
+      bestand?.bestand_url ||
       bestand?.url ||
       null
     );
@@ -202,7 +211,6 @@ export default function DownloadPage() {
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
 
-  // Zoek gerichte match op stijlnaam
   const gevondenRender = panoramaRendersLijst.find((item: any) => {
     const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase();
     return stijlNaam && (pakketLower.includes(stijlNaam) || stijlNaam.includes(pakketLower));
@@ -226,7 +234,6 @@ export default function DownloadPage() {
       geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
     }
   } else if (panoramaRendersLijst.length > 0) {
-    // Fallback naar de eerste als er geen directe naammatch is
     const eersteItem = panoramaRendersLijst[0];
     const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
     const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
@@ -236,19 +243,7 @@ export default function DownloadPage() {
     }
   }
 
-  // Debugging in de browser console om te controleren wat er binnenkomt
-  useEffect(() => {
-    if (isAuthorized) {
-      console.log('--- NOMI DEBUG INFO ---');
-      console.log('Geselecteerd Woningtype:', woningType);
-      console.log('Geselecteerd Designpakket:', designPakket);
-      console.log('Huidig Woningtype Object:', huidigWoningTypeObj);
-      console.log('Gevonden Panorama Renders:', panoramaRendersLijst);
-      console.log('Geselecteerde Media URL:', geselecteerdeMediaUrl);
-    }
-  }, [isAuthorized, woningType, designPakket, huidigWoningTypeObj, panoramaRendersLijst, geselecteerdeMediaUrl]);
-
-  // 3. Initialiseer Pannellum 360° viewer
+  // Initialiseer Pannellum 360° viewer
   useEffect(() => {
     let isMounted = true;
     let currentBlobUrl: string | null = null;
@@ -310,7 +305,7 @@ export default function DownloadPage() {
   });
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
-    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand;
+    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand;
     const mimeType = uploadObj?.node?.mimeType || uploadObj?.mimeType || '';
     const lowerUrl = fileUrl?.toLowerCase() || '';
     
@@ -338,9 +333,10 @@ export default function DownloadPage() {
     return ext;
   };
 
-  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string, fileName: string) => {
+  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string) => {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
+      console.warn('Ontbrekende URL voor bestand:', fileName);
       alert('Geen geldig bestand gekoppeld in het CMS.');
       return;
     }
@@ -468,7 +464,7 @@ export default function DownloadPage() {
               </div>
 
               {isVideo ? (
-                <div className="w-full h-[450px !important] sm:h-[550px !important]  rounded-2xl overflow-hidden bg-black shadow-inner">
+                <div className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-black shadow-inner">
                   <video 
                     src={geselecteerdeMediaUrl} 
                     autoPlay 
@@ -555,7 +551,7 @@ export default function DownloadPage() {
                               {/* Icoon */}
                             </div>
                             <div>
-                              <h4 className="frontend-medium text-dark text-base group-hover:text-[#C5A880] transition">
+                              <h4 className="font-medium text-dark text-base group-hover:text-[#C5A880] transition">
                                 {fileName}
                               </h4>
                               <span className="text-[14px] text-muted mt-0.5 block font-normal">
