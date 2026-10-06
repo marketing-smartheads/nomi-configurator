@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T07:46:55.811Z
+Generated: 2026-10-06T09:18:47.813Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T07:46:54.095Z
+- Last activity: 2026-10-06T09:18:45.459Z
 ## Workspace Focus
-- Active file in focus: components/Story.tsx
-- Hottest files right now: app/api/confirm/route.ts (32), app/privacy/page.tsx (4), components/Story.tsx (3), app/dashboard/page.tsx (1)
-- Suggested starting points: components/Story.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, app/dashboard/page.tsx, .gitignore, AGENTS.md
+- Active file in focus: app/download/page.tsx
+- Hottest files right now: app/download/page.tsx (27), app/api/confirm/route.ts (5), app/privacy/page.tsx (4), components/Story.tsx (3)
+- Suggested starting points: app/download/page.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, components/Story.tsx, app/dashboard/page.tsx, .gitignore
 ## Current Workspace
-- Active file: components/Story.tsx
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- app/download/page.tsx | 555 lines | 21084 chars | hash f794e1e54819
+  Last snapshot: 2026-10-06T09:18:45.459Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/Story.tsx | 76 lines | 3174 chars | hash 9cb2cded37f2
   Last snapshot: 2026-10-06T07:46:54.095Z
   Preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
@@ -57,119 +60,125 @@ Structured manifest: workspace.json
 - app/layout.tsx | 75 lines | 1493 chars | hash 0beae626997f
   Last snapshot: 2026-09-30T18:20:26.953Z
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- app/download/page.tsx | 445 lines | 17332 chars | hash 650eaf8f6392
-  Last snapshot: 2026-09-30T17:51:03.537Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepThreeVisuals.tsx | 286 lines | 14192 chars | hash f686682f55d5
   Last snapshot: 2026-09-30T17:49:20.546Z
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 
 ## Recent Changes
-### 2026-10-06T07:46:54.095Z | saved | components/Story.tsx
-- Summary: Saved without a textual diff.
-- Before: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-- After: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+### 2026-10-06T09:18:45.459Z | saved | app/download/page.tsx
+- Summary: Line 51: replaced 403 lines with 384 lines.
+- Before: 574 lines | 21,818 chars | hash cf65fb260724 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 555 lines | 21,084 chars | hash f794e1e54819 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.getItem('configurator_bevestigd') === 'true' || / lo..."
+- Current fragment: "// 2. Initialiseer en valideer de downloadpagina / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.g..."
 
-### 2026-10-06T07:46:46.477Z | saved | components/Story.tsx
-- Summary: Line 24: replaced 16 lines with 21 lines.
-- Before: 71 lines | 2,951 chars | hash 27bffeecaf36 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-- After: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-- Previous fragment: "return ( / <section className="w-full max-w-360 mx-auto px-6 md:px-16 py-28 "> / <div className="text-center mb-16 flex flex-col items-center"> / <span className="font-poppins t..."
-- Current fragment: "// Controleer of er al parameters (zoals een hash) in de videobron staan / const vimeoSrc = videobron?.includes('?') / ? `https://player.vimeo.com/video/${videobron}&autoplay=1&..."
+### 2026-10-06T08:58:11.051Z | saved | app/download/page.tsx
+- Summary: Line 68: replaced 182 lines with 182 lines.
+- Before: 574 lines | 21,831 chars | hash fba9427bbc2d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 574 lines | 21,818 chars | hash cf65fb260724 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc..."
+- Current fragment: ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
 
-### 2026-10-06T07:38:36.642Z | saved | components/Story.tsx
-- Summary: Line 39: replaced 3 lines with 3 lines.
-- Before: 71 lines | 3,009 chars | hash a0fd1705837a | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-- After: 71 lines | 2,951 chars | hash 27bffeecaf36 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-- Previous fragment: "www.youtube-nocookie.com/embed/${videobron}?autoplay=1&rel=0`} / title={titel || "YouTube video"} / allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-- Current fragment: "player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`} / title={titel || "Vimeo video"} / allow="autoplay; fullscreen"
+### 2026-10-06T08:57:23.614Z | saved | app/download/page.tsx
+- Summary: Line 249: replaced 47 lines with 47 lines.
+- Before: 574 lines | 21,792 chars | hash 712d53c2a33a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 574 lines | 21,831 chars | hash fba9427bbc2d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (isVideo || !isPannellumLoaded || !geselecteerdeMedi..."
+- Current fragment: "(vaste omvang van de dependency array behouden) / useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (i..."
 
-### 2026-10-05T15:40:54.385Z | saved | app/dashboard/page.tsx
-- Summary: Line 132: replaced 22 lines with 22 lines.
-- Before: 300 lines | 13,639 chars | hash 749aa72f1fb7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 300 lines | 13,641 chars | hash 39178477b1a4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "on password.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onSu..."
-- Current fragment: "e wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onS..."
+### 2026-10-06T08:54:51.519Z | saved | app/download/page.tsx
+- Summary: Line 191: replaced 265 lines with 292 lines.
+- Before: 547 lines | 20,859 chars | hash d2e947bd218e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 574 lines | 21,792 chars | hash 712d53c2a33a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "de juiste panorama afbeelding op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pa..."
+- Current fragment: "media op per stijl (Hotel Chic / Modern Raw) / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower.includes('hotel chic') || pakketLower.in..."
 
-### 2026-10-05T15:19:55.506Z | saved | app/privacy/page.tsx
-- Summary: Saved without a textual diff.
-- Before: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+### 2026-10-06T08:52:39.029Z | saved | app/download/page.tsx
+- Summary: Line 68: inserted 1 line.
+- Before: 547 lines | 20,855 chars | hash f69ead43850f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 547 lines | 20,859 chars | hash d2e947bd218e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "* 60"
 
-### 2026-10-05T15:19:10.017Z | saved | app/privacy/page.tsx
-- Summary: Line 10: replaced 137 lines with 122 lines.
-- Before: 150 lines | 8,649 chars | hash 99d551e017d4 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: "{/* Header - Aangepast naar een toegestane TypeScript prop zoals "welcome" */} / <Header currentScreen="welcome" onStart={() => window.location.href = '/'} /> / {/* Hoofdinhoud..."
-- Current fragment: "<Header currentScreen="welcome" onStart={() => window.location.href = '/'} /> / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8..."
+### 2026-10-06T08:52:21.135Z | saved | app/download/page.tsx
+- Summary: Line 18: replaced 481 lines with 437 lines.
+- Before: 591 lines | 22,950 chars | hash e5e95438bf4e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 547 lines | 20,855 chars | hash f69ead43850f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "actievePanoramaIndex, setActievePanoramaIndex] = useState<number>(0); / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum script..."
+- Current fragment: "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
 
-### 2026-10-05T15:17:57.425Z | saved | app/privacy/page.tsx
-- Summary: Line 139: removed 1 line.
-- Before: 150 lines | 8,651 chars | hash b9466bbbc377 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 150 lines | 8,649 chars | hash 99d551e017d4 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: ","
+### 2026-10-06T08:50:17.416Z | saved | app/download/page.tsx
+- Summary: Line 205: replaced 245 lines with 285 lines.
+- Before: 551 lines | 21,032 chars | hash cecb36ef5269 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 591 lines | 22,950 chars | hash e5e95438bf4e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const panoramaBestanden: { url: string; titel: string }[] = []; / categorieen.forEach((cat: any) => { / cat?.bestandenLijst?.forEach((bestand: any) => { / const rawUrl = getFile..."
+- Current fragment: "// Filter panorama's op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower..."
 
-### 2026-10-05T15:17:37.439Z | saved | app/privacy/page.tsx
-- Summary: Line 138: replaced 2 lines with 2 lines.
-- Before: 150 lines | 8,653 chars | hash f0b7c156a578 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 150 lines | 8,651 chars | hash b9466bbbc377 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: "NOMI &amp; Thomas de Gier</p> / <p className="text-zinc-400">E-mail: email@adres.nl"
-- Current fragment: "Thomas de Gier</p> / <p className="text-zinc-400">E-mail: info@thomasdegier.com,"
+### 2026-10-06T08:48:03.317Z | saved | app/download/page.tsx
+- Summary: Line 69: inserted 1 line.
+- Before: 551 lines | 21,027 chars | hash 9300b1d626f2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 551 lines | 21,032 chars | hash cecb36ef5269 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "* 60"
 
-### 2026-10-03T16:29:45.035Z | saved | app/api/confirm/route.ts
-- Summary: Line 280: removed 1 line.
-- Before: 312 lines | 11,772 chars | hash 4437ace99c0d | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+### 2026-10-06T08:47:28.108Z | saved | app/download/page.tsx
+- Summary: Line 69: replaced 147 lines with 483 lines.
+- Before: 215 lines | 7,905 chars | hash e9a6e9fec331 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 551 lines | 21,027 chars | hash 9300b1d626f2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc..."
+- Current fragment: ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
 
-### 2026-10-03T16:29:27.714Z | saved | app/api/confirm/route.ts
-- Summary: Line 280: inserted 1 line.
-- Before: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,772 chars | hash 4437ace99c0d | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+### 2026-10-06T08:46:47.682Z | saved | app/download/page.tsx
+- Summary: Line 21: replaced 559 lines with 195 lines.
+- Before: 579 lines | 22,462 chars | hash d28881cadbe0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 215 lines | 7,905 chars | hash e9a6e9fec331 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "en houd bij wanneer het klaar is / useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!docum..."
+- Current fragment: "useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!document.getElementById('pannellum-css')..."
 
-### 2026-10-03T16:18:36.441Z | saved | app/api/confirm/route.ts
-- Summary: Saved without a textual diff.
-- Before: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+### 2026-10-06T08:44:55.569Z | saved | app/download/page.tsx
+- Summary: Line 69: inserted 1 line.
+- Before: 579 lines | 22,458 chars | hash 2b8495b07f78 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 579 lines | 22,462 chars | hash d28881cadbe0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "* 60"
 
-### 2026-10-03T16:17:39.576Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 3 lines with 3 lines.
-- Before: 312 lines | 11,762 chars | hash 0385c76d760f | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
-- Current fragment: "// let bestandenHtml = actieveBestanden.map((b) => / //   `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;f..."
+### 2026-10-06T08:44:22.369Z | saved | app/download/page.tsx
+- Summary: Line 206: replaced 47 lines with 41 lines.
+- Before: 585 lines | 22,943 chars | hash d465b622734e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 579 lines | 22,458 chars | hash 2b8495b07f78 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Filter bestanden op basis van designpakket / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: a..."
+- Current fragment: "Slimme filtering met fallback zodat bestanden altijd zichtbaar zijn / const categorieen = ruweCategorieen.map((cat: any) => { / const alleBestanden = cat?.bestandenLijst || [];..."
 
-### 2026-10-03T16:17:28.254Z | saved | app/api/confirm/route.ts
-- Summary: Line 1: inserted 312 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 312 lines | 11,762 chars | hash 0385c76d760f | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Current fragment: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Req..."
+### 2026-10-06T08:42:24.518Z | saved | app/download/page.tsx
+- Summary: Line 206: replaced 68 lines with 93 lines.
+- Before: 560 lines | 22,429 chars | hash 3915500c7bef | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 585 lines | 22,943 chars | hash d465b622734e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "(Hotel Chic / Modern Raw) / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const..."
+- Current fragment: "const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const fileUrl = getFileUrl(bestand..."
 
-### 2026-10-02T09:14:41.466Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 3 lines with 3 lines.
-- Before: 312 lines | 11,765 chars | hash e15d2b6fb49d | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,759 chars | hash 8850ba77e5b6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
-- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+### 2026-10-06T08:39:34.795Z | saved | app/download/page.tsx
+- Summary: Line 19: replaced 428 lines with 446 lines.
+- Before: 542 lines | 21,571 chars | hash fe6a29d52466 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 560 lines | 22,429 chars | hash 3915500c7bef | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'..."
+- Current fragment: "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
 
-### 2026-10-01T13:28:00.041Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 3 lines with 3 lines.
-- Before: 312 lines | 11,759 chars | hash 8850ba77e5b6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,765 chars | hash e15d2b6fb49d | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
-- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+### 2026-10-06T08:39:26.921Z | saved | app/download/page.tsx
+- Summary: Line 56: inserted 1 line.
+- Before: 542 lines | 21,566 chars | hash 65f18417607a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 542 lines | 21,571 chars | hash fe6a29d52466 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "* 60"
 
 
 ## Hot Files
-- app/api/confirm/route.ts (32 tracked changes)
+- app/download/page.tsx (27 tracked changes)
+- app/api/confirm/route.ts (5 tracked changes)
 - app/privacy/page.tsx (4 tracked changes)
 - components/Story.tsx (3 tracked changes)
 - app/dashboard/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 f7fe4e9 Changed Youtube to Vimeo player
+- HEAD: 2026-10-06 6e9ad7a Fixing code to get wright video ID
 - Working tree summary: 4 modifieds
-- M components/Story.tsx
+- M app/download/page.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -180,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- f7fe4e9 by Bas van Dooremalen on 2026-10-06
-  Changed Youtube to Vimeo player
+- 6e9ad7a by Bas van Dooremalen on 2026-10-06
+  Fixing code to get wright video ID
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

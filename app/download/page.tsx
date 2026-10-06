@@ -15,13 +15,45 @@ export default function DownloadPage() {
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
 
+  // 1. Laad Pannellum scripts dynamisch in
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).pannellum) {
+      setIsPannellumLoaded(true);
+      return;
+    }
+
+    if (!document.getElementById('pannellum-css')) {
+      const link = document.createElement('link');
+      link.id = 'pannellum-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css';
+      document.head.appendChild(link);
+    }
+
+    let script = document.getElementById('pannellum-js') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'pannellum-js';
+      script.src = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js';
+      script.async = true;
+      script.onload = () => setIsPannellumLoaded(true);
+      document.body.appendChild(script);
+    } else {
+      script.onload = () => setIsPannellumLoaded(true);
+      if ((window as any).pannellum) {
+        setIsPannellumLoaded(true);
+      }
+    }
+  }, []);
+
+  // 2. Initialiseer en valideer de downloadpagina
   useEffect(() => {
     let isMounted = true;
 
     async function initDownloadPage() {
       try {
-        // 1. Controleer of de configuratie is bevestigd
         const isConfirmed = 
           localStorage.getItem('configurator_bevestigd') === 'true' || 
           localStorage.getItem('configuratorConfirmed') === 'true' ||
@@ -32,11 +64,10 @@ export default function DownloadPage() {
           return;
         }
 
-        // 2. Tijdslimiet check (10 seconden lokaal om snel te testen, 48 uur live)
         const timestamp = localStorage.getItem('download_timestamp');
         const maxTijd = process.env.NODE_ENV === 'development'
-          ? 60 * 1000                // 10 seconden lokaal
-          : 48 * 60 * 60 * 1000;     // 48 uur live
+          ? 60 * 1000                
+          : 48 * 60 * 60 * 1000;     
 
         if (timestamp) {
           const elapsed = Date.now() - Number(timestamp);
@@ -48,17 +79,6 @@ export default function DownloadPage() {
           localStorage.setItem('download_timestamp', Date.now().toString());
         }
 
-        // 3. Actieve timer voor lokaal testen
-        if (process.env.NODE_ENV === 'development') {
-          const currentElapsed = timestamp ? Date.now() - Number(timestamp) : 0;
-          const resterendeTijd = Math.max(0, maxTijd - currentElapsed);
-
-          setTimeout(() => {
-            if (isMounted) wisEnStuurTerug();
-          }, resterendeTijd);
-        }
-
-        // 4. Haal de keuzes op
         const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType');
         const targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket');
 
@@ -72,7 +92,6 @@ export default function DownloadPage() {
           setDesignPakket(targetPakket);
         }
 
-        // 5. Haal CMS data op met een timeout van 5 seconden
         let cmsData = null;
         try {
           const fetchPromise = getPageData();
@@ -124,25 +143,17 @@ export default function DownloadPage() {
     };
   }, [router]);
 
-  if (!isAuthorized || !woningType || !designPakket) {
-    return (
-      <div className="min-h-screen bg-dark flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
   const configuratorData = pageData?.configuratorData || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
   const designPakkettenLijst = configuratorData?.designPakketten || [];
   const woningTypenLijst = configuratorData?.woningTypen || [];
 
   const huidigPakketObj = designPakkettenLijst.find(
-    (p: any) => p?.pakketTitel?.toLowerCase() === designPakket.toLowerCase()
+    (p: any) => p?.pakketTitel?.toLowerCase() === designPakket?.toLowerCase()
   ) || designPakkettenLijst[0];
 
   const huidigWoningTypeObj = woningTypenLijst.find(
-    (w: any) => w?.typeNaam?.toLowerCase() === woningType.toLowerCase()
+    (w: any) => w?.typeNaam?.toLowerCase() === woningType?.toLowerCase()
   ) || woningTypenLijst[0];
 
   const moodboardGallery = huidigPakketObj?.moodboardGallery?.nodes || huidigPakketObj?.moodboardGallery || [];
@@ -150,39 +161,8 @@ export default function DownloadPage() {
   
   const rawIntro = downloadSectie?.downloadIntroductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
   const formattedIntro = rawIntro
-    .replace('%type%', woningType)
-    .replace('%designpakket%', designPakket);
-
-  // 1. Haal de ruwe categorieën op uit het huidige woningtype
-  const ruweCategorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
-
-  // 2. Filter bestanden op basis van het gekozen designpakket (Hotel Chic of Modern Raw)
-  const categorieen = ruweCategorieen.map((cat: any) => {
-    const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => {
-      const titel = (bestand?.bestandTitel || '').toLowerCase();
-      const pakketKeuze = designPakket.toLowerCase(); // 'hotel chic' of 'modern raw'
-
-      const zoekwoorden = pakketKeuze.includes('hotel chic') 
-        ? ['hotel chic', 'chic', 'hotel'] 
-        : ['modern raw', 'raw', 'modern'];
-
-      const bevatAndereStijl = pakketKeuze.includes('hotel chic') 
-        ? (titel.includes('modern raw') || titel.includes('raw'))
-        : (titel.includes('hotel chic') || titel.includes('chic'));
-
-      if (bevatAndereStijl) return false;
-
-      const bevatOnzeStijl = zoekwoorden.some(woord => titel.includes(woord));
-      const isAlgemeenBestand = !titel.includes('hotel chic') && !titel.includes('modern raw') && !titel.includes('chic') && !titel.includes('raw');
-
-      return bevatOnzeStijl || isAlgemeenBestand;
-    });
-
-    return {
-      ...cat,
-      bestandenLijst: gefilterdeBestanden
-    };
-  }).filter((cat: any) => cat.bestandenLijst.length > 0);
+    .replace('%type%', woningType || '')
+    .replace('%designpakket%', designPakket || '');
 
   const getFileUrl = (bestand: any) => {
     let url = (
@@ -206,6 +186,102 @@ export default function DownloadPage() {
 
     return url;
   };
+
+  const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || [];
+
+  // Zoek 360° render uit de nieuwe 'panorama_renders' repeater op basis van stijl naam
+  const panoramaRendersLijst = huidigWoningTypeObj?.panoramaRenders || huidigWoningTypeObj?.panorama_renders || [];
+  const pakketLower = (designPakket || '').toLowerCase();
+
+  let geselecteerdeMediaUrl: string | null = null;
+  let isVideo = false;
+
+  const gevondenRender = panoramaRendersLijst.find((item: any) => {
+    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase();
+    return stijlNaam && pakketLower.includes(stijlNaam);
+  });
+
+  const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
+  const rawMediaUrl = (
+    renderBestandObj?.mediaItemUrl ||
+    renderBestandObj?.node?.mediaItemUrl ||
+    renderBestandObj?.sourceUrl ||
+    renderBestandObj?.node?.sourceUrl ||
+    renderBestandObj?.url ||
+    null
+  );
+
+  if (rawMediaUrl) {
+    isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(rawMediaUrl);
+    if (isVideo) {
+      geselecteerdeMediaUrl = rawMediaUrl;
+    } else {
+      geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
+    }
+  } else if (panoramaRendersLijst.length > 0) {
+    const eersteBestand = panoramaRendersLijst[0]?.renderBestand || panoramaRendersLijst[0]?.render_bestand;
+    const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
+    if (eersteUrl) {
+      isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(eersteUrl);
+      geselecteerdeMediaUrl = isVideo ? eersteUrl : `/api/download?url=${encodeURIComponent(eersteUrl)}&name=panorama.jpg`;
+    }
+  }
+
+  // 3. Initialiseer Pannellum 360° viewer
+  useEffect(() => {
+    let isMounted = true;
+    let currentBlobUrl: string | null = null;
+
+    async function loadPanorama() {
+      if (isVideo || !isPannellumLoaded || !geselecteerdeMediaUrl || typeof window === 'undefined' || !(window as any).pannellum) {
+        return;
+      }
+
+      try {
+        const response = await fetch(geselecteerdeMediaUrl);
+        if (!response.ok) throw new Error('Kon panorama afbeelding niet laden');
+        const blob = await response.blob();
+        
+        if (!isMounted) return;
+
+        currentBlobUrl = URL.createObjectURL(blob);
+
+        const container = document.getElementById('panorama-container');
+        if (container) {
+          container.innerHTML = '';
+        }
+
+        (window as any).pannellum.viewer('panorama-container', {
+          type: 'equirectangular',
+          panorama: currentBlobUrl,
+          autoLoad: true,
+          autoRotate: -2,
+          compass: false,
+          showZoomCtrl: true,
+          showFullscreenCtrl: true,
+        });
+      } catch (e) {
+        console.error('Pannellum init error:', e);
+      }
+    }
+
+    loadPanorama();
+
+    return () => {
+      isMounted = false;
+      if (currentBlobUrl) {
+        URL.revokeObjectURL(currentBlobUrl);
+      }
+    };
+  }, [isPannellumLoaded, geselecteerdeMediaUrl]);
+
+  if (!isAuthorized || !woningType || !designPakket) {
+    return (
+      <div className="min-h-screen bg-dark flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   const heeftBestanden = categorieen.some((cat: any) => 
     cat?.bestandenLijst && cat.bestandenLijst.length > 0 && 
@@ -354,6 +430,40 @@ export default function DownloadPage() {
             </div>
           </div>
         </div>
+
+        {/* 360° Viewer & Stijlweergave sectie */}
+        {geselecteerdeMediaUrl && (
+          <div className="w-full pb-16 px-6 sm:px-12">
+            <div className="max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#EFECE6] space-y-6">
+              <div>
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
+                  360° BELEVING & STIJLWEERGAVE
+                </span>
+                <h3 className="text-2xl font-serif text-dark mt-1">
+                  Bekijk uw interieur in 360 graden ({designPakket})
+                </h3>
+              </div>
+
+              {isVideo ? (
+                <div className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-black shadow-inner">
+                  <video 
+                    src={geselecteerdeMediaUrl} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div 
+                  id="panorama-container" 
+                  className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
+                />
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="w-full pb-12 text-center">
           <div className="max-w-4xl mx-auto px-6">

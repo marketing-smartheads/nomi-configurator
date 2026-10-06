@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T07:46:55.811Z",
-  "generatedAtEpochMs": 1791272815811,
+  "generatedAt": "2026-10-06T09:18:47.813Z",
+  "generatedAtEpochMs": 1791278327813,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/Story.tsx",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/Story.tsx",
+      "app/download/page.tsx",
       "app/api/confirm/route.ts",
       "app/privacy/page.tsx",
+      "components/Story.tsx",
       "app/dashboard/page.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -543,7 +544,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T07:46:54.095Z",
+    "lastActivityAt": "2026-10-06T09:18:45.459Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -554,6 +555,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1791278325459,
+      "lineCount": 555,
+      "charCount": 21084,
+      "hash": "f794e1e54819",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
     {
       "filePath": "components/Story.tsx",
       "updatedAt": 1791272814095,
@@ -603,14 +612,6 @@
       "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
     },
     {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1790790663537,
-      "lineCount": 445,
-      "charCount": 17332,
-      "hash": "650eaf8f6392",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1790790560546,
       "lineCount": 286,
@@ -622,468 +623,493 @@
   "recentChanges": [
     {
       "type": "save",
-      "path": "components/Story.tsx",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-10-06T07:46:54.095Z",
-      "recordedAtEpochMs": 1791272814095,
+      "summary": "Line 51: replaced 403 lines with 384 lines.",
+      "recordedAt": "2026-10-06T09:18:45.459Z",
+      "recordedAtEpochMs": 1791278325459,
       "before": {
         "kind": "text",
-        "lineCount": 76,
-        "charCount": 3174,
-        "hash": "9cb2cded37f2",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272814095
+        "lineCount": 574,
+        "charCount": 21818,
+        "hash": "cf65fb260724",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791278325459
       },
       "after": {
         "kind": "text",
-        "lineCount": 76,
-        "charCount": 3174,
-        "hash": "9cb2cded37f2",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272814095
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/Story.tsx",
-      "toPath": "",
-      "summary": "Line 24: replaced 16 lines with 21 lines.",
-      "recordedAt": "2026-10-06T07:46:46.477Z",
-      "recordedAtEpochMs": 1791272806477,
-      "before": {
-        "kind": "text",
-        "lineCount": 71,
-        "charCount": 2951,
-        "hash": "27bffeecaf36",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272806476
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 76,
-        "charCount": 3174,
-        "hash": "9cb2cded37f2",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272806477
+        "lineCount": 555,
+        "charCount": 21084,
+        "hash": "f794e1e54819",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791278325459
       },
       "diff": {
-        "lineStart": 24,
-        "removedLines": 16,
-        "addedLines": 21,
-        "summary": "Line 24: replaced 16 lines with 21 lines.",
-        "beforeFragment": "return ( / <section className=\"w-full max-w-360 mx-auto px-6 md:px-16 py-28 \"> / <div className=\"text-center mb-16 flex flex-col items-center\"> / <span className=\"font-poppins t...",
-        "afterFragment": "// Controleer of er al parameters (zoals een hash) in de videobron staan / const vimeoSrc = videobron?.includes('?') / ? `https://player.vimeo.com/video/${videobron}&autoplay=1&..."
+        "lineStart": 51,
+        "removedLines": 403,
+        "addedLines": 384,
+        "summary": "Line 51: replaced 403 lines with 384 lines.",
+        "beforeFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.getItem('configurator_bevestigd') === 'true' || / lo...",
+        "afterFragment": "// 2. Initialiseer en valideer de downloadpagina / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.g..."
       }
     },
     {
       "type": "save",
-      "path": "components/Story.tsx",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 39: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-10-06T07:38:36.642Z",
-      "recordedAtEpochMs": 1791272316642,
+      "summary": "Line 68: replaced 182 lines with 182 lines.",
+      "recordedAt": "2026-10-06T08:58:11.051Z",
+      "recordedAtEpochMs": 1791277091051,
       "before": {
         "kind": "text",
-        "lineCount": 71,
-        "charCount": 3009,
-        "hash": "a0fd1705837a",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272316642
+        "lineCount": 574,
+        "charCount": 21831,
+        "hash": "fba9427bbc2d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791277091051
       },
       "after": {
         "kind": "text",
-        "lineCount": 71,
-        "charCount": 2951,
-        "hash": "27bffeecaf36",
-        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
-        "updatedAt": 1791272316642
+        "lineCount": 574,
+        "charCount": 21818,
+        "hash": "cf65fb260724",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791277091051
       },
       "diff": {
-        "lineStart": 39,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 39: replaced 3 lines with 3 lines.",
-        "beforeFragment": "www.youtube-nocookie.com/embed/${videobron}?autoplay=1&rel=0`} / title={titel || \"YouTube video\"} / allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope",
-        "afterFragment": "player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`} / title={titel || \"Vimeo video\"} / allow=\"autoplay; fullscreen"
+        "lineStart": 68,
+        "removedLines": 182,
+        "addedLines": 182,
+        "summary": "Line 68: replaced 182 lines with 182 lines.",
+        "beforeFragment": "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc...",
+        "afterFragment": ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
       }
     },
     {
       "type": "save",
-      "path": "app/dashboard/page.tsx",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 132: replaced 22 lines with 22 lines.",
-      "recordedAt": "2026-10-05T15:40:54.385Z",
-      "recordedAtEpochMs": 1791214854385,
+      "summary": "Line 249: replaced 47 lines with 47 lines.",
+      "recordedAt": "2026-10-06T08:57:23.614Z",
+      "recordedAtEpochMs": 1791277043614,
       "before": {
         "kind": "text",
-        "lineCount": 300,
-        "charCount": 13639,
-        "hash": "749aa72f1fb7",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1791214854385
+        "lineCount": 574,
+        "charCount": 21792,
+        "hash": "712d53c2a33a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791277043613
       },
       "after": {
         "kind": "text",
-        "lineCount": 300,
-        "charCount": 13641,
-        "hash": "39178477b1a4",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1791214854385
+        "lineCount": 574,
+        "charCount": 21831,
+        "hash": "fba9427bbc2d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791277043614
       },
       "diff": {
-        "lineStart": 132,
-        "removedLines": 22,
-        "addedLines": 22,
-        "summary": "Line 132: replaced 22 lines with 22 lines.",
-        "beforeFragment": "on password.</p> / {loginError && ( / <div className=\"bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4\"> / {loginError} / </div> / )} / <form onSu...",
-        "afterFragment": "e wachtwoord.</p> / {loginError && ( / <div className=\"bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4\"> / {loginError} / </div> / )} / <form onS..."
+        "lineStart": 249,
+        "removedLines": 47,
+        "addedLines": 47,
+        "summary": "Line 249: replaced 47 lines with 47 lines.",
+        "beforeFragment": "useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (isVideo || !isPannellumLoaded || !geselecteerdeMedi...",
+        "afterFragment": "(vaste omvang van de dependency array behouden) / useEffect(() => { / let isMounted = true; / let currentBlobUrl: string | null = null; / async function loadPanorama() { / if (i..."
       }
     },
     {
       "type": "save",
-      "path": "app/privacy/page.tsx",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-10-05T15:19:55.506Z",
-      "recordedAtEpochMs": 1791213595506,
+      "summary": "Line 191: replaced 265 lines with 292 lines.",
+      "recordedAt": "2026-10-06T08:54:51.519Z",
+      "recordedAtEpochMs": 1791276891519,
       "before": {
         "kind": "text",
-        "lineCount": 135,
-        "charCount": 8229,
-        "hash": "1fa058bba875",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213595506
+        "lineCount": 547,
+        "charCount": 20859,
+        "hash": "d2e947bd218e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276891519
       },
       "after": {
         "kind": "text",
-        "lineCount": 135,
-        "charCount": 8229,
-        "hash": "1fa058bba875",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213595506
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/privacy/page.tsx",
-      "toPath": "",
-      "summary": "Line 10: replaced 137 lines with 122 lines.",
-      "recordedAt": "2026-10-05T15:19:10.017Z",
-      "recordedAtEpochMs": 1791213550017,
-      "before": {
-        "kind": "text",
-        "lineCount": 150,
-        "charCount": 8649,
-        "hash": "99d551e017d4",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213550017
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 135,
-        "charCount": 8229,
-        "hash": "1fa058bba875",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213550017
+        "lineCount": 574,
+        "charCount": 21792,
+        "hash": "712d53c2a33a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276891519
       },
       "diff": {
-        "lineStart": 10,
-        "removedLines": 137,
-        "addedLines": 122,
-        "summary": "Line 10: replaced 137 lines with 122 lines.",
-        "beforeFragment": "{/* Header - Aangepast naar een toegestane TypeScript prop zoals \"welcome\" */} / <Header currentScreen=\"welcome\" onStart={() => window.location.href = '/'} /> / {/* Hoofdinhoud...",
-        "afterFragment": "<Header currentScreen=\"welcome\" onStart={() => window.location.href = '/'} /> / <main className=\"flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8..."
+        "lineStart": 191,
+        "removedLines": 265,
+        "addedLines": 292,
+        "summary": "Line 191: replaced 265 lines with 292 lines.",
+        "beforeFragment": "de juiste panorama afbeelding op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pa...",
+        "afterFragment": "media op per stijl (Hotel Chic / Modern Raw) / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower.includes('hotel chic') || pakketLower.in..."
       }
     },
     {
       "type": "save",
-      "path": "app/privacy/page.tsx",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 139: removed 1 line.",
-      "recordedAt": "2026-10-05T15:17:57.425Z",
-      "recordedAtEpochMs": 1791213477425,
+      "summary": "Line 68: inserted 1 line.",
+      "recordedAt": "2026-10-06T08:52:39.029Z",
+      "recordedAtEpochMs": 1791276759029,
       "before": {
         "kind": "text",
-        "lineCount": 150,
-        "charCount": 8651,
-        "hash": "b9466bbbc377",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213477425
+        "lineCount": 547,
+        "charCount": 20855,
+        "hash": "f69ead43850f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276759028
       },
       "after": {
         "kind": "text",
-        "lineCount": 150,
-        "charCount": 8649,
-        "hash": "99d551e017d4",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213477425
+        "lineCount": 547,
+        "charCount": 20859,
+        "hash": "d2e947bd218e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276759029
       },
       "diff": {
-        "lineStart": 139,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 139: removed 1 line.",
-        "beforeFragment": ",",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/privacy/page.tsx",
-      "toPath": "",
-      "summary": "Line 138: replaced 2 lines with 2 lines.",
-      "recordedAt": "2026-10-05T15:17:37.439Z",
-      "recordedAtEpochMs": 1791213457439,
-      "before": {
-        "kind": "text",
-        "lineCount": 150,
-        "charCount": 8653,
-        "hash": "f0b7c156a578",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213457439
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 150,
-        "charCount": 8651,
-        "hash": "b9466bbbc377",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1791213457439
-      },
-      "diff": {
-        "lineStart": 138,
-        "removedLines": 2,
-        "addedLines": 2,
-        "summary": "Line 138: replaced 2 lines with 2 lines.",
-        "beforeFragment": "NOMI &amp; Thomas de Gier</p> / <p className=\"text-zinc-400\">E-mail: email@adres.nl",
-        "afterFragment": "Thomas de Gier</p> / <p className=\"text-zinc-400\">E-mail: info@thomasdegier.com,"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 280: removed 1 line.",
-      "recordedAt": "2026-10-03T16:29:45.035Z",
-      "recordedAtEpochMs": 1791044985035,
-      "before": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11772,
-        "hash": "4437ace99c0d",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044985035
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044985035
-      },
-      "diff": {
-        "lineStart": 280,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 280: removed 1 line.",
-        "beforeFragment": "",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 280: inserted 1 line.",
-      "recordedAt": "2026-10-03T16:29:27.714Z",
-      "recordedAtEpochMs": 1791044967714,
-      "before": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044967714
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11772,
-        "hash": "4437ace99c0d",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044967714
-      },
-      "diff": {
-        "lineStart": 280,
+        "lineStart": 68,
         "removedLines": 0,
         "addedLines": 1,
-        "summary": "Line 280: inserted 1 line.",
+        "summary": "Line 68: inserted 1 line.",
         "beforeFragment": "",
-        "afterFragment": ""
+        "afterFragment": "* 60"
       }
     },
     {
       "type": "save",
-      "path": "app/api/confirm/route.ts",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-10-03T16:18:36.441Z",
-      "recordedAtEpochMs": 1791044316441,
+      "summary": "Line 18: replaced 481 lines with 437 lines.",
+      "recordedAt": "2026-10-06T08:52:21.135Z",
+      "recordedAtEpochMs": 1791276741135,
       "before": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044316441
+        "lineCount": 591,
+        "charCount": 22950,
+        "hash": "e5e95438bf4e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276741135
       },
       "after": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044316441
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 259: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-10-03T16:17:39.576Z",
-      "recordedAtEpochMs": 1791044259576,
-      "before": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11762,
-        "hash": "0385c76d760f",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044259576
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044259576
+        "lineCount": 547,
+        "charCount": 20855,
+        "hash": "f69ead43850f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276741135
       },
       "diff": {
-        "lineStart": 259,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 259: replaced 3 lines with 3 lines.",
-        "beforeFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig...",
-        "afterFragment": "// let bestandenHtml = actieveBestanden.map((b) => / //   `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;f..."
+        "lineStart": 18,
+        "removedLines": 481,
+        "addedLines": 437,
+        "summary": "Line 18: replaced 481 lines with 437 lines.",
+        "beforeFragment": "actievePanoramaIndex, setActievePanoramaIndex] = useState<number>(0); / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum script...",
+        "afterFragment": "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
       }
     },
     {
       "type": "save",
-      "path": "app/api/confirm/route.ts",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 1: inserted 312 lines.",
-      "recordedAt": "2026-10-03T16:17:28.254Z",
-      "recordedAtEpochMs": 1791044248254,
+      "summary": "Line 205: replaced 245 lines with 285 lines.",
+      "recordedAt": "2026-10-06T08:50:17.416Z",
+      "recordedAtEpochMs": 1791276617416,
       "before": {
         "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1791044248254
+        "lineCount": 551,
+        "charCount": 21032,
+        "hash": "cecb36ef5269",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276617416
       },
       "after": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11762,
-        "hash": "0385c76d760f",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791044248254
+        "lineCount": 591,
+        "charCount": 22950,
+        "hash": "e5e95438bf4e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276617416
       },
       "diff": {
-        "lineStart": 1,
+        "lineStart": 205,
+        "removedLines": 245,
+        "addedLines": 285,
+        "summary": "Line 205: replaced 245 lines with 285 lines.",
+        "beforeFragment": "const panoramaBestanden: { url: string; titel: string }[] = []; / categorieen.forEach((cat: any) => { / cat?.bestandenLijst?.forEach((bestand: any) => { / const rawUrl = getFile...",
+        "afterFragment": "// Filter panorama's op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 69: inserted 1 line.",
+      "recordedAt": "2026-10-06T08:48:03.317Z",
+      "recordedAtEpochMs": 1791276483317,
+      "before": {
+        "kind": "text",
+        "lineCount": 551,
+        "charCount": 21027,
+        "hash": "9300b1d626f2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276483317
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 551,
+        "charCount": 21032,
+        "hash": "cecb36ef5269",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276483317
+      },
+      "diff": {
+        "lineStart": 69,
         "removedLines": 0,
-        "addedLines": 312,
-        "summary": "Line 1: inserted 312 lines.",
+        "addedLines": 1,
+        "summary": "Line 69: inserted 1 line.",
         "beforeFragment": "",
-        "afterFragment": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Req..."
+        "afterFragment": "* 60"
       }
     },
     {
       "type": "save",
-      "path": "app/api/confirm/route.ts",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 259: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-10-02T09:14:41.466Z",
-      "recordedAtEpochMs": 1790932481466,
+      "summary": "Line 69: replaced 147 lines with 483 lines.",
+      "recordedAt": "2026-10-06T08:47:28.108Z",
+      "recordedAtEpochMs": 1791276448108,
       "before": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11765,
-        "hash": "e15d2b6fb49d",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790932481465
+        "lineCount": 215,
+        "charCount": 7905,
+        "hash": "e9a6e9fec331",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276448108
       },
       "after": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11759,
-        "hash": "8850ba77e5b6",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790932481466
+        "lineCount": 551,
+        "charCount": 21027,
+        "hash": "9300b1d626f2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276448108
       },
       "diff": {
-        "lineStart": 259,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 259: replaced 3 lines with 3 lines.",
-        "beforeFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig...",
-        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+        "lineStart": 69,
+        "removedLines": 147,
+        "addedLines": 483,
+        "summary": "Line 69: replaced 147 lines with 483 lines.",
+        "beforeFragment": "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc...",
+        "afterFragment": ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
       }
     },
     {
       "type": "save",
-      "path": "app/api/confirm/route.ts",
+      "path": "app/download/page.tsx",
       "toPath": "",
-      "summary": "Line 259: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-10-01T13:28:00.041Z",
-      "recordedAtEpochMs": 1790861280041,
+      "summary": "Line 21: replaced 559 lines with 195 lines.",
+      "recordedAt": "2026-10-06T08:46:47.682Z",
+      "recordedAtEpochMs": 1791276407682,
       "before": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11759,
-        "hash": "8850ba77e5b6",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790861280041
+        "lineCount": 579,
+        "charCount": 22462,
+        "hash": "d28881cadbe0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276407682
       },
       "after": {
         "kind": "text",
-        "lineCount": 312,
-        "charCount": 11765,
-        "hash": "e15d2b6fb49d",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790861280041
+        "lineCount": 215,
+        "charCount": 7905,
+        "hash": "e9a6e9fec331",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276407682
       },
       "diff": {
-        "lineStart": 259,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 259: replaced 3 lines with 3 lines.",
-        "beforeFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig...",
-        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
+        "lineStart": 21,
+        "removedLines": 559,
+        "addedLines": 195,
+        "summary": "Line 21: replaced 559 lines with 195 lines.",
+        "beforeFragment": "en houd bij wanneer het klaar is / useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!docum...",
+        "afterFragment": "useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!document.getElementById('pannellum-css')..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 69: inserted 1 line.",
+      "recordedAt": "2026-10-06T08:44:55.569Z",
+      "recordedAtEpochMs": 1791276295569,
+      "before": {
+        "kind": "text",
+        "lineCount": 579,
+        "charCount": 22458,
+        "hash": "2b8495b07f78",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276295569
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 579,
+        "charCount": 22462,
+        "hash": "d28881cadbe0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276295569
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 69: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "* 60"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 206: replaced 47 lines with 41 lines.",
+      "recordedAt": "2026-10-06T08:44:22.369Z",
+      "recordedAtEpochMs": 1791276262369,
+      "before": {
+        "kind": "text",
+        "lineCount": 585,
+        "charCount": 22943,
+        "hash": "d465b622734e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276262369
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 579,
+        "charCount": 22458,
+        "hash": "2b8495b07f78",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276262369
+      },
+      "diff": {
+        "lineStart": 206,
+        "removedLines": 47,
+        "addedLines": 41,
+        "summary": "Line 206: replaced 47 lines with 41 lines.",
+        "beforeFragment": "Filter bestanden op basis van designpakket / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: a...",
+        "afterFragment": "Slimme filtering met fallback zodat bestanden altijd zichtbaar zijn / const categorieen = ruweCategorieen.map((cat: any) => { / const alleBestanden = cat?.bestandenLijst || [];..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 206: replaced 68 lines with 93 lines.",
+      "recordedAt": "2026-10-06T08:42:24.518Z",
+      "recordedAtEpochMs": 1791276144518,
+      "before": {
+        "kind": "text",
+        "lineCount": 560,
+        "charCount": 22429,
+        "hash": "3915500c7bef",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276144518
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 585,
+        "charCount": 22943,
+        "hash": "d465b622734e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791276144518
+      },
+      "diff": {
+        "lineStart": 206,
+        "removedLines": 68,
+        "addedLines": 93,
+        "summary": "Line 206: replaced 68 lines with 93 lines.",
+        "beforeFragment": "(Hotel Chic / Modern Raw) / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const...",
+        "afterFragment": "const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const fileUrl = getFileUrl(bestand..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 19: replaced 428 lines with 446 lines.",
+      "recordedAt": "2026-10-06T08:39:34.795Z",
+      "recordedAtEpochMs": 1791275974795,
+      "before": {
+        "kind": "text",
+        "lineCount": 542,
+        "charCount": 21571,
+        "hash": "fe6a29d52466",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791275974795
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 560,
+        "charCount": 22429,
+        "hash": "3915500c7bef",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791275974795
+      },
+      "diff": {
+        "lineStart": 19,
+        "removedLines": 428,
+        "addedLines": 446,
+        "summary": "Line 19: replaced 428 lines with 446 lines.",
+        "beforeFragment": "// 1. Laad Pannellum scripts dynamisch in voor de 360° viewer / useEffect(() => { / if (!document.getElementById('pannellum-css')) { / const link = document.createElement('link'...",
+        "afterFragment": "const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in en houd bij wanneer het klaar is / useEffect(() => { / if..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 56: inserted 1 line.",
+      "recordedAt": "2026-10-06T08:39:26.921Z",
+      "recordedAtEpochMs": 1791275966921,
+      "before": {
+        "kind": "text",
+        "lineCount": 542,
+        "charCount": 21566,
+        "hash": "65f18417607a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791275966921
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 542,
+        "charCount": 21571,
+        "hash": "fe6a29d52466",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791275966921
+      },
+      "diff": {
+        "lineStart": 56,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 56: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "* 60"
       }
     }
   ],
   "hotFiles": [
     {
+      "filePath": "app/download/page.tsx",
+      "count": 27
+    },
+    {
       "filePath": "app/api/confirm/route.ts",
-      "count": 32
+      "count": 5
     },
     {
       "filePath": "app/privacy/page.tsx",
@@ -1101,11 +1127,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 f7fe4e9 Changed Youtube to Vimeo player",
+    "headSummary": "2026-10-06 6e9ad7a Fixing code to get wright video ID",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
-      "M components/Story.tsx",
+      "M app/download/page.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1114,7 +1140,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f7fe4e9 by Bas van Dooremalen on 2026-10-06\n  Changed Youtube to Vimeo player\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6e9ad7a by Bas van Dooremalen on 2026-10-06\n  Fixing code to get wright video ID\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
