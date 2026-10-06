@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T11:34:45.639Z
+Generated: 2026-10-06T13:34:52.069Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T11:34:43.919Z
+- Last activity: 2026-10-06T13:34:49.719Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (37), lib/cms.ts (3)
-- Suggested starting points: app/download/page.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md, package-lock.json
+- Hottest files right now: app/download/page.tsx (33), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (3)
+- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 66
@@ -37,11 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 5 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 579 lines | 22751 chars | hash d8bdd06b6211
-  Last snapshot: 2026-10-06T11:34:43.919Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- app/download/page.tsx | 566 lines | 24110 chars | hash f2b9ac5f39be
+  Last snapshot: 2026-10-06T13:34:49.719Z
+  Preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- components/configurator/StepFourConfirmation.tsx | 302 lines | 14641 chars | hash f97bde831204
+  Last snapshot: 2026-10-06T12:58:31.921Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
 - lib/cms.ts | 170 lines | 4502 chars | hash 7c301d4275bc
   Last snapshot: 2026-10-06T11:34:26.208Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
@@ -60,11 +63,43 @@ Structured manifest: workspace.json
 - .env.local | 10 lines | 370 chars | hash 58cf12c6dc42
   Last snapshot: 2026-10-01T09:09:27.816Z
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
-- app/layout.tsx | 75 lines | 1493 chars | hash 0beae626997f
-  Last snapshot: 2026-09-30T18:20:26.953Z
-  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T13:34:49.719Z | saved | app/download/page.tsx
+- Summary: Line 3: replaced 575 lines with 562 lines.
+- Before: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 566 lines | 24,110 chars | hash f2b9ac5f39be | preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- Previous fragment: "} from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageData } f..."
+- Current fragment: ", Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'..."
+
+### 2026-10-06T12:58:31.921Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 14: replaced 323 lines with 247 lines.
+- Before: 378 lines | 17,949 chars | hash 6e0cbca53bbf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- After: 302 lines | 14,641 chars | hash f97bde831204 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- Previous fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
+- Current fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
+
+### 2026-10-06T12:51:04.366Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 14: replaced 247 lines with 323 lines.
+- Before: 302 lines | 14,641 chars | hash f97bde831204 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- After: 378 lines | 17,949 chars | hash 6e0cbca53bbf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- Previous fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
+- Current fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
+
+### 2026-10-06T12:48:56.267Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 14: replaced 320 lines with 283 lines.
+- Before: 339 lines | 15,137 chars | hash 10593c9677a5 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- After: 302 lines | 14,641 chars | hash f97bde831204 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- Previous fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
+- Current fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
+
+### 2026-10-06T12:48:46.588Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 14: replaced 283 lines with 320 lines.
+- Before: 302 lines | 14,641 chars | hash f97bde831204 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- After: 339 lines | 15,137 chars | hash 10593c9677a5 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+- Previous fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
+- Current fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
+
 ### 2026-10-06T11:34:43.919Z | saved | app/download/page.tsx
 - Summary: Line 176: replaced 40 lines with 20 lines.
 - Before: 599 lines | 23,427 chars | hash 9c9c4bfa4f63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -134,50 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi..."
 - Current fragment: "const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLijst.find((p: any) => { / const titel = (p?.pakketTite..."
 
-### 2026-10-06T10:25:22.174Z | saved | app/download/page.tsx
-- Summary: Line 151: replaced 387 lines with 388 lines.
-- Before: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 581 lines | 22,917 chars | hash ec878aeb6131 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "const huidigPakketObj = designPakkettenLijst.find( / (p: any) => (p?.pakketTitel || p?.pakket_titel || '').toLowerCase() === designPakket?.toLowerCase() / ) || designPakkettenLi..."
-- Current fragment: "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi..."
-
-### 2026-10-06T10:19:52.065Z | saved | app/download/page.tsx
-- Summary: Saved without a textual diff.
-- Before: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-
-### 2026-10-06T10:19:22.411Z | saved | app/download/page.tsx
-- Summary: Line 159: replaced 400 lines with 396 lines.
-- Before: 584 lines | 22,801 chars | hash 501210992e33 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 580 lines | 22,518 chars | hash 1c521ec47175 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "PakketObj?.moodboard_gallery || []; / const moodboardNodes = moodboardGallery?.nodes || moodboardGallery; / const downloadTitel = downloadSectie?.downloadTitel || downloadSectie..."
-- Current fragment: "WoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || []; / const moodboardNodes = moodboardGallery?.nodes || moodboardGallery; / const downloadTitel = downlo..."
-
-### 2026-10-06T10:13:04.040Z | saved | app/download/page.tsx
-- Summary: Line 471: inserted 1 line.
-- Before: 584 lines | 22,790 chars | hash abce7a7264fa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 584 lines | 22,801 chars | hash 501210992e33 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Current fragment: "!important"
-
-### 2026-10-06T10:12:40.136Z | saved | app/download/page.tsx
-- Summary: Line 3: replaced 105 lines with 580 lines.
-- Before: 109 lines | 3,790 chars | hash e3095020b3a5 | preview: "'use client'; / import React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useState<any>(null);..."
-- After: 584 lines | 22,790 chars | hash abce7a7264fa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS..."
-- Current fragment: "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im..."
-
 
 ## Hot Files
-- app/download/page.tsx (37 tracked changes)
+- app/download/page.tsx (33 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - lib/cms.ts (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 e1da3b7 fixed GraphQL error
-- Working tree summary: 5 modifieds
+- HEAD: 2026-10-06 db3f90f try to fixing getFileUrl PDF for download page
+- Working tree summary: 4 modifieds
 - M app/download/page.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
-- M lib/cms.ts
 - M workspace.json
 - M workspacememory.md
 
@@ -187,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e1da3b7 by Bas van Dooremalen on 2026-10-06
-  fixed GraphQL error
+- db3f90f by Bas van Dooremalen on 2026-10-06
+  try to fixing getFileUrl PDF for download page
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
