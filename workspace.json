@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T10:19:53.789Z",
-  "generatedAtEpochMs": 1791281993789,
+  "generatedAt": "2026-10-06T10:26:22.786Z",
+  "generatedAtEpochMs": 1791282382786,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,7 +24,6 @@
     "suggestedStartingPoints": [
       "app/download/page.tsx",
       "components/Story.tsx",
-      "app/privacy/page.tsx",
       "app/dashboard/page.tsx",
       "lib/cms.ts",
       ".gitignore",
@@ -544,7 +543,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T10:19:52.065Z",
+    "lastActivityAt": "2026-10-06T10:26:21.051Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,10 +556,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791281992065,
-      "lineCount": 580,
-      "charCount": 22518,
-      "hash": "1c521ec47175",
+      "updatedAt": 1791282381051,
+      "lineCount": 585,
+      "charCount": 22852,
+      "hash": "1bf241607f8b",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -621,6 +620,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 151: replaced 373 lines with 377 lines.",
+      "recordedAt": "2026-10-06T10:26:21.051Z",
+      "recordedAtEpochMs": 1791282381051,
+      "before": {
+        "kind": "text",
+        "lineCount": 581,
+        "charCount": 22917,
+        "hash": "ec878aeb6131",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791282381051
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 585,
+        "charCount": 22852,
+        "hash": "1bf241607f8b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791282381051
+      },
+      "diff": {
+        "lineStart": 151,
+        "removedLines": 373,
+        "addedLines": 377,
+        "summary": "Line 151: replaced 373 lines with 377 lines.",
+        "beforeFragment": "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi...",
+        "afterFragment": "const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLijst.find((p: any) => { / const titel = (p?.pakketTite..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 151: replaced 387 lines with 388 lines.",
+      "recordedAt": "2026-10-06T10:25:22.174Z",
+      "recordedAtEpochMs": 1791282322174,
+      "before": {
+        "kind": "text",
+        "lineCount": 580,
+        "charCount": 22518,
+        "hash": "1c521ec47175",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791282322174
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 581,
+        "charCount": 22917,
+        "hash": "ec878aeb6131",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791282322174
+      },
+      "diff": {
+        "lineStart": 151,
+        "removedLines": 387,
+        "addedLines": 388,
+        "summary": "Line 151: replaced 387 lines with 388 lines.",
+        "beforeFragment": "const huidigPakketObj = designPakkettenLijst.find( / (p: any) => (p?.pakketTitel || p?.pakket_titel || '').toLowerCase() === designPakket?.toLowerCase() / ) || designPakkettenLi...",
+        "afterFragment": "// Robuuste matching voor het gekozen designpakket / const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigPakketObj = designPakkettenLi..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1029,84 +1092,16 @@
         "beforeFragment": "actievePanoramaIndex, setActievePanoramaIndex] = useState<number>(0); / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum script...",
         "afterFragment": "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 205: replaced 245 lines with 285 lines.",
-      "recordedAt": "2026-10-06T08:50:17.416Z",
-      "recordedAtEpochMs": 1791276617416,
-      "before": {
-        "kind": "text",
-        "lineCount": 551,
-        "charCount": 21032,
-        "hash": "cecb36ef5269",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276617416
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 591,
-        "charCount": 22950,
-        "hash": "e5e95438bf4e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276617416
-      },
-      "diff": {
-        "lineStart": 205,
-        "removedLines": 245,
-        "addedLines": 285,
-        "summary": "Line 205: replaced 245 lines with 285 lines.",
-        "beforeFragment": "const panoramaBestanden: { url: string; titel: string }[] = []; / categorieen.forEach((cat: any) => { / cat?.bestandenLijst?.forEach((bestand: any) => { / const rawUrl = getFile...",
-        "afterFragment": "// Filter panorama's op basis van bestandsnaam / URL die bij het gekozen pakket hoort / const pakketLower = (designPakket || '').toLowerCase(); / const isHotelChic = pakketLower..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 69: inserted 1 line.",
-      "recordedAt": "2026-10-06T08:48:03.317Z",
-      "recordedAtEpochMs": 1791276483317,
-      "before": {
-        "kind": "text",
-        "lineCount": 551,
-        "charCount": 21027,
-        "hash": "9300b1d626f2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276483317
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 551,
-        "charCount": 21032,
-        "hash": "cecb36ef5269",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276483317
-      },
-      "diff": {
-        "lineStart": 69,
-        "removedLines": 0,
-        "addedLines": 1,
-        "summary": "Line 69: inserted 1 line.",
-        "beforeFragment": "",
-        "afterFragment": "* 60"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 33
+      "count": 35
     },
     {
       "filePath": "components/Story.tsx",
       "count": 3
-    },
-    {
-      "filePath": "app/privacy/page.tsx",
-      "count": 2
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1120,7 +1115,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 9d33ffb Addef fixed height to panorama container",
+    "headSummary": "2026-10-06 d0150d4 Fix getFileUrl alert",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
@@ -1133,7 +1128,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9d33ffb by Bas van Dooremalen on 2026-10-06\n  Addef fixed height to panorama container\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- d0150d4 by Bas van Dooremalen on 2026-10-06\n  Fix getFileUrl alert\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

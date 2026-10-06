@@ -148,13 +148,17 @@ export default function DownloadPage() {
   const designPakkettenLijst = configuratorData?.designPakketten || configuratorData?.design_pakketten || [];
   const woningTypenLijst = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
 
-  const huidigPakketObj = designPakkettenLijst.find(
-    (p: any) => (p?.pakketTitel || p?.pakket_titel || '').toLowerCase() === designPakket?.toLowerCase()
-  ) || designPakkettenLijst[0];
+  const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const huidigPakketObj = designPakkettenLijst.find((p: any) => {
+    const titel = (p?.pakketTitel || p?.pakket_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return titel.includes(normPakket) || normPakket.includes(titel);
+  }) || designPakkettenLijst[0];
 
-  const huidigWoningTypeObj = woningTypenLijst.find(
-    (w: any) => (w?.typeNaam || w?.typenaam || '').toLowerCase() === woningType?.toLowerCase()
-  ) || woningTypenLijst[0];
+  const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return naam.includes(normWoning) || normWoning.includes(naam);
+  }) || woningTypenLijst[0];
 
   const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigWoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
   const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
@@ -165,15 +169,19 @@ export default function DownloadPage() {
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
 
-  // ROBUUSTE FIX: Haalt de bestand-URL flexibel op uit alle mogelijke CMS structuren
+  // Super robuuste URL-ophaling voor zowel PDFs als afbeeldingen uit elk CMS veld
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
-    
-    // Als het bestand zelf direct een string (URL) is
     if (typeof bestand === 'string') return bestand;
 
-    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.file;
-    
+    const uploadObj = 
+      bestand?.uploadBestand || 
+      bestand?.upload_bestand || 
+      bestand?.bestand || 
+      bestand?.file ||
+      bestand?.pdfBestand ||
+      bestand?.pdf_bestand;
+
     let url = (
       uploadObj?.mediaItemUrl ||
       uploadObj?.node?.mediaItemUrl ||
@@ -183,7 +191,6 @@ export default function DownloadPage() {
       uploadObj?.media_item_url ||
       bestand?.bestandUrl ||
       bestand?.bestand_url ||
-      bestand?.url ||
       null
     );
 
@@ -200,20 +207,17 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Flexibel ophalen van de 360° renders repeater
   const panoramaRendersLijst = 
     huidigWoningTypeObj?.panoramaRenders || 
     huidigWoningTypeObj?.panorama_renders || 
     huidigWoningTypeObj?.panoramaRendersLijst || [];
 
-  const pakketLower = (designPakket || '').toLowerCase();
-
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
 
   const gevondenRender = panoramaRendersLijst.find((item: any) => {
-    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase();
-    return stijlNaam && (pakketLower.includes(stijlNaam) || stijlNaam.includes(pakketLower));
+    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(normPakket));
   });
 
   const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
@@ -299,13 +303,8 @@ export default function DownloadPage() {
     );
   }
 
-  const heeftBestanden = categorieen.some((cat: any) => {
-    const lijst = cat?.bestandenLijst || cat?.bestanden_lijst;
-    return lijst && lijst.length > 0 && lijst.some((bestand: any) => getFileUrl(bestand));
-  });
-
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
-    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand;
+    const uploadObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand;
     const mimeType = uploadObj?.node?.mimeType || uploadObj?.mimeType || '';
     const lowerUrl = fileUrl?.toLowerCase() || '';
     
@@ -336,7 +335,6 @@ export default function DownloadPage() {
   const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string) => {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
-      console.warn('Ontbrekende URL voor bestand:', fileName);
       alert('Geen geldig bestand gekoppeld in het CMS.');
       return;
     }
@@ -367,8 +365,12 @@ export default function DownloadPage() {
       for (const cat of categorieen) {
         const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
         for (const bestand of bestandenLijst) {
+          const fileName = bestand?.bestandTitel || bestand?.bestand_titel || '';
+          const fileNorm = fileName.toLowerCase().replace(/[^a-z0-9]/g, '');
+          
+          if (!fileNorm.includes(normPakket)) continue;
+
           const fileUrl = getFileUrl(bestand);
-          const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
           
           if (fileUrl) {
             try {
@@ -489,14 +491,10 @@ export default function DownloadPage() {
           <div className="max-w-4xl mx-auto px-6">
             <button
               onClick={handleAutomaticZipDownload}
-              disabled={isDownloading || !heeftBestanden}
+              disabled={isDownloading}
               className="inline-block bg-dark text-white px-10 py-4 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {!heeftBestanden 
-                ? 'GEEN BESTANDEN BESCHIKBAAR' 
-                : isDownloading 
-                  ? 'BEZIG MET GENEREREN...' 
-                  : 'DOWNLOAD ALLES (.ZIP)'}
+              {isDownloading ? 'BEZIG MET GENEREREN...' : 'DOWNLOAD ALLES (.ZIP)'}
             </button>
           </div>
         </div>
@@ -525,7 +523,14 @@ export default function DownloadPage() {
           <div className="max-w-4xl mx-auto px-6 space-y-16">
             {categorieen?.map((cat: any, catIndex: number) => {
               const catTitel = cat?.categorieTitel || cat?.categorie_titel;
-              const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+              const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+
+              const gefilterdeBestanden = rawBestandenLijst.filter((bestand: any) => {
+                const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                return fileName.includes(normPakket);
+              });
+
+              if (gefilterdeBestanden.length === 0) return null;
 
               return (
                 <div key={catIndex} className="space-y-6">
@@ -534,7 +539,7 @@ export default function DownloadPage() {
                   </h3>
 
                   <div className="space-y-2">
-                    {bestandenLijst.map((bestand: any, fileIndex: number) => {
+                    {gefilterdeBestanden.map((bestand: any, fileIndex: number) => {
                       const fileUrl = getFileUrl(bestand);
                       const metaText = getFileMeta(bestand, fileUrl);
                       const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
