@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T07:38:38.588Z
+Generated: 2026-10-06T07:46:55.811Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T07:38:36.642Z
+- Last activity: 2026-10-06T07:46:54.095Z
 ## Workspace Focus
 - Active file in focus: components/Story.tsx
-- Hottest files right now: app/api/confirm/route.ts (33), app/privacy/page.tsx (4), .env.local (1), app/dashboard/page.tsx (1)
-- Suggested starting points: components/Story.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, .env.local, app/dashboard/page.tsx, .gitignore
+- Hottest files right now: app/api/confirm/route.ts (32), app/privacy/page.tsx (4), components/Story.tsx (3), app/dashboard/page.tsx (1)
+- Suggested starting points: components/Story.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, app/dashboard/page.tsx, .gitignore, AGENTS.md
 ## Current Workspace
 - Active file: components/Story.tsx
 - Tracked files in snapshot: 66
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 5 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/Story.tsx | 71 lines | 2951 chars | hash 27bffeecaf36
-  Last snapshot: 2026-10-06T07:38:36.642Z
+- components/Story.tsx | 76 lines | 3174 chars | hash 9cb2cded37f2
+  Last snapshot: 2026-10-06T07:46:54.095Z
   Preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
 - app/dashboard/page.tsx | 300 lines | 13641 chars | hash 39178477b1a4
   Last snapshot: 2026-10-05T15:40:54.385Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
 
 ## Recent Changes
+### 2026-10-06T07:46:54.095Z | saved | components/Story.tsx
+- Summary: Saved without a textual diff.
+- Before: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- After: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+
+### 2026-10-06T07:46:46.477Z | saved | components/Story.tsx
+- Summary: Line 24: replaced 16 lines with 21 lines.
+- Before: 71 lines | 2,951 chars | hash 27bffeecaf36 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- After: 76 lines | 3,174 chars | hash 9cb2cded37f2 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- Previous fragment: "return ( / <section className="w-full max-w-360 mx-auto px-6 md:px-16 py-28 "> / <div className="text-center mb-16 flex flex-col items-center"> / <span className="font-poppins t..."
+- Current fragment: "// Controleer of er al parameters (zoals een hash) in de videobron staan / const vimeoSrc = videobron?.includes('?') / ? `https://player.vimeo.com/video/${videobron}&autoplay=1&..."
+
 ### 2026-10-06T07:38:36.642Z | saved | components/Story.tsx
 - Summary: Line 39: replaced 3 lines with 3 lines.
 - Before: 71 lines | 3,009 chars | hash a0fd1705837a | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
@@ -146,35 +158,21 @@ Structured manifest: workspace.json
 - Previous fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
 - Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
 
-### 2026-10-01T13:26:07.611Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 5 lines with 4 lines.
-- Before: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 312 lines | 11,759 chars | hash 8850ba77e5b6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
-- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
-
-### 2026-10-01T13:13:32.330Z | saved | app/api/confirm/route.ts
-- Summary: Saved without a textual diff.
-- Before: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-
 
 ## Hot Files
-- app/api/confirm/route.ts (33 tracked changes)
+- app/api/confirm/route.ts (32 tracked changes)
 - app/privacy/page.tsx (4 tracked changes)
-- .env.local (1 tracked changes)
+- components/Story.tsx (3 tracked changes)
 - app/dashboard/page.tsx (1 tracked changes)
-- components/Story.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-05 b317cfb Added contact info to privacy page
-- Working tree summary: 5 modifieds
-- M  app/dashboard/page.tsx
+- HEAD: 2026-10-06 f7fe4e9 Changed Youtube to Vimeo player
+- Working tree summary: 4 modifieds
 - M components/Story.tsx
-- MM graphify-out/WORKSPACE_MEMORY.md
-- MM workspace.json
-- MM workspacememory.md
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +180,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- b317cfb by Bas van Dooremalen on 2026-10-05
-  Added contact info to privacy page
+- f7fe4e9 by Bas van Dooremalen on 2026-10-06
+  Changed Youtube to Vimeo player
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

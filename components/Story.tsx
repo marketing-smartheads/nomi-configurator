@@ -21,6 +21,11 @@ export default function Story({ data }: StoryProps) {
 
     const { subtitel, titel, videobron, videoPoster } = data;
 
+    // Controleer of er al parameters (zoals een hash) in de videobron staan
+    const vimeoSrc = videobron?.includes('?') 
+        ? `https://player.vimeo.com/video/${videobron}&autoplay=1&dnt=1`
+        : `https://player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`;
+
     return (
         <section className="w-full max-w-360 mx-auto px-6 md:px-16 py-28 ">
             <div className="text-center mb-16 flex flex-col items-center">
@@ -36,7 +41,7 @@ export default function Story({ data }: StoryProps) {
                 {isPlaying ? (
                     <iframe
                         className="w-full h-full"
-                        src={`https://player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`}
+                        src={vimeoSrc}
                         title={titel || "Vimeo video"}
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen

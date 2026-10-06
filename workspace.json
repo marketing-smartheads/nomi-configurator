@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T07:38:38.588Z",
-  "generatedAtEpochMs": 1791272318588,
+  "generatedAt": "2026-10-06T07:46:55.811Z",
+  "generatedAtEpochMs": 1791272815811,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,7 +25,6 @@
       "components/Story.tsx",
       "app/api/confirm/route.ts",
       "app/privacy/page.tsx",
-      ".env.local",
       "app/dashboard/page.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -544,7 +543,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T07:38:36.642Z",
+    "lastActivityAt": "2026-10-06T07:46:54.095Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,10 +556,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/Story.tsx",
-      "updatedAt": 1791272316642,
-      "lineCount": 71,
-      "charCount": 2951,
-      "hash": "27bffeecaf36",
+      "updatedAt": 1791272814095,
+      "lineCount": 76,
+      "charCount": 3174,
+      "hash": "9cb2cded37f2",
       "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
     },
     {
@@ -621,6 +620,63 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Story.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-06T07:46:54.095Z",
+      "recordedAtEpochMs": 1791272814095,
+      "before": {
+        "kind": "text",
+        "lineCount": 76,
+        "charCount": 3174,
+        "hash": "9cb2cded37f2",
+        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
+        "updatedAt": 1791272814095
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 76,
+        "charCount": 3174,
+        "hash": "9cb2cded37f2",
+        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
+        "updatedAt": 1791272814095
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/Story.tsx",
+      "toPath": "",
+      "summary": "Line 24: replaced 16 lines with 21 lines.",
+      "recordedAt": "2026-10-06T07:46:46.477Z",
+      "recordedAtEpochMs": 1791272806477,
+      "before": {
+        "kind": "text",
+        "lineCount": 71,
+        "charCount": 2951,
+        "hash": "27bffeecaf36",
+        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
+        "updatedAt": 1791272806476
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 76,
+        "charCount": 3174,
+        "hash": "9cb2cded37f2",
+        "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /...",
+        "updatedAt": 1791272806477
+      },
+      "diff": {
+        "lineStart": 24,
+        "removedLines": 16,
+        "addedLines": 21,
+        "summary": "Line 24: replaced 16 lines with 21 lines.",
+        "beforeFragment": "return ( / <section className=\"w-full max-w-360 mx-auto px-6 md:px-16 py-28 \"> / <div className=\"text-center mb-16 flex flex-col items-center\"> / <span className=\"font-poppins t...",
+        "afterFragment": "// Controleer of er al parameters (zoals een hash) in de videobron staan / const vimeoSrc = videobron?.includes('?') / ? `https://player.vimeo.com/video/${videobron}&autoplay=1&..."
+      }
+    },
     {
       "type": "save",
       "path": "components/Story.tsx",
@@ -1022,105 +1078,43 @@
         "beforeFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig...",
         "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 259: replaced 5 lines with 4 lines.",
-      "recordedAt": "2026-10-01T13:26:07.611Z",
-      "recordedAtEpochMs": 1790861167611,
-      "before": {
-        "kind": "text",
-        "lineCount": 313,
-        "charCount": 11841,
-        "hash": "baca773bc7ad",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790861167611
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11759,
-        "hash": "8850ba77e5b6",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790861167611
-      },
-      "diff": {
-        "lineStart": 259,
-        "removedLines": 5,
-        "addedLines": 4,
-        "summary": "Line 259: replaced 5 lines with 4 lines.",
-        "beforeFragment": "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"dis...",
-        "afterFragment": "let bestandenHtml = actieveBestanden.map((b) => / `<a href=\"${b.url}\" target=\"_blank\" style=\"display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weig..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-10-01T13:13:32.330Z",
-      "recordedAtEpochMs": 1790860412330,
-      "before": {
-        "kind": "text",
-        "lineCount": 313,
-        "charCount": 11841,
-        "hash": "baca773bc7ad",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790860412330
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 313,
-        "charCount": 11841,
-        "hash": "baca773bc7ad",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1790860412330
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/api/confirm/route.ts",
-      "count": 33
+      "count": 32
     },
     {
       "filePath": "app/privacy/page.tsx",
       "count": 4
     },
     {
-      "filePath": ".env.local",
-      "count": 1
+      "filePath": "components/Story.tsx",
+      "count": 3
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 1
-    },
-    {
-      "filePath": "components/Story.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-05 b317cfb Added contact info to privacy page",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-06 f7fe4e9 Changed Youtube to Vimeo player",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M  app/dashboard/page.tsx",
       "M components/Story.tsx",
-      "MM graphify-out/WORKSPACE_MEMORY.md",
-      "MM workspace.json",
-      "MM workspacememory.md"
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b317cfb by Bas van Dooremalen on 2026-10-05\n  Added contact info to privacy page\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f7fe4e9 by Bas van Dooremalen on 2026-10-06\n  Changed Youtube to Vimeo player\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
