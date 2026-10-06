@@ -173,46 +173,26 @@ export default function DownloadPage() {
     if (!bestand) return null;
     if (typeof bestand === 'string') return bestand;
 
-    // Haal het bestandsobject op uit uploadBestand (of varianten)
     const uploadObj = 
       bestand?.uploadBestand || 
       bestand?.upload_bestand || 
       bestand?.bestand || 
-      bestand?.file ||
-      bestand?.pdfBestand ||
-      bestand?.pdf_bestand ||
       {};
 
     const node = uploadObj?.node || uploadObj;
 
-    // Haal de URL op uit de WPGraphQL respons van het uploadveld
+    // Prioriteit geven aan mediaItemUrl en sourceUrl uit de node
     let url = (
       node?.mediaItemUrl ||
       node?.sourceUrl ||
-      node?.uri ||
-      node?.link ||
       node?.guid ||
       uploadObj?.mediaItemUrl ||
       uploadObj?.sourceUrl ||
-      uploadObj?.url ||
-      bestand?.mediaItemUrl ||
-      bestand?.sourceUrl ||
-      bestand?.url ||
       null
     );
 
-    // Mocht de URL als object terugkomen vanuit GraphQL
     if (url && typeof url === 'object') {
       url = url.mediaItemUrl || url.sourceUrl || url.url || null;
-    }
-
-    // Event prijs / thumbnail extensie opschonen indien nodig
-    if (url && typeof url === 'string') {
-      url = url.replace(/-pdf\.jpg$/i, '.pdf');
-      url = url.replace(/\.pdf\.jpg$/i, '.pdf');
-      if (url.toLowerCase().endsWith('-pdf')) {
-        url = url.slice(0, -4) + '.pdf';
-      }
     }
 
     return typeof url === 'string' && url.startsWith('http') ? url : null;

@@ -73,12 +73,13 @@ export async function getPageData() {
                   uploadBestand {
                     node {
                       sourceUrl
+                      mediaItemUrl
                       fileSize
                       mimeType
                     }
                   }
                 }
-              }       
+              }
               partnerLijst {
                 partnerNaam
                 partnerOmschrijving

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T11:16:41.814Z",
-  "generatedAtEpochMs": 1791285401814,
+  "generatedAt": "2026-10-06T11:34:45.639Z",
+  "generatedAtEpochMs": 1791286485639,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/cms.ts",
       "app/download/page.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -541,7 +541,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T11:16:40.076Z",
+    "lastActivityAt": "2026-10-06T11:34:43.919Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -553,20 +553,20 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1791285400076,
-      "lineCount": 169,
-      "charCount": 4473,
-      "hash": "ae4e9878550f",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1791286483919,
+      "lineCount": 579,
+      "charCount": 22751,
+      "hash": "d8bdd06b6211",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1791285110583,
-      "lineCount": 599,
-      "charCount": 23427,
-      "hash": "9c9c4bfa4f63",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1791286466208,
+      "lineCount": 170,
+      "charCount": 4502,
+      "hash": "7c301d4275bc",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
     },
     {
       "filePath": "components/Story.tsx",
@@ -618,6 +618,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 176: replaced 40 lines with 20 lines.",
+      "recordedAt": "2026-10-06T11:34:43.919Z",
+      "recordedAtEpochMs": 1791286483919,
+      "before": {
+        "kind": "text",
+        "lineCount": 599,
+        "charCount": 23427,
+        "hash": "9c9c4bfa4f63",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791286483919
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 579,
+        "charCount": 22751,
+        "hash": "d8bdd06b6211",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791286483919
+      },
+      "diff": {
+        "lineStart": 176,
+        "removedLines": 40,
+        "addedLines": 20,
+        "summary": "Line 176: replaced 40 lines with 20 lines.",
+        "beforeFragment": "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file...",
+        "afterFragment": "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / {}; / const node = uploadObj?.node || uploadObj; / // Prioriteit geven aan med..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 76: replaced 6 lines with 7 lines.",
+      "recordedAt": "2026-10-06T11:34:26.208Z",
+      "recordedAtEpochMs": 1791286466208,
+      "before": {
+        "kind": "text",
+        "lineCount": 169,
+        "charCount": 4473,
+        "hash": "ae4e9878550f",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791286466208
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 170,
+        "charCount": 4502,
+        "hash": "7c301d4275bc",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791286466208
+      },
+      "diff": {
+        "lineStart": 76,
+        "removedLines": 6,
+        "addedLines": 7,
+        "summary": "Line 76: replaced 6 lines with 7 lines.",
+        "beforeFragment": "fileSize / mimeType / } / } / } / }",
+        "afterFragment": "mediaItemUrl / fileSize / mimeType / } / } / } / }"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1026,96 +1090,36 @@
         "beforeFragment": "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS...",
         "afterFragment": "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 3: replaced 579 lines with 105 lines.",
-      "recordedAt": "2026-10-06T09:59:41.968Z",
-      "recordedAtEpochMs": 1791280781968,
-      "before": {
-        "kind": "text",
-        "lineCount": 583,
-        "charCount": 22745,
-        "hash": "78b1d08e1cb2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791280781968
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 109,
-        "charCount": 3790,
-        "hash": "e3095020b3a5",
-        "preview": "'use client'; / import React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useState<any>(null);...",
-        "updatedAt": 1791280781968
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 579,
-        "addedLines": 105,
-        "summary": "Line 3: replaced 579 lines with 105 lines.",
-        "beforeFragment": "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im...",
-        "afterFragment": "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 59: inserted 11 lines.",
-      "recordedAt": "2026-10-06T09:51:36.353Z",
-      "recordedAtEpochMs": 1791280296353,
-      "before": {
-        "kind": "text",
-        "lineCount": 164,
-        "charCount": 4296,
-        "hash": "56ba0cfe67f1",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791280296353
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 174,
-        "charCount": 4612,
-        "hash": "a009f5d976c4",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791280296353
-      },
-      "diff": {
-        "lineStart": 59,
-        "removedLines": 0,
-        "addedLines": 11,
-        "summary": "Line 59: inserted 11 lines.",
-        "beforeFragment": "",
-        "afterFragment": "# TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / }"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 38
+      "count": 37
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 2
+      "count": 3
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 63a4e47 removed bestandenLink",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-06 e1da3b7 fixed GraphQL error",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M lib/cms.ts"
+      "M app/download/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8ecccd7 by Bas van Dooremalen on 2026-10-06\n  new fixes for getFileUrl\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e1da3b7 by Bas van Dooremalen on 2026-10-06\n  fixed GraphQL error\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

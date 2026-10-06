@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T11:16:41.814Z
+Generated: 2026-10-06T11:34:45.639Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T11:16:40.076Z
+- Last activity: 2026-10-06T11:34:43.919Z
 ## Workspace Focus
-- Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (38), lib/cms.ts (2)
-- Suggested starting points: lib/cms.ts, app/download/page.tsx, .gitignore, AGENTS.md, README.md, package-lock.json
+- Active file in focus: app/download/page.tsx
+- Hottest files right now: app/download/page.tsx (37), lib/cms.ts (3)
+- Suggested starting points: app/download/page.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md, package-lock.json
 ## Current Workspace
-- Active file: lib/cms.ts
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- lib/cms.ts | 169 lines | 4473 chars | hash ae4e9878550f
-  Last snapshot: 2026-10-06T11:16:40.076Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- app/download/page.tsx | 599 lines | 23427 chars | hash 9c9c4bfa4f63
-  Last snapshot: 2026-10-06T11:11:50.583Z
+- app/download/page.tsx | 579 lines | 22751 chars | hash d8bdd06b6211
+  Last snapshot: 2026-10-06T11:34:43.919Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- lib/cms.ts | 170 lines | 4502 chars | hash 7c301d4275bc
+  Last snapshot: 2026-10-06T11:34:26.208Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 - components/Story.tsx | 76 lines | 3174 chars | hash 9cb2cded37f2
   Last snapshot: 2026-10-06T07:46:54.095Z
   Preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
@@ -65,6 +65,20 @@ Structured manifest: workspace.json
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T11:34:43.919Z | saved | app/download/page.tsx
+- Summary: Line 176: replaced 40 lines with 20 lines.
+- Before: 599 lines | 23,427 chars | hash 9c9c4bfa4f63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file..."
+- Current fragment: "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / {}; / const node = uploadObj?.node || uploadObj; / // Prioriteit geven aan med..."
+
+### 2026-10-06T11:34:26.208Z | saved | lib/cms.ts
+- Summary: Line 76: replaced 6 lines with 7 lines.
+- Before: 169 lines | 4,473 chars | hash ae4e9878550f | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- After: 170 lines | 4,502 chars | hash 7c301d4275bc | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- Previous fragment: "fileSize / mimeType / } / } / } / }"
+- Current fragment: "mediaItemUrl / fileSize / mimeType / } / } / } / }"
+
 ### 2026-10-06T11:16:40.076Z | saved | lib/cms.ts
 - Summary: Line 80: replaced 7 lines with 2 lines.
 - Before: 174 lines | 4,612 chars | hash a009f5d976c4 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
@@ -152,29 +166,20 @@ Structured manifest: workspace.json
 - Previous fragment: "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS..."
 - Current fragment: "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im..."
 
-### 2026-10-06T09:59:41.968Z | saved | app/download/page.tsx
-- Summary: Line 3: replaced 579 lines with 105 lines.
-- Before: 583 lines | 22,745 chars | hash 78b1d08e1cb2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 109 lines | 3,790 chars | hash e3095020b3a5 | preview: "'use client'; / import React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useState<any>(null);..."
-- Previous fragment: "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im..."
-- Current fragment: "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS..."
-
-### 2026-10-06T09:51:36.353Z | saved | lib/cms.ts
-- Summary: Line 59: inserted 11 lines.
-- Before: 164 lines | 4,296 chars | hash 56ba0cfe67f1 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- After: 174 lines | 4,612 chars | hash a009f5d976c4 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- Current fragment: "# TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / }"
-
 
 ## Hot Files
-- app/download/page.tsx (38 tracked changes)
-- lib/cms.ts (2 tracked changes)
+- app/download/page.tsx (37 tracked changes)
+- lib/cms.ts (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 63a4e47 removed bestandenLink
-- Working tree summary: 1 modified
+- HEAD: 2026-10-06 e1da3b7 fixed GraphQL error
+- Working tree summary: 5 modifieds
+- M app/download/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
 - M lib/cms.ts
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 8ecccd7 by Bas van Dooremalen on 2026-10-06
-  new fixes for getFileUrl
+- e1da3b7 by Bas van Dooremalen on 2026-10-06
+  fixed GraphQL error
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
