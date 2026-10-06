@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-05T15:19:11.727Z
+Generated: 2026-10-06T07:38:38.588Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-05T15:19:10.017Z
+- Last activity: 2026-10-06T07:38:36.642Z
 ## Workspace Focus
-- Active file in focus: app/privacy/page.tsx
-- Hottest files right now: app/api/confirm/route.ts (36), app/privacy/page.tsx (3), .env.local (1)
-- Suggested starting points: app/privacy/page.tsx, app/api/confirm/route.ts, .env.local, .gitignore, AGENTS.md, README.md
+- Active file in focus: components/Story.tsx
+- Hottest files right now: app/api/confirm/route.ts (33), app/privacy/page.tsx (4), .env.local (1), app/dashboard/page.tsx (1)
+- Suggested starting points: components/Story.tsx, app/api/confirm/route.ts, app/privacy/page.tsx, .env.local, app/dashboard/page.tsx, .gitignore
 ## Current Workspace
-- Active file: app/privacy/page.tsx
+- Active file: components/Story.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,10 +37,16 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
+- components/Story.tsx | 71 lines | 2951 chars | hash 27bffeecaf36
+  Last snapshot: 2026-10-06T07:38:36.642Z
+  Preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- app/dashboard/page.tsx | 300 lines | 13641 chars | hash 39178477b1a4
+  Last snapshot: 2026-10-05T15:40:54.385Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/privacy/page.tsx | 135 lines | 8229 chars | hash 1fa058bba875
-  Last snapshot: 2026-10-05T15:19:10.017Z
+  Last snapshot: 2026-10-05T15:19:55.506Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
 - app/api/confirm/route.ts | 312 lines | 11771 chars | hash 7818b7a67d18
   Last snapshot: 2026-10-03T16:29:45.035Z
@@ -57,14 +63,27 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx | 286 lines | 14192 chars | hash f686682f55d5
   Last snapshot: 2026-09-30T17:49:20.546Z
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = confi..."
-- app/favicon.ico | 0 lines | 0 chars | hash unknown
-  Last snapshot: 2026-09-30T16:09:34.000Z
-  Preview: "Binary or large file; content preview omitted."
-- components/CookieBanner.tsx | 213 lines | 9503 chars | hash d679e25f6e7a
-  Last snapshot: 2026-09-30T09:39:58.131Z
-  Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
 
 ## Recent Changes
+### 2026-10-06T07:38:36.642Z | saved | components/Story.tsx
+- Summary: Line 39: replaced 3 lines with 3 lines.
+- Before: 71 lines | 3,009 chars | hash a0fd1705837a | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- After: 71 lines | 2,951 chars | hash 27bffeecaf36 | preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
+- Previous fragment: "www.youtube-nocookie.com/embed/${videobron}?autoplay=1&rel=0`} / title={titel || "YouTube video"} / allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+- Current fragment: "player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`} / title={titel || "Vimeo video"} / allow="autoplay; fullscreen"
+
+### 2026-10-05T15:40:54.385Z | saved | app/dashboard/page.tsx
+- Summary: Line 132: replaced 22 lines with 22 lines.
+- Before: 300 lines | 13,639 chars | hash 749aa72f1fb7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 300 lines | 13,641 chars | hash 39178477b1a4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "on password.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onSu..."
+- Current fragment: "e wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onS..."
+
+### 2026-10-05T15:19:55.506Z | saved | app/privacy/page.tsx
+- Summary: Saved without a textual diff.
+- Before: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- After: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+
 ### 2026-10-05T15:19:10.017Z | saved | app/privacy/page.tsx
 - Summary: Line 10: replaced 137 lines with 122 lines.
 - Before: 150 lines | 8,649 chars | hash 99d551e017d4 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -139,41 +158,23 @@ Structured manifest: workspace.json
 - Before: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 - After: 313 lines | 11,841 chars | hash baca773bc7ad | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
-### 2026-10-01T13:09:32.822Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 4 lines with 11 lines.
-- Before: 313 lines | 11,835 chars | hash 50f18a8aa70a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 320 lines | 11,958 chars | hash cecc37b956d6 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
-- Current fragment: "let bestandenHtml = actieveBestanden.map((b) => ` / <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;"> / <tr> / <td style="background-color: #dcd7ce;..."
-
-### 2026-10-01T13:02:46.437Z | saved | app/api/confirm/route.ts
-- Summary: Line 259: replaced 16 lines with 4 lines.
-- Before: 325 lines | 12,465 chars | hash 958d2370d3b3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 313 lines | 11,835 chars | hash 50f18a8aa70a | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "// Gecomprimeerde HTML zonder overbodige enters om onder de 2000 tekens te blijven / let bestandenHtml = actieveBestanden.map((b) => ` / <div style="display: inline-block; margi..."
-- Current fragment: "// Supercompacte HTML op één regel per knop (geen enters, geen zware VML code) / let bestandenHtml = actieveBestanden.map((b) => / `<a href="${b.url}" target="_blank" style="dis..."
-
-### 2026-10-01T12:59:59.942Z | saved | app/api/confirm/route.ts
-- Summary: Line 260: replaced 3 lines with 15 lines.
-- Before: 313 lines | 11,855 chars | hash c82cd24aa4d8 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 325 lines | 12,465 chars | hash 958d2370d3b3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "`<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:n..."
-- Current fragment: "` / <div style="display: inline-block; margin-right: 8px; margin-bottom: 10px;"> / <!--[if mso]> / <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-micr..."
-
 
 ## Hot Files
-- app/api/confirm/route.ts (36 tracked changes)
-- app/privacy/page.tsx (3 tracked changes)
+- app/api/confirm/route.ts (33 tracked changes)
+- app/privacy/page.tsx (4 tracked changes)
 - .env.local (1 tracked changes)
+- app/dashboard/page.tsx (1 tracked changes)
+- components/Story.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-03 8b220fb removed var bestandenHtml
-- Working tree summary: 4 modifieds
-- M app/privacy/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-10-05 b317cfb Added contact info to privacy page
+- Working tree summary: 5 modifieds
+- M  app/dashboard/page.tsx
+- M components/Story.tsx
+- MM graphify-out/WORKSPACE_MEMORY.md
+- MM workspace.json
+- MM workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -181,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 8b220fb by Bas van Dooremalen on 2026-10-03
-  removed var bestandenHtml
+- b317cfb by Bas van Dooremalen on 2026-10-05
+  Added contact info to privacy page
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

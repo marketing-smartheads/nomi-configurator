@@ -36,9 +36,9 @@ export default function Story({ data }: StoryProps) {
                 {isPlaying ? (
                     <iframe
                         className="w-full h-full"
-                        src={`https://www.youtube-nocookie.com/embed/${videobron}?autoplay=1&rel=0`}
-                        title={titel || "YouTube video"}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        src={`https://player.vimeo.com/video/${videobron}?autoplay=1&dnt=1`}
+                        title={titel || "Vimeo video"}
+                        allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen
                     />
                 ) : (
