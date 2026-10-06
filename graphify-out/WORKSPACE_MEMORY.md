@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T10:50:55.351Z
+Generated: 2026-10-06T11:11:52.926Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T10:50:52.928Z
+- Last activity: 2026-10-06T11:11:50.583Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (39), lib/cms.ts (1)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 604 lines | 23906 chars | hash 3899581f9eb4
-  Last snapshot: 2026-10-06T10:50:52.928Z
+- app/download/page.tsx | 599 lines | 23427 chars | hash 9c9c4bfa4f63
+  Last snapshot: 2026-10-06T11:11:50.583Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 174 lines | 4612 chars | hash a009f5d976c4
   Last snapshot: 2026-10-06T09:51:36.353Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 
 ## Recent Changes
+### 2026-10-06T11:11:50.583Z | saved | app/download/page.tsx
+- Summary: Line 176: replaced 50 lines with 45 lines.
+- Before: 604 lines | 23,906 chars | hash 3899581f9eb4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 599 lines | 23,427 chars | hash 9c9c4bfa4f63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file || / bestand?.pdfBestand || / bestand?.pdf_bestand || / {}; / co..."
+- Current fragment: "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file..."
+
 ### 2026-10-06T10:50:52.928Z | saved | app/download/page.tsx
 - Summary: Line 176: replaced 52 lines with 50 lines.
 - Before: 606 lines | 23,677 chars | hash a5f2c50b8b3f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -158,13 +165,6 @@ Structured manifest: workspace.json
 - Previous fragment: "{}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || []; / const woningTypenLijst = configura..."
 - Current fragment: "pageData?.configurator || {}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || configuratorDa..."
 
-### 2026-10-06T09:18:45.459Z | saved | app/download/page.tsx
-- Summary: Line 51: replaced 403 lines with 384 lines.
-- Before: 574 lines | 21,818 chars | hash cf65fb260724 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 555 lines | 21,084 chars | hash f794e1e54819 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.getItem('configurator_bevestigd') === 'true' || / lo..."
-- Current fragment: "// 2. Initialiseer en valideer de downloadpagina / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.g..."
-
 
 ## Hot Files
 - app/download/page.tsx (39 tracked changes)
@@ -172,7 +172,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 6ed092b fixing getFileURL
+- HEAD: 2026-10-06 8ecccd7 new fixes for getFileUrl
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -182,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 6ed092b by Bas van Dooremalen on 2026-10-06
-  fixing getFileURL
+- 8ecccd7 by Bas van Dooremalen on 2026-10-06
+  new fixes for getFileUrl
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

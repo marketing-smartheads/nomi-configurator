@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T10:50:55.351Z",
-  "generatedAtEpochMs": 1791283855351,
+  "generatedAt": "2026-10-06T11:11:52.926Z",
+  "generatedAtEpochMs": 1791285112926,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -541,7 +541,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T10:50:52.928Z",
+    "lastActivityAt": "2026-10-06T11:11:50.583Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -554,10 +554,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791283852928,
-      "lineCount": 604,
-      "charCount": 23906,
-      "hash": "3899581f9eb4",
+      "updatedAt": 1791285110583,
+      "lineCount": 599,
+      "charCount": 23427,
+      "hash": "9c9c4bfa4f63",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -618,6 +618,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 176: replaced 50 lines with 45 lines.",
+      "recordedAt": "2026-10-06T11:11:50.583Z",
+      "recordedAtEpochMs": 1791285110583,
+      "before": {
+        "kind": "text",
+        "lineCount": 604,
+        "charCount": 23906,
+        "hash": "3899581f9eb4",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791285110583
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 599,
+        "charCount": 23427,
+        "hash": "9c9c4bfa4f63",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791285110583
+      },
+      "diff": {
+        "lineStart": 176,
+        "removedLines": 50,
+        "addedLines": 45,
+        "summary": "Line 176: replaced 50 lines with 45 lines.",
+        "beforeFragment": "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file || / bestand?.pdfBestand || / bestand?.pdf_bestand || / {}; / co...",
+        "afterFragment": "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1058,38 +1090,6 @@
         "beforeFragment": "{}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || []; / const woningTypenLijst = configura...",
         "afterFragment": "pageData?.configurator || {}; / const downloadSectie = configuratorData?.downloadSectie || {}; / const designPakkettenLijst = configuratorData?.designPakketten || configuratorDa..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 51: replaced 403 lines with 384 lines.",
-      "recordedAt": "2026-10-06T09:18:45.459Z",
-      "recordedAtEpochMs": 1791278325459,
-      "before": {
-        "kind": "text",
-        "lineCount": 574,
-        "charCount": 21818,
-        "hash": "cf65fb260724",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791278325459
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 555,
-        "charCount": 21084,
-        "hash": "f794e1e54819",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791278325459
-      },
-      "diff": {
-        "lineStart": 51,
-        "removedLines": 403,
-        "addedLines": 384,
-        "summary": "Line 51: replaced 403 lines with 384 lines.",
-        "beforeFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.getItem('configurator_bevestigd') === 'true' || / lo...",
-        "afterFragment": "// 2. Initialiseer en valideer de downloadpagina / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.g..."
-      }
     }
   ],
   "hotFiles": [
@@ -1105,7 +1105,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 6ed092b fixing getFileURL",
+    "headSummary": "2026-10-06 8ecccd7 new fixes for getFileUrl",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1115,7 +1115,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6ed092b by Bas van Dooremalen on 2026-10-06\n  fixing getFileURL\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8ecccd7 by Bas van Dooremalen on 2026-10-06\n  new fixes for getFileUrl\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

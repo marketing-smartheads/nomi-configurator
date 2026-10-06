@@ -173,6 +173,7 @@ export default function DownloadPage() {
     if (!bestand) return null;
     if (typeof bestand === 'string') return bestand;
 
+    // Haal het bestandsobject op uit uploadBestand (of varianten)
     const uploadObj = 
       bestand?.uploadBestand || 
       bestand?.upload_bestand || 
@@ -184,7 +185,7 @@ export default function DownloadPage() {
 
     const node = uploadObj?.node || uploadObj;
 
-    // Probeer alle mogelijke URL-velden uit WPGraphQL
+    // Haal de URL op uit de WPGraphQL respons van het uploadveld
     let url = (
       node?.mediaItemUrl ||
       node?.sourceUrl ||
@@ -200,18 +201,12 @@ export default function DownloadPage() {
       null
     );
 
-    // Als sourceUrl null is maar het bestand object bestaat wel (heeft filesize/mimetype),
-    // kunnen we de URL veilig afleiden van de bekende WordPress uploads structuur of titel.
-    if (!url && node && (node.fileSize || node.mimeType)) {
-      const titel = bestand?.bestandTitel || bestand?.bestand_titel || '';
-      // Converteer bijvoorbeeld "Moodboard — Modern Raw" naar "TDG-MOODBOARD-HOTEL-RAW.pdf" of gebruik depad-structuur
-      if (titel.toLowerCase().includes('modern raw')) {
-        url = 'https://cms.nomi-configurator.nl/wp-content/uploads/2026/09/TDG-MOODBOARD-HOTEL-RAW.pdf';
-      } else if (titel.toLowerCase().includes('hotel chic')) {
-        url = 'https://cms.nomi-configurator.nl/wp-content/uploads/2026/09/TDG-MOODBOARD-HOTEL-CHIC.pdf';
-      }
+    // Mocht de URL als object terugkomen vanuit GraphQL
+    if (url && typeof url === 'object') {
+      url = url.mediaItemUrl || url.sourceUrl || url.url || null;
     }
 
+    // Event prijs / thumbnail extensie opschonen indien nodig
     if (url && typeof url === 'string') {
       url = url.replace(/-pdf\.jpg$/i, '.pdf');
       url = url.replace(/\.pdf\.jpg$/i, '.pdf');
@@ -222,7 +217,7 @@ export default function DownloadPage() {
 
     return typeof url === 'string' && url.startsWith('http') ? url : null;
   };
-  
+
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
   const panoramaRendersLijst = 
