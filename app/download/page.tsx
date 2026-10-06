@@ -468,7 +468,7 @@ export default function DownloadPage() {
               </div>
 
               {isVideo ? (
-                <div className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-black shadow-inner">
+                <div className="w-full h-[450px !important] sm:h-[550px !important]  rounded-2xl overflow-hidden bg-black shadow-inner">
                   <video 
                     src={geselecteerdeMediaUrl} 
                     autoPlay 
@@ -481,7 +481,8 @@ export default function DownloadPage() {
               ) : (
                 <div 
                   id="panorama-container" 
-                  className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
+                  style={{ width: '100%', height: '550px' }} 
+                  className="rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
                 />
               )}
             </div>

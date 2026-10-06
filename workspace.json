@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T09:51:38.674Z",
-  "generatedAtEpochMs": 1791280298674,
+  "generatedAt": "2026-10-06T10:13:05.736Z",
+  "generatedAtEpochMs": 1791281585736,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,12 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/cms.ts",
       "app/download/page.tsx",
       "app/privacy/page.tsx",
-      "app/api/confirm/route.ts",
       "components/Story.tsx",
       "app/dashboard/page.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -545,7 +544,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T09:51:36.353Z",
+    "lastActivityAt": "2026-10-06T10:13:04.040Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,20 +556,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1791281584040,
+      "lineCount": 584,
+      "charCount": 22801,
+      "hash": "501210992e33",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
       "filePath": "lib/cms.ts",
       "updatedAt": 1791280296353,
       "lineCount": 174,
       "charCount": 4612,
       "hash": "a009f5d976c4",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1791279803999,
-      "lineCount": 583,
-      "charCount": 22745,
-      "hash": "78b1d08e1cb2",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "components/Story.tsx",
@@ -622,6 +621,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 471: inserted 1 line.",
+      "recordedAt": "2026-10-06T10:13:04.040Z",
+      "recordedAtEpochMs": 1791281584040,
+      "before": {
+        "kind": "text",
+        "lineCount": 584,
+        "charCount": 22790,
+        "hash": "abce7a7264fa",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791281584040
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 584,
+        "charCount": 22801,
+        "hash": "501210992e33",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791281584040
+      },
+      "diff": {
+        "lineStart": 471,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 471: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "!important"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 105 lines with 580 lines.",
+      "recordedAt": "2026-10-06T10:12:40.136Z",
+      "recordedAtEpochMs": 1791281560136,
+      "before": {
+        "kind": "text",
+        "lineCount": 109,
+        "charCount": 3790,
+        "hash": "e3095020b3a5",
+        "preview": "'use client'; / import React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useState<any>(null);...",
+        "updatedAt": 1791281560136
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 584,
+        "charCount": 22790,
+        "hash": "abce7a7264fa",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791281560136
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 105,
+        "addedLines": 580,
+        "summary": "Line 3: replaced 105 lines with 580 lines.",
+        "beforeFragment": "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS...",
+        "afterFragment": "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 579 lines with 105 lines.",
+      "recordedAt": "2026-10-06T09:59:41.968Z",
+      "recordedAtEpochMs": 1791280781968,
+      "before": {
+        "kind": "text",
+        "lineCount": 583,
+        "charCount": 22745,
+        "hash": "78b1d08e1cb2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791280781968
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 109,
+        "charCount": 3790,
+        "hash": "e3095020b3a5",
+        "preview": "'use client'; / import React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useState<any>(null);...",
+        "updatedAt": 1791280781968
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 579,
+        "addedLines": 105,
+        "summary": "Line 3: replaced 579 lines with 105 lines.",
+        "beforeFragment": "{ useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / im...",
+        "afterFragment": "React, { useEffect, useState, useRef } from 'react'; / import { getPageData } from '@/lib/cms'; / export default function DownloadPage() { / const [pageData, setPageData] = useS..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1005,116 +1100,16 @@
         "beforeFragment": "en houd bij wanneer het klaar is / useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!docum...",
         "afterFragment": "useEffect(() => { / if (typeof window !== 'undefined' && (window as any).pannellum) { / setIsPannellumLoaded(true); / return; / } / if (!document.getElementById('pannellum-css')..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 69: inserted 1 line.",
-      "recordedAt": "2026-10-06T08:44:55.569Z",
-      "recordedAtEpochMs": 1791276295569,
-      "before": {
-        "kind": "text",
-        "lineCount": 579,
-        "charCount": 22458,
-        "hash": "2b8495b07f78",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276295569
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 579,
-        "charCount": 22462,
-        "hash": "d28881cadbe0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276295569
-      },
-      "diff": {
-        "lineStart": 69,
-        "removedLines": 0,
-        "addedLines": 1,
-        "summary": "Line 69: inserted 1 line.",
-        "beforeFragment": "",
-        "afterFragment": "* 60"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 206: replaced 47 lines with 41 lines.",
-      "recordedAt": "2026-10-06T08:44:22.369Z",
-      "recordedAtEpochMs": 1791276262369,
-      "before": {
-        "kind": "text",
-        "lineCount": 585,
-        "charCount": 22943,
-        "hash": "d465b622734e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276262369
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 579,
-        "charCount": 22458,
-        "hash": "2b8495b07f78",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276262369
-      },
-      "diff": {
-        "lineStart": 206,
-        "removedLines": 47,
-        "addedLines": 41,
-        "summary": "Line 206: replaced 47 lines with 41 lines.",
-        "beforeFragment": "Filter bestanden op basis van designpakket / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: a...",
-        "afterFragment": "Slimme filtering met fallback zodat bestanden altijd zichtbaar zijn / const categorieen = ruweCategorieen.map((cat: any) => { / const alleBestanden = cat?.bestandenLijst || [];..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 206: replaced 68 lines with 93 lines.",
-      "recordedAt": "2026-10-06T08:42:24.518Z",
-      "recordedAtEpochMs": 1791276144518,
-      "before": {
-        "kind": "text",
-        "lineCount": 560,
-        "charCount": 22429,
-        "hash": "3915500c7bef",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276144518
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 585,
-        "charCount": 22943,
-        "hash": "d465b622734e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791276144518
-      },
-      "diff": {
-        "lineStart": 206,
-        "removedLines": 68,
-        "addedLines": 93,
-        "summary": "Line 206: replaced 68 lines with 93 lines.",
-        "beforeFragment": "(Hotel Chic / Modern Raw) / const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const...",
-        "afterFragment": "const categorieen = ruweCategorieen.map((cat: any) => { / const gefilterdeBestanden = (cat?.bestandenLijst || []).filter((bestand: any) => { / const fileUrl = getFileUrl(bestand..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 28
+      "count": 31
     },
     {
       "filePath": "app/privacy/page.tsx",
       "count": 4
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "count": 3
     },
     {
       "filePath": "components/Story.tsx",
@@ -1132,17 +1127,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 9f212ce some fixes",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-06 358822a Added renders to cms.ts file",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M lib/cms.ts"
+      "M app/download/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9f212ce by Bas van Dooremalen on 2026-10-06\n  some fixes\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 358822a by Bas van Dooremalen on 2026-10-06\n  Added renders to cms.ts file\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
