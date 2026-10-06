@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T10:45:30.310Z",
-  "generatedAtEpochMs": 1791283530310,
+  "generatedAt": "2026-10-06T10:50:55.351Z",
+  "generatedAtEpochMs": 1791283855351,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -541,7 +541,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-06T10:45:28.567Z",
+    "lastActivityAt": "2026-10-06T10:50:52.928Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -554,10 +554,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791283528567,
-      "lineCount": 606,
-      "charCount": 23677,
-      "hash": "a5f2c50b8b3f",
+      "updatedAt": 1791283852928,
+      "lineCount": 604,
+      "charCount": 23906,
+      "hash": "3899581f9eb4",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -618,6 +618,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 176: replaced 52 lines with 50 lines.",
+      "recordedAt": "2026-10-06T10:50:52.928Z",
+      "recordedAtEpochMs": 1791283852928,
+      "before": {
+        "kind": "text",
+        "lineCount": 606,
+        "charCount": 23677,
+        "hash": "a5f2c50b8b3f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791283852928
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 604,
+        "charCount": 23906,
+        "hash": "3899581f9eb4",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791283852928
+      },
+      "diff": {
+        "lineStart": 176,
+        "removedLines": 52,
+        "addedLines": 50,
+        "summary": "Line 176: replaced 52 lines with 50 lines.",
+        "beforeFragment": "// Check alle mogelijke plekken waar de URL of het bestandsobject kan staan / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || /...",
+        "afterFragment": "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file || / bestand?.pdfBestand || / bestand?.pdf_bestand || / {}; / co..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1058,38 +1090,6 @@
         "beforeFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.getItem('configurator_bevestigd') === 'true' || / lo...",
         "afterFragment": "// 2. Initialiseer en valideer de downloadpagina / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / const isConfirmed = / localStorage.g..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 68: replaced 182 lines with 182 lines.",
-      "recordedAt": "2026-10-06T08:58:11.051Z",
-      "recordedAtEpochMs": 1791277091051,
-      "before": {
-        "kind": "text",
-        "lineCount": 574,
-        "charCount": 21831,
-        "hash": "fba9427bbc2d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791277091051
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 574,
-        "charCount": 21818,
-        "hash": "cf65fb260724",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791277091051
-      },
-      "diff": {
-        "lineStart": 68,
-        "removedLines": 182,
-        "addedLines": 182,
-        "summary": "Line 68: replaced 182 lines with 182 lines.",
-        "beforeFragment": "* 60 / : 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / loc...",
-        "afterFragment": ": 48 * 60 * 60 * 1000; / if (timestamp) { / const elapsed = Date.now() - Number(timestamp); / if (elapsed > maxTijd) { / wisEnStuurTerug(); / return; / } / } else { / localStora..."
-      }
     }
   ],
   "hotFiles": [
@@ -1105,7 +1105,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-06 7b1b154 Fixing getFileUrl for downloadpadge PDF",
+    "headSummary": "2026-10-06 6ed092b fixing getFileURL",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1115,7 +1115,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8b50c28 by Bas van Dooremalen on 2026-10-06\n  added debugo log to file object\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6ed092b by Bas van Dooremalen on 2026-10-06\n  fixing getFileURL\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
