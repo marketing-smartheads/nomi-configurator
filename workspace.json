@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T08:37:17.602Z",
-  "generatedAtEpochMs": 1791448637602,
+  "generatedAt": "2026-10-08T08:54:29.986Z",
+  "generatedAtEpochMs": 1791449669986,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
-      "components/configurator/StepFourConfirmation.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T08:37:15.306Z",
+    "lastActivityAt": "2026-10-08T08:54:27.547Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -553,6 +553,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1791449667547,
+      "lineCount": 325,
+      "charCount": 16042,
+      "hash": "3b3bf54c38e8",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1791448635306,
@@ -568,14 +576,6 @@
       "charCount": 6897,
       "hash": "2d23958b4d26",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1791291511921,
-      "lineCount": 302,
-      "charCount": 14641,
-      "hash": "f97bde831204",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
     },
     {
       "filePath": "components/Story.tsx",
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 325 lines.",
+      "recordedAt": "2026-10-08T08:54:27.547Z",
+      "recordedAtEpochMs": 1791449667547,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1791449667547
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 325,
+        "charCount": 16042,
+        "hash": "3b3bf54c38e8",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
+        "updatedAt": 1791449667547
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 325,
+        "summary": "Line 1: inserted 325 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "CMS data ophalen / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPromise = getPageData(); /...",
         "afterFragment": "koppel voucher direct aan Type B / pakket / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPr..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 120: replaced 238 lines with 239 lines.",
-      "recordedAt": "2026-10-08T07:32:57.389Z",
-      "recordedAtEpochMs": 1791444777389,
-      "before": {
-        "kind": "text",
-        "lineCount": 671,
-        "charCount": 26955,
-        "hash": "c09fd0a7705e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791444777389
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 672,
-        "charCount": 26931,
-        "hash": "11f9d7b62632",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791444777389
-      },
-      "diff": {
-        "lineStart": 120,
-        "removedLines": 238,
-        "addedLines": 239,
-        "summary": "Line 120: replaced 238 lines with 239 lines.",
-        "beforeFragment": "woning en pakket op uit storage (of gekoppeld aan vouchercode) / const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType'...",
-        "afterFragment": "gekoppelde woning en pakket op (of uit storage na afronding / voucher login) / const targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('gesele..."
-      }
     }
   ],
   "hotFiles": [
@@ -1107,31 +1107,27 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 9
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 4
+      "count": 5
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 8b640a5 get correct data from vouchercode",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-08 24373a9 added limiet to download page",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8b640a5 by Bas van Dooremalen on 2026-10-08\n  get correct data from vouchercode\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 24373a9 by Bas van Dooremalen on 2026-10-08\n  added limiet to download page\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
