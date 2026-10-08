@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:12:15.968Z",
-  "generatedAtEpochMs": 1791450735968,
+  "generatedAt": "2026-10-08T09:14:09.830Z",
+  "generatedAtEpochMs": 1791450849830,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T09:12:14.234Z",
+    "lastActivityAt": "2026-10-08T09:14:07.509Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,10 +555,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1791450734234,
-      "lineCount": 168,
-      "charCount": 4460,
-      "hash": "6e0d4b7c422a",
+      "updatedAt": 1791450847509,
+      "lineCount": 223,
+      "charCount": 6051,
+      "hash": "188db5995315",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 166: replaced 2 lines with 57 lines.",
+      "recordedAt": "2026-10-08T09:14:07.509Z",
+      "recordedAtEpochMs": 1791450847509,
+      "before": {
+        "kind": "text",
+        "lineCount": 168,
+        "charCount": 4460,
+        "hash": "6e0d4b7c422a",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1791450847509
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 6051,
+        "hash": "188db5995315",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1791450847509
+      },
+      "diff": {
+        "lineStart": 166,
+        "removedLines": 2,
+        "addedLines": 57,
+        "summary": "Line 166: replaced 2 lines with 57 lines.",
+        "beforeFragment": "// Veilige vaste standaard tot de optiepagina in WordPress volledig is gekoppeld / };",
+        "afterFragment": "}; / } / export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1066,48 +1098,16 @@
         "beforeFragment": "met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVoucherData = awai...",
         "afterFragment": "voor de opgeslagen vouchercode / if (opgeslagenCode && typeof opgeslagenCode === 'string' && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVouc..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 124: replaced 2 lines with 2 lines.",
-      "recordedAt": "2026-10-08T07:53:00.084Z",
-      "recordedAtEpochMs": 1791445980084,
-      "before": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 27532,
-        "hash": "1483ad688c05",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791445980084
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 27550,
-        "hash": "b43e23bc3ad9",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791445980084
-      },
-      "diff": {
-        "lineStart": 124,
-        "removedLines": 2,
-        "addedLines": 2,
-        "summary": "Line 124: replaced 2 lines with 2 lines.",
-        "beforeFragment": "Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress / if (opgeslagenCode",
-        "afterFragment": "Veilige check met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== ''"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 24
+      "count": 23
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1117,7 +1117,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 251b4d4 fixing cms.ts file",
+    "headSummary": "2026-10-08 49a8583 Some improvements",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1127,7 +1127,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 40e4a25 by Bas van Dooremalen on 2026-10-08\n  Update StepFourComfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 49a8583 by Bas van Dooremalen on 2026-10-08\n  Some improvements\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
