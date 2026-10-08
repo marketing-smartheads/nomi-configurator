@@ -2,6 +2,11 @@
 
 export async function getPageData() {
   const query = `
+  query GetConfiguratorOptions {
+      configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina
+        downloadLimietDagen
+      }
+    },
     query GetPageSections {
       page(id: "28", idType: DATABASE_ID) {
         sections { 

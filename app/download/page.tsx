@@ -82,12 +82,18 @@ export default function DownloadPage() {
           setPageData(cmsData);
         }
 
-        // Bepaal de geldigheidsduur
+        // Bepaal de geldigheidsduur (Ondersteunt optiepagina, configurator data én standaard 14 dagen)
         const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {};
-        const instelbareDagen = configuratorData?.downloadLimietDagen || 14; 
+        const instelbareDagen = Number(
+          cmsData?.downloadLimietDagen || 
+          configuratorData?.downloadLimietDagen || 
+          cmsData?.options?.downloadLimietDagen || 
+          14
+        ); 
+
         const maxTijd = process.env.NODE_ENV === 'development'
           ? 60 * 60 * 1000                
-          : instelbareDagen * 24 * 60 * 60 * 1000;     
+          : instelbareDagen * 24 * 60 * 60 * 1000;    
 
         const isConfirmed = 
           localStorage.getItem('configurator_bevestigd') === 'true' || 
