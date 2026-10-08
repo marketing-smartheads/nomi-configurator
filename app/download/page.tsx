@@ -121,9 +121,9 @@ export default function DownloadPage() {
         let targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning');
         let targetPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket');
 
-        // Veilige check met string conversie om TypeScript fouten te voorkomen
-        if (opgeslagenCode && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) {
-          const liveVoucherData = await getVoucherData(opgeslagenCode);
+        // Veilige check voor de opgeslagen vouchercode
+        if (opgeslagenCode && typeof opgeslagenCode === 'string' && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) {
+          const liveVoucherData = await getVoucherData(opgeslagenCode as string);
           if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
             targetWoning = liveVoucherData.gekozenTypeWoning;
             targetPakket = liveVoucherData.gekozenDesignpakket || 'Hotel Chic';

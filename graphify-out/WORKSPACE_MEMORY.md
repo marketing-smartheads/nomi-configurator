@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T07:53:02.367Z
+Generated: 2026-10-08T07:55:22.105Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T07:53:00.084Z
+- Last activity: 2026-10-08T07:55:20.327Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (32), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (4)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 683 lines | 27550 chars | hash b43e23bc3ad9
-  Last snapshot: 2026-10-08T07:53:00.084Z
+- app/download/page.tsx | 683 lines | 27574 chars | hash 390e29f08f4b
+  Last snapshot: 2026-10-08T07:55:20.327Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 219 lines | 5999 chars | hash c332ee6485eb
   Last snapshot: 2026-10-08T07:46:09.912Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T07:55:20.327Z | saved | app/download/page.tsx
+- Summary: Line 124: replaced 3 lines with 3 lines.
+- Before: 683 lines | 27,550 chars | hash b43e23bc3ad9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 683 lines | 27,574 chars | hash 390e29f08f4b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVoucherData = awai..."
+- Current fragment: "voor de opgeslagen vouchercode / if (opgeslagenCode && typeof opgeslagenCode === 'string' && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVouc..."
+
 ### 2026-10-08T07:53:00.084Z | saved | app/download/page.tsx
 - Summary: Line 124: replaced 2 lines with 2 lines.
 - Before: 683 lines | 27,532 chars | hash 1483ad688c05 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,13 +170,6 @@ Structured manifest: workspace.json
 - Previous fragment: "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file..."
 - Current fragment: "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / {}; / const node = uploadObj?.node || uploadObj; / // Prioriteit geven aan med..."
 
-### 2026-10-06T11:34:26.208Z | saved | lib/cms.ts
-- Summary: Line 76: replaced 6 lines with 7 lines.
-- Before: 169 lines | 4,473 chars | hash ae4e9878550f | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- After: 170 lines | 4,502 chars | hash 7c301d4275bc | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- Previous fragment: "fileSize / mimeType / } / } / } / }"
-- Current fragment: "mediaItemUrl / fileSize / mimeType / } / } / } / }"
-
 
 ## Hot Files
 - app/download/page.tsx (32 tracked changes)
@@ -178,7 +178,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 aef7173 Update downloadpage
+- HEAD: 2026-10-08 f900858 fixing error update downloadpage
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 

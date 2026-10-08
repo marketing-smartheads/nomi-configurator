@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T07:53:02.367Z",
-  "generatedAtEpochMs": 1791445982367,
+  "generatedAt": "2026-10-08T07:55:22.105Z",
+  "generatedAtEpochMs": 1791446122105,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T07:53:00.084Z",
+    "lastActivityAt": "2026-10-08T07:55:20.327Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,10 +555,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791445980084,
+      "updatedAt": 1791446120327,
       "lineCount": 683,
-      "charCount": 27550,
-      "hash": "b43e23bc3ad9",
+      "charCount": 27574,
+      "hash": "390e29f08f4b",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 124: replaced 3 lines with 3 lines.",
+      "recordedAt": "2026-10-08T07:55:20.327Z",
+      "recordedAtEpochMs": 1791446120327,
+      "before": {
+        "kind": "text",
+        "lineCount": 683,
+        "charCount": 27550,
+        "hash": "b43e23bc3ad9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791446120326
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 683,
+        "charCount": 27574,
+        "hash": "390e29f08f4b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791446120327
+      },
+      "diff": {
+        "lineStart": 124,
+        "removedLines": 3,
+        "addedLines": 3,
+        "summary": "Line 124: replaced 3 lines with 3 lines.",
+        "beforeFragment": "met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVoucherData = awai...",
+        "afterFragment": "voor de opgeslagen vouchercode / if (opgeslagenCode && typeof opgeslagenCode === 'string' && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) { / const liveVouc..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file...",
         "afterFragment": "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / {}; / const node = uploadObj?.node || uploadObj; / // Prioriteit geven aan med..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 76: replaced 6 lines with 7 lines.",
-      "recordedAt": "2026-10-06T11:34:26.208Z",
-      "recordedAtEpochMs": 1791286466208,
-      "before": {
-        "kind": "text",
-        "lineCount": 169,
-        "charCount": 4473,
-        "hash": "ae4e9878550f",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791286466208
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 170,
-        "charCount": 4502,
-        "hash": "7c301d4275bc",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791286466208
-      },
-      "diff": {
-        "lineStart": 76,
-        "removedLines": 6,
-        "addedLines": 7,
-        "summary": "Line 76: replaced 6 lines with 7 lines.",
-        "beforeFragment": "fileSize / mimeType / } / } / } / }",
-        "afterFragment": "mediaItemUrl / fileSize / mimeType / } / } / } / }"
-      }
     }
   ],
   "hotFiles": [
@@ -1117,7 +1117,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 aef7173 Update downloadpage",
+    "headSummary": "2026-10-08 f900858 fixing error update downloadpage",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
