@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T08:16:39.102Z",
-  "generatedAtEpochMs": 1791447399102,
+  "generatedAt": "2026-10-08T08:21:11.318Z",
+  "generatedAtEpochMs": 1791447671318,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T08:16:37.353Z",
+    "lastActivityAt": "2026-10-08T08:21:09.016Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,10 +555,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1791447397353,
-      "lineCount": 237,
-      "charCount": 6735,
-      "hash": "19c72617aa3b",
+      "updatedAt": 1791447669016,
+      "lineCount": 235,
+      "charCount": 6730,
+      "hash": "346b5b5e24ec",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
     },
     {
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 176: replaced 56 lines with 54 lines.",
+      "recordedAt": "2026-10-08T08:21:09.016Z",
+      "recordedAtEpochMs": 1791447669016,
+      "before": {
+        "kind": "text",
+        "lineCount": 237,
+        "charCount": 6735,
+        "hash": "19c72617aa3b",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791447669016
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 235,
+        "charCount": 6730,
+        "hash": "346b5b5e24ec",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791447669016
+      },
+      "diff": {
+        "lineStart": 176,
+        "removedLines": 56,
+        "addedLines": 54,
+        "summary": "Line 176: replaced 56 lines with 54 lines.",
+        "beforeFragment": "query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekoze...",
+        "afterFragment": "cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherVelden { / toegangscode / gek..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1066,48 +1098,16 @@
         "beforeFragment": "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind...",
         "afterFragment": "needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false); / const [voucherInput, setVoucherInput] = useState<string>(''); / const [voucherError, setVoucherError] = us..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 3: replaced 562 lines with 575 lines.",
-      "recordedAt": "2026-10-06T13:40:55.719Z",
-      "recordedAtEpochMs": 1791294055719,
-      "before": {
-        "kind": "text",
-        "lineCount": 566,
-        "charCount": 24110,
-        "hash": "f2b9ac5f39be",
-        "preview": "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo...",
-        "updatedAt": 1791294055719
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 579,
-        "charCount": 22751,
-        "hash": "d8bdd06b6211",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791294055719
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 562,
-        "addedLines": 575,
-        "summary": "Line 3: replaced 562 lines with 575 lines.",
-        "beforeFragment": ", Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'...",
-        "afterFragment": "} from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageData } f..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 29
+      "count": 28
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 7
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1117,21 +1117,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 2fed84d Update getVoucherData",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-08 47ed294 update CMS.ts file",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2fed84d by Bas van Dooremalen on 2026-10-08\n  Update getVoucherData\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 47ed294 by Bas van Dooremalen on 2026-10-08\n  update CMS.ts file\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

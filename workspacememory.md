@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T08:16:39.102Z
+Generated: 2026-10-08T08:21:11.318Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T08:16:37.353Z
+- Last activity: 2026-10-08T08:21:09.016Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (29), lib/cms.ts (7), components/configurator/StepFourConfirmation.tsx (4)
+- Hottest files right now: app/download/page.tsx (28), lib/cms.ts (8), components/configurator/StepFourConfirmation.tsx (4)
 - Suggested starting points: lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, .gitignore, AGENTS.md, README.md
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 237 lines | 6735 chars | hash 19c72617aa3b
-  Last snapshot: 2026-10-08T08:16:37.353Z
+- lib/cms.ts | 235 lines | 6730 chars | hash 346b5b5e24ec
+  Last snapshot: 2026-10-08T08:21:09.016Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 - app/download/page.tsx | 675 lines | 27024 chars | hash 7a82577d1cd2
   Last snapshot: 2026-10-08T08:15:04.808Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T08:21:09.016Z | saved | lib/cms.ts
+- Summary: Line 176: replaced 56 lines with 54 lines.
+- Before: 237 lines | 6,735 chars | hash 19c72617aa3b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- After: 235 lines | 6,730 chars | hash 346b5b5e24ec | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- Previous fragment: "query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekoze..."
+- Current fragment: "cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherVelden { / toegangscode / gek..."
+
 ### 2026-10-08T08:16:37.353Z | saved | lib/cms.ts
 - Summary: Line 180: replaced 39 lines with 53 lines.
 - Before: 223 lines | 6,147 chars | hash c042d574f6a7 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
@@ -162,28 +169,17 @@ Structured manifest: workspace.json
 - Previous fragment: "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
 - Current fragment: "needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false); / const [voucherInput, setVoucherInput] = useState<string>(''); / const [voucherError, setVoucherError] = us..."
 
-### 2026-10-06T13:40:55.719Z | saved | app/download/page.tsx
-- Summary: Line 3: replaced 562 lines with 575 lines.
-- Before: 566 lines | 24,110 chars | hash f2b9ac5f39be | preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
-- After: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: ", Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'..."
-- Current fragment: "} from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageData } f..."
-
 
 ## Hot Files
-- app/download/page.tsx (29 tracked changes)
-- lib/cms.ts (7 tracked changes)
+- app/download/page.tsx (28 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 2fed84d Update getVoucherData
-- Working tree summary: 5 modifieds
-- M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
+- HEAD: 2026-10-08 47ed294 update CMS.ts file
+- Working tree summary: 1 modified
 - M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 2fed84d by Bas van Dooremalen on 2026-10-08
-  Update getVoucherData
+- 47ed294 by Bas van Dooremalen on 2026-10-08
+  update CMS.ts file
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
