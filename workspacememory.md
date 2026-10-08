@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T07:48:04.258Z
+Generated: 2026-10-08T07:53:02.367Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T07:48:02.501Z
+- Last activity: 2026-10-08T07:53:00.084Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (32), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (4)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 683 lines | 27532 chars | hash 1483ad688c05
-  Last snapshot: 2026-10-08T07:48:02.501Z
+- app/download/page.tsx | 683 lines | 27550 chars | hash b43e23bc3ad9
+  Last snapshot: 2026-10-08T07:53:00.084Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 219 lines | 5999 chars | hash c332ee6485eb
   Last snapshot: 2026-10-08T07:46:09.912Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T07:53:00.084Z | saved | app/download/page.tsx
+- Summary: Line 124: replaced 2 lines with 2 lines.
+- Before: 683 lines | 27,532 chars | hash 1483ad688c05 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 683 lines | 27,550 chars | hash b43e23bc3ad9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress / if (opgeslagenCode"
+- Current fragment: "Veilige check met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== ''"
+
 ### 2026-10-08T07:48:02.501Z | saved | app/download/page.tsx
 - Summary: Line 7: replaced 184 lines with 190 lines.
 - Before: 677 lines | 26,964 chars | hash 6ec024d45fc1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,13 +170,6 @@ Structured manifest: workspace.json
 - Previous fragment: "fileSize / mimeType / } / } / } / }"
 - Current fragment: "mediaItemUrl / fileSize / mimeType / } / } / } / }"
 
-### 2026-10-06T11:16:40.076Z | saved | lib/cms.ts
-- Summary: Line 80: replaced 7 lines with 2 lines.
-- Before: 174 lines | 4,612 chars | hash a009f5d976c4 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- After: 169 lines | 4,473 chars | hash ae4e9878550f | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- Previous fragment: "bestandLink { / url / title / target / } / } / }"
-- Current fragment: "} / }"
-
 
 ## Hot Files
 - app/download/page.tsx (32 tracked changes)
@@ -178,13 +178,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 d0cb75b fixed downloadpage
-- Working tree summary: 5 modifieds
+- HEAD: 2026-10-08 aef7173 Update downloadpage
+- Working tree summary: 1 modified
 - M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- d0cb75b by Bas van Dooremalen on 2026-10-08
-  fixed downloadpage
+- aef7173 by Bas van Dooremalen on 2026-10-08
+  Update downloadpage
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

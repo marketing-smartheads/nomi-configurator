@@ -121,8 +121,8 @@ export default function DownloadPage() {
         let targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning');
         let targetPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket');
 
-        // Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress
-        if (opgeslagenCode && (!targetWoning || !targetPakket)) {
+        // Veilige check met string conversie om TypeScript fouten te voorkomen
+        if (opgeslagenCode && opgeslagenCode.trim() !== '' && (!targetWoning || !targetPakket)) {
           const liveVoucherData = await getVoucherData(opgeslagenCode);
           if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
             targetWoning = liveVoucherData.gekozenTypeWoning;

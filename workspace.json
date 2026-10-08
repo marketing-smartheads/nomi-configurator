@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T07:48:04.258Z",
-  "generatedAtEpochMs": 1791445684258,
+  "generatedAt": "2026-10-08T07:53:02.367Z",
+  "generatedAtEpochMs": 1791445982367,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T07:48:02.501Z",
+    "lastActivityAt": "2026-10-08T07:53:00.084Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,10 +555,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791445682501,
+      "updatedAt": 1791445980084,
       "lineCount": 683,
-      "charCount": 27532,
-      "hash": "1483ad688c05",
+      "charCount": 27550,
+      "hash": "b43e23bc3ad9",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 124: replaced 2 lines with 2 lines.",
+      "recordedAt": "2026-10-08T07:53:00.084Z",
+      "recordedAtEpochMs": 1791445980084,
+      "before": {
+        "kind": "text",
+        "lineCount": 683,
+        "charCount": 27532,
+        "hash": "1483ad688c05",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791445980084
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 683,
+        "charCount": 27550,
+        "hash": "b43e23bc3ad9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791445980084
+      },
+      "diff": {
+        "lineStart": 124,
+        "removedLines": 2,
+        "addedLines": 2,
+        "summary": "Line 124: replaced 2 lines with 2 lines.",
+        "beforeFragment": "Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress / if (opgeslagenCode",
+        "afterFragment": "Veilige check met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== ''"
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "fileSize / mimeType / } / } / } / }",
         "afterFragment": "mediaItemUrl / fileSize / mimeType / } / } / } / }"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 80: replaced 7 lines with 2 lines.",
-      "recordedAt": "2026-10-06T11:16:40.076Z",
-      "recordedAtEpochMs": 1791285400076,
-      "before": {
-        "kind": "text",
-        "lineCount": 174,
-        "charCount": 4612,
-        "hash": "a009f5d976c4",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791285400076
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 169,
-        "charCount": 4473,
-        "hash": "ae4e9878550f",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791285400076
-      },
-      "diff": {
-        "lineStart": 80,
-        "removedLines": 7,
-        "addedLines": 2,
-        "summary": "Line 80: replaced 7 lines with 2 lines.",
-        "beforeFragment": "bestandLink { / url / title / target / } / } / }",
-        "afterFragment": "} / }"
-      }
     }
   ],
   "hotFiles": [
@@ -1117,21 +1117,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 d0cb75b fixed downloadpage",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-08 aef7173 Update downloadpage",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- d0cb75b by Bas van Dooremalen on 2026-10-08\n  fixed downloadpage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- aef7173 by Bas van Dooremalen on 2026-10-08\n  Update downloadpage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
