@@ -171,13 +171,11 @@ export async function getPageData() {
   };
 }
 
-// In src/lib/cms.ts
-export async function getVoucherData(voucherCode: string | null) {
-  if (!voucherCode) return null;
-  
+// update getVoucherData
+export async function getVoucherData(voucherCode: string) {
   const query = `
-    query GetVoucherByCode($code: String!) {
-      vouchers(where: { search: $code }) {
+    query GetAllVouchers {
+      vouchers(first: 100) {
         nodes {
           title
           voucherDetails {
@@ -201,21 +199,25 @@ export async function getVoucherData(voucherCode: string | null) {
     const res = await fetch(graphqlEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, variables: { code: voucherCode } }),
+      body: JSON.stringify({ query }),
       cache: 'no-store',
     });
 
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
     
-    const match = vouchers.find((v: any) => 
-      v?.voucherDetails?.toegangscode?.toLowerCase() === voucherCode.toLowerCase() ||
-      v?.title?.toLowerCase() === voucherCode.toLowerCase()
-    );
+    const cleanInputCode = voucherCode.trim().toLowerCase();
+
+    // Zoek exact naar de matching vouchercode (zowel op post title als op het ACF veld 'toegangscode')
+    const match = vouchers.find((v: any) => {
+      const codeField = (v?.voucherDetails?.toegangscode || '').trim().toLowerCase();
+      const postTitle = (v?.title || '').trim().toLowerCase();
+      return codeField === cleanInputCode || postTitle === cleanInputCode;
+    });
 
     return match ? match.voucherDetails : null;
   } catch (error) {
-    console.error('Fout bij ophalen voucher via GraphQL:', error);
+    console.error('Fout bij ophalen vouchers via GraphQL:', error);
     return null;
   }
 }

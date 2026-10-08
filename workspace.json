@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T08:08:46.862Z",
-  "generatedAtEpochMs": 1791446926862,
+  "generatedAt": "2026-10-08T08:13:20.140Z",
+  "generatedAtEpochMs": 1791447200140,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
       "lib/cms.ts",
+      "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T08:08:44.548Z",
+    "lastActivityAt": "2026-10-08T08:13:18.443Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -554,20 +554,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1791447198443,
+      "lineCount": 223,
+      "charCount": 6147,
+      "hash": "c042d574f6a7",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+    },
+    {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1791446924548,
       "lineCount": 675,
       "charCount": 27037,
       "hash": "53cf88e42dd0",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1791446261356,
-      "lineCount": 221,
-      "charCount": 6003,
-      "hash": "012e66e0b34d",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 174: replaced 45 lines with 47 lines.",
+      "recordedAt": "2026-10-08T08:13:18.443Z",
+      "recordedAtEpochMs": 1791447198443,
+      "before": {
+        "kind": "text",
+        "lineCount": 221,
+        "charCount": 6003,
+        "hash": "012e66e0b34d",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791447198443
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 6147,
+        "hash": "c042d574f6a7",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
+        "updatedAt": 1791447198443
+      },
+      "diff": {
+        "lineStart": 174,
+        "removedLines": 45,
+        "addedLines": 47,
+        "summary": "Line 174: replaced 45 lines with 47 lines.",
+        "beforeFragment": "In src/lib/cms.ts / export async function getVoucherData(voucherCode: string | null) { / if (!voucherCode) return null; / const query = ` / query GetVoucherByCode($code: String!...",
+        "afterFragment": "update getVoucherData / export async function getVoucherData(voucherCode: string) { / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / vouch..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,48 +1098,16 @@
         "beforeFragment": "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step...",
         "afterFragment": "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 247 lines with 323 lines.",
-      "recordedAt": "2026-10-06T12:51:04.366Z",
-      "recordedAtEpochMs": 1791291064366,
-      "before": {
-        "kind": "text",
-        "lineCount": 302,
-        "charCount": 14641,
-        "hash": "f97bde831204",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791291064366
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 378,
-        "charCount": 17949,
-        "hash": "6e0cbca53bbf",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791291064366
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 247,
-        "addedLines": 323,
-        "summary": "Line 14: replaced 247 lines with 323 lines.",
-        "beforeFragment": "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design...",
-        "afterFragment": "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 31
+      "count": 30
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1117,11 +1117,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 2a3e098 try to fix deploy error",
+    "headSummary": "2026-10-08 a536815 fixing download page",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
