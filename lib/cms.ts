@@ -2,9 +2,6 @@
 export async function getPageData() {
   const query = `
     query GetConfiguratorPage {
-      configuratorInstellingen {
-        downloadLimietDagen
-      }
       page(id: "28", idType: DATABASE_ID) {
         sections { 
           hero {
@@ -166,56 +163,6 @@ export async function getPageData() {
   return {
     sections: result.data.page.sections,
     configuratorData: result.data.page.configuratorBeheer.configurator,
-    downloadLimietDagen: result.data.configuratorInstellingen?.downloadLimietDagen || 14,
-  };
-}
-
-export async function getVoucherData(voucherCode: string) {
-  const cleanCode = voucherCode.trim().toUpperCase();
-
-  const query = `
-    query GetAllVouchers {
-      vouchers(first: 100) {
-        nodes {
-          title
-          slug
-          voucherVelden {
-            toegangscode
-            gekozenTypeWoning
-            gekozenDesignpakket
-            status
-          }
-        }
-      }
-    }
-  `;
-
-  const graphqlEndpoint = process.env.NODE_ENV === 'development'
-    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
-    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
-
-  const res = await fetch(graphqlEndpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query }),
-    cache: 'no-store',
-  });
-
-  const json = await res.json();
-  const vouchers = json?.data?.vouchers?.nodes || [];
-  
-  const match = vouchers.find((v: any) => {
-    const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
-    const postTitle = (v?.title || '').trim().toUpperCase();
-    return codeField === cleanCode || postTitle === cleanCode;
-  });
-
-  if (!match || !match.voucherVelden?.gekozenTypeWoning) {
-    return null;
-  }
-
-  return {
-    gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning,
-    gekozenDesignpakket: match.voucherVelden.gekozenDesignpakket || 'Hotel Chic',
+    downloadLimietDagen: 14, // Veilige vaste standaard tot de optiepagina in WordPress volledig is gekoppeld
   };
 }

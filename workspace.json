@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:07:32.739Z",
-  "generatedAtEpochMs": 1791450452739,
+  "generatedAt": "2026-10-08T09:12:15.968Z",
+  "generatedAtEpochMs": 1791450735968,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T09:07:29.506Z",
+    "lastActivityAt": "2026-10-08T09:12:14.234Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,11 +555,11 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1791450449506,
-      "lineCount": 221,
-      "charCount": 6020,
-      "hash": "86dbf689501a",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero..."
+      "updatedAt": 1791450734234,
+      "lineCount": 168,
+      "charCount": 4460,
+      "hash": "6e0d4b7c422a",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 215 lines with 162 lines.",
+      "recordedAt": "2026-10-08T09:12:14.234Z",
+      "recordedAtEpochMs": 1791450734234,
+      "before": {
+        "kind": "text",
+        "lineCount": 221,
+        "charCount": 6020,
+        "hash": "86dbf689501a",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero...",
+        "updatedAt": 1791450734234
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 168,
+        "charCount": 4460,
+        "hash": "6e0d4b7c422a",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1791450734234
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 215,
+        "addedLines": 162,
+        "summary": "Line 5: replaced 215 lines with 162 lines.",
+        "beforeFragment": "configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / so...",
+        "afterFragment": "page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / sourceUrl / altText / } / } / } / story { / subtitel / ti..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1066,48 +1098,16 @@
         "beforeFragment": "Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress / if (opgeslagenCode",
         "afterFragment": "Veilige check met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== ''"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 184 lines with 190 lines.",
-      "recordedAt": "2026-10-08T07:48:02.501Z",
-      "recordedAtEpochMs": 1791445682501,
-      "before": {
-        "kind": "text",
-        "lineCount": 677,
-        "charCount": 26964,
-        "hash": "6ec024d45fc1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791445682501
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 27532,
-        "hash": "1483ad688c05",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791445682501
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 184,
-        "addedLines": 190,
-        "summary": "Line 7: replaced 184 lines with 190 lines.",
-        "beforeFragment": "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us...",
-        "afterFragment": ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 25
+      "count": 24
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 10
+      "count": 11
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1117,14 +1117,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 40e4a25 Update StepFourComfirmation",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-08 251b4d4 fixing cms.ts file",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T09:07:32.739Z
+Generated: 2026-10-08T09:12:15.968Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T09:07:29.506Z
+- Last activity: 2026-10-08T09:12:14.234Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (25), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (5)
+- Hottest files right now: app/download/page.tsx (24), lib/cms.ts (11), components/configurator/StepFourConfirmation.tsx (5)
 - Suggested starting points: lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, .gitignore, AGENTS.md, README.md
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -37,11 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 221 lines | 6020 chars | hash 86dbf689501a
-  Last snapshot: 2026-10-08T09:07:29.506Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: "28", idType: DATABASE_ID) { / sections { / hero..."
+- lib/cms.ts | 168 lines | 4460 chars | hash 6e0d4b7c422a
+  Last snapshot: 2026-10-08T09:12:14.234Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepFourConfirmation.tsx | 325 lines | 16042 chars | hash 3b3bf54c38e8
   Last snapshot: 2026-10-08T08:54:27.547Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T09:12:14.234Z | saved | lib/cms.ts
+- Summary: Line 5: replaced 215 lines with 162 lines.
+- Before: 221 lines | 6,020 chars | hash 86dbf689501a | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: "28", idType: DATABASE_ID) { / sections { / hero..."
+- After: 168 lines | 4,460 chars | hash 6e0d4b7c422a | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "configuratorInstellingen { / downloadLimietDagen / } / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / so..."
+- Current fragment: "page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / sourceUrl / altText / } / } / } / story { / subtitel / ti..."
+
 ### 2026-10-08T09:07:29.506Z | saved | lib/cms.ts
 - Summary: Line 4: replaced 235 lines with 217 lines.
 - Before: 239 lines | 6,895 chars | hash d25ebf879d58 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
@@ -158,27 +165,17 @@ Structured manifest: workspace.json
 - Previous fragment: "Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress / if (opgeslagenCode"
 - Current fragment: "Veilige check met string conversie om TypeScript fouten te voorkomen / if (opgeslagenCode && opgeslagenCode.trim() !== ''"
 
-### 2026-10-08T07:48:02.501Z | saved | app/download/page.tsx
-- Summary: Line 7: replaced 184 lines with 190 lines.
-- Before: 677 lines | 26,964 chars | hash 6ec024d45fc1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 683 lines | 27,532 chars | hash 1483ad688c05 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
-- Current fragment: ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
-
 
 ## Hot Files
-- app/download/page.tsx (25 tracked changes)
-- lib/cms.ts (10 tracked changes)
+- app/download/page.tsx (24 tracked changes)
+- lib/cms.ts (11 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 40e4a25 Update StepFourComfirmation
-- Working tree summary: 4 modifieds
-- M graphify-out/WORKSPACE_MEMORY.md
+- HEAD: 2026-10-08 251b4d4 fixing cms.ts file
+- Working tree summary: 1 modified
 - M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
