@@ -167,7 +167,7 @@ export default function DownloadPage() {
       const voucherData = await getVoucherData(code);
 
       if (!voucherData || !voucherData.gekozenTypeWoning) {
-        setVoucherError('Onjuiste vouchercode of geen woningkoppeling gevonden in WordPress.');
+        setVoucherError('Onjuiste vouchercode of geen woningkoppeling gevonden.');
         return;
       }
 

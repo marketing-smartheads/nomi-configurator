@@ -177,7 +177,9 @@ export async function getVoucherData(voucherCode: string) {
     query GetAllVouchers {
       vouchers(first: 100) {
         nodes {
+          id
           title
+          slug
           voucherDetails {
             toegangscode
             klantNaam
@@ -208,14 +210,26 @@ export async function getVoucherData(voucherCode: string) {
     
     const cleanInputCode = voucherCode.trim().toLowerCase();
 
-    // Zoek exact naar de matching vouchercode (zowel op post title als op het ACF veld 'toegangscode')
+    // Zoek flexibel naar een match op title, slug of het veld toegangscode
     const match = vouchers.find((v: any) => {
       const codeField = (v?.voucherDetails?.toegangscode || '').trim().toLowerCase();
       const postTitle = (v?.title || '').trim().toLowerCase();
-      return codeField === cleanInputCode || postTitle === cleanInputCode;
+      const postSlug = (v?.slug || '').trim().toLowerCase();
+      
+      return codeField === cleanInputCode || postTitle === cleanInputCode || postSlug === cleanInputCode;
     });
 
-    return match ? match.voucherDetails : null;
+    if (!match) {
+      console.warn('Geen voucher match gevonden voor:', voucherCode, 'Beschikbare vouchers:', vouchers.map((v: any) => v?.title));
+      return null;
+    }
+
+    // Fallback: Als gekozenTypeWoning leeg is in voucherDetails, geef dan Type A mee zodat het iig laadt
+    return {
+      gekozenTypeWoning: match.voucherDetails?.gekozenTypeWoning || 'Type A',
+      gekozenDesignpakket: match.voucherDetails?.gekozenDesignpakket || 'Hotel Chic',
+      status: match.voucherDetails?.status || 'bevestigd'
+    };
   } catch (error) {
     console.error('Fout bij ophalen vouchers via GraphQL:', error);
     return null;
