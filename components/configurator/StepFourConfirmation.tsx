@@ -5,6 +5,13 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
+// Partner voor de documentatielijst.
+// Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local
+// In productie: variabele weglaten, dan gaat de mail naar Tobias.
+const PARTNER_NAAM = 'Aanhuis Spijk';
+const PARTNER_CONTACT = 'Tobias';
+const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
+
 interface StepFourConfirmationProps {
   stepTitle: string;
   configuratorData: any;
@@ -25,28 +32,38 @@ export default function StepFourConfirmation({
   loading,
 }: StepFourConfirmationProps) {
   const [showPopup, setShowPopup] = useState(false);
-  const [agreedPartner, setAgreedPartner] = useState(false); // Scenario toestemming partners
-  const [agreedWarning, setAgreedWarning] = useState(false); // Waarschuwing / definitief
+  // null = nog niet gekozen. Toestemming mag niet vooraf aangevinkt staan (AVG).
+  const [agreedPartner, setAgreedPartner] = useState<boolean | null>(null);
+  const [agreedWarning, setAgreedWarning] = useState(false); // Definitief vinkje
+
   const [klantNaam, setKlantNaam] = useState('');
   const [klantEmail, setKlantEmail] = useState('');
+  const [klantTelefoon, setKlantTelefoon] = useState('');
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [manualNotice, setManualNotice] = useState(false); // Scenario 2 melding
+  const [manualNotice, setManualNotice] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
-  // Haal automatisch e-mail en naam op uit sessionStorage/localStorage
+  // Haal automatisch gegevens op uit sessionStorage/localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const opgeslagenEmail = 
-        sessionStorage.getItem('klantEmail') || 
-        localStorage.getItem('klantEmail') || 
-        sessionStorage.getItem('email') || 
+      const opgeslagenEmail =
+        sessionStorage.getItem('klantEmail') ||
+        localStorage.getItem('klantEmail') ||
+        sessionStorage.getItem('email') ||
         localStorage.getItem('email') || '';
       setKlantEmail(opgeslagenEmail);
 
-      const opgeslagenNaam = 
-        sessionStorage.getItem('klantNaam') || 
+      const opgeslagenNaam =
+        sessionStorage.getItem('klantNaam') ||
         localStorage.getItem('klantNaam') || '';
       if (opgeslagenNaam) setKlantNaam(opgeslagenNaam);
+
+      const opgeslagenTel =
+        sessionStorage.getItem('klantTelefoon') ||
+        localStorage.getItem('klantTelefoon') || '';
+      if (opgeslagenTel) setKlantTelefoon(opgeslagenTel);
     }
   }, []);
 
@@ -59,6 +76,9 @@ export default function StepFourConfirmation({
   const storedWoning = woningTypenLijst.find((w: any) => (w?.typeNaam || w?.type_naam) === woningType) || null;
   const storedPakket = designPakkettenLijst.find((p: any) => (p?.pakketId || p?.pakket_id || p?.pakketTitel) === designPakket) || null;
 
+  const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
+  const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
+
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const heroImage = bevData?.bannerAfbeelding?.node?.sourceUrl || bevData?.banner_afbeelding?.sourceUrl || bevData?.bannerAfbeelding?.sourceUrl;
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel;
@@ -70,38 +90,62 @@ export default function StepFourConfirmation({
   const subtitel = configuratorData?.bevestigingSubtitel || configuratorData?.bevestiging_subtitel;
   const omschrijving = configuratorData?.bevestigingOmschrijving || configuratorData?.bevestiging_omschrijving;
   const waarschuwingTekst = configuratorData?.bevestigingWaarschuwingTekst || configuratorData?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
-  
+
   const partnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel || "Geselecteerde partners";
   const partnersOmschrijving = configuratorData?.geselecteerdePartnersOmschrijving || configuratorData?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
 
+  // Validatie: voor delen zijn naam, e-mail en telefoon nodig
+  const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
+  const telefoonGeldig = klantTelefoon.replace(/\D/g, '').length >= 8;
+  const gegevensCompleet = klantNaam.trim() !== '' && emailGeldig && telefoonGeldig;
+
+  const kanBevestigen =
+    agreedPartner !== null &&
+    agreedWarning &&
+    !isSubmitting &&
+    (agreedPartner === false || gegevensCompleet);
+
+  // Voorgevulde mail voor scenario 2 (klant neemt zelf contact op)
+  const mailtoHref =
+    `mailto:${PARTNER_EMAIL}` +
+    `?subject=${encodeURIComponent('Aanvraag documentatielijst')}` +
+    `&body=${encodeURIComponent(
+      `Beste ${PARTNER_CONTACT},\n\nGraag ontvang ik de documentatielijst.\n\n` +
+      `Naam: ${klantNaam}\n` +
+      (woningNaam ? `Type woning: ${woningNaam}\n` : '') +
+      (pakketNaam ? `Designpakket: ${pakketNaam}\n` : '') +
+      `\nMet vriendelijke groet,\n${klantNaam}`
+    )}`;
+
   const handleOpenPopup = () => {
-    if (!klantNaam) {
-      alert('Vul alstublieft eerst uw volledige naam / familienaam in.');
+    if (!klantNaam.trim()) {
+      setErrorMessage('Vul eerst uw volledige naam / familienaam in.');
       return;
     }
+    setErrorMessage('');
     setShowPopup(true);
   };
 
-  const handleFinalConfirm = async (toestemmingGegeven: boolean) => {
+  // Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina
+  const handlePartnerConfirm = async () => {
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    const opgeslagenCode = typeof window !== 'undefined' 
-      ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '') 
+    const opgeslagenCode = typeof window !== 'undefined'
+      ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '')
       : '';
-
-    const opgeslagenEmail = typeof window !== 'undefined' 
-      ? (sessionStorage.getItem('klantEmail') || localStorage.getItem('klantEmail') || sessionStorage.getItem('email') || localStorage.getItem('email') || klantEmail) 
-      : klantEmail;
 
     const payload = {
       toegangscode: opgeslagenCode,
-      klantNaam: klantNaam,
-      klantEmail: opgeslagenEmail,
-      woningType: storedWoning?.typeNaam || storedWoning?.type_naam || woningType,
-      designPakket: storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket,
+      klantNaam: klantNaam.trim(),
+      klantEmail: klantEmail.trim(),
+      klantTelefoon: klantTelefoon.trim(),
+      woningType: woningNaam,
+      designPakket: pakketNaam,
       partners,
       bestanden: storedWoning?.downloadCategorie || storedWoning?.download_categorieen || [],
-      toestemmingPartner: toestemmingGegeven // Geeft door of Tobias/Aahuis Spijk gemaild mag worden
+      toestemmingPartner: true,
+      testOntvanger: PARTNER_EMAIL, // Wordt opgevangen in de API route
     };
 
     try {
@@ -116,27 +160,37 @@ export default function StepFourConfirmation({
         throw new Error(errorData?.error || errorData?.message || 'Fout bij het verwerken van de bevestiging.');
       }
 
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem('configuratorConfirmed', 'true');
-        sessionStorage.setItem('klantNaam', klantNaam);
-        sessionStorage.setItem('klantEmail', opgeslagenEmail);
-      }
+      sessionStorage.setItem('configuratorConfirmed', 'true');
+      sessionStorage.setItem('klantNaam', klantNaam.trim());
+      sessionStorage.setItem('klantEmail', klantEmail.trim());
+      sessionStorage.setItem('klantTelefoon', klantTelefoon.trim());
+      sessionStorage.setItem('geselecteerdeWoning', woningNaam);
+      sessionStorage.setItem('geselecteerdPakket', pakketNaam);
 
-      sessionStorage.setItem('geselecteerdeWoning', storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '');
-      sessionStorage.setItem('geselecteerdPakket', storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '');
-
-      if (onConfirm) {
-        onConfirm();
-      }
-
+      setShowPopup(false);
+      if (onConfirm) onConfirm();
       router.push('/download');
     } catch (error: any) {
       console.error(error);
-      alert(`Er is iets misgegaan: ${error.message || 'Onbekende fout'}`);
+      // Popup blijft open zodat de klant het opnieuw kan proberen
+      setErrorMessage(`Versturen is niet gelukt: ${error.message || 'onbekende fout'}. Probeer het opnieuw.`);
     } finally {
       setIsSubmitting(false);
-      setShowPopup(false);
     }
+  };
+
+  // Scenario 2: geen akkoord -> niets versturen, instructie tonen op het scherm
+  const handleManualContact = () => {
+    setShowPopup(false);
+    setErrorMessage('');
+    setManualNotice(true);
+  };
+
+  const handleSwitchToShare = () => {
+    setManualNotice(false);
+    setAgreedPartner(true);
+    setAgreedWarning(false);
+    setShowPopup(true);
   };
 
   return (
@@ -153,7 +207,7 @@ export default function StepFourConfirmation({
           />
         )}
         <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/25 to-black/80" />
-        
+
         <div className="relative z-20 text-white text-center max-w-4xl mx-auto pt-6">
           {heroTitle && <h1 className="text-4xl md:text-6xl font-serif">{heroTitle}</h1>}
         </div>
@@ -162,18 +216,18 @@ export default function StepFourConfirmation({
           <div className="inline-flex flex-wrap sm:flex-nowrap items-center bg-[#181820]/80 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl">
             <div className="px-6 py-3 flex flex-col min-w-[200px]">
               <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Type woning</span>
-              <span className="text-lg font-serif text-white mt-0.5">{storedWoning?.typeNaam || storedWoning?.type_naam || woningType || 'Niet geselecteerd'}</span>
+              <span className="text-lg font-serif text-white mt-0.5">{woningNaam || 'Niet geselecteerd'}</span>
             </div>
             <div className="hidden sm:block w-[1px] h-10 bg-white/10 my-auto" />
             <div className="px-6 py-3 flex flex-col min-w-[200px] border-t sm:border-t-0 border-white/10 w-full sm:w-auto">
               <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Designpakket</span>
-              <span className="text-lg font-serif text-white mt-0.5">{storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || 'Niet geselecteerd'}</span>
+              <span className="text-lg font-serif text-white mt-0.5">{pakketNaam || 'Niet geselecteerd'}</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. BEVESTIGING TEKST & FORMULIER */}
+      {/* 2. BEVESTIGING TEKST & FORMULIER (Naam, E-mail, Telefoon) */}
       <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
         <div className="space-y-3">
           {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
@@ -182,76 +236,170 @@ export default function StepFourConfirmation({
         </div>
 
         <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
-          <h3 className="font-serif text-dark text-base">Uw gegevens voor de definitieve bevestiging</h3>
+          <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
+
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam</label>
-            <input 
-              type="text" 
-              value={klantNaam} 
+            <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam *</label>
+            <input
+              id="klantNaam"
+              type="text"
+              value={klantNaam}
               onChange={(e) => setKlantNaam(e.target.value)}
-              placeholder="Bijv. Fam. de Vries" 
+              placeholder="Bijv. Fam. de Vries"
               className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
               required
             />
           </div>
+
+          <div>
+            <label htmlFor="klantEmail" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">E-mailadres</label>
+            <input
+              id="klantEmail"
+              type="email"
+              value={klantEmail}
+              onChange={(e) => setKlantEmail(e.target.value)}
+              placeholder="naam@voorbeeld.nl"
+              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="klantTelefoon" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Telefoonnummer</label>
+            <input
+              id="klantTelefoon"
+              type="tel"
+              value={klantTelefoon}
+              onChange={(e) => setKlantTelefoon(e.target.value)}
+              placeholder="06 12345678"
+              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
+            />
+          </div>
+
+          <p className="text-xs text-muted leading-relaxed pt-1">
+            E-mailadres en telefoonnummer zijn alleen nodig als u uw gegevens wilt delen met {PARTNER_NAAM}.
+          </p>
         </div>
 
-        {/* Scenario 2 Handmatige Instructie melding als er geen akkoord is gegeven */}
-        {manualNotice && (
-          <div className="bg-[#F9F6F0] border border-[#C5A880]/40 p-6 rounded-2xl text-left space-y-3">
-            <h4 className="font-serif text-dark text-base">Documentatielijst handmatig opvragen</h4>
-            <p className="text-xs text-muted leading-relaxed">
-              U heeft gekozen om uw gegevens niet automatisch te delen. U kunt de documentatielijst direct opvragen door zelf contact op te nemen met onze partner <strong>Aahuis Spijk</strong> (t.a.v. Tobias) via <a href="mailto:tobias@aanhuis-spijk.nl" className="text-primary underline font-medium">tobias@aanhuis-spijk.nl</a>.
-            </p>
-          </div>
+        {errorMessage && !showPopup && (
+          <p role="alert" className="text-sm text-red-700 text-left">{errorMessage}</p>
         )}
 
-        <div className="flex items-center justify-center gap-8 pt-2">
-          <Button 
-            onClick={handleOpenPopup}
-            disabled={!klantNaam || loading}
-            loading={loading}
-            className="px-10 py-4"
-          >
-            BEVESTIG KEUZES
-          </Button>
+        {/* SCENARIO 2: handmatige instructie, getoond na keuze 'niet akkoord' */}
+        {manualNotice ? (
+          <div className="space-y-6">
+            <div className="bg-[#F9F6F0] border border-[#C5A880]/40 p-6 rounded-2xl text-left space-y-4" role="status">
+              <h4 className="font-serif text-dark text-base">Documentatielijst zelf opvragen</h4>
+              <p className="text-sm text-muted leading-relaxed">
+                U heeft gekozen om uw gegevens niet te delen. Wij sturen daarom niets automatisch door.
+                Wilt u de documentatielijst ontvangen? Neem dan zelf contact op met <strong>{PARTNER_NAAM}</strong> (t.a.v. {PARTNER_CONTACT}).
+              </p>
+              <a
+                href={mailtoHref}
+                className="inline-block text-sm font-medium text-primary underline underline-offset-2 break-all"
+              >
+                {PARTNER_EMAIL}
+              </a>
+              <p className="text-xs text-muted">
+                Vermeld uw naam, het type woning en het gekozen designpakket. De e-mail hierboven is al voor u ingevuld.
+              </p>
+            </div>
 
-          <button
-            onClick={onBack}
-            disabled={loading}
-            className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
-          >
-            TERUG
-          </button>
-        </div>
+            <div className="flex items-center justify-center gap-8">
+              <button
+                type="button"
+                onClick={handleSwitchToShare}
+                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
+              >
+                Toch gegevens delen
+              </button>
+              <button
+                type="button"
+                onClick={onBack}
+                disabled={loading}
+                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
+              >
+                TERUG
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center justify-center gap-8 pt-2">
+            <Button
+              onClick={handleOpenPopup}
+              disabled={!klantNaam.trim() || loading}
+              loading={loading}
+              className="px-10 py-4"
+            >
+              BEVESTIG KEUZES
+            </Button>
+
+            <button
+              type="button"
+              onClick={onBack}
+              disabled={loading}
+              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
+            >
+              TERUG
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* POP-UP MET DE TWEE TOESTEMMINGSSCENARIO'S */}
+      {/* POP-UP MET KEUZE WEL/NIET AKKOORD */}
       {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative animate-in fade-in zoom-in-95 duration-200">
-            <h3 className="text-2xl font-serif text-dark">Definitief bevestigen</h3>
-            <p className="text-sm text-muted">Controleer uw keuzes goed. Geef hieronder aan of uw gegevens automatisch gedeeld mogen worden met partner Aahuis Spijk.</p>
-            
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="toestemming-titel"
+        >
+          <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
+            <h3 id="toestemming-titel" className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
+            <p className="text-sm text-muted">
+              Mogen wij uw naam, e-mailadres en telefoonnummer samen met uw keuzes delen met {PARTNER_NAAM}? Zij gebruiken die om u de documentatielijst te sturen.
+            </p>
+
             <div className="space-y-4 pt-2">
-              {/* Scenario 1 Checkbox */}
-              <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10">
-                <input 
-                  type="checkbox" 
-                  checked={agreedPartner} 
-                  onChange={(e) => setAgreedPartner(e.target.checked)}
-                  className="mt-1 w-5 h-5 accent-[#C5A880] rounded cursor-pointer shrink-0"
-                />
-                <span className="text-xs text-dark leading-relaxed">
-                  <strong>Scenario 1 (Wel akkoord):</strong> Ik ga ermee akkoord dat mijn contactgegevens worden gedeeld met partner Aahuis Spijk (tobias@aanhuis-spijk.nl), zodat zij mij direct de documentatielijst kunnen toesturen.
-                </span>
-              </label>
+              <div className="space-y-2" role="radiogroup" aria-label="Gegevens delen met partner">
+                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+                  <input
+                    type="radio"
+                    name="partnerAkkoord"
+                    checked={agreedPartner === true}
+                    onChange={() => setAgreedPartner(true)}
+                    className="w-4 h-4 accent-[#C5A880] cursor-pointer"
+                  />
+                  <span className="text-xs font-medium text-dark">
+                    <strong>Ja, delen:</strong> deel mijn gegevens met {PARTNER_NAAM}. Ik krijg direct toegang tot de downloadpagina.
+                  </span>
+                </label>
+
+                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+                  <input
+                    type="radio"
+                    name="partnerAkkoord"
+                    checked={agreedPartner === false}
+                    onChange={() => setAgreedPartner(false)}
+                    className="w-4 h-4 accent-[#C5A880] cursor-pointer"
+                  />
+                  <span className="text-xs font-medium text-dark">
+                    <strong>Nee, niet delen:</strong> ik neem zelf contact op om de documentatielijst te ontvangen.
+                  </span>
+                </label>
+              </div>
+
+              {/* Ontbrekende gegevens bij 'ja' */}
+              {agreedPartner === true && !gegevensCompleet && (
+                <p role="alert" className="text-xs text-red-700 leading-relaxed">
+                  Om te kunnen delen hebben we een naam, een geldig e-mailadres en een telefoonnummer nodig. Sluit dit venster en vul de ontbrekende velden in.
+                </p>
+              )}
 
               {/* Waarschuwing */}
-              <label className="flex items-start gap-3 cursor-pointer p-2">
-                <input 
-                  type="checkbox" 
-                  checked={agreedWarning} 
+              <label className="flex items-start gap-3 cursor-pointer p-2 pt-2">
+                <input
+                  type="checkbox"
+                  checked={agreedWarning}
                   onChange={(e) => setAgreedWarning(e.target.checked)}
                   className="mt-1 w-5 h-5 accent-dark rounded cursor-pointer shrink-0"
                 />
@@ -259,32 +407,34 @@ export default function StepFourConfirmation({
               </label>
             </div>
 
+            {errorMessage && (
+              <p role="alert" className="text-sm text-red-700">{errorMessage}</p>
+            )}
+
             <div className="flex items-center justify-end gap-4 pt-4 border-t border-dark/10">
-              <button 
-                onClick={() => setShowPopup(false)}
+              <button
+                type="button"
+                onClick={() => { setShowPopup(false); setErrorMessage(''); }}
+                disabled={isSubmitting}
                 className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-muted hover:text-dark transition cursor-pointer"
               >
                 Annuleren
               </button>
-              
-              <Button 
-                onClick={() => {
-                  if (!agreedWarning) return;
 
+              <Button
+                onClick={() => {
+                  if (!kanBevestigen) return;
                   if (agreedPartner) {
-                    // Scenario 1: Wel akkoord -> Verstuur mail & ga naar downloadpagina
-                    handleFinalConfirm(true);
+                    handlePartnerConfirm();
                   } else {
-                    // Scenario 2: Geen akkoord -> Toon handmatige instructie op het scherm
-                    setShowPopup(false);
-                    setManualNotice(true);
+                    handleManualContact();
                   }
                 }}
-                disabled={!agreedWarning || isSubmitting}
+                disabled={!kanBevestigen}
                 loading={isSubmitting}
                 className="px-6 py-3 text-xs"
               >
-                {agreedPartner ? 'AKKOORD & VERSTUREN' : 'DOORGAAN (HANDMATIG CONTACT)'}
+                {agreedPartner === false ? 'DOORGAAN ZONDER DELEN' : 'AKKOORD & VERSTUREN'}
               </Button>
             </div>
           </div>
