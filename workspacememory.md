@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T07:55:22.105Z
+Generated: 2026-10-08T07:57:43.054Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T07:55:20.327Z
+- Last activity: 2026-10-08T07:57:41.356Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (32), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (4)
-- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, lib/cms.ts, .gitignore, AGENTS.md, README.md
+- Active file in focus: lib/cms.ts
+- Hottest files right now: app/download/page.tsx (31), lib/cms.ts (5), components/configurator/StepFourConfirmation.tsx (4)
+- Suggested starting points: lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, .gitignore, AGENTS.md, README.md
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,12 +39,12 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 221 lines | 6003 chars | hash 012e66e0b34d
+  Last snapshot: 2026-10-08T07:57:41.356Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 - app/download/page.tsx | 683 lines | 27574 chars | hash 390e29f08f4b
   Last snapshot: 2026-10-08T07:55:20.327Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- lib/cms.ts | 219 lines | 5999 chars | hash c332ee6485eb
-  Last snapshot: 2026-10-08T07:46:09.912Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
 - components/configurator/StepFourConfirmation.tsx | 302 lines | 14641 chars | hash f97bde831204
   Last snapshot: 2026-10-06T12:58:31.921Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T07:57:41.356Z | saved | lib/cms.ts
+- Summary: Line 174: replaced 35 lines with 37 lines.
+- Before: 219 lines | 5,999 chars | hash c332ee6485eb | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- After: 221 lines | 6,003 chars | hash 012e66e0b34d | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
+- Previous fragment: "export async function getVoucherData(voucherCode: string) { / const query = ` / query GetVoucherByCode($code: String!) { / vouchers(where: { search: $code }) { / nodes { / title..."
+- Current fragment: "// In src/lib/cms.ts / export async function getVoucherData(voucherCode: string | null) { / if (!voucherCode) return null; / const query = ` / query GetVoucherByCode($code: Stri..."
+
 ### 2026-10-08T07:55:20.327Z | saved | app/download/page.tsx
 - Summary: Line 124: replaced 3 lines with 3 lines.
 - Before: 683 lines | 27,550 chars | hash b43e23bc3ad9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,24 +170,17 @@ Structured manifest: workspace.json
 - Previous fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
 - Current fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
 
-### 2026-10-06T11:34:43.919Z | saved | app/download/page.tsx
-- Summary: Line 176: replaced 40 lines with 20 lines.
-- Before: 599 lines | 23,427 chars | hash 9c9c4bfa4f63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Haal het bestandsobject op uit uploadBestand (of varianten) / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file..."
-- Current fragment: "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / {}; / const node = uploadObj?.node || uploadObj; / // Prioriteit geven aan med..."
-
 
 ## Hot Files
-- app/download/page.tsx (32 tracked changes)
+- app/download/page.tsx (31 tracked changes)
+- lib/cms.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
-- lib/cms.ts (4 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 f900858 fixing error update downloadpage
+- HEAD: 2026-10-08 0931e59 fixing deploy error downloadpage
 - Working tree summary: 1 modified
-- M app/download/page.tsx
+- M lib/cms.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

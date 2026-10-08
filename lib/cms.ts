@@ -171,7 +171,10 @@ export async function getPageData() {
   };
 }
 
-export async function getVoucherData(voucherCode: string) {
+// In src/lib/cms.ts
+export async function getVoucherData(voucherCode: string | null) {
+  if (!voucherCode) return null;
+  
   const query = `
     query GetVoucherByCode($code: String!) {
       vouchers(where: { search: $code }) {
@@ -205,7 +208,6 @@ export async function getVoucherData(voucherCode: string) {
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
     
-    // Zoek de juiste voucher op basis van de ingevoerde code
     const match = vouchers.find((v: any) => 
       v?.voucherDetails?.toegangscode?.toLowerCase() === voucherCode.toLowerCase() ||
       v?.title?.toLowerCase() === voucherCode.toLowerCase()
