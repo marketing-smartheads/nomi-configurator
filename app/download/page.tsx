@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getPageData } from '@/lib/cms';
+import { getPageData, getVoucherData } from '@/lib/cms';
 import { downloadZip } from 'client-zip';
 
 export default function DownloadPage() {
@@ -51,7 +51,7 @@ export default function DownloadPage() {
     }
   }, []);
 
-  // 2. Initialiseer en valideer de downloadpagina & koppel voucher direct aan Type B / pakket
+  // 2. Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data
   useEffect(() => {
     let isMounted = true;
 
@@ -104,7 +104,7 @@ export default function DownloadPage() {
           }
         }
 
-        // Check of er een vouchercode aanwezig is (bijv. XX3060)
+        // Check of er een vouchercode aanwezig is
         const opgeslagenCode = localStorage.getItem('toegangscode');
         if (!geldig && opgeslagenCode) {
           geldig = true;
@@ -117,20 +117,24 @@ export default function DownloadPage() {
           return;
         }
 
-        // SLIMME KOPPELING: Als voucher XX3060 is ingevoerd, forceer direct Type B en Hotel Chic
+        // Haal de opgeslagen keuzes op uit local/session storage
         let targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning');
         let targetPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket');
 
-        if (opgeslagenCode?.toUpperCase() === 'XX3060') {
-          targetWoning = 'Type B';
-          targetPakket = 'Hotel Chic';
-          localStorage.setItem('selected_woningType', 'Type B');
-          localStorage.setItem('selected_designPakket', 'Hotel Chic');
+        // Als we wel een code hebben maar geen woning, haal het alsnog live op uit WordPress
+        if (opgeslagenCode && (!targetWoning || !targetPakket)) {
+          const liveVoucherData = await getVoucherData(opgeslagenCode);
+          if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
+            targetWoning = liveVoucherData.gekozenTypeWoning;
+            targetPakket = liveVoucherData.gekozenDesignpakket || 'Hotel Chic';
+            localStorage.setItem('selected_woningType', targetWoning);
+            localStorage.setItem('selected_designPakket', targetPakket);
+          }
         }
 
         if (!targetWoning || !targetPakket) {
           if (isMounted) {
-            setWoningType('Type B'); // Fallback naar Type B i.p.v. Type A
+            setWoningType('Type A');
             setDesignPakket('Hotel Chic');
             setIsAuthorized(true);
           }
@@ -157,8 +161,8 @@ export default function DownloadPage() {
     };
   }, []);
 
-  // Handler voor het valideren van de ingevoerde vouchercode
-  const handleVoucherSubmit = (e: React.FormEvent) => {
+  // Dynamische Handler voor het valideren van ELKE vouchercode via WordPress WPGraphQL
+  const handleVoucherSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const code = voucherInput.trim();
     if (!code || code.length < 3) {
@@ -167,27 +171,29 @@ export default function DownloadPage() {
     }
 
     try {
-      localStorage.setItem('toegangscode', code);
-      localStorage.setItem('download_timestamp', Date.now().toString());
+      setVoucherError('Controleren...');
       
-      let toegekendWoning = 'Type A';
-      let toegekendPakket = 'Hotel Chic';
+      // Vraag de gekoppelde woning en designpakket live op uit WordPress
+      const voucherData = await getVoucherData(code);
 
-      // Koppel XX3060 direct aan Type B zoals ingesteld in WordPress
-      if (code.toUpperCase() === 'XX3060') {
-        toegekendWoning = 'Type B';
-        toegekendPakket = 'Hotel Chic';
+      if (!voucherData || !voucherData.gekozenTypeWoning) {
+        setVoucherError('Onjuiste vouchercode of geen woningkoppeling gevonden in WordPress.');
+        return;
       }
 
-      localStorage.setItem('selected_woningType', toegekendWoning);
-      localStorage.setItem('selected_designPakket', toegekendPakket);
+      // Sla de echte data op in localStorage
+      localStorage.setItem('toegangscode', code.toUpperCase());
+      localStorage.setItem('download_timestamp', Date.now().toString());
+      localStorage.setItem('selected_woningType', voucherData.gekozenTypeWoning);
+      localStorage.setItem('selected_designPakket', voucherData.gekozenDesignpakket || 'Hotel Chic');
 
-      setWoningType(toegekendWoning);
-      setDesignPakket(toegekendPakket);
+      setWoningType(voucherData.gekozenTypeWoning);
+      setDesignPakket(voucherData.gekozenDesignpakket || 'Hotel Chic');
       setNeedsVoucherInput(false);
       setIsAuthorized(true);
     } catch (err) {
-      setVoucherError('Onjuiste vouchercode of kon geen verbinding maken.');
+      console.error(err);
+      setVoucherError('Er is een fout opgetreden bij het controleren van de code.');
     }
   };
 

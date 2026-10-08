@@ -139,6 +139,8 @@ export async function getPageData() {
     }
   `;
   
+  
+
   // Bepaal automatisch het juiste GraphQL endpoint op basis van de omgeving
   const graphqlEndpoint = process.env.NODE_ENV === 'development'
     ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
@@ -167,4 +169,51 @@ export async function getPageData() {
     sections: result.data.page.sections,
     configuratorData: result.data.page.configuratorBeheer.configurator,
   };
+}
+
+export async function getVoucherData(voucherCode: string) {
+  const query = `
+    query GetVoucherByCode($code: String!) {
+      vouchers(where: { search: $code }) {
+        nodes {
+          title
+          voucherDetails {
+            toegangscode
+            klantNaam
+            klantEmail
+            gekozenTypeWoning
+            gekozenDesignpakket
+            status
+          }
+        }
+      }
+    }
+  `;
+
+  const graphqlEndpoint = process.env.NODE_ENV === 'development'
+    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
+    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+
+  try {
+    const res = await fetch(graphqlEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, variables: { code: voucherCode } }),
+      cache: 'no-store',
+    });
+
+    const json = await res.json();
+    const vouchers = json?.data?.vouchers?.nodes || [];
+    
+    // Zoek de juiste voucher op basis van de ingevoerde code
+    const match = vouchers.find((v: any) => 
+      v?.voucherDetails?.toegangscode?.toLowerCase() === voucherCode.toLowerCase() ||
+      v?.title?.toLowerCase() === voucherCode.toLowerCase()
+    );
+
+    return match ? match.voucherDetails : null;
+  } catch (error) {
+    console.error('Fout bij ophalen voucher via GraphQL:', error);
+    return null;
+  }
 }
