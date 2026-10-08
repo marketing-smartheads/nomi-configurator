@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:36:19.938Z",
-  "generatedAtEpochMs": 1791452179938,
+  "generatedAt": "2026-10-08T09:49:42.728Z",
+  "generatedAtEpochMs": 1791452982728,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -26,6 +26,7 @@
       "app/download/page.tsx",
       "lib/cms.ts",
       ".env.local",
+      "app/api/confirm/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -543,7 +544,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T09:36:18.219Z",
+    "lastActivityAt": "2026-10-08T09:49:41.022Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -556,11 +557,19 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1791452178219,
-      "lineCount": 475,
-      "charCount": 22032,
-      "hash": "c3271a6086db",
+      "updatedAt": 1791452981022,
+      "lineCount": 484,
+      "charCount": 22609,
+      "hash": "ab9ef7b47f37",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+    },
+    {
+      "filePath": "app/api/confirm/route.ts",
+      "updatedAt": 1791452974063,
+      "lineCount": 390,
+      "charCount": 15369,
+      "hash": "c56f8cd3c4e3",
+      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
     },
     {
       "filePath": ".env.local",
@@ -609,17 +618,105 @@
       "charCount": 8229,
       "hash": "1fa058bba875",
       "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "updatedAt": 1791044985035,
-      "lineCount": 312,
-      "charCount": 11771,
-      "hash": "7818b7a67d18",
-      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 9: replaced 142 lines with 141 lines.",
+      "recordedAt": "2026-10-08T09:49:41.022Z",
+      "recordedAtEpochMs": 1791452981022,
+      "before": {
+        "kind": "text",
+        "lineCount": 485,
+        "charCount": 22677,
+        "hash": "99504a202b1e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791452981022
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 484,
+        "charCount": 22609,
+        "hash": "ab9ef7b47f37",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791452981022
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 142,
+        "addedLines": 141,
+        "summary": "Line 9: replaced 142 lines with 141 lines.",
+        "beforeFragment": "Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, dan gaat de mail naar Tobias. / const PARTNER...",
+        "afterFragment": "Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / // Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl;..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 18: replaced 295 lines with 373 lines.",
+      "recordedAt": "2026-10-08T09:49:34.063Z",
+      "recordedAtEpochMs": 1791452974063,
+      "before": {
+        "kind": "text",
+        "lineCount": 312,
+        "charCount": 11771,
+        "hash": "7818b7a67d18",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1791452974063
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 390,
+        "charCount": 15369,
+        "hash": "c56f8cd3c4e3",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1791452974063
+      },
+      "diff": {
+        "lineStart": 18,
+        "removedLines": 295,
+        "addedLines": 373,
+        "summary": "Line 18: replaced 295 lines with 373 lines.",
+        "beforeFragment": "console.log(\"📥 Ontvangen data in API route:\", { / toegangscode, / klantNaam, / klantEmail, / woningType, / designPakket, / bestandenStructuur: Array.isArray(bestanden) ? `Array...",
+        "afterFragment": "let klantTelefoon = body.klantTelefoon || body.telefoon || ''; / // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming / const toestemmingPartner = b..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 129: replaced 300 lines with 310 lines.",
+      "recordedAt": "2026-10-08T09:48:35.110Z",
+      "recordedAtEpochMs": 1791452915110,
+      "before": {
+        "kind": "text",
+        "lineCount": 475,
+        "charCount": 22032,
+        "hash": "c3271a6086db",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791452915110
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 485,
+        "charCount": 22677,
+        "hash": "99504a202b1e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791452915110
+      },
+      "diff": {
+        "lineStart": 129,
+        "removedLines": 300,
+        "addedLines": 310,
+        "summary": "Line 129: replaced 300 lines with 310 lines.",
+        "beforeFragment": "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge...",
+        "afterFragment": "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1003,108 +1100,12 @@
         "beforeFragment": "title / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = process.env.NO...",
         "afterFragment": "id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = pr..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 170: removed 1 line.",
-      "recordedAt": "2026-10-08T08:15:04.808Z",
-      "recordedAtEpochMs": 1791447304808,
-      "before": {
-        "kind": "text",
-        "lineCount": 675,
-        "charCount": 27037,
-        "hash": "53cf88e42dd0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791447304807
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 675,
-        "charCount": 27024,
-        "hash": "7a82577d1cd2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791447304808
-      },
-      "diff": {
-        "lineStart": 170,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 170: removed 1 line.",
-        "beforeFragment": "in WordPress",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 174: replaced 45 lines with 47 lines.",
-      "recordedAt": "2026-10-08T08:13:18.443Z",
-      "recordedAtEpochMs": 1791447198443,
-      "before": {
-        "kind": "text",
-        "lineCount": 221,
-        "charCount": 6003,
-        "hash": "012e66e0b34d",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447198443
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 223,
-        "charCount": 6147,
-        "hash": "c042d574f6a7",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447198443
-      },
-      "diff": {
-        "lineStart": 174,
-        "removedLines": 45,
-        "addedLines": 47,
-        "summary": "Line 174: replaced 45 lines with 47 lines.",
-        "beforeFragment": "In src/lib/cms.ts / export async function getVoucherData(voucherCode: string | null) { / if (!voucherCode) return null; / const query = ` / query GetVoucherByCode($code: String!...",
-        "afterFragment": "update getVoucherData / export async function getVoucherData(voucherCode: string) { / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / vouch..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 13: replaced 383 lines with 375 lines.",
-      "recordedAt": "2026-10-08T08:08:44.548Z",
-      "recordedAtEpochMs": 1791446924548,
-      "before": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 27520,
-        "hash": "df8c212b096d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791446924548
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 675,
-        "charCount": 27037,
-        "hash": "53cf88e42dd0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1791446924548
-      },
-      "diff": {
-        "lineStart": 13,
-        "removedLines": 383,
-        "addedLines": 375,
-        "summary": "Line 13: replaced 383 lines with 375 lines.",
-        "beforeFragment": "| null>(null); / const [designPakket, setDesignPakket] = useState<string | null>(null); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownl...",
-        "afterFragment": ">('Type A'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownlo..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 20
+      "count": 17
     },
     {
       "filePath": "lib/cms.ts",
@@ -1112,20 +1113,25 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 7
+      "count": 9
     },
     {
       "filePath": ".env.local",
+      "count": 1
+    },
+    {
+      "filePath": "app/api/confirm/route.ts",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 c592ae0 Fixing errors",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-08 af55400 update StepFourConfirmation",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
+      "M app/api/confirm/route.ts",
       "M components/configurator/StepFourConfirmation.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
@@ -1135,7 +1141,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c592ae0 by Bas van Dooremalen on 2026-10-08\n  Fixing errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- af55400 by Bas van Dooremalen on 2026-10-08\n  update StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

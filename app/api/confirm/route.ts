@@ -15,6 +15,10 @@ export async function POST(request: Request) {
     let woningObject = body.woningObject || 'Nomi — Object';
     let partners = body.partners;
     let bestanden = body.bestanden || body.bestandenLijst;
+    let klantTelefoon = body.klantTelefoon || body.telefoon || '';
+
+    // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming
+    const toestemmingPartner = body.toestemmingPartner === true;
 
     console.log("📥 Ontvangen data in API route:", { 
       toegangscode, 
@@ -25,9 +29,21 @@ export async function POST(request: Request) {
       bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden
     });
 
-    if (!klantNaam || !klantEmail) {
+    const klantEmailGeldig =
+      typeof klantEmail === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
+    const klantEmailClean = klantEmailGeldig ? klantEmail.trim() : '';
+    const telefoonGeldig = String(klantTelefoon).replace(/\D/g, '').length >= 8;
+
+    if (!klantNaam) {
       return NextResponse.json(
         { error: 'Ontbrekende verplichte klantgegevens.' },
+        { status: 400 }
+      );
+    }
+
+    if (toestemmingPartner && (!klantEmailGeldig || !telefoonGeldig)) {
+      return NextResponse.json(
+        { error: 'Voor het delen met de partner zijn een geldig e-mailadres en telefoonnummer nodig.' },
         { status: 400 }
       );
     }
@@ -180,7 +196,7 @@ export async function POST(request: Request) {
     const uniekePartners = Array.from(allePartnersMap.values());
     const schonePartnersEmails = uniekePartners
       .map(p => p.email)
-      .filter((email) => typeof email === 'string' && email.trim() !== '' && email.toLowerCase() !== klantEmail.toLowerCase());
+      .filter((email) => typeof email === 'string' && email.trim() !== '' && email.toLowerCase() !== klantEmailClean.toLowerCase());
 
     // GEEN HTML-tags zoals &bull; hierin zodat het schone platte tekst blijft in de mail
     const partnersNamenString = uniekePartners.length > 0
@@ -259,7 +275,7 @@ export async function POST(request: Request) {
     // let bestandenHtml = actieveBestanden.map((b) => 
     //   `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:20px;margin:0 8px 10px 0;letter-spacing:0.5px;">${b.naam}</a>&nbsp;`
     // ).join('');
-0
+
     // --- STAP 5: Versturen via Resend ---
     const templateId = process.env.RESEND_TEMPLATE_ID || 'd532cedb-3f4b-4315-bf51-c3fcdf348fcc';
 
@@ -296,9 +312,71 @@ export async function POST(request: Request) {
       return response;
     };
 
+    // --- Documentatielijst-aanvraag naar de partner (alleen bij toestemming) ---
+    // Ontvanger wordt server-side bepaald, nooit vanuit de request.
+    // Test: zet PARTNER_EMAIL (of NEXT_PUBLIC_PARTNER_EMAIL) op het webmaster-adres.
+    const PARTNER_ONTVANGER =
+      process.env.PARTNER_EMAIL ||
+      process.env.NEXT_PUBLIC_PARTNER_EMAIL ||
+      'tobias@aanhuis-spijk.nl';
+
+    const esc = (v: unknown) =>
+      String(v ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+
+    const stuurDocumentatieAanvraag = async () => {
+      const regels: [string, string][] = [
+        ['Naam', klantNaam],
+        ['E-mail', klantEmailClean],
+        ['Telefoon', String(klantTelefoon).trim()],
+        ['Type woning', woningType || '-'],
+        ['Designpakket', designPakket || '-'],
+        ['Toegangscode', toegangscode || 'N.v.t.'],
+        ['Datum', `${datumString} om ${tijdString}`],
+      ];
+
+      const html =
+        `<p>Beste Tobias,</p>` +
+        `<p>Een klant heeft toestemming gegeven om de contactgegevens te delen en wil de <strong>documentatielijst</strong> ontvangen.</p>` +
+        `<table cellpadding="6" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">` +
+        regels.map(([k, v]) => `<tr><td style="color:#666;">${esc(k)}</td><td><strong>${esc(v)}</strong></td></tr>`).join('') +
+        `</table>` +
+        `<p>Je kunt direct reageren op deze mail om contact op te nemen met de klant.</p>`;
+
+      const text =
+        `Beste Tobias,\n\nEen klant heeft toestemming gegeven om de contactgegevens te delen en wil de documentatielijst ontvangen.\n\n` +
+        regels.map(([k, v]) => `${k}: ${v}`).join('\n');
+
+      const response = await resend.emails.send({
+        from: 'Nomi Configurator <noreply@nomi-configurator.nl>',
+        to: [PARTNER_ONTVANGER],
+        replyTo: klantEmailClean,
+        subject: `Aanvraag documentatielijst — ${klantNaam}`,
+        html,
+        text,
+      });
+
+      if (response.error) {
+        console.error(`❌ Resend weigerde documentatie-aanvraag voor ${PARTNER_ONTVANGER}:`, response.error);
+        throw new Error(response.error.message);
+      }
+
+      console.log(`✅ Documentatie-aanvraag verzonden naar ${PARTNER_ONTVANGER}`);
+      return response;
+    };
+
+    // MAIL_TEST_MODE=true: de bevestigingsmails naar de partners uit WordPress worden overgeslagen
+    const testModus = process.env.MAIL_TEST_MODE === 'true';
+    const partnerBevestigingen = testModus ? [] : schonePartnersEmails;
+
     const finalEmailPromises = [
-      stuurResendMail(klantEmail, `Beste ${klantNaam},`),
-      ...schonePartnersEmails.map((pEmail) => stuurResendMail(pEmail, 'Beste partners,'))
+      // Klant krijgt alleen een mail als er een geldig adres is (bij 'niet delen' is dat optioneel)
+      ...(klantEmailGeldig ? [stuurResendMail(klantEmailClean, `Beste ${klantNaam},`)] : []),
+      ...partnerBevestigingen.map((pEmail) => stuurResendMail(pEmail, 'Beste partners,')),
+      ...(toestemmingPartner ? [stuurDocumentatieAanvraag()] : []),
     ];
 
     await Promise.all(finalEmailPromises);
@@ -309,4 +387,4 @@ export async function POST(request: Request) {
     console.error('❌ Resend & API server critical error:', error);
     return NextResponse.json({ success: false, error: error.message || 'E-mail kon niet worden verzonden' }, { status: 500 });
   }
-} 
+}

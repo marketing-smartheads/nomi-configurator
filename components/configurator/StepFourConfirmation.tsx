@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
 // Partner voor de documentatielijst.
-// Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local
-// In productie: variabele weglaten, dan gaat de mail naar Tobias.
+// Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger.
+// Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl; in productie weglaten.
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
@@ -126,8 +126,10 @@ export default function StepFourConfirmation({
     setShowPopup(true);
   };
 
-  // Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina
-  const handlePartnerConfirm = async () => {
+  // Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina.
+  // toestemming = true  -> API mailt de partner (scenario 1)
+  // toestemming = false -> geen mail naar de partner, klant gaat alleen door naar /download (scenario 2)
+  const handleSubmit = async (toestemming: boolean) => {
     setIsSubmitting(true);
     setErrorMessage('');
 
@@ -138,14 +140,13 @@ export default function StepFourConfirmation({
     const payload = {
       toegangscode: opgeslagenCode,
       klantNaam: klantNaam.trim(),
-      klantEmail: klantEmail.trim(),
-      klantTelefoon: klantTelefoon.trim(),
+      klantEmail: klantEmail.trim() || 'Niet ingevuld',
+      klantTelefoon: klantTelefoon.trim() || 'Niet ingevuld',
       woningType: woningNaam,
       designPakket: pakketNaam,
       partners,
       bestanden: storedWoning?.downloadCategorie || storedWoning?.download_categorieen || [],
-      toestemmingPartner: true,
-      testOntvanger: PARTNER_EMAIL, // Wordt opgevangen in de API route
+      toestemmingPartner: toestemming,
     };
 
     try {
@@ -172,7 +173,7 @@ export default function StepFourConfirmation({
       router.push('/download');
     } catch (error: any) {
       console.error(error);
-      // Popup blijft open zodat de klant het opnieuw kan proberen
+      // Popup blijft open (indien open) zodat de klant het opnieuw kan proberen
       setErrorMessage(`Versturen is niet gelukt: ${error.message || 'onbekende fout'}. Probeer het opnieuw.`);
     } finally {
       setIsSubmitting(false);
@@ -291,7 +292,7 @@ export default function StepFourConfirmation({
               <h4 className="font-serif text-dark text-base">Documentatielijst zelf opvragen</h4>
               <p className="text-sm text-muted leading-relaxed">
                 U heeft gekozen om uw gegevens niet te delen. Wij sturen daarom niets automatisch door.
-                Wilt u de documentatielijst ontvangen? Neem dan zelf contact op met <strong>{PARTNER_NAAM}</strong> (t.a.v. {PARTNER_CONTACT}).
+                Uw downloadpagina met de overige bestanden is wel beschikbaar. Wilt u ook de documentatielijst ontvangen? Neem dan zelf contact op met <strong>{PARTNER_NAAM}</strong> (t.a.v. {PARTNER_CONTACT}).
               </p>
               <a
                 href={mailtoHref}
@@ -304,7 +305,15 @@ export default function StepFourConfirmation({
               </p>
             </div>
 
-            <div className="flex items-center justify-center gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+              <Button
+                onClick={() => handleSubmit(false)}
+                disabled={isSubmitting || loading}
+                loading={isSubmitting}
+                className="px-8 py-4"
+              >
+                NAAR DOWNLOADPAGINA
+              </Button>
               <button
                 type="button"
                 onClick={handleSwitchToShare}
@@ -425,7 +434,7 @@ export default function StepFourConfirmation({
                 onClick={() => {
                   if (!kanBevestigen) return;
                   if (agreedPartner) {
-                    handlePartnerConfirm();
+                    handleSubmit(true);
                   } else {
                     handleManualContact();
                   }

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T09:36:19.938Z
+Generated: 2026-10-08T09:49:42.728Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T09:36:18.219Z
+- Last activity: 2026-10-08T09:49:41.022Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: app/download/page.tsx (20), lib/cms.ts (12), components/configurator/StepFourConfirmation.tsx (7), .env.local (1)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, lib/cms.ts, .env.local, .gitignore, AGENTS.md
+- Hottest files right now: app/download/page.tsx (17), lib/cms.ts (12), components/configurator/StepFourConfirmation.tsx (9), .env.local (1)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, lib/cms.ts, .env.local, app/api/confirm/route.ts, .gitignore
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 66
@@ -37,11 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 475 lines | 22032 chars | hash c3271a6086db
-  Last snapshot: 2026-10-08T09:36:18.219Z
+- components/configurator/StepFourConfirmation.tsx | 484 lines | 22609 chars | hash ab9ef7b47f37
+  Last snapshot: 2026-10-08T09:49:41.022Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- app/api/confirm/route.ts | 390 lines | 15369 chars | hash c56f8cd3c4e3
+  Last snapshot: 2026-10-08T09:49:34.063Z
+  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 - .env.local | 12 lines | 432 chars | hash a1ea6608e103
   Last snapshot: 2026-10-08T09:36:13.713Z
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
@@ -60,11 +63,29 @@ Structured manifest: workspace.json
 - app/privacy/page.tsx | 135 lines | 8229 chars | hash 1fa058bba875
   Last snapshot: 2026-10-05T15:19:55.506Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- app/api/confirm/route.ts | 312 lines | 11771 chars | hash 7818b7a67d18
-  Last snapshot: 2026-10-03T16:29:45.035Z
-  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
 ## Recent Changes
+### 2026-10-08T09:49:41.022Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 9: replaced 142 lines with 141 lines.
+- Before: 485 lines | 22,677 chars | hash 99504a202b1e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- After: 484 lines | 22,609 chars | hash ab9ef7b47f37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- Previous fragment: "Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, dan gaat de mail naar Tobias. / const PARTNER..."
+- Current fragment: "Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / // Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl;..."
+
+### 2026-10-08T09:49:34.063Z | saved | app/api/confirm/route.ts
+- Summary: Line 18: replaced 295 lines with 373 lines.
+- Before: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 390 lines | 15,369 chars | hash c56f8cd3c4e3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "console.log("📥 Ontvangen data in API route:", { / toegangscode, / klantNaam, / klantEmail, / woningType, / designPakket, / bestandenStructuur: Array.isArray(bestanden) ? `Array..."
+- Current fragment: "let klantTelefoon = body.klantTelefoon || body.telefoon || ''; / // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming / const toestemmingPartner = b..."
+
+### 2026-10-08T09:48:35.110Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 129: replaced 300 lines with 310 lines.
+- Before: 475 lines | 22,032 chars | hash c3271a6086db | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- After: 485 lines | 22,677 chars | hash 99504a202b1e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- Previous fragment: "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge..."
+- Current fragment: "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
+
 ### 2026-10-08T09:36:18.219Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 8: replaced 329 lines with 430 lines.
 - Before: 374 lines | 18,125 chars | hash 0e1c6d9e733e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
@@ -144,37 +165,19 @@ Structured manifest: workspace.json
 - Previous fragment: "title / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = process.env.NO..."
 - Current fragment: "id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = pr..."
 
-### 2026-10-08T08:15:04.808Z | saved | app/download/page.tsx
-- Summary: Line 170: removed 1 line.
-- Before: 675 lines | 27,037 chars | hash 53cf88e42dd0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 675 lines | 27,024 chars | hash 7a82577d1cd2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "in WordPress"
-
-### 2026-10-08T08:13:18.443Z | saved | lib/cms.ts
-- Summary: Line 174: replaced 45 lines with 47 lines.
-- Before: 221 lines | 6,003 chars | hash 012e66e0b34d | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- After: 223 lines | 6,147 chars | hash c042d574f6a7 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- Previous fragment: "In src/lib/cms.ts / export async function getVoucherData(voucherCode: string | null) { / if (!voucherCode) return null; / const query = ` / query GetVoucherByCode($code: String!..."
-- Current fragment: "update getVoucherData / export async function getVoucherData(voucherCode: string) { / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / vouch..."
-
-### 2026-10-08T08:08:44.548Z | saved | app/download/page.tsx
-- Summary: Line 13: replaced 383 lines with 375 lines.
-- Before: 683 lines | 27,520 chars | hash df8c212b096d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 675 lines | 27,037 chars | hash 53cf88e42dd0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "| null>(null); / const [designPakket, setDesignPakket] = useState<string | null>(null); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownl..."
-- Current fragment: ">('Type A'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownlo..."
-
 
 ## Hot Files
-- app/download/page.tsx (20 tracked changes)
+- app/download/page.tsx (17 tracked changes)
 - lib/cms.ts (12 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (7 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (9 tracked changes)
 - .env.local (1 tracked changes)
+- app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 c592ae0 Fixing errors
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-08 af55400 update StepFourConfirmation
+- Working tree summary: 5 modifieds
+- M app/api/confirm/route.ts
 - M components/configurator/StepFourConfirmation.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
@@ -186,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c592ae0 by Bas van Dooremalen on 2026-10-08
-  Fixing errors
+- af55400 by Bas van Dooremalen on 2026-10-08
+  update StepFourConfirmation
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
