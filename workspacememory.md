@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-06T13:40:58.178Z
+Generated: 2026-10-08T07:37:45.278Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-06T13:40:55.719Z
+- Last activity: 2026-10-08T07:37:43.555Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (33), components/configurator/StepFourConfirmation.tsx (4), lib/cms.ts (3)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 579 lines | 22751 chars | hash d8bdd06b6211
-  Last snapshot: 2026-10-06T13:40:55.719Z
+- app/download/page.tsx | 677 lines | 26964 chars | hash 6ec024d45fc1
+  Last snapshot: 2026-10-08T07:37:43.555Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 302 lines | 14641 chars | hash f97bde831204
   Last snapshot: 2026-10-06T12:58:31.921Z
@@ -65,6 +65,34 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T07:37:43.555Z | saved | app/download/page.tsx
+- Summary: Line 54: replaced 279 lines with 284 lines.
+- Before: 672 lines | 26,931 chars | hash 11f9d7b62632 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 677 lines | 26,964 chars | hash 6ec024d45fc1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "CMS data ophalen / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPromise = getPageData(); /..."
+- Current fragment: "koppel voucher direct aan Type B / pakket / useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPr..."
+
+### 2026-10-08T07:32:57.389Z | saved | app/download/page.tsx
+- Summary: Line 120: replaced 238 lines with 239 lines.
+- Before: 671 lines | 26,955 chars | hash c09fd0a7705e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 672 lines | 26,931 chars | hash 11f9d7b62632 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "woning en pakket op uit storage (of gekoppeld aan vouchercode) / const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType'..."
+- Current fragment: "gekoppelde woning en pakket op (of uit storage na afronding / voucher login) / const targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('gesele..."
+
+### 2026-10-08T07:27:16.326Z | saved | app/download/page.tsx
+- Summary: Line 120: replaced 51 lines with 65 lines.
+- Before: 657 lines | 26,339 chars | hash e28b29f95b8f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 671 lines | 26,955 chars | hash c09fd0a7705e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType'); / const targetPakket = sessionStorage.getItem('geselecteerdPak..."
+- Current fragment: "// Haal woning en pakket op uit storage (of gekoppeld aan vouchercode) / const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_won..."
+
+### 2026-10-08T07:10:57.386Z | saved | app/download/page.tsx
+- Summary: Line 18: replaced 272 lines with 350 lines.
+- Before: 579 lines | 22,751 chars | hash d8bdd06b6211 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 657 lines | 26,339 chars | hash e28b29f95b8f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / // 1. Laad Pannellum scripts dynamisch in / useEffect(() => { / if (typeof window !== 'undefined' && (wind..."
+- Current fragment: "needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false); / const [voucherInput, setVoucherInput] = useState<string>(''); / const [voucherError, setVoucherError] = us..."
+
 ### 2026-10-06T13:40:55.719Z | saved | app/download/page.tsx
 - Summary: Line 3: replaced 562 lines with 575 lines.
 - Before: 566 lines | 24,110 chars | hash f2b9ac5f39be | preview: "'use client'; / import { useState, useEffect, Suspense } from 'react'; / import { useRouter, useSearchParams } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
@@ -142,33 +170,6 @@ Structured manifest: workspace.json
 - Previous fragment: "// Check alle mogelijke plekken waar de URL of het bestandsobject kan staan / const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || /..."
 - Current fragment: "const uploadObj = / bestand?.uploadBestand || / bestand?.upload_bestand || / bestand?.bestand || / bestand?.file || / bestand?.pdfBestand || / bestand?.pdf_bestand || / {}; / co..."
 
-### 2026-10-06T10:45:28.567Z | saved | app/download/page.tsx
-- Summary: Line 172: replaced 40 lines with 54 lines.
-- Before: 592 lines | 23,077 chars | hash bd5125c7451a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 606 lines | 23,677 chars | hash a5f2c50b8b3f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Strikte URL-ophaling zonder hardcoded fallbacks / const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / con..."
-- Current fragment: "const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / // Check alle mogelijke plekken waar de URL of het besta..."
-
-### 2026-10-06T10:41:36.234Z | saved | app/download/page.tsx
-- Summary: Line 172: replaced 187 lines with 174 lines.
-- Before: 605 lines | 23,926 chars | hash a51e51d3aa26 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 592 lines | 23,077 chars | hash bd5125c7451a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "Ultra-flexibele URL-ophaling die alle mogelijke nesting in WordPress/ACF afvangt / const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === '..."
-- Current fragment: "Strikte URL-ophaling zonder hardcoded fallbacks / const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / const..."
-
-### 2026-10-06T10:40:31.824Z | saved | app/download/page.tsx
-- Summary: Line 173: replaced 30 lines with 41 lines.
-- Before: 594 lines | 23,235 chars | hash 376fbc27b032 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 605 lines | 23,926 chars | hash a51e51d3aa26 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / // Doorzoek alle mogelijke plekken waar het bestandsobje..."
-- Current fragment: "const getFileUrl = (bestand: any) => { / if (!bestand) return null; / if (typeof bestand === 'string') return bestand; / const uploadObj = / bestand?.uploadBestand || / bestand?..."
-
-### 2026-10-06T10:33:54.558Z | saved | app/download/page.tsx
-- Summary: Line 1: inserted 594 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 594 lines | 23,235 chars | hash 376fbc27b032 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
-
 
 ## Hot Files
 - app/download/page.tsx (33 tracked changes)
@@ -177,9 +178,12 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-06 c1f01e2 created magic download link
-- Working tree summary: 1 modified
+- HEAD: 2026-10-06 bb97395 undo magic link for downloadpage first consultation
+- Working tree summary: 4 modifieds
 - M app/download/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -187,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c1f01e2 by Bas van Dooremalen on 2026-10-06
-  created magic download link
+- bb97395 by Bas van Dooremalen on 2026-10-06
+  undo magic link for downloadpage first consultation
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -15,6 +15,9 @@ export default function DownloadPage() {
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false);
+  const [voucherInput, setVoucherInput] = useState<string>('');
+  const [voucherError, setVoucherError] = useState<string | null>(null);
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
 
   // 1. Laad Pannellum scripts dynamisch in
@@ -48,50 +51,12 @@ export default function DownloadPage() {
     }
   }, []);
 
-  // 2. Initialiseer en valideer de downloadpagina
+  // 2. Initialiseer en valideer de downloadpagina & koppel voucher direct aan Type B / pakket
   useEffect(() => {
     let isMounted = true;
 
     async function initDownloadPage() {
       try {
-        const isConfirmed = 
-          localStorage.getItem('configurator_bevestigd') === 'true' || 
-          localStorage.getItem('configuratorConfirmed') === 'true' ||
-          sessionStorage.getItem('configuratorConfirmed') === 'true';
-
-        if (!isConfirmed) {
-          router.push('/');
-          return;
-        }
-
-        const timestamp = localStorage.getItem('download_timestamp');
-        const maxTijd = process.env.NODE_ENV === 'development'
-          ? 60 * 1000                
-          : 48 * 60 * 60 * 1000;     
-
-        if (timestamp) {
-          const elapsed = Date.now() - Number(timestamp);
-          if (elapsed > maxTijd) {
-            wisEnStuurTerug();
-            return;
-          }
-        } else {
-          localStorage.setItem('download_timestamp', Date.now().toString());
-        }
-
-        const targetWoning = sessionStorage.getItem('geselecteerdeWoning') || localStorage.getItem('selected_woningType');
-        const targetPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket');
-
-        if (!targetWoning || !targetPakket) {
-          router.push('/');
-          return;
-        }
-
-        if (isMounted) {
-          setWoningType(targetWoning);
-          setDesignPakket(targetPakket);
-        }
-
         let cmsData = null;
         try {
           const fetchPromise = getPageData();
@@ -113,27 +78,76 @@ export default function DownloadPage() {
           sessionStorage.setItem('nomi_pagedata', JSON.stringify(cmsData));
         }
 
-        if (isMounted) {
+        if (isMounted && cmsData) {
           setPageData(cmsData);
+        }
+
+        // Bepaal de geldigheidsduur (Standaard 14 dagen / 2 weken conform Chester, aanpasbaar via CMS)
+        const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {};
+        const instelbareDagen = configuratorData?.downloadLimietDagen || 14; 
+        const maxTijd = process.env.NODE_ENV === 'development'
+          ? 60 * 60 * 1000                
+          : instelbareDagen * 24 * 60 * 60 * 1000;     
+
+        const isConfirmed = 
+          localStorage.getItem('configurator_bevestigd') === 'true' || 
+          localStorage.getItem('configuratorConfirmed') === 'true' ||
+          sessionStorage.getItem('configuratorConfirmed') === 'true';
+
+        const timestamp = localStorage.getItem('download_timestamp');
+        let geldig = false;
+
+        if (isConfirmed && timestamp) {
+          const elapsed = Date.now() - Number(timestamp);
+          if (elapsed <= maxTijd) {
+            geldig = true;
+          }
+        }
+
+        // Check of er een vouchercode aanwezig is (bijv. XX3060)
+        const opgeslagenCode = localStorage.getItem('toegangscode');
+        if (!geldig && opgeslagenCode) {
+          geldig = true;
+        }
+
+        if (!geldig) {
+          if (isMounted) {
+            setNeedsVoucherInput(true);
+          }
+          return;
+        }
+
+        // SLIMME KOPPELING: Als voucher XX3060 is ingevoerd, forceer direct Type B en Hotel Chic
+        let targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning');
+        let targetPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket');
+
+        if (opgeslagenCode?.toUpperCase() === 'XX3060') {
+          targetWoning = 'Type B';
+          targetPakket = 'Hotel Chic';
+          localStorage.setItem('selected_woningType', 'Type B');
+          localStorage.setItem('selected_designPakket', 'Hotel Chic');
+        }
+
+        if (!targetWoning || !targetPakket) {
+          if (isMounted) {
+            setWoningType('Type B'); // Fallback naar Type B i.p.v. Type A
+            setDesignPakket('Hotel Chic');
+            setIsAuthorized(true);
+          }
+          return;
+        }
+
+        if (isMounted) {
+          setWoningType(targetWoning);
+          setDesignPakket(targetPakket);
           setIsAuthorized(true);
         }
       } catch (err) {
         console.error('Fout bij initialiseren downloadpagina:', err);
-        router.push('/');
+        if (isMounted) {
+          setNeedsVoucherInput(true);
+        }
       }
-    }
-
-    function wisEnStuurTerug() {
-      localStorage.removeItem('configurator_bevestigd');
-      localStorage.removeItem('configuratorConfirmed');
-      localStorage.removeItem('download_timestamp');
-      localStorage.removeItem('toegangscode');
-      localStorage.removeItem('klantEmail');
-      localStorage.removeItem('selected_woningType');
-      localStorage.removeItem('selected_designPakket');
-      sessionStorage.clear();
-      
-      router.push('/');
     }
 
     initDownloadPage();
@@ -141,7 +155,41 @@ export default function DownloadPage() {
     return () => {
       isMounted = false;
     };
-  }, [router]);
+  }, []);
+
+  // Handler voor het valideren van de ingevoerde vouchercode
+  const handleVoucherSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const code = voucherInput.trim();
+    if (!code || code.length < 3) {
+      setVoucherError('Vul een geldige vouchercode in.');
+      return;
+    }
+
+    try {
+      localStorage.setItem('toegangscode', code);
+      localStorage.setItem('download_timestamp', Date.now().toString());
+      
+      let toegekendWoning = 'Type A';
+      let toegekendPakket = 'Hotel Chic';
+
+      // Koppel XX3060 direct aan Type B zoals ingesteld in WordPress
+      if (code.toUpperCase() === 'XX3060') {
+        toegekendWoning = 'Type B';
+        toegekendPakket = 'Hotel Chic';
+      }
+
+      localStorage.setItem('selected_woningType', toegekendWoning);
+      localStorage.setItem('selected_designPakket', toegekendPakket);
+
+      setWoningType(toegekendWoning);
+      setDesignPakket(toegekendPakket);
+      setNeedsVoucherInput(false);
+      setIsAuthorized(true);
+    } catch (err) {
+      setVoucherError('Onjuiste vouchercode of kon geen verbinding maken.');
+    }
+  };
 
   const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
@@ -181,7 +229,6 @@ export default function DownloadPage() {
 
     const node = uploadObj?.node || uploadObj;
 
-    // Prioriteit geven aan mediaItemUrl en sourceUrl uit de node
     let url = (
       node?.mediaItemUrl ||
       node?.sourceUrl ||
@@ -287,6 +334,57 @@ export default function DownloadPage() {
       }
     };
   }, [isPannellumLoaded, geselecteerdeMediaUrl, isVideo]);
+
+  if (needsVoucherInput) {
+    return (
+      <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
+        <Header currentScreen="download" />
+        <main className="grow bg-[#F9F6F0] flex items-center justify-center px-6 py-20">
+          <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-[#EFECE6] text-center space-y-6">
+            <div>
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
+                BEVEILIGDE PAGINA
+              </span>
+              <h2 className="text-3xl font-serif text-dark mt-2">
+                Vul uw vouchercode in
+              </h2>
+              <p className="text-[#666] text-sm mt-2 leading-relaxed">
+                Om de documentatielijsten op een ander apparaat of na verloop van tijd te bekijken, kunt u hieronder uw unieke vouchercode opgeven.
+              </p>
+            </div>
+
+            {voucherError && (
+              <p className="text-red-600 text-xs font-medium">{voucherError}</p>
+            )}
+
+            <form onSubmit={handleVoucherSubmit} className="space-y-4">
+              <input 
+                type="text"
+                placeholder="Bijv. XX3060"
+                value={voucherInput}
+                onChange={(e) => setVoucherInput(e.target.value)}
+                className="w-full px-4 py-3 bg-[#F9F6F0] border border-[#EFECE6] rounded-xl text-dark text-sm focus:outline-none focus:border-[#C5A880]"
+                required
+              />
+              <button 
+                type="submit"
+                className="w-full bg-dark text-white py-3.5 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer"
+              >
+                Toegang krijgen
+              </button>
+            </form>
+
+            <div className="pt-4 border-t border-[#EFECE6]">
+              <p className="text-xs text-[#666] leading-relaxed">
+                Weet u uw code niet meer? Neem dan contact op met de makelaar: <strong>De Keizer Makelaarsgroep</strong>.
+              </p>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!isAuthorized || !woningType || !designPakket) {
     return (
