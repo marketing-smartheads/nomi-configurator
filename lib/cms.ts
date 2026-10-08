@@ -1,13 +1,10 @@
 // lib/cms.ts
-
 export async function getPageData() {
   const query = `
-  query GetConfiguratorOptions {
-      configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina
+    query GetConfiguratorPage {
+      configuratorInstellingen {
         downloadLimietDagen
       }
-    },
-    query GetPageSections {
       page(id: "28", idType: DATABASE_ID) {
         sections { 
           hero {
@@ -61,7 +58,6 @@ export async function getPageData() {
                   sourceUrl
                 }
               }
-              # TOEGEVOEGD: Haalt de 360° renders repeater op uit het CMS
               panoramaRenders {
                 stijlNaam
                 renderBestand {
@@ -143,10 +139,7 @@ export async function getPageData() {
       }
     }
   `;
-  
-  
 
-  // Bepaal automatisch het juiste GraphQL endpoint op basis van de omgeving
   const graphqlEndpoint = process.env.NODE_ENV === 'development'
     ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
     : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
@@ -173,10 +166,10 @@ export async function getPageData() {
   return {
     sections: result.data.page.sections,
     configuratorData: result.data.page.configuratorBeheer.configurator,
+    downloadLimietDagen: result.data.configuratorInstellingen?.downloadLimietDagen || 14,
   };
 }
 
-// update getVoucherData
 export async function getVoucherData(voucherCode: string) {
   const cleanCode = voucherCode.trim().toUpperCase();
 
@@ -201,40 +194,28 @@ export async function getVoucherData(voucherCode: string) {
     ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
     : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
 
-  try {
-    const res = await fetch(graphqlEndpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query }),
-      cache: 'no-store',
-    });
+  const res = await fetch(graphqlEndpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+    cache: 'no-store',
+  });
 
-    const json = await res.json();
-    const vouchers = json?.data?.vouchers?.nodes || [];
-    
-    // Zoek nauwkeurig naar de juiste voucher
-    const match = vouchers.find((v: any) => {
-      const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
-      const postTitle = (v?.title || '').trim().toUpperCase();
-      return codeField === cleanCode || postTitle === cleanCode;
-    });
+  const json = await res.json();
+  const vouchers = json?.data?.vouchers?.nodes || [];
+  
+  const match = vouchers.find((v: any) => {
+    const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
+    const postTitle = (v?.title || '').trim().toUpperCase();
+    return codeField === cleanCode || postTitle === cleanCode;
+  });
 
-    if (!match || !match.voucherVelden?.gekozenTypeWoning) {
-      // Hardcoded fallback voor de zekerheid als de API call achterloopt
-      const fallbackMap: Record<string, { gekozenTypeWoning: string; gekozenDesignpakket: string }> = {
-        "XX3043": { gekozenTypeWoning: "Type C", gekozenDesignpakket: "Hotel Chic" },
-        "XX3027": { gekozenTypeWoning: "Type B", gekozenDesignpakket: "Hotel Chic" },
-        "XX3060": { gekozenTypeWoning: "Type B", gekozenDesignpakket: "Hotel Chic" },
-      };
-      return fallbackMap[cleanCode] || null;
-    }
-
-    return {
-      gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning,
-      gekozenDesignpakket: match.voucherVelden.gekozenDesignpakket || 'Hotel Chic',
-    };
-  } catch (error) {
-    console.error('Fout bij ophalen vouchers via GraphQL:', error);
+  if (!match || !match.voucherVelden?.gekozenTypeWoning) {
     return null;
   }
+
+  return {
+    gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning,
+    gekozenDesignpakket: match.voucherVelden.gekozenDesignpakket || 'Hotel Chic',
+  };
 }
