@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T08:01:36.926Z",
-  "generatedAtEpochMs": 1791446496926,
+  "generatedAt": "2026-10-08T08:08:46.862Z",
+  "generatedAtEpochMs": 1791446926862,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -542,7 +542,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T08:01:34.594Z",
+    "lastActivityAt": "2026-10-08T08:08:44.548Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,10 +555,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1791446494594,
-      "lineCount": 683,
-      "charCount": 27520,
-      "hash": "df8c212b096d",
+      "updatedAt": 1791446924548,
+      "lineCount": 675,
+      "charCount": 27037,
+      "hash": "53cf88e42dd0",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -619,6 +619,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 13: replaced 383 lines with 375 lines.",
+      "recordedAt": "2026-10-08T08:08:44.548Z",
+      "recordedAtEpochMs": 1791446924548,
+      "before": {
+        "kind": "text",
+        "lineCount": 683,
+        "charCount": 27520,
+        "hash": "df8c212b096d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791446924548
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 675,
+        "charCount": 27037,
+        "hash": "53cf88e42dd0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1791446924548
+      },
+      "diff": {
+        "lineStart": 13,
+        "removedLines": 383,
+        "addedLines": 375,
+        "summary": "Line 13: replaced 383 lines with 375 lines.",
+        "beforeFragment": "| null>(null); / const [designPakket, setDesignPakket] = useState<string | null>(null); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownl...",
+        "afterFragment": ">('Type A'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownlo..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design...",
         "afterFragment": "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 320 lines with 283 lines.",
-      "recordedAt": "2026-10-06T12:48:56.267Z",
-      "recordedAtEpochMs": 1791290936267,
-      "before": {
-        "kind": "text",
-        "lineCount": 339,
-        "charCount": 15137,
-        "hash": "10593c9677a5",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791290936267
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 302,
-        "charCount": 14641,
-        "hash": "f97bde831204",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791290936267
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 320,
-        "addedLines": 283,
-        "summary": "Line 14: replaced 320 lines with 283 lines.",
-        "beforeFragment": "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step...",
-        "afterFragment": "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
-      }
     }
   ],
   "hotFiles": [
@@ -1117,7 +1117,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 c1a14b3 fixing getVoucherData",
+    "headSummary": "2026-10-08 2a3e098 try to fix deploy error",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1127,7 +1127,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c1a14b3 by Bas van Dooremalen on 2026-10-08\n  fixing getVoucherData\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2a3e098 by Bas van Dooremalen on 2026-10-08\n  try to fix deploy error\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

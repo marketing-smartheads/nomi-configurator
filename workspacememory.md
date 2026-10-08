@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-08T08:01:36.926Z
+Generated: 2026-10-08T08:08:46.862Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-08T08:01:34.594Z
+- Last activity: 2026-10-08T08:08:44.548Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: app/download/page.tsx (31), lib/cms.ts (5), components/configurator/StepFourConfirmation.tsx (4)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 683 lines | 27520 chars | hash df8c212b096d
-  Last snapshot: 2026-10-08T08:01:34.594Z
+- app/download/page.tsx | 675 lines | 27037 chars | hash 53cf88e42dd0
+  Last snapshot: 2026-10-08T08:08:44.548Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - lib/cms.ts | 221 lines | 6003 chars | hash 012e66e0b34d
   Last snapshot: 2026-10-08T07:57:41.356Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER="webmaster-msh" / WORDPRESS_AUTH_PASSWO..."
 
 ## Recent Changes
+### 2026-10-08T08:08:44.548Z | saved | app/download/page.tsx
+- Summary: Line 13: replaced 383 lines with 375 lines.
+- Before: 683 lines | 27,520 chars | hash df8c212b096d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 675 lines | 27,037 chars | hash 53cf88e42dd0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "| null>(null); / const [designPakket, setDesignPakket] = useState<string | null>(null); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownl..."
+- Current fragment: ">('Type A'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownlo..."
+
 ### 2026-10-08T08:01:34.594Z | saved | app/download/page.tsx
 - Summary: Line 124: replaced 2 lines with 2 lines.
 - Before: 683 lines | 27,574 chars | hash 390e29f08f4b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,13 +170,6 @@ Structured manifest: workspace.json
 - Previous fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
 - Current fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
 
-### 2026-10-06T12:48:56.267Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 14: replaced 320 lines with 283 lines.
-- Before: 339 lines | 15,137 chars | hash 10593c9677a5 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
-- After: 302 lines | 14,641 chars | hash f97bde831204 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
-- Previous fragment: "loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / designPakket, / onBack, / onConfirm, / loading, / }: Step..."
-- Current fragment: "// Toegevoegd om de TypeScript fout op te lossen / loading: boolean; / } / export default function StepFourConfirmation({ / stepTitle, / configuratorData, / woningType, / design..."
-
 
 ## Hot Files
 - app/download/page.tsx (31 tracked changes)
@@ -178,7 +178,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-08 c1a14b3 fixing getVoucherData
+- HEAD: 2026-10-08 2a3e098 try to fix deploy error
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c1a14b3 by Bas van Dooremalen on 2026-10-08
-  fixing getVoucherData
+- 2a3e098 by Bas van Dooremalen on 2026-10-08
+  try to fix deploy error
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -10,8 +10,8 @@ import { downloadZip } from 'client-zip';
 export default function DownloadPage() {
   const router = useRouter();
   
-  const [woningType, setWoningType] = useState<string | null>(null);
-  const [designPakket, setDesignPakket] = useState<string | null>(null);
+  const [woningType, setWoningType] = useState<string>('Type A');
+  const [designPakket, setDesignPakket] = useState<string>('Hotel Chic');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
@@ -82,7 +82,7 @@ export default function DownloadPage() {
           setPageData(cmsData);
         }
 
-        // Bepaal de geldigheidsduur (Standaard 14 dagen / 2 weken conform Chester, aanpasbaar via CMS)
+        // Bepaal de geldigheidsduur
         const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {};
         const instelbareDagen = configuratorData?.downloadLimietDagen || 14; 
         const maxTijd = process.env.NODE_ENV === 'development'
@@ -104,7 +104,6 @@ export default function DownloadPage() {
           }
         }
 
-        // Check of er een vouchercode aanwezig is
         const opgeslagenCode = localStorage.getItem('toegangscode');
         if (!geldig && opgeslagenCode) {
           geldig = true;
@@ -117,33 +116,25 @@ export default function DownloadPage() {
           return;
         }
 
-        // Haal de opgeslagen keuzes op uit local/session storage
-        let targetWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning');
-        let targetPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket');
+        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
+        let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
 
-        // Voeg 'as string' toe om de TypeScript null-check te omzeilen
-        if (opgeslagenCode && (!targetWoning || !targetPakket)) {
-          const liveVoucherData = await getVoucherData(opgeslagenCode as string);
+        if (opgeslagenCode && (!resolvedWoning || !resolvedPakket)) {
+          const liveVoucherData = await getVoucherData(opgeslagenCode);
           if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
-            targetWoning = liveVoucherData.gekozenTypeWoning;
-            targetPakket = liveVoucherData.gekozenDesignpakket || 'Hotel Chic';
-            localStorage.setItem('selected_woningType', targetWoning);
-            localStorage.setItem('selected_designPakket', targetPakket);
+            resolvedWoning = liveVoucherData.gekozenTypeWoning;
+            resolvedPakket = liveVoucherData.gekozenDesignpakket || 'Hotel Chic';
+            localStorage.setItem('selected_woningType', resolvedWoning);
+            localStorage.setItem('selected_designPakket', resolvedPakket);
           }
         }
 
-        if (!targetWoning || !targetPakket) {
-          if (isMounted) {
-            setWoningType('Type A');
-            setDesignPakket('Hotel Chic');
-            setIsAuthorized(true);
-          }
-          return;
-        }
+        if (!resolvedWoning) resolvedWoning = 'Type A';
+        if (!resolvedPakket) resolvedPakket = 'Hotel Chic';
 
         if (isMounted) {
-          setWoningType(targetWoning);
-          setDesignPakket(targetPakket);
+          setWoningType(resolvedWoning);
+          setDesignPakket(resolvedPakket);
           setIsAuthorized(true);
         }
       } catch (err) {
@@ -173,7 +164,6 @@ export default function DownloadPage() {
     try {
       setVoucherError('Controleren...');
       
-      // Vraag de gekoppelde woning en designpakket live op uit WordPress
       const voucherData = await getVoucherData(code);
 
       if (!voucherData || !voucherData.gekozenTypeWoning) {
@@ -181,14 +171,16 @@ export default function DownloadPage() {
         return;
       }
 
-      // Sla de echte data op in localStorage
+      const finalWoning = voucherData.gekozenTypeWoning;
+      const finalPakket = voucherData.gekozenDesignpakket || 'Hotel Chic';
+
       localStorage.setItem('toegangscode', code.toUpperCase());
       localStorage.setItem('download_timestamp', Date.now().toString());
-      localStorage.setItem('selected_woningType', voucherData.gekozenTypeWoning);
-      localStorage.setItem('selected_designPakket', voucherData.gekozenDesignpakket || 'Hotel Chic');
+      localStorage.setItem('selected_woningType', finalWoning);
+      localStorage.setItem('selected_designPakket', finalPakket);
 
-      setWoningType(voucherData.gekozenTypeWoning);
-      setDesignPakket(voucherData.gekozenDesignpakket || 'Hotel Chic');
+      setWoningType(finalWoning);
+      setDesignPakket(finalPakket);
       setNeedsVoucherInput(false);
       setIsAuthorized(true);
     } catch (err) {
@@ -392,7 +384,7 @@ export default function DownloadPage() {
     );
   }
 
-  if (!isAuthorized || !woningType || !designPakket) {
+  if (!isAuthorized) {
     return (
       <div className="min-h-screen bg-dark flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
