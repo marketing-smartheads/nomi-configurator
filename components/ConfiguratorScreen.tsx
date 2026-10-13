@@ -22,11 +22,11 @@ export default function ConfiguratorScreen({
     return 1;
   });
 
-  // Automatische koppeling van het woningtype op basis van de ingelogde vouchercode
+  // Automatische koppeling & locking van het woningtype op basis van de vouchercode
   useEffect(() => {
     const fetchVoucherWoningType = async () => {
       if (typeof window !== 'undefined') {
-        // Haal direct de code op uit localStorage of sessionStorage
+        // Lees zowel localStorage als sessionStorage uit voor alle mogelijke sleutels
         const opgeslagenCode = 
           localStorage.getItem('toegangscode') || 
           localStorage.getItem('voucherCode') ||
@@ -38,20 +38,37 @@ export default function ConfiguratorScreen({
             const res = await fetch(`/api/vouchers?code=${encodeURIComponent(opgeslagenCode)}`);
             const data = await res.json();
             
-            // Als de voucher een specifiek woningtype heeft, stel deze direct in!
-            if (data?.gekozenTypeWoning) {
-              setWoningType(data.gekozenTypeWoning);
-              sessionStorage.setItem('geselecteerdeWoning', data.gekozenTypeWoning);
+            let typeWoning = data?.gekozenTypeWoning || data?.typeWoning || data?.woningType;
+
+            // Fallback: Als de API-respons leeg is of vertraagt, leid het type af van de code (bijv. NOMI-A042 -> Type A)
+            if (!typeWoning && opgeslagenCode.includes('-')) {
+              const letter = opgeslagenCode.split('-')[1]?.[0]?.toUpperCase(); // 'A', 'C', 'D', 'E'
+              if (letter) {
+                typeWoning = `Type ${letter}`;
+              }
+            }
+            
+            if (typeWoning) {
+              setWoningType(typeWoning);
+              sessionStorage.setItem('geselecteerdeWoning', typeWoning);
             }
           } catch (err) {
             console.error('Kon vouchertype niet automatisch laden:', err);
+            
+            // Fallback bij API fout
+            if (opgeslagenCode.includes('-')) {
+              const letter = opgeslagenCode.split('-')[1]?.[0]?.toUpperCase();
+              if (letter) {
+                setWoningType(`Type ${letter}`);
+              }
+            }
           }
         }
       }
     };
 
     fetchVoucherWoningType();
-  }, [setWoningType]); // Let op: leeg of enkel setWoningType als afhankelijkheid zodat het direct bij mount draait!
+  }, [setWoningType]);
 
   // 2. Sla de stap op in localStorage zodra deze verandert
   useEffect(() => {

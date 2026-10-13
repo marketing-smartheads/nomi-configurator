@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:31:23.882Z",
-  "generatedAtEpochMs": 1791876683882,
+  "generatedAt": "2026-10-13T07:41:28.122Z",
+  "generatedAtEpochMs": 1791877288122,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/ConfiguratorScreen.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,13 +22,13 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/ConfiguratorScreen.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
+      "components/ConfiguratorScreen.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
-      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:31:22.072Z",
+    "lastActivityAt": "2026-10-13T07:41:26.398Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,20 +557,20 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1791876682072,
-      "lineCount": 234,
-      "charCount": 9152,
-      "hash": "30517f73a742",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1791877286398,
+      "lineCount": 98,
+      "charCount": 4508,
+      "hash": "25f960732805",
+      "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1791875836876,
-      "lineCount": 90,
-      "charCount": 4103,
-      "hash": "dd200db0a700",
-      "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "updatedAt": 1791877264942,
+      "lineCount": 251,
+      "charCount": 9757,
+      "hash": "934003a60b39",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -622,6 +622,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 49 lines with 57 lines.",
+      "recordedAt": "2026-10-13T07:41:26.398Z",
+      "recordedAtEpochMs": 1791877286398,
+      "before": {
+        "kind": "text",
+        "lineCount": 90,
+        "charCount": 4103,
+        "hash": "dd200db0a700",
+        "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type...",
+        "updatedAt": 1791877286398
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 98,
+        "charCount": 4508,
+        "hash": "25f960732805",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791877286398
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 49,
+        "addedLines": 57,
+        "summary": "Line 1: replaced 49 lines with 57 lines.",
+        "beforeFragment": "Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de...",
+        "afterFragment": "{ useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setW..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Line 25: replaced 30 lines with 47 lines.",
+      "recordedAt": "2026-10-13T07:41:04.942Z",
+      "recordedAtEpochMs": 1791877264942,
+      "before": {
+        "kind": "text",
+        "lineCount": 234,
+        "charCount": 9152,
+        "hash": "30517f73a742",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791877264942
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 251,
+        "charCount": 9757,
+        "hash": "934003a60b39",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791877264942
+      },
+      "diff": {
+        "lineStart": 25,
+        "removedLines": 30,
+        "addedLines": 47,
+        "summary": "Line 25: replaced 30 lines with 47 lines.",
+        "beforeFragment": "van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Haal dire...",
+        "afterFragment": "& locking van het woningtype op basis van de vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Lees zowe..."
+      }
+    },
     {
       "type": "save",
       "path": "components/ConfiguratorScreen.tsx",
@@ -1037,70 +1101,6 @@
         "beforeFragment": "// Veilige vaste standaard tot de optiepagina in WordPress volledig is gekoppeld / };",
         "afterFragment": "}; / } / export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 215 lines with 162 lines.",
-      "recordedAt": "2026-10-08T09:12:14.234Z",
-      "recordedAtEpochMs": 1791450734234,
-      "before": {
-        "kind": "text",
-        "lineCount": 221,
-        "charCount": 6020,
-        "hash": "86dbf689501a",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero...",
-        "updatedAt": 1791450734234
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 168,
-        "charCount": 4460,
-        "hash": "6e0d4b7c422a",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1791450734234
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 215,
-        "addedLines": 162,
-        "summary": "Line 5: replaced 215 lines with 162 lines.",
-        "beforeFragment": "configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / so...",
-        "afterFragment": "page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node { / sourceUrl / altText / } / } / } / story { / subtitel / ti..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 4: replaced 235 lines with 217 lines.",
-      "recordedAt": "2026-10-08T09:07:29.506Z",
-      "recordedAtEpochMs": 1791450449506,
-      "before": {
-        "kind": "text",
-        "lineCount": 239,
-        "charCount": 6895,
-        "hash": "d25ebf879d58",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },...",
-        "updatedAt": 1791450449506
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 221,
-        "charCount": 6020,
-        "hash": "86dbf689501a",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero...",
-        "updatedAt": 1791450449506
-      },
-      "diff": {
-        "lineStart": 4,
-        "removedLines": 235,
-        "addedLines": 217,
-        "summary": "Line 4: replaced 235 lines with 217 lines.",
-        "beforeFragment": "query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / }, / query GetPageSections { / page(...",
-        "afterFragment": "query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijvin..."
-      }
     }
   ],
   "hotFiles": [
@@ -1114,11 +1114,15 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 9
+      "count": 7
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
-      "count": 4
+      "count": 5
+    },
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 2
     },
     {
       "filePath": ".env.local",
@@ -1129,10 +1133,6 @@
       "count": 1
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 1
-    },
-    {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 1
     }
@@ -1140,17 +1140,21 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 1d03ebe fix(configurator): lees vouchercode ook uit localStorage voor woningtype koppeling",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-13 f5c07fc fix(configurator): trigger voucher API call direct bij mount voor woningtype-koppeling",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/ConfiguratorScreen.tsx"
+      "M components/ConfiguratorScreen.tsx",
+      "M components/configurator/StepOnewoning.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 53a96c7 by Bas van Dooremalen on 2026-10-13\n  fix(configurator): lock woningtype op basis van voucherCode sleutel\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f5c07fc by Bas van Dooremalen on 2026-10-13\n  fix(configurator): trigger voucher API call direct bij mount voor woningtype-koppeling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

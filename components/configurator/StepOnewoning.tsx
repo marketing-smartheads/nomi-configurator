@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
 
 export default function StepOneWoning({ 
@@ -11,9 +12,21 @@ export default function StepOneWoning({
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
         const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
-        return typeNaam.toLowerCase().trim() === woningType.toLowerCase().trim();
+        // Zorg voor een flexibele match (bijv. "type a" === "type a")
+        return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', '');
       })
     : woningTypenLijst;
+
+  // Automatisch de enige gefilterde optie selecteren als deze nog niet is geselecteerd
+  useEffect(() => {
+    if (gefilterdeLijst.length === 1) {
+      const geselecteerdeWoning = gefilterdeLijst[0];
+      const typeNaam = geselecteerdeWoning.typeNaam || geselecteerdeWoning.type_naam || geselecteerdeWoning.titel;
+      if (typeNaam && woningType !== typeNaam) {
+        setWoningType(typeNaam);
+      }
+    }
+  }, [gefilterdeLijst, woningType, setWoningType]);
 
   return (
     <div className="space-y-12">
@@ -29,24 +42,19 @@ export default function StepOneWoning({
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 max-w-2xl mx-auto">
         {gefilterdeLijst.length > 0 ? (
           gefilterdeLijst.map((item: any, index: number) => {
             const typeNaam = item.typeNaam || item.type_naam || `Type ${index + 1}`;
             const indelingTitel = item.indelingTitel || item.indeling_titel || '';
             const metrage = item.metrage || '';
-            
-            // Als er maar 1 optie overblijft door de voucher-lock, selecteer deze dan meteen automatisch!
-            if (gefilterdeLijst.length === 1 && woningType !== typeNaam) {
-              setWoningType(typeNaam);
-            }
-
             const isSelected = woningType === typeNaam;
             const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
 
             return (
               <button
                 key={typeNaam + index}
+                type="button"
                 onClick={() => setWoningType(typeNaam)}
                 className={`bg-white p-7 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md ${
                   isSelected ? 'border-primary ring-1 ring-primary' : 'border-dark/15 hover:border-primary/50'
