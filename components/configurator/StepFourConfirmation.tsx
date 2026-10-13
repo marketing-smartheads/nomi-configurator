@@ -91,7 +91,12 @@ export default function StepFourConfirmation({
   const omschrijving = configuratorData?.bevestigingOmschrijving || configuratorData?.bevestiging_omschrijving;
   const waarschuwingTekst = configuratorData?.bevestigingWaarschuwingTekst || configuratorData?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
 
-  const partnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel || "Geselecteerde partners";
+  // CMS-titel flexibel houden, maar standaard "Partners Nomi" tonen
+  const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel;
+  const partnersTitel = (!cmsPartnersTitel || cmsPartnersTitel === "Geselecteerde partners") 
+    ? "Partners Nomi" 
+    : cmsPartnersTitel;
+
   const partnersOmschrijving = configuratorData?.geselecteerdePartnersOmschrijving || configuratorData?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
 
   // Validatie: voor delen zijn naam, e-mail en telefoon nodig
@@ -127,8 +132,6 @@ export default function StepFourConfirmation({
   };
 
   // Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina.
-  // toestemming = true  -> API mailt de partner (scenario 1)
-  // toestemming = false -> geen mail naar de partner, klant gaat alleen door naar /download (scenario 2)
   const handleSubmit = async (toestemming: boolean) => {
     setIsSubmitting(true);
     setErrorMessage('');
@@ -173,7 +176,6 @@ export default function StepFourConfirmation({
       router.push('/download');
     } catch (error: any) {
       console.error(error);
-      // Popup blijft open (indien open) zodat de klant het opnieuw kan proberen
       setErrorMessage(`Versturen is niet gelukt: ${error.message || 'onbekende fout'}. Probeer het opnieuw.`);
     } finally {
       setIsSubmitting(false);
@@ -397,14 +399,12 @@ export default function StepFourConfirmation({
                 </label>
               </div>
 
-              {/* Ontbrekende gegevens bij 'ja' */}
               {agreedPartner === true && !gegevensCompleet && (
                 <p role="alert" className="text-xs text-red-700 leading-relaxed">
                   Om te kunnen delen hebben we een naam, een geldig e-mailadres en een telefoonnummer nodig. Sluit dit venster en vul de ontbrekende velden in.
                 </p>
               )}
 
-              {/* Waarschuwing */}
               <label className="flex items-start gap-3 cursor-pointer p-2 pt-2">
                 <input
                   type="checkbox"

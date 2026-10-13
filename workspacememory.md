@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-13T07:55:06.831Z
+Generated: 2026-10-13T08:02:14.830Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-13T07:55:04.620Z
+- Last activity: 2026-10-13T08:02:12.530Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: app/download/page.tsx (12), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (5), components/configurator/StepOnewoning.tsx (5)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/ConfiguratorScreen.tsx, .env.local
+- Active file in focus: components/configurator/StepFourConfirmation.tsx
+- Hottest files right now: app/download/page.tsx (11), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (6), components/configurator/StepOnewoning.tsx (5)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, .env.local
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepFourConfirmation.tsx | 484 lines | 22459 chars | hash 6cb8208e9f8a
+  Last snapshot: 2026-10-13T08:02:12.530Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
 - components/configurator/StepOnewoning.tsx | 118 lines | 5390 chars | hash 7d3f73a5ba32
   Last snapshot: 2026-10-13T07:55:04.620Z
   Preview: "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
@@ -48,9 +51,6 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 160 lines | 6478 chars | hash 46f4d92c2206
   Last snapshot: 2026-10-13T07:02:02.608Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
-- components/configurator/StepFourConfirmation.tsx | 484 lines | 22609 chars | hash ab9ef7b47f37
-  Last snapshot: 2026-10-08T09:49:41.022Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
 - app/api/confirm/route.ts | 390 lines | 15369 chars | hash c56f8cd3c4e3
   Last snapshot: 2026-10-08T09:49:34.063Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-10-13T08:02:12.530Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 94: replaced 314 lines with 314 lines.
+- Before: 484 lines | 22,609 chars | hash ab9ef7b47f37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- After: 484 lines | 22,459 chars | hash 6cb8208e9f8a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- Previous fragment: "const partnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel || "Geselecteerde partners"; / const partnersOmschrijving =..."
+- Current fragment: "// CMS-titel flexibel houden, maar standaard "Partners Nomi" tonen / const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_par..."
+
 ### 2026-10-13T07:55:04.620Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 86: removed 1 line.
 - Before: 118 lines | 5,440 chars | hash 6f56c94c4741 | preview: "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
@@ -162,18 +169,11 @@ Structured manifest: workspace.json
 - Previous fragment: "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge..."
 - Current fragment: "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
 
-### 2026-10-08T09:36:18.219Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 8: replaced 329 lines with 430 lines.
-- Before: 374 lines | 18,125 chars | hash 0e1c6d9e733e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
-- After: 475 lines | 22,032 chars | hash c3271a6086db | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- Previous fragment: "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
-- Current fragment: "// Partner voor de documentatielijst. / // Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, da..."
-
 
 ## Hot Files
-- app/download/page.tsx (12 tracked changes)
+- app/download/page.tsx (11 tracked changes)
 - lib/cms.ts (10 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (5 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (5 tracked changes)
 - components/ConfiguratorScreen.tsx (5 tracked changes)
 - .env.local (1 tracked changes)
@@ -182,9 +182,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 76ec3d0 style wijziging voor type woning
+- HEAD: 2026-10-13 5f5f5f4 hover effect eraf gehaald bij afbeelding type woning
 - Working tree summary: 1 modified
-- M components/configurator/StepOnewoning.tsx
+- M components/configurator/StepFourConfirmation.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 76ec3d0 by Bas van Dooremalen on 2026-10-13
-  style wijziging voor type woning
+- 5f5f5f4 by Bas van Dooremalen on 2026-10-13
+  hover effect eraf gehaald bij afbeelding type woning
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

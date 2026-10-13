@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:55:06.831Z",
-  "generatedAtEpochMs": 1791878106831,
+  "generatedAt": "2026-10-13T08:02:14.830Z",
+  "generatedAtEpochMs": 1791878534830,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
-      "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:55:04.620Z",
+    "lastActivityAt": "2026-10-13T08:02:12.530Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -556,6 +556,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1791878532530,
+      "lineCount": 484,
+      "charCount": 22459,
+      "hash": "6cb8208e9f8a",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1791878104620,
@@ -579,14 +587,6 @@
       "charCount": 6478,
       "hash": "46f4d92c2206",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1791452981022,
-      "lineCount": 484,
-      "charCount": 22609,
-      "hash": "ab9ef7b47f37",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -622,6 +622,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 94: replaced 314 lines with 314 lines.",
+      "recordedAt": "2026-10-13T08:02:12.530Z",
+      "recordedAtEpochMs": 1791878532530,
+      "before": {
+        "kind": "text",
+        "lineCount": 484,
+        "charCount": 22609,
+        "hash": "ab9ef7b47f37",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791878532529
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 484,
+        "charCount": 22459,
+        "hash": "6cb8208e9f8a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1791878532530
+      },
+      "diff": {
+        "lineStart": 94,
+        "removedLines": 314,
+        "addedLines": 314,
+        "summary": "Line 94: replaced 314 lines with 314 lines.",
+        "beforeFragment": "const partnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel || \"Geselecteerde partners\"; / const partnersOmschrijving =...",
+        "afterFragment": "// CMS-titel flexibel houden, maar standaard \"Partners Nomi\" tonen / const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_par..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1069,44 +1101,12 @@
         "beforeFragment": "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge...",
         "afterFragment": "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 8: replaced 329 lines with 430 lines.",
-      "recordedAt": "2026-10-08T09:36:18.219Z",
-      "recordedAtEpochMs": 1791452178219,
-      "before": {
-        "kind": "text",
-        "lineCount": 374,
-        "charCount": 18125,
-        "hash": "0e1c6d9e733e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791452178218
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 475,
-        "charCount": 22032,
-        "hash": "c3271a6086db",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791452178219
-      },
-      "diff": {
-        "lineStart": 8,
-        "removedLines": 329,
-        "addedLines": 430,
-        "summary": "Line 8: replaced 329 lines with 430 lines.",
-        "beforeFragment": "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm...",
-        "afterFragment": "// Partner voor de documentatielijst. / // Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, da..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 12
+      "count": 11
     },
     {
       "filePath": "lib/cms.ts",
@@ -1114,7 +1114,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1140,17 +1140,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 76ec3d0 style wijziging voor type woning",
+    "headSummary": "2026-10-13 5f5f5f4 hover effect eraf gehaald bij afbeelding type woning",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 76ec3d0 by Bas van Dooremalen on 2026-10-13\n  style wijziging voor type woning\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5f5f5f4 by Bas van Dooremalen on 2026-10-13\n  hover effect eraf gehaald bij afbeelding type woning\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
