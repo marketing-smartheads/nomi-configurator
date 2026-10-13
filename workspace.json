@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:02:04.927Z",
-  "generatedAtEpochMs": 1791874924927,
+  "generatedAt": "2026-10-13T07:11:39.025Z",
+  "generatedAtEpochMs": 1791875499025,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "components/ConfiguratorScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
+      "components/ConfiguratorScreen.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
+      "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
       "package-lock.json",
-      "package.json",
-      "tsconfig.json"
+      "package.json"
     ],
     "stats": {
       "totalFiles": 66,
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:02:02.608Z",
+    "lastActivityAt": "2026-10-13T07:11:36.767Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -556,6 +556,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "updatedAt": 1791875496767,
+      "lineCount": 228,
+      "charCount": 8886,
+      "hash": "c678a6c895f6",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+    },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1791874922608,
@@ -611,17 +619,41 @@
       "charCount": 3174,
       "hash": "9cb2cded37f2",
       "preview": "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
-    },
-    {
-      "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1791214854385,
-      "lineCount": 300,
-      "charCount": 13641,
-      "hash": "39178477b1a4",
-      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Line 25: replaced 157 lines with 178 lines.",
+      "recordedAt": "2026-10-13T07:11:36.767Z",
+      "recordedAtEpochMs": 1791875496767,
+      "before": {
+        "kind": "text",
+        "lineCount": 207,
+        "charCount": 8253,
+        "hash": "c9eea385c9aa",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791875496767
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 228,
+        "charCount": 8886,
+        "hash": "c678a6c895f6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791875496767
+      },
+      "diff": {
+        "lineStart": 25,
+        "removedLines": 157,
+        "addedLines": 178,
+        "summary": "Line 25: replaced 157 lines with 178 lines.",
+        "beforeFragment": "2. Sla de stap op in localStorage zodra deze verandert / useEffect(() => { / const handleStorageChange = () => { / if (typeof window !== 'undefined') { / const savedStep = local...",
+        "afterFragment": "Automatische koppeling van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undef..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1069,44 +1101,12 @@
         "beforeFragment": "",
         "afterFragment": "query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 176: replaced 56 lines with 54 lines.",
-      "recordedAt": "2026-10-08T08:21:09.016Z",
-      "recordedAtEpochMs": 1791447669016,
-      "before": {
-        "kind": "text",
-        "lineCount": 237,
-        "charCount": 6735,
-        "hash": "19c72617aa3b",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447669016
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 235,
-        "charCount": 6730,
-        "hash": "346b5b5e24ec",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447669016
-      },
-      "diff": {
-        "lineStart": 176,
-        "removedLines": 56,
-        "addedLines": 54,
-        "summary": "Line 176: replaced 56 lines with 54 lines.",
-        "beforeFragment": "query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekoze...",
-        "afterFragment": "cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherVelden { / toegangscode / gek..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 16
+      "count": 15
     },
     {
       "filePath": "lib/cms.ts",
@@ -1127,25 +1127,26 @@
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 1
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 469278f fixing StepFourComfirmation code",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-13 fcaaa4c feat(configurator): update materialenlijst, partners titel en voucher type routing",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/ConfiguratorScreen.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 469278f by Bas van Dooremalen on 2026-10-08\n  fixing StepFourComfirmation code\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- fcaaa4c by Bas van Dooremalen on 2026-10-13\n  feat(configurator): update materialenlijst, partners titel en voucher type routing\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

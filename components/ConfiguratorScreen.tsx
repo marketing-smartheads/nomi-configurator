@@ -22,6 +22,31 @@ export default function ConfiguratorScreen({
     return 1;
   });
 
+  // Automatische koppeling van het woningtype op basis van de ingelogde vouchercode
+  useEffect(() => {
+    const fetchVoucherWoningType = async () => {
+      if (typeof window !== 'undefined') {
+        const opgeslagenCode = sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode');
+        if (opgeslagenCode && !woningType) {
+          try {
+            const res = await fetch(`/api/vouchers?code=${encodeURIComponent(opgeslagenCode)}`);
+            const data = await res.json();
+            
+            // Als de voucher een specifiek woningtype heeft, stel deze direct in!
+            if (data?.gekozenTypeWoning) {
+              setWoningType(data.gekozenTypeWoning);
+              sessionStorage.setItem('geselecteerdeWoning', data.gekozenTypeWoning);
+            }
+          } catch (err) {
+            console.error('Kon vouchertype niet automatisch laden:', err);
+          }
+        }
+      }
+    };
+
+    fetchVoucherWoningType();
+  }, [woningType, setWoningType]);
+
   // 2. Sla de stap op in localStorage zodra deze verandert
   useEffect(() => {
     const handleStorageChange = () => {
@@ -36,10 +61,7 @@ export default function ConfiguratorScreen({
       }
     };
 
-    // Luister naar custom events of window focus / storage events
     window.addEventListener('storage', handleStorageChange);
-    
-    // Ook een eigen event zodat we het direct in dezelfde tab kunnen triggeren
     window.addEventListener('configuratorStepChange', handleStorageChange);
 
     return () => {
@@ -48,7 +70,7 @@ export default function ConfiguratorScreen({
     };
   }, []);
 
-  // 3. NIEUW: Scroll naar boven zodra de stap (currentStep) verandert
+  // 3. Scroll naar boven zodra de stap verandert
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentStep]);
@@ -90,14 +112,13 @@ export default function ConfiguratorScreen({
 
   return (
     <section className="w-full bg-secondary min-h-screen">
-      {/* Als we op stap 4 zijn, halen we de max-w-6xl en padding hier weg zodat de hero full-width kan */}
       <div className={`w-full mx-auto flex flex-col justify-between min-h-screen ${
         currentStep === 4 ? 'px-0' : 'max-w-6xl py-28'
       }`}>
         
         <div className={currentStep === 4 ? 'w-full' : ''}>
           
-          {/* STAPPEN BALK - Op stap 4 geven we dit wel weer padding zodat het binnen de layout blijft */}
+          {/* STAPPEN BALK */}
           <div className={`flex items-center justify-center space-x-6 sm:space-x-12 mb-16 ${
             currentStep === 4 ? 'px-6 pt-28 max-w-6xl mx-auto' : ''
           }`}>
@@ -128,7 +149,7 @@ export default function ConfiguratorScreen({
             })}
           </div>
 
-          {/* STAP 1 */}
+          {/* STAP 1: WONING & INDELING */}
           {currentStep === 1 && (
             <div className="px-6">
               <StepOneWoning 
@@ -153,7 +174,7 @@ export default function ConfiguratorScreen({
             </div>
           )}
           
-          {/* STAP 3 */}
+          {/* STAP 3: VISUEEL ONTWERP */}
           {currentStep === 3 && (
             <div className="px-6">
               <StepThreeVisuals 
@@ -164,7 +185,7 @@ export default function ConfiguratorScreen({
             </div>
           )}
 
-          {/* STAP 4: BEVESTIGING (Hier kan de hero nu direct full-width renderen) */}
+          {/* STAP 4: BEVESTIGING */}
           {currentStep === 4 && (
             <StepFourConfirmation 
               stepTitle={steps[3].title}
@@ -178,7 +199,7 @@ export default function ConfiguratorScreen({
           )}
         </div>
 
-        {/* ONDERSTE NAVIGATIE BALK — niet tonen op stap 4 */}
+        {/* ONDERSTE NAVIGATIE BALK */}
         {currentStep !== 4 && (
           <div className="px-6 flex flex-col-reverse sm:flex-row justify-between items-center gap-4 sm:gap-0 pt-12 mt-16 border-t border-dark/15">
             <button 
