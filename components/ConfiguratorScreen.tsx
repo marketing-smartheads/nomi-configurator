@@ -26,14 +26,14 @@ export default function ConfiguratorScreen({
   useEffect(() => {
     const fetchVoucherWoningType = async () => {
       if (typeof window !== 'undefined') {
-        // Check zowel localStorage als sessionStorage voor alle mogelijke sleutels
+        // Haal direct de code op uit localStorage of sessionStorage
         const opgeslagenCode = 
-          sessionStorage.getItem('voucherCode') || 
+          localStorage.getItem('toegangscode') || 
           localStorage.getItem('voucherCode') ||
           sessionStorage.getItem('toegangscode') || 
-          localStorage.getItem('toegangscode');
+          sessionStorage.getItem('voucherCode');
 
-        if (opgeslagenCode && !woningType) {
+        if (opgeslagenCode) {
           try {
             const res = await fetch(`/api/vouchers?code=${encodeURIComponent(opgeslagenCode)}`);
             const data = await res.json();
@@ -51,7 +51,7 @@ export default function ConfiguratorScreen({
     };
 
     fetchVoucherWoningType();
-  }, [woningType, setWoningType]);
+  }, [setWoningType]); // Let op: leeg of enkel setWoningType als afhankelijkheid zodat het direct bij mount draait!
 
   // 2. Sla de stap op in localStorage zodra deze verandert
   useEffect(() => {

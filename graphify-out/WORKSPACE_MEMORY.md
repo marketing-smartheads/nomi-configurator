@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-13T07:27:38.232Z
+Generated: 2026-10-13T07:31:23.882Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-13T07:27:35.929Z
+- Last activity: 2026-10-13T07:31:22.072Z
 ## Workspace Focus
 - Active file in focus: components/ConfiguratorScreen.tsx
-- Hottest files right now: app/download/page.tsx (14), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (9), components/ConfiguratorScreen.tsx (3)
+- Hottest files right now: app/download/page.tsx (13), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (9), components/ConfiguratorScreen.tsx (4)
 - Suggested starting points: components/ConfiguratorScreen.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, .env.local, app/api/confirm/route.ts
 ## Current Workspace
 - Active file: components/ConfiguratorScreen.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 41
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/ConfiguratorScreen.tsx | 234 lines | 9100 chars | hash 399bd5aa34c7
-  Last snapshot: 2026-10-13T07:27:35.929Z
+- components/ConfiguratorScreen.tsx | 234 lines | 9152 chars | hash 30517f73a742
+  Last snapshot: 2026-10-13T07:31:22.072Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 - components/configurator/StepOnewoning.tsx | 90 lines | 4103 chars | hash dd200db0a700
   Last snapshot: 2026-10-13T07:17:16.876Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-10-13T07:31:22.072Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 29: replaced 26 lines with 26 lines.
+- Before: 234 lines | 9,100 chars | hash 399bd5aa34c7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- After: 234 lines | 9,152 chars | hash 30517f73a742 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- Previous fragment: "Check zowel localStorage als sessionStorage voor alle mogelijke sleutels / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCode'..."
+- Current fragment: "Haal direct de code op uit localStorage of sessionStorage / const opgeslagenCode = / localStorage.getItem('toegangscode') || / localStorage.getItem('voucherCode') || / sessionSt..."
+
 ### 2026-10-13T07:27:35.929Z | saved | components/ConfiguratorScreen.tsx
 - Summary: Line 29: replaced 1 line with 1 line.
 - Before: 234 lines | 9,099 chars | hash 42ab9ee6d146 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
@@ -162,17 +169,12 @@ Structured manifest: workspace.json
 - Previous fragment: "query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / }, / query GetPageSections { / page(..."
 - Current fragment: "query GetConfiguratorPage { / configuratorInstellingen { / downloadLimietDagen / } / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijvin..."
 
-### 2026-10-08T08:59:55.950Z | saved | lib/cms.ts
-- Summary: Line 2: removed 2 lines.
-- Before: 240 lines | 6,897 chars | hash 2d23958b4d26 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
-- After: 239 lines | 6,895 chars | hash d25ebf879d58 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
-
 
 ## Hot Files
-- app/download/page.tsx (14 tracked changes)
+- app/download/page.tsx (13 tracked changes)
 - lib/cms.ts (10 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (9 tracked changes)
-- components/ConfiguratorScreen.tsx (3 tracked changes)
+- components/ConfiguratorScreen.tsx (4 tracked changes)
 - .env.local (1 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - components/configurator/StepOnewoning.tsx (1 tracked changes)
@@ -180,7 +182,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 53a96c7 fix(configurator): lock woningtype op basis van voucherCode sleutel
+- HEAD: 2026-10-13 1d03ebe fix(configurator): lees vouchercode ook uit localStorage voor woningtype koppeling
 - Working tree summary: 1 modified
 - M components/ConfiguratorScreen.tsx
 
