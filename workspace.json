@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T09:49:42.728Z",
-  "generatedAtEpochMs": 1791452982728,
+  "generatedAt": "2026-10-13T07:02:04.927Z",
+  "generatedAtEpochMs": 1791874924927,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
+      "components/configurator/StepFourConfirmation.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
       ".gitignore",
@@ -544,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-08T09:49:41.022Z",
+    "lastActivityAt": "2026-10-13T07:02:02.608Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -555,6 +556,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1791874922608,
+      "lineCount": 160,
+      "charCount": 6478,
+      "hash": "46f4d92c2206",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1791452981022,
@@ -610,17 +619,41 @@
       "charCount": 13641,
       "hash": "39178477b1a4",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-    },
-    {
-      "filePath": "app/privacy/page.tsx",
-      "updatedAt": 1791213595506,
-      "lineCount": 135,
-      "charCount": 8229,
-      "hash": "1fa058bba875",
-      "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 89 lines with 128 lines.",
+      "recordedAt": "2026-10-13T07:02:02.608Z",
+      "recordedAtEpochMs": 1791874922608,
+      "before": {
+        "kind": "text",
+        "lineCount": 121,
+        "charCount": 4928,
+        "hash": "8cd0bf1e088a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1791874922608
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 160,
+        "charCount": 6478,
+        "hash": "46f4d92c2206",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const...",
+        "updatedAt": 1791874922608
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 89,
+        "addedLines": 128,
+        "summary": "Line 7: replaced 89 lines with 128 lines.",
+        "beforeFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /...",
+        "afterFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1068,44 +1101,12 @@
         "beforeFragment": "query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekoze...",
         "afterFragment": "cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherVelden { / toegangscode / gek..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 180: replaced 39 lines with 53 lines.",
-      "recordedAt": "2026-10-08T08:16:37.353Z",
-      "recordedAtEpochMs": 1791447397353,
-      "before": {
-        "kind": "text",
-        "lineCount": 223,
-        "charCount": 6147,
-        "hash": "c042d574f6a7",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447397353
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 237,
-        "charCount": 6735,
-        "hash": "19c72617aa3b",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {...",
-        "updatedAt": 1791447397353
-      },
-      "diff": {
-        "lineStart": 180,
-        "removedLines": 39,
-        "addedLines": 53,
-        "summary": "Line 180: replaced 39 lines with 53 lines.",
-        "beforeFragment": "title / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = process.env.NO...",
-        "afterFragment": "id / title / slug / voucherDetails { / toegangscode / klantNaam / klantEmail / gekozenTypeWoning / gekozenDesignpakket / status / } / } / } / } / `; / const graphqlEndpoint = pr..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 17
+      "count": 16
     },
     {
       "filePath": "lib/cms.ts",
@@ -1122,17 +1123,20 @@
     {
       "filePath": "app/api/confirm/route.ts",
       "count": 1
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-08 af55400 update StepFourConfirmation",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-08 469278f fixing StepFourComfirmation code",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/api/confirm/route.ts",
-      "M components/configurator/StepFourConfirmation.tsx",
+      "M components/configurator/StepTwoDesign.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1141,7 +1145,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- af55400 by Bas van Dooremalen on 2026-10-08\n  update StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 469278f by Bas van Dooremalen on 2026-10-08\n  fixing StepFourComfirmation code\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

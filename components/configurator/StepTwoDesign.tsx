@@ -4,6 +4,24 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier
+const MATERIALEN_MAP: Record<string, string[]> = {
+  'modern raw': [
+    'Travertin look',
+    'Beton cement',
+    'Eiken hout',
+    'Mat zwart',
+    'Gun metal'
+  ],
+  'hotel chic': [
+    'Brons',
+    'Visgraat eiken',
+    'Suede',
+    'Beige / zand',
+    'Marmer look'
+  ]
+};
+
 export default function StepTwoDesign({ 
   stepTitle, 
   configuratorData, 
@@ -53,6 +71,12 @@ export default function StepTwoDesign({
             const afbField = pakket.pakketAabeelding || pakket.pakketAfbeelding;
             const imageUrl = afbField?.node?.sourceUrl || afbField?.sourceUrl;
 
+            // Bepaal de juiste materialenlijst op basis van de titel van het pakket (case-insensitive check)
+            const titelLower = pakketTitel.toLowerCase();
+            const materialen = Object.keys(MATERIALEN_MAP).find(key => titelLower.includes(key)) 
+              ? MATERIALEN_MAP[Object.keys(MATERIALEN_MAP).find(key => titelLower.includes(key))!] 
+              : [];
+
             return (
               <div
                 key={pakketId + index}
@@ -79,10 +103,25 @@ export default function StepTwoDesign({
                   </span>
                   
                   <h3 className="text-3xl font-serif text-dark mb-3">{pakketTitel}</h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-8">{pakketOmschrijving}</p>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">{pakketOmschrijving}</p>
+
+                  {/* Toegevoegde materialenlijst per pakket */}
+                  {materialen.length > 0 && (
+                    <div className="mb-8 bg-[#F9F6F0] p-5 rounded-2xl border border-dark/5">
+                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-dark mb-3">De materialen in dit pakket:</h4>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {materialen.map((mat, mIdx) => (
+                          <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                            {mat}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
 
-                <div className="flex items-center justify-between pt-6">
+                <div className="flex items-center justify-between pt-4 border-t border-dark/5">
                   {/* BEKIJK RENDERS KNOP: Enkel zichtbaar als Bevestigd is */}
                   {isConfirmed ? (
                     <Link 
@@ -92,7 +131,7 @@ export default function StepTwoDesign({
                       BEKIJK RENDERS →
                     </Link>
                   ) : (
-                    <div /> /* Lege ruimte behouden als de knop er niet is om layout stabiel te houden */
+                    <div />
                   )}
 
                   <button
