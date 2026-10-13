@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:49:05.872Z",
-  "generatedAtEpochMs": 1791877745872,
+  "generatedAt": "2026-10-13T07:53:40.931Z",
+  "generatedAtEpochMs": 1791878020931,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:49:03.469Z",
+    "lastActivityAt": "2026-10-13T07:53:39.223Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -558,10 +558,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1791877743469,
-      "lineCount": 114,
-      "charCount": 5192,
-      "hash": "16186b6788a0",
+      "updatedAt": 1791878019223,
+      "lineCount": 118,
+      "charCount": 5440,
+      "hash": "6f56c94c4741",
       "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
     },
     {
@@ -622,6 +622,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 80: replaced 10 lines with 14 lines.",
+      "recordedAt": "2026-10-13T07:53:39.223Z",
+      "recordedAtEpochMs": 1791878019223,
+      "before": {
+        "kind": "text",
+        "lineCount": 114,
+        "charCount": 5192,
+        "hash": "16186b6788a0",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791878019223
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 118,
+        "charCount": 5440,
+        "hash": "6f56c94c4741",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791878019223
+      },
+      "diff": {
+        "lineStart": 80,
+        "removedLines": 10,
+        "addedLines": 14,
+        "summary": "Line 80: replaced 10 lines with 14 lines.",
+        "beforeFragment": "h-64 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5\"> / {imageUrl ? ( / <Image / src={imageU...",
+        "afterFragment": "aspect-16/10 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5\"> / {imageUrl ? ( / <Image / src..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1069,38 +1101,6 @@
         "beforeFragment": "",
         "afterFragment": "NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 28: replaced 251 lines with 300 lines.",
-      "recordedAt": "2026-10-08T09:24:10.240Z",
-      "recordedAtEpochMs": 1791451450240,
-      "before": {
-        "kind": "text",
-        "lineCount": 325,
-        "charCount": 16042,
-        "hash": "3b3bf54c38e8",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791451450240
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 374,
-        "charCount": 18125,
-        "hash": "0e1c6d9e733e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791451450240
-      },
-      "diff": {
-        "lineStart": 28,
-        "removedLines": 251,
-        "addedLines": 300,
-        "summary": "Line 28: replaced 251 lines with 300 lines.",
-        "beforeFragment": "false); // Scenario toestemming partners / const [agreedWarning, setAgreedWarning] = useState(false); // Waarschuwing / definitief / const [klantNaam, setKlantNaam] = useState('...",
-        "afterFragment": "true); // Standaard aangevinkt (Wel akkoord) / const [agreedWarning, setAgreedWarning] = useState(false); // Definitief vinkje / const [klantNaam, setKlantNaam] = useState('');..."
-      }
     }
   ],
   "hotFiles": [
@@ -1114,7 +1114,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1122,7 +1122,7 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": ".env.local",
@@ -1140,7 +1140,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 85ffda0 fix(configurator): dwing direct woningtype-lock af op basis van vouchercode",
+    "headSummary": "2026-10-13 4be61c1 style(configurator): maak woningkaart breder, gecentreerd en voorkom initiële flits",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

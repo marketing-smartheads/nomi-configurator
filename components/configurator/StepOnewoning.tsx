@@ -77,16 +77,20 @@ export default function StepOneWoning({
                 }`}
               >
                 <div>
-                  <div className="w-full h-64 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5">
+                  <div className="w-full aspect-16/10 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5">
                     {imageUrl ? (
                       <Image 
                         src={imageUrl} 
                         alt={indelingTitel || 'Plattegrond'} 
                         fill 
-                        className="object-contain p-4"
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
                       />
                     ) : (
-                      `[ Plattegrond ${indelingTitel} ]`
+                      <span className="text-muted/60 font-medium">
+                        [ Plattegrond {indelingTitel} ]
+                      </span>
                     )}
                   </div>
 
