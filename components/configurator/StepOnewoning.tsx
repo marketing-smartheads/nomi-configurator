@@ -12,12 +12,11 @@ export default function StepOneWoning({
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
         const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
-        // Zorg voor een flexibele match (bijv. "type a" === "type a")
         return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', '');
       })
     : woningTypenLijst;
 
-  // Automatisch de enige gefilterde optie selecteren als deze nog niet is geselecteerd
+  // Automatisch de enige gefilterde optie selecteren zodra deze bekend is
   useEffect(() => {
     if (gefilterdeLijst.length === 1) {
       const geselecteerdeWoning = gefilterdeLijst[0];
@@ -27,6 +26,18 @@ export default function StepOneWoning({
       }
     }
   }, [gefilterdeLijst, woningType, setWoningType]);
+
+  // Als woningType nog leeg is bij eerste render (terwijl voucher geladen wordt), 
+  // tonen we een nette loader in plaats van kort alle 4 de woningen
+  if (!woningType && woningTypenLijst.length > 0) {
+    return (
+      <div className="space-y-12 min-h-[400px] flex flex-col justify-center items-center">
+        <p className="text-xs text-muted tracking-widest uppercase animate-pulse">
+          Uw woningtype wordt geladen...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-12">
@@ -42,7 +53,10 @@ export default function StepOneWoning({
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 max-w-2xl mx-auto">
+      {/* Breder grid: max-w-4xl / max-w-5xl net als stap 2, en flex/center bij 1 item */}
+      <div className={`flex flex-wrap justify-center gap-8 pt-4 mx-auto ${
+        gefilterdeLijst.length === 1 ? 'max-w-xl' : 'max-w-5xl'
+      }`}>
         {gefilterdeLijst.length > 0 ? (
           gefilterdeLijst.map((item: any, index: number) => {
             const typeNaam = item.typeNaam || item.type_naam || `Type ${index + 1}`;
@@ -56,18 +70,20 @@ export default function StepOneWoning({
                 key={typeNaam + index}
                 type="button"
                 onClick={() => setWoningType(typeNaam)}
-                className={`bg-white p-7 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md ${
+                className={`bg-white p-8 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md w-full ${
+                  gefilterdeLijst.length === 1 ? 'max-w-xl' : 'md:w-[calc(50%-1rem)]'
+                } ${
                   isSelected ? 'border-primary ring-1 ring-primary' : 'border-dark/15 hover:border-primary/50'
                 }`}
               >
                 <div>
-                  <div className="w-full h-48 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5">
+                  <div className="w-full h-64 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5">
                     {imageUrl ? (
                       <Image 
                         src={imageUrl} 
                         alt={indelingTitel || 'Plattegrond'} 
                         fill 
-                        className="object-cover"
+                        className="object-contain p-4"
                       />
                     ) : (
                       `[ Plattegrond ${indelingTitel} ]`
@@ -81,7 +97,7 @@ export default function StepOneWoning({
                   <p className="text-xs text-muted py-3.5">{metrage}</p>
                 </div>
 
-                <div className="text-[11px] font-semibold tracking-wider text-primary">
+                <div className="text-[11px] font-semibold tracking-wider text-primary mt-4">
                   {isSelected ? 'GESELECTEERD ✓' : 'SELECTEER →'}
                 </div>
               </button>

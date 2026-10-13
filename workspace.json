@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:41:28.122Z",
-  "generatedAtEpochMs": 1791877288122,
+  "generatedAt": "2026-10-13T07:49:05.872Z",
+  "generatedAtEpochMs": 1791877745872,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:41:26.398Z",
+    "lastActivityAt": "2026-10-13T07:49:03.469Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -558,10 +558,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1791877286398,
-      "lineCount": 98,
-      "charCount": 4508,
-      "hash": "25f960732805",
+      "updatedAt": 1791877743469,
+      "lineCount": 114,
+      "charCount": 5192,
+      "hash": "16186b6788a0",
       "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
     },
     {
@@ -622,6 +622,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 15: replaced 70 lines with 86 lines.",
+      "recordedAt": "2026-10-13T07:49:03.469Z",
+      "recordedAtEpochMs": 1791877743469,
+      "before": {
+        "kind": "text",
+        "lineCount": 98,
+        "charCount": 4508,
+        "hash": "25f960732805",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791877743469
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 114,
+        "charCount": 5192,
+        "hash": "16186b6788a0",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791877743469
+      },
+      "diff": {
+        "lineStart": 15,
+        "removedLines": 70,
+        "addedLines": 86,
+        "summary": "Line 15: replaced 70 lines with 86 lines.",
+        "beforeFragment": "// Zorg voor een flexibele match (bijv. \"type a\" === \"type a\") / return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : won...",
+        "afterFragment": "return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : woningTypenLijst; / // Automatisch de enige gefilterde optie selecte..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1069,38 +1101,6 @@
         "beforeFragment": "false); // Scenario toestemming partners / const [agreedWarning, setAgreedWarning] = useState(false); // Waarschuwing / definitief / const [klantNaam, setKlantNaam] = useState('...",
         "afterFragment": "true); // Standaard aangevinkt (Wel akkoord) / const [agreedWarning, setAgreedWarning] = useState(false); // Definitief vinkje / const [klantNaam, setKlantNaam] = useState('');..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 166: replaced 2 lines with 57 lines.",
-      "recordedAt": "2026-10-08T09:14:07.509Z",
-      "recordedAtEpochMs": 1791450847509,
-      "before": {
-        "kind": "text",
-        "lineCount": 168,
-        "charCount": 4460,
-        "hash": "6e0d4b7c422a",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1791450847509
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 223,
-        "charCount": 6051,
-        "hash": "188db5995315",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1791450847509
-      },
-      "diff": {
-        "lineStart": 166,
-        "removedLines": 2,
-        "addedLines": 57,
-        "summary": "Line 166: replaced 2 lines with 57 lines.",
-        "beforeFragment": "// Veilige vaste standaard tot de optiepagina in WordPress volledig is gekoppeld / };",
-        "afterFragment": "}; / } / export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(..."
-      }
     }
   ],
   "hotFiles": [
@@ -1114,7 +1114,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 7
+      "count": 6
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1122,7 +1122,7 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": ".env.local",
@@ -1140,21 +1140,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 f5c07fc fix(configurator): trigger voucher API call direct bij mount voor woningtype-koppeling",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-13 85ffda0 fix(configurator): dwing direct woningtype-lock af op basis van vouchercode",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/ConfiguratorScreen.tsx",
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f5c07fc by Bas van Dooremalen on 2026-10-13\n  fix(configurator): trigger voucher API call direct bij mount voor woningtype-koppeling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 85ffda0 by Bas van Dooremalen on 2026-10-13\n  fix(configurator): dwing direct woningtype-lock af op basis van vouchercode\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
