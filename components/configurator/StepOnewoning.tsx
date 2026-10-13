@@ -83,7 +83,7 @@ export default function StepOneWoning({
                         src={imageUrl} 
                         alt={indelingTitel || 'Plattegrond'} 
                         fill 
-                        className="object-cover transition-transform duration-500 hover:scale-105"
+                        className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority
                       />

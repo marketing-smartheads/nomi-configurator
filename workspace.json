@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:53:40.931Z",
-  "generatedAtEpochMs": 1791878020931,
+  "generatedAt": "2026-10-13T07:55:06.831Z",
+  "generatedAtEpochMs": 1791878106831,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:53:39.223Z",
+    "lastActivityAt": "2026-10-13T07:55:04.620Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -558,10 +558,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1791878019223,
+      "updatedAt": 1791878104620,
       "lineCount": 118,
-      "charCount": 5440,
-      "hash": "6f56c94c4741",
+      "charCount": 5390,
+      "hash": "7d3f73a5ba32",
       "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
     },
     {
@@ -622,6 +622,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 86: removed 1 line.",
+      "recordedAt": "2026-10-13T07:55:04.620Z",
+      "recordedAtEpochMs": 1791878104620,
+      "before": {
+        "kind": "text",
+        "lineCount": 118,
+        "charCount": 5440,
+        "hash": "6f56c94c4741",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791878104620
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 118,
+        "charCount": 5390,
+        "hash": "7d3f73a5ba32",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1791878104620
+      },
+      "diff": {
+        "lineStart": 86,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 86: removed 1 line.",
+        "beforeFragment": "transition-transform duration-500 hover:scale-105",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1069,44 +1101,12 @@
         "beforeFragment": "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm...",
         "afterFragment": "// Partner voor de documentatielijst. / // Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, da..."
       }
-    },
-    {
-      "type": "save",
-      "path": ".env.local",
-      "toPath": "",
-      "summary": "Line 5: inserted 3 lines.",
-      "recordedAt": "2026-10-08T09:36:13.713Z",
-      "recordedAtEpochMs": 1791452173713,
-      "before": {
-        "kind": "text",
-        "lineCount": 10,
-        "charCount": 370,
-        "hash": "58cf12c6dc42",
-        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / WORDPRESS_AUTH_USER=\"webmaster-msh\" / WORDPRESS_AUTH_PASSWO...",
-        "updatedAt": 1791452173713
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 12,
-        "charCount": 432,
-        "hash": "a1ea6608e103",
-        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl...",
-        "updatedAt": 1791452173713
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 0,
-        "addedLines": 3,
-        "summary": "Line 5: inserted 3 lines.",
-        "beforeFragment": "",
-        "afterFragment": "NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 13
+      "count": 12
     },
     {
       "filePath": "lib/cms.ts",
@@ -1117,12 +1117,12 @@
       "count": 5
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 5
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 4
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "count": 5
     },
     {
       "filePath": ".env.local",
@@ -1140,7 +1140,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 4be61c1 style(configurator): maak woningkaart breder, gecentreerd en voorkom initiële flits",
+    "headSummary": "2026-10-13 76ec3d0 style wijziging voor type woning",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1150,7 +1150,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 85ffda0 by Bas van Dooremalen on 2026-10-13\n  fix(configurator): dwing direct woningtype-lock af op basis van vouchercode\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 76ec3d0 by Bas van Dooremalen on 2026-10-13\n  style wijziging voor type woning\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
