@@ -26,7 +26,7 @@ export default function ConfiguratorScreen({
   useEffect(() => {
     const fetchVoucherWoningType = async () => {
       if (typeof window !== 'undefined') {
-        // Controleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode
+        // Check zowel localStorage als sessionStorage voor alle mogelijke sleutels
         const opgeslagenCode = 
           sessionStorage.getItem('voucherCode') || 
           localStorage.getItem('voucherCode') ||

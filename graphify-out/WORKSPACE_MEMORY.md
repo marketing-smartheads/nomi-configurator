@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-13T07:17:18.614Z
+Generated: 2026-10-13T07:27:38.232Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-13T07:17:16.876Z
+- Last activity: 2026-10-13T07:27:35.929Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: app/download/page.tsx (14), lib/cms.ts (11), components/configurator/StepFourConfirmation.tsx (9), components/ConfiguratorScreen.tsx (2)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/ConfiguratorScreen.tsx, .env.local
+- Active file in focus: components/ConfiguratorScreen.tsx
+- Hottest files right now: app/download/page.tsx (14), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (9), components/ConfiguratorScreen.tsx (3)
+- Suggested starting points: components/ConfiguratorScreen.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, .env.local, app/api/confirm/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/ConfiguratorScreen.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/ConfiguratorScreen.tsx | 234 lines | 9100 chars | hash 399bd5aa34c7
+  Last snapshot: 2026-10-13T07:27:35.929Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 - components/configurator/StepOnewoning.tsx | 90 lines | 4103 chars | hash dd200db0a700
   Last snapshot: 2026-10-13T07:17:16.876Z
   Preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
-- components/ConfiguratorScreen.tsx | 234 lines | 9099 chars | hash 42ab9ee6d146
-  Last snapshot: 2026-10-13T07:16:57.548Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 - components/configurator/StepTwoDesign.tsx | 160 lines | 6478 chars | hash 46f4d92c2206
   Last snapshot: 2026-10-13T07:02:02.608Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-10-13T07:27:35.929Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 29: replaced 1 line with 1 line.
+- Before: 234 lines | 9,099 chars | hash 42ab9ee6d146 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- After: 234 lines | 9,100 chars | hash 399bd5aa34c7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- Previous fragment: "ontroleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode"
+- Current fragment: "heck zowel localStorage als sessionStorage voor alle mogelijke sleutels"
+
 ### 2026-10-13T07:17:16.876Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 10: replaced 61 lines with 75 lines.
 - Before: 76 lines | 3,448 chars | hash 568f8963cd5d | preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
@@ -160,18 +167,12 @@ Structured manifest: workspace.json
 - Before: 240 lines | 6,897 chars | hash 2d23958b4d26 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
 - After: 239 lines | 6,895 chars | hash d25ebf879d58 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
 
-### 2026-10-08T08:54:27.547Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: inserted 325 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 325 lines | 16,042 chars | hash 3b3bf54c38e8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
-- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
-
 
 ## Hot Files
 - app/download/page.tsx (14 tracked changes)
-- lib/cms.ts (11 tracked changes)
+- lib/cms.ts (10 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (9 tracked changes)
-- components/ConfiguratorScreen.tsx (2 tracked changes)
+- components/ConfiguratorScreen.tsx (3 tracked changes)
 - .env.local (1 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - components/configurator/StepOnewoning.tsx (1 tracked changes)
@@ -179,13 +180,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 bc28c76 feat(configurator): koppel woningtype automatisch aan vouchercode
-- Working tree summary: 5 modifieds
+- HEAD: 2026-10-13 53a96c7 fix(configurator): lock woningtype op basis van voucherCode sleutel
+- Working tree summary: 1 modified
 - M components/ConfiguratorScreen.tsx
-- M components/configurator/StepOnewoning.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -193,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- bc28c76 by Bas van Dooremalen on 2026-10-13
-  feat(configurator): koppel woningtype automatisch aan vouchercode
+- 53a96c7 by Bas van Dooremalen on 2026-10-13
+  fix(configurator): lock woningtype op basis van voucherCode sleutel
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

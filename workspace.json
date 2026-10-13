@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T07:17:18.614Z",
-  "generatedAtEpochMs": 1791875838614,
+  "generatedAt": "2026-10-13T07:27:38.232Z",
+  "generatedAtEpochMs": 1791876458232,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/ConfiguratorScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,13 +22,13 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "components/ConfiguratorScreen.tsx",
       "app/download/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/ConfiguratorScreen.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -545,7 +545,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T07:17:16.876Z",
+    "lastActivityAt": "2026-10-13T07:27:35.929Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 41,
     "changeTypeCounts": {
@@ -557,20 +557,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "updatedAt": 1791876455929,
+      "lineCount": 234,
+      "charCount": 9100,
+      "hash": "399bd5aa34c7",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+    },
+    {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1791875836876,
       "lineCount": 90,
       "charCount": 4103,
       "hash": "dd200db0a700",
       "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
-    },
-    {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1791875817548,
-      "lineCount": 234,
-      "charCount": 9099,
-      "hash": "42ab9ee6d146",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -622,6 +622,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Line 29: replaced 1 line with 1 line.",
+      "recordedAt": "2026-10-13T07:27:35.929Z",
+      "recordedAtEpochMs": 1791876455929,
+      "before": {
+        "kind": "text",
+        "lineCount": 234,
+        "charCount": 9099,
+        "hash": "42ab9ee6d146",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791876455929
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 234,
+        "charCount": 9100,
+        "hash": "399bd5aa34c7",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1791876455929
+      },
+      "diff": {
+        "lineStart": 29,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 29: replaced 1 line with 1 line.",
+        "beforeFragment": "ontroleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode",
+        "afterFragment": "heck zowel localStorage als sessionStorage voor alle mogelijke sleutels"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1069,38 +1101,6 @@
         "beforeFragment": "",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 325 lines.",
-      "recordedAt": "2026-10-08T08:54:27.547Z",
-      "recordedAtEpochMs": 1791449667547,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1791449667547
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 325,
-        "charCount": 16042,
-        "hash": "3b3bf54c38e8",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /...",
-        "updatedAt": 1791449667547
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 325,
-        "summary": "Line 1: inserted 325 lines.",
-        "beforeFragment": "",
-        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1110,7 +1110,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1118,7 +1118,7 @@
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": ".env.local",
@@ -1140,21 +1140,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 bc28c76 feat(configurator): koppel woningtype automatisch aan vouchercode",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-13 53a96c7 fix(configurator): lock woningtype op basis van voucherCode sleutel",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/ConfiguratorScreen.tsx",
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/ConfiguratorScreen.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- bc28c76 by Bas van Dooremalen on 2026-10-13\n  feat(configurator): koppel woningtype automatisch aan vouchercode\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 53a96c7 by Bas van Dooremalen on 2026-10-13\n  fix(configurator): lock woningtype op basis van voucherCode sleutel\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
