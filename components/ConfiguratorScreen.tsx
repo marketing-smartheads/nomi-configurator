@@ -26,7 +26,13 @@ export default function ConfiguratorScreen({
   useEffect(() => {
     const fetchVoucherWoningType = async () => {
       if (typeof window !== 'undefined') {
-        const opgeslagenCode = sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode');
+        // Controleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode
+        const opgeslagenCode = 
+          sessionStorage.getItem('voucherCode') || 
+          localStorage.getItem('voucherCode') ||
+          sessionStorage.getItem('toegangscode') || 
+          localStorage.getItem('toegangscode');
+
         if (opgeslagenCode && !woningType) {
           try {
             const res = await fetch(`/api/vouchers?code=${encodeURIComponent(opgeslagenCode)}`);

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-13T07:11:39.025Z
+Generated: 2026-10-13T07:17:18.614Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-13T07:11:36.767Z
+- Last activity: 2026-10-13T07:17:16.876Z
 ## Workspace Focus
-- Active file in focus: components/ConfiguratorScreen.tsx
-- Hottest files right now: app/download/page.tsx (15), lib/cms.ts (12), components/configurator/StepFourConfirmation.tsx (9), .env.local (1)
-- Suggested starting points: components/ConfiguratorScreen.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, .env.local, app/api/confirm/route.ts
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: app/download/page.tsx (14), lib/cms.ts (11), components/configurator/StepFourConfirmation.tsx (9), components/ConfiguratorScreen.tsx (2)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/ConfiguratorScreen.tsx, .env.local
 ## Current Workspace
-- Active file: components/ConfiguratorScreen.tsx
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 66
 - Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
 - Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,10 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 41
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/ConfiguratorScreen.tsx | 228 lines | 8886 chars | hash c678a6c895f6
-  Last snapshot: 2026-10-13T07:11:36.767Z
+- components/configurator/StepOnewoning.tsx | 90 lines | 4103 chars | hash dd200db0a700
+  Last snapshot: 2026-10-13T07:17:16.876Z
+  Preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
+- components/ConfiguratorScreen.tsx | 234 lines | 9099 chars | hash 42ab9ee6d146
+  Last snapshot: 2026-10-13T07:16:57.548Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 - components/configurator/StepTwoDesign.tsx | 160 lines | 6478 chars | hash 46f4d92c2206
   Last snapshot: 2026-10-13T07:02:02.608Z
@@ -60,11 +63,22 @@ Structured manifest: workspace.json
 - app/download/page.tsx | 681 lines | 27231 chars | hash c783e7314120
   Last snapshot: 2026-10-08T08:37:15.306Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- components/Story.tsx | 76 lines | 3174 chars | hash 9cb2cded37f2
-  Last snapshot: 2026-10-06T07:46:54.095Z
-  Preview: "import React, { useState } from 'react'; / import Image from 'next/image'; / interface StoryProps { / data: { / subtitel: string; / titel: string; / videobron: string; / videoPoster: { / node: { / sourceUrl: string; /..."
 
 ## Recent Changes
+### 2026-10-13T07:17:16.876Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 10: replaced 61 lines with 75 lines.
+- Before: 76 lines | 3,448 chars | hash 568f8963cd5d | preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
+- After: 90 lines | 4,103 chars | hash dd200db0a700 | preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
+- Previous fragment: "return ( / <div className="space-y-12"> / <div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-sem..."
+- Current fragment: "// Filter de lijst zodat uitsluitend het type wordt getoond dat gekoppeld is aan de vouchercode / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => {..."
+
+### 2026-10-13T07:16:57.548Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 29: replaced 1 line with 7 lines.
+- Before: 228 lines | 8,886 chars | hash c678a6c895f6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- After: 234 lines | 9,099 chars | hash 42ab9ee6d146 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- Previous fragment: "const opgeslagenCode = sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode');"
+- Current fragment: "// Controleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCod..."
+
 ### 2026-10-13T07:11:36.767Z | saved | components/ConfiguratorScreen.tsx
 - Summary: Line 25: replaced 157 lines with 178 lines.
 - Before: 207 lines | 8,253 chars | hash c9eea385c9aa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
@@ -152,34 +166,26 @@ Structured manifest: workspace.json
 - After: 325 lines | 16,042 chars | hash 3b3bf54c38e8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / interface StepFourConfirmationProps { /..."
 - Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
 
-### 2026-10-08T08:37:15.306Z | saved | app/download/page.tsx
-- Summary: Line 85: replaced 6 lines with 12 lines.
-- Before: 675 lines | 27,024 chars | hash 7a82577d1cd2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 681 lines | 27,231 chars | hash c783e7314120 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {}; / const instelbareDagen = configuratorData?.downloadLimietDagen || 14; / const maxTijd = proce..."
-- Current fragment: "(Ondersteunt optiepagina, configurator data én standaard 14 dagen) / const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {}; / const instelbareDagen =..."
-
-### 2026-10-08T08:30:32.718Z | saved | lib/cms.ts
-- Summary: Line 5: inserted 6 lines.
-- Before: 235 lines | 6,730 chars | hash 346b5b5e24ec | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetPageSections { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / node {..."
-- After: 240 lines | 6,897 chars | hash 2d23958b4d26 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },..."
-- Current fragment: "query GetConfiguratorOptions { / configuratorInstellingen { # Of de gegenereerde GraphQL naam van je optiepagina / downloadLimietDagen / } / },"
-
 
 ## Hot Files
-- app/download/page.tsx (15 tracked changes)
-- lib/cms.ts (12 tracked changes)
+- app/download/page.tsx (14 tracked changes)
+- lib/cms.ts (11 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (9 tracked changes)
+- components/ConfiguratorScreen.tsx (2 tracked changes)
 - .env.local (1 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
+- components/configurator/StepOnewoning.tsx (1 tracked changes)
 - components/configurator/StepTwoDesign.tsx (1 tracked changes)
-- components/ConfiguratorScreen.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 fcaaa4c feat(configurator): update materialenlijst, partners titel en voucher type routing
-- Working tree summary: 1 modified
+- HEAD: 2026-10-13 bc28c76 feat(configurator): koppel woningtype automatisch aan vouchercode
+- Working tree summary: 5 modifieds
 - M components/ConfiguratorScreen.tsx
+- M components/configurator/StepOnewoning.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -187,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- fcaaa4c by Bas van Dooremalen on 2026-10-13
-  feat(configurator): update materialenlijst, partners titel en voucher type routing
+- bc28c76 by Bas van Dooremalen on 2026-10-13
+  feat(configurator): koppel woningtype automatisch aan vouchercode
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

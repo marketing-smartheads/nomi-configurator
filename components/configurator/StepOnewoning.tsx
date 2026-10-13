@@ -7,6 +7,14 @@ export default function StepOneWoning({
   woningType, 
   setWoningType 
 }: any) {
+  // Filter de lijst zodat uitsluitend het type wordt getoond dat gekoppeld is aan de vouchercode
+  const gefilterdeLijst = woningType 
+    ? woningTypenLijst.filter((item: any) => {
+        const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
+        return typeNaam.toLowerCase().trim() === woningType.toLowerCase().trim();
+      })
+    : woningTypenLijst;
+
   return (
     <div className="space-y-12">
       <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -22,11 +30,17 @@ export default function StepOneWoning({
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-        {woningTypenLijst.length > 0 ? (
-          woningTypenLijst.map((item: any, index: number) => {
+        {gefilterdeLijst.length > 0 ? (
+          gefilterdeLijst.map((item: any, index: number) => {
             const typeNaam = item.typeNaam || item.type_naam || `Type ${index + 1}`;
             const indelingTitel = item.indelingTitel || item.indeling_titel || '';
             const metrage = item.metrage || '';
+            
+            // Als er maar 1 optie overblijft door de voucher-lock, selecteer deze dan meteen automatisch!
+            if (gefilterdeLijst.length === 1 && woningType !== typeNaam) {
+              setWoningType(typeNaam);
+            }
+
             const isSelected = woningType === typeNaam;
             const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
 
@@ -35,7 +49,7 @@ export default function StepOneWoning({
                 key={typeNaam + index}
                 onClick={() => setWoningType(typeNaam)}
                 className={`bg-white p-7 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md ${
-                  isSelected ? 'border-primary ring-1 ring-primary' : 'border-dark/10 hover:border-primary/50'
+                  isSelected ? 'border-primary ring-1 ring-primary' : 'border-dark/15 hover:border-primary/50'
                 }`}
               >
                 <div>
@@ -66,8 +80,8 @@ export default function StepOneWoning({
             );
           })
         ) : (
-          <div className="col-span-3 text-center py-12 text-muted text-xs">
-            Geen woningtypen beschikbaar.
+          <div className="col-span-2 text-center py-12 text-muted text-xs">
+            Geen woningtypen gevonden voor uw vouchercode.
           </div>
         )}
       </div>
