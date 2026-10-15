@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T08:02:14.830Z",
-  "generatedAtEpochMs": 1791878534830,
+  "generatedAt": "2026-10-15T12:32:16.941Z",
+  "generatedAtEpochMs": 1792067536941,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "app/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
-      "app/download/page.tsx",
+      "app/page.tsx",
       "lib/cms.ts",
+      "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
+      "components/VoucherParamHandler.tsx",
       ".env.local",
       "app/api/confirm/route.ts",
-      "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
-      "totalFiles": 66,
+      "totalFiles": 67,
       "topLevelAreas": [
         {
           "name": "public",
@@ -44,7 +44,7 @@
         },
         {
           "name": "components",
-          "count": 16
+          "count": 17
         },
         {
           "name": "[root]",
@@ -62,7 +62,7 @@
       "primaryFileTypes": [
         {
           "name": ".tsx",
-          "count": 21
+          "count": 22
         },
         {
           "name": ".svg",
@@ -278,6 +278,12 @@
         },
         {
           "path": "components/Story.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/VoucherParamHandler.tsx",
           "topLevelArea": "components",
           "extension": ".tsx",
           "isKeyFile": false
@@ -545,17 +551,33 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-13T08:02:12.530Z",
+    "lastActivityAt": "2026-10-15T12:32:15.183Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 41,
+    "trackedFileSnapshotCount": 42,
     "changeTypeCounts": {
-      "save": 40,
-      "create": 0,
+      "save": 39,
+      "create": 1,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/page.tsx",
+      "updatedAt": 1792067535183,
+      "lineCount": 17,
+      "charCount": 426,
+      "hash": "0d94bfd3ea1f",
+      "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s..."
+    },
+    {
+      "filePath": "components/VoucherParamHandler.tsx",
+      "updatedAt": 1792067515849,
+      "lineCount": 20,
+      "charCount": 598,
+      "hash": "06ad36daf3da",
+      "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1791878532530,
@@ -603,25 +625,93 @@
       "charCount": 432,
       "hash": "a1ea6608e103",
       "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1791450847509,
-      "lineCount": 223,
-      "charCount": 6051,
-      "hash": "188db5995315",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1791448635306,
-      "lineCount": 681,
-      "charCount": 27231,
-      "hash": "c783e7314120",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/page.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 9 lines with 13 lines.",
+      "recordedAt": "2026-10-15T12:32:15.183Z",
+      "recordedAtEpochMs": 1792067535183,
+      "before": {
+        "kind": "text",
+        "lineCount": 13,
+        "charCount": 308,
+        "hash": "e95adef2762a",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC...",
+        "updatedAt": 1792067535183
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 17,
+        "charCount": 426,
+        "hash": "0d94bfd3ea1f",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s...",
+        "updatedAt": 1792067535183
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 9,
+        "addedLines": 13,
+        "summary": "Line 3: replaced 9 lines with 13 lines.",
+        "beforeFragment": "export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configur...",
+        "afterFragment": "import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / retu..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/VoucherParamHandler.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 20 lines.",
+      "recordedAt": "2026-10-15T12:31:55.849Z",
+      "recordedAtEpochMs": 1792067515849,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792067515849
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 20,
+        "charCount": 598,
+        "hash": "06ad36daf3da",
+        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /...",
+        "updatedAt": 1792067515849
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 20,
+        "summary": "Line 1: inserted 20 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams =..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "components/VoucherParamHandler.tsx",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-10-15T12:31:38.139Z",
+      "recordedAtEpochMs": 1792067498139,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792067498134.3486,
+        "extension": ".tsx",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1005,112 +1095,16 @@
         "beforeFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /...",
         "afterFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 9: replaced 142 lines with 141 lines.",
-      "recordedAt": "2026-10-08T09:49:41.022Z",
-      "recordedAtEpochMs": 1791452981022,
-      "before": {
-        "kind": "text",
-        "lineCount": 485,
-        "charCount": 22677,
-        "hash": "99504a202b1e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791452981022
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 484,
-        "charCount": 22609,
-        "hash": "ab9ef7b47f37",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791452981022
-      },
-      "diff": {
-        "lineStart": 9,
-        "removedLines": 142,
-        "addedLines": 141,
-        "summary": "Line 9: replaced 142 lines with 141 lines.",
-        "beforeFragment": "Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, dan gaat de mail naar Tobias. / const PARTNER...",
-        "afterFragment": "Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / // Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl;..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 18: replaced 295 lines with 373 lines.",
-      "recordedAt": "2026-10-08T09:49:34.063Z",
-      "recordedAtEpochMs": 1791452974063,
-      "before": {
-        "kind": "text",
-        "lineCount": 312,
-        "charCount": 11771,
-        "hash": "7818b7a67d18",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791452974063
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 390,
-        "charCount": 15369,
-        "hash": "c56f8cd3c4e3",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1791452974063
-      },
-      "diff": {
-        "lineStart": 18,
-        "removedLines": 295,
-        "addedLines": 373,
-        "summary": "Line 18: replaced 295 lines with 373 lines.",
-        "beforeFragment": "console.log(\"📥 Ontvangen data in API route:\", { / toegangscode, / klantNaam, / klantEmail, / woningType, / designPakket, / bestandenStructuur: Array.isArray(bestanden) ? `Array...",
-        "afterFragment": "let klantTelefoon = body.klantTelefoon || body.telefoon || ''; / // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming / const toestemmingPartner = b..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 129: replaced 300 lines with 310 lines.",
-      "recordedAt": "2026-10-08T09:48:35.110Z",
-      "recordedAtEpochMs": 1791452915110,
-      "before": {
-        "kind": "text",
-        "lineCount": 475,
-        "charCount": 22032,
-        "hash": "c3271a6086db",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791452915110
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 485,
-        "charCount": 22677,
-        "hash": "99504a202b1e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791452915110
-      },
-      "diff": {
-        "lineStart": 129,
-        "removedLines": 300,
-        "addedLines": 310,
-        "summary": "Line 129: replaced 300 lines with 310 lines.",
-        "beforeFragment": "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge...",
-        "afterFragment": "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "app/download/page.tsx",
-      "count": 11
-    },
-    {
       "filePath": "lib/cms.ts",
       "count": 10
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1125,32 +1119,36 @@
       "count": 5
     },
     {
+      "filePath": "components/VoucherParamHandler.tsx",
+      "count": 2
+    },
+    {
       "filePath": ".env.local",
       "count": 1
     },
     {
       "filePath": "app/api/confirm/route.ts",
       "count": 1
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 5f5f5f4 hover effect eraf gehaald bij afbeelding type woning",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-13 478a056 fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback",
+    "statusSummary": "4 modifieds, 1 untracked",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M app/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md",
+      "?? components/VoucherParamHandler.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5f5f5f4 by Bas van Dooremalen on 2026-10-13\n  hover effect eraf gehaald bij afbeelding type woning\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 478a056 by Bas van Dooremalen on 2026-10-13\n  fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

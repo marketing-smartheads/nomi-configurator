@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-13T08:02:14.830Z
+Generated: 2026-10-15T12:32:16.941Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-13T08:02:12.530Z
+- Last activity: 2026-10-15T12:32:15.183Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: app/download/page.tsx (11), lib/cms.ts (10), components/configurator/StepFourConfirmation.tsx (6), components/configurator/StepOnewoning.tsx (5)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, lib/cms.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, .env.local
+- Active file in focus: app/page.tsx
+- Hottest files right now: lib/cms.ts (10), app/download/page.tsx (8), components/configurator/StepFourConfirmation.tsx (6), components/configurator/StepOnewoning.tsx (5)
+- Suggested starting points: app/page.tsx, lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
-- Tracked files in snapshot: 66
-- Top-level areas: public (21), components (16), [root] (15), app (11), lib (3)
-- Primary file types: .tsx (21), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
+- Active file: app/page.tsx
+- Tracked files in snapshot: 67
+- Top-level areas: public (21), components (17), [root] (15), app (11), lib (3)
+- Primary file types: .tsx (22), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -35,10 +35,16 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (40)
-- Remembered file snapshots: 41
-- Working tree summary: 1 modified
+- Change mix: save (39), create (1)
+- Remembered file snapshots: 42
+- Working tree summary: 4 modifieds, 1 untracked
 ## Tracked Snapshots
+- app/page.tsx | 17 lines | 426 chars | hash 0d94bfd3ea1f
+  Last snapshot: 2026-10-15T12:32:15.183Z
+  Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s..."
+- components/VoucherParamHandler.tsx | 20 lines | 598 chars | hash 06ad36daf3da
+  Last snapshot: 2026-10-15T12:31:55.849Z
+  Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
 - components/configurator/StepFourConfirmation.tsx | 484 lines | 22459 chars | hash 6cb8208e9f8a
   Last snapshot: 2026-10-13T08:02:12.530Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
@@ -57,14 +63,25 @@ Structured manifest: workspace.json
 - .env.local | 12 lines | 432 chars | hash a1ea6608e103
   Last snapshot: 2026-10-08T09:36:13.713Z
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
-- lib/cms.ts | 223 lines | 6051 chars | hash 188db5995315
-  Last snapshot: 2026-10-08T09:14:07.509Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- app/download/page.tsx | 681 lines | 27231 chars | hash c783e7314120
-  Last snapshot: 2026-10-08T08:37:15.306Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-10-15T12:32:15.183Z | saved | app/page.tsx
+- Summary: Line 3: replaced 9 lines with 13 lines.
+- Before: 13 lines | 308 chars | hash e95adef2762a | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
+- After: 17 lines | 426 chars | hash 0d94bfd3ea1f | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s..."
+- Previous fragment: "export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configur..."
+- Current fragment: "import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / retu..."
+
+### 2026-10-15T12:31:55.849Z | saved | components/VoucherParamHandler.tsx
+- Summary: Line 1: inserted 20 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 20 lines | 598 chars | hash 06ad36daf3da | preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
+- Current fragment: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams =..."
+
+### 2026-10-15T12:31:38.139Z | created | components/VoucherParamHandler.tsx
+- Summary: Created file.
+- After: 0 lines | 0 chars | hash empty
+
 ### 2026-10-13T08:02:12.530Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 94: replaced 314 lines with 314 lines.
 - Before: 484 lines | 22,609 chars | hash ab9ef7b47f37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
@@ -148,43 +165,26 @@ Structured manifest: workspace.json
 - Previous fragment: "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
 - Current fragment: "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
 
-### 2026-10-08T09:49:41.022Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 9: replaced 142 lines with 141 lines.
-- Before: 485 lines | 22,677 chars | hash 99504a202b1e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- After: 484 lines | 22,609 chars | hash ab9ef7b47f37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- Previous fragment: "Tijdens testen: zet NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl in .env.local / // In productie: variabele weglaten, dan gaat de mail naar Tobias. / const PARTNER..."
-- Current fragment: "Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / // Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl;..."
-
-### 2026-10-08T09:49:34.063Z | saved | app/api/confirm/route.ts
-- Summary: Line 18: replaced 295 lines with 373 lines.
-- Before: 312 lines | 11,771 chars | hash 7818b7a67d18 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 390 lines | 15,369 chars | hash c56f8cd3c4e3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "console.log("📥 Ontvangen data in API route:", { / toegangscode, / klantNaam, / klantEmail, / woningType, / designPakket, / bestandenStructuur: Array.isArray(bestanden) ? `Array..."
-- Current fragment: "let klantTelefoon = body.klantTelefoon || body.telefoon || ''; / // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming / const toestemmingPartner = b..."
-
-### 2026-10-08T09:48:35.110Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 129: replaced 300 lines with 310 lines.
-- Before: 475 lines | 22,032 chars | hash c3271a6086db | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- After: 485 lines | 22,677 chars | hash 99504a202b1e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- Previous fragment: "Scenario 1: wel akkoord -> mail naar partner + door naar downloadpagina / const handlePartnerConfirm = async () => { / setIsSubmitting(true); / setErrorMessage(''); / const opge..."
-- Current fragment: "Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina. / // toestemming = true  -> API mailt de partner (scenario 1) / // toestemming = false -> geen mail naar..."
-
 
 ## Hot Files
-- app/download/page.tsx (11 tracked changes)
 - lib/cms.ts (10 tracked changes)
+- app/download/page.tsx (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (5 tracked changes)
 - components/ConfiguratorScreen.tsx (5 tracked changes)
+- components/VoucherParamHandler.tsx (2 tracked changes)
 - .env.local (1 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
-- components/configurator/StepTwoDesign.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 5f5f5f4 hover effect eraf gehaald bij afbeelding type woning
-- Working tree summary: 1 modified
-- M components/configurator/StepFourConfirmation.tsx
+- HEAD: 2026-10-13 478a056 fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback
+- Working tree summary: 4 modifieds, 1 untracked
+- M app/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
+- ?? components/VoucherParamHandler.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 5f5f5f4 by Bas van Dooremalen on 2026-10-13
-  hover effect eraf gehaald bij afbeelding type woning
+- 478a056 by Bas van Dooremalen on 2026-10-13
+  fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
