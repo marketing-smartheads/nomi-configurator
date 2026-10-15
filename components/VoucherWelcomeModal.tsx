@@ -81,7 +81,7 @@ export default function VoucherWelcomeModal() {
         <div className="space-y-4 pt-2">
           <Button
             onClick={handleStart}
-            className="w-full py-4 text-xs font-bold tracking-[0.2em] uppercase"
+            className="w-full py-4 text-xs font-bold tracking-[0.2em] uppercase text-white"
           >
             START CONFIGURATOR →
           </Button>

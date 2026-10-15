@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T12:53:07.992Z",
-  "generatedAtEpochMs": 1792068787992,
+  "generatedAt": "2026-10-15T12:55:31.654Z",
+  "generatedAtEpochMs": 1792068931654,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-15T12:53:06.201Z",
+    "lastActivityAt": "2026-10-15T12:55:29.900Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
-      "updatedAt": 1792068786201,
+      "updatedAt": 1792068929900,
       "lineCount": 96,
-      "charCount": 3522,
-      "hash": "14d64b1e13cc",
+      "charCount": 3533,
+      "hash": "b0287afaa956",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/VoucherWelcomeModal.tsx",
+      "toPath": "",
+      "summary": "Line 84: inserted 1 line.",
+      "recordedAt": "2026-10-15T12:55:29.900Z",
+      "recordedAtEpochMs": 1792068929900,
+      "before": {
+        "kind": "text",
+        "lineCount": 96,
+        "charCount": 3522,
+        "hash": "14d64b1e13cc",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
+        "updatedAt": 1792068929900
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 96,
+        "charCount": 3533,
+        "hash": "b0287afaa956",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
+        "updatedAt": 1792068929900
+      },
+      "diff": {
+        "lineStart": 84,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 84: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "text-white"
+      }
+    },
     {
       "type": "save",
       "path": "components/VoucherWelcomeModal.tsx",
@@ -1023,38 +1055,6 @@
         "beforeFragment": "Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de...",
         "afterFragment": "{ useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setW..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 25: replaced 30 lines with 47 lines.",
-      "recordedAt": "2026-10-13T07:41:04.942Z",
-      "recordedAtEpochMs": 1791877264942,
-      "before": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9152,
-        "hash": "30517f73a742",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791877264942
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 251,
-        "charCount": 9757,
-        "hash": "934003a60b39",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791877264942
-      },
-      "diff": {
-        "lineStart": 25,
-        "removedLines": 30,
-        "addedLines": 47,
-        "summary": "Line 25: replaced 30 lines with 47 lines.",
-        "beforeFragment": "van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Haal dire...",
-        "afterFragment": "& locking van het woningtype op basis van de vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Lees zowe..."
-      }
     }
   ],
   "hotFiles": [
@@ -1075,11 +1075,11 @@
       "count": 5
     },
     {
-      "filePath": "app/download/page.tsx",
+      "filePath": "components/VoucherWelcomeModal.tsx",
       "count": 4
     },
     {
-      "filePath": "components/VoucherWelcomeModal.tsx",
+      "filePath": "app/download/page.tsx",
       "count": 3
     },
     {
@@ -1094,15 +1094,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-15 18fb120 feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)",
-    "statusSummary": "3 modifieds, 2 untrackeds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-15 92324e0 feat(voucher): voeg VoucherWelcomeModal & /voucher landingspagina toe",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md",
-      "?? app/voucher/",
-      "?? components/VoucherWelcomeModal.tsx"
+      "M components/VoucherWelcomeModal.tsx"
     ],
     "error": ""
   },
