@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T12:32:16.941Z",
-  "generatedAtEpochMs": 1792067536941,
+  "generatedAt": "2026-10-15T12:53:07.992Z",
+  "generatedAtEpochMs": 1792068787992,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/page.tsx",
+    "activeFile": "components/VoucherWelcomeModal.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/page.tsx",
+      "components/VoucherWelcomeModal.tsx",
       "lib/cms.ts",
-      "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
+      "app/download/page.tsx",
+      "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
-      ".env.local",
-      "app/api/confirm/route.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
-      "totalFiles": 67,
+      "totalFiles": 69,
       "topLevelAreas": [
         {
           "name": "public",
@@ -44,7 +44,7 @@
         },
         {
           "name": "components",
-          "count": 17
+          "count": 18
         },
         {
           "name": "[root]",
@@ -52,7 +52,7 @@
         },
         {
           "name": "app",
-          "count": 11
+          "count": 12
         },
         {
           "name": "lib",
@@ -62,7 +62,7 @@
       "primaryFileTypes": [
         {
           "name": ".tsx",
-          "count": 22
+          "count": 24
         },
         {
           "name": ".svg",
@@ -187,6 +187,12 @@
           "isKeyFile": false
         },
         {
+          "path": "app/voucher/page.tsx",
+          "topLevelArea": "app",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
           "path": "CLAUDE.md",
           "topLevelArea": "[root]",
           "extension": ".md",
@@ -284,6 +290,12 @@
         },
         {
           "path": "components/VoucherParamHandler.tsx",
+          "topLevelArea": "components",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "components/VoucherWelcomeModal.tsx",
           "topLevelArea": "components",
           "extension": ".tsx",
           "isKeyFile": false
@@ -551,17 +563,33 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-15T12:32:15.183Z",
+    "lastActivityAt": "2026-10-15T12:53:06.201Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 42,
+    "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
-      "save": 39,
-      "create": 1,
+      "save": 36,
+      "create": 4,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/VoucherWelcomeModal.tsx",
+      "updatedAt": 1792068786201,
+      "lineCount": 96,
+      "charCount": 3522,
+      "hash": "14d64b1e13cc",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
+    },
+    {
+      "filePath": "app/voucher/page.tsx",
+      "updatedAt": 1792068745240,
+      "lineCount": 19,
+      "charCount": 563,
+      "hash": "0ffd40656a77",
+      "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
+    },
     {
       "filePath": "app/page.tsx",
       "updatedAt": 1792067535183,
@@ -609,25 +637,149 @@
       "charCount": 6478,
       "hash": "46f4d92c2206",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "updatedAt": 1791452974063,
-      "lineCount": 390,
-      "charCount": 15369,
-      "hash": "c56f8cd3c4e3",
-      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-    },
-    {
-      "filePath": ".env.local",
-      "updatedAt": 1791452173713,
-      "lineCount": 12,
-      "charCount": 432,
-      "hash": "a1ea6608e103",
-      "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/VoucherWelcomeModal.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-15T12:53:06.201Z",
+      "recordedAtEpochMs": 1792068786201,
+      "before": {
+        "kind": "text",
+        "lineCount": 96,
+        "charCount": 3522,
+        "hash": "14d64b1e13cc",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
+        "updatedAt": 1792068786201
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 96,
+        "charCount": 3522,
+        "hash": "14d64b1e13cc",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
+        "updatedAt": 1792068786201
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/VoucherWelcomeModal.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 96 lines.",
+      "recordedAt": "2026-10-15T12:52:53.130Z",
+      "recordedAtEpochMs": 1792068773130,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792068773130
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 96,
+        "charCount": 3522,
+        "hash": "14d64b1e13cc",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
+        "updatedAt": 1792068773130
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 96,
+        "summary": "Line 1: inserted 96 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default fu..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "components/VoucherWelcomeModal.tsx",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-10-15T12:52:48.563Z",
+      "recordedAtEpochMs": 1792068768563,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792068768557.626,
+        "extension": ".tsx",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "app/voucher/page.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 19 lines.",
+      "recordedAt": "2026-10-15T12:52:25.240Z",
+      "recordedAtEpochMs": 1792068745240,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792068745240
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 563,
+        "hash": "0ffd40656a77",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()...",
+        "updatedAt": 1792068745240
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 19,
+        "summary": "Line 1: inserted 19 lines.",
+        "beforeFragment": "",
+        "afterFragment": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export def..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "app/voucher/page.tsx",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-10-15T12:52:19.481Z",
+      "recordedAtEpochMs": 1792068739481,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1792068739475.7427,
+        "extension": ".tsx",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
+    {
+      "type": "create",
+      "path": "app/voucher",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-10-15T12:52:13.678Z",
+      "recordedAtEpochMs": 1792068733678,
+      "before": null,
+      "after": null,
+      "diff": null
+    },
     {
       "type": "save",
       "path": "app/page.tsx",
@@ -903,207 +1055,11 @@
         "beforeFragment": "van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Haal dire...",
         "afterFragment": "& locking van het woningtype op basis van de vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Lees zowe..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 29: replaced 26 lines with 26 lines.",
-      "recordedAt": "2026-10-13T07:31:22.072Z",
-      "recordedAtEpochMs": 1791876682072,
-      "before": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9100,
-        "hash": "399bd5aa34c7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791876682072
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9152,
-        "hash": "30517f73a742",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791876682072
-      },
-      "diff": {
-        "lineStart": 29,
-        "removedLines": 26,
-        "addedLines": 26,
-        "summary": "Line 29: replaced 26 lines with 26 lines.",
-        "beforeFragment": "Check zowel localStorage als sessionStorage voor alle mogelijke sleutels / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCode'...",
-        "afterFragment": "Haal direct de code op uit localStorage of sessionStorage / const opgeslagenCode = / localStorage.getItem('toegangscode') || / localStorage.getItem('voucherCode') || / sessionSt..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 29: replaced 1 line with 1 line.",
-      "recordedAt": "2026-10-13T07:27:35.929Z",
-      "recordedAtEpochMs": 1791876455929,
-      "before": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9099,
-        "hash": "42ab9ee6d146",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791876455929
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9100,
-        "hash": "399bd5aa34c7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791876455929
-      },
-      "diff": {
-        "lineStart": 29,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 29: replaced 1 line with 1 line.",
-        "beforeFragment": "ontroleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode",
-        "afterFragment": "heck zowel localStorage als sessionStorage voor alle mogelijke sleutels"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 10: replaced 61 lines with 75 lines.",
-      "recordedAt": "2026-10-13T07:17:16.876Z",
-      "recordedAtEpochMs": 1791875836876,
-      "before": {
-        "kind": "text",
-        "lineCount": 76,
-        "charCount": 3448,
-        "hash": "568f8963cd5d",
-        "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className=\"space-y-12\"> / <div...",
-        "updatedAt": 1791875836876
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 90,
-        "charCount": 4103,
-        "hash": "dd200db0a700",
-        "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type...",
-        "updatedAt": 1791875836876
-      },
-      "diff": {
-        "lineStart": 10,
-        "removedLines": 61,
-        "addedLines": 75,
-        "summary": "Line 10: replaced 61 lines with 75 lines.",
-        "beforeFragment": "return ( / <div className=\"space-y-12\"> / <div className=\"text-center space-y-4 max-w-3xl mx-auto\"> / <p className=\"text-[10px] tracking-[0.25em] uppercase text-primary font-sem...",
-        "afterFragment": "// Filter de lijst zodat uitsluitend het type wordt getoond dat gekoppeld is aan de vouchercode / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => {..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 29: replaced 1 line with 7 lines.",
-      "recordedAt": "2026-10-13T07:16:57.548Z",
-      "recordedAtEpochMs": 1791875817548,
-      "before": {
-        "kind": "text",
-        "lineCount": 228,
-        "charCount": 8886,
-        "hash": "c678a6c895f6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791875817548
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 234,
-        "charCount": 9099,
-        "hash": "42ab9ee6d146",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791875817548
-      },
-      "diff": {
-        "lineStart": 29,
-        "removedLines": 1,
-        "addedLines": 7,
-        "summary": "Line 29: replaced 1 line with 7 lines.",
-        "beforeFragment": "const opgeslagenCode = sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode');",
-        "afterFragment": "// Controleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCod..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 25: replaced 157 lines with 178 lines.",
-      "recordedAt": "2026-10-13T07:11:36.767Z",
-      "recordedAtEpochMs": 1791875496767,
-      "before": {
-        "kind": "text",
-        "lineCount": 207,
-        "charCount": 8253,
-        "hash": "c9eea385c9aa",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791875496767
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 228,
-        "charCount": 8886,
-        "hash": "c678a6c895f6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1791875496767
-      },
-      "diff": {
-        "lineStart": 25,
-        "removedLines": 157,
-        "addedLines": 178,
-        "summary": "Line 25: replaced 157 lines with 178 lines.",
-        "beforeFragment": "2. Sla de stap op in localStorage zodra deze verandert / useEffect(() => { / const handleStorageChange = () => { / if (typeof window !== 'undefined') { / const savedStep = local...",
-        "afterFragment": "Automatische koppeling van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undef..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 89 lines with 128 lines.",
-      "recordedAt": "2026-10-13T07:02:02.608Z",
-      "recordedAtEpochMs": 1791874922608,
-      "before": {
-        "kind": "text",
-        "lineCount": 121,
-        "charCount": 4928,
-        "hash": "8cd0bf1e088a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1791874922608
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 160,
-        "charCount": 6478,
-        "hash": "46f4d92c2206",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const...",
-        "updatedAt": 1791874922608
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 89,
-        "addedLines": 128,
-        "summary": "Line 7: replaced 89 lines with 128 lines.",
-        "beforeFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /...",
-        "afterFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 10
-    },
-    {
-      "filePath": "app/download/page.tsx",
       "count": 8
     },
     {
@@ -1119,36 +1075,40 @@
       "count": 5
     },
     {
-      "filePath": "components/VoucherParamHandler.tsx",
+      "filePath": "app/download/page.tsx",
+      "count": 4
+    },
+    {
+      "filePath": "components/VoucherWelcomeModal.tsx",
+      "count": 3
+    },
+    {
+      "filePath": "app/voucher/page.tsx",
       "count": 2
     },
     {
-      "filePath": ".env.local",
-      "count": 1
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "count": 1
+      "filePath": "components/VoucherParamHandler.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-13 478a056 fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback",
-    "statusSummary": "4 modifieds, 1 untracked",
+    "headSummary": "2026-10-15 18fb120 feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)",
+    "statusSummary": "3 modifieds, 2 untrackeds",
     "changedFileCount": 5,
     "statusLines": [
-      "M app/page.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md",
-      "?? components/VoucherParamHandler.tsx"
+      "?? app/voucher/",
+      "?? components/VoucherWelcomeModal.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 478a056 by Bas van Dooremalen on 2026-10-13\n  fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 18fb120 by Bas van Dooremalen on 2026-10-15\n  feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

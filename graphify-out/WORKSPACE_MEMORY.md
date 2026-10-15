@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-15T12:32:16.941Z
+Generated: 2026-10-15T12:53:07.992Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-15T12:32:15.183Z
+- Last activity: 2026-10-15T12:53:06.201Z
 ## Workspace Focus
-- Active file in focus: app/page.tsx
-- Hottest files right now: lib/cms.ts (10), app/download/page.tsx (8), components/configurator/StepFourConfirmation.tsx (6), components/configurator/StepOnewoning.tsx (5)
-- Suggested starting points: app/page.tsx, lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx
+- Active file in focus: components/VoucherWelcomeModal.tsx
+- Hottest files right now: lib/cms.ts (8), components/configurator/StepFourConfirmation.tsx (6), components/configurator/StepOnewoning.tsx (5), components/ConfiguratorScreen.tsx (5)
+- Suggested starting points: components/VoucherWelcomeModal.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, app/download/page.tsx
 ## Current Workspace
-- Active file: app/page.tsx
-- Tracked files in snapshot: 67
-- Top-level areas: public (21), components (17), [root] (15), app (11), lib (3)
-- Primary file types: .tsx (22), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
+- Active file: components/VoucherWelcomeModal.tsx
+- Tracked files in snapshot: 69
+- Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
+- Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -35,10 +35,16 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (39), create (1)
-- Remembered file snapshots: 42
-- Working tree summary: 4 modifieds, 1 untracked
+- Change mix: save (36), create (4)
+- Remembered file snapshots: 44
+- Working tree summary: 3 modifieds, 2 untrackeds
 ## Tracked Snapshots
+- components/VoucherWelcomeModal.tsx | 96 lines | 3522 chars | hash 14d64b1e13cc
+  Last snapshot: 2026-10-15T12:53:06.201Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
+- app/voucher/page.tsx | 19 lines | 563 chars | hash 0ffd40656a77
+  Last snapshot: 2026-10-15T12:52:25.240Z
+  Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
 - app/page.tsx | 17 lines | 426 chars | hash 0d94bfd3ea1f
   Last snapshot: 2026-10-15T12:32:15.183Z
   Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s..."
@@ -57,14 +63,36 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 160 lines | 6478 chars | hash 46f4d92c2206
   Last snapshot: 2026-10-13T07:02:02.608Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
-- app/api/confirm/route.ts | 390 lines | 15369 chars | hash c56f8cd3c4e3
-  Last snapshot: 2026-10-08T09:49:34.063Z
-  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- .env.local | 12 lines | 432 chars | hash a1ea6608e103
-  Last snapshot: 2026-10-08T09:36:13.713Z
-  Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
 
 ## Recent Changes
+### 2026-10-15T12:53:06.201Z | saved | components/VoucherWelcomeModal.tsx
+- Summary: Saved without a textual diff.
+- Before: 96 lines | 3,522 chars | hash 14d64b1e13cc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
+- After: 96 lines | 3,522 chars | hash 14d64b1e13cc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
+
+### 2026-10-15T12:52:53.130Z | saved | components/VoucherWelcomeModal.tsx
+- Summary: Line 1: inserted 96 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 96 lines | 3,522 chars | hash 14d64b1e13cc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
+- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default fu..."
+
+### 2026-10-15T12:52:48.563Z | created | components/VoucherWelcomeModal.tsx
+- Summary: Created file.
+- After: 0 lines | 0 chars | hash empty
+
+### 2026-10-15T12:52:25.240Z | saved | app/voucher/page.tsx
+- Summary: Line 1: inserted 19 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 19 lines | 563 chars | hash 0ffd40656a77 | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
+- Current fragment: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export def..."
+
+### 2026-10-15T12:52:19.481Z | created | app/voucher/page.tsx
+- Summary: Created file.
+- After: 0 lines | 0 chars | hash empty
+
+### 2026-10-15T12:52:13.678Z | created | app/voucher
+- Summary: Created file.
+
 ### 2026-10-15T12:32:15.183Z | saved | app/page.tsx
 - Summary: Line 3: replaced 9 lines with 13 lines.
 - Before: 13 lines | 308 chars | hash e95adef2762a | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainC..."
@@ -123,68 +151,26 @@ Structured manifest: workspace.json
 - Previous fragment: "van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Haal dire..."
 - Current fragment: "& locking van het woningtype op basis van de vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undefined') { / // Lees zowe..."
 
-### 2026-10-13T07:31:22.072Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 29: replaced 26 lines with 26 lines.
-- Before: 234 lines | 9,100 chars | hash 399bd5aa34c7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 234 lines | 9,152 chars | hash 30517f73a742 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Previous fragment: "Check zowel localStorage als sessionStorage voor alle mogelijke sleutels / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCode'..."
-- Current fragment: "Haal direct de code op uit localStorage of sessionStorage / const opgeslagenCode = / localStorage.getItem('toegangscode') || / localStorage.getItem('voucherCode') || / sessionSt..."
-
-### 2026-10-13T07:27:35.929Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 29: replaced 1 line with 1 line.
-- Before: 234 lines | 9,099 chars | hash 42ab9ee6d146 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 234 lines | 9,100 chars | hash 399bd5aa34c7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Previous fragment: "ontroleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode"
-- Current fragment: "heck zowel localStorage als sessionStorage voor alle mogelijke sleutels"
-
-### 2026-10-13T07:17:16.876Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 10: replaced 61 lines with 75 lines.
-- Before: 76 lines | 3,448 chars | hash 568f8963cd5d | preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / return ( / <div className="space-y-12"> / <div..."
-- After: 90 lines | 4,103 chars | hash dd200db0a700 | preview: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type..."
-- Previous fragment: "return ( / <div className="space-y-12"> / <div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-sem..."
-- Current fragment: "// Filter de lijst zodat uitsluitend het type wordt getoond dat gekoppeld is aan de vouchercode / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => {..."
-
-### 2026-10-13T07:16:57.548Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 29: replaced 1 line with 7 lines.
-- Before: 228 lines | 8,886 chars | hash c678a6c895f6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 234 lines | 9,099 chars | hash 42ab9ee6d146 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Previous fragment: "const opgeslagenCode = sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode');"
-- Current fragment: "// Controleer zowel voucherCode (zoals opgeslagen bij login) alsegangscode / const opgeslagenCode = / sessionStorage.getItem('voucherCode') || / localStorage.getItem('voucherCod..."
-
-### 2026-10-13T07:11:36.767Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 25: replaced 157 lines with 178 lines.
-- Before: 207 lines | 8,253 chars | hash c9eea385c9aa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 228 lines | 8,886 chars | hash c678a6c895f6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Previous fragment: "2. Sla de stap op in localStorage zodra deze verandert / useEffect(() => { / const handleStorageChange = () => { / if (typeof window !== 'undefined') { / const savedStep = local..."
-- Current fragment: "Automatische koppeling van het woningtype op basis van de ingelogde vouchercode / useEffect(() => { / const fetchVoucherWoningType = async () => { / if (typeof window !== 'undef..."
-
-### 2026-10-13T07:02:02.608Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 7: replaced 89 lines with 128 lines.
-- Before: 121 lines | 4,928 chars | hash 8cd0bf1e088a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 160 lines | 6,478 chars | hash 46f4d92c2206 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
-- Previous fragment: "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
-- Current fragment: "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
-
 
 ## Hot Files
-- lib/cms.ts (10 tracked changes)
-- app/download/page.tsx (8 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (5 tracked changes)
 - components/ConfiguratorScreen.tsx (5 tracked changes)
+- app/download/page.tsx (4 tracked changes)
+- components/VoucherWelcomeModal.tsx (3 tracked changes)
+- app/voucher/page.tsx (2 tracked changes)
 - components/VoucherParamHandler.tsx (2 tracked changes)
-- .env.local (1 tracked changes)
-- app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-13 478a056 fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback
-- Working tree summary: 4 modifieds, 1 untracked
-- M app/page.tsx
+- HEAD: 2026-10-15 18fb120 feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)
+- Working tree summary: 3 modifieds, 2 untrackeds
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
-- ?? components/VoucherParamHandler.tsx
+- ?? app/voucher/
+- ?? components/VoucherWelcomeModal.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +178,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 478a056 by Bas van Dooremalen on 2026-10-13
-  fix(copy): gebruik 'Partners Nomi' als standaard titel met CMS-fallback
+- 18fb120 by Bas van Dooremalen on 2026-10-15
+  feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
