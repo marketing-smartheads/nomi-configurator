@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T23:55:51.480Z",
-  "generatedAtEpochMs": 1793058951480,
+  "generatedAt": "2026-10-26T23:56:54.061Z",
+  "generatedAtEpochMs": 1793059014061,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T23:55:49.640Z",
+    "lastActivityAt": "2026-10-26T23:56:51.668Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793058949640,
-      "lineCount": 215,
-      "charCount": 5826,
-      "hash": "2eac94d030e5",
+      "updatedAt": 1793059011668,
+      "lineCount": 223,
+      "charCount": 6051,
+      "hash": "188db5995315",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 63: replaced 57 lines with 65 lines.",
+      "recordedAt": "2026-10-26T23:56:51.668Z",
+      "recordedAtEpochMs": 1793059011668,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5826,
+        "hash": "2eac94d030e5",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059011668
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 6051,
+        "hash": "188db5995315",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059011668
+      },
+      "diff": {
+        "lineStart": 63,
+        "removedLines": 57,
+        "addedLines": 65,
+        "summary": "Line 63: replaced 57 lines with 65 lines.",
+        "beforeFragment": "mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / uploadBestand { / node { / sourceUrl / mediaItemUrl / fileSize / mimeType / }...",
+        "afterFragment": "mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / uploadBestand { / node { / sourceUrl / mediaItemUrl / fileSize / mimeType / }..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1059,38 +1091,6 @@
         "beforeFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower...",
         "afterFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 12: replaced 83 lines with 82 lines.",
-      "recordedAt": "2026-10-26T14:59:28.030Z",
-      "recordedAtEpochMs": 1793026768030,
-      "before": {
-        "kind": "text",
-        "lineCount": 101,
-        "charCount": 4545,
-        "hash": "8e0fb7650573",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
-        "updatedAt": 1793026768030
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 100,
-        "charCount": 4443,
-        "hash": "e505e6d9f285",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793026768030
-      },
-      "diff": {
-        "lineStart": 12,
-        "removedLines": 83,
-        "addedLines": 82,
-        "summary": "Line 12: replaced 83 lines with 82 lines.",
-        "beforeFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam...",
-        "afterFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
-      }
     }
   ],
   "hotFiles": [
@@ -1100,18 +1100,18 @@
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
-      "count": 8
+      "count": 7
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
       "count": 4
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 3
+      "filePath": "lib/cms.ts",
+      "count": 4
     },
     {
-      "filePath": "lib/cms.ts",
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
@@ -1130,7 +1130,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 8016aa7 set previous code back online",
+    "headSummary": "2026-10-27 ed5fb12 fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1140,7 +1140,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 59b954f by Bas van Dooremalen on 2026-10-26\n  fix(designpakket): map ACF camelCase subvelden correct voor weergave\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ed5fb12 by Bas van Dooremalen on 2026-10-26\n  fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

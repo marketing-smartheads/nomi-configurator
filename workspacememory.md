@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T23:55:51.480Z
+Generated: 2026-10-26T23:56:54.061Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T23:55:49.640Z
+- Last activity: 2026-10-26T23:56:51.668Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/ConfiguratorScreen.tsx (8), components/VoucherWelcomeModal.tsx (4), components/configurator/StepTwoDesign.tsx (3)
+- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/ConfiguratorScreen.tsx (7), components/VoucherWelcomeModal.tsx (4), lib/cms.ts (4)
 - Suggested starting points: lib/cms.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/VoucherWelcomeModal.tsx, components/configurator/StepTwoDesign.tsx, app/voucher/page.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 215 lines | 5826 chars | hash 2eac94d030e5
-  Last snapshot: 2026-10-26T23:55:49.640Z
+- lib/cms.ts | 223 lines | 6051 chars | hash 188db5995315
+  Last snapshot: 2026-10-26T23:56:51.668Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 137 lines | 5707 chars | hash ab8329f59817
   Last snapshot: 2026-10-26T23:45:32.193Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-26T23:56:51.668Z | saved | lib/cms.ts
+- Summary: Line 63: replaced 57 lines with 65 lines.
+- Before: 215 lines | 5,826 chars | hash 2eac94d030e5 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 223 lines | 6,051 chars | hash 188db5995315 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / uploadBestand { / node { / sourceUrl / mediaItemUrl / fileSize / mimeType / }..."
+- Current fragment: "mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / uploadBestand { / node { / sourceUrl / mediaItemUrl / fileSize / mimeType / }..."
+
 ### 2026-10-26T23:55:49.640Z | saved | lib/cms.ts
 - Summary: Line 63: replaced 65 lines with 57 lines.
 - Before: 223 lines | 6,051 chars | hash 188db5995315 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -154,27 +161,20 @@ Structured manifest: workspace.json
 - Previous fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
 - Current fragment: "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
 
-### 2026-10-26T14:59:28.030Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 12: replaced 83 lines with 82 lines.
-- Before: 101 lines | 4,545 chars | hash 8e0fb7650573 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
-- After: 100 lines | 4,443 chars | hash e505e6d9f285 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-- Previous fragment: "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
-- Current fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (10 tracked changes)
-- components/ConfiguratorScreen.tsx (8 tracked changes)
+- components/ConfiguratorScreen.tsx (7 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
+- lib/cms.ts (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
-- lib/cms.ts (3 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 8016aa7 set previous code back online
+- HEAD: 2026-10-27 ed5fb12 fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -184,8 +184,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 59b954f by Bas van Dooremalen on 2026-10-26
-  fix(designpakket): map ACF camelCase subvelden correct voor weergave
+- ed5fb12 by Bas van Dooremalen on 2026-10-26
+  fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -60,7 +60,7 @@ export async function getPageData() {
                 renderBestand {
                   node {
                     sourceUrl
-                      mediaItemUrl
+                    mediaItemUrl
                   }
                 }
               }
@@ -94,7 +94,7 @@ export async function getPageData() {
             bevestigingWaarschuwingTekst
             bevestigingAkkoordTekst
 
-            designPaketten {
+            designPakketten {
               pakketId
               pakketTitel
               pakketOmschrijving
@@ -116,7 +116,15 @@ export async function getPageData() {
                 nodes {
                   sourceUrl
                 }
-              }          
+              }
+              bevestigingStap {
+                bannerAfbeelding {
+                  node {
+                    sourceUrl
+                  }
+                }
+                bannerTitel            
+              }            
             }
 
             downloadSectie {
