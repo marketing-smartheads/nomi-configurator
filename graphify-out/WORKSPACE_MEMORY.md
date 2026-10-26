@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T15:16:49.525Z
+Generated: 2026-10-26T15:19:21.230Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T15:16:47.784Z
+- Last activity: 2026-10-26T15:19:19.500Z
 ## Workspace Focus
-- Active file in focus: components/MainContent.tsx
+- Active file in focus: lib/useConfigurator.ts
 - Hottest files right now: components/configurator/StepOnewoning.tsx (9), components/ConfiguratorScreen.tsx (8), components/configurator/StepFourConfirmation.tsx (5), components/VoucherWelcomeModal.tsx (4)
-- Suggested starting points: components/MainContent.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepFourConfirmation.tsx, components/VoucherWelcomeModal.tsx, lib/cms.ts
+- Suggested starting points: lib/useConfigurator.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepFourConfirmation.tsx, components/VoucherWelcomeModal.tsx, app/voucher/page.tsx
 ## Current Workspace
-- Active file: components/MainContent.tsx
+- Active file: lib/useConfigurator.ts
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/useConfigurator.ts | 191 lines | 5604 chars | hash 6b9a1c08487a
+  Last snapshot: 2026-10-26T15:19:19.500Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 - components/MainContent.tsx | 217 lines | 8847 chars | hash ca1e0d747e51
   Last snapshot: 2026-10-26T15:16:47.784Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/VoucherParamHandler.tsx | 20 lines | 598 chars | hash 06ad36daf3da
   Last snapshot: 2026-10-15T12:31:55.849Z
   Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
-- components/configurator/StepFourConfirmation.tsx | 484 lines | 22459 chars | hash 6cb8208e9f8a
-  Last snapshot: 2026-10-13T08:02:12.530Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
 
 ## Recent Changes
+### 2026-10-26T15:19:19.500Z | saved | lib/useConfigurator.ts
+- Summary: Line 38: replaced 129 lines with 150 lines.
+- Before: 170 lines | 5,088 chars | hash ca6f0728b2fd | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
+- After: 191 lines | 5,604 chars | hash 6b9a1c08487a | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
+- Previous fragment: "toegangscode, setToegangscode] = useState(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem('toegangscode') || ''; / } / return ''; / }); / const [kla..."
+- Current fragment: "selectedIndeling, setSelectedIndelingState] = useState<any>(() => { / if (typeof window !== 'undefined') { / const saved = localStorage.getItem('selected_indeling'); / return sa..."
+
 ### 2026-10-26T15:16:47.784Z | saved | components/MainContent.tsx
 - Summary: Line 27: replaced 128 lines with 125 lines.
 - Before: 220 lines | 9,176 chars | hash 2f54f2a9b999 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
@@ -152,26 +159,22 @@ Structured manifest: workspace.json
 - After: 19 lines | 563 chars | hash 0ffd40656a77 | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
 - Current fragment: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export def..."
 
-### 2026-10-15T12:52:19.481Z | created | app/voucher/page.tsx
-- Summary: Created file.
-- After: 0 lines | 0 chars | hash empty
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (9 tracked changes)
 - components/ConfiguratorScreen.tsx (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
-- lib/cms.ts (3 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 - components/VoucherParamHandler.tsx (2 tracked changes)
+- lib/cms.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-26 d3e51d3 geef selectedIndeling en setSelectedIndeling door aan ConfiguratorScreen
+- HEAD: 2026-10-26 9741889 verwijder dubbele code en syntaxfout in MainContent.tsx
 - Working tree summary: 1 modified
-- M components/MainContent.tsx
+- M lib/useConfigurator.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

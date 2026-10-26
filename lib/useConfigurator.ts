@@ -35,6 +35,14 @@ export function useConfigurator() {
     return null;
   });
 
+  const [selectedIndeling, setSelectedIndelingState] = useState<any>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('selected_indeling');
+      return saved ? JSON.parse(saved) : null;
+    }
+    return null;
+  });
+
   const [toegangscode, setToegangscode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('toegangscode') || '';
@@ -82,7 +90,17 @@ export function useConfigurator() {
     }
   };
 
-  // SLIMME INLOG-CONTROLE: Check direct in WordPress of de code al verzilverd is
+  const setSelectedIndeling = (indeling: any) => {
+    setSelectedIndelingState(indeling);
+    if (typeof window !== 'undefined') {
+      if (indeling) {
+        localStorage.setItem('selected_indeling', JSON.stringify(indeling));
+      } else {
+        localStorage.removeItem('selected_indeling');
+      }
+    }
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -118,7 +136,7 @@ export function useConfigurator() {
             if (typeof window !== 'undefined') {
               sessionStorage.setItem('configuratorConfirmed', 'true');
             }
-            setScreen('configurator'); // Dit triggert de 'reeds verzilverd' melding in MainContent
+            setScreen('configurator');
             setLoading(false);
             return;
           }
@@ -128,7 +146,6 @@ export function useConfigurator() {
       console.error('Fout bij controleren voucher status:', err);
     }
 
-    // Als hij niet verzilverd is, gewoon door naar de normale workflow
     setTimeout(() => {
       setLoading(false);
       setScreen('welcome');
@@ -145,9 +162,11 @@ export function useConfigurator() {
       }
       localStorage.removeItem('selected_woningType');
       localStorage.removeItem('selected_designPakket');
+      localStorage.removeItem('selected_indeling');
       setScreen('welcome');
       setWoningType(null);
       setDesignPakket(null);
+      setSelectedIndeling(null);
     }, 1000);
   };
 
@@ -164,6 +183,8 @@ export function useConfigurator() {
     setWoningType,
     designPakket,
     setDesignPakket,
+    selectedIndeling,
+    setSelectedIndeling,
     handleLogin,
     handleSaveChoices,
   };

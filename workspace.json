@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T15:16:49.525Z",
-  "generatedAtEpochMs": 1793027809525,
+  "generatedAt": "2026-10-26T15:19:21.230Z",
+  "generatedAtEpochMs": 1793027961230,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/MainContent.tsx",
+    "activeFile": "lib/useConfigurator.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/MainContent.tsx",
+      "lib/useConfigurator.ts",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/VoucherWelcomeModal.tsx",
-      "lib/cms.ts",
       "app/voucher/page.tsx",
+      "components/MainContent.tsx",
       "components/VoucherParamHandler.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T15:16:47.784Z",
+    "lastActivityAt": "2026-10-26T15:19:19.500Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "lib/useConfigurator.ts",
+      "updatedAt": 1793027959500,
+      "lineCount": 191,
+      "charCount": 5604,
+      "hash": "6b9a1c08487a",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
+    },
     {
       "filePath": "components/MainContent.tsx",
       "updatedAt": 1793027807784,
@@ -629,17 +637,41 @@
       "charCount": 598,
       "hash": "06ad36daf3da",
       "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1791878532530,
-      "lineCount": 484,
-      "charCount": 22459,
-      "hash": "6cb8208e9f8a",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Line 38: replaced 129 lines with 150 lines.",
+      "recordedAt": "2026-10-26T15:19:19.500Z",
+      "recordedAtEpochMs": 1793027959500,
+      "before": {
+        "kind": "text",
+        "lineCount": 170,
+        "charCount": 5088,
+        "hash": "ca6f0728b2fd",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793027959500
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 191,
+        "charCount": 5604,
+        "hash": "6b9a1c08487a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793027959500
+      },
+      "diff": {
+        "lineStart": 38,
+        "removedLines": 129,
+        "addedLines": 150,
+        "summary": "Line 38: replaced 129 lines with 150 lines.",
+        "beforeFragment": "toegangscode, setToegangscode] = useState(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem('toegangscode') || ''; / } / return ''; / }); / const [kla...",
+        "afterFragment": "selectedIndeling, setSelectedIndelingState] = useState<any>(() => { / if (typeof window !== 'undefined') { / const saved = localStorage.getItem('selected_indeling'); / return sa..."
+      }
+    },
     {
       "type": "save",
       "path": "components/MainContent.tsx",
@@ -1061,26 +1093,6 @@
         "beforeFragment": "",
         "afterFragment": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export def..."
       }
-    },
-    {
-      "type": "create",
-      "path": "app/voucher/page.tsx",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-10-15T12:52:19.481Z",
-      "recordedAtEpochMs": 1792068739481,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1792068739475.7427,
-        "extension": ".tsx",
-        "sizeBytes": 0
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1101,10 +1113,6 @@
       "count": 4
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 3
-    },
-    {
       "filePath": "app/voucher/page.tsx",
       "count": 2
     },
@@ -1115,16 +1123,20 @@
     {
       "filePath": "components/VoucherParamHandler.tsx",
       "count": 2
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-26 d3e51d3 geef selectedIndeling en setSelectedIndeling door aan ConfiguratorScreen",
+    "headSummary": "2026-10-26 9741889 verwijder dubbele code en syntaxfout in MainContent.tsx",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/MainContent.tsx"
+      "M lib/useConfigurator.ts"
     ],
     "error": ""
   },
