@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T15:14:56.430Z
+Generated: 2026-10-26T15:16:49.525Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T15:14:54.076Z
+- Last activity: 2026-10-26T15:16:47.784Z
 ## Workspace Focus
 - Active file in focus: components/MainContent.tsx
 - Hottest files right now: components/configurator/StepOnewoning.tsx (9), components/ConfiguratorScreen.tsx (8), components/configurator/StepFourConfirmation.tsx (5), components/VoucherWelcomeModal.tsx (4)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/MainContent.tsx | 220 lines | 9176 chars | hash 2f54f2a9b999
-  Last snapshot: 2026-10-26T15:14:54.076Z
+- components/MainContent.tsx | 217 lines | 8847 chars | hash ca1e0d747e51
+  Last snapshot: 2026-10-26T15:16:47.784Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 - components/ConfiguratorScreen.tsx | 250 lines | 9599 chars | hash 6af3f7e817b2
   Last snapshot: 2026-10-26T15:10:32.454Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
 
 ## Recent Changes
+### 2026-10-26T15:16:47.784Z | saved | components/MainContent.tsx
+- Summary: Line 27: replaced 128 lines with 125 lines.
+- Before: 220 lines | 9,176 chars | hash 2f54f2a9b999 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- After: 217 lines | 8,847 chars | hash ca1e0d747e51 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- Previous fragment: "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,..."
+- Current fragment: "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
+
 ### 2026-10-26T15:14:54.076Z | saved | components/MainContent.tsx
 - Summary: Line 27: replaced 172 lines with 165 lines.
 - Before: 227 lines | 9,623 chars | hash f904222d275d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
@@ -149,23 +156,20 @@ Structured manifest: workspace.json
 - Summary: Created file.
 - After: 0 lines | 0 chars | hash empty
 
-### 2026-10-15T12:52:13.678Z | created | app/voucher
-- Summary: Created file.
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (9 tracked changes)
 - components/ConfiguratorScreen.tsx (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
-- lib/cms.ts (4 tracked changes)
+- lib/cms.ts (3 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
+- components/MainContent.tsx (2 tracked changes)
 - components/VoucherParamHandler.tsx (2 tracked changes)
-- .env.local (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-26 85432ac Zorg dat setSelectedIndeling correct wordt meegegeven als functie aan ConfiguratorScreen
+- HEAD: 2026-10-26 d3e51d3 geef selectedIndeling en setSelectedIndeling door aan ConfiguratorScreen
 - Working tree summary: 1 modified
 - M components/MainContent.tsx
 

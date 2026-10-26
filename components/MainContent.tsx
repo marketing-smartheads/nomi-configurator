@@ -24,24 +24,21 @@ export default function MainContent({ sections, configuratorData, initialScreen 
     loading, error,
     woningType, setWoningType,
     designPakket, setDesignPakket,
-    selectedIndeling, setSelectedIndeling, // <-- TOEGEVOEGD: Ophalen uit de hook
+    selectedIndeling, setSelectedIndeling,
     handleLogin, handleSaveChoices
   } = useConfigurator();
 
   const [isMounted, setIsMounted] = useState(false);
   const [isReedsBevestigd, setIsReedsBevestigd] = useState(false);
 
-  // ACHTERGROND CHECK: Altijd backend controleren bij opstarten als er een code bekend is
   useEffect(() => {
     setIsMounted(true);
 
     if (typeof window !== 'undefined') {
-      // 1. Check eerst of sessionStorage het al weet
       if (sessionStorage.getItem('configuratorConfirmed') === 'true') {
         setIsReedsBevestigd(true);
       }
 
-      // 2. Vraag daarna de live status op in WordPress op basis van de opgeslagen toegangscode
       const savedCode = localStorage.getItem('toegangscode');
       
       if (!savedCode) {
@@ -150,8 +147,8 @@ export default function MainContent({ sections, configuratorData, initialScreen 
               setWoningType={setWoningType}
               designPakket={designPakket}
               setDesignPakket={setDesignPakket}
-              selectedIndeling={selectedIndeling}       {/* TOEGEVOEGD */}
-              setSelectedIndeling={setSelectedIndeling}   {/* TOEGEVOEGD */}
+              selectedIndeling={selectedIndeling}
+              setSelectedIndeling={setSelectedIndeling}
               loading={loading}
               onBack={handleReturnToHome}
               onConfirm={handleSaveChoices}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T15:14:56.430Z",
-  "generatedAtEpochMs": 1793027696430,
+  "generatedAt": "2026-10-26T15:16:49.525Z",
+  "generatedAtEpochMs": 1793027809525,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -30,10 +30,10 @@
       "lib/cms.ts",
       "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
-      ".env.local",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T15:14:54.076Z",
+    "lastActivityAt": "2026-10-26T15:16:47.784Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/MainContent.tsx",
-      "updatedAt": 1793027694076,
-      "lineCount": 220,
-      "charCount": 9176,
-      "hash": "2f54f2a9b999",
+      "updatedAt": 1793027807784,
+      "lineCount": 217,
+      "charCount": 8847,
+      "hash": "ca1e0d747e51",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/MainContent.tsx",
+      "toPath": "",
+      "summary": "Line 27: replaced 128 lines with 125 lines.",
+      "recordedAt": "2026-10-26T15:16:47.784Z",
+      "recordedAtEpochMs": 1793027807784,
+      "before": {
+        "kind": "text",
+        "lineCount": 220,
+        "charCount": 9176,
+        "hash": "2f54f2a9b999",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793027807783
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 8847,
+        "hash": "ca1e0d747e51",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793027807784
+      },
+      "diff": {
+        "lineStart": 27,
+        "removedLines": 128,
+        "addedLines": 125,
+        "summary": "Line 27: replaced 128 lines with 125 lines.",
+        "beforeFragment": "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,...",
+        "afterFragment": "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
+      }
+    },
     {
       "type": "save",
       "path": "components/MainContent.tsx",
@@ -1049,17 +1081,6 @@
         "sizeBytes": 0
       },
       "diff": null
-    },
-    {
-      "type": "create",
-      "path": "app/voucher",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-10-15T12:52:13.678Z",
-      "recordedAtEpochMs": 1792068733678,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1081,25 +1102,25 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "app/voucher/page.tsx",
       "count": 2
     },
     {
-      "filePath": "components/VoucherParamHandler.tsx",
+      "filePath": "components/MainContent.tsx",
       "count": 2
     },
     {
-      "filePath": ".env.local",
-      "count": 1
+      "filePath": "components/VoucherParamHandler.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-26 85432ac Zorg dat setSelectedIndeling correct wordt meegegeven als functie aan ConfiguratorScreen",
+    "headSummary": "2026-10-26 d3e51d3 geef selectedIndeling en setSelectedIndeling door aan ConfiguratorScreen",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
