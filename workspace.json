@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T15:05:56.894Z",
-  "generatedAtEpochMs": 1793027156894,
+  "generatedAt": "2026-10-26T15:10:34.168Z",
+  "generatedAtEpochMs": 1793027434168,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/ConfiguratorScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/VoucherWelcomeModal.tsx",
       "lib/cms.ts",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T15:05:54.467Z",
+    "lastActivityAt": "2026-10-26T15:10:32.454Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "updatedAt": 1793027432454,
+      "lineCount": 250,
+      "charCount": 9599,
+      "hash": "6af3f7e817b2",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+    },
+    {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1793027154467,
       "lineCount": 106,
       "charCount": 4670,
       "hash": "c684c361c24a",
       "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
-    },
-    {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1793026012117,
-      "lineCount": 250,
-      "charCount": 9599,
-      "hash": "6af3f7e817b2",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
@@ -640,6 +640,31 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-26T15:10:32.454Z",
+      "recordedAtEpochMs": 1793027432454,
+      "before": {
+        "kind": "text",
+        "lineCount": 250,
+        "charCount": 9599,
+        "hash": "6af3f7e817b2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793027432454
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 250,
+        "charCount": 9599,
+        "hash": "6af3f7e817b2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793027432454
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1035,38 +1060,6 @@
         "beforeFragment": "export default async function Home() { / const { sections, configuratorData } = await getPageData(); / return ( / <MainContent / sections={sections} / configuratorData={configur...",
         "afterFragment": "import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { sections, configuratorData } = await getPageData(); / retu..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/VoucherParamHandler.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 20 lines.",
-      "recordedAt": "2026-10-15T12:31:55.849Z",
-      "recordedAtEpochMs": 1792067515849,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1792067515849
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 20,
-        "charCount": 598,
-        "hash": "06ad36daf3da",
-        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /...",
-        "updatedAt": 1792067515849
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 20,
-        "summary": "Line 1: inserted 20 lines.",
-        "beforeFragment": "",
-        "afterFragment": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams =..."
-      }
     }
   ],
   "hotFiles": [
@@ -1076,7 +1069,7 @@
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
-      "count": 7
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1106,12 +1099,10 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-26 ae74153 grid weergave aangepast, styling van afbeelding beter",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
-    "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
-    ],
+    "headSummary": "2026-10-26 4071776 some improvements",
+    "statusSummary": "",
+    "changedFileCount": 0,
+    "statusLines": [],
     "error": ""
   },
   "github": {
