@@ -9,6 +9,7 @@ export default function StepOneWoning({
   setSelectedIndeling 
 }: any) {
   
+  // Filter de lijst op basis van het woningtype van de voucher
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
         const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
@@ -40,7 +41,7 @@ export default function StepOneWoning({
         </p>
       </div>
       
-      {/* Grid aangepast naar max 2 kolommen op desktop, 1 op mobiel */}
+      {/* Grid: 2 kolommen op desktop (md:grid-cols-2), 1 op mobiel */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 max-w-4xl mx-auto">
         {gefilterdeLijst.length > 0 ? (
           gefilterdeLijst.map((item: any, index: number) => {
@@ -49,7 +50,12 @@ export default function StepOneWoning({
             const metrage = item.metrage || '';
             const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
             
-            const isSelected = selectedIndeling?.indelingTitel === indelingTitel || selectedIndeling?.indeling_titel === indelingTitel;
+            // Flexibele check zodat selecteren altijd werkt
+            const isSelected = selectedIndeling && (
+              selectedIndeling === item || 
+              selectedIndeling?.indelingTitel === indelingTitel || 
+              selectedIndeling?.indeling_titel === indelingTitel
+            );
 
             return (
               <button
@@ -61,7 +67,7 @@ export default function StepOneWoning({
                 }`}
               >
                 <div>
-                  {/* Afbeelding vullend met object-cover voor een strakke weergave */}
+                  {/* Container met strakke afbeelding via object-cover */}
                   <div className="w-full aspect-16/10 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-dark/5">
                     {imageUrl ? (
                       <img 

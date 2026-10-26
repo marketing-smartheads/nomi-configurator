@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T14:59:30.372Z",
-  "generatedAtEpochMs": 1793026770372,
+  "generatedAt": "2026-10-26T15:05:56.894Z",
+  "generatedAtEpochMs": 1793027156894,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,8 +25,8 @@
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "lib/cms.ts",
       "components/VoucherWelcomeModal.tsx",
+      "lib/cms.ts",
       "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
       ".env.local",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T14:59:28.030Z",
+    "lastActivityAt": "2026-10-26T15:05:54.467Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,11 +576,11 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793026768030,
-      "lineCount": 100,
-      "charCount": 4443,
-      "hash": "e505e6d9f285",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+      "updatedAt": 1793027154467,
+      "lineCount": 106,
+      "charCount": 4670,
+      "hash": "c684c361c24a",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 12: replaced 53 lines with 59 lines.",
+      "recordedAt": "2026-10-26T15:05:54.467Z",
+      "recordedAtEpochMs": 1793027154467,
+      "before": {
+        "kind": "text",
+        "lineCount": 100,
+        "charCount": 4443,
+        "hash": "e505e6d9f285",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793027154467
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 106,
+        "charCount": 4670,
+        "hash": "c684c361c24a",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
+        "updatedAt": 1793027154467
+      },
+      "diff": {
+        "lineStart": 12,
+        "removedLines": 53,
+        "addedLines": 59,
+        "summary": "Line 12: replaced 53 lines with 59 lines.",
+        "beforeFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower...",
+        "afterFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1035,32 +1067,12 @@
         "beforeFragment": "",
         "afterFragment": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams =..."
       }
-    },
-    {
-      "type": "create",
-      "path": "components/VoucherParamHandler.tsx",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-10-15T12:31:38.139Z",
-      "recordedAtEpochMs": 1792067498139,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1792067498134.3486,
-        "extension": ".tsx",
-        "sizeBytes": 0
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 8
+      "count": 9
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1071,11 +1083,11 @@
       "count": 6
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 5
+      "filePath": "components/VoucherWelcomeModal.tsx",
+      "count": 4
     },
     {
-      "filePath": "components/VoucherWelcomeModal.tsx",
+      "filePath": "lib/cms.ts",
       "count": 4
     },
     {
@@ -1094,21 +1106,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-26 4e74099 State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-26 ae74153 grid weergave aangepast, styling van afbeelding beter",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/ConfiguratorScreen.tsx",
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4e74099 by Bas van Dooremalen on 2026-10-26\n  State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ae74153 by Bas van Dooremalen on 2026-10-26\n  grid weergave aangepast, styling van afbeelding beter\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

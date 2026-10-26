@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T14:59:30.372Z
+Generated: 2026-10-26T15:05:56.894Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T14:59:28.030Z
+- Last activity: 2026-10-26T15:05:54.467Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepOnewoning.tsx (8), components/ConfiguratorScreen.tsx (7), components/configurator/StepFourConfirmation.tsx (6), lib/cms.ts (5)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepFourConfirmation.tsx, lib/cms.ts, components/VoucherWelcomeModal.tsx, app/voucher/page.tsx
+- Hottest files right now: components/configurator/StepOnewoning.tsx (9), components/ConfiguratorScreen.tsx (7), components/configurator/StepFourConfirmation.tsx (6), components/VoucherWelcomeModal.tsx (4)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepFourConfirmation.tsx, components/VoucherWelcomeModal.tsx, lib/cms.ts, app/voucher/page.tsx
 ## Current Workspace
 - Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 69
@@ -37,11 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (36), create (4)
 - Remembered file snapshots: 44
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 100 lines | 4443 chars | hash e505e6d9f285
-  Last snapshot: 2026-10-26T14:59:28.030Z
-  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+- components/configurator/StepOnewoning.tsx | 106 lines | 4670 chars | hash c684c361c24a
+  Last snapshot: 2026-10-26T15:05:54.467Z
+  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
 - components/ConfiguratorScreen.tsx | 250 lines | 9599 chars | hash 6af3f7e817b2
   Last snapshot: 2026-10-26T14:46:52.117Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const..."
 
 ## Recent Changes
+### 2026-10-26T15:05:54.467Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 12: replaced 53 lines with 59 lines.
+- Before: 100 lines | 4,443 chars | hash e505e6d9f285 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+- After: 106 lines | 4,670 chars | hash c684c361c24a | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
+- Previous fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
+- Current fragment: "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
+
 ### 2026-10-26T14:59:28.030Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 12: replaced 83 lines with 82 lines.
 - Before: 101 lines | 4,545 chars | hash 8e0fb7650573 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
@@ -146,30 +153,22 @@ Structured manifest: workspace.json
 - After: 20 lines | 598 chars | hash 06ad36daf3da | preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
 - Current fragment: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams =..."
 
-### 2026-10-15T12:31:38.139Z | created | components/VoucherParamHandler.tsx
-- Summary: Created file.
-- After: 0 lines | 0 chars | hash empty
-
 
 ## Hot Files
-- components/configurator/StepOnewoning.tsx (8 tracked changes)
+- components/configurator/StepOnewoning.tsx (9 tracked changes)
 - components/ConfiguratorScreen.tsx (7 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (6 tracked changes)
-- lib/cms.ts (5 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
+- lib/cms.ts (4 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
 - components/VoucherParamHandler.tsx (2 tracked changes)
 - .env.local (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-26 4e74099 State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage
-- Working tree summary: 5 modifieds
-- M components/ConfiguratorScreen.tsx
+- HEAD: 2026-10-26 ae74153 grid weergave aangepast, styling van afbeelding beter
+- Working tree summary: 1 modified
 - M components/configurator/StepOnewoning.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -177,8 +176,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4e74099 by Bas van Dooremalen on 2026-10-26
-  State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage
+- ae74153 by Bas van Dooremalen on 2026-10-26
+  grid weergave aangepast, styling van afbeelding beter
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
