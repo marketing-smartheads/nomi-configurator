@@ -10,6 +10,7 @@ import StepFourConfirmation from './configurator/StepFourConfirmation';
 export default function ConfiguratorScreen({
   woningType, setWoningType, 
   designPakket, setDesignPakket, 
+  selectedIndeling, setSelectedIndeling, 
   loading, onBack, onConfirm,
   configuratorData 
 }: any) {
@@ -26,7 +27,6 @@ export default function ConfiguratorScreen({
   useEffect(() => {
     const fetchVoucherWoningType = async () => {
       if (typeof window !== 'undefined') {
-        // Lees zowel localStorage als sessionStorage uit voor alle mogelijke sleutels
         const opgeslagenCode = 
           localStorage.getItem('toegangscode') || 
           localStorage.getItem('voucherCode') ||
@@ -40,9 +40,8 @@ export default function ConfiguratorScreen({
             
             let typeWoning = data?.gekozenTypeWoning || data?.typeWoning || data?.woningType;
 
-            // Fallback: Als de API-respons leeg is of vertraagt, leid het type af van de code (bijv. NOMI-A042 -> Type A)
             if (!typeWoning && opgeslagenCode.includes('-')) {
-              const letter = opgeslagenCode.split('-')[1]?.[0]?.toUpperCase(); // 'A', 'C', 'D', 'E'
+              const letter = opgeslagenCode.split('-')[1]?.[0]?.toUpperCase();
               if (letter) {
                 typeWoning = `Type ${letter}`;
               }
@@ -55,7 +54,6 @@ export default function ConfiguratorScreen({
           } catch (err) {
             console.error('Kon vouchertype niet automatisch laden:', err);
             
-            // Fallback bij API fout
             if (opgeslagenCode.includes('-')) {
               const letter = opgeslagenCode.split('-')[1]?.[0]?.toUpperCase();
               if (letter) {
@@ -112,7 +110,7 @@ export default function ConfiguratorScreen({
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
   const isCurrentStepValid = () => {
-    if (currentStep === 1) return woningType !== null;
+    if (currentStep === 1) return selectedIndeling !== null;
     if (currentStep === 2) return designPakket !== null;
     return true;
   };
@@ -180,7 +178,8 @@ export default function ConfiguratorScreen({
                 configuratorData={configuratorData}
                 woningTypenLijst={woningTypenLijst}
                 woningType={woningType}
-                setWoningType={setWoningType}
+                selectedIndeling={selectedIndeling}
+                setSelectedIndeling={setSelectedIndeling}
               />
             </div>
           )}

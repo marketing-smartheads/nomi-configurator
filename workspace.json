@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T14:32:03.856Z",
-  "generatedAtEpochMs": 1793025123856,
+  "generatedAt": "2026-10-26T14:59:30.372Z",
+  "generatedAtEpochMs": 1793026770372,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -23,13 +23,13 @@
     },
     "suggestedStartingPoints": [
       "components/configurator/StepOnewoning.tsx",
-      "lib/cms.ts",
-      "components/configurator/StepFourConfirmation.tsx",
       "components/ConfiguratorScreen.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
+      "lib/cms.ts",
       "components/VoucherWelcomeModal.tsx",
-      "app/download/page.tsx",
       "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
+      ".env.local",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T14:32:01.297Z",
+    "lastActivityAt": "2026-10-26T14:59:28.030Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,11 +576,19 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793025121297,
+      "updatedAt": 1793026768030,
       "lineCount": 100,
-      "charCount": 4447,
-      "hash": "99a300fde68a",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
+      "charCount": 4443,
+      "hash": "e505e6d9f285",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "updatedAt": 1793026012117,
+      "lineCount": 250,
+      "charCount": 9599,
+      "hash": "6af3f7e817b2",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
@@ -623,14 +631,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1791877264942,
-      "lineCount": 251,
-      "charCount": 9757,
-      "hash": "934003a60b39",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-    },
-    {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1791874922608,
       "lineCount": 160,
@@ -640,6 +640,134 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 12: replaced 83 lines with 82 lines.",
+      "recordedAt": "2026-10-26T14:59:28.030Z",
+      "recordedAtEpochMs": 1793026768030,
+      "before": {
+        "kind": "text",
+        "lineCount": 101,
+        "charCount": 4545,
+        "hash": "8e0fb7650573",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
+        "updatedAt": 1793026768030
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 100,
+        "charCount": 4443,
+        "hash": "e505e6d9f285",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793026768030
+      },
+      "diff": {
+        "lineStart": 12,
+        "removedLines": 83,
+        "addedLines": 82,
+        "summary": "Line 12: replaced 83 lines with 82 lines.",
+        "beforeFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam...",
+        "afterFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 52: replaced 13 lines with 14 lines.",
+      "recordedAt": "2026-10-26T14:47:36.836Z",
+      "recordedAtEpochMs": 1793026056836,
+      "before": {
+        "kind": "text",
+        "lineCount": 100,
+        "charCount": 4447,
+        "hash": "99a300fde68a",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
+        "updatedAt": 1793026056836
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 101,
+        "charCount": 4545,
+        "hash": "8e0fb7650573",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
+        "updatedAt": 1793026056836
+      },
+      "diff": {
+        "lineStart": 52,
+        "removedLines": 13,
+        "addedLines": 14,
+        "summary": "Line 52: replaced 13 lines with 14 lines.",
+        "beforeFragment": "const isSelected = selectedIndeling?.indelingTitel === indelingTitel; / return ( / <button / key={indelingTitel + index} / type=\"button\" / onClick={() => setSelectedIndeling(ite...",
+        "afterFragment": "// Controleer of deze specifieke indeling momenteel geselecteerd is / const isSelected = selectedIndeling?.indelingTitel === indelingTitel || selectedIndeling?.indeling_titel ==..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Line 216: inserted 35 lines.",
+      "recordedAt": "2026-10-26T14:46:52.117Z",
+      "recordedAtEpochMs": 1793026012117,
+      "before": {
+        "kind": "text",
+        "lineCount": 216,
+        "charCount": 8406,
+        "hash": "1e25cdae80da",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793026012117
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 250,
+        "charCount": 9599,
+        "hash": "6af3f7e817b2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793026012117
+      },
+      "diff": {
+        "lineStart": 216,
+        "removedLines": 0,
+        "addedLines": 35,
+        "summary": "Line 216: inserted 35 lines.",
+        "beforeFragment": "",
+        "afterFragment": "Pakket} / onConfirm={onConfirm} / onBack={handlePrevious} / loading={loading} / /> / )} / </div> / {/* ONDERSTE NAVIGATIE BALK */} / {currentStep !== 4 && ( / <div className=\"px..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/ConfiguratorScreen.tsx",
+      "toPath": "",
+      "summary": "Line 13: replaced 239 lines with 204 lines.",
+      "recordedAt": "2026-10-26T14:46:47.228Z",
+      "recordedAtEpochMs": 1793026007228,
+      "before": {
+        "kind": "text",
+        "lineCount": 251,
+        "charCount": 9757,
+        "hash": "934003a60b39",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793026007228
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 216,
+        "charCount": 8406,
+        "hash": "1e25cdae80da",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
+        "updatedAt": 1793026007228
+      },
+      "diff": {
+        "lineStart": 13,
+        "removedLines": 239,
+        "addedLines": 204,
+        "summary": "Line 13: replaced 239 lines with 204 lines.",
+        "beforeFragment": "loading, onBack, onConfirm, / configuratorData / }: any) { / // 1. Initialiseer currentStep vanuit localStorage (default is 1) / const [currentStep, setCurrentStep] = useState((...",
+        "afterFragment": "selectedIndeling, setSelectedIndeling, / loading, onBack, onConfirm, / configuratorData / }: any) { / // 1. Initialiseer currentStep vanuit localStorage (default is 1) / const [..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -927,160 +1055,28 @@
         "sizeBytes": 0
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 94: replaced 314 lines with 314 lines.",
-      "recordedAt": "2026-10-13T08:02:12.530Z",
-      "recordedAtEpochMs": 1791878532530,
-      "before": {
-        "kind": "text",
-        "lineCount": 484,
-        "charCount": 22609,
-        "hash": "ab9ef7b47f37",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791878532529
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 484,
-        "charCount": 22459,
-        "hash": "6cb8208e9f8a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1791878532530
-      },
-      "diff": {
-        "lineStart": 94,
-        "removedLines": 314,
-        "addedLines": 314,
-        "summary": "Line 94: replaced 314 lines with 314 lines.",
-        "beforeFragment": "const partnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel || \"Geselecteerde partners\"; / const partnersOmschrijving =...",
-        "afterFragment": "// CMS-titel flexibel houden, maar standaard \"Partners Nomi\" tonen / const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_par..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 86: removed 1 line.",
-      "recordedAt": "2026-10-13T07:55:04.620Z",
-      "recordedAtEpochMs": 1791878104620,
-      "before": {
-        "kind": "text",
-        "lineCount": 118,
-        "charCount": 5440,
-        "hash": "6f56c94c4741",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791878104620
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 118,
-        "charCount": 5390,
-        "hash": "7d3f73a5ba32",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791878104620
-      },
-      "diff": {
-        "lineStart": 86,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 86: removed 1 line.",
-        "beforeFragment": "transition-transform duration-500 hover:scale-105",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 80: replaced 10 lines with 14 lines.",
-      "recordedAt": "2026-10-13T07:53:39.223Z",
-      "recordedAtEpochMs": 1791878019223,
-      "before": {
-        "kind": "text",
-        "lineCount": 114,
-        "charCount": 5192,
-        "hash": "16186b6788a0",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791878019223
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 118,
-        "charCount": 5440,
-        "hash": "6f56c94c4741",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791878019223
-      },
-      "diff": {
-        "lineStart": 80,
-        "removedLines": 10,
-        "addedLines": 14,
-        "summary": "Line 80: replaced 10 lines with 14 lines.",
-        "beforeFragment": "h-64 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5\"> / {imageUrl ? ( / <Image / src={imageU...",
-        "afterFragment": "aspect-16/10 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center text-[11px] text-muted border border-dark/5\"> / {imageUrl ? ( / <Image / src..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 15: replaced 70 lines with 86 lines.",
-      "recordedAt": "2026-10-13T07:49:03.469Z",
-      "recordedAtEpochMs": 1791877743469,
-      "before": {
-        "kind": "text",
-        "lineCount": 98,
-        "charCount": 4508,
-        "hash": "25f960732805",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791877743469
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 114,
-        "charCount": 5192,
-        "hash": "16186b6788a0",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791877743469
-      },
-      "diff": {
-        "lineStart": 15,
-        "removedLines": 70,
-        "addedLines": 86,
-        "summary": "Line 15: replaced 70 lines with 86 lines.",
-        "beforeFragment": "// Zorg voor een flexibele match (bijv. \"type a\" === \"type a\") / return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : won...",
-        "afterFragment": "return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : woningTypenLijst; / // Automatisch de enige gefilterde optie selecte..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "lib/cms.ts",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 8
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "count": 7
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 6
-    },
-    {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "lib/cms.ts",
       "count": 5
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
       "count": 4
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "count": 2
     },
     {
       "filePath": "app/voucher/page.tsx",
@@ -1089,15 +1085,20 @@
     {
       "filePath": "components/VoucherParamHandler.tsx",
       "count": 2
+    },
+    {
+      "filePath": ".env.local",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-15 1677305 changed text button to white",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-26 4e74099 State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
+      "M components/ConfiguratorScreen.tsx",
       "M components/configurator/StepOnewoning.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
@@ -1107,7 +1108,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1677305 by Bas van Dooremalen on 2026-10-15\n  changed text button to white\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4e74099 by Bas van Dooremalen on 2026-10-26\n  State voor selectedIndeling toegevoegd aan useConfigurator hook en localStorage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
