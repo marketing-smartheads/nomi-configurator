@@ -8,19 +8,26 @@ export default function StepThreeVisuals({
   configuratorData, 
   designPakket 
 }: any) {
-  const rawPakketten = configuratorData?.designPaketten || [];
-  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
+  const rawPakketten = 
+    configuratorData?.designPaketten || 
+    configuratorData?.design_paketten || 
+    configuratorData?.configuratorBeheer?.designPaketten ||
+    configuratorData?.configuratorBeheer?.design_paketten ||
+    [];
+
+  const pakkettenLijst = Array.isArray(rawPakketten) 
+    ? rawPakketten 
+    : rawPakketten?.nodes || rawPakketten?.edges || [];
   
-  // Zoek het juiste pakket op basis van pakket_id uit de state
   const huidigPakket = pakkettenLijst.find((p: any) => (p.pakket_id || p.pakketId) === designPakket) || pakkettenLijst[0];
 
-  const pakketTitel = huidigPakket?.pakket_titel || 'Hotel Chic';
+  const pakketTitel = huidigPakket?.pakket_titel || huidigPakket?.pakketTitel || 'Hotel Chic';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
-  const stapOmschrijving = huidigPakket?.stap3_omschrijving || configuratorData?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
+  const stapOmschrijving = huidigPakket?.stap3_omschrijving || huidigPakket?.stap3Omschrijving || configuratorData?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  const visuals = huidigPakket?.visuals_slider?.nodes || huidigPakket?.visuals_slider || [];
-  const materialen = huidigPakket?.materialen_lijst || [];
-  const moodboardGallery = huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboard_gallery || [];
+  const visuals = huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider || [];
+  const materialen = huidigPakket?.materialen_lijst || huidigPakket?.materialenLijst || [];
+  const moodboardGallery = huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery || [];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [thumbPage, setThumbPage] = useState(0);
@@ -207,7 +214,6 @@ export default function StepThreeVisuals({
         )}
       </div>
 
-      {/* Materialen en Moodboard sectie */}
       <div className="bg-white rounded-[2.5rem] max-w-6xl mx-auto overflow-hidden shadow-sm flex flex-col sm:mx-auto">
         <div className="p-6 sm:p-12 pb-8 space-y-8">
           <div>
@@ -223,7 +229,7 @@ export default function StepThreeVisuals({
               materialen.map((mat: any, idx: number) => (
                 <div key={idx} className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
                   <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0" />
-                  <span className="text-xs sm:text-sm font-normal text-dark">{mat.materiaal_titel}</span>
+                  <span className="text-xs sm:text-sm font-normal text-dark">{mat.materiaal_titel || mat.materiaalTitel}</span>
                 </div>
               ))
             ) : (

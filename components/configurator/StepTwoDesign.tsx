@@ -24,9 +24,17 @@ export default function StepTwoDesign({
   const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = configuratorData?.stap2omschrijving || '';
   
-  // Ophalen van de ACF repeater data via de juiste camelCase GraphQL naam
-  const rawPakketten = configuratorData?.designPaketten || [];
-  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
+  // Robuuste check om de repeater array op te halen uit elk mogelijk GraphQL-pad
+  const rawPakketten = 
+    configuratorData?.designPaketten || 
+    configuratorData?.design_paketten || 
+    configuratorData?.configuratorBeheer?.designPaketten ||
+    configuratorData?.configuratorBeheer?.design_paketten ||
+    [];
+
+  const pakkettenLijst = Array.isArray(rawPakketten) 
+    ? rawPakketten 
+    : rawPakketten?.nodes || rawPakketten?.edges || [];
 
   return (
     <div className="space-y-12">
@@ -45,17 +53,15 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            // Koppeling met de exacte ACF subvelden
-            const pakketId = pakket.pakket_id || `pakket-${index}`;
-            const pakketTitel = pakket.pakket_titel || '';
-            const pakketOmschrijving = pakket.pakket_omschrijving || '';
+            const pakketId = pakket.pakket_id || pakket.pakketId || `pakket-${index}`;
+            const pakketTitel = pakket.pakket_titel || pakket.pakketTitel || '';
+            const pakketOmschrijving = pakket.pakket_omschrijving || pakket.pakketOmschrijving || '';
             const isSelected = designPakket === pakketId;
 
-            const afbField = pakket.pakket_aabeelding;
+            const afbField = pakket.pakket_aabeelding || pakket.pakketAfbeelding;
             const imageUrl = afbField?.node?.sourceUrl || afbField?.sourceUrl;
 
-            // Dynamische materialenlijst direct uit de backend repeater
-            const materialen = pakket.materialen_lijst || [];
+            const materialen = pakket.materialen_lijst || pakket.materialenLijst || [];
 
             return (
               <div
@@ -85,7 +91,6 @@ export default function StepTwoDesign({
                   <h3 className="text-3xl font-serif text-dark mb-3">{pakketTitel}</h3>
                   <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">{pakketOmschrijving}</p>
 
-                  {/* Backend materialenlijst per pakket */}
                   {materialen.length > 0 && (
                     <div className="mb-8 bg-[#F9F6F0] p-5 rounded-2xl border border-dark/5">
                       <h4 className="text-[11px] font-bold uppercase tracking-wider text-dark mb-3">De materialen in dit pakket:</h4>
@@ -93,7 +98,7 @@ export default function StepTwoDesign({
                         {materialen.map((mat: any, mIdx: number) => (
                           <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                            {mat.materiaal_titel}
+                            {mat.materiaal_titel || mat.materiaalTitel}
                           </li>
                         ))}
                       </ul>
