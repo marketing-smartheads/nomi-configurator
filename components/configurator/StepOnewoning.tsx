@@ -9,7 +9,6 @@ export default function StepOneWoning({
   setSelectedIndeling 
 }: any) {
   
-  // Filter de lijst op basis van het woningtype van de voucher
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
         const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
@@ -41,7 +40,6 @@ export default function StepOneWoning({
         </p>
       </div>
       
-      {/* Grid: 2 kolommen op desktop (md:grid-cols-2), 1 op mobiel */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 max-w-4xl mx-auto">
         {gefilterdeLijst.length > 0 ? (
           gefilterdeLijst.map((item: any, index: number) => {
@@ -50,7 +48,6 @@ export default function StepOneWoning({
             const metrage = item.metrage || '';
             const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
             
-            // Flexibele check zodat selecteren altijd werkt
             const isSelected = selectedIndeling && (
               selectedIndeling === item || 
               selectedIndeling?.indelingTitel === indelingTitel || 
@@ -67,13 +64,13 @@ export default function StepOneWoning({
                 }`}
               >
                 <div>
-                  {/* Container met strakke afbeelding via object-cover */}
-                  <div className="w-full aspect-16/10 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-dark/5">
+                  {/* Container met object-contain en padding zodat de hele plattegrond zichtbaar blijft */}
+                  <div className="w-full aspect-16/10 bg-white rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
                     {imageUrl ? (
                       <img 
                         src={imageUrl} 
                         alt={indelingTitel} 
-                        className="w-full h-full object-cover"
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 hover:scale-105"
                       />
                     ) : (
                       <span className="text-muted/60 font-medium text-xs">
