@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T12:55:31.654Z",
-  "generatedAtEpochMs": 1792068931654,
+  "generatedAt": "2026-10-26T14:32:03.856Z",
+  "generatedAtEpochMs": 1793025123856,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/VoucherWelcomeModal.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/VoucherWelcomeModal.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
+      "components/VoucherWelcomeModal.tsx",
       "app/download/page.tsx",
       "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-15T12:55:29.900Z",
+    "lastActivityAt": "2026-10-26T14:32:01.297Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1793025121297,
+      "lineCount": 100,
+      "charCount": 4447,
+      "hash": "99a300fde68a",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
+    },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
       "updatedAt": 1792068929900,
@@ -615,14 +623,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1791878104620,
-      "lineCount": 118,
-      "charCount": 5390,
-      "hash": "7d3f73a5ba32",
-      "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter..."
-    },
-    {
       "filePath": "components/ConfiguratorScreen.tsx",
       "updatedAt": 1791877264942,
       "lineCount": 251,
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 112 lines with 94 lines.",
+      "recordedAt": "2026-10-26T14:32:01.297Z",
+      "recordedAtEpochMs": 1793025121297,
+      "before": {
+        "kind": "text",
+        "lineCount": 118,
+        "charCount": 5390,
+        "hash": "7d3f73a5ba32",
+        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
+        "updatedAt": 1793025121297
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 100,
+        "charCount": 4447,
+        "hash": "99a300fde68a",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
+        "updatedAt": 1793025121297
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 112,
+        "addedLines": 94,
+        "summary": "Line 1: replaced 112 lines with 94 lines.",
+        "beforeFragment": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType,...",
+        "afterFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
+      }
+    },
     {
       "type": "save",
       "path": "components/VoucherWelcomeModal.tsx",
@@ -1023,38 +1055,6 @@
         "beforeFragment": "// Zorg voor een flexibele match (bijv. \"type a\" === \"type a\") / return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : won...",
         "afterFragment": "return typeNaam.toLowerCase().replaceAll(' ', '') === woningType.toLowerCase().replaceAll(' ', ''); / }) / : woningTypenLijst; / // Automatisch de enige gefilterde optie selecte..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 49 lines with 57 lines.",
-      "recordedAt": "2026-10-13T07:41:26.398Z",
-      "recordedAtEpochMs": 1791877286398,
-      "before": {
-        "kind": "text",
-        "lineCount": 90,
-        "charCount": 4103,
-        "hash": "dd200db0a700",
-        "preview": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de lijst zodat uitsluitend het type...",
-        "updatedAt": 1791877286398
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 98,
-        "charCount": 4508,
-        "hash": "25f960732805",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1791877286398
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 49,
-        "addedLines": 57,
-        "summary": "Line 1: replaced 49 lines with 57 lines.",
-        "beforeFragment": "Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter de...",
-        "afterFragment": "{ useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setW..."
-      }
     }
   ],
   "hotFiles": [
@@ -1068,7 +1068,7 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1080,7 +1080,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 3
+      "count": 2
     },
     {
       "filePath": "app/voucher/page.tsx",
@@ -1094,17 +1094,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-15 92324e0 feat(voucher): voeg VoucherWelcomeModal & /voucher landingspagina toe",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-15 1677305 changed text button to white",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/VoucherWelcomeModal.tsx"
+      "M components/configurator/StepOnewoning.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 18fb120 by Bas van Dooremalen on 2026-10-15\n  feat(voucher): voeg magic link ondersteuning toe via URL-parameter (?code=...)\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1677305 by Bas van Dooremalen on 2026-10-15\n  changed text button to white\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
