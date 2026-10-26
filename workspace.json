@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T23:39:47.630Z",
-  "generatedAtEpochMs": 1793057987630,
+  "generatedAt": "2026-10-26T23:45:34.032Z",
+  "generatedAtEpochMs": 1793058334032,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,13 +22,13 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
       "components/VoucherWelcomeModal.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       "app/voucher/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/MainContent.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T23:39:45.836Z",
+    "lastActivityAt": "2026-10-26T23:45:32.193Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793058332193,
+      "lineCount": 137,
+      "charCount": 5707,
+      "hash": "ab8329f59817",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+    },
+    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793057985836,
       "lineCount": 263,
       "charCount": 10896,
       "hash": "88578395a651",
       "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793057977361,
-      "lineCount": 144,
-      "charCount": 6011,
-      "hash": "ee310f80390b",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 13: replaced 90 lines with 82 lines.",
+      "recordedAt": "2026-10-26T23:45:32.193Z",
+      "recordedAtEpochMs": 1793058332193,
+      "before": {
+        "kind": "text",
+        "lineCount": 145,
+        "charCount": 6072,
+        "hash": "4bdb3c1429b0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793058332193
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 137,
+        "charCount": 5707,
+        "hash": "ab8329f59817",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793058332193
+      },
+      "diff": {
+        "lineStart": 13,
+        "removedLines": 90,
+        "addedLines": 82,
+        "summary": "Line 13: replaced 90 lines with 82 lines.",
+        "beforeFragment": "ole.log(\"DEBUG configuratorData:\", configuratorData); / const [isConfirmed, setIsConfirmed] = useState(false); / useEffect(() => { / if (typeof window !== 'undefined') { / const...",
+        "afterFragment": "t [isConfirmed, setIsConfirmed] = useState(false); / useEffect(() => { / if (typeof window !== 'undefined') { / const confirmedStatus = localStorage.getItem('configuratorConfirm..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1059,38 +1091,6 @@
         "beforeFragment": "loading, onBack, onConfirm, / configuratorData / }: any) { / // 1. Initialiseer currentStep vanuit localStorage (default is 1) / const [currentStep, setCurrentStep] = useState((...",
         "afterFragment": "selectedIndeling, setSelectedIndeling, / loading, onBack, onConfirm, / configuratorData / }: any) { / // 1. Initialiseer currentStep vanuit localStorage (default is 1) / const [..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 112 lines with 94 lines.",
-      "recordedAt": "2026-10-26T14:32:01.297Z",
-      "recordedAtEpochMs": 1793025121297,
-      "before": {
-        "kind": "text",
-        "lineCount": 118,
-        "charCount": 5390,
-        "hash": "7d3f73a5ba32",
-        "preview": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / setWoningType / }: any) { / // Filter...",
-        "updatedAt": 1793025121297
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 100,
-        "charCount": 4447,
-        "hash": "99a300fde68a",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
-        "updatedAt": 1793025121297
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 112,
-        "addedLines": 94,
-        "summary": "Line 1: replaced 112 lines with 94 lines.",
-        "beforeFragment": "import { useEffect } from 'react'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType,...",
-        "afterFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
-      }
     }
   ],
   "hotFiles": [
@@ -1103,19 +1103,19 @@
       "count": 8
     },
     {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 4
+    },
+    {
       "filePath": "components/VoucherWelcomeModal.tsx",
       "count": 4
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 3
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 3
-    },
-    {
       "filePath": "app/voucher/page.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
     {
@@ -1130,11 +1130,10 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 e5bf0d0 fix(designpakketten): koppel ACF repeater velden en subvelden correct aan frontend",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-27 ce54a24 debug configuratorData",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
       "M components/configurator/StepTwoDesign.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
@@ -1144,7 +1143,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1547a0b by Bas van Dooremalen on 2026-10-26\n  optimaliseer plattegrond weergave met object-contain\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ce54a24 by Bas van Dooremalen on 2026-10-26\n  debug configuratorData\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

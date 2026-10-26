@@ -10,7 +10,6 @@ export default function StepTwoDesign({
   designPakket, 
   setDesignPakket 
 }: any) {
-  console.log("DEBUG configuratorData:", configuratorData);
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {
@@ -22,20 +21,12 @@ export default function StepTwoDesign({
     }
   }, []);
 
-  const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
+  const titel = configuratorData?.titelStap1 || configuratorData?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = configuratorData?.stap2omschrijving || '';
   
-  // Robuuste check om de repeater array op te halen uit elk mogelijk GraphQL-pad
-  const rawPakketten = 
-    configuratorData?.designPaketten || 
-    configuratorData?.design_paketten || 
-    configuratorData?.configuratorBeheer?.designPaketten ||
-    configuratorData?.configuratorBeheer?.design_paketten ||
-    [];
-
-  const pakkettenLijst = Array.isArray(rawPakketten) 
-    ? rawPakketten 
-    : rawPakketten?.nodes || rawPakketten?.edges || [];
+  // Direct gekoppeld aan de juiste array uit de console
+  const rawPakketten = configuratorData?.designPaketten || [];
+  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   return (
     <div className="space-y-12">
@@ -54,15 +45,16 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            const pakketId = pakket.pakket_id || pakket.pakketId || `pakket-${index}`;
-            const pakketTitel = pakket.pakket_titel || pakket.pakketTitel || '';
-            const pakketOmschrijving = pakket.pakket_omschrijving || pakket.pakketOmschrijving || '';
+            // Exacte subvelden uit de console-output
+            const pakketId = pakket.pakketId || `pakket-${index}`;
+            const pakketTitel = pakket.pakketTitel || '';
+            const pakketOmschrijving = pakket.pakketOmschrijving || '';
             const isSelected = designPakket === pakketId;
 
-            const afbField = pakket.pakket_aabeelding || pakket.pakketAfbeelding;
+            const afbField = pakket.pakketAabeelding;
             const imageUrl = afbField?.node?.sourceUrl || afbField?.sourceUrl;
 
-            const materialen = pakket.materialen_lijst || pakket.materialenLijst || [];
+            const materialen = pakket.materialenLijst || [];
 
             return (
               <div
@@ -99,7 +91,7 @@ export default function StepTwoDesign({
                         {materialen.map((mat: any, mIdx: number) => (
                           <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                            {mat.materiaal_titel || mat.materiaalTitel}
+                            {mat.materiaalTitel}
                           </li>
                         ))}
                       </ul>
