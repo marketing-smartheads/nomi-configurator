@@ -24,6 +24,7 @@ export default function MainContent({ sections, configuratorData, initialScreen 
     loading, error,
     woningType, setWoningType,
     designPakket, setDesignPakket,
+    selectedIndeling, setSelectedIndeling, // <-- TOEGEVOEGD: Ophalen uit de hook
     handleLogin, handleSaveChoices
   } = useConfigurator();
 
@@ -43,7 +44,6 @@ export default function MainContent({ sections, configuratorData, initialScreen 
       // 2. Vraag daarna de live status op in WordPress op basis van de opgeslagen toegangscode
       const savedCode = localStorage.getItem('toegangscode');
       
-      // ALSL EEN NIEUWE TOEVOEGING: Als er geen code is, dwing direct het inlogscherm af!
       if (!savedCode) {
         setScreen('login');
       }
@@ -145,19 +145,19 @@ export default function MainContent({ sections, configuratorData, initialScreen 
 
         {screen === 'configurator' && (
           <>
-            
             <ConfiguratorScreen 
               woningType={woningType}
               setWoningType={setWoningType}
               designPakket={designPakket}
               setDesignPakket={setDesignPakket}
+              selectedIndeling={selectedIndeling}       {/* TOEGEVOEGD */}
+              setSelectedIndeling={setSelectedIndeling}   {/* TOEGEVOEGD */}
               loading={loading}
               onBack={handleReturnToHome}
               onConfirm={handleSaveChoices}
               configuratorData={configuratorData} 
             />
 
-            
             {isReedsBevestigd && (
               <div className="absolute inset-0 z-40 flex items-start justify-center px-6 py-16">
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-all duration-500" />
@@ -174,20 +174,14 @@ export default function MainContent({ sections, configuratorData, initialScreen 
                     <button
                       onClick={() => {
                         if (typeof window !== 'undefined') {
-                          // 1. Haal de laatst bekende geldige waardes op uit localStorage of gebruik een veilige fallback
                           const huidigeWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
                           const huidigPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || 'Pakket A';
 
-                          // Als de waardes per ongeluk op Type A stonden terwijl er wel data bekend is, behoud ze dan streng
-                          console.log('Navigeren naar download met:', huidigeWoning, huidigPakket);
-
-                          // 2. Zet ze expliciet vast in zowel local- als sessionstorage
                           localStorage.setItem('selected_woningType', huidigeWoning);
                           localStorage.setItem('selected_designPakket', huidigPakket);
                           sessionStorage.setItem('geselecteerdeWoning', huidigeWoning);
                           sessionStorage.setItem('geselecteerdPakket', huidigPakket);
 
-                          // 3. Markeer als bevestigd
                           localStorage.setItem('configurator_bevestigd', 'true');
                           localStorage.setItem('configuratorConfirmed', 'true');
                           sessionStorage.setItem('configuratorConfirmed', 'true');
@@ -195,7 +189,6 @@ export default function MainContent({ sections, configuratorData, initialScreen 
                           localStorage.setItem('download_timestamp', new Date().getTime().toString());
                         }
 
-                        // 4. Stuur door naar de downloadpagina
                         window.location.href = '/download';
                       }}
                       className="inline-block w-full py-4 bg-dark text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:opacity-90 transition text-center shadow-lg cursor-pointer"
