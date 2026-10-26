@@ -4,24 +4,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier
-const MATERIALEN_MAP: Record<string, string[]> = {
-  'modern raw': [
-    'Travertin look',
-    'Beton cement',
-    'Eiken hout',
-    'Mat zwart',
-    'Gun metal'
-  ],
-  'hotel chic': [
-    'Brons',
-    'Visgraat eiken',
-    'Suede',
-    'Beige / zand',
-    'Marmer look'
-  ]
-};
-
 export default function StepTwoDesign({ 
   stepTitle, 
   configuratorData, 
@@ -31,7 +13,6 @@ export default function StepTwoDesign({
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {
-    // Check of de laatste stap (Bevestiging) al is afgerond
     if (typeof window !== 'undefined') {
       const confirmedStatus = localStorage.getItem('configuratorConfirmed');
       if (confirmedStatus === 'true') {
@@ -43,7 +24,8 @@ export default function StepTwoDesign({
   const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = configuratorData?.stap2omschrijving || '';
   
-  const rawPakketten = configuratorData?.designPakketten || [];
+  // Ophalen van de ACF repeater data via de juiste camelCase GraphQL naam
+  const rawPakketten = configuratorData?.designPaketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   return (
@@ -63,19 +45,17 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            const pakketId = pakket.pakketId || `pakket-${index}`;
-            const pakketTitel = pakket.pakketTitel || '';
-            const pakketOmschrijving = pakket.pakketOmschrijving || '';
+            // Koppeling met de exacte ACF subvelden
+            const pakketId = pakket.pakket_id || `pakket-${index}`;
+            const pakketTitel = pakket.pakket_titel || '';
+            const pakketOmschrijving = pakket.pakket_omschrijving || '';
             const isSelected = designPakket === pakketId;
 
-            const afbField = pakket.pakketAabeelding || pakket.pakketAfbeelding;
+            const afbField = pakket.pakket_aabeelding;
             const imageUrl = afbField?.node?.sourceUrl || afbField?.sourceUrl;
 
-            // Bepaal de juiste materialenlijst op basis van de titel van het pakket (case-insensitive check)
-            const titelLower = pakketTitel.toLowerCase();
-            const materialen = Object.keys(MATERIALEN_MAP).find(key => titelLower.includes(key)) 
-              ? MATERIALEN_MAP[Object.keys(MATERIALEN_MAP).find(key => titelLower.includes(key))!] 
-              : [];
+            // Dynamische materialenlijst direct uit de backend repeater
+            const materialen = pakket.materialen_lijst || [];
 
             return (
               <div
@@ -105,15 +85,15 @@ export default function StepTwoDesign({
                   <h3 className="text-3xl font-serif text-dark mb-3">{pakketTitel}</h3>
                   <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">{pakketOmschrijving}</p>
 
-                  {/* Toegevoegde materialenlijst per pakket */}
+                  {/* Backend materialenlijst per pakket */}
                   {materialen.length > 0 && (
                     <div className="mb-8 bg-[#F9F6F0] p-5 rounded-2xl border border-dark/5">
                       <h4 className="text-[11px] font-bold uppercase tracking-wider text-dark mb-3">De materialen in dit pakket:</h4>
                       <ul className="grid grid-cols-2 gap-2">
-                        {materialen.map((mat, mIdx) => (
+                        {materialen.map((mat: any, mIdx: number) => (
                           <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                            {mat}
+                            {mat.materiaal_titel}
                           </li>
                         ))}
                       </ul>
@@ -122,7 +102,6 @@ export default function StepTwoDesign({
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-dark/5">
-                  {/* BEKIJK RENDERS KNOP: Enkel zichtbaar als Bevestigd is */}
                   {isConfirmed ? (
                     <Link 
                       href="/download"

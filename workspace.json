@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T15:22:39.370Z",
-  "generatedAtEpochMs": 1793028159370,
+  "generatedAt": "2026-10-26T23:35:11.233Z",
+  "generatedAtEpochMs": 1793057711233,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/VoucherWelcomeModal.tsx",
       "app/voucher/page.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "components/MainContent.tsx",
       "components/VoucherParamHandler.tsx",
-      ".env.local",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T15:22:36.985Z",
+    "lastActivityAt": "2026-10-26T23:35:09.495Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793057699637,
+      "lineCount": 139,
+      "charCount": 5834,
+      "hash": "bb8372e6abd6",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1793028156985,
@@ -629,17 +637,52 @@
       "charCount": 426,
       "hash": "0d94bfd3ea1f",
       "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherParamHandler from '@/components/VoucherParamHandler'; / export default async function Home() { / const { s..."
-    },
-    {
-      "filePath": "components/VoucherParamHandler.tsx",
-      "updatedAt": 1792067515849,
-      "lineCount": 20,
-      "charCount": 598,
-      "hash": "06ad36daf3da",
-      "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "",
+      "recordedAt": "2026-10-26T23:35:09.495Z",
+      "recordedAtEpochMs": 1793057709495,
+      "before": null,
+      "after": null,
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 119 lines with 98 lines.",
+      "recordedAt": "2026-10-26T23:34:59.637Z",
+      "recordedAtEpochMs": 1793057699637,
+      "before": {
+        "kind": "text",
+        "lineCount": 160,
+        "charCount": 6478,
+        "hash": "46f4d92c2206",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const...",
+        "updatedAt": 1793057699637
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 139,
+        "charCount": 5834,
+        "hash": "bb8372e6abd6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793057699637
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 119,
+        "addedLines": 98,
+        "summary": "Line 7: replaced 119 lines with 98 lines.",
+        "beforeFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be...",
+        "afterFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1041,58 +1084,6 @@
         "updatedAt": 1792068786201
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/VoucherWelcomeModal.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 96 lines.",
-      "recordedAt": "2026-10-15T12:52:53.130Z",
-      "recordedAtEpochMs": 1792068773130,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1792068773130
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 96,
-        "charCount": 3522,
-        "hash": "14d64b1e13cc",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s...",
-        "updatedAt": 1792068773130
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 96,
-        "summary": "Line 1: inserted 96 lines.",
-        "beforeFragment": "",
-        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default fu..."
-      }
-    },
-    {
-      "type": "create",
-      "path": "components/VoucherWelcomeModal.tsx",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-10-15T12:52:48.563Z",
-      "recordedAtEpochMs": 1792068768563,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1792068768557.626,
-        "extension": ".tsx",
-        "sizeBytes": 0
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1106,7 +1097,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
@@ -1117,32 +1108,36 @@
       "count": 2
     },
     {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 2
+    },
+    {
       "filePath": "components/MainContent.tsx",
       "count": 2
     },
     {
       "filePath": "components/VoucherParamHandler.tsx",
       "count": 2
-    },
-    {
-      "filePath": ".env.local",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-26 8e78c85 voeg selectedIndeling toe aan useConfigurator hook",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-26 1547a0b optimaliseer plattegrond weergave met object-contain",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepThreeVisuals.tsx",
+      "M components/configurator/StepTwoDesign.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8e78c85 by Bas van Dooremalen on 2026-10-26\n  voeg selectedIndeling toe aan useConfigurator hook\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1547a0b by Bas van Dooremalen on 2026-10-26\n  optimaliseer plattegrond weergave met object-contain\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
