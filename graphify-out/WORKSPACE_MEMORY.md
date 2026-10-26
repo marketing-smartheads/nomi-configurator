@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T23:51:16.276Z
+Generated: 2026-10-26T23:53:00.739Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T23:51:13.866Z
+- Last activity: 2026-10-26T23:52:58.919Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
 - Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/ConfiguratorScreen.tsx (8), components/configurator/StepTwoDesign.tsx (4), components/VoucherWelcomeModal.tsx (4)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 223 lines | 6050 chars | hash 117d3c6ee43c
-  Last snapshot: 2026-10-26T23:51:13.866Z
+- lib/cms.ts | 223 lines | 6051 chars | hash 188db5995315
+  Last snapshot: 2026-10-26T23:52:58.919Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 137 lines | 5707 chars | hash ab8329f59817
   Last snapshot: 2026-10-26T23:45:32.193Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-26T23:52:58.919Z | saved | lib/cms.ts
+- Summary: Line 97: inserted 1 line.
+- Before: 223 lines | 6,050 chars | hash 117d3c6ee43c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 223 lines | 6,051 chars | hash 188db5995315 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Current fragment: "k"
+
 ### 2026-10-26T23:51:13.866Z | saved | lib/cms.ts
 - Summary: Line 97: removed 1 line.
 - Before: 223 lines | 6,051 chars | hash 188db5995315 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -155,12 +161,6 @@ Structured manifest: workspace.json
 - Previous fragment: "const isSelected = selectedIndeling?.indelingTitel === indelingTitel; / return ( / <button / key={indelingTitel + index} / type="button" / onClick={() => setSelectedIndeling(ite..."
 - Current fragment: "// Controleer of deze specifieke indeling momenteel geselecteerd is / const isSelected = selectedIndeling?.indelingTitel === indelingTitel || selectedIndeling?.indeling_titel ==..."
 
-### 2026-10-26T14:46:52.117Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 216: inserted 35 lines.
-- Before: 216 lines | 8,406 chars | hash 1e25cdae80da | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 250 lines | 9,599 chars | hash 6af3f7e817b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Current fragment: "Pakket} / onConfirm={onConfirm} / onBack={handlePrevious} / loading={loading} / /> / )} / </div> / {/* ONDERSTE NAVIGATIE BALK */} / {currentStep !== 4 && ( / <div className="px..."
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (10 tracked changes)
@@ -168,13 +168,13 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
+- components/VoucherParamHandler.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 59b954f fix(designpakket): map ACF camelCase subvelden correct voor weergave
+- HEAD: 2026-10-27 3bf8fee fix(cms): update graphql query structure for design packages and materials matching backend schema
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
