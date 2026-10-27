@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T08:49:35.729Z",
-  "generatedAtEpochMs": 1793090975729,
+  "generatedAt": "2026-10-27T08:56:04.076Z",
+  "generatedAtEpochMs": 1793091364076,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
       "components/configurator/StepTwoDesign.tsx",
-      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/MainContent.tsx",
       "app/download/page.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
-      "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T08:49:33.986Z",
+    "lastActivityAt": "2026-10-27T08:56:02.317Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,8 +575,16 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793091362317,
+      "lineCount": 489,
+      "charCount": 22030,
+      "hash": "7a4796eafb68",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+    },
+    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793090973986,
+      "updatedAt": 1793091356454,
       "lineCount": 422,
       "charCount": 17204,
       "hash": "7c13abe084e1",
@@ -629,17 +637,66 @@
       "charCount": 9599,
       "hash": "6af3f7e817b2",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-    },
-    {
-      "filePath": "components/VoucherWelcomeModal.tsx",
-      "updatedAt": 1792068929900,
-      "lineCount": 96,
-      "charCount": 3533,
-      "hash": "b0287afaa956",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 10: replaced 281 lines with 286 lines.",
+      "recordedAt": "2026-10-27T08:56:02.317Z",
+      "recordedAtEpochMs": 1793091362317,
+      "before": {
+        "kind": "text",
+        "lineCount": 484,
+        "charCount": 22459,
+        "hash": "6cb8208e9f8a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091362317
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 489,
+        "charCount": 22030,
+        "hash": "7a4796eafb68",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091362317
+      },
+      "diff": {
+        "lineStart": 10,
+        "removedLines": 281,
+        "addedLines": 286,
+        "summary": "Line 10: replaced 281 lines with 286 lines.",
+        "beforeFragment": "// Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl; in productie weglaten. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias';...",
+        "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-27T08:55:56.454Z",
+      "recordedAtEpochMs": 1793091356454,
+      "before": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 17204,
+        "hash": "7c13abe084e1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /...",
+        "updatedAt": 1793091356454
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 17204,
+        "hash": "7c13abe084e1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /...",
+        "updatedAt": 1793091356454
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1027,70 +1084,6 @@
         "beforeFragment": "const rawPakketten = configuratorData?.designp",
         "afterFragment": "const rawPakketten = configuratorData?.designP"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 28: removed 1 line.",
-      "recordedAt": "2026-10-27T00:27:34.751Z",
-      "recordedAtEpochMs": 1793060854751,
-      "before": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5624,
-        "hash": "80cbbcb8c846",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060854751
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5622,
-        "hash": "ffea82492dbf",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060854751
-      },
-      "diff": {
-        "lineStart": 28,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 28: removed 1 line.",
-        "beforeFragment": "",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 28: replaced 1 line with 1 line.",
-      "recordedAt": "2026-10-27T00:25:56.740Z",
-      "recordedAtEpochMs": 1793060756740,
-      "before": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5624,
-        "hash": "1ca9595154e4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060756740
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5624,
-        "hash": "80cbbcb8c846",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060756740
-      },
-      "diff": {
-        "lineStart": 28,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 28: replaced 1 line with 1 line.",
-        "beforeFragment": "P",
-        "afterFragment": "p"
-      }
     }
   ],
   "hotFiles": [
@@ -1104,11 +1097,7 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 9
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 3
+      "count": 10
     },
     {
       "filePath": "components/MainContent.tsx",
@@ -1119,23 +1108,26 @@
       "count": 1
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 1
     },
     {
-      "filePath": "lib/useConfigurator.ts",
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 1
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 946b9b7 fix(components): extract configuratorData correctly from nested object in StepThreeVisuals",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-27 ef64760 feat(components): add Pannellum 360 viewer integration to StepThreeVisuals",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M components/configurator/StepThreeVisuals.tsx",
+      "M components/configurator/StepFourConfirmation.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1144,7 +1136,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 946b9b7 by Bas van Dooremalen on 2026-10-27\n  fix(components): extract configuratorData correctly from nested object in StepThreeVisuals\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ef64760 by Bas van Dooremalen on 2026-10-27\n  feat(components): add Pannellum 360 viewer integration to StepThreeVisuals\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

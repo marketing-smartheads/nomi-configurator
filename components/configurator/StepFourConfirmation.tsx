@@ -7,7 +7,6 @@ import Button from '../Button';
 
 // Partner voor de documentatielijst.
 // Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger.
-// Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl; in productie weglaten.
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
@@ -32,9 +31,8 @@ export default function StepFourConfirmation({
   loading,
 }: StepFourConfirmationProps) {
   const [showPopup, setShowPopup] = useState(false);
-  // null = nog niet gekozen. Toestemming mag niet vooraf aangevinkt staan (AVG).
   const [agreedPartner, setAgreedPartner] = useState<boolean | null>(null);
-  const [agreedWarning, setAgreedWarning] = useState(false); // Definitief vinkje
+  const [agreedWarning, setAgreedWarning] = useState(false);
 
   const [klantNaam, setKlantNaam] = useState('');
   const [klantEmail, setKlantEmail] = useState('');
@@ -45,7 +43,6 @@ export default function StepFourConfirmation({
   const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
-  // Haal automatisch gegevens op uit sessionStorage/localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const opgeslagenEmail =
@@ -70,7 +67,7 @@ export default function StepFourConfirmation({
   const rawWoningTypen = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const rawDesignPakketten = configuratorData?.designPakketten || configuratorData?.design_pakketten || [];
+  const rawDesignPakketten = configuratorData?.designPakketten || configuratorData?.design_paketten || [];
   const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
 
   const storedWoning = woningTypenLijst.find((w: any) => (w?.typeNaam || w?.type_naam) === woningType) || null;
@@ -79,9 +76,23 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
-  const heroImage = bevData?.bannerAfbeelding?.node?.sourceUrl || bevData?.banner_afbeelding?.sourceUrl || bevData?.bannerAfbeelding?.sourceUrl;
-  const heroTitle = bevData?.bannerTitel || bevData?.banner_titel;
+  // Robuuste opzet voor het ophalen van de banner gegevens uit het pakket of configuratorData
+  const bevData = 
+    storedPakket?.bevestigingStap || 
+    storedPakket?.bevestiging_stap || 
+    configuratorData?.bevestigingStap || 
+    configuratorData?.bevestiging_stap || 
+    {};
+
+  const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
+  const heroImage = 
+    typeof rawImage === 'string' ? rawImage : 
+    rawImage?.node?.sourceUrl || 
+    rawImage?.sourceUrl || 
+    rawImage?.mediaItemUrl || 
+    null;
+
+  const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
@@ -91,7 +102,6 @@ export default function StepFourConfirmation({
   const omschrijving = configuratorData?.bevestigingOmschrijving || configuratorData?.bevestiging_omschrijving;
   const waarschuwingTekst = configuratorData?.bevestigingWaarschuwingTekst || configuratorData?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
 
-  // CMS-titel flexibel houden, maar standaard "Partners Nomi" tonen
   const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel;
   const partnersTitel = (!cmsPartnersTitel || cmsPartnersTitel === "Geselecteerde partners") 
     ? "Partners Nomi" 
@@ -99,7 +109,6 @@ export default function StepFourConfirmation({
 
   const partnersOmschrijving = configuratorData?.geselecteerdePartnersOmschrijving || configuratorData?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
 
-  // Validatie: voor delen zijn naam, e-mail en telefoon nodig
   const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
   const telefoonGeldig = klantTelefoon.replace(/\D/g, '').length >= 8;
   const gegevensCompleet = klantNaam.trim() !== '' && emailGeldig && telefoonGeldig;
@@ -110,7 +119,6 @@ export default function StepFourConfirmation({
     !isSubmitting &&
     (agreedPartner === false || gegevensCompleet);
 
-  // Voorgevulde mail voor scenario 2 (klant neemt zelf contact op)
   const mailtoHref =
     `mailto:${PARTNER_EMAIL}` +
     `?subject=${encodeURIComponent('Aanvraag documentatielijst')}` +
@@ -131,7 +139,6 @@ export default function StepFourConfirmation({
     setShowPopup(true);
   };
 
-  // Verstuurt de bevestiging en stuurt de klant door naar de downloadpagina.
   const handleSubmit = async (toestemming: boolean) => {
     setIsSubmitting(true);
     setErrorMessage('');
@@ -182,7 +189,6 @@ export default function StepFourConfirmation({
     }
   };
 
-  // Scenario 2: geen akkoord -> niets versturen, instructie tonen op het scherm
   const handleManualContact = () => {
     setShowPopup(false);
     setErrorMessage('');
@@ -230,7 +236,7 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      {/* 2. BEVESTIGING TEKST & FORMULIER (Naam, E-mail, Telefoon) */}
+      {/* 2. BEVESTIGING TEKST & FORMULIER */}
       <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
         <div className="space-y-3">
           {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
@@ -287,7 +293,6 @@ export default function StepFourConfirmation({
           <p role="alert" className="text-sm text-red-700 text-left">{errorMessage}</p>
         )}
 
-        {/* SCENARIO 2: handmatige instructie, getoond na keuze 'niet akkoord' */}
         {manualNotice ? (
           <div className="space-y-6">
             <div className="bg-[#F9F6F0] border border-[#C5A880]/40 p-6 rounded-2xl text-left space-y-4" role="status">
