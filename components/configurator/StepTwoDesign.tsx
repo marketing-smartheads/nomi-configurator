@@ -25,7 +25,7 @@ export default function StepTwoDesign({
   const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = configuratorData?.stap2omschrijving || '';
   
-  const rawPakketten = configuratorData?.designPaketten || [];
+  const rawPakketten = configuratorData?.designPaketten || configuratorData?.configurator?.designPaketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   return (
