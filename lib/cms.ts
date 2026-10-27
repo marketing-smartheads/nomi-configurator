@@ -94,7 +94,7 @@ export async function getPageData() {
             bevestigingWaarschuwingTekst
             bevestigingAkkoordTekst
 
-            designPakketten {
+            designPaketten {
               pakketId
               pakketTitel
               pakketOmschrijving
@@ -116,15 +116,7 @@ export async function getPageData() {
                 nodes {
                   sourceUrl
                 }
-              }
-              bevestigingStap {
-                bannerAfbeelding {
-                  node {
-                    sourceUrl
-                  }
-                }
-                bannerTitel            
-              }            
+              }         
             }
 
             downloadSectie {

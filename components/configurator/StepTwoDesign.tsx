@@ -21,10 +21,9 @@ export default function StepTwoDesign({
     }
   }, []);
 
-  const titel = configuratorData?.titelStap1 || configuratorData?.titelStap2 || 'Kies uw designpakket';
+  const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = configuratorData?.stap2omschrijving || '';
   
-  // Direct gekoppeld aan de juiste array uit de console
   const rawPakketten = configuratorData?.designPaketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
@@ -45,7 +44,6 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            // Exacte subvelden uit de console-output
             const pakketId = pakket.pakketId || `pakket-${index}`;
             const pakketTitel = pakket.pakketTitel || '';
             const pakketOmschrijving = pakket.pakketOmschrijving || '';
