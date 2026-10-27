@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T10:36:52.082Z",
-  "generatedAtEpochMs": 1793097412082,
+  "generatedAt": "2026-10-27T10:42:56.269Z",
+  "generatedAtEpochMs": 1793097776269,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T10:36:50.377Z",
+    "lastActivityAt": "2026-10-27T10:42:53.950Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793097410377,
-      "lineCount": 516,
-      "charCount": 22756,
-      "hash": "2188db4aeac1",
+      "updatedAt": 1793097773950,
+      "lineCount": 506,
+      "charCount": 22365,
+      "hash": "7f6cc257e2a0",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 90: replaced 33 lines with 23 lines.",
+      "recordedAt": "2026-10-27T10:42:53.950Z",
+      "recordedAtEpochMs": 1793097773950,
+      "before": {
+        "kind": "text",
+        "lineCount": 516,
+        "charCount": 22756,
+        "hash": "2188db4aeac1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793097773950
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 506,
+        "charCount": 22365,
+        "hash": "7f6cc257e2a0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793097773950
+      },
+      "diff": {
+        "lineStart": 90,
+        "removedLines": 33,
+        "addedLines": 23,
+        "summary": "Line 90: replaced 33 lines with 23 lines.",
+        "beforeFragment": "data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding ||...",
+        "afterFragment": "{}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding || / storedPakket?.pakket_afbeelding || / storedPakket?.pa..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1072,27 +1104,16 @@
         "beforeFragment": "} from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configura...",
         "afterFragment": ", useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "",
-      "recordedAt": "2026-10-27T08:49:19.628Z",
-      "recordedAtEpochMs": 1793090959628,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 12
+      "count": 13
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1110,7 +1131,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 0ce0208 fix(components): ensure confirmation banner title and fallback image resolve correctly from stored package in StepFourConfirmation",
+    "headSummary": "2026-10-27 2d49e0d fix(components): add console.log debugging for confirmation banner data extraction in StepFourConfirmation",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1120,7 +1141,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 48904b7 by Bas van Dooremalen on 2026-10-27\n  fix(components): add robust fallbacks for confirmation banner image and title from root configurator data in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2d49e0d by Bas van Dooremalen on 2026-10-27\n  fix(components): add console.log debugging for confirmation banner data extraction in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

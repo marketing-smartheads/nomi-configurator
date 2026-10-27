@@ -87,15 +87,13 @@ export default function StepFourConfirmation({
   const bevData = 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
-    data?.bevestigingStap || 
-    data?.bevestiging_stap || 
     {};
 
   const rawImage = 
     bevData?.bannerAfbeelding || 
     bevData?.banner_afbeelding || 
     storedPakket?.pakketAfbeelding || 
-    storedPakket?.pakket_afbeelding ||
+    storedPakket?.pakket_afbeelding || 
     storedPakket?.pakketAafbeelding;
 
   const heroImage = 
@@ -109,17 +107,9 @@ export default function StepFourConfirmation({
   const heroTitle = 
     bevData?.bannerTitel || 
     bevData?.banner_titel || 
-    data?.bannerTitel ||
-    data?.banner_titel ||
-    '';
-
-  // 👉 Debug logs om direct in te zien wat er misgaat
-  console.log("DEBUG - configuratorData:", configuratorData);
-  console.log("DEBUG - storedPakket:", storedPakket);
-  console.log("DEBUG - bevData:", bevData);
-  console.log("DEBUG - rawImage:", rawImage);
-  console.log("DEBUG - heroImage:", heroImage);
-  console.log("DEBUG - heroTitle:", heroTitle);
+    storedPakket?.pakketTitel || 
+    storedPakket?.pakket_titel || 
+    'Uw nieuwe interieur';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
