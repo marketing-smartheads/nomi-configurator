@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T15:47:32.760Z",
-  "generatedAtEpochMs": 1793116052760,
+  "generatedAt": "2026-10-27T15:59:35.238Z",
+  "generatedAtEpochMs": 1793116775238,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/VoucherParamHandler.tsx",
+    "activeFile": "app/voucher/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/VoucherParamHandler.tsx",
+      "app/voucher/page.tsx",
       "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
+      "components/VoucherParamHandler.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T15:47:30.331Z",
+    "lastActivityAt": "2026-10-27T15:59:32.776Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/voucher/page.tsx",
+      "updatedAt": 1793116772776,
+      "lineCount": 22,
+      "charCount": 730,
+      "hash": "950e3928e018",
+      "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc..."
+    },
     {
       "filePath": "components/VoucherParamHandler.tsx",
       "updatedAt": 1793116050331,
@@ -629,17 +637,41 @@
       "charCount": 6049,
       "hash": "15c866223c79",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793091356454,
-      "lineCount": 422,
-      "charCount": 17204,
-      "hash": "7c13abe084e1",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/voucher/page.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 14 lines with 17 lines.",
+      "recordedAt": "2026-10-27T15:59:32.776Z",
+      "recordedAtEpochMs": 1793116772776,
+      "before": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 563,
+        "hash": "0ffd40656a77",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()...",
+        "updatedAt": 1793116772776
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 22,
+        "charCount": 730,
+        "hash": "950e3928e018",
+        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc...",
+        "updatedAt": 1793116772776
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 14,
+        "addedLines": 17,
+        "summary": "Line 4: replaced 14 lines with 17 lines.",
+        "beforeFragment": "export default async function VoucherLandingPage() { / const { sections, configuratorData } = await getPageData(); / return ( / <> / {/* Activeert automatisch de welkomst-popup...",
+        "afterFragment": "import VoucherParamHandler from '@/components/VoucherParamHandler'; / import { Suspense } from 'react'; / export default async function VoucherLandingPage() { / const { sections..."
+      }
+    },
     {
       "type": "save",
       "path": "components/VoucherParamHandler.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "EN NAUWKEURIGE FILTERFUNCTIE / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase(); // bijv. \"hotel chi...",
         "afterFragment": "FILTER OP BASIS VAN DE BESTAND TITEL IN HET CMS / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase();..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 41 lines with 71 lines.",
-      "recordedAt": "2026-10-27T12:30:17.617Z",
-      "recordedAtEpochMs": 1793104217617,
-      "before": {
-        "kind": "text",
-        "lineCount": 476,
-        "charCount": 22549,
-        "hash": "003818703585",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104217617
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 506,
-        "charCount": 23882,
-        "hash": "fa2fc7a584ea",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104217617
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 41,
-        "addedLines": 71,
-        "summary": "Line 196: replaced 41 lines with 71 lines.",
-        "beforeFragment": "exact het cijfer van de indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatc...",
-        "afterFragment": "het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMat..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 14
+      "count": 13
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1143,6 +1143,10 @@
       "count": 1
     },
     {
+      "filePath": "app/voucher/page.tsx",
+      "count": 1
+    },
+    {
       "filePath": "components/VoucherParamHandler.tsx",
       "count": 1
     },
@@ -1154,17 +1158,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 4ce9189 feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard",
+    "headSummary": "2026-10-27 e4c1b7f feat(voucher): remove code parameter from browser address bar after storing token",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/VoucherParamHandler.tsx"
+      "M app/voucher/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4ce9189 by Bas van Dooremalen on 2026-10-27\n  feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e4c1b7f by Bas van Dooremalen on 2026-10-27\n  feat(voucher): remove code parameter from browser address bar after storing token\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
