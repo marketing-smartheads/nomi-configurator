@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T14:51:18.900Z",
-  "generatedAtEpochMs": 1793112678900,
+  "generatedAt": "2026-10-27T14:58:51.097Z",
+  "generatedAtEpochMs": 1793113131097,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/vouchers/route.ts",
+    "activeFile": "app/dashboard/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/vouchers/route.ts",
+      "app/dashboard/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
-      "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
+      "app/api/vouchers/route.ts",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T14:51:17.159Z",
+    "lastActivityAt": "2026-10-27T14:58:48.731Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/dashboard/page.tsx",
+      "updatedAt": 1793113128731,
+      "lineCount": 299,
+      "charCount": 14038,
+      "hash": "13465c996da3",
+      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+    },
+    {
       "filePath": "app/api/vouchers/route.ts",
       "updatedAt": 1793112677159,
       "lineCount": 52,
       "charCount": 1568,
       "hash": "0eacd0d2ae72",
       "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-    },
-    {
-      "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1793112601149,
-      "lineCount": 302,
-      "charCount": 13974,
-      "hash": "bdc42371f0d2",
-      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 82: replaced 183 lines with 180 lines.",
+      "recordedAt": "2026-10-27T14:58:48.731Z",
+      "recordedAtEpochMs": 1793113128731,
+      "before": {
+        "kind": "text",
+        "lineCount": 302,
+        "charCount": 13974,
+        "hash": "bdc42371f0d2",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113128731
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 299,
+        "charCount": 14038,
+        "hash": "13465c996da3",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113128731
+      },
+      "diff": {
+        "lineStart": 82,
+        "removedLines": 183,
+        "addedLines": 180,
+        "summary": "Line 82: replaced 183 lines with 180 lines.",
+        "beforeFragment": "woningType = `\"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}\"`; / const indeling = `\"${details.gekozenIndeling || details.gekozen_indeling || '—'}\"`;...",
+        "afterFragment": "statusVal = String(details.status || ''); / const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/vouchers/route.ts",
@@ -1087,44 +1119,12 @@
         "beforeFragment": "Extract het getal uit de gekozen indeling (bijv. \"02\" of \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = inde...",
         "afterFragment": "Haal het getal uit de gekozen indeling (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerM..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 19 lines with 25 lines.",
-      "recordedAt": "2026-10-27T12:11:51.527Z",
-      "recordedAtEpochMs": 1793103111527,
-      "before": {
-        "kind": "text",
-        "lineCount": 453,
-        "charCount": 21397,
-        "hash": "86ed78038622",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103111527
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 459,
-        "charCount": 21729,
-        "hash": "28126dfa6b9d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103111527
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 19,
-        "addedLines": 25,
-        "summary": "Line 196: replaced 19 lines with 25 lines.",
-        "beforeFragment": "const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; / // Helper om b...",
-        "afterFragment": "// Extract het getal uit de gekozen indeling (bijv. \"02\" of \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = i..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 18
+      "count": 17
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1132,7 +1132,7 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -1150,21 +1150,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 d2a4134 feat(dashboard): display selected layout correctly and add voucher code column next to status in frontend dashboard",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-27 be73304 feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/api/vouchers/route.ts",
-      "M app/dashboard/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/dashboard/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 35290b3 by Bas van Dooremalen on 2026-10-27\n  feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- be73304 by Bas van Dooremalen on 2026-10-27\n  feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

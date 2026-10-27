@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T14:51:18.900Z
+Generated: 2026-10-27T14:58:51.097Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T14:51:17.159Z
+- Last activity: 2026-10-27T14:58:48.731Z
 ## Workspace Focus
-- Active file in focus: app/api/vouchers/route.ts
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (15), app/dashboard/page.tsx (3), app/api/confirm/route.ts (2)
-- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, lib/cms.ts
+- Active file in focus: app/dashboard/page.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), app/download/page.tsx (15), app/dashboard/page.tsx (4), app/api/confirm/route.ts (2)
+- Suggested starting points: app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, lib/cms.ts
 ## Current Workspace
-- Active file: app/api/vouchers/route.ts
+- Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/dashboard/page.tsx | 299 lines | 14038 chars | hash 13465c996da3
+  Last snapshot: 2026-10-27T14:58:48.731Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/vouchers/route.ts | 52 lines | 1568 chars | hash 0eacd0d2ae72
   Last snapshot: 2026-10-27T14:51:17.159Z
   Preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-- app/dashboard/page.tsx | 302 lines | 13974 chars | hash bdc42371f0d2
-  Last snapshot: 2026-10-27T14:50:01.149Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
   Last snapshot: 2026-10-27T13:33:01.869Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-10-27T14:58:48.731Z | saved | app/dashboard/page.tsx
+- Summary: Line 82: replaced 183 lines with 180 lines.
+- Before: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 299 lines | 14,038 chars | hash 13465c996da3 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`; / const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;..."
+- Current fragment: "statusVal = String(details.status || ''); / const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('..."
+
 ### 2026-10-27T14:51:17.159Z | saved | app/api/vouchers/route.ts
 - Summary: Line 23: inserted 2 lines.
 - Before: 51 lines | 1,537 chars | hash 8e387415497b | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
@@ -160,31 +167,20 @@ Structured manifest: workspace.json
 - Previous fragment: "Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = inde..."
 - Current fragment: "Haal het getal uit de gekozen indeling (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
 
-### 2026-10-27T12:11:51.527Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 19 lines with 25 lines.
-- Before: 453 lines | 21,397 chars | hash 86ed78038622 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 459 lines | 21,729 chars | hash 28126dfa6b9d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; / // Helper om b..."
-- Current fragment: "// Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = i..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (18 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (17 tracked changes)
 - app/download/page.tsx (15 tracked changes)
-- app/dashboard/page.tsx (3 tracked changes)
+- app/dashboard/page.tsx (4 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 d2a4134 feat(dashboard): display selected layout correctly and add voucher code column next to status in frontend dashboard
-- Working tree summary: 5 modifieds
-- M app/api/vouchers/route.ts
+- HEAD: 2026-10-27 be73304 feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard
+- Working tree summary: 1 modified
 - M app/dashboard/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 35290b3 by Bas van Dooremalen on 2026-10-27
-  feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter
+- be73304 by Bas van Dooremalen on 2026-10-27
+  feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

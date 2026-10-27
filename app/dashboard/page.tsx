@@ -79,15 +79,14 @@ export default function DashboardPage() {
     
     const rows = vouchers.map(v => {
       const details = v.voucherVelden || {};
-      const woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`;
-      const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;
-      const klantNaam = `"${details.klantNaam || details.klant_naam || '—'}"`;
-      const designPakket = `"${details.gekozenDesignpakket || details.gekozen_designpakket || '—'}"`;
-      
       const statusVal = String(details.status || '');
-      const isVerz = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('verzilverd');
-      const status = `"${isVerz ? 'Verzilverd' : 'Niet verzilverd'}"`;
+      const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('verzilverd');
       
+      const woningType = `"${isVerzilverd ? (details.gekozenTypeWoning || details.gekozen_type_woning || '—') : '—'}"`;
+      const indeling = `"${isVerzilverd ? (details.gekozenIndeling || details.gekozen_indeling || details.indeling || '—') : '—'}"`;
+      const klantNaam = `"${isVerzilverd ? (details.klantNaam || details.klant_naam || '—') : '—'}"`;
+      const designPakket = `"${isVerzilverd ? (details.gekozenDesignpakket || details.gekozen_designpakket || '—') : '—'}"`;
+      const status = `"${isVerzilverd ? 'Verzilverd' : 'Niet verzilverd'}"`;
       const code = `"${details.toegangscode || v.title || ''}"`;
 
       return [woningType, indeling, klantNaam, designPakket, status, code].join(';');
@@ -240,7 +239,7 @@ export default function DashboardPage() {
                   <tbody>
                     {fetchingData ? (
                       <tr>
-                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen...</td>
+                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
                       </tr>
                     ) : vouchers.length === 0 ? (
                       <tr>
@@ -249,19 +248,17 @@ export default function DashboardPage() {
                     ) : (
                       vouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
-                        
-                        const woningTypeLabel = details.gekozenTypeWoning || details.gekozen_type_woning || v.title || 'Type Onbekend';
-                        // Vang alle mogelijke veldnamen voor de indeling op
-                        const indelingLabel = details.gekozenIndeling || details.gekozen_indeling || details.indeling || '—';
-                        const klantNaam = details.klantNaam || details.klant_naam || '—';
-                        const designPakket = details.gekozenDesignpakket || details.gekozen_designpakket || '—';
-                        const vouchercode = details.toegangscode || v.title || '—';
-                        
                         const statusVal = String(details.status || '');
                         const isVerzilverd = 
                           statusVal === 'bevestigd' || 
                           statusVal.toLowerCase().includes('bevestigd') || 
                           statusVal.toLowerCase().includes('verzilverd');
+
+                        const woningTypeLabel = isVerzilverd ? (details.gekozenTypeWoning || details.gekozen_type_woning || '—') : '—';
+                        const indelingLabel = isVerzilverd ? (details.gekozenIndeling || details.gekozen_indeling || details.indeling || '—') : '—';
+                        const klantNaam = isVerzilverd ? (details.klantNaam || details.klant_naam || '—') : '—';
+                        const designPakket = isVerzilverd ? (details.gekozenDesignpakket || details.gekozen_designpakket || '—') : '—';
+                        const vouchercode = details.toegangscode || v.title || '—';
 
                         return (
                           <tr key={v.databaseId || index} className="border-b border-[#EFECE6] hover:bg-[#FAF9F6] transition">
