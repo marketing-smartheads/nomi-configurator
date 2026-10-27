@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T00:05:36.077Z
+Generated: 2026-10-27T00:08:31.695Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T00:05:34.241Z
+- Last activity: 2026-10-27T00:08:29.259Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: components/configurator/StepOnewoning.tsx (9), lib/cms.ts (8), components/configurator/StepTwoDesign.tsx (4), components/VoucherWelcomeModal.tsx (4)
+- Hottest files right now: lib/cms.ts (9), components/configurator/StepOnewoning.tsx (8), components/configurator/StepTwoDesign.tsx (4), components/VoucherWelcomeModal.tsx (4)
 - Suggested starting points: lib/cms.ts, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/VoucherWelcomeModal.tsx, components/ConfiguratorScreen.tsx, app/voucher/page.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (36), create (4)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 215 lines | 5823 chars | hash add39ca44442
-  Last snapshot: 2026-10-27T00:05:34.241Z
+- lib/cms.ts | 215 lines | 5824 chars | hash 3b57281655f0
+  Last snapshot: 2026-10-27T00:08:29.259Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5562 chars | hash 02539b1ab342
   Last snapshot: 2026-10-26T23:59:24.462Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-27T00:08:29.259Z | saved | lib/cms.ts
+- Summary: Line 97: inserted 1 line.
+- Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 215 lines | 5,824 chars | hash 3b57281655f0 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Current fragment: "k"
+
 ### 2026-10-27T00:05:34.241Z | saved | lib/cms.ts
 - Summary: Saved without a textual diff.
 - Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -154,17 +160,10 @@ Structured manifest: workspace.json
 - Previous fragment: "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be..."
 - Current fragment: "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
 
-### 2026-10-26T15:22:36.985Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 12: replaced 65 lines with 62 lines.
-- Before: 106 lines | 4,670 chars | hash c684c361c24a | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo..."
-- After: 103 lines | 4,563 chars | hash 3c15fc14d5bc | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-- Previous fragment: "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
-- Current fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
-
 
 ## Hot Files
-- components/configurator/StepOnewoning.tsx (9 tracked changes)
-- lib/cms.ts (8 tracked changes)
+- lib/cms.ts (9 tracked changes)
+- components/configurator/StepOnewoning.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
 - components/ConfiguratorScreen.tsx (3 tracked changes)
@@ -174,12 +173,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 6c053ae fix(cms): update graphql query field to use design_paketten matching acf backend
-- Working tree summary: 4 modifieds
-- M graphify-out/WORKSPACE_MEMORY.md
+- HEAD: 2026-10-27 59c396f fix(cms): restore designPaketten field in graphql query conforming to schema
+- Working tree summary: 1 modified
 - M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -187,8 +183,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 5a507c1 by Bas van Dooremalen on 2026-10-27
-  fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel
+- 59c396f by Bas van Dooremalen on 2026-10-27
+  fix(cms): restore designPaketten field in graphql query conforming to schema
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T00:05:36.077Z",
-  "generatedAtEpochMs": 1793059536077,
+  "generatedAt": "2026-10-27T00:08:31.695Z",
+  "generatedAtEpochMs": 1793059711695,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T00:05:34.241Z",
+    "lastActivityAt": "2026-10-27T00:08:29.259Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793059534241,
+      "updatedAt": 1793059709259,
       "lineCount": 215,
-      "charCount": 5823,
-      "hash": "add39ca44442",
+      "charCount": 5824,
+      "hash": "3b57281655f0",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 97: inserted 1 line.",
+      "recordedAt": "2026-10-27T00:08:29.259Z",
+      "recordedAtEpochMs": 1793059709259,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5823,
+        "hash": "add39ca44442",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059709259
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5824,
+        "hash": "3b57281655f0",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059709259
+      },
+      "diff": {
+        "lineStart": 97,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 97: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "k"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1059,47 +1091,15 @@
         "beforeFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be...",
         "afterFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 12: replaced 65 lines with 62 lines.",
-      "recordedAt": "2026-10-26T15:22:36.985Z",
-      "recordedAtEpochMs": 1793028156985,
-      "before": {
-        "kind": "text",
-        "lineCount": 106,
-        "charCount": 4670,
-        "hash": "c684c361c24a",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / // Filter de lijst op basis van het wo...",
-        "updatedAt": 1793028156985
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 103,
-        "charCount": 4563,
-        "hash": "3c15fc14d5bc",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793028156985
-      },
-      "diff": {
-        "lineStart": 12,
-        "removedLines": 65,
-        "addedLines": 62,
-        "summary": "Line 12: replaced 65 lines with 62 lines.",
-        "beforeFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam...",
-        "afterFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
+      "filePath": "lib/cms.ts",
       "count": 9
     },
     {
-      "filePath": "lib/cms.ts",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 8
     },
     {
@@ -1130,20 +1130,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 6c053ae fix(cms): update graphql query field to use design_paketten matching acf backend",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-27 59c396f fix(cms): restore designPaketten field in graphql query conforming to schema",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5a507c1 by Bas van Dooremalen on 2026-10-27\n  fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 59c396f by Bas van Dooremalen on 2026-10-27\n  fix(cms): restore designPaketten field in graphql query conforming to schema\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
