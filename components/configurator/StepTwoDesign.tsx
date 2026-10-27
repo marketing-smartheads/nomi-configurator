@@ -10,7 +10,12 @@ export default function StepTwoDesign({
   designPakket, 
   setDesignPakket 
 }: any) {
-  console.log("Stap 2 configuratorData:", configuratorData);
+  const data = configuratorData?.configurator || configuratorData;
+
+  const titel = data?.titelStap2 || 'Kies uw designpakket';
+  const omschrijving = data?.stap2omschrijving || '';
+  const pakkettenLijst = data?.designPakketten || [];
+
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {
@@ -21,12 +26,6 @@ export default function StepTwoDesign({
       }
     }
   }, []);
-
-  const titel = configuratorData?.titelStap2 || 'Kies uw designpakket';
-  const omschrijving = configuratorData?.stap2omschrijving || '';
-  
-  const rawPakketten = configuratorData?.designPaketten || configuratorData?.configurator?.designPaketten || [];
-  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   return (
     <div className="space-y-12">
