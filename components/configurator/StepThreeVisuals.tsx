@@ -19,6 +19,10 @@ export default function StepThreeVisuals({
     ? rawPakketten 
     : rawPakketten?.nodes || rawPakketten?.edges || [];
   
+  // Debug logs om direct in de browserconsole (F12) te zien wat er binnenkomt
+  console.log("CHECK - Ontvangen designPakket prop:", designPakket);
+  console.log("CHECK - Beschikbare pakkettenLijst:", pakkettenLijst);
+
   // Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken
   const huidigPakket = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase();
@@ -27,6 +31,8 @@ export default function StepThreeVisuals({
     
     return pId === selected || pTitel === selected;
   }) || pakkettenLijst[0];
+
+  console.log("CHECK - Geselecteerd huidigPakket:", huidigPakket);
 
   const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;

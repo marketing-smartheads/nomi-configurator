@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T08:27:43.154Z",
-  "generatedAtEpochMs": 1793089663154,
+  "generatedAt": "2026-10-27T08:32:27.283Z",
+  "generatedAtEpochMs": 1793089947283,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T08:27:40.731Z",
+    "lastActivityAt": "2026-10-27T08:32:25.333Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793089660731,
-      "lineCount": 262,
-      "charCount": 10995,
-      "hash": "b291afd179c3",
+      "updatedAt": 1793089945333,
+      "lineCount": 268,
+      "charCount": 11288,
+      "hash": "a06321968bbf",
       "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 22: replaced 8 lines with 14 lines.",
+      "recordedAt": "2026-10-27T08:32:25.333Z",
+      "recordedAtEpochMs": 1793089945333,
+      "before": {
+        "kind": "text",
+        "lineCount": 262,
+        "charCount": 10995,
+        "hash": "b291afd179c3",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con...",
+        "updatedAt": 1793089945333
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 268,
+        "charCount": 11288,
+        "hash": "a06321968bbf",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con...",
+        "updatedAt": 1793089945333
+      },
+      "diff": {
+        "lineStart": 22,
+        "removedLines": 8,
+        "addedLines": 14,
+        "summary": "Line 22: replaced 8 lines with 14 lines.",
+        "beforeFragment": "Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken / const huidigPakket = pakkettenLijst.find((p: any) => { / const pId = (p.pakketId || p.pakket_...",
+        "afterFragment": "Debug logs om direct in de browserconsole (F12) te zien wat er binnenkomt / console.log(\"CHECK - Ontvangen designPakket prop:\", designPakket); / console.log(\"CHECK - Beschikbare..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1073,38 +1105,6 @@
         "updatedAt": 1793059534241
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 97: replaced 1 line with 1 line.",
-      "recordedAt": "2026-10-27T00:05:29.102Z",
-      "recordedAtEpochMs": 1793059529102,
-      "before": {
-        "kind": "text",
-        "lineCount": 215,
-        "charCount": 5824,
-        "hash": "305c860c6d40",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793059529102
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 215,
-        "charCount": 5823,
-        "hash": "add39ca44442",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793059529102
-      },
-      "diff": {
-        "lineStart": 97,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 97: replaced 1 line with 1 line.",
-        "beforeFragment": "_p",
-        "afterFragment": "P"
-      }
     }
   ],
   "hotFiles": [
@@ -1122,7 +1122,7 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 4
+      "count": 5
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1134,7 +1134,7 @@
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
-      "count": 2
+      "count": 1
     },
     {
       "filePath": "lib/useConfigurator.ts",
@@ -1144,7 +1144,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 b7f6b8e fix(components): trim whitespace from pakketId matching and fix field fallback access in StepThreeVisuals",
+    "headSummary": "2026-10-27 2dbd1f2 fix(components): fallback to matching designPakket by title or id in StepThreeVisuals",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
