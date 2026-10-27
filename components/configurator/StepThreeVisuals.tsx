@@ -8,22 +8,19 @@ export default function StepThreeVisuals({
   configuratorData, 
   designPakket 
 }: any) {
-  const rawPakketten = 
-    configuratorData?.designPaketten || 
-    configuratorData?.design_paketten || 
-    configuratorData?.configuratorBeheer?.designPaketten ||
-    configuratorData?.configuratorBeheer?.design_paketten ||
-    [];
+  // Haal de configurator data op dezelfde robuuste manier op als in Stap 2
+  const data = configuratorData?.configurator || configuratorData;
+  const rawPakketten = data?.designPakketten || data?.design_paketten || [];
 
   const pakkettenLijst = Array.isArray(rawPakketten) 
     ? rawPakketten 
     : rawPakketten?.nodes || rawPakketten?.edges || [];
   
-  // Debug logs om direct in de browserconsole (F12) te zien wat er binnenkomt
+  // Debug logs om de data te verifiëren in de console
   console.log("CHECK - Ontvangen designPakket prop:", designPakket);
-  console.log("CHECK - Beschikbare pakkettenLijst:", pakkettenLijst);
+  console.log("CHECK - Gecorrigeerde pakkettenLijst:", pakkettenLijst);
 
-  // Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken
+  // Zoek het juiste pakket op basis van ID of titel (case-insensitive en getrimd)
   const huidigPakket = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase();
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase();
@@ -36,7 +33,7 @@ export default function StepThreeVisuals({
 
   const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
-  const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || configuratorData?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
+  const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
   const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || [];
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
