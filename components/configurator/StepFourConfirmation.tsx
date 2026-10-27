@@ -84,7 +84,6 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap data op uit het geselecteerde pakket of direct uit configuratorData
   const bevData = 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
@@ -96,7 +95,7 @@ export default function StepFourConfirmation({
     bevData?.bannerAfbeelding || 
     bevData?.banner_afbeelding || 
     storedPakket?.pakketAafbeelding || 
-    storedPakket?.pakket_a afbeelding;
+    storedPakket?.pakket_a_afbeelding;
 
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
