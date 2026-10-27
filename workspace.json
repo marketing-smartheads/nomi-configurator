@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T10:56:08.018Z",
-  "generatedAtEpochMs": 1793098568018,
+  "generatedAt": "2026-10-27T11:00:51.319Z",
+  "generatedAtEpochMs": 1793098851319,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,8 +24,8 @@
     "suggestedStartingPoints": [
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
+      "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T10:56:05.712Z",
+    "lastActivityAt": "2026-10-27T11:00:49.581Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793098565712,
-      "lineCount": 492,
-      "charCount": 22077,
-      "hash": "a7ff2f0ae634",
+      "updatedAt": 1793098849581,
+      "lineCount": 501,
+      "charCount": 22218,
+      "hash": "5ecfa4a27ef8",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 87: replaced 12 lines with 21 lines.",
+      "recordedAt": "2026-10-27T11:00:49.581Z",
+      "recordedAtEpochMs": 1793098849581,
+      "before": {
+        "kind": "text",
+        "lineCount": 492,
+        "charCount": 22077,
+        "hash": "a7ff2f0ae634",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793098849581
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 501,
+        "charCount": 22218,
+        "hash": "5ecfa4a27ef8",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793098849581
+      },
+      "diff": {
+        "lineStart": 87,
+        "removedLines": 12,
+        "addedLines": 21,
+        "summary": "Line 87: replaced 12 lines with 21 lines.",
+        "beforeFragment": "echtstreeks op uit het geselecteerde pakket[cite: 21] / const bevData = storedPakket?.bevestigingStap || {}; / const rawImage = bevData?.bannerAfbeelding; / const heroImage = /...",
+        "afterFragment": "obuust op (inclusief snake_case en camelCase varianten) / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevDa..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1079,56 +1111,24 @@
         "beforeFragment": "bevestigingsstap op uit configuratorData of de root / const bevData = / configuratorData?.bevestigingStap || / configuratorData?.bevestiging_stap || / configuratorData?.configur...",
         "afterFragment": "robuuste configurator data op / const data = configuratorData?.configurator || configuratorData; / const beheer = data?.configuratorBeheer || data; / const bevData = / beheren?...."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 79: replaced 6 lines with 8 lines.",
-      "recordedAt": "2026-10-27T09:00:45.677Z",
-      "recordedAtEpochMs": 1793091645677,
-      "before": {
-        "kind": "text",
-        "lineCount": 489,
-        "charCount": 22030,
-        "hash": "7a4796eafb68",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1793091645677
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 491,
-        "charCount": 22125,
-        "hash": "be14cb5a90ac",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1793091645677
-      },
-      "diff": {
-        "lineStart": 79,
-        "removedLines": 6,
-        "addedLines": 8,
-        "summary": "Line 79: replaced 6 lines with 8 lines.",
-        "beforeFragment": "Robuuste opzet voor het ophalen van de banner gegevens uit het pakket of configuratorData / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap |...",
-        "afterFragment": "Haal de bevestigingsstap op uit configuratorData of de root / const bevData = / configuratorData?.bevestigingStap || / configuratorData?.bevestiging_stap || / configuratorData?...."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 15
+      "count": 16
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 8
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "filePath": "lib/cms.ts",
       "count": 8
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 8
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 7
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1138,7 +1138,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 bae5bd1 fix(cms): haal bevestigingStap op in designPakketten query",
+    "headSummary": "2026-10-27 c20c708 fix(components): extract confirmation banner image and title directly from CMS confirmation step data in StepFourConfirmation",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
