@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T23:59:26.306Z",
-  "generatedAtEpochMs": 1793059166306,
+  "generatedAt": "2026-10-27T00:03:24.212Z",
+  "generatedAtEpochMs": 1793059404212,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
+      "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
       "components/ConfiguratorScreen.tsx",
-      "lib/cms.ts",
+      "components/configurator/StepTwoDesign.tsx",
       "components/VoucherWelcomeModal.tsx",
       "app/voucher/page.tsx",
       "components/configurator/StepThreeVisuals.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-26T23:59:24.462Z",
+    "lastActivityAt": "2026-10-27T00:03:21.804Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793059401804,
+      "lineCount": 215,
+      "charCount": 5824,
+      "hash": "305c860c6d40",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
+    {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1793059164462,
       "lineCount": 135,
       "charCount": 5562,
       "hash": "02539b1ab342",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793059154045,
-      "lineCount": 215,
-      "charCount": 5823,
-      "hash": "add39ca44442",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 97: replaced 1 line with 1 line.",
+      "recordedAt": "2026-10-27T00:03:21.804Z",
+      "recordedAtEpochMs": 1793059401804,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5823,
+        "hash": "add39ca44442",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059401804
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5824,
+        "hash": "305c860c6d40",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059401804
+      },
+      "diff": {
+        "lineStart": 97,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 97: replaced 1 line with 1 line.",
+        "beforeFragment": "P",
+        "afterFragment": "_p"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1066,38 +1098,6 @@
         "beforeFragment": "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,...",
         "afterFragment": "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/MainContent.tsx",
-      "toPath": "",
-      "summary": "Line 27: replaced 172 lines with 165 lines.",
-      "recordedAt": "2026-10-26T15:14:54.076Z",
-      "recordedAtEpochMs": 1793027694076,
-      "before": {
-        "kind": "text",
-        "lineCount": 227,
-        "charCount": 9623,
-        "hash": "f904222d275d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793027694076
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 220,
-        "charCount": 9176,
-        "hash": "2f54f2a9b999",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793027694076
-      },
-      "diff": {
-        "lineStart": 27,
-        "removedLines": 172,
-        "addedLines": 165,
-        "summary": "Line 27: replaced 172 lines with 165 lines.",
-        "beforeFragment": "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /...",
-        "afterFragment": "selectedIndeling, setSelectedIndeling, // <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useSt..."
-      }
     }
   ],
   "hotFiles": [
@@ -1106,11 +1106,11 @@
       "count": 9
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "lib/cms.ts",
       "count": 6
     },
     {
-      "filePath": "lib/cms.ts",
+      "filePath": "components/ConfiguratorScreen.tsx",
       "count": 5
     },
     {
@@ -1137,21 +1137,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 5bdf9c9 set previous code back online",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-10-27 5a507c1 fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ed5fb12 by Bas van Dooremalen on 2026-10-26\n  fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5a507c1 by Bas van Dooremalen on 2026-10-27\n  fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

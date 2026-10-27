@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-26T23:59:26.306Z
+Generated: 2026-10-27T00:03:24.212Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-26T23:59:24.462Z
+- Last activity: 2026-10-27T00:03:21.804Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: components/configurator/StepOnewoning.tsx (9), components/ConfiguratorScreen.tsx (6), lib/cms.ts (5), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, lib/cms.ts, components/VoucherWelcomeModal.tsx, app/voucher/page.tsx
+- Active file in focus: lib/cms.ts
+- Hottest files right now: components/configurator/StepOnewoning.tsx (9), lib/cms.ts (6), components/ConfiguratorScreen.tsx (5), components/configurator/StepTwoDesign.tsx (4)
+- Suggested starting points: lib/cms.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepTwoDesign.tsx, components/VoucherWelcomeModal.tsx, app/voucher/page.tsx
 ## Current Workspace
-- Active file: components/configurator/StepTwoDesign.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (36), create (4)
 - Remembered file snapshots: 44
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 215 lines | 5824 chars | hash 305c860c6d40
+  Last snapshot: 2026-10-27T00:03:21.804Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5562 chars | hash 02539b1ab342
   Last snapshot: 2026-10-26T23:59:24.462Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- lib/cms.ts | 215 lines | 5823 chars | hash add39ca44442
-  Last snapshot: 2026-10-26T23:59:14.045Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepThreeVisuals.tsx | 263 lines | 10896 chars | hash 88578395a651
   Last snapshot: 2026-10-26T23:39:45.836Z
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-27T00:03:21.804Z | saved | lib/cms.ts
+- Summary: Line 97: replaced 1 line with 1 line.
+- Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 215 lines | 5,824 chars | hash 305c860c6d40 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "P"
+- Current fragment: "_p"
+
 ### 2026-10-26T23:59:24.462Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 24: replaced 25 lines with 23 lines.
 - Before: 137 lines | 5,707 chars | hash ab8329f59817 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -156,18 +163,11 @@ Structured manifest: workspace.json
 - Previous fragment: "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,..."
 - Current fragment: "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
 
-### 2026-10-26T15:14:54.076Z | saved | components/MainContent.tsx
-- Summary: Line 27: replaced 172 lines with 165 lines.
-- Before: 227 lines | 9,623 chars | hash f904222d275d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 220 lines | 9,176 chars | hash 2f54f2a9b999 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
-- Current fragment: "selectedIndeling, setSelectedIndeling, // <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useSt..."
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (9 tracked changes)
-- components/ConfiguratorScreen.tsx (6 tracked changes)
-- lib/cms.ts (5 tracked changes)
+- lib/cms.ts (6 tracked changes)
+- components/ConfiguratorScreen.tsx (5 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
@@ -176,13 +176,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 5bdf9c9 set previous code back online
-- Working tree summary: 5 modifieds
-- M components/configurator/StepTwoDesign.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
+- HEAD: 2026-10-27 5a507c1 fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel
+- Working tree summary: 1 modified
 - M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -190,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- ed5fb12 by Bas van Dooremalen on 2026-10-26
-  fix(cms): verwijder niet-bestaand bevestigingStap subveld uit designPaketten graphql query
+- 5a507c1 by Bas van Dooremalen on 2026-10-27
+  fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
