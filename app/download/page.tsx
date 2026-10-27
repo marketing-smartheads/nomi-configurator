@@ -197,73 +197,44 @@ export default function DownloadPage() {
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
   const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '2'; // Standaard 2
 
-  // SLIMME EN NAUWKEURIGE FILTERFUNCTIE
+  // SLIMME FILTER OP BASIS VAN DE BESTAND TITEL IN HET CMS
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
     const activePakketLower = (designPakket || '').toLowerCase(); // bijv. "hotel chic"
     const isHotelChic = activePakketLower.includes('hotel');
     const uitsluitPakket = isHotelChic ? 'modern raw' : 'hotel chic';
-    const uitsluitPakketAlt = isHotelChic ? 'modern_raw' : 'hotel_chic';
 
     return rawBestandenLijst.filter((bestand: any) => {
+      // Primair de titel uit het CMS controleren (`Bestand Titel`)
       const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
-      const urlOfPad = (getFileUrl(bestand) || '').toLowerCase();
-      const combined = `${titel} ${urlOfPad}`;
+      if (!titel) return false;
 
-      // 1. Sluit direct bestanden uit die van het andere designpakket zijn
-      if (combined.includes(uitsluitPakket) || combined.includes(uitsluitPakketAlt)) {
-        return false;
-      }
+      // 1. Altijd het andere designpakket uitsluiten op basis van de titel
+      if (titel.includes(uitsluitPakket)) return false;
 
-      // 2. Bepaal of het bestand bij ons gekozen indelingnummer hoort (of algemeen is zoals moodboards/infosheets)
-      const isAlgemeen = !combined.includes('ec0') && !combined.includes('ec') && !combined.includes('concept') && !combined.includes('indeling');
-      
-      if (isAlgemeen) {
-        return combined.includes(activePakketLower) || combined.includes('moodboard') || combined.includes('info sheet');
-      }
+      // 2. Moet het gekozen designpakket in de titel bevatten (of een algemeen bestand zijn zoals moodboard / info sheet)
+      const hoortBijPakket = titel.includes(activePakketLower) || titel.includes('moodboard') || titel.includes('info sheet');
+      if (!hoortBijPakket) return false;
 
-      // 3. Voor specifieke bestanden (technische tekeningen, concepten, indelingen): 
-      // Controleer of het juiste indelingnummer erin voorkomt (bijv. "2", "02", "ec02", "concept 2")
-      const matchJuisteIndeling = 
-        combined.includes(`ec0${indelingNummer}`) || 
-        combined.includes(`ec${indelingNummer}`) || 
-        combined.includes(`concept ${indelingNummer}`) || 
-        combined.includes(`concept-${indelingNummer}`) || 
-        combined.includes(`concept_${indelingNummer}`) || 
-        combined.includes(`concept${indelingNummer}`) || 
-        combined.includes(`indeling 0${indelingNummer}`) || 
-        combined.includes(`indeling0${indelingNummer}`) ||
-        combined.includes(`_0${indelingNummer}_`) ||
-        combined.includes(`_0${indelingNummer}.`) ||
-        combined.includes(`-${indelingNummer}-`) ||
-        combined.includes(`type e${indelingNummer}`) ||
-        combined.includes(`type_e_${indelingNummer}`) ||
-        combined.includes(`type_e0${indelingNummer}`) ||
-        combined.includes(`typeec0${indelingNummer}`);
-
-      if (matchJuisteIndeling) {
-        return true;
-      }
-
-      // Als er een ander indelingnummer in staat (bijv. 1 i.p.v. 2), direct uitsluiten
-      const andereGetallen = ['1', '3', '4', '5'].filter(n => n !== indelingNummer);
-      for (const ander of andereGetallen) {
+      // 3. Controleer indeling op basis van de titel (bijv. "ec02", "concept 2", "02")
+      // Als de titel expliciet een ander indelingnummer bevat (zoals 1), direct uitsluiten!
+      const andereNummers = ['1', '3', '4', '5', '6'].filter(n => n !== indelingNummer);
+      for (const anderNummer of andereNummers) {
         if (
-          combined.includes(`ec0${ander}`) || 
-          combined.includes(`ec${ander}`) || 
-          combined.includes(`concept ${ander}`) || 
-          combined.includes(`concept-${ander}`) || 
-          combined.includes(`concept_${ander}`) || 
-          combined.includes(`concept${ander}`) || 
-          combined.includes(`indeling 0${ander}`) || 
-          combined.includes(`indeling0${ander}`) ||
-          combined.includes(`-_0${ander}_`) ||
-          combined.includes(`-${ander}.`)
+          titel.includes(`ec0${anderNummer}`) || 
+          titel.includes(`ec${anderNummer}`) || 
+          titel.includes(`concept ${anderNummer}`) || 
+          titel.includes(`concept-${anderNummer}`) || 
+          titel.includes(`concept_${anderNummer}`) || 
+          titel.includes(`concept${anderNummer}`) || 
+          titel.includes(`indeling 0${anderNummer}`) || 
+          titel.includes(`indeling0${anderNummer}`) ||
+          titel.includes(`-${anderNummer}`)
         ) {
           return false;
         }
       }
 
-      return combined.includes(activePakketLower);
+      return true;
     });
   };
 

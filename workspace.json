@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T12:30:19.954Z",
-  "generatedAtEpochMs": 1793104219954,
+  "generatedAt": "2026-10-27T12:35:48.812Z",
+  "generatedAtEpochMs": 1793104548812,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -26,7 +26,6 @@
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "app/api/confirm/route.ts",
-      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T12:30:17.617Z",
+    "lastActivityAt": "2026-10-27T12:35:46.347Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793104217617,
-      "lineCount": 506,
-      "charCount": 23882,
-      "hash": "fa2fc7a584ea",
+      "updatedAt": 1793104546347,
+      "lineCount": 477,
+      "charCount": 22508,
+      "hash": "0358ebd61053",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -640,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 200: replaced 67 lines with 38 lines.",
+      "recordedAt": "2026-10-27T12:35:46.347Z",
+      "recordedAtEpochMs": 1793104546347,
+      "before": {
+        "kind": "text",
+        "lineCount": 506,
+        "charCount": 23882,
+        "hash": "fa2fc7a584ea",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793104546347
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 477,
+        "charCount": 22508,
+        "hash": "0358ebd61053",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793104546347
+      },
+      "diff": {
+        "lineStart": 200,
+        "removedLines": 67,
+        "addedLines": 38,
+        "summary": "Line 200: replaced 67 lines with 38 lines.",
+        "beforeFragment": "EN NAUWKEURIGE FILTERFUNCTIE / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase(); // bijv. \"hotel chi...",
+        "afterFragment": "FILTER OP BASIS VAN DE BESTAND TITEL IN HET CMS / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase();..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1087,38 +1118,6 @@
         "beforeFragment": "echtstreeks op uit het geselecteerde pakket[cite: 21] / const bevData = storedPakket?.bevestigingStap || {}; / const rawImage = bevData?.bannerAfbeelding; / const heroImage = /...",
         "afterFragment": "obuust op (inclusief snake_case en camelCase varianten) / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevDa..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 87: replaced 23 lines with 12 lines.",
-      "recordedAt": "2026-10-27T10:56:05.712Z",
-      "recordedAtEpochMs": 1793098565712,
-      "before": {
-        "kind": "text",
-        "lineCount": 503,
-        "charCount": 22267,
-        "hash": "9d1aaba99dd7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793098565712
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 492,
-        "charCount": 22077,
-        "hash": "a7ff2f0ae634",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793098565712
-      },
-      "diff": {
-        "lineStart": 87,
-        "removedLines": 23,
-        "addedLines": 12,
-        "summary": "Line 87: replaced 23 lines with 12 lines.",
-        "beforeFragment": "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || /...",
-        "afterFragment": "[cite: 21] / const bevData = storedPakket?.bevestigingStap || {}; / const rawImage = bevData?.bannerAfbeelding; / const heroImage = / typeof rawImage === 'string' ? rawImage : /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1127,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1139,10 +1138,6 @@
       "count": 1
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 1
-    },
-    {
       "filePath": "lib/cms.ts",
       "count": 1
     }
@@ -1150,7 +1145,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 4aa8185 fix(download): filter out layout 1 files and successfully render layout 2 technical drawings and correct design package assets",
+    "headSummary": "2026-10-27 97af719 fix(download): update file filtering logic to correctly match layout 2 technical drawings and concept files while excluding layout 1 and alternative design packages",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1160,7 +1155,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4aa8185 by Bas van Dooremalen on 2026-10-27\n  fix(download): filter out layout 1 files and successfully render layout 2 technical drawings and correct design package assets\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 97af719 by Bas van Dooremalen on 2026-10-27\n  fix(download): update file filtering logic to correctly match layout 2 technical drawings and concept files while excluding layout 1 and alternative design pac…\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
