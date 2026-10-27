@@ -193,25 +193,31 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
+  // Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02")
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
-  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '';
+  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; // bijv. "2"
 
-  // Helper om bestanden te filteren met slimme fallback
+  // Strenge filter: dwing af dat alleen bestanden worden getoond die bij de juiste indeling horen
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
-    const pakketGefilterd = rawBestandenLijst.filter((bestand: any) => {
+    return rawBestandenLijst.filter((bestand: any) => {
       const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-      return fileName.includes(normPakket);
+      
+      // Moet sowieso bij het pakket horen
+      if (!fileName.includes(normPakket)) return false;
+
+      // Als het een technische tekening / plattegrond / concept is met een nummer erin, filter dan strikt op het indelingnummer
+      if (indelingNummer) {
+        const bevatOnjuistNummer = ['1', '2', '3', '4', '5'].some(num => {
+          if (num === indelingNummer) return false;
+          // Als de bestandsnaam expliciet een andernummer bevat (bijv. "ec01" of "concept1" terwijl wij 2 willen)
+          return fileName.includes(`ec0${num}`) || fileName.includes(`ec${num}`) || fileName.includes(`concept${num}`) || fileName.includes(`indeling0${num}`) || fileName.includes(`indeling${num}`);
+        });
+
+        if (bevatOnjuistNummer) return false;
+      }
+
+      return true;
     });
-
-    if (!indelingNummer) return pakketGefilterd;
-
-    const specifiekGefilterd = pakketGefilterd.filter((bestand: any) => {
-      const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-      return fileName.includes(indelingNummer) || fileName.includes(`0${indelingNummer}`);
-    });
-
-    // Als er specifieke bestanden zijn voor deze indeling, toon die. Zo niet, toon alles van het pakket als fallback.
-    return specifiekGefilterd.length > 0 ? specifiekGefilterd : pakketGefilterd;
   };
 
   if (needsVoucherInput) {

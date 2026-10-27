@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T12:07:33.612Z",
-  "generatedAtEpochMs": 1793102853612,
+  "generatedAt": "2026-10-27T12:11:53.269Z",
+  "generatedAtEpochMs": 1793103113269,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T12:07:31.334Z",
+    "lastActivityAt": "2026-10-27T12:11:51.527Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793102851334,
-      "lineCount": 453,
-      "charCount": 21397,
-      "hash": "86ed78038622",
+      "updatedAt": 1793103111527,
+      "lineCount": 459,
+      "charCount": 21729,
+      "hash": "28126dfa6b9d",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 196: replaced 19 lines with 25 lines.",
+      "recordedAt": "2026-10-27T12:11:51.527Z",
+      "recordedAtEpochMs": 1793103111527,
+      "before": {
+        "kind": "text",
+        "lineCount": 453,
+        "charCount": 21397,
+        "hash": "86ed78038622",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793103111527
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 459,
+        "charCount": 21729,
+        "hash": "28126dfa6b9d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793103111527
+      },
+      "diff": {
+        "lineStart": 196,
+        "removedLines": 19,
+        "addedLines": 25,
+        "summary": "Line 196: replaced 19 lines with 25 lines.",
+        "beforeFragment": "const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; / // Helper om b...",
+        "afterFragment": "// Extract het getal uit de gekozen indeling (bijv. \"02\" of \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = i..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "// Haal de bevestigingsstap data op uit het geselecteerde pakket of configurator root / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || /...",
         "afterFragment": "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 87: replaced 33 lines with 30 lines.",
-      "recordedAt": "2026-10-27T10:32:59.443Z",
-      "recordedAtEpochMs": 1793097179443,
-      "before": {
-        "kind": "text",
-        "lineCount": 513,
-        "charCount": 22622,
-        "hash": "339a7b6eda77",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793097179443
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 510,
-        "charCount": 22576,
-        "hash": "3e972f72e684",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793097179443
-      },
-      "diff": {
-        "lineStart": 87,
-        "removedLines": 33,
-        "addedLines": 30,
-        "summary": "Line 87: replaced 33 lines with 30 lines.",
-        "beforeFragment": "pakket, de configurator root of direct uit opties / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bev...",
-        "afterFragment": "geselecteerde pakket of configurator root / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bevestiging..."
-      }
     }
   ],
   "hotFiles": [
@@ -1132,11 +1132,11 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 6
+      "count": 7
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "lib/cms.ts",
@@ -1150,7 +1150,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 d348d1f fix(download): restore flexible file filtering by design package to ensure all files and zip generation work correctly",
+    "headSummary": "2026-10-27 5099d80 fix(download): implement smart layout filtering with automatic fallback to ensure all files and zip downloads render correctly",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
