@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T00:03:24.212Z
+Generated: 2026-10-27T00:05:36.077Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T00:03:21.804Z
+- Last activity: 2026-10-27T00:05:34.241Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: components/configurator/StepOnewoning.tsx (9), lib/cms.ts (6), components/ConfiguratorScreen.tsx (5), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: lib/cms.ts, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepTwoDesign.tsx, components/VoucherWelcomeModal.tsx, app/voucher/page.tsx
+- Hottest files right now: components/configurator/StepOnewoning.tsx (9), lib/cms.ts (8), components/configurator/StepTwoDesign.tsx (4), components/VoucherWelcomeModal.tsx (4)
+- Suggested starting points: lib/cms.ts, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/VoucherWelcomeModal.tsx, components/ConfiguratorScreen.tsx, app/voucher/page.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
 - Tracked files in snapshot: 69
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (36), create (4)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- lib/cms.ts | 215 lines | 5824 chars | hash 305c860c6d40
-  Last snapshot: 2026-10-27T00:03:21.804Z
+- lib/cms.ts | 215 lines | 5823 chars | hash add39ca44442
+  Last snapshot: 2026-10-27T00:05:34.241Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5562 chars | hash 02539b1ab342
   Last snapshot: 2026-10-26T23:59:24.462Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-27T00:05:34.241Z | saved | lib/cms.ts
+- Summary: Saved without a textual diff.
+- Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+
+### 2026-10-27T00:05:29.102Z | saved | lib/cms.ts
+- Summary: Line 97: replaced 1 line with 1 line.
+- Before: 215 lines | 5,824 chars | hash 305c860c6d40 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "_p"
+- Current fragment: "P"
+
 ### 2026-10-27T00:03:21.804Z | saved | lib/cms.ts
 - Summary: Line 97: replaced 1 line with 1 line.
 - Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -149,36 +161,25 @@ Structured manifest: workspace.json
 - Previous fragment: "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam..."
 - Current fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
 
-### 2026-10-26T15:19:19.500Z | saved | lib/useConfigurator.ts
-- Summary: Line 38: replaced 129 lines with 150 lines.
-- Before: 170 lines | 5,088 chars | hash ca6f0728b2fd | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- After: 191 lines | 5,604 chars | hash 6b9a1c08487a | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- Previous fragment: "toegangscode, setToegangscode] = useState(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem('toegangscode') || ''; / } / return ''; / }); / const [kla..."
-- Current fragment: "selectedIndeling, setSelectedIndelingState] = useState<any>(() => { / if (typeof window !== 'undefined') { / const saved = localStorage.getItem('selected_indeling'); / return sa..."
-
-### 2026-10-26T15:16:47.784Z | saved | components/MainContent.tsx
-- Summary: Line 27: replaced 128 lines with 125 lines.
-- Before: 220 lines | 9,176 chars | hash 2f54f2a9b999 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 217 lines | 8,847 chars | hash ca1e0d747e51 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,..."
-- Current fragment: "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (9 tracked changes)
-- lib/cms.ts (6 tracked changes)
-- components/ConfiguratorScreen.tsx (5 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/VoucherWelcomeModal.tsx (4 tracked changes)
+- components/ConfiguratorScreen.tsx (3 tracked changes)
 - app/voucher/page.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 5a507c1 fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel
-- Working tree summary: 1 modified
+- HEAD: 2026-10-27 6c053ae fix(cms): update graphql query field to use design_paketten matching acf backend
+- Working tree summary: 4 modifieds
+- M graphify-out/WORKSPACE_MEMORY.md
 - M lib/cms.ts
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

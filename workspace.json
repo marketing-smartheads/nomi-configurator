@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T00:03:24.212Z",
-  "generatedAtEpochMs": 1793059404212,
+  "generatedAt": "2026-10-27T00:05:36.077Z",
+  "generatedAtEpochMs": 1793059536077,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,9 +24,9 @@
     "suggestedStartingPoints": [
       "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
-      "components/ConfiguratorScreen.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "components/VoucherWelcomeModal.tsx",
+      "components/ConfiguratorScreen.tsx",
       "app/voucher/page.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/MainContent.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T00:03:21.804Z",
+    "lastActivityAt": "2026-10-27T00:05:34.241Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793059401804,
+      "updatedAt": 1793059534241,
       "lineCount": 215,
-      "charCount": 5824,
-      "hash": "305c860c6d40",
+      "charCount": 5823,
+      "hash": "add39ca44442",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,63 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-27T00:05:34.241Z",
+      "recordedAtEpochMs": 1793059534241,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5823,
+        "hash": "add39ca44442",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059534241
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5823,
+        "hash": "add39ca44442",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059534241
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 97: replaced 1 line with 1 line.",
+      "recordedAt": "2026-10-27T00:05:29.102Z",
+      "recordedAtEpochMs": 1793059529102,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5824,
+        "hash": "305c860c6d40",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059529102
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5823,
+        "hash": "add39ca44442",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793059529102
+      },
+      "diff": {
+        "lineStart": 97,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 97: replaced 1 line with 1 line.",
+        "beforeFragment": "_p",
+        "afterFragment": "P"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1034,70 +1091,6 @@
         "beforeFragment": "// Filter de lijst op basis van het woningtype van de voucher / const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam...",
         "afterFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/useConfigurator.ts",
-      "toPath": "",
-      "summary": "Line 38: replaced 129 lines with 150 lines.",
-      "recordedAt": "2026-10-26T15:19:19.500Z",
-      "recordedAtEpochMs": 1793027959500,
-      "before": {
-        "kind": "text",
-        "lineCount": 170,
-        "charCount": 5088,
-        "hash": "ca6f0728b2fd",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793027959500
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 191,
-        "charCount": 5604,
-        "hash": "6b9a1c08487a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793027959500
-      },
-      "diff": {
-        "lineStart": 38,
-        "removedLines": 129,
-        "addedLines": 150,
-        "summary": "Line 38: replaced 129 lines with 150 lines.",
-        "beforeFragment": "toegangscode, setToegangscode] = useState(() => { / if (typeof window !== 'undefined') { / return localStorage.getItem('toegangscode') || ''; / } / return ''; / }); / const [kla...",
-        "afterFragment": "selectedIndeling, setSelectedIndelingState] = useState<any>(() => { / if (typeof window !== 'undefined') { / const saved = localStorage.getItem('selected_indeling'); / return sa..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/MainContent.tsx",
-      "toPath": "",
-      "summary": "Line 27: replaced 128 lines with 125 lines.",
-      "recordedAt": "2026-10-26T15:16:47.784Z",
-      "recordedAtEpochMs": 1793027807784,
-      "before": {
-        "kind": "text",
-        "lineCount": 220,
-        "charCount": 9176,
-        "hash": "2f54f2a9b999",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793027807783
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 8847,
-        "hash": "ca1e0d747e51",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793027807784
-      },
-      "diff": {
-        "lineStart": 27,
-        "removedLines": 128,
-        "addedLines": 125,
-        "summary": "Line 27: replaced 128 lines with 125 lines.",
-        "beforeFragment": "// <-- TOEGEVOEGD: Ophalen uit de hook / handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd,...",
-        "afterFragment": "handleLogin, handleSaveChoices / } = useConfigurator(); / const [isMounted, setIsMounted] = useState(false); / const [isReedsBevestigd, setIsReedsBevestigd] = useState(false); /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1107,11 +1100,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 6
-    },
-    {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "count": 5
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1120,6 +1109,10 @@
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
       "count": 4
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "count": 3
     },
     {
       "filePath": "app/voucher/page.tsx",
@@ -1137,11 +1130,14 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 5a507c1 fix(cms): verwijder ongeldig bevestigingStap veld uit graphql query en herstel stap 2 titel",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 6c053ae fix(cms): update graphql query field to use design_paketten matching acf backend",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M lib/cms.ts"
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
