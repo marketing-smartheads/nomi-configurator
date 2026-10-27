@@ -94,7 +94,7 @@ export async function getPageData() {
             bevestigingWaarschuwingTekst
             bevestigingAkkoordTekst
 
-            designpaketten {
+            designPakketten {
               pakketId
               pakketTitel
               pakketOmschrijving
