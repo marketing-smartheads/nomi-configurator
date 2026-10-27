@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T13:33:04.253Z",
-  "generatedAtEpochMs": 1793107984253,
+  "generatedAt": "2026-10-27T14:41:17.559Z",
+  "generatedAtEpochMs": 1793112077559,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/confirm/route.ts",
+    "activeFile": "app/dashboard/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/confirm/route.ts",
+      "app/dashboard/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
+      "app/api/confirm/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       ".gitignore",
@@ -562,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T13:33:01.869Z",
+    "lastActivityAt": "2026-10-27T14:41:15.131Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -573,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/dashboard/page.tsx",
+      "updatedAt": 1793112075131,
+      "lineCount": 304,
+      "charCount": 14012,
+      "hash": "7d7c3ff88074",
+      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+    },
     {
       "filePath": "app/api/confirm/route.ts",
       "updatedAt": 1793107981869,
@@ -628,17 +637,41 @@
       "charCount": 4563,
       "hash": "3c15fc14d5bc",
       "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-    },
-    {
-      "filePath": "lib/useConfigurator.ts",
-      "updatedAt": 1793027959500,
-      "lineCount": 191,
-      "charCount": 5604,
-      "hash": "6b9a1c08487a",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 79: replaced 190 lines with 194 lines.",
+      "recordedAt": "2026-10-27T14:41:15.131Z",
+      "recordedAtEpochMs": 1793112075131,
+      "before": {
+        "kind": "text",
+        "lineCount": 300,
+        "charCount": 13641,
+        "hash": "39178477b1a4",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793112075131
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 304,
+        "charCount": 14012,
+        "hash": "7d7c3ff88074",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793112075131
+      },
+      "diff": {
+        "lineStart": 79,
+        "removedLines": 190,
+        "addedLines": 194,
+        "summary": "Line 79: replaced 190 lines with 194 lines.",
+        "beforeFragment": "Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `\"${details.toegangscod...",
+        "afterFragment": "Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `\"${details..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/confirm/route.ts",
@@ -1086,38 +1119,6 @@
         "beforeFragment": "// Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data / useEffect(() => { / let isMounted = true; / async function initDownloadPag...",
         "afterFragment": "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromis..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 48: replaced 440 lines with 254 lines.",
-      "recordedAt": "2026-10-27T11:43:31.026Z",
-      "recordedAtEpochMs": 1793101411026,
-      "before": {
-        "kind": "text",
-        "lineCount": 493,
-        "charCount": 22271,
-        "hash": "f4436a5f41b4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793101411026
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 307,
-        "charCount": 14831,
-        "hash": "c65841c87fbd",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793101411026
-      },
-      "diff": {
-        "lineStart": 48,
-        "removedLines": 440,
-        "addedLines": 254,
-        "summary": "Line 48: replaced 440 lines with 254 lines.",
-        "beforeFragment": "sessionStorage.getItem('email') || / localStorage.getItem('email') || ''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / l...",
-        "afterFragment": "''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / localStorage.getItem('klantNaam') || ''; / if (opgeslagenNaam) setKlant..."
-      }
     }
   ],
   "hotFiles": [
@@ -1130,12 +1131,16 @@
       "count": 16
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 3
-    },
-    {
       "filePath": "app/api/confirm/route.ts",
       "count": 2
+    },
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "app/dashboard/page.tsx",
+      "count": 1
     },
     {
       "filePath": "lib/cms.ts",
@@ -1145,17 +1150,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 94e7081 fix(download): toon technische tekeningen en interieur bij de gekozen indeling",
+    "headSummary": "2026-10-27 98c419f feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/api/confirm/route.ts"
+      "M app/dashboard/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 94e7081 by Bas van Dooremalen on 2026-10-27\n  fix(download): toon technische tekeningen en interieur bij de gekozen indeling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 98c419f by Bas van Dooremalen on 2026-10-27\n  feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -76,12 +76,13 @@ export default function DashboardPage() {
       return;
     }
 
-    const headers = ['Toegangscode', 'Type woning', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status'];
+    const headers = ['Toegangscode', 'Type woning', 'Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status'];
     
     const rows = vouchers.map(v => {
       const details = v.voucherVelden || {};
       const toegangscode = `"${details.toegangscode || v.title || ''}"`;
       const woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`;
+      const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;
       const klantNaam = `"${details.klantNaam || details.klant_naam || '—'}"`;
       const klantEmail = `"${details.klantEMail || details.klant_email || '—'}"`;
       const designPakket = `"${details.gekozenDesignpakket || details.gekozen_designpakket || '—'}"`;
@@ -90,7 +91,7 @@ export default function DashboardPage() {
       const isVerz = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('verzilverd');
       const status = `"${isVerz ? 'Verzilverd' : 'Niet verzilverd'}"`;
 
-      return [toegangscode, woningType, klantNaam, klantEmail, designPakket, status].join(';');
+      return [toegangscode, woningType, indeling, klantNaam, klantEmail, designPakket, status].join(';');
     });
 
     const csvContent = '\uFEFF' + [headers.join(';'), ...rows].join('\n');
@@ -235,6 +236,7 @@ export default function DashboardPage() {
                   <thead>
                     <tr className="border-b border-[#E5E2DD] text-[#888] text-[10px] uppercase tracking-wider">
                       <th className="py-4 px-6">Type woning</th>
+                      <th className="py-4 px-6">Indeling</th>
                       <th className="py-4 px-6">Klant naam</th>
                       <th className="py-4 px-6">Designpakket</th>
                       <th className="py-4 px-6">Status</th>
@@ -243,17 +245,18 @@ export default function DashboardPage() {
                   <tbody>
                     {fetchingData ? (
                       <tr>
-                        <td colSpan={4} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
+                        <td colSpan={5} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
                       </tr>
                     ) : vouchers.length === 0 ? (
                       <tr>
-                        <td colSpan={4} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
+                        <td colSpan={5} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
                       </tr>
                     ) : (
                       vouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
                         
                         const woningTypeLabel = details.gekozenTypeWoning || details.gekozen_type_woning || v.title || 'Type Onbekend';
+                        const indelingLabel = details.gekozenIndeling || details.gekozen_indeling || '—';
                         const klantNaam = details.klantNaam || details.klant_naam || '—';
                         const designPakket = details.gekozenDesignpakket || details.gekozen_designpakket || '—';
                         
@@ -266,6 +269,7 @@ export default function DashboardPage() {
                         return (
                           <tr key={v.databaseId || index} className="border-b border-[#EFECE6] hover:bg-[#FAF9F6] transition">
                             <td className="py-4 px-6 font-bold text-dark">{woningTypeLabel}</td>
+                            <td className="py-4 px-6 text-[#555]">{indelingLabel}</td>
                             <td className="py-4 px-6 text-[#555]">{klantNaam}</td>
                             <td className="py-4 px-6 text-[#555]">{designPakket}</td>
                             <td className="py-4 px-6">

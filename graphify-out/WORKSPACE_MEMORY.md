@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T13:33:04.253Z
+Generated: 2026-10-27T14:41:17.559Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T13:33:01.869Z
+- Last activity: 2026-10-27T14:41:15.131Z
 ## Workspace Focus
-- Active file in focus: app/api/confirm/route.ts
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (16), components/configurator/StepThreeVisuals.tsx (3), app/api/confirm/route.ts (2)
-- Suggested starting points: app/api/confirm/route.ts, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, .gitignore
+- Active file in focus: app/dashboard/page.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (16), app/api/confirm/route.ts (2), components/configurator/StepThreeVisuals.tsx (2)
+- Suggested starting points: app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/api/confirm/route.ts, components/configurator/StepThreeVisuals.tsx, lib/cms.ts
 ## Current Workspace
-- Active file: app/api/confirm/route.ts
+- Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/dashboard/page.tsx | 304 lines | 14012 chars | hash 7d7c3ff88074
+  Last snapshot: 2026-10-27T14:41:15.131Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
   Last snapshot: 2026-10-27T13:33:01.869Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/configurator/StepOnewoning.tsx | 103 lines | 4563 chars | hash 3c15fc14d5bc
   Last snapshot: 2026-10-26T15:22:36.985Z
   Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-- lib/useConfigurator.ts | 191 lines | 5604 chars | hash 6b9a1c08487a
-  Last snapshot: 2026-10-26T15:19:19.500Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T14:41:15.131Z | saved | app/dashboard/page.tsx
+- Summary: Line 79: replaced 190 lines with 194 lines.
+- Before: 300 lines | 13,641 chars | hash 39178477b1a4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 304 lines | 14,012 chars | hash 7d7c3ff88074 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `"${details.toegangscod..."
+- Current fragment: "Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `"${details..."
+
 ### 2026-10-27T13:33:01.869Z | saved | app/api/confirm/route.ts
 - Summary: Line 247: replaced 4 lines with 4 lines.
 - Before: 308 lines | 11,550 chars | hash e789f59957a2 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
@@ -162,26 +169,20 @@ Structured manifest: workspace.json
 - Previous fragment: "// Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data / useEffect(() => { / let isMounted = true; / async function initDownloadPag..."
 - Current fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromis..."
 
-### 2026-10-27T11:43:31.026Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 48: replaced 440 lines with 254 lines.
-- Before: 493 lines | 22,271 chars | hash f4436a5f41b4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 307 lines | 14,831 chars | hash c65841c87fbd | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "sessionStorage.getItem('email') || / localStorage.getItem('email') || ''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / l..."
-- Current fragment: "''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / localStorage.getItem('klantNaam') || ''; / if (opgeslagenNaam) setKlant..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
 - app/download/page.tsx (16 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
+- app/dashboard/page.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 94e7081 fix(download): toon technische tekeningen en interieur bij de gekozen indeling
+- HEAD: 2026-10-27 98c419f feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation
 - Working tree summary: 1 modified
-- M app/api/confirm/route.ts
+- M app/dashboard/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 94e7081 by Bas van Dooremalen on 2026-10-27
-  fix(download): toon technische tekeningen en interieur bij de gekozen indeling
+- 98c419f by Bas van Dooremalen on 2026-10-27
+  feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
