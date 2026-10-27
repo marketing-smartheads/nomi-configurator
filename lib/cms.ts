@@ -110,13 +110,22 @@ export async function getPageData() {
                 }
               }
               materialenLijst {
-                materiaalTitel            
+                materiaalTitel
               }
               moodboardGallery {
                 nodes {
                   sourceUrl
                 }
-              }         
+              }
+              bevestigingStap {
+                bannerAfbeelding {
+                  node {
+                    sourceUrl
+                    mediaItemUrl
+                  }
+                }
+                bannerTitel
+              }
             }
 
             downloadSectie {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T10:45:55.194Z",
-  "generatedAtEpochMs": 1793097955194,
+  "generatedAt": "2026-10-27T10:51:04.118Z",
+  "generatedAtEpochMs": 1793098264118,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T10:45:53.446Z",
+    "lastActivityAt": "2026-10-27T10:51:01.817Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -573,6 +573,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793098261817,
+      "lineCount": 224,
+      "charCount": 6049,
+      "hash": "15c866223c79",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793097953446,
@@ -596,14 +604,6 @@
       "charCount": 5497,
       "hash": "829aaad9c45c",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793060862144,
-      "lineCount": 215,
-      "charCount": 5824,
-      "hash": "3b57281655f0",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 113: replaced 7 lines with 16 lines.",
+      "recordedAt": "2026-10-27T10:51:01.817Z",
+      "recordedAtEpochMs": 1793098261817,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 5824,
+        "hash": "3b57281655f0",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793098261817
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 224,
+        "charCount": 6049,
+        "hash": "15c866223c79",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793098261817
+      },
+      "diff": {
+        "lineStart": 113,
+        "removedLines": 7,
+        "addedLines": 16,
+        "summary": "Line 113: replaced 7 lines with 16 lines.",
+        "beforeFragment": "} / moodboardGallery { / nodes { / sourceUrl / } / }",
+        "afterFragment": "} / moodboardGallery { / nodes { / sourceUrl / } / } / bevestigingStap { / bannerAfbeelding { / node { / sourceUrl / mediaItemUrl / } / } / bannerTitel / }"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1079,31 +1111,6 @@
         "beforeFragment": "// Tijdens testen: NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl; in productie weglaten. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias';...",
         "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-10-27T08:55:56.454Z",
-      "recordedAtEpochMs": 1793091356454,
-      "before": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 17204,
-        "hash": "7c13abe084e1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /...",
-        "updatedAt": 1793091356454
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 17204,
-        "hash": "7c13abe084e1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /...",
-        "updatedAt": 1793091356454
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1131,17 +1138,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 6259f22 fix(components): fallback to design package image and title for confirmation banner in StepFourConfirmation",
+    "headSummary": "2026-10-27 25ec5ed fix(components): extract confirmation banner image and title directly from design package confirmation group in StepFourConfirmation",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2d49e0d by Bas van Dooremalen on 2026-10-27\n  fix(components): add console.log debugging for confirmation banner data extraction in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 25ec5ed by Bas van Dooremalen on 2026-10-27\n  fix(components): extract confirmation banner image and title directly from design package confirmation group in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
