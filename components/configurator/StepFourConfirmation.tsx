@@ -84,29 +84,18 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket
-  const bevData = 
-    storedPakket?.bevestigingStap || 
-    storedPakket?.bevestiging_stap || 
-    {};
+  // Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket[cite: 21]
+  const bevData = storedPakket?.bevestigingStap || {};
 
-  const rawImage = 
-    bevData?.bannerAfbeelding || 
-    bevData?.banner_afbeelding || 
-    bevData?.bannerAfbeeldingUrl;
-
+  const rawImage = bevData?.bannerAfbeelding;
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
     rawImage?.node?.sourceUrl || 
     rawImage?.sourceUrl || 
     rawImage?.mediaItemUrl || 
-    rawImage?.url || 
     null;
 
-  const heroTitle = 
-    bevData?.bannerTitel || 
-    bevData?.banner_titel || 
-    '';
+  const heroTitle = bevData?.bannerTitel || '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
