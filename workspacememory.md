@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T11:05:01.612Z
+Generated: 2026-10-27T11:19:19.164Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T11:04:59.181Z
+- Last activity: 2026-10-27T11:19:16.781Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (7), lib/cms.ts (7)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, app/download/page.tsx, .gitignore
+- Active file in focus: app/download/page.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (7), lib/cms.ts (6)
+- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/download/page.tsx | 545 lines | 22242 chars | hash 1090c35185df
+  Last snapshot: 2026-10-27T11:19:16.781Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 493 lines | 22271 chars | hash f4436a5f41b4
   Last snapshot: 2026-10-27T11:04:59.181Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/MainContent.tsx | 217 lines | 8847 chars | hash ca1e0d747e51
   Last snapshot: 2026-10-26T15:16:47.784Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- components/ConfiguratorScreen.tsx | 250 lines | 9599 chars | hash 6af3f7e817b2
-  Last snapshot: 2026-10-26T15:10:32.454Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 
 ## Recent Changes
+### 2026-10-27T11:19:16.781Z | saved | app/download/page.tsx
+- Summary: Line 14: replaced 409 lines with 430 lines.
+- Before: 524 lines | 21,353 chars | hash f77a5c92bea1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 545 lines | 22,242 chars | hash 1090c35185df | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<bool..."
+- Current fragment: "gekozenIndeling, setGekozenIndeling] = useState<string>(''); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState..."
+
 ### 2026-10-27T11:04:59.181Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 69: replaced 39 lines with 31 lines.
 - Before: 501 lines | 22,218 chars | hash 5ecfa4a27ef8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -161,26 +168,19 @@ Structured manifest: workspace.json
 - Previous fragment: "// Partner voor de documentatielijst. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL |..."
 - Current fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
 
-### 2026-10-27T09:05:59.946Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 9: replaced 90 lines with 94 lines.
-- Before: 492 lines | 22,082 chars | hash d0ec0c3d6194 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- After: 496 lines | 22,230 chars | hash b3e1e93f000e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- Previous fragment: "// Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; /..."
-- Current fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (17 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (7 tracked changes)
-- lib/cms.ts (7 tracked changes)
-- app/download/page.tsx (1 tracked changes)
+- lib/cms.ts (6 tracked changes)
+- app/download/page.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 0a53bca fix(components): fix package matching with trim and robust nested confirmation step extraction in StepFourConfirmation
+- HEAD: 2026-10-27 6575248 fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly
 - Working tree summary: 1 modified
-- M components/configurator/StepFourConfirmation.tsx
+- M app/download/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 0a53bca by Bas van Dooremalen on 2026-10-27
-  fix(components): fix package matching with trim and robust nested confirmation step extraction in StepFourConfirmation
+- 6575248 by Bas van Dooremalen on 2026-10-27
+  fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

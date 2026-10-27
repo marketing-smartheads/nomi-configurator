@@ -11,6 +11,7 @@ export default function DownloadPage() {
   const router = useRouter();
   
   const [woningType, setWoningType] = useState<string>('Type A');
+  const [gekozenIndeling, setGekozenIndeling] = useState<string>('');
   const [designPakket, setDesignPakket] = useState<string>('Hotel Chic');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
@@ -92,6 +93,20 @@ export default function DownloadPage() {
         let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
         let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
 
+        // Ophalen van gekozen indeling uit localStorage / sessionStorage
+        let rawIndelingObj = {};
+        try {
+          rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}');
+        } catch (e) {
+          rawIndelingObj = {};
+        }
+
+        let resolvedIndeling = 
+          (rawIndelingObj as any)?.indelingTitel || 
+          sessionStorage.getItem('geselecteerdeIndeling') || 
+          localStorage.getItem('geselecteerdeIndeling') || 
+          '';
+
         if (opgeslagenCode && (!resolvedWoning || !resolvedPakket)) {
           const liveVoucherData = await getVoucherData(opgeslagenCode);
           if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
@@ -107,6 +122,7 @@ export default function DownloadPage() {
 
         if (isMounted) {
           setWoningType(resolvedWoning);
+          setGekozenIndeling(resolvedIndeling);
           setDesignPakket(resolvedPakket);
           setIsAuthorized(true);
         }
@@ -416,10 +432,15 @@ export default function DownloadPage() {
             />
           </div>
 
-          <div className="relative z-20 max-w-6xl mx-auto w-full flex flex-col sm:flex-row justify-center gap-3 mt-8">
+          <div className="relative z-20 max-w-6xl mx-auto w-full flex flex-col sm:flex-row justify-center items-center gap-3 mt-8">
             <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">
               {woningType}
             </div>
+            {gekozenIndeling && (
+              <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">
+                {gekozenIndeling}
+              </div>
+            )}
             <div className="px-6 py-2.5 bg-[#D9D3CB] rounded-full text-xs tracking-[0.15em] font-semibold uppercase text-dark w-fit">
               {designPakket}
             </div>

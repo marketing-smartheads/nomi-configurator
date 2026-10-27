@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T11:05:01.612Z",
-  "generatedAtEpochMs": 1793099101612,
+  "generatedAt": "2026-10-27T11:19:19.164Z",
+  "generatedAtEpochMs": 1793099959164,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
-      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T11:04:59.181Z",
+    "lastActivityAt": "2026-10-27T11:19:16.781Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -573,6 +573,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1793099956781,
+      "lineCount": 545,
+      "charCount": 22242,
+      "hash": "1090c35185df",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793099099181,
@@ -628,17 +636,41 @@
       "charCount": 8847,
       "hash": "ca1e0d747e51",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-    },
-    {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1793027432454,
-      "lineCount": 250,
-      "charCount": 9599,
-      "hash": "6af3f7e817b2",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 14: replaced 409 lines with 430 lines.",
+      "recordedAt": "2026-10-27T11:19:16.781Z",
+      "recordedAtEpochMs": 1793099956781,
+      "before": {
+        "kind": "text",
+        "lineCount": 524,
+        "charCount": 21353,
+        "hash": "f77a5c92bea1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793099956780
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 545,
+        "charCount": 22242,
+        "hash": "1090c35185df",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793099956781
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 409,
+        "addedLines": 430,
+        "summary": "Line 14: replaced 409 lines with 430 lines.",
+        "beforeFragment": "designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<bool...",
+        "afterFragment": "gekozenIndeling, setGekozenIndeling] = useState<string>(''); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1079,38 +1111,6 @@
         "beforeFragment": "// Partner voor de documentatielijst. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL |...",
         "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 9: replaced 90 lines with 94 lines.",
-      "recordedAt": "2026-10-27T09:05:59.946Z",
-      "recordedAtEpochMs": 1793091959946,
-      "before": {
-        "kind": "text",
-        "lineCount": 492,
-        "charCount": 22082,
-        "hash": "d0ec0c3d6194",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1793091959946
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 496,
-        "charCount": 22230,
-        "hash": "b3e1e93f000e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1793091959946
-      },
-      "diff": {
-        "lineStart": 9,
-        "removedLines": 90,
-        "addedLines": 94,
-        "summary": "Line 9: replaced 90 lines with 94 lines.",
-        "beforeFragment": "// Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; /...",
-        "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,27 +1128,27 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 7
+      "count": 6
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 1
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 0a53bca fix(components): fix package matching with trim and robust nested confirmation step extraction in StepFourConfirmation",
+    "headSummary": "2026-10-27 6575248 fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 0a53bca by Bas van Dooremalen on 2026-10-27\n  fix(components): fix package matching with trim and robust nested confirmation step extraction in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6575248 by Bas van Dooremalen on 2026-10-27\n  fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
