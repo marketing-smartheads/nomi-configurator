@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T12:54:01.195Z
+Generated: 2026-10-27T12:58:34.216Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T12:53:58.859Z
+- Last activity: 2026-10-27T12:58:32.461Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (14), components/configurator/StepThreeVisuals.tsx (6), app/api/confirm/route.ts (1)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (15), components/configurator/StepThreeVisuals.tsx (5), app/api/confirm/route.ts (1)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, app/api/confirm/route.ts, lib/cms.ts, .gitignore
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 475 lines | 22268 chars | hash 6d6e3495277a
-  Last snapshot: 2026-10-27T12:53:58.859Z
+- app/download/page.tsx | 492 lines | 23261 chars | hash e284cbdf9fcc
+  Last snapshot: 2026-10-27T12:58:32.461Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T12:58:32.461Z | saved | app/download/page.tsx
+- Summary: Line 196: replaced 40 lines with 57 lines.
+- Before: 475 lines | 22,268 chars | hash 6d6e3495277a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 492 lines | 23,261 chars | hash e284cbdf9fcc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Haal het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNumm..."
+- Current fragment: "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
+
 ### 2026-10-27T12:53:58.859Z | saved | app/download/page.tsx
 - Summary: Line 196: replaced 39 lines with 34 lines.
 - Before: 480 lines | 22,688 chars | hash 2d0d95ca6552 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,24 +169,17 @@ Structured manifest: workspace.json
 - Previous fragment: "Ophalen van gekozen indeling uit localStorage / sessionStorage / let rawIndelingObj = {}; / try { / rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}'..."
 - Current fragment: "Robuust ophalen van de gekozen indeling (of het nu een object of string is) / let resolvedIndeling = ''; / try { / const rawLocalStorageIndeling = localStorage.getItem('selected..."
 
-### 2026-10-27T11:19:16.781Z | saved | app/download/page.tsx
-- Summary: Line 14: replaced 409 lines with 430 lines.
-- Before: 524 lines | 21,353 chars | hash f77a5c92bea1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 545 lines | 22,242 chars | hash 1090c35185df | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<bool..."
-- Current fragment: "gekozenIndeling, setGekozenIndeling] = useState<string>(''); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
-- app/download/page.tsx (14 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (6 tracked changes)
+- app/download/page.tsx (15 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (5 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 b544984 fix(download): update title-based file filtering to correctly isolate layout 2 and package assets from CMS data
+- HEAD: 2026-10-27 198a16b fix(download): optimize file filtering using explicit CMS file titles to properly display technical drawings and layout 2 assets
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 

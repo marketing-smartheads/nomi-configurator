@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T12:54:01.195Z",
-  "generatedAtEpochMs": 1793105641195,
+  "generatedAt": "2026-10-27T12:58:34.216Z",
+  "generatedAtEpochMs": 1793105914216,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T12:53:58.859Z",
+    "lastActivityAt": "2026-10-27T12:58:32.461Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793105638859,
-      "lineCount": 475,
-      "charCount": 22268,
-      "hash": "6d6e3495277a",
+      "updatedAt": 1793105912461,
+      "lineCount": 492,
+      "charCount": 23261,
+      "hash": "e284cbdf9fcc",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 196: replaced 40 lines with 57 lines.",
+      "recordedAt": "2026-10-27T12:58:32.461Z",
+      "recordedAtEpochMs": 1793105912461,
+      "before": {
+        "kind": "text",
+        "lineCount": 475,
+        "charCount": 22268,
+        "hash": "6d6e3495277a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793105912461
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 492,
+        "charCount": 23261,
+        "hash": "e284cbdf9fcc",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793105912461
+      },
+      "diff": {
+        "lineStart": 196,
+        "removedLines": 40,
+        "addedLines": 57,
+        "summary": "Line 196: replaced 40 lines with 57 lines.",
+        "beforeFragment": "Haal het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNumm...",
+        "afterFragment": "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1086,38 +1118,6 @@
         "beforeFragment": "Ophalen van gekozen indeling uit localStorage / sessionStorage / let rawIndelingObj = {}; / try { / rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}'...",
         "afterFragment": "Robuust ophalen van de gekozen indeling (of het nu een object of string is) / let resolvedIndeling = ''; / try { / const rawLocalStorageIndeling = localStorage.getItem('selected..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 409 lines with 430 lines.",
-      "recordedAt": "2026-10-27T11:19:16.781Z",
-      "recordedAtEpochMs": 1793099956781,
-      "before": {
-        "kind": "text",
-        "lineCount": 524,
-        "charCount": 21353,
-        "hash": "f77a5c92bea1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793099956780
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 545,
-        "charCount": 22242,
-        "hash": "1090c35185df",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793099956781
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 409,
-        "addedLines": 430,
-        "summary": "Line 14: replaced 409 lines with 430 lines.",
-        "beforeFragment": "designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<bool...",
-        "afterFragment": "gekozenIndeling, setGekozenIndeling] = useState<string>(''); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState..."
-      }
     }
   ],
   "hotFiles": [
@@ -1127,11 +1127,11 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 14
+      "count": 15
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -1145,7 +1145,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 b544984 fix(download): update title-based file filtering to correctly isolate layout 2 and package assets from CMS data",
+    "headSummary": "2026-10-27 198a16b fix(download): optimize file filtering using explicit CMS file titles to properly display technical drawings and layout 2 assets",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

@@ -193,46 +193,63 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Haal het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02")
-  const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
-  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '2'; // Standaard 2
+  // ---------------------------------------------------------------------
+  // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam
+  // ---------------------------------------------------------------------
+  const normaliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
 
-  // ROBUUSTE FILTER: Controleert of bestandstitel bij gekozen pakket hoort en de juiste indeling bevat
+  // Herkent o.a. "Type EC02", "TypeECO2", "Concept 2", "CONCEPT-02", "Concept_2", "Indeling 02"
+  const haalIndelingNummers = (tekst: string): Set<number> => {
+    const t = (tekst || '').toLowerCase();
+    const nummers = new Set<number>();
+    const patronen = [
+      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g, // Type EC02 / TypeECO2
+      /concept[\s_-]*0*(\d+)/g,                // Concept 2 / CONCEPT-02 / Concept_2
+      /indeling[\s_-]*0*(\d+)/g,               // Indeling 02 (niet "Indelingsplattegrond")
+    ];
+    for (const p of patronen) {
+      for (const m of t.matchAll(p)) nummers.add(Number(m[1]));
+    }
+    return nummers;
+  };
+
+  // Gekozen indeling (bijv. "Indeling 02" -> 2). Geen keuze = niet op nummer filteren.
+  const gekozenNummers = haalIndelingNummers(gekozenIndeling || '');
+  const gekozenNummer: number | null = gekozenNummers.size > 0
+    ? Array.from(gekozenNummers)[0]
+    : ((gekozenIndeling || '').match(/\d+/) ? Number((gekozenIndeling || '').match(/\d+/)![0]) : null);
+
+  // Alle bekende pakketnamen uit het CMS (met fallback)
+  const alleNormPakketten: string[] = Array.from(new Set([
+    ...designPakkettenLijst.map((p: any) => normaliseer(p?.pakketTitel || p?.pakket_titel || '')).filter(Boolean),
+    'hotelchic',
+    'modernraw',
+  ]));
+  const actiefPakket = alleNormPakketten.find(p => normaliseer(designPakket).includes(p));
+  const vindPakket = (tekst: string) => {
+    const n = normaliseer(tekst);
+    return alleNormPakketten.find(p => n.includes(p));
+  };
+
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
-    const activePakketLower = (designPakket || '').toLowerCase(); // bijv. "hotel chic"
-    const isHotelChic = activePakketLower.includes('hotel');
-    const uitsluitPakket = isHotelChic ? 'modern raw' : 'hotel chic';
-
     return rawBestandenLijst.filter((bestand: any) => {
-      const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
+      const titel = bestand?.bestandTitel || bestand?.bestand_titel || '';
       if (!titel) return false;
 
-      // 1. Sluit altijd het andere designpakket uit
-      if (titel.includes(uitsluitPakket)) return false;
+      const url = getFileUrl(bestand) || '';
+      const bestandsnaam = safeDecode(url.split('?')[0].split('/').pop() || '');
 
-      // 2. Het bestand moet bij ons gekozen designpakket horen (of algemeen zijn)
-      const hoortBijPakket = titel.includes(activePakketLower) || titel.includes('moodboard') || titel.includes('info sheet');
-      if (!hoortBijPakket) return false;
+      // 1. Pakket: titel wint, bestandsnaam is fallback. Geen pakket genoemd = algemeen bestand.
+      const pakketInBestand = vindPakket(titel) ?? vindPakket(bestandsnaam);
+      if (pakketInBestand && pakketInBestand !== actiefPakket) return false;
 
-      // 3. Controleer of er expliciet een verkeerd indelingnummer in staat (bijv. "1" of "01" als we indeling 2 willen)
-      const verkeerdeNummers = ['1', '3', '4', '5', '6', '7', '8', '9'].filter(n => n !== indelingNummer);
-      
-      for (const num of verkeerdeNummers) {
-        if (
-          titel.includes(`ec0${num}`) || 
-          titel.includes(`ec${num}`) || 
-          titel.includes(`concept ${num}`) || 
-          titel.includes(`concept-${num}`) || 
-          titel.includes(`concept_${num}`) || 
-          titel.includes(`concept${num}`) || 
-          titel.includes(`indeling 0${num}`) || 
-          titel.includes(`indeling0${num}`)
-        ) {
-          return false;
-        }
-      }
-
-      return true;
+      // 2. Indeling: titel wint, bestandsnaam is fallback. Geen nummer gevonden = algemeen bestand.
+      if (gekozenNummer === null) return true;
+      let nummers = haalIndelingNummers(titel);
+      if (nummers.size === 0) nummers = haalIndelingNummers(bestandsnaam);
+      if (nummers.size === 0) return true;
+      return nummers.has(gekozenNummer);
     });
   };
 
