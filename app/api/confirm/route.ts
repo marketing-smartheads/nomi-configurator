@@ -244,10 +244,10 @@ export async function POST(request: Request) {
 
     const esc = (v: unknown) =>
       String(v ?? '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/&/g, '&')
+        .replace(/</g, '<')
+        .replace(/>/g, '>')
+        .replace(/"/g, '"');
 
     const stuurDocumentatieAanvraag = async () => {
       const regels: [string, string][] = [

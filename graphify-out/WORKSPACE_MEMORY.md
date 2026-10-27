@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T13:02:53.070Z
+Generated: 2026-10-27T13:33:04.253Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T13:02:50.504Z
+- Last activity: 2026-10-27T13:33:01.869Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (16), components/configurator/StepThreeVisuals.tsx (4), app/api/confirm/route.ts (1)
-- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, app/api/confirm/route.ts, lib/cms.ts, .gitignore
+- Active file in focus: app/api/confirm/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (16), components/configurator/StepThreeVisuals.tsx (3), app/api/confirm/route.ts (2)
+- Suggested starting points: app/api/confirm/route.ts, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: app/api/confirm/route.ts
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
+  Last snapshot: 2026-10-27T13:33:01.869Z
+  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 - app/download/page.tsx | 504 lines | 23775 chars | hash 6f867323f7b2
   Last snapshot: 2026-10-27T13:02:50.504Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- app/api/confirm/route.ts | 308 lines | 11550 chars | hash e789f59957a2
-  Last snapshot: 2026-10-27T11:42:58.917Z
-  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 - lib/cms.ts | 224 lines | 6049 chars | hash 15c866223c79
   Last snapshot: 2026-10-27T10:51:01.817Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T13:33:01.869Z | saved | app/api/confirm/route.ts
+- Summary: Line 247: replaced 4 lines with 4 lines.
+- Before: 308 lines | 11,550 chars | hash e789f59957a2 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 308 lines | 11,535 chars | hash ef6f9a97b4ac | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/"/g, '&quot;"
+- Current fragment: "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/"/g, '""
+
 ### 2026-10-27T13:02:50.504Z | saved | app/download/page.tsx
 - Summary: Line 169: replaced 53 lines with 65 lines.
 - Before: 492 lines | 23,261 chars | hash e284cbdf9fcc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,26 +169,19 @@ Structured manifest: workspace.json
 - Previous fragment: "sessionStorage.getItem('email') || / localStorage.getItem('email') || ''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / l..."
 - Current fragment: "''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / localStorage.getItem('klantNaam') || ''; / if (opgeslagenNaam) setKlant..."
 
-### 2026-10-27T11:42:58.917Z | saved | app/api/confirm/route.ts
-- Summary: Line 14: replaced 363 lines with 281 lines.
-- Before: 390 lines | 15,369 chars | hash c56f8cd3c4e3 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 308 lines | 11,550 chars | hash e789f59957a2 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "designPakket = body.designPakket || body.selected_designPakket || body.geselecteerdePakket; / let woningObject = body.woningObject || 'Nomi — Object'; / let partners = body.part..."
-- Current fragment: "gekozenIndeling = body.gekozenIndeling || body.selected_indeling || body.geselecteerdeIndeling || 'Standaard indeling'; / let designPakket = body.designPakket || body.selected_d..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
 - app/download/page.tsx (16 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (4 tracked changes)
-- app/api/confirm/route.ts (1 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- app/api/confirm/route.ts (2 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 0821a14 fix(download): filter bestanden op indelingsnummer en pakket via titel en bestandsnaam
+- HEAD: 2026-10-27 94e7081 fix(download): toon technische tekeningen en interieur bij de gekozen indeling
 - Working tree summary: 1 modified
-- M app/download/page.tsx
+- M app/api/confirm/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 0821a14 by Bas van Dooremalen on 2026-10-27
-  fix(download): filter bestanden op indelingsnummer en pakket via titel en bestandsnaam
+- 94e7081 by Bas van Dooremalen on 2026-10-27
+  fix(download): toon technische tekeningen en interieur bij de gekozen indeling
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

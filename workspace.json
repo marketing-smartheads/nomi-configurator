@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T13:02:53.070Z",
-  "generatedAtEpochMs": 1793106173070,
+  "generatedAt": "2026-10-27T13:33:04.253Z",
+  "generatedAtEpochMs": 1793107984253,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "app/api/confirm/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepThreeVisuals.tsx",
       "app/api/confirm/route.ts",
+      "components/configurator/StepFourConfirmation.tsx",
+      "app/download/page.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T13:02:50.504Z",
+    "lastActivityAt": "2026-10-27T13:33:01.869Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -573,6 +573,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/confirm/route.ts",
+      "updatedAt": 1793107981869,
+      "lineCount": 308,
+      "charCount": 11535,
+      "hash": "ef6f9a97b4ac",
+      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793106170504,
@@ -588,14 +596,6 @@
       "charCount": 14831,
       "hash": "c65841c87fbd",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "updatedAt": 1793101378917,
-      "lineCount": 308,
-      "charCount": 11550,
-      "hash": "e789f59957a2",
-      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
     },
     {
       "filePath": "lib/cms.ts",
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 247: replaced 4 lines with 4 lines.",
+      "recordedAt": "2026-10-27T13:33:01.869Z",
+      "recordedAtEpochMs": 1793107981869,
+      "before": {
+        "kind": "text",
+        "lineCount": 308,
+        "charCount": 11550,
+        "hash": "e789f59957a2",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1793107981869
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 308,
+        "charCount": 11535,
+        "hash": "ef6f9a97b4ac",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1793107981869
+      },
+      "diff": {
+        "lineStart": 247,
+        "removedLines": 4,
+        "addedLines": 4,
+        "summary": "Line 247: replaced 4 lines with 4 lines.",
+        "beforeFragment": "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/\"/g, '&quot;",
+        "afterFragment": "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/\"/g, '\""
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1086,38 +1118,6 @@
         "beforeFragment": "sessionStorage.getItem('email') || / localStorage.getItem('email') || ''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / l...",
         "afterFragment": "''; / setKlantEmail(opgeslagenEmail); / const opgeslagenNaam = / sessionStorage.getItem('klantNaam') || / localStorage.getItem('klantNaam') || ''; / if (opgeslagenNaam) setKlant..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 14: replaced 363 lines with 281 lines.",
-      "recordedAt": "2026-10-27T11:42:58.917Z",
-      "recordedAtEpochMs": 1793101378917,
-      "before": {
-        "kind": "text",
-        "lineCount": 390,
-        "charCount": 15369,
-        "hash": "c56f8cd3c4e3",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1793101378916
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 308,
-        "charCount": 11550,
-        "hash": "e789f59957a2",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1793101378917
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 363,
-        "addedLines": 281,
-        "summary": "Line 14: replaced 363 lines with 281 lines.",
-        "beforeFragment": "designPakket = body.designPakket || body.selected_designPakket || body.geselecteerdePakket; / let woningObject = body.woningObject || 'Nomi — Object'; / let partners = body.part...",
-        "afterFragment": "gekozenIndeling = body.gekozenIndeling || body.selected_indeling || body.geselecteerdeIndeling || 'Standaard indeling'; / let designPakket = body.designPakket || body.selected_d..."
-      }
     }
   ],
   "hotFiles": [
@@ -1131,11 +1131,11 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "app/api/confirm/route.ts",
-      "count": 1
+      "count": 2
     },
     {
       "filePath": "lib/cms.ts",
@@ -1145,17 +1145,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 0821a14 fix(download): filter bestanden op indelingsnummer en pakket via titel en bestandsnaam",
+    "headSummary": "2026-10-27 94e7081 fix(download): toon technische tekeningen en interieur bij de gekozen indeling",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M app/api/confirm/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 0821a14 by Bas van Dooremalen on 2026-10-27\n  fix(download): filter bestanden op indelingsnummer en pakket via titel en bestandsnaam\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 94e7081 by Bas van Dooremalen on 2026-10-27\n  fix(download): toon technische tekeningen en interieur bij de gekozen indeling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
