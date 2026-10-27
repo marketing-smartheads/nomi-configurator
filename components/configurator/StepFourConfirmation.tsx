@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
-// Partner voor de documentatielijst.
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
@@ -63,27 +62,34 @@ export default function StepFourConfirmation({
     }
   }, []);
 
-  const rawWoningTypen = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
+  const data = configuratorData?.configurator || configuratorData;
+  const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const rawDesignPakketten = configuratorData?.designPakketten || configuratorData?.design_paketten || [];
+  const rawDesignPakketten = data?.designPaketten || data?.design_paketten || [];
   const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
 
-  const storedWoning = woningTypenLijst.find((w: any) => (w?.typeNaam || w?.type_naam) === woningType) || null;
-  const storedPakket = designPakkettenLijst.find((p: any) => (p?.pakketId || p?.pakket_id || p?.pakketTitel) === designPakket) || null;
+  const storedWoning = woningTypenLijst.find((w: any) => {
+    const wNaam = (w?.typeNaam || w?.type_naam || '').trim().toLowerCase();
+    return wNaam === (woningType || '').trim().toLowerCase();
+  }) || null;
+
+  const storedPakket = designPakkettenLijst.find((p: any) => {
+    const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase();
+    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
+    const selected = (designPakket || '').trim().toLowerCase();
+    return pId === selected || pTitel === selected;
+  }) || designPakkettenLijst[0];
 
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de robuuste configurator data op
-  const data = configuratorData?.configurator || configuratorData;
-  const beheer = data?.configuratorBeheer || data;
-
+  // Haal de bevestigingsstap data specifiek op uit het geselecteerde designpakket repeater item
   const bevData = 
-    beheren?.bevestigingStap || 
-    beheren?.bevestiging_stap || 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
+    data?.bevestigingStap || 
+    data?.bevestiging_stap || 
     {};
 
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
@@ -96,25 +102,20 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // 👉 Debug logs toegevoegd om de data te verifiëren
-  console.log("CHECK - configuratorData in Stap 4:", configuratorData);
-  console.log("CHECK - opgespoorde bevData:", bevData);
-  console.log("CHECK - opgespoorde heroImage:", heroImage);
-
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
 
-  const sectieTitel = configuratorData?.bevestigingTitel || configuratorData?.bevestiging_titel;
-  const subtitel = configuratorData?.bevestigingSubtitel || configuratorData?.bevestiging_subtitel;
-  const omschrijving = configuratorData?.bevestigingOmschrijving || configuratorData?.bevestiging_omschrijving;
-  const waarschuwingTekst = configuratorData?.bevestigingWaarschuwingTekst || configuratorData?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
+  const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
+  const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
+  const omschrijving = data?.bevestigingOmschrijving || data?.bevestiging_omschrijving;
+  const waarschuwingTekst = data?.bevestigingWaarschuwingTekst || data?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
 
-  const cmsPartnersTitel = configuratorData?.geselecteerdePartnersTitel || configuratorData?.geselecteerde_partners_titel;
+  const cmsPartnersTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || data?.geselecteerdePartnersTitel || data?.geselecteerde_partners_titel;
   const partnersTitel = (!cmsPartnersTitel || cmsPartnersTitel === "Geselecteerde partners") 
     ? "Partners Nomi" 
     : cmsPartnersTitel;
 
-  const partnersOmschrijving = configuratorData?.geselecteerdePartnersOmschrijving || configuratorData?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
+  const partnersOmschrijving = bevData?.geselecteerdePartnersOmschrijving || bevData?.geselecteerde_partners_omschrijving || data?.geselecteerdePartnersOmschrijving || data?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
 
   const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
   const telefoonGeldig = klantTelefoon.replace(/\D/g, '').length >= 8;
