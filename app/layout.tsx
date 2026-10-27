@@ -53,6 +53,10 @@ const inter = localFont({
 export const metadata: Metadata = {
   title: "Interieur & Design Configurator",
   description: "Exclusieve designpakketten en woonstijlen configureren en downloaden.",
+  robots: {
+    index: true,
+    follow: false,
+  },
   icons: {
     icon: {
       url: "/favicon.ico",
