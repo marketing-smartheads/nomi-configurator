@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T12:17:55.429Z",
-  "generatedAtEpochMs": 1793103475429,
+  "generatedAt": "2026-10-27T12:23:42.965Z",
+  "generatedAtEpochMs": 1793103822965,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -26,8 +26,8 @@
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
-      "lib/cms.ts",
       "app/api/confirm/route.ts",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T12:17:53.102Z",
+    "lastActivityAt": "2026-10-27T12:23:40.664Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793103473102,
-      "lineCount": 480,
-      "charCount": 22743,
-      "hash": "9b21e1741f7d",
+      "updatedAt": 1793103820664,
+      "lineCount": 494,
+      "charCount": 23392,
+      "hash": "6f42b8a86751",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 494 lines.",
+      "recordedAt": "2026-10-27T12:23:40.664Z",
+      "recordedAtEpochMs": 1793103820664,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793103820664
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 494,
+        "charCount": 23392,
+        "hash": "6f42b8a86751",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793103820664
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 494,
+        "summary": "Line 1: inserted 494 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || /...",
         "afterFragment": "// Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const r..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 90: replaced 33 lines with 23 lines.",
-      "recordedAt": "2026-10-27T10:42:53.950Z",
-      "recordedAtEpochMs": 1793097773950,
-      "before": {
-        "kind": "text",
-        "lineCount": 516,
-        "charCount": 22756,
-        "hash": "2188db4aeac1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793097773950
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 506,
-        "charCount": 22365,
-        "hash": "7f6cc257e2a0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793097773950
-      },
-      "diff": {
-        "lineStart": 90,
-        "removedLines": 33,
-        "addedLines": 23,
-        "summary": "Line 90: replaced 33 lines with 23 lines.",
-        "beforeFragment": "data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding ||...",
-        "afterFragment": "{}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding || / storedPakket?.pakket_afbeelding || / storedPakket?.pa..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 8
+      "count": 9
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1139,18 +1139,18 @@
       "count": 3
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 2
+      "filePath": "app/api/confirm/route.ts",
+      "count": 1
     },
     {
-      "filePath": "app/api/confirm/route.ts",
+      "filePath": "lib/cms.ts",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 2c77995 fix(download): implement strict layout filtering to exclude files belonging to other layout variants",
+    "headSummary": "2026-10-27 6625100 fix(download): implement smart layout exclusion filter to correctly display layout 2 files (EC02, Concept 2) and filter out layout 1 files",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1160,7 +1160,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2c77995 by Bas van Dooremalen on 2026-10-27\n  fix(download): implement strict layout filtering to exclude files belonging to other layout variants\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6625100 by Bas van Dooremalen on 2026-10-27\n  fix(download): implement smart layout exclusion filter to correctly display layout 2 files (EC02, Concept 2) and filter out layout 1 files\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

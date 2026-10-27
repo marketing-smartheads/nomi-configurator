@@ -193,51 +193,65 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Haal het getal uit de gekozen indeling (bijv. "2" uit "Indeling 02")
+  // Haal het indelingnummer op (bijv. "2" uit "Indeling 02")
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
-  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; // bijv. "2"
+  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '2'; // Standaard 2 indien niet gevonden
 
-  // SLIMME FILTER: Match zowel op designpakket als op het indelingnummer (bijv. 2, EC02, Concept 2)
+  // NAUWKEURIGE FILTERFUNCTIE OP BASIS VAN CMS STRUCTUUR
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
+    const activePakketLower = (designPakket || '').toLowerCase(); // bijv. "hotel chic"
+    const activePakketNorm = normPakket; // bijv. "hotelchic"
+    
+    // Bepaal het andere pakket om uit te sluiten
+    const isHotelChic = activePakketLower.includes('hotel');
+    const uitsluitPakket = isHotelChic ? 'modern raw' : 'hotel chic';
+    const uitsluitPakketNorm = isHotelChic ? 'modernraw' : 'hotelchic';
+
     return rawBestandenLijst.filter((bestand: any) => {
       const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
       const urlOfPad = (getFileUrl(bestand) || '').toLowerCase();
       const combined = `${titel} ${urlOfPad}`;
+      const combinedNorm = combined.replace(/[^a-z0-9]/g, '');
 
-      // 1. Het bestand moet bij het gekozen pakket horen (of algemeen zijn zoals info sheets / moodboards)
-      const hoortBijPakket = combined.includes((designPakket || '').toLowerCase()) || 
-                             combined.includes(normPakket) || 
-                             combined.includes('info sheet') || 
-                             combined.includes('moodboard');
-
-      if (!hoortBijPakket) return false;
-
-      // 2. Als er een specifiek indelingnummer is (bijv. "2"), filter dan op bestanden die bij deze indeling horen (zoals EC02, Concept 2, 02)
-      if (indelingNummer) {
-        // Bepaal welke nummers we WEL en NIET willen zien
-        const andereNummers = ['1', '2', '3', '4', '5', '6'].filter(n => n !== indelingNummer);
-        
-        // Controleer of de bestandsnaam expliciet een ANDER nummer bevat (bijv. "01", "ec01", "concept 1")
-        bevatAnderGetal: for (const anderNummer of andereNummers) {
-          const isAnderIndeling = 
-            combined.includes(`ec0${anderNummer}`) || 
-            combined.includes(`ec${anderNummer}`) || 
-            combined.includes(`concept ${anderNummer}`) || 
-            combined.includes(`concept${anderNummer}`) || 
-            combined.includes(`indeling 0${anderNummer}`) || 
-            combined.includes(`indeling0${anderNummer}`) ||
-            combined.includes(`_0${anderNummer}_`) ||
-            combined.includes(`_0${anderNummer}.`) ||
-            combined.includes(`-${anderNummer}-`) ||
-            combined.endsWith(`-${anderNummer}`);
-
-          if (isAnderIndeling) {
-            return false; // Dit bestand hoort bij een andere indeling en sluiten we uit!
-          }
-        }
+      // 1. Sluit direct bestanden uit die van het andere designpakket zijn
+      if (combined.includes(uitsluitPakket) || combinedNorm.includes(uitsluitPakketNorm)) {
+        return false;
       }
 
-      return true;
+      // 2. Als het een info sheet of algemeen bestand is zonder indelingnummer, accepteer het als het bij ons pakket hoort
+      const isAlgemeenPakketBestand = 
+        (combined.includes(activePakketLower) || combinedNorm.includes(activePakketNorm)) && 
+        !combined.includes('ec0') && !combined.includes('ec') && !combined.includes('concept');
+
+      if (isAlgemeenPakketBestand) {
+        return true;
+      }
+
+      // 3. Voor technische tekeningen en plattegronden: filter strikt op het gekozen indelingnummer (bijv. "2", "ec02", "concept 2")
+      const matchIndeling = 
+        combined.includes(`ec0${indelingNummer}`) || 
+        combined.includes(`ec${indelingNummer}`) || 
+        combined.includes(`concept ${indelingNummer}`) || 
+        combined.includes(`concept${indelingNummer}`) || 
+        combined.includes(`indeling 0${indelingNummer}`) || 
+        combined.includes(`indeling0${indelingNummer}`) ||
+        combined.includes(`_0${indelingNummer}_`) ||
+        combined.includes(`_0${indelingNummer}.`) ||
+        combined.includes(`-${indelingNummer}-`) ||
+        combined.includes(`type e${indelingNummer}`) ||
+        combined.includes(`type_e_${indelingNummer}`) ||
+        combined.includes(`type_e0${indelingNummer}`);
+
+      if (matchIndeling && (combined.includes(activePakketLower) || combinedNorm.includes(activePakketNorm) || combined.includes('tdg') || combined.includes('nomi'))) {
+        return true;
+      }
+
+      // Als de titel zowel het pakket als de juiste indeling bevat
+      if (combined.includes(activePakketLower) && (combined.includes(indelingNummer) || combined.includes(`0${indelingNummer}`))) {
+        return true;
+      }
+
+      return false;
     });
   };
 

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T12:17:55.429Z
+Generated: 2026-10-27T12:23:42.965Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T12:17:53.102Z
+- Last activity: 2026-10-27T12:23:40.664Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (8), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (3)
-- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, app/api/confirm/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (9), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (3)
+- Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/confirm/route.ts, lib/cms.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 69
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 480 lines | 22743 chars | hash 9b21e1741f7d
-  Last snapshot: 2026-10-27T12:17:53.102Z
+- app/download/page.tsx | 494 lines | 23392 chars | hash 6f42b8a86751
+  Last snapshot: 2026-10-27T12:23:40.664Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T12:23:40.664Z | saved | app/download/page.tsx
+- Summary: Line 1: inserted 494 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 494 lines | 23,392 chars | hash 6f42b8a86751 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
+
 ### 2026-10-27T12:17:53.102Z | saved | app/download/page.tsx
 - Summary: Line 196: replaced 21 lines with 42 lines.
 - Before: 459 lines | 21,729 chars | hash 28126dfa6b9d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,25 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || /..."
 - Current fragment: "// Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const r..."
 
-### 2026-10-27T10:42:53.950Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 90: replaced 33 lines with 23 lines.
-- Before: 516 lines | 22,756 chars | hash 2188db4aeac1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 506 lines | 22,365 chars | hash 7f6cc257e2a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding ||..."
-- Current fragment: "{}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding || / storedPakket?.pakket_afbeelding || / storedPakket?.pa..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
-- app/download/page.tsx (8 tracked changes)
+- app/download/page.tsx (9 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
-- lib/cms.ts (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
+- lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 2c77995 fix(download): implement strict layout filtering to exclude files belonging to other layout variants
+- HEAD: 2026-10-27 6625100 fix(download): implement smart layout exclusion filter to correctly display layout 2 files (EC02, Concept 2) and filter out layout 1 files
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -191,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 2c77995 by Bas van Dooremalen on 2026-10-27
-  fix(download): implement strict layout filtering to exclude files belonging to other layout variants
+- 6625100 by Bas van Dooremalen on 2026-10-27
+  fix(download): implement smart layout exclusion filter to correctly display layout 2 files (EC02, Concept 2) and filter out layout 1 files
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
