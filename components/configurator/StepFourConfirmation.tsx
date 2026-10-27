@@ -76,12 +76,14 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Robuuste opzet voor het ophalen van de banner gegevens uit het pakket of configuratorData
+  // Haal de bevestigingsstap op uit configuratorData of de root
   const bevData = 
-    storedPakket?.bevestigingStap || 
-    storedPakket?.bevestiging_stap || 
     configuratorData?.bevestigingStap || 
     configuratorData?.bevestiging_stap || 
+    configuratorData?.configuratorBeheer?.bevestigingStap ||
+    configuratorData?.configuratorBeheer?.bevestiging_stap ||
+    storedPakket?.bevestigingStap || 
+    storedPakket?.bevestiging_stap || 
     {};
 
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;

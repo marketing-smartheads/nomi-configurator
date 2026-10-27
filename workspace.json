@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T08:56:04.076Z",
-  "generatedAtEpochMs": 1793091364076,
+  "generatedAt": "2026-10-27T09:00:47.437Z",
+  "generatedAtEpochMs": 1793091647437,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -29,7 +29,7 @@
       "components/MainContent.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
-      "components/ConfiguratorScreen.tsx",
+      "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T08:56:02.317Z",
+    "lastActivityAt": "2026-10-27T09:00:45.677Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793091362317,
-      "lineCount": 489,
-      "charCount": 22030,
-      "hash": "7a4796eafb68",
+      "updatedAt": 1793091645677,
+      "lineCount": 491,
+      "charCount": 22125,
+      "hash": "be14cb5a90ac",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 79: replaced 6 lines with 8 lines.",
+      "recordedAt": "2026-10-27T09:00:45.677Z",
+      "recordedAtEpochMs": 1793091645677,
+      "before": {
+        "kind": "text",
+        "lineCount": 489,
+        "charCount": 22030,
+        "hash": "7a4796eafb68",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091645677
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 491,
+        "charCount": 22125,
+        "hash": "be14cb5a90ac",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091645677
+      },
+      "diff": {
+        "lineStart": 79,
+        "removedLines": 6,
+        "addedLines": 8,
+        "summary": "Line 79: replaced 6 lines with 8 lines.",
+        "beforeFragment": "Robuuste opzet voor het ophalen van de banner gegevens uit het pakket of configuratorData / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap |...",
+        "afterFragment": "Haal de bevestigingsstap op uit configuratorData of de root / const bevData = / configuratorData?.bevestigingStap || / configuratorData?.bevestiging_stap || / configuratorData?...."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1052,38 +1084,6 @@
         "beforeFragment": "pa",
         "afterFragment": "Pak"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 28: replaced 1 line with 1 line.",
-      "recordedAt": "2026-10-27T00:27:37.847Z",
-      "recordedAtEpochMs": 1793060857847,
-      "before": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5622,
-        "hash": "ffea82492dbf",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060857847
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5624,
-        "hash": "1ca9595154e4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793060857847
-      },
-      "diff": {
-        "lineStart": 28,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 28: replaced 1 line with 1 line.",
-        "beforeFragment": "const rawPakketten = configuratorData?.designp",
-        "afterFragment": "const rawPakketten = configuratorData?.designP"
-      }
     }
   ],
   "hotFiles": [
@@ -1100,6 +1100,10 @@
       "count": 10
     },
     {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 2
+    },
+    {
       "filePath": "components/MainContent.tsx",
       "count": 2
     },
@@ -1108,29 +1112,22 @@
       "count": 1
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 1
-    },
-    {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 1
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "lib/useConfigurator.ts",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 ef64760 feat(components): add Pannellum 360 viewer integration to StepThreeVisuals",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-27 5fd5c3a fix(components): fix fallback and image structure extraction for confirmation step banner in StepFourConfirmation",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },

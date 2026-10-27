@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T08:56:04.076Z
+Generated: 2026-10-27T09:00:47.437Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T08:56:02.317Z
+- Last activity: 2026-10-27T09:00:45.677Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepThreeVisuals.tsx (10), components/MainContent.tsx (2)
+- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepThreeVisuals.tsx (10), components/configurator/StepFourConfirmation.tsx (2)
 - Suggested starting points: components/configurator/StepFourConfirmation.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, components/MainContent.tsx, app/download/page.tsx
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 489 lines | 22030 chars | hash 7a4796eafb68
-  Last snapshot: 2026-10-27T08:56:02.317Z
+- components/configurator/StepFourConfirmation.tsx | 491 lines | 22125 chars | hash be14cb5a90ac
+  Last snapshot: 2026-10-27T09:00:45.677Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
 - components/configurator/StepThreeVisuals.tsx | 422 lines | 17204 chars | hash 7c13abe084e1
   Last snapshot: 2026-10-27T08:55:56.454Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 
 ## Recent Changes
+### 2026-10-27T09:00:45.677Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 79: replaced 6 lines with 8 lines.
+- Before: 489 lines | 22,030 chars | hash 7a4796eafb68 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- After: 491 lines | 22,125 chars | hash be14cb5a90ac | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
+- Previous fragment: "Robuuste opzet voor het ophalen van de banner gegevens uit het pakket of configuratorData / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap |..."
+- Current fragment: "Haal de bevestigingsstap op uit configuratorData of de root / const bevData = / configuratorData?.bevestigingStap || / configuratorData?.bevestiging_stap || / configuratorData?...."
+
 ### 2026-10-27T08:56:02.317Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 10: replaced 281 lines with 286 lines.
 - Before: 484 lines | 22,459 chars | hash 6cb8208e9f8a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
@@ -154,32 +161,22 @@ Structured manifest: workspace.json
 - Previous fragment: "pa"
 - Current fragment: "Pak"
 
-### 2026-10-27T00:27:37.847Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 28: replaced 1 line with 1 line.
-- Before: 136 lines | 5,622 chars | hash ffea82492dbf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 136 lines | 5,624 chars | hash 1ca9595154e4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- Previous fragment: "const rawPakketten = configuratorData?.designp"
-- Current fragment: "const rawPakketten = configuratorData?.designP"
-
 
 ## Hot Files
 - lib/cms.ts (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (11 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (10 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 - app/download/page.tsx (1 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (1 tracked changes)
 - components/configurator/StepOnewoning.tsx (1 tracked changes)
-- components/ConfiguratorScreen.tsx (1 tracked changes)
+- lib/useConfigurator.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 ef64760 feat(components): add Pannellum 360 viewer integration to StepThreeVisuals
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-27 5fd5c3a fix(components): fix fallback and image structure extraction for confirmation step banner in StepFourConfirmation
+- Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
