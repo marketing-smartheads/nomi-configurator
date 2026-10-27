@@ -84,7 +84,7 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap data specifiek op uit het geselecteerde designpakket repeater item
+  // Haal de bevestigingsstap data op uit het geselecteerde pakket of direct uit configuratorData
   const bevData = 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
@@ -92,7 +92,12 @@ export default function StepFourConfirmation({
     data?.bevestiging_stap || 
     {};
 
-  const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
+  const rawImage = 
+    bevData?.bannerAfbeelding || 
+    bevData?.banner_afbeelding || 
+    storedPakket?.pakketAafbeelding || 
+    storedPakket?.pakket_a afbeelding;
+
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
     rawImage?.node?.sourceUrl || 
@@ -100,7 +105,11 @@ export default function StepFourConfirmation({
     rawImage?.mediaItemUrl || 
     null;
 
-  const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
+  const heroTitle = 
+    bevData?.bannerTitel || 
+    bevData?.banner_titel || 
+    pakketNaam || 
+    '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
