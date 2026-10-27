@@ -193,45 +193,40 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Haal exact het cijfer op van de gekozen indeling (bijv. "2" uit "Indeling 02")
+  // Haal het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02")
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
   const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '2'; // Standaard 2
 
-  // EXACTE EN SLIMME FILTER OP BASIS VAN DE BESTAND TITEL
+  // ROBUUSTE FILTER: Controleert of bestandstitel bij gekozen pakket hoort en de juiste indeling bevat
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
     const activePakketLower = (designPakket || '').toLowerCase(); // bijv. "hotel chic"
     const isHotelChic = activePakketLower.includes('hotel');
     const uitsluitPakket = isHotelChic ? 'modern raw' : 'hotel chic';
 
     return rawBestandenLijst.filter((bestand: any) => {
-      // Haal de bestandstitel uit het CMS op (bijv. "Hotel Chic - Type EC02 Indeling" of "Hotel Chic - Info sheet - Concept 2")
       const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
       if (!titel) return false;
 
-      // 1. Sluit altijd het andere designpakket uit op basis van de titel
+      // 1. Sluit altijd het andere designpakket uit
       if (titel.includes(uitsluitPakket)) return false;
 
-      // 2. Het bestand moet bij ons gekozen designpakket horen (of een algemeen bestand zijn zoals moodboard / info sheet)
+      // 2. Het bestand moet bij ons gekozen designpakket horen (of algemeen zijn)
       const hoortBijPakket = titel.includes(activePakketLower) || titel.includes('moodboard') || titel.includes('info sheet');
       if (!hoortBijPakket) return false;
 
-      // 3. Filter streng op het indelingnummer uit de titel:
-      // Als de indeling 2 is, moeten titels met "1", "01", "ec01", "concept 1" direct genegeerd worden.
-      const andereGetallen = ['1', '3', '4', '5', '6', '7', '8', '9'].filter(n => n !== indelingNummer);
+      // 3. Controleer of er expliciet een verkeerd indelingnummer in staat (bijv. "1" of "01" als we indeling 2 willen)
+      const verkeerdeNummers = ['1', '3', '4', '5', '6', '7', '8', '9'].filter(n => n !== indelingNummer);
       
-      for (const ander of andereGetallen) {
-        // Controleer of de titel een ander specifiek nummer bevat (bijv. "ec01" of "concept 1" of "indeling 01")
+      for (const num of verkeerdeNummers) {
         if (
-          titel.includes(`ec0${ander}`) || 
-          titel.includes(`ec${ander}`) || 
-          titel.includes(`concept ${ander}`) || 
-          titel.includes(`concept-${ander}`) || 
-          titel.includes(`concept_${ander}`) || 
-          titel.includes(`concept${ander}`) || 
-          titel.includes(`indeling 0${ander}`) || 
-          titel.includes(`indeling0${ander}`) ||
-          titel.includes(` - 0${ander}`) ||
-          titel.includes(` - ${ander}`)
+          titel.includes(`ec0${num}`) || 
+          titel.includes(`ec${num}`) || 
+          titel.includes(`concept ${num}`) || 
+          titel.includes(`concept-${num}`) || 
+          titel.includes(`concept_${num}`) || 
+          titel.includes(`concept${num}`) || 
+          titel.includes(`indeling 0${num}`) || 
+          titel.includes(`indeling0${num}`)
         ) {
           return false;
         }
