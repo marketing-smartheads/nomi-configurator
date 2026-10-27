@@ -94,20 +94,20 @@ export default function StepFourConfirmation({
   const rawImage = 
     bevData?.bannerAfbeelding || 
     bevData?.banner_afbeelding || 
-    storedPakket?.pakketAafbeelding || 
-    storedPakket?.pakket_a_afbeelding;
+    storedPakket?.pakketAfbeelding || 
+    storedPakket?.pakket_afbeelding;
 
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
     rawImage?.node?.sourceUrl || 
     rawImage?.sourceUrl || 
     rawImage?.mediaItemUrl || 
+    rawImage?.url || 
     null;
 
   const heroTitle = 
     bevData?.bannerTitel || 
     bevData?.banner_titel || 
-    pakketNaam || 
     '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
