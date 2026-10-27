@@ -84,7 +84,6 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap data op uit het geselecteerde pakket of configurator root
   const bevData = 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
@@ -92,7 +91,6 @@ export default function StepFourConfirmation({
     data?.bevestiging_stap || 
     {};
 
-  // Directe fallback naar de pakket afbeelding als de banner afbeelding in de subgroep leeg is
   const rawImage = 
     bevData?.bannerAfbeelding || 
     bevData?.banner_afbeelding || 
@@ -114,6 +112,14 @@ export default function StepFourConfirmation({
     data?.bannerTitel ||
     data?.banner_titel ||
     '';
+
+  // 👉 Debug logs om direct in te zien wat er misgaat
+  console.log("DEBUG - configuratorData:", configuratorData);
+  console.log("DEBUG - storedPakket:", storedPakket);
+  console.log("DEBUG - bevData:", bevData);
+  console.log("DEBUG - rawImage:", rawImage);
+  console.log("DEBUG - heroImage:", heroImage);
+  console.log("DEBUG - heroTitle:", heroTitle);
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
