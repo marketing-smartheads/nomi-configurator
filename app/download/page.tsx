@@ -18,40 +18,8 @@ export default function DownloadPage() {
   const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false);
   const [voucherInput, setVoucherInput] = useState<string>('');
   const [voucherError, setVoucherError] = useState<string | null>(null);
-  const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
 
-  // 1. Laad Pannellum scripts dynamisch in
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).pannellum) {
-      setIsPannellumLoaded(true);
-      return;
-    }
-
-    if (!document.getElementById('pannellum-css')) {
-      const link = document.createElement('link');
-      link.id = 'pannellum-css';
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css';
-      document.head.appendChild(link);
-    }
-
-    let script = document.getElementById('pannellum-js') as HTMLScriptElement;
-    if (!script) {
-      script = document.createElement('script');
-      script.id = 'pannellum-js';
-      script.src = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js';
-      script.async = true;
-      script.onload = () => setIsPannellumLoaded(true);
-      document.body.appendChild(script);
-    } else {
-      script.onload = () => setIsPannellumLoaded(true);
-      if ((window as any).pannellum) {
-        setIsPannellumLoaded(true);
-      }
-    }
-  }, []);
-
-  // 2. Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data
+  // Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data
   useEffect(() => {
     let isMounted = true;
 
@@ -82,7 +50,6 @@ export default function DownloadPage() {
           setPageData(cmsData);
         }
 
-        // Bepaal de geldigheidsduur (Ondersteunt optiepagina, configurator data én standaard 14 dagen)
         const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {};
         const instelbareDagen = Number(
           cmsData?.downloadLimietDagen || 
@@ -158,7 +125,6 @@ export default function DownloadPage() {
     };
   }, []);
 
-  // Dynamische Handler voor het valideren van ELKE vouchercode via WordPress WPGraphQL
   const handleVoucherSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const code = voucherInput.trim();
@@ -197,7 +163,7 @@ export default function DownloadPage() {
 
   const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
-  const designPakkettenLijst = configuratorData?.designPakketten || configuratorData?.design_pakketten || [];
+  const designPakkettenLijst = configuratorData?.designPaketten || configuratorData?.design_paketten || [];
   const woningTypenLijst = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
 
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -250,94 +216,6 @@ export default function DownloadPage() {
   };
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
-
-  const panoramaRendersLijst = 
-    huidigWoningTypeObj?.panoramaRenders || 
-    huidigWoningTypeObj?.panorama_renders || 
-    huidigWoningTypeObj?.panoramaRendersLijst || [];
-
-  let geselecteerdeMediaUrl: string | null = null;
-  let isVideo = false;
-
-  const gevondenRender = panoramaRendersLijst.find((item: any) => {
-    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(normPakket));
-  });
-
-  const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
-  const rawMediaUrl = (
-    renderBestandObj?.mediaItemUrl ||
-    renderBestandObj?.node?.mediaItemUrl ||
-    renderBestandObj?.sourceUrl ||
-    renderBestandObj?.node?.sourceUrl ||
-    renderBestandObj?.url ||
-    null
-  );
-
-  if (rawMediaUrl) {
-    isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(rawMediaUrl);
-    if (isVideo) {
-      geselecteerdeMediaUrl = rawMediaUrl;
-    } else {
-      geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
-    }
-  } else if (panoramaRendersLijst.length > 0) {
-    const eersteItem = panoramaRendersLijst[0];
-    const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
-    const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
-    if (eersteUrl) {
-      isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(eersteUrl);
-      geselecteerdeMediaUrl = isVideo ? eersteUrl : `/api/download?url=${encodeURIComponent(eersteUrl)}&name=panorama.jpg`;
-    }
-  }
-
-  // Initialiseer Pannellum 360° viewer
-  useEffect(() => {
-    let isMounted = true;
-    let currentBlobUrl: string | null = null;
-
-    async function loadPanorama() {
-      if (isVideo || !isPannellumLoaded || !geselecteerdeMediaUrl || typeof window === 'undefined' || !(window as any).pannellum) {
-        return;
-      }
-
-      try {
-        const response = await fetch(geselecteerdeMediaUrl);
-        if (!response.ok) throw new Error('Kon panorama afbeelding niet laden');
-        const blob = await response.blob();
-        
-        if (!isMounted) return;
-
-        currentBlobUrl = URL.createObjectURL(blob);
-
-        const container = document.getElementById('panorama-container');
-        if (container) {
-          container.innerHTML = '';
-        }
-
-        (window as any).pannellum.viewer('panorama-container', {
-          type: 'equirectangular',
-          panorama: currentBlobUrl,
-          autoLoad: true,
-          autoRotate: -2,
-          compass: false,
-          showZoomCtrl: true,
-          showFullscreenCtrl: true,
-        });
-      } catch (e) {
-        console.error('Pannellum init error:', e);
-      }
-    }
-
-    loadPanorama();
-
-    return () => {
-      isMounted = false;
-      if (currentBlobUrl) {
-        URL.revokeObjectURL(currentBlobUrl);
-      }
-    };
-  }, [isPannellumLoaded, geselecteerdeMediaUrl, isVideo]);
 
   if (needsVoucherInput) {
     return (
@@ -547,41 +425,6 @@ export default function DownloadPage() {
             </div>
           </div>
         </div>
-
-        {/* 360° Viewer & Stijlweergave sectie */}
-        {geselecteerdeMediaUrl && (
-          <div className="w-full pb-16 px-6 sm:px-12">
-            <div className="max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#EFECE6] space-y-6">
-              <div>
-                <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
-                  360° BELEVING & STIJLWEERGAVE
-                </span>
-                <h3 className="text-2xl font-serif text-dark mt-1">
-                  Bekijk uw interieur in 360 graden ({designPakket})
-                </h3>
-              </div>
-
-              {isVideo ? (
-                <div className="w-full h-[450px] sm:h-[550px] rounded-2xl overflow-hidden bg-black shadow-inner">
-                  <video 
-                    src={geselecteerdeMediaUrl} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : (
-                <div 
-                  id="panorama-container" 
-                  style={{ width: '100%', height: '550px' }} 
-                  className="rounded-2xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
-                />
-              )}
-            </div>
-          </div>
-        )}
 
         <div className="w-full pb-12 text-center">
           <div className="max-w-4xl mx-auto px-6">

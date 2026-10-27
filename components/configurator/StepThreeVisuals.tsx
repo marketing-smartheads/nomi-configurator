@@ -1,25 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function StepThreeVisuals({ 
   stepTitle, 
   configuratorData, 
-  designPakket 
+  designPakket,
+  woningType 
 }: any) {
   // Haal de configurator data op dezelfde robuuste manier op als in Stap 2
   const data = configuratorData?.configurator || configuratorData;
   const rawPakketten = data?.designPakketten || data?.design_paketten || [];
+  const woningTypenLijst = data?.woningTypen || data?.woning_typen || [];
 
   const pakkettenLijst = Array.isArray(rawPakketten) 
     ? rawPakketten 
     : rawPakketten?.nodes || rawPakketten?.edges || [];
   
-  // Debug logs om de data te verifiëren in de console
-  console.log("CHECK - Ontvangen designPakket prop:", designPakket);
-  console.log("CHECK - Gecorrigeerde pakkettenLijst:", pakkettenLijst);
-
   // Zoek het juiste pakket op basis van ID of titel (case-insensitive en getrimd)
   const huidigPakket = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase();
@@ -29,7 +27,12 @@ export default function StepThreeVisuals({
     return pId === selected || pTitel === selected;
   }) || pakkettenLijst[0];
 
-  console.log("CHECK - Geselecteerd huidigPakket:", huidigPakket);
+  const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return naam.includes(normWoning) || normWoning.includes(naam);
+  }) || woningTypenLijst[0];
 
   const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
@@ -38,6 +41,126 @@ export default function StepThreeVisuals({
   const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || [];
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
   const moodboardGallery = huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery || [];
+
+  // Pannellum state & logica
+  const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).pannellum) {
+      setIsPannellumLoaded(true);
+      return;
+    }
+
+    if (!document.getElementById('pannellum-css')) {
+      const link = document.createElement('link');
+      link.id = 'pannellum-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css';
+      document.head.appendChild(link);
+    }
+
+    let script = document.getElementById('pannellum-js') as HTMLScriptElement;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'pannellum-js';
+      script.src = 'https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js';
+      script.async = true;
+      script.onload = () => setIsPannellumLoaded(true);
+      document.body.appendChild(script);
+    } else {
+      script.onload = () => setIsPannellumLoaded(true);
+      if ((window as any).pannellum) {
+        setIsPannellumLoaded(true);
+      }
+    }
+  }, []);
+
+  const panoramaRendersLijst = 
+    huidigWoningTypeObj?.panoramaRenders || 
+    huidigWoningTypeObj?.panorama_renders || 
+    huidigWoningTypeObj?.panoramaRendersLijst || [];
+
+  let geselecteerdeMediaUrl: string | null = null;
+  let isVideo = false;
+
+  const gevondenRender = panoramaRendersLijst.find((item: any) => {
+    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(normPakket));
+  });
+
+  const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
+  const rawMediaUrl = (
+    renderBestandObj?.mediaItemUrl ||
+    renderBestandObj?.node?.mediaItemUrl ||
+    renderBestandObj?.sourceUrl ||
+    renderBestandObj?.node?.sourceUrl ||
+    renderBestandObj?.url ||
+    null
+  );
+
+  if (rawMediaUrl) {
+    isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(rawMediaUrl);
+    if (isVideo) {
+      geselecteerdeMediaUrl = rawMediaUrl;
+    } else {
+      geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
+    }
+  } else if (panoramaRendersLijst.length > 0) {
+    const eersteItem = panoramaRendersLijst[0];
+    const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
+    const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
+    if (eersteUrl) {
+      isVideo = /\.(mp4|webm|mov)(\?.*)?$/i.test(eersteUrl);
+      geselecteerdeMediaUrl = isVideo ? eersteUrl : `/api/download?url=${encodeURIComponent(eersteUrl)}&name=panorama.jpg`;
+    }
+  }
+
+  useEffect(() => {
+    let isMounted = true;
+    let currentBlobUrl: string | null = null;
+
+    async function loadPanorama() {
+      if (isVideo || !isPannellumLoaded || !geselecteerdeMediaUrl || typeof window === 'undefined' || !(window as any).pannellum) {
+        return;
+      }
+
+      try {
+        const response = await fetch(geselecteerdeMediaUrl);
+        if (!response.ok) throw new Error('Kon panorama afbeelding niet laden');
+        const blob = await response.blob();
+        
+        if (!isMounted) return;
+
+        currentBlobUrl = URL.createObjectURL(blob);
+
+        const container = document.getElementById('step3-panorama-container');
+        if (container) {
+          container.innerHTML = '';
+        }
+
+        (window as any).pannellum.viewer('step3-panorama-container', {
+          type: 'equirectangular',
+          panorama: currentBlobUrl,
+          autoLoad: true,
+          autoRotate: -2,
+          compass: false,
+          showZoomCtrl: true,
+          showFullscreenCtrl: true,
+        });
+      } catch (e) {
+        console.error('Pannellum init error:', e);
+      }
+    }
+
+    loadPanorama();
+
+    return () => {
+      isMounted = false;
+      if (currentBlobUrl) {
+        URL.revokeObjectURL(currentBlobUrl);
+      }
+    };
+  }, [isPannellumLoaded, geselecteerdeMediaUrl, isVideo]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [thumbPage, setThumbPage] = useState(0);
@@ -121,6 +244,40 @@ export default function StepThreeVisuals({
           {stapOmschrijving}
         </p>
       </div>
+
+      {/* 360° Panorama Viewer Sectie */}
+      {geselecteerdeMediaUrl && (
+        <div className="max-w-6xl mx-auto space-y-6">
+          <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
+            <div>
+              <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
+                360° Beleving
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif text-dark">Interactieve 360° ruimte</h3>
+              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar uw gekozen stijl in een interactieve panorama weergave.</p>
+            </div>
+
+            {isVideo ? (
+              <div className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden rounded-4xl bg-black shadow-inner">
+                <video 
+                  src={geselecteerdeMediaUrl} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div 
+                id="step3-panorama-container" 
+                style={{ width: '100%', height: '500px' }} 
+                className="w-full aspect-4/3 sm:aspect-16/10 rounded-4xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
+              />
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">

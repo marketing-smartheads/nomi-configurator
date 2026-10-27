@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T08:39:55.935Z
+Generated: 2026-10-27T08:49:35.729Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T08:39:54.182Z
+- Last activity: 2026-10-27T08:49:33.986Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepThreeVisuals.tsx (7), components/configurator/StepOnewoning.tsx (4)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/MainContent.tsx
+- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepThreeVisuals.tsx (9), components/configurator/StepOnewoning.tsx (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/MainContent.tsx, app/download/page.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
@@ -37,11 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 265 lines | 11231 chars | hash 89604e3eb106
-  Last snapshot: 2026-10-27T08:39:54.182Z
-  Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
+- components/configurator/StepThreeVisuals.tsx | 422 lines | 17204 chars | hash 7c13abe084e1
+  Last snapshot: 2026-10-27T08:49:33.986Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5497 chars | hash 829aaad9c45c
   Last snapshot: 2026-10-27T00:47:00.540Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -65,6 +65,22 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-27T08:49:33.986Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 3: replaced 115 lines with 278 lines.
+- Before: 259 lines | 10,960 chars | hash 9bf7742a55b7 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
+- After: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
+- Previous fragment: "} from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configura..."
+- Current fragment: ", useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any..."
+
+### 2026-10-27T08:49:19.628Z | saved | app/download/page.tsx
+
+### 2026-10-27T08:45:24.773Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 19: replaced 14 lines with 8 lines.
+- Before: 265 lines | 11,231 chars | hash 89604e3eb106 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
+- After: 259 lines | 10,960 chars | hash 9bf7742a55b7 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
+- Previous fragment: "Debug logs om de data te verifiëren in de console / console.log("CHECK - Ontvangen designPakket prop:", designPakket); / console.log("CHECK - Gecorrigeerde pakkettenLijst:", pak..."
+- Current fragment: "Zoek het juiste pakket op basis van ID of titel (case-insensitive en getrimd) / const huidigPakket = pakkettenLijst.find((p: any) => { / const pId = (p.pakketId || p.pakket_id |..."
+
 ### 2026-10-27T08:39:54.182Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Saved without a textual diff.
 - Before: 265 lines | 11,231 chars | hash 89604e3eb106 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
@@ -145,38 +161,22 @@ Structured manifest: workspace.json
 - Previous fragment: "P"
 - Current fragment: "p"
 
-### 2026-10-27T00:25:40.564Z | saved | lib/cms.ts
-- Summary: Saved without a textual diff.
-- Before: 215 lines | 5,823 chars | hash 7943584eac3d | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 215 lines | 5,823 chars | hash 7943584eac3d | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-
-### 2026-10-27T00:23:45.427Z | saved | lib/cms.ts
-- Summary: Line 97: replaced 1 line with 1 line.
-- Before: 215 lines | 5,824 chars | hash 3b57281655f0 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 215 lines | 5,823 chars | hash 7943584eac3d | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "Pak"
-- Current fragment: "pa"
-
-### 2026-10-27T00:11:41.078Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 13: inserted 2 lines.
-- Before: 135 lines | 5,562 chars | hash 02539b1ab342 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 136 lines | 5,624 chars | hash 1ca9595154e4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- Current fragment: "ole.log("Stap 2 configuratorData:", configuratorData); / cons"
-
 
 ## Hot Files
 - lib/cms.ts (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (11 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (7 tracked changes)
-- components/configurator/StepOnewoning.tsx (4 tracked changes)
-- components/ConfiguratorScreen.tsx (3 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (9 tracked changes)
+- components/configurator/StepOnewoning.tsx (3 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
+- app/download/page.tsx (1 tracked changes)
+- components/ConfiguratorScreen.tsx (1 tracked changes)
 - lib/useConfigurator.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 e5eac0c debug designpakket
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-27 946b9b7 fix(components): extract configuratorData correctly from nested object in StepThreeVisuals
+- Working tree summary: 5 modifieds
+- M app/download/page.tsx
 - M components/configurator/StepThreeVisuals.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e5eac0c by Bas van Dooremalen on 2026-10-27
-  debug designpakket
+- 946b9b7 by Bas van Dooremalen on 2026-10-27
+  fix(components): extract configuratorData correctly from nested object in StepThreeVisuals
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
