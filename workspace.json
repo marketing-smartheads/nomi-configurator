@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T14:58:51.097Z",
-  "generatedAtEpochMs": 1793113131097,
+  "generatedAt": "2026-10-27T15:01:14.576Z",
+  "generatedAtEpochMs": 1793113274576,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -23,8 +23,8 @@
     },
     "suggestedStartingPoints": [
       "app/dashboard/page.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
       "lib/cms.ts",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T14:58:48.731Z",
+    "lastActivityAt": "2026-10-27T15:01:12.831Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1793113128731,
-      "lineCount": 299,
-      "charCount": 14038,
-      "hash": "13465c996da3",
+      "updatedAt": 1793113272831,
+      "lineCount": 372,
+      "charCount": 18002,
+      "hash": "402480d5c584",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
     },
     {
@@ -640,6 +640,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 17: replaced 233 lines with 306 lines.",
+      "recordedAt": "2026-10-27T15:01:12.831Z",
+      "recordedAtEpochMs": 1793113272831,
+      "before": {
+        "kind": "text",
+        "lineCount": 299,
+        "charCount": 14024,
+        "hash": "f235ada8fd93",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113272831
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 372,
+        "charCount": 18002,
+        "hash": "402480d5c584",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113272831
+      },
+      "diff": {
+        "lineStart": 17,
+        "removedLines": 233,
+        "addedLines": 306,
+        "summary": "Line 17: replaced 233 lines with 306 lines.",
+        "beforeFragment": "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons...",
+        "afterFragment": "// Sorteer states / const [sortField, setSortField] = useState<string>('vouchercode'); / const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc'); / useEffect((..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 242: removed 1 line.",
+      "recordedAt": "2026-10-27T15:00:15.348Z",
+      "recordedAtEpochMs": 1793113215348,
+      "before": {
+        "kind": "text",
+        "lineCount": 299,
+        "charCount": 14038,
+        "hash": "13465c996da3",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113215348
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 299,
+        "charCount": 14024,
+        "hash": "f235ada8fd93",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793113215348
+      },
+      "diff": {
+        "lineStart": 242,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 242: removed 1 line.",
+        "beforeFragment": "uit WordPress",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1055,84 +1119,20 @@
         "beforeFragment": "het indelingnummer op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNu...",
         "afterFragment": "exact het cijfer van de indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatc..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 494 lines.",
-      "recordedAt": "2026-10-27T12:23:40.664Z",
-      "recordedAtEpochMs": 1793103820664,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793103820664
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 494,
-        "charCount": 23392,
-        "hash": "6f42b8a86751",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103820664
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 494,
-        "summary": "Line 1: inserted 494 lines.",
-        "beforeFragment": "",
-        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 21 lines with 42 lines.",
-      "recordedAt": "2026-10-27T12:17:53.102Z",
-      "recordedAtEpochMs": 1793103473102,
-      "before": {
-        "kind": "text",
-        "lineCount": 459,
-        "charCount": 21729,
-        "hash": "28126dfa6b9d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103473102
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 480,
-        "charCount": 22743,
-        "hash": "9b21e1741f7d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103473102
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 21,
-        "addedLines": 42,
-        "summary": "Line 196: replaced 21 lines with 42 lines.",
-        "beforeFragment": "Extract het getal uit de gekozen indeling (bijv. \"02\" of \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = inde...",
-        "afterFragment": "Haal het getal uit de gekozen indeling (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerM..."
-      }
     }
   ],
   "hotFiles": [
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 17
-    },
     {
       "filePath": "app/download/page.tsx",
       "count": 15
     },
     {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 15
+    },
+    {
       "filePath": "app/dashboard/page.tsx",
-      "count": 4
+      "count": 6
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -1150,11 +1150,14 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 be73304 feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 52dc6a7 feat(dashboard): show details like house type and layout only when voucher status is redeemed (verzilverd)",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/dashboard/page.tsx"
+      "M app/dashboard/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },

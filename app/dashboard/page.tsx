@@ -14,6 +14,10 @@ export default function DashboardPage() {
   const [vouchers, setVouchers] = useState<any[]>([]);
   const [fetchingData, setFetchingData] = useState(false);
 
+  // Sorteer states
+  const [sortField, setSortField] = useState<string>('vouchercode');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+
   useEffect(() => {
     const savedAuth = sessionStorage.getItem('nomi_dashboard_auth');
     if (savedAuth === 'true') {
@@ -68,6 +72,61 @@ export default function DashboardPage() {
     }
   };
 
+  // --- SORTEER FUNCTIE ---
+  const handleSort = (field: string) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortedVouchers = () => {
+    return [...vouchers].sort((a, b) => {
+      const detailsA = a.voucherVelden || {};
+      const detailsB = b.voucherVelden || {};
+      const statusA = String(detailsA.status || '');
+      const statusB = String(detailsB.status || '');
+      const isVerzilverdA = statusA === 'bevestigd' || statusA.toLowerCase().includes('bevestigd') || statusA.toLowerCase().includes('verzilverd');
+      const isVerzilverdB = statusB === 'bevestigd' || statusB.toLowerCase().includes('bevestigd') || statusB.toLowerCase().includes('verzilverd');
+
+      let valA = '';
+      let valB = '';
+
+      switch (sortField) {
+        case 'woningType':
+          valA = isVerzilverdA ? (detailsA.gekozenTypeWoning || detailsA.gekozen_type_woning || '') : '';
+          valB = isVerzilverdB ? (detailsB.gekozenTypeWoning || detailsB.gekozen_type_woning || '') : '';
+          break;
+        case 'indeling':
+          valA = isVerzilverdA ? (detailsA.gekozenIndeling || detailsA.gekozen_indeling || detailsA.indeling || '') : '';
+          valB = isVerzilverdB ? (detailsB.gekozenIndeling || detailsB.gekozen_indeling || detailsB.indeling || '') : '';
+          break;
+        case 'klantNaam':
+          valA = isVerzilverdA ? (detailsA.klantNaam || detailsA.klant_naam || '') : '';
+          valB = isVerzilverdB ? (detailsB.klantNaam || detailsB.klant_naam || '') : '';
+          break;
+        case 'designPakket':
+          valA = isVerzilverdA ? (detailsA.gekozenDesignpakket || detailsA.gekozen_designpakket || '') : '';
+          valB = isVerzilverdB ? (detailsB.gekozenDesignpakket || detailsB.gekozen_designpakket || '') : '';
+          break;
+        case 'status':
+          valA = isVerzilverdA ? 'Verzilverd' : 'Niet verzilverd';
+          valB = isVerzilverdB ? 'Verzilverd' : 'Niet verzilverd';
+          break;
+        case 'vouchercode':
+        default:
+          valA = detailsA.toegangscode || a.title || '';
+          valB = detailsB.toegangscode || b.title || '';
+          break;
+      }
+
+      const res = valA.localeCompare(valB, undefined, { numeric: true, sensitivity: 'base' });
+      return sortDirection === 'asc' ? res : -res;
+    });
+  };
+
   // --- CSV EXPORTEREN FUNCTIE ---
   const handleExportCsv = () => {
     if (vouchers.length === 0) {
@@ -77,7 +136,7 @@ export default function DashboardPage() {
 
     const headers = ['Type woning', 'Indeling', 'Klantnaam', 'Designpakket', 'Status', 'Vouchercode'];
     
-    const rows = vouchers.map(v => {
+    const rows = getSortedVouchers().map(v => {
       const details = v.voucherVelden || {};
       const statusVal = String(details.status || '');
       const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('verzilverd');
@@ -116,6 +175,8 @@ export default function DashboardPage() {
   const aantalVerzilverd = verzilverdLijst.length;
   const aantalOpen = totaalWoningen - aantalVerzilverd;
   const voortgangPercentage = totaalWoningen > 0 ? Math.round((aantalVerzilverd / totaalWoningen) * 100) : 0;
+
+  const sortedVouchers = getSortedVouchers();
 
   return (
     <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
@@ -228,25 +289,37 @@ export default function DashboardPage() {
                 <table className="w-full border-collapse text-left text-sm">
                   <thead>
                     <tr className="border-b border-[#E5E2DD] text-[#888] text-[10px] uppercase tracking-wider">
-                      <th className="py-4 px-6">Type woning</th>
-                      <th className="py-4 px-6">Indeling</th>
-                      <th className="py-4 px-6">Klant naam</th>
-                      <th className="py-4 px-6">Designpakket</th>
-                      <th className="py-4 px-6">Status</th>
-                      <th className="py-4 px-6">Vouchercode</th>
+                      <th onClick={() => handleSort('woningType')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Type woning {sortField === 'woningType' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
+                      <th onClick={() => handleSort('indeling')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Indeling {sortField === 'indeling' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
+                      <th onClick={() => handleSort('klantNaam')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Klant naam {sortField === 'klantNaam' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
+                      <th onClick={() => handleSort('designPakket')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Designpakket {sortField === 'designPakket' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
+                      <th onClick={() => handleSort('status')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Status {sortField === 'status' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
+                      <th onClick={() => handleSort('vouchercode')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
+                        Vouchercode {sortField === 'vouchercode' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {fetchingData ? (
                       <tr>
-                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
+                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen...</td>
                       </tr>
-                    ) : vouchers.length === 0 ? (
+                    ) : sortedVouchers.length === 0 ? (
                       <tr>
                         <td colSpan={6} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
                       </tr>
                     ) : (
-                      vouchers.map((v, index) => {
+                      sortedVouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
                         const statusVal = String(details.status || '');
                         const isVerzilverd = 

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T14:58:51.097Z
+Generated: 2026-10-27T15:01:14.576Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T14:58:48.731Z
+- Last activity: 2026-10-27T15:01:12.831Z
 ## Workspace Focus
 - Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), app/download/page.tsx (15), app/dashboard/page.tsx (4), app/api/confirm/route.ts (2)
-- Suggested starting points: app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, lib/cms.ts
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (15), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: app/dashboard/page.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, lib/cms.ts
 ## Current Workspace
 - Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 69
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/dashboard/page.tsx | 299 lines | 14038 chars | hash 13465c996da3
-  Last snapshot: 2026-10-27T14:58:48.731Z
+- app/dashboard/page.tsx | 372 lines | 18002 chars | hash 402480d5c584
+  Last snapshot: 2026-10-27T15:01:12.831Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/vouchers/route.ts | 52 lines | 1568 chars | hash 0eacd0d2ae72
   Last snapshot: 2026-10-27T14:51:17.159Z
@@ -65,6 +65,19 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-10-27T15:01:12.831Z | saved | app/dashboard/page.tsx
+- Summary: Line 17: replaced 233 lines with 306 lines.
+- Before: 299 lines | 14,024 chars | hash f235ada8fd93 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 372 lines | 18,002 chars | hash 402480d5c584 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons..."
+- Current fragment: "// Sorteer states / const [sortField, setSortField] = useState<string>('vouchercode'); / const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc'); / useEffect((..."
+
+### 2026-10-27T15:00:15.348Z | saved | app/dashboard/page.tsx
+- Summary: Line 242: removed 1 line.
+- Before: 299 lines | 14,038 chars | hash 13465c996da3 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 299 lines | 14,024 chars | hash f235ada8fd93 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "uit WordPress"
+
 ### 2026-10-27T14:58:48.731Z | saved | app/dashboard/page.tsx
 - Summary: Line 82: replaced 183 lines with 180 lines.
 - Before: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -154,33 +167,23 @@ Structured manifest: workspace.json
 - Previous fragment: "het indelingnummer op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNu..."
 - Current fragment: "exact het cijfer van de indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatc..."
 
-### 2026-10-27T12:23:40.664Z | saved | app/download/page.tsx
-- Summary: Line 1: inserted 494 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 494 lines | 23,392 chars | hash 6f42b8a86751 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
-
-### 2026-10-27T12:17:53.102Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 21 lines with 42 lines.
-- Before: 459 lines | 21,729 chars | hash 28126dfa6b9d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 480 lines | 22,743 chars | hash 9b21e1741f7d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = inde..."
-- Current fragment: "Haal het getal uit de gekozen indeling (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (17 tracked changes)
 - app/download/page.tsx (15 tracked changes)
-- app/dashboard/page.tsx (4 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (15 tracked changes)
+- app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 be73304 feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard
-- Working tree summary: 1 modified
+- HEAD: 2026-10-27 52dc6a7 feat(dashboard): show details like house type and layout only when voucher status is redeemed (verzilverd)
+- Working tree summary: 4 modifieds
 - M app/dashboard/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
