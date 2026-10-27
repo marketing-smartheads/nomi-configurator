@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T00:47:02.459Z",
-  "generatedAtEpochMs": 1793062022459,
+  "generatedAt": "2026-10-27T08:18:31.975Z",
+  "generatedAtEpochMs": 1793089111975,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,12 +22,12 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
-      "lib/cms.ts",
-      "components/configurator/StepOnewoning.tsx",
-      "components/VoucherWelcomeModal.tsx",
-      "components/ConfiguratorScreen.tsx",
       "components/configurator/StepThreeVisuals.tsx",
+      "lib/cms.ts",
+      "components/configurator/StepTwoDesign.tsx",
+      "components/configurator/StepOnewoning.tsx",
+      "components/ConfiguratorScreen.tsx",
+      "components/VoucherWelcomeModal.tsx",
       "components/MainContent.tsx",
       "lib/useConfigurator.ts",
       ".gitignore",
@@ -563,17 +563,25 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T00:47:00.540Z",
+    "lastActivityAt": "2026-10-27T08:18:29.590Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
-      "save": 39,
-      "create": 1,
+      "save": 40,
+      "create": 0,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1793089109590,
+      "lineCount": 260,
+      "charCount": 10860,
+      "hash": "c4ba594b374d",
+      "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
+    },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1793062020540,
@@ -589,14 +597,6 @@
       "charCount": 5824,
       "hash": "3b57281655f0",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793057985836,
-      "lineCount": 263,
-      "charCount": 10896,
-      "hash": "88578395a651",
-      "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 22: replaced 79 lines with 76 lines.",
+      "recordedAt": "2026-10-27T08:18:29.590Z",
+      "recordedAtEpochMs": 1793089109590,
+      "before": {
+        "kind": "text",
+        "lineCount": 263,
+        "charCount": 10896,
+        "hash": "88578395a651",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con...",
+        "updatedAt": 1793089109590
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 260,
+        "charCount": 10860,
+        "hash": "c4ba594b374d",
+        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con...",
+        "updatedAt": 1793089109590
+      },
+      "diff": {
+        "lineStart": 22,
+        "removedLines": 79,
+        "addedLines": 76,
+        "summary": "Line 22: replaced 79 lines with 76 lines.",
+        "beforeFragment": "const huidigPakket = pakkettenLijst.find((p: any) => (p.pakket_id || p.pakketId) === designPakket) || pakkettenLijst[0]; / const pakketTitel = huidigPakket?.pakket_titel || huid...",
+        "afterFragment": "// Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken / const huidigPakket = pakkettenLijst.find((p: any) => { / const pId = (p.pakketId || p.pakk..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1073,38 +1105,6 @@
         "beforeFragment": "P",
         "afterFragment": "_p"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 24: replaced 25 lines with 23 lines.",
-      "recordedAt": "2026-10-26T23:59:24.462Z",
-      "recordedAtEpochMs": 1793059164462,
-      "before": {
-        "kind": "text",
-        "lineCount": 137,
-        "charCount": 5707,
-        "hash": "ab8329f59817",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793059164462
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 135,
-        "charCount": 5562,
-        "hash": "02539b1ab342",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793059164462
-      },
-      "diff": {
-        "lineStart": 24,
-        "removedLines": 25,
-        "addedLines": 23,
-        "summary": "Line 24: replaced 25 lines with 23 lines.",
-        "beforeFragment": "1 || configuratorData?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = configuratorData?.stap2omschrijving || ''; / // Direct gekoppeld aan de juiste array uit de c...",
-        "afterFragment": "2 || 'Kies uw designpakket'; / const omschrijving = configuratorData?.stap2omschrijving || ''; / const rawPakketten = configuratorData?.designPaketten || []; / const pakkettenLi..."
-      }
     }
   ],
   "hotFiles": [
@@ -1121,16 +1121,16 @@
       "count": 5
     },
     {
-      "filePath": "components/VoucherWelcomeModal.tsx",
-      "count": 4
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 3
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
+      "filePath": "components/VoucherWelcomeModal.tsx",
+      "count": 3
     },
     {
       "filePath": "components/MainContent.tsx",
@@ -1144,17 +1144,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 c0cc6ba fix(components): fallback for designPakketten property path in StepTwoDesign",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 b20212f fix(components): clean up duplicate variable declarations in StepTwoDesign",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx"
+      "M components/configurator/StepThreeVisuals.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 09ae3eb by Bas van Dooremalen on 2026-10-27\n  reset code\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b20212f by Bas van Dooremalen on 2026-10-27\n  fix(components): clean up duplicate variable declarations in StepTwoDesign\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

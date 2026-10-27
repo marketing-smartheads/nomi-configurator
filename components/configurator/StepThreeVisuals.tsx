@@ -19,15 +19,20 @@ export default function StepThreeVisuals({
     ? rawPakketten 
     : rawPakketten?.nodes || rawPakketten?.edges || [];
   
-  const huidigPakket = pakkettenLijst.find((p: any) => (p.pakket_id || p.pakketId) === designPakket) || pakkettenLijst[0];
+  // Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken
+  const huidigPakket = pakkettenLijst.find((p: any) => {
+    const pId = (p.pakketId || p.pakket_id || '').trim();
+    const selectedId = (designPakket || '').trim();
+    return pId === selectedId;
+  }) || pakkettenLijst[0];
 
-  const pakketTitel = huidigPakket?.pakket_titel || huidigPakket?.pakketTitel || 'Hotel Chic';
+  const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
-  const stapOmschrijving = huidigPakket?.stap3_omschrijving || huidigPakket?.stap3Omschrijving || configuratorData?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
+  const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || configuratorData?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  const visuals = huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider || [];
-  const materialen = huidigPakket?.materialen_lijst || huidigPakket?.materialenLijst || [];
-  const moodboardGallery = huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery || [];
+  const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || [];
+  const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
+  const moodboardGallery = huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery || [];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [thumbPage, setThumbPage] = useState(0);
@@ -90,14 +95,6 @@ export default function StepThreeVisuals({
     if (isAnimating) return;
     const direction = absoluteIdx > activeIndex ? 'right' : 'left';
     triggerSlide(absoluteIdx, direction);
-  };
-
-  const handlePrevThumbPage = () => {
-    setThumbPage((prev) => (prev > 0 ? prev - 1 : maxThumbPage));
-  };
-
-  const handleNextThumbPage = () => {
-    setThumbPage((prev) => (prev < maxThumbPage ? prev + 1 : 0));
   };
 
   const currentThumbs = visuals.slice(
