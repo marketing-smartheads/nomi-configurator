@@ -21,9 +21,11 @@ export default function StepThreeVisuals({
   
   // Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken
   const huidigPakket = pakkettenLijst.find((p: any) => {
-    const pId = (p.pakketId || p.pakket_id || '').trim();
-    const selectedId = (designPakket || '').trim();
-    return pId === selectedId;
+    const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase();
+    const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase();
+    const selected = (designPakket || '').trim().toLowerCase();
+    
+    return pId === selected || pTitel === selected;
   }) || pakkettenLijst[0];
 
   const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';

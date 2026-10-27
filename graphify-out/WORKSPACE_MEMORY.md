@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T08:18:31.975Z
+Generated: 2026-10-27T08:27:43.154Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T08:18:29.590Z
+- Last activity: 2026-10-27T08:27:40.731Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepOnewoning.tsx (5), components/configurator/StepThreeVisuals.tsx (3)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/VoucherWelcomeModal.tsx
+- Hottest files right now: lib/cms.ts (12), components/configurator/StepTwoDesign.tsx (11), components/configurator/StepOnewoning.tsx (5), components/configurator/StepThreeVisuals.tsx (4)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/ConfiguratorScreen.tsx, components/MainContent.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 260 lines | 10860 chars | hash c4ba594b374d
-  Last snapshot: 2026-10-27T08:18:29.590Z
+- components/configurator/StepThreeVisuals.tsx | 262 lines | 10995 chars | hash b291afd179c3
+  Last snapshot: 2026-10-27T08:27:40.731Z
   Preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5497 chars | hash 829aaad9c45c
   Last snapshot: 2026-10-27T00:47:00.540Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useSearchParams, useRouter } from 'next/navigation'; / import Button from './Button'; / export default function VoucherWelcomeModal() { / const s..."
 
 ## Recent Changes
+### 2026-10-27T08:27:40.731Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 24: replaced 3 lines with 5 lines.
+- Before: 260 lines | 10,860 chars | hash c4ba594b374d | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
+- After: 262 lines | 10,995 chars | hash b291afd179c3 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
+- Previous fragment: "; / const selectedId = (designPakket || '').trim(); / return pId === selectedI"
+- Current fragment: ".toLowerCase(); / const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase(); / const selected = (designPakket || '').trim().toLowerCase(); / return pId === sel..."
+
 ### 2026-10-27T08:18:29.590Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 22: replaced 79 lines with 76 lines.
 - Before: 263 lines | 10,896 chars | hash 88578395a651 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con..."
@@ -155,32 +162,22 @@ Structured manifest: workspace.json
 - Previous fragment: "_p"
 - Current fragment: "P"
 
-### 2026-10-27T00:03:21.804Z | saved | lib/cms.ts
-- Summary: Line 97: replaced 1 line with 1 line.
-- Before: 215 lines | 5,823 chars | hash add39ca44442 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 215 lines | 5,824 chars | hash 305c860c6d40 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "P"
-- Current fragment: "_p"
-
 
 ## Hot Files
 - lib/cms.ts (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (11 tracked changes)
 - components/configurator/StepOnewoning.tsx (5 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/ConfiguratorScreen.tsx (3 tracked changes)
-- components/VoucherWelcomeModal.tsx (3 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
+- components/VoucherWelcomeModal.tsx (2 tracked changes)
 - lib/useConfigurator.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 b20212f fix(components): clean up duplicate variable declarations in StepTwoDesign
-- Working tree summary: 4 modifieds
+- HEAD: 2026-10-27 b7f6b8e fix(components): trim whitespace from pakketId matching and fix field fallback access in StepThreeVisuals
+- Working tree summary: 1 modified
 - M components/configurator/StepThreeVisuals.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +185,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- b20212f by Bas van Dooremalen on 2026-10-27
-  fix(components): clean up duplicate variable declarations in StepTwoDesign
+- b7f6b8e by Bas van Dooremalen on 2026-10-27
+  fix(components): trim whitespace from pakketId matching and fix field fallback access in StepThreeVisuals
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
