@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T14:41:17.559Z
+Generated: 2026-10-27T14:48:25.783Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T14:41:15.131Z
+- Last activity: 2026-10-27T14:48:23.468Z
 ## Workspace Focus
 - Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (16), app/api/confirm/route.ts (2), components/configurator/StepThreeVisuals.tsx (2)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (15), app/api/confirm/route.ts (2), app/dashboard/page.tsx (2)
 - Suggested starting points: app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/api/confirm/route.ts, components/configurator/StepThreeVisuals.tsx, lib/cms.ts
 ## Current Workspace
 - Active file: app/dashboard/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/dashboard/page.tsx | 304 lines | 14012 chars | hash 7d7c3ff88074
-  Last snapshot: 2026-10-27T14:41:15.131Z
+- app/dashboard/page.tsx | 302 lines | 13988 chars | hash 39c23fe90aa4
+  Last snapshot: 2026-10-27T14:48:23.468Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
   Last snapshot: 2026-10-27T13:33:01.869Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
 
 ## Recent Changes
+### 2026-10-27T14:48:23.468Z | saved | app/dashboard/page.tsx
+- Summary: Line 17: replaced 271 lines with 269 lines.
+- Before: 304 lines | 14,012 chars | hash 7d7c3ff88074 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 302 lines | 13,988 chars | hash 39c23fe90aa4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "// Check of de sessie al bekend is bij herladen / useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLogge..."
+- Current fragment: "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons..."
+
 ### 2026-10-27T14:41:15.131Z | saved | app/dashboard/page.tsx
 - Summary: Line 79: replaced 190 lines with 194 lines.
 - Before: 300 lines | 13,641 chars | hash 39178477b1a4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -162,25 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "// Extraheer indelingnummer (bijv. "02" uit "Indeling 02" of "EC02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
 - Current fragment: "const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : ''; / if (needsVoucherInput) { / return..."
 
-### 2026-10-27T11:55:39.136Z | saved | app/download/page.tsx
-- Summary: Line 23: replaced 528 lines with 417 lines.
-- Before: 554 lines | 22,645 chars | hash f82dad4c5249 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 443 lines | 20,973 chars | hash 77daeb8fb697 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Initialiseer en valideer de downloadpagina & koppel voucher dynamisch op basis van WordPress data / useEffect(() => { / let isMounted = true; / async function initDownloadPag..."
-- Current fragment: "useEffect(() => { / let isMounted = true; / async function initDownloadPage() { / try { / let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromis..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
-- app/download/page.tsx (16 tracked changes)
+- app/download/page.tsx (15 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
+- app/dashboard/page.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
-- app/dashboard/page.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 98c419f feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation
+- HEAD: 2026-10-27 35290b3 feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter
 - Working tree summary: 1 modified
 - M app/dashboard/page.tsx
 
@@ -190,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 98c419f by Bas van Dooremalen on 2026-10-27
-  feat(api): ensure selected layout is successfully saved to WordPress voucher ACF fields upon confirmation
+- 35290b3 by Bas van Dooremalen on 2026-10-27
+  feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

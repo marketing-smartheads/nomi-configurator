@@ -14,7 +14,6 @@ export default function DashboardPage() {
   const [vouchers, setVouchers] = useState<any[]>([]);
   const [fetchingData, setFetchingData] = useState(false);
 
-  // Check of de sessie al bekend is bij herladen
   useEffect(() => {
     const savedAuth = sessionStorage.getItem('nomi_dashboard_auth');
     if (savedAuth === 'true') {
@@ -76,22 +75,22 @@ export default function DashboardPage() {
       return;
     }
 
-    const headers = ['Toegangscode', 'Type woning', 'Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status'];
+    const headers = ['Type woning', 'Indeling', 'Klantnaam', 'Designpakket', 'Status', 'Vouchercode'];
     
     const rows = vouchers.map(v => {
       const details = v.voucherVelden || {};
-      const toegangscode = `"${details.toegangscode || v.title || ''}"`;
       const woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`;
       const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;
       const klantNaam = `"${details.klantNaam || details.klant_naam || '—'}"`;
-      const klantEmail = `"${details.klantEMail || details.klant_email || '—'}"`;
       const designPakket = `"${details.gekozenDesignpakket || details.gekozen_designpakket || '—'}"`;
       
       const statusVal = String(details.status || '');
       const isVerz = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('verzilverd');
       const status = `"${isVerz ? 'Verzilverd' : 'Niet verzilverd'}"`;
+      
+      const code = `"${details.toegangscode || v.title || ''}"`;
 
-      return [toegangscode, woningType, indeling, klantNaam, klantEmail, designPakket, status].join(';');
+      return [woningType, indeling, klantNaam, designPakket, status, code].join(';');
     });
 
     const csvContent = '\uFEFF' + [headers.join(';'), ...rows].join('\n');
@@ -106,7 +105,6 @@ export default function DashboardPage() {
     document.body.removeChild(link);
   };
 
-  // --- STATISTIEKEN BEREKENEN OP BASIS VAN DATABASE ---
   const totaalWoningen = vouchers.length;
   const verzilverdLijst = vouchers.filter(v => {
     const statusVal = String(v.voucherVelden?.status || '');
@@ -126,7 +124,6 @@ export default function DashboardPage() {
 
       <main className="grow bg-[#F9F6F0]">
         {!isLoggedIn ? (
-          /* INLOGSCHERM */
           <div className="flex items-center justify-center py-24 px-6">
             <div className="bg-white p-8 rounded-2xl w-full max-w-md shadow-lg border border-[#E5E2DD]">
               <h2 className="font-serif text-2xl text-dark mb-2">Dashboard Inloggen</h2>
@@ -172,7 +169,6 @@ export default function DashboardPage() {
             </div>
           </div>
         ) : (
-          /* HOOFD DASHBOARD SCHERM */
           <div className="max-w-7xl mx-auto px-6 sm:px-12 py-12">
             
             <div className="flex justify-between items-start mb-8">
@@ -196,7 +192,6 @@ export default function DashboardPage() {
               </button>
             </div>
 
-            {/* Statistieken Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <div className="bg-white p-6 rounded-2xl border border-[#E5E2DD] shadow-sm">
                 <div className="font-serif text-4xl text-dark mb-1">{totaalWoningen}</div>
@@ -219,7 +214,6 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            {/* Tabel Overzicht */}
             <div className="bg-white rounded-2xl border border-[#E5E2DD] shadow-sm overflow-hidden">
               <div className="p-6 border-b border-[#E5E2DD] flex justify-between items-center">
                 <h3 className="m-0 text-lg font-serif text-dark">Alle woningen</h3>
@@ -240,25 +234,28 @@ export default function DashboardPage() {
                       <th className="py-4 px-6">Klant naam</th>
                       <th className="py-4 px-6">Designpakket</th>
                       <th className="py-4 px-6">Status</th>
+                      <th className="py-4 px-6">Vouchercode</th>
                     </tr>
                   </thead>
                   <tbody>
                     {fetchingData ? (
                       <tr>
-                        <td colSpan={5} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
+                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
                       </tr>
                     ) : vouchers.length === 0 ? (
                       <tr>
-                        <td colSpan={5} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
+                        <td colSpan={6} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
                       </tr>
                     ) : (
                       vouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
                         
                         const woningTypeLabel = details.gekozenTypeWoning || details.gekozen_type_woning || v.title || 'Type Onbekend';
-                        const indelingLabel = details.gekozenIndeling || details.gekozen_indeling || '—';
+                        // Vang alle mogelijke veldnamen voor de indeling op
+                        const indelingLabel = details.gekozenIndeling || details.gekozen_indeling || details.indeling || '—';
                         const klantNaam = details.klantNaam || details.klant_naam || '—';
                         const designPakket = details.gekozenDesignpakket || details.gekozen_designpakket || '—';
+                        const vouchercode = details.toegangscode || v.title || '—';
                         
                         const statusVal = String(details.status || '');
                         const isVerzilverd = 
@@ -285,6 +282,7 @@ export default function DashboardPage() {
                                 </span>
                               )}
                             </td>
+                            <td className="py-4 px-6 font-mono text-xs text-dark">{vouchercode}</td>
                           </tr>
                         );
                       })
