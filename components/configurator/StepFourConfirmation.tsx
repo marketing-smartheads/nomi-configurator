@@ -66,7 +66,8 @@ export default function StepFourConfirmation({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const rawDesignPakketten = data?.designPaketten || data?.design_paketten || [];
+  // Gecorrigeerd: let op de dubbele 'k' (designPakketten) die overeenkomt met lib/cms.ts
+  const rawDesignPakketten = data?.designPakketten || data?.designPaketten || data?.design_paketten || [];
   const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
 
   const storedWoning = woningTypenLijst.find((w: any) => {
@@ -84,16 +85,10 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap robuust op (inclusief snake_case en camelCase varianten)
-  const bevData = 
-    storedPakket?.bevestigingStap || 
-    storedPakket?.bevestiging_stap || 
-    {};
+  // Haal de bevestigingsstap nu correct op uit het gevonden designpakket
+  const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
 
-  const rawImage = 
-    bevData?.bannerAfbeelding || 
-    bevData?.banner_afbeelding;
-
+  const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
     rawImage?.node?.sourceUrl || 
@@ -101,10 +96,7 @@ export default function StepFourConfirmation({
     rawImage?.mediaItemUrl || 
     null;
 
-  const heroTitle = 
-    bevData?.bannerTitel || 
-    bevData?.banner_titel || 
-    '';
+  const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
