@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T10:42:56.269Z
+Generated: 2026-10-27T10:45:55.194Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T10:42:53.950Z
+- Last activity: 2026-10-27T10:45:53.446Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (13), lib/cms.ts (10), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (8)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (14), lib/cms.ts (9), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (8)
 - Suggested starting points: components/configurator/StepFourConfirmation.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/download/page.tsx, .gitignore
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 506 lines | 22365 chars | hash 7f6cc257e2a0
-  Last snapshot: 2026-10-27T10:42:53.950Z
+- components/configurator/StepFourConfirmation.tsx | 503 lines | 22267 chars | hash 9d1aaba99dd7
+  Last snapshot: 2026-10-27T10:45:53.446Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - components/configurator/StepThreeVisuals.tsx | 422 lines | 17204 chars | hash 7c13abe084e1
   Last snapshot: 2026-10-27T08:55:56.454Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 
 ## Recent Changes
+### 2026-10-27T10:45:53.446Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 87: replaced 26 lines with 23 lines.
+- Before: 506 lines | 22,365 chars | hash 7f6cc257e2a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 503 lines | 22,267 chars | hash 9d1aaba99dd7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- Previous fragment: "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || /..."
+- Current fragment: "// Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const r..."
+
 ### 2026-10-27T10:42:53.950Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 90: replaced 33 lines with 23 lines.
 - Before: 516 lines | 22,756 chars | hash 2188db4aeac1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -159,24 +166,17 @@ Structured manifest: workspace.json
 - Before: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
 - After: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
 
-### 2026-10-27T08:49:33.986Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 3: replaced 115 lines with 278 lines.
-- Before: 259 lines | 10,960 chars | hash 9bf7742a55b7 | preview: "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da..."
-- After: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
-- Previous fragment: "} from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configura..."
-- Current fragment: ", useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (13 tracked changes)
-- lib/cms.ts (10 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (14 tracked changes)
+- lib/cms.ts (9 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (8 tracked changes)
 - app/download/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 2d49e0d fix(components): add console.log debugging for confirmation banner data extraction in StepFourConfirmation
+- HEAD: 2026-10-27 6259f22 fix(components): fallback to design package image and title for confirmation banner in StepFourConfirmation
 - Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
 
