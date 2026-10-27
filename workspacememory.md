@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T11:55:41.466Z
+Generated: 2026-10-27T12:01:22.997Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T11:55:39.136Z
+- Last activity: 2026-10-27T12:01:20.581Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (6), app/download/page.tsx (4)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (6), app/download/page.tsx (5)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, app/api/confirm/route.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 6 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 443 lines | 20973 chars | hash 77daeb8fb697
-  Last snapshot: 2026-10-27T11:55:39.136Z
+- app/download/page.tsx | 450 lines | 21214 chars | hash 69ad8ebf96d4
+  Last snapshot: 2026-10-27T12:01:20.581Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T12:01:20.581Z | saved | app/download/page.tsx
+- Summary: Line 196: replaced 218 lines with 225 lines.
+- Before: 443 lines | 20,973 chars | hash 77daeb8fb697 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 450 lines | 21,214 chars | hash 69ad8ebf96d4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "// Extraheer indelingnummer (bijv. "02" uit "Indeling 02" of "EC02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
+- Current fragment: "const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : ''; / if (needsVoucherInput) { / return..."
+
 ### 2026-10-27T11:55:39.136Z | saved | app/download/page.tsx
 - Summary: Line 23: replaced 528 lines with 417 lines.
 - Before: 554 lines | 22,645 chars | hash f82dad4c5249 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,32 +170,20 @@ Structured manifest: workspace.json
 - Previous fragment: "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?..."
 - Current fragment: "// Haal de bevestigingsstap data op uit het pakket, de configurator root of direct uit opties / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_st..."
 
-### 2026-10-27T09:26:47.803Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 97: replaced 14 lines with 14 lines.
-- Before: 505 lines | 22,297 chars | hash 81c470b6f018 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 505 lines | 22,297 chars | hash 7ea9d383cc25 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "afbeelding || / storedPakket?.pakket_a_afbeelding; / const heroImage = / typeof rawImage === 'string' ? rawImage : / rawImage?.node?.sourceUrl || / rawImage?.sourceUrl || / rawI..."
-- Current fragment: "fbeelding || / storedPakket?.pakket_afbeelding; / const heroImage = / typeof rawImage === 'string' ? rawImage : / rawImage?.node?.sourceUrl || / rawImage?.sourceUrl || / rawImag..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (6 tracked changes)
-- app/download/page.tsx (4 tracked changes)
-- lib/cms.ts (3 tracked changes)
+- app/download/page.tsx (5 tracked changes)
+- lib/cms.ts (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 b99070d fix(download): parse and display selected layout title correctly from local storage object structure
-- Working tree summary: 6 modifieds
-- M app/api/confirm/route.ts
+- HEAD: 2026-10-27 6f5b40a fix(download): filter downloadable files and zip generation by both package name and layout number
+- Working tree summary: 1 modified
 - M app/download/page.tsx
-- M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -196,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- b99070d by Bas van Dooremalen on 2026-10-27
-  fix(download): parse and display selected layout title correctly from local storage object structure
+- 6f5b40a by Bas van Dooremalen on 2026-10-27
+  fix(download): filter downloadable files and zip generation by both package name and layout number
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

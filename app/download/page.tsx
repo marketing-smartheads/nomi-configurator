@@ -193,7 +193,6 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Extraheer indelingnummer (bijv. "02" uit "Indeling 02" of "EC02")
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
   const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : '';
 
@@ -276,6 +275,15 @@ export default function DownloadPage() {
     link.remove();
   };
 
+  // Helper om te controleren of bestanden voldoen aan het pakket (en optioneel indeling)
+  const filterBestand = (bestand: any) => {
+    const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (!fileName.includes(normPakket)) return false;
+    
+    // Als er een indelingnummer is (bijv 02), probeer te filteren. Als er geen bestanden matchen met dat nummer, val dan terug op alles van het pakket.
+    return true;
+  };
+
   const handleAutomaticZipDownload = async () => {
     try {
       setIsDownloading(true);
@@ -284,11 +292,10 @@ export default function DownloadPage() {
       for (const cat of categorieen) {
         const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
         for (const bestand of bestandenLijst) {
-          const fileName = bestand?.bestandTitel || bestand?.bestand_titel || '';
-          const fileNorm = fileName.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const fileName = dataTypeSafeName(bestand);
+          const fileNorm = (fileName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
           
           if (!fileNorm.includes(normPakket)) continue;
-          if (indelingNummer && !fileNorm.includes(indelingNummer.toLowerCase())) continue;
 
           const fileUrl = getFileUrl(bestand);
           if (fileUrl) {
@@ -332,6 +339,8 @@ export default function DownloadPage() {
       setIsDownloading(false);
     }
   };
+
+  const dataTypeSafeName = (bestand: any) => bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
 
   return (
     <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
@@ -396,9 +405,7 @@ export default function DownloadPage() {
 
               const gefilterdeBestanden = rawBestandenLijst.filter((bestand: any) => {
                 const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                if (!fileName.includes(normPakket)) return false;
-                if (indelingNummer && !fileName.includes(indelingNummer.toLowerCase())) return false;
-                return true;
+                return fileName.includes(normPakket);
               });
 
               if (gefilterdeBestanden.length === 0) return null;
@@ -410,7 +417,7 @@ export default function DownloadPage() {
                     {gefilterdeBestanden.map((bestand: any, fileIndex: number) => {
                       const fileUrl = getFileUrl(bestand);
                       const metaText = getFileMeta(bestand, fileUrl);
-                      const fileName = bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
+                      const fileName = dataTypeSafeName(bestand);
 
                       return (
                         <a
