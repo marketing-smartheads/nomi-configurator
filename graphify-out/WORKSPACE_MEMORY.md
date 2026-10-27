@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T11:19:19.164Z
+Generated: 2026-10-27T11:29:44.320Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T11:19:16.781Z
+- Last activity: 2026-10-27T11:29:41.938Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (7), lib/cms.ts (6)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (17), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (7), lib/cms.ts (5)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 545 lines | 22242 chars | hash 1090c35185df
-  Last snapshot: 2026-10-27T11:19:16.781Z
+- app/download/page.tsx | 554 lines | 22645 chars | hash f82dad4c5249
+  Last snapshot: 2026-10-27T11:29:41.938Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 493 lines | 22271 chars | hash f4436a5f41b4
   Last snapshot: 2026-10-27T11:04:59.181Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-10-27T11:29:41.938Z | saved | app/download/page.tsx
+- Summary: Line 96: replaced 13 lines with 22 lines.
+- Before: 545 lines | 22,242 chars | hash 1090c35185df | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 554 lines | 22,645 chars | hash f82dad4c5249 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Ophalen van gekozen indeling uit localStorage / sessionStorage / let rawIndelingObj = {}; / try { / rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}'..."
+- Current fragment: "Robuust ophalen van de gekozen indeling (of het nu een object of string is) / let resolvedIndeling = ''; / try { / const rawLocalStorageIndeling = localStorage.getItem('selected..."
+
 ### 2026-10-27T11:19:16.781Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 409 lines with 430 lines.
 - Before: 524 lines | 21,353 chars | hash f77a5c92bea1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -161,24 +168,17 @@ Structured manifest: workspace.json
 - Before: 497 lines | 22,259 chars | hash edbbeb145427 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - After: 497 lines | 22,259 chars | hash edbbeb145427 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
-### 2026-10-27T09:11:08.194Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 8: replaced 110 lines with 111 lines.
-- Before: 496 lines | 22,230 chars | hash b3e1e93f000e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
-- After: 497 lines | 22,259 chars | hash edbbeb145427 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "// Partner voor de documentatielijst. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL |..."
-- Current fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (17 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepTwoDesign.tsx (7 tracked changes)
-- lib/cms.ts (6 tracked changes)
-- app/download/page.tsx (2 tracked changes)
+- lib/cms.ts (5 tracked changes)
+- app/download/page.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 6575248 fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly
+- HEAD: 2026-10-27 0b3176d feat(download): display selected layout badge on download page extracted from local storage
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 6575248 by Bas van Dooremalen on 2026-10-27
-  fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly
+- 0b3176d by Bas van Dooremalen on 2026-10-27
+  feat(download): display selected layout badge on download page extracted from local storage
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

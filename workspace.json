@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T11:19:19.164Z",
-  "generatedAtEpochMs": 1793099959164,
+  "generatedAt": "2026-10-27T11:29:44.320Z",
+  "generatedAtEpochMs": 1793100584320,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T11:19:16.781Z",
+    "lastActivityAt": "2026-10-27T11:29:41.938Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793099956781,
-      "lineCount": 545,
-      "charCount": 22242,
-      "hash": "1090c35185df",
+      "updatedAt": 1793100581938,
+      "lineCount": 554,
+      "charCount": 22645,
+      "hash": "f82dad4c5249",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 96: replaced 13 lines with 22 lines.",
+      "recordedAt": "2026-10-27T11:29:41.938Z",
+      "recordedAtEpochMs": 1793100581938,
+      "before": {
+        "kind": "text",
+        "lineCount": 545,
+        "charCount": 22242,
+        "hash": "1090c35185df",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793100581938
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 554,
+        "charCount": 22645,
+        "hash": "f82dad4c5249",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793100581938
+      },
+      "diff": {
+        "lineStart": 96,
+        "removedLines": 13,
+        "addedLines": 22,
+        "summary": "Line 96: replaced 13 lines with 22 lines.",
+        "beforeFragment": "Ophalen van gekozen indeling uit localStorage / sessionStorage / let rawIndelingObj = {}; / try { / rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}'...",
+        "afterFragment": "Robuust ophalen van de gekozen indeling (of het nu een object of string is) / let resolvedIndeling = ''; / try { / const rawLocalStorageIndeling = localStorage.getItem('selected..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1079,38 +1111,6 @@
         "updatedAt": 1793092391261
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 8: replaced 110 lines with 111 lines.",
-      "recordedAt": "2026-10-27T09:11:08.194Z",
-      "recordedAtEpochMs": 1793092268194,
-      "before": {
-        "kind": "text",
-        "lineCount": 496,
-        "charCount": 22230,
-        "hash": "b3e1e93f000e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
-        "updatedAt": 1793092268194
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 497,
-        "charCount": 22259,
-        "hash": "edbbeb145427",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793092268194
-      },
-      "diff": {
-        "lineStart": 8,
-        "removedLines": 110,
-        "addedLines": 111,
-        "summary": "Line 8: replaced 110 lines with 111 lines.",
-        "beforeFragment": "// Partner voor de documentatielijst. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL |...",
-        "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,17 +1128,17 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 2
+      "count": 3
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 6575248 fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly",
+    "headSummary": "2026-10-27 0b3176d feat(download): display selected layout badge on download page extracted from local storage",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1148,7 +1148,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6575248 by Bas van Dooremalen on 2026-10-27\n  fix(components): resolve designPakketten property mapping and extract confirmation step banner data correctly\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 0b3176d by Bas van Dooremalen on 2026-10-27\n  feat(download): display selected layout badge on download page extracted from local storage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

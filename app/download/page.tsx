@@ -93,19 +93,28 @@ export default function DownloadPage() {
         let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
         let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
 
-        // Ophalen van gekozen indeling uit localStorage / sessionStorage
-        let rawIndelingObj = {};
+        // Robuust ophalen van de gekozen indeling (of het nu een object of string is)
+        let resolvedIndeling = '';
         try {
-          rawIndelingObj = JSON.parse(localStorage.getItem('selected_indeling') || '{}');
+          const rawLocalStorageIndeling = localStorage.getItem('selected_indeling');
+          if (rawLocalStorageIndeling) {
+            if (rawLocalStorageIndeling.startsWith('{')) {
+              const parsedObj = JSON.parse(rawLocalStorageIndeling);
+              resolvedIndeling = parsedObj?.indelingTitel || parsedObj?.indeling_titel || parsedObj?.titel || '';
+            } else {
+              resolvedIndeling = rawLocalStorageIndeling;
+            }
+          }
         } catch (e) {
-          rawIndelingObj = {};
+          resolvedIndeling = '';
         }
 
-        let resolvedIndeling = 
-          (rawIndelingObj as any)?.indelingTitel || 
-          sessionStorage.getItem('geselecteerdeIndeling') || 
-          localStorage.getItem('geselecteerdeIndeling') || 
-          '';
+        if (!resolvedIndeling) {
+          resolvedIndeling = 
+            sessionStorage.getItem('geselecteerdeIndeling') || 
+            localStorage.getItem('geselecteerdeIndeling') || 
+            '';
+        }
 
         if (opgeslagenCode && (!resolvedWoning || !resolvedPakket)) {
           const liveVoucherData = await getVoucherData(opgeslagenCode);
