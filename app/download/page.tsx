@@ -193,27 +193,48 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02")
+  // Haal het getal uit de gekozen indeling (bijv. "2" uit "Indeling 02")
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
   const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; // bijv. "2"
 
-  // Strenge filter: dwing af dat alleen bestanden worden getoond die bij de juiste indeling horen
+  // SLIMME FILTER: Match zowel op designpakket als op het indelingnummer (bijv. 2, EC02, Concept 2)
   const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
     return rawBestandenLijst.filter((bestand: any) => {
-      const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-      
-      // Moet sowieso bij het pakket horen
-      if (!fileName.includes(normPakket)) return false;
+      const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
+      const urlOfPad = (getFileUrl(bestand) || '').toLowerCase();
+      const combined = `${titel} ${urlOfPad}`;
 
-      // Als het een technische tekening / plattegrond / concept is met een nummer erin, filter dan strikt op het indelingnummer
+      // 1. Het bestand moet bij het gekozen pakket horen (of algemeen zijn zoals info sheets / moodboards)
+      const hoortBijPakket = combined.includes((designPakket || '').toLowerCase()) || 
+                             combined.includes(normPakket) || 
+                             combined.includes('info sheet') || 
+                             combined.includes('moodboard');
+
+      if (!hoortBijPakket) return false;
+
+      // 2. Als er een specifiek indelingnummer is (bijv. "2"), filter dan op bestanden die bij deze indeling horen (zoals EC02, Concept 2, 02)
       if (indelingNummer) {
-        const bevatOnjuistNummer = ['1', '2', '3', '4', '5'].some(num => {
-          if (num === indelingNummer) return false;
-          // Als de bestandsnaam expliciet een andernummer bevat (bijv. "ec01" of "concept1" terwijl wij 2 willen)
-          return fileName.includes(`ec0${num}`) || fileName.includes(`ec${num}`) || fileName.includes(`concept${num}`) || fileName.includes(`indeling0${num}`) || fileName.includes(`indeling${num}`);
-        });
+        // Bepaal welke nummers we WEL en NIET willen zien
+        const andereNummers = ['1', '2', '3', '4', '5', '6'].filter(n => n !== indelingNummer);
+        
+        // Controleer of de bestandsnaam expliciet een ANDER nummer bevat (bijv. "01", "ec01", "concept 1")
+        bevatAnderGetal: for (const anderNummer of andereNummers) {
+          const isAnderIndeling = 
+            combined.includes(`ec0${anderNummer}`) || 
+            combined.includes(`ec${anderNummer}`) || 
+            combined.includes(`concept ${anderNummer}`) || 
+            combined.includes(`concept${anderNummer}`) || 
+            combined.includes(`indeling 0${anderNummer}`) || 
+            combined.includes(`indeling0${anderNummer}`) ||
+            combined.includes(`_0${anderNummer}_`) ||
+            combined.includes(`_0${anderNummer}.`) ||
+            combined.includes(`-${anderNummer}-`) ||
+            combined.endsWith(`-${anderNummer}`);
 
-        if (bevatOnjuistNummer) return false;
+          if (isAnderIndeling) {
+            return false; // Dit bestand hoort bij een andere indeling en sluiten we uit!
+          }
+        }
       }
 
       return true;

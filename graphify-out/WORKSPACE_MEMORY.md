@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T12:11:53.269Z
+Generated: 2026-10-27T12:17:55.429Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T12:11:51.527Z
+- Last activity: 2026-10-27T12:17:53.102Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), components/configurator/StepThreeVisuals.tsx (8), app/download/page.tsx (7), components/configurator/StepTwoDesign.tsx (4)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (8), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (3)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, app/api/confirm/route.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 459 lines | 21729 chars | hash 28126dfa6b9d
-  Last snapshot: 2026-10-27T12:11:51.527Z
+- app/download/page.tsx | 480 lines | 22743 chars | hash 9b21e1741f7d
+  Last snapshot: 2026-10-27T12:17:53.102Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T12:17:53.102Z | saved | app/download/page.tsx
+- Summary: Line 196: replaced 21 lines with 42 lines.
+- Before: 459 lines | 21,729 chars | hash 28126dfa6b9d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 480 lines | 22,743 chars | hash 9b21e1741f7d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = inde..."
+- Current fragment: "Haal het getal uit de gekozen indeling (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
+
 ### 2026-10-27T12:11:51.527Z | saved | app/download/page.tsx
 - Summary: Line 196: replaced 19 lines with 25 lines.
 - Before: 453 lines | 21,397 chars | hash 86ed78038622 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -163,25 +170,18 @@ Structured manifest: workspace.json
 - Previous fragment: "data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding ||..."
 - Current fragment: "{}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || / storedPakket?.pakketAfbeelding || / storedPakket?.pakket_afbeelding || / storedPakket?.pa..."
 
-### 2026-10-27T10:36:50.377Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 87: replaced 30 lines with 36 lines.
-- Before: 510 lines | 22,576 chars | hash 3e972f72e684 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 516 lines | 22,756 chars | hash 2188db4aeac1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "// Haal de bevestigingsstap data op uit het geselecteerde pakket of configurator root / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || /..."
-- Current fragment: "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
+- app/download/page.tsx (8 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
-- app/download/page.tsx (7 tracked changes)
-- components/configurator/StepTwoDesign.tsx (4 tracked changes)
+- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - lib/cms.ts (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 5099d80 fix(download): implement smart layout filtering with automatic fallback to ensure all files and zip downloads render correctly
+- HEAD: 2026-10-27 2c77995 fix(download): implement strict layout filtering to exclude files belonging to other layout variants
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -191,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- d348d1f by Bas van Dooremalen on 2026-10-27
-  fix(download): restore flexible file filtering by design package to ensure all files and zip generation work correctly
+- 2c77995 by Bas van Dooremalen on 2026-10-27
+  fix(download): implement strict layout filtering to exclude files belonging to other layout variants
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
