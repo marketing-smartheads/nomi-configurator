@@ -166,11 +166,46 @@ export default function DownloadPage() {
     return titel.includes(normPakket) || normPakket.includes(titel);
   }) || designPakkettenLijst[0];
 
+  const normaliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
+
+  // Herkent o.a. "Type EC02", "TypeECO2", "Concept 2", "CONCEPT-02", "Concept_2", "Indeling 02"
+  const haalIndelingNummers = (tekst: string): Set<number> => {
+    const t = (tekst || '').toLowerCase();
+    const nummers = new Set<number>();
+    const patronen = [
+      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g, // Type EC02 / TypeECO2
+      /concept[\s_-]*0*(\d+)/g,                // Concept 2 / CONCEPT-02 / Concept_2
+      /indeling[\s_-]*0*(\d+)/g,               // Indeling 02 (niet "Indelingsplattegrond")
+    ];
+    for (const p of patronen) {
+      for (const m of t.matchAll(p)) nummers.add(Number(m[1]));
+    }
+    return nummers;
+  };
+
+  // Gekozen indeling (bijv. "Indeling 02" -> 2). Geen keuze = niet op nummer filteren.
+  const gekozenNummers = haalIndelingNummers(gekozenIndeling || '');
+  const gekozenNummer: number | null = gekozenNummers.size > 0
+    ? Array.from(gekozenNummers)[0]
+    : ((gekozenIndeling || '').match(/\d+/) ? Number((gekozenIndeling || '').match(/\d+/)![0]) : null);
+
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+
+  // Elk woningtype staat per indeling apart in het CMS (bijv. "Type E" + "Indeling 02").
+  // Dus eerst op typenaam filteren, daarna de kandidaat kiezen die bij de gekozen indeling hoort.
+  const woningKandidaten = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return naam.includes(normWoning) || normWoning.includes(naam);
-  }) || woningTypenLijst[0];
+    return naam && (naam.includes(normWoning) || normWoning.includes(naam));
+  });
+  const huidigWoningTypeObj =
+    (gekozenNummer !== null &&
+      woningKandidaten.find((w: any) => {
+        const indelingTitel = w?.indelingTitel || w?.indeling_titel || w?.titel || '';
+        return haalIndelingNummers(indelingTitel).has(gekozenNummer);
+      })) ||
+    woningKandidaten[0] ||
+    woningTypenLijst[0];
 
   const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigWoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
   const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
@@ -196,29 +231,6 @@ export default function DownloadPage() {
   // ---------------------------------------------------------------------
   // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam
   // ---------------------------------------------------------------------
-  const normaliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
-
-  // Herkent o.a. "Type EC02", "TypeECO2", "Concept 2", "CONCEPT-02", "Concept_2", "Indeling 02"
-  const haalIndelingNummers = (tekst: string): Set<number> => {
-    const t = (tekst || '').toLowerCase();
-    const nummers = new Set<number>();
-    const patronen = [
-      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g, // Type EC02 / TypeECO2
-      /concept[\s_-]*0*(\d+)/g,                // Concept 2 / CONCEPT-02 / Concept_2
-      /indeling[\s_-]*0*(\d+)/g,               // Indeling 02 (niet "Indelingsplattegrond")
-    ];
-    for (const p of patronen) {
-      for (const m of t.matchAll(p)) nummers.add(Number(m[1]));
-    }
-    return nummers;
-  };
-
-  // Gekozen indeling (bijv. "Indeling 02" -> 2). Geen keuze = niet op nummer filteren.
-  const gekozenNummers = haalIndelingNummers(gekozenIndeling || '');
-  const gekozenNummer: number | null = gekozenNummers.size > 0
-    ? Array.from(gekozenNummers)[0]
-    : ((gekozenIndeling || '').match(/\d+/) ? Number((gekozenIndeling || '').match(/\d+/)![0]) : null);
 
   // Alle bekende pakketnamen uit het CMS (met fallback)
   const alleNormPakketten: string[] = Array.from(new Set([
