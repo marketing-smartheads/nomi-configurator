@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T12:23:42.965Z
+Generated: 2026-10-27T12:26:35.940Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T12:23:40.664Z
+- Last activity: 2026-10-27T12:26:34.211Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (9), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (3)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (10), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepTwoDesign.tsx (2)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/confirm/route.ts, lib/cms.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 494 lines | 23392 chars | hash 6f42b8a86751
-  Last snapshot: 2026-10-27T12:23:40.664Z
+- app/download/page.tsx | 476 lines | 22549 chars | hash 003818703585
+  Last snapshot: 2026-10-27T12:26:34.211Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
   Last snapshot: 2026-10-27T11:43:31.026Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
 ## Recent Changes
+### 2026-10-27T12:26:34.211Z | saved | app/download/page.tsx
+- Summary: Line 196: replaced 59 lines with 41 lines.
+- Before: 494 lines | 23,392 chars | hash 6f42b8a86751 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 476 lines | 22,549 chars | hash 003818703585 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "het indelingnummer op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNu..."
+- Current fragment: "exact het cijfer van de indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatc..."
+
 ### 2026-10-27T12:23:40.664Z | saved | app/download/page.tsx
 - Summary: Line 1: inserted 494 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -162,25 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "} / moodboardGallery { / nodes { / sourceUrl / } / }"
 - Current fragment: "} / moodboardGallery { / nodes { / sourceUrl / } / } / bevestigingStap { / bannerAfbeelding { / node { / sourceUrl / mediaItemUrl / } / } / bannerTitel / }"
 
-### 2026-10-27T10:45:53.446Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 87: replaced 26 lines with 23 lines.
-- Before: 506 lines | 22,365 chars | hash 7f6cc257e2a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 503 lines | 22,267 chars | hash 9d1aaba99dd7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const rawImage = / bevData?.bannerAfbeelding || / bevData?.banner_afbeelding || /..."
-- Current fragment: "// Haal de bevestigingsstap rechtstreeks op uit het geselecteerde pakket / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / {}; / const r..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
-- app/download/page.tsx (9 tracked changes)
+- app/download/page.tsx (10 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
-- components/configurator/StepTwoDesign.tsx (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 6625100 fix(download): implement smart layout exclusion filter to correctly display layout 2 files (EC02, Concept 2) and filter out layout 1 files
+- HEAD: 2026-10-27 ecf9b9b fix(download): implement precise filtering matching both selected design package and layout number while excluding alternative packages
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
