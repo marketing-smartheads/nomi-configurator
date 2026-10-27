@@ -84,18 +84,23 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
+  // Haal de bevestigingsstap data op uit het pakket, de configurator root of direct uit opties
   const bevData = 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
     data?.bevestigingStap || 
     data?.bevestiging_stap || 
+    data?.configuratorBeheer ||
     {};
 
   const rawImage = 
     bevData?.bannerAfbeelding || 
     bevData?.banner_afbeelding || 
+    data?.bannerAfbeelding ||
+    data?.banner_afbeelding ||
     storedPakket?.pakketAfbeelding || 
-    storedPakket?.pakket_afbeelding;
+    storedPakket?.pakket_afbeelding ||
+    storedPakket?.pakketAafbeelding;
 
   const heroImage = 
     typeof rawImage === 'string' ? rawImage : 
@@ -108,7 +113,10 @@ export default function StepFourConfirmation({
   const heroTitle = 
     bevData?.bannerTitel || 
     bevData?.banner_titel || 
-    '';
+    data?.bannerTitel ||
+    data?.banner_titel ||
+    pakketNaam || 
+    'Uw nieuwe interieur';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];

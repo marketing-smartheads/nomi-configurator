@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T09:26:49.569Z",
-  "generatedAtEpochMs": 1793093209569,
+  "generatedAt": "2026-10-27T09:30:52.601Z",
+  "generatedAtEpochMs": 1793093452601,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,8 +24,8 @@
     "suggestedStartingPoints": [
       "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
-      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -562,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T09:26:47.803Z",
+    "lastActivityAt": "2026-10-27T09:30:50.240Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,10 +575,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793093207803,
-      "lineCount": 505,
-      "charCount": 22297,
-      "hash": "7ea9d383cc25",
+      "updatedAt": 1793093450240,
+      "lineCount": 513,
+      "charCount": 22622,
+      "hash": "339a7b6eda77",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
@@ -639,6 +639,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 87: replaced 25 lines with 33 lines.",
+      "recordedAt": "2026-10-27T09:30:50.240Z",
+      "recordedAtEpochMs": 1793093450240,
+      "before": {
+        "kind": "text",
+        "lineCount": 505,
+        "charCount": 22297,
+        "hash": "7ea9d383cc25",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793093450239
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 513,
+        "charCount": 22622,
+        "hash": "339a7b6eda77",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793093450240
+      },
+      "diff": {
+        "lineStart": 87,
+        "removedLines": 25,
+        "addedLines": 33,
+        "summary": "Line 87: replaced 25 lines with 33 lines.",
+        "beforeFragment": "const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_stap || / data?.bevestigingStap || / data?.bevestiging_stap || / {}; / const rawImage = / bevData?...",
+        "afterFragment": "// Haal de bevestigingsstap data op uit het pakket, de configurator root of direct uit opties / const bevData = / storedPakket?.bevestigingStap || / storedPakket?.bevestiging_st..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1044,38 +1076,6 @@
         "updatedAt": 1793090394182
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 11: replaced 29 lines with 26 lines.",
-      "recordedAt": "2026-10-27T08:36:54.023Z",
-      "recordedAtEpochMs": 1793090214023,
-      "before": {
-        "kind": "text",
-        "lineCount": 268,
-        "charCount": 11288,
-        "hash": "a06321968bbf",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / const rawPakketten = / con...",
-        "updatedAt": 1793090214023
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 265,
-        "charCount": 11231,
-        "hash": "89604e3eb106",
-        "preview": "'use client'; / import { useState } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket / }: any) { / // Haal de configurator da...",
-        "updatedAt": 1793090214023
-      },
-      "diff": {
-        "lineStart": 11,
-        "removedLines": 29,
-        "addedLines": 26,
-        "summary": "Line 11: replaced 29 lines with 26 lines.",
-        "beforeFragment": "const rawPakketten = / configuratorData?.designPaketten || / configuratorData?.design_paketten || / configuratorData?.configuratorBeheer?.designPaketten || / configuratorData?.c...",
-        "afterFragment": "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP..."
-      }
     }
   ],
   "hotFiles": [
@@ -1085,15 +1085,15 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 9
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 9
+      "count": 10
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 9
+    },
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 8
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1103,7 +1103,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 d497e57 fix(components): fix syntax error and property typo in StepFourConfirmation",
+    "headSummary": "2026-10-27 549ebdc fix(components): support multiple image node paths for confirmation banner in StepFourConfirmation",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1113,7 +1113,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 0eb8864 by Bas van Dooremalen on 2026-10-27\n  fix(components): extract confirmation banner data from design_paketten repeater in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 549ebdc by Bas van Dooremalen on 2026-10-27\n  fix(components): support multiple image node paths for confirmation banner in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
