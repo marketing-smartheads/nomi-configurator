@@ -10,6 +10,7 @@ export default function StepTwoDesign({
   designPakket, 
   setDesignPakket 
 }: any) {
+  console.log("Stap 2 configuratorData:", configuratorData);
   const [isConfirmed, setIsConfirmed] = useState(false);
 
   useEffect(() => {

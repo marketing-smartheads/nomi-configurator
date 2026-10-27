@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T00:08:31.695Z",
-  "generatedAtEpochMs": 1793059711695,
+  "generatedAt": "2026-10-27T00:11:42.899Z",
+  "generatedAtEpochMs": 1793059902899,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       "components/VoucherWelcomeModal.tsx",
       "components/ConfiguratorScreen.tsx",
       "app/voucher/page.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T00:08:29.259Z",
+    "lastActivityAt": "2026-10-27T00:11:41.078Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793059901078,
+      "lineCount": 136,
+      "charCount": 5624,
+      "hash": "1ca9595154e4",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+    },
+    {
       "filePath": "lib/cms.ts",
       "updatedAt": 1793059709259,
       "lineCount": 215,
       "charCount": 5824,
       "hash": "3b57281655f0",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793059164462,
-      "lineCount": 135,
-      "charCount": 5562,
-      "hash": "02539b1ab342",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 13: inserted 2 lines.",
+      "recordedAt": "2026-10-27T00:11:41.078Z",
+      "recordedAtEpochMs": 1793059901078,
+      "before": {
+        "kind": "text",
+        "lineCount": 135,
+        "charCount": 5562,
+        "hash": "02539b1ab342",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793059901078
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 136,
+        "charCount": 5624,
+        "hash": "1ca9595154e4",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793059901078
+      },
+      "diff": {
+        "lineStart": 13,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 13: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": "ole.log(\"Stap 2 configuratorData:\", configuratorData); / cons"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1059,38 +1091,6 @@
       "before": null,
       "after": null,
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 119 lines with 98 lines.",
-      "recordedAt": "2026-10-26T23:34:59.637Z",
-      "recordedAtEpochMs": 1793057699637,
-      "before": {
-        "kind": "text",
-        "lineCount": 160,
-        "charCount": 6478,
-        "hash": "46f4d92c2206",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / // Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const...",
-        "updatedAt": 1793057699637
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 139,
-        "charCount": 5834,
-        "hash": "bb8372e6abd6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793057699637
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 119,
-        "addedLines": 98,
-        "summary": "Line 7: replaced 119 lines with 98 lines.",
-        "beforeFragment": "// Vaste materialenlijsten per designpakket op basis van feedback Thomas de Gier / const MATERIALEN_MAP: Record<string, string[]> = { / 'modern raw': [ / 'Travertin look', / 'Be...",
-        "afterFragment": "export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket, / setDesignPakket / }: any) { / const [isConfirmed, setIsConfirmed] = useState(false); /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1100,11 +1100,11 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 8
+      "count": 7
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 4
+      "count": 5
     },
     {
       "filePath": "components/VoucherWelcomeModal.tsx",
@@ -1130,11 +1130,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 59c396f fix(cms): restore designPaketten field in graphql query conforming to schema",
+    "headSummary": "2026-10-27 368baa0 fix type designPakketten",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M lib/cms.ts"
+      "M components/configurator/StepTwoDesign.tsx"
     ],
     "error": ""
   },
