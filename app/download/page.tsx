@@ -194,7 +194,25 @@ export default function DownloadPage() {
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
   const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/);
-  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : '';
+  const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : '';
+
+  // Helper om bestanden te filteren met slimme fallback
+  const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
+    const pakketGefilterd = rawBestandenLijst.filter((bestand: any) => {
+      const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      return fileName.includes(normPakket);
+    });
+
+    if (!indelingNummer) return pakketGefilterd;
+
+    const specifiekGefilterd = pakketGefilterd.filter((bestand: any) => {
+      const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      return fileName.includes(indelingNummer) || fileName.includes(`0${indelingNummer}`);
+    });
+
+    // Als er specifieke bestanden zijn voor deze indeling, toon die. Zo niet, toon alles van het pakket als fallback.
+    return specifiekGefilterd.length > 0 ? specifiekGefilterd : pakketGefilterd;
+  };
 
   if (needsVoucherInput) {
     return (
@@ -275,28 +293,17 @@ export default function DownloadPage() {
     link.remove();
   };
 
-  // Helper om te controleren of bestanden voldoen aan het pakket (en optioneel indeling)
-  const filterBestand = (bestand: any) => {
-    const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (!fileName.includes(normPakket)) return false;
-    
-    // Als er een indelingnummer is (bijv 02), probeer te filteren. Als er geen bestanden matchen met dat nummer, val dan terug op alles van het pakket.
-    return true;
-  };
-
   const handleAutomaticZipDownload = async () => {
     try {
       setIsDownloading(true);
       const filesToZip: any[] = [];
 
       for (const cat of categorieen) {
-        const bestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-        for (const bestand of bestandenLijst) {
-          const fileName = dataTypeSafeName(bestand);
-          const fileNorm = (fileName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-          
-          if (!fileNorm.includes(normPakket)) continue;
+        const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+        const gefilterdeBestanden = getGefilterdeBestanden(rawBestandenLijst);
 
+        for (const bestand of gefilterdeBestanden) {
+          const fileName = dataTypeSafeName(bestand);
           const fileUrl = getFileUrl(bestand);
           if (fileUrl) {
             try {
@@ -402,11 +409,7 @@ export default function DownloadPage() {
             {categorieen?.map((cat: any, catIndex: number) => {
               const catTitel = cat?.categorieTitel || cat?.categorie_titel;
               const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-
-              const gefilterdeBestanden = rawBestandenLijst.filter((bestand: any) => {
-                const fileName = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-                return fileName.includes(normPakket);
-              });
+              const gefilterdeBestanden = getGefilterdeBestanden(rawBestandenLijst);
 
               if (gefilterdeBestanden.length === 0) return null;
 
