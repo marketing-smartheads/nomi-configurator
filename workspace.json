@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T09:00:47.437Z",
-  "generatedAtEpochMs": 1793091647437,
+  "generatedAt": "2026-10-27T09:06:01.676Z",
+  "generatedAtEpochMs": 1793091961676,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -26,14 +26,14 @@
       "lib/cms.ts",
       "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepThreeVisuals.tsx",
-      "components/MainContent.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T09:00:45.677Z",
+    "lastActivityAt": "2026-10-27T09:05:59.946Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793091645677,
-      "lineCount": 491,
-      "charCount": 22125,
-      "hash": "be14cb5a90ac",
+      "updatedAt": 1793091959946,
+      "lineCount": 496,
+      "charCount": 22230,
+      "hash": "b3e1e93f000e",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /..."
     },
     {
@@ -640,6 +640,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 9: replaced 90 lines with 94 lines.",
+      "recordedAt": "2026-10-27T09:05:59.946Z",
+      "recordedAtEpochMs": 1793091959946,
+      "before": {
+        "kind": "text",
+        "lineCount": 492,
+        "charCount": 22082,
+        "hash": "d0ec0c3d6194",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091959946
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 496,
+        "charCount": 22230,
+        "hash": "b3e1e93f000e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091959946
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 90,
+        "addedLines": 94,
+        "summary": "Line 9: replaced 90 lines with 94 lines.",
+        "beforeFragment": "// Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger. / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; /...",
+        "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / interface..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 79: replaced 6 lines with 7 lines.",
+      "recordedAt": "2026-10-27T09:03:36.390Z",
+      "recordedAtEpochMs": 1793091816390,
+      "before": {
+        "kind": "text",
+        "lineCount": 491,
+        "charCount": 22125,
+        "hash": "be14cb5a90ac",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091816390
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 492,
+        "charCount": 22082,
+        "hash": "d0ec0c3d6194",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / // Partner voor de documentatielijst. /...",
+        "updatedAt": 1793091816390
+      },
+      "diff": {
+        "lineStart": 79,
+        "removedLines": 6,
+        "addedLines": 7,
+        "summary": "Line 79: replaced 6 lines with 7 lines.",
+        "beforeFragment": "bevestigingsstap op uit configuratorData of de root / const bevData = / configuratorData?.bevestigingStap || / configuratorData?.bevestiging_stap || / configuratorData?.configur...",
+        "afterFragment": "robuuste configurator data op / const data = configuratorData?.configurator || configuratorData; / const beheer = data?.configuratorBeheer || data; / const bevData = / beheren?...."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1020,70 +1084,6 @@
         "beforeFragment": "rawPakketten = configuratorData?.designPaketten || configuratorData?.configurator?.designPaketten || []; / const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : ra...",
         "afterFragment": "titel = configuratorData?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = configuratorData?.stap2omschrijving || ''; / const rawPakketten = configuratorData?.design..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 25: replaced 2 lines with 2 lines.",
-      "recordedAt": "2026-10-27T00:43:10.742Z",
-      "recordedAtEpochMs": 1793061790742,
-      "before": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5624,
-        "hash": "1ca9595154e4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793061790742
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5696,
-        "hash": "9d921b9c4799",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793061790742
-      },
-      "diff": {
-        "lineStart": 25,
-        "removedLines": 2,
-        "addedLines": 2,
-        "summary": "Line 25: replaced 2 lines with 2 lines.",
-        "beforeFragment": "titel = configuratorData?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = configuratorData?.stap2omschrijving || ''",
-        "afterFragment": "rawPakketten = configuratorData?.designPaketten || configuratorData?.configurator?.designPaketten || []; / const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : ra..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 97: replaced 1 line with 1 line.",
-      "recordedAt": "2026-10-27T00:27:42.144Z",
-      "recordedAtEpochMs": 1793060862144,
-      "before": {
-        "kind": "text",
-        "lineCount": 215,
-        "charCount": 5823,
-        "hash": "7943584eac3d",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793060862144
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 215,
-        "charCount": 5824,
-        "hash": "3b57281655f0",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793060862144
-      },
-      "diff": {
-        "lineStart": 97,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 97: replaced 1 line with 1 line.",
-        "beforeFragment": "pa",
-        "afterFragment": "Pak"
-      }
     }
   ],
   "hotFiles": [
@@ -1101,11 +1101,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "components/MainContent.tsx",
-      "count": 2
+      "count": 4
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1123,17 +1119,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 5fd5c3a fix(components): fix fallback and image structure extraction for confirmation step banner in StepFourConfirmation",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 e4647d7 fix(components): retrieve confirmation banner data from root configuratorData in StepFourConfirmation",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "MM components/configurator/StepFourConfirmation.tsx",
+      "M  graphify-out/WORKSPACE_MEMORY.md",
+      "M  workspace.json",
+      "M  workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ef64760 by Bas van Dooremalen on 2026-10-27\n  feat(components): add Pannellum 360 viewer integration to StepThreeVisuals\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e4647d7 by Bas van Dooremalen on 2026-10-27\n  fix(components): retrieve confirmation banner data from root configuratorData in StepFourConfirmation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

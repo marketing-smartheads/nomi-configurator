@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
 // Partner voor de documentatielijst.
-// Wordt getoond aan de klant (scenario 2). De API-route gebruikt dezelfde variabele als ontvanger.
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
@@ -76,12 +75,13 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap op uit configuratorData of de root
+  // Haal de robuuste configurator data op
+  const data = configuratorData?.configurator || configuratorData;
+  const beheer = data?.configuratorBeheer || data;
+
   const bevData = 
-    configuratorData?.bevestigingStap || 
-    configuratorData?.bevestiging_stap || 
-    configuratorData?.configuratorBeheer?.bevestigingStap ||
-    configuratorData?.configuratorBeheer?.bevestiging_stap ||
+    beheren?.bevestigingStap || 
+    beheren?.bevestiging_stap || 
     storedPakket?.bevestigingStap || 
     storedPakket?.bevestiging_stap || 
     {};
@@ -95,6 +95,11 @@ export default function StepFourConfirmation({
     null;
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
+
+  // 👉 Debug logs toegevoegd om de data te verifiëren
+  console.log("CHECK - configuratorData in Stap 4:", configuratorData);
+  console.log("CHECK - opgespoorde bevData:", bevData);
+  console.log("CHECK - opgespoorde heroImage:", heroImage);
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : [];
