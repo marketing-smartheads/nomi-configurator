@@ -20,6 +20,7 @@ export async function GET() {
               klantNaam
               gekozenTypeWoning
               gekozenDesignpakket
+              gekozenIndeling
             }
           }
         }

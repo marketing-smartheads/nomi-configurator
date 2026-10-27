@@ -240,7 +240,7 @@ export default function DashboardPage() {
                   <tbody>
                     {fetchingData ? (
                       <tr>
-                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen uit WordPress...</td>
+                        <td colSpan={6} className="py-8 text-center text-[#888]">Gegevens ophalen...</td>
                       </tr>
                     ) : vouchers.length === 0 ? (
                       <tr>

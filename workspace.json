@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T14:48:25.783Z",
-  "generatedAtEpochMs": 1793112505783,
+  "generatedAt": "2026-10-27T14:51:18.900Z",
+  "generatedAtEpochMs": 1793112678900,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/dashboard/page.tsx",
+    "activeFile": "app/api/vouchers/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/dashboard/page.tsx",
+      "app/api/vouchers/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
+      "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
-      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T14:48:23.468Z",
+    "lastActivityAt": "2026-10-27T14:51:17.159Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,11 +575,19 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/api/vouchers/route.ts",
+      "updatedAt": 1793112677159,
+      "lineCount": 52,
+      "charCount": 1568,
+      "hash": "0eacd0d2ae72",
+      "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
+    },
+    {
       "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1793112503468,
+      "updatedAt": 1793112601149,
       "lineCount": 302,
-      "charCount": 13988,
-      "hash": "39c23fe90aa4",
+      "charCount": 13974,
+      "hash": "bdc42371f0d2",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
     },
     {
@@ -629,17 +637,73 @@
       "charCount": 5497,
       "hash": "829aaad9c45c",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793028156985,
-      "lineCount": 103,
-      "charCount": 4563,
-      "hash": "3c15fc14d5bc",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 23: inserted 2 lines.",
+      "recordedAt": "2026-10-27T14:51:17.159Z",
+      "recordedAtEpochMs": 1793112677159,
+      "before": {
+        "kind": "text",
+        "lineCount": 51,
+        "charCount": 1537,
+        "hash": "8e387415497b",
+        "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons...",
+        "updatedAt": 1793112677159
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 52,
+        "charCount": 1568,
+        "hash": "0eacd0d2ae72",
+        "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons...",
+        "updatedAt": 1793112677159
+      },
+      "diff": {
+        "lineStart": 23,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 23: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": "gekozenIndeling"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 243: removed 1 line.",
+      "recordedAt": "2026-10-27T14:50:01.149Z",
+      "recordedAtEpochMs": 1793112601149,
+      "before": {
+        "kind": "text",
+        "lineCount": 302,
+        "charCount": 13988,
+        "hash": "39c23fe90aa4",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793112601149
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 302,
+        "charCount": 13974,
+        "hash": "bdc42371f0d2",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1793112601149
+      },
+      "diff": {
+        "lineStart": 243,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 243: removed 1 line.",
+        "beforeFragment": "uit WordPress",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1055,70 +1119,6 @@
         "beforeFragment": "const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; / // Helper om b...",
         "afterFragment": "// Extract het getal uit de gekozen indeling (bijv. \"02\" of \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = i..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 197: replaced 213 lines with 216 lines.",
-      "recordedAt": "2026-10-27T12:07:31.334Z",
-      "recordedAtEpochMs": 1793102851334,
-      "before": {
-        "kind": "text",
-        "lineCount": 450,
-        "charCount": 21214,
-        "hash": "69ad8ebf96d4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793102851334
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 453,
-        "charCount": 21397,
-        "hash": "86ed78038622",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793102851334
-      },
-      "diff": {
-        "lineStart": 197,
-        "removedLines": 213,
-        "addedLines": 216,
-        "summary": "Line 197: replaced 213 lines with 216 lines.",
-        "beforeFragment": ": ''; / if (needsVoucherInput) { / return ( / <div className=\"min-h-screen bg-dark flex flex-col justify-between text-dark\"> / <Header currentScreen=\"download\" /> / <main classN...",
-        "afterFragment": ".replace(/^0+/, '') : ''; / // Helper om bestanden te filteren met slimme fallback / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const pakketGefilterd = raw..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 218 lines with 225 lines.",
-      "recordedAt": "2026-10-27T12:01:20.581Z",
-      "recordedAtEpochMs": 1793102480581,
-      "before": {
-        "kind": "text",
-        "lineCount": 443,
-        "charCount": 20973,
-        "hash": "77daeb8fb697",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793102480581
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 450,
-        "charCount": 21214,
-        "hash": "69ad8ebf96d4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793102480581
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 218,
-        "addedLines": 225,
-        "summary": "Line 196: replaced 218 lines with 225 lines.",
-        "beforeFragment": "// Extraheer indelingnummer (bijv. \"02\" uit \"Indeling 02\" of \"EC02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerM...",
-        "afterFragment": "const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : ''; / if (needsVoucherInput) { / return..."
-      }
     }
   ],
   "hotFiles": [
@@ -1131,16 +1131,16 @@
       "count": 15
     },
     {
+      "filePath": "app/dashboard/page.tsx",
+      "count": 3
+    },
+    {
       "filePath": "app/api/confirm/route.ts",
       "count": 2
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
+      "filePath": "app/api/vouchers/route.ts",
+      "count": 1
     },
     {
       "filePath": "lib/cms.ts",
@@ -1150,11 +1150,15 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 35290b3 feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 d2a4134 feat(dashboard): display selected layout correctly and add voucher code column next to status in frontend dashboard",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M app/dashboard/page.tsx"
+      "M app/api/vouchers/route.ts",
+      "M app/dashboard/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },

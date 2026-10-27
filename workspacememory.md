@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T14:48:25.783Z
+Generated: 2026-10-27T14:51:18.900Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T14:48:23.468Z
+- Last activity: 2026-10-27T14:51:17.159Z
 ## Workspace Focus
-- Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (15), app/api/confirm/route.ts (2), app/dashboard/page.tsx (2)
-- Suggested starting points: app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/api/confirm/route.ts, components/configurator/StepThreeVisuals.tsx, lib/cms.ts
+- Active file in focus: app/api/vouchers/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), app/download/page.tsx (15), app/dashboard/page.tsx (3), app/api/confirm/route.ts (2)
+- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, lib/cms.ts
 ## Current Workspace
-- Active file: app/dashboard/page.tsx
+- Active file: app/api/vouchers/route.ts
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,10 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- app/dashboard/page.tsx | 302 lines | 13988 chars | hash 39c23fe90aa4
-  Last snapshot: 2026-10-27T14:48:23.468Z
+- app/api/vouchers/route.ts | 52 lines | 1568 chars | hash 0eacd0d2ae72
+  Last snapshot: 2026-10-27T14:51:17.159Z
+  Preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
+- app/dashboard/page.tsx | 302 lines | 13974 chars | hash bdc42371f0d2
+  Last snapshot: 2026-10-27T14:50:01.149Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
   Last snapshot: 2026-10-27T13:33:01.869Z
@@ -60,11 +63,20 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 135 lines | 5497 chars | hash 829aaad9c45c
   Last snapshot: 2026-10-27T00:47:00.540Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- components/configurator/StepOnewoning.tsx | 103 lines | 4563 chars | hash 3c15fc14d5bc
-  Last snapshot: 2026-10-26T15:22:36.985Z
-  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
 
 ## Recent Changes
+### 2026-10-27T14:51:17.159Z | saved | app/api/vouchers/route.ts
+- Summary: Line 23: inserted 2 lines.
+- Before: 51 lines | 1,537 chars | hash 8e387415497b | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
+- After: 52 lines | 1,568 chars | hash 0eacd0d2ae72 | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
+- Current fragment: "gekozenIndeling"
+
+### 2026-10-27T14:50:01.149Z | saved | app/dashboard/page.tsx
+- Summary: Line 243: removed 1 line.
+- Before: 302 lines | 13,988 chars | hash 39c23fe90aa4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "uit WordPress"
+
 ### 2026-10-27T14:48:23.468Z | saved | app/dashboard/page.tsx
 - Summary: Line 17: replaced 271 lines with 269 lines.
 - Before: 304 lines | 14,012 chars | hash 7d7c3ff88074 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -155,34 +167,24 @@ Structured manifest: workspace.json
 - Previous fragment: "const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0].replace(/^0+/, '') : ''; / // Helper om b..."
 - Current fragment: "// Extract het getal uit de gekozen indeling (bijv. "02" of "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = i..."
 
-### 2026-10-27T12:07:31.334Z | saved | app/download/page.tsx
-- Summary: Line 197: replaced 213 lines with 216 lines.
-- Before: 450 lines | 21,214 chars | hash 69ad8ebf96d4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 453 lines | 21,397 chars | hash 86ed78038622 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: ": ''; / if (needsVoucherInput) { / return ( / <div className="min-h-screen bg-dark flex flex-col justify-between text-dark"> / <Header currentScreen="download" /> / <main classN..."
-- Current fragment: ".replace(/^0+/, '') : ''; / // Helper om bestanden te filteren met slimme fallback / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const pakketGefilterd = raw..."
-
-### 2026-10-27T12:01:20.581Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 218 lines with 225 lines.
-- Before: 443 lines | 20,973 chars | hash 77daeb8fb697 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 450 lines | 21,214 chars | hash 69ad8ebf96d4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Extraheer indelingnummer (bijv. "02" uit "Indeling 02" of "EC02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerM..."
-- Current fragment: "const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNummerMatch[0] : ''; / if (needsVoucherInput) { / return..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (18 tracked changes)
 - app/download/page.tsx (15 tracked changes)
+- app/dashboard/page.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
-- app/dashboard/page.tsx (2 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
+- app/api/vouchers/route.ts (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 35290b3 feat(dashboard): add selected layout (indeling) column to the frontend public cheque-dashboard table and CSV exporter
-- Working tree summary: 1 modified
+- HEAD: 2026-10-27 d2a4134 feat(dashboard): display selected layout correctly and add voucher code column next to status in frontend dashboard
+- Working tree summary: 5 modifieds
+- M app/api/vouchers/route.ts
 - M app/dashboard/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
