@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T15:01:14.576Z
+Generated: 2026-10-27T15:47:32.760Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T15:01:12.831Z
+- Last activity: 2026-10-27T15:47:30.331Z
 ## Workspace Focus
-- Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (15), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: app/dashboard/page.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, lib/cms.ts
+- Active file in focus: components/VoucherParamHandler.tsx
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (14), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: components/VoucherParamHandler.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: app/dashboard/page.tsx
+- Active file: components/VoucherParamHandler.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/VoucherParamHandler.tsx | 26 lines | 903 chars | hash ec9c2628508d
+  Last snapshot: 2026-10-27T15:47:30.331Z
+  Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
 - app/dashboard/page.tsx | 372 lines | 18002 chars | hash 402480d5c584
   Last snapshot: 2026-10-27T15:01:12.831Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx | 422 lines | 17204 chars | hash 7c13abe084e1
   Last snapshot: 2026-10-27T08:55:56.454Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
-- components/configurator/StepTwoDesign.tsx | 135 lines | 5497 chars | hash 829aaad9c45c
-  Last snapshot: 2026-10-27T00:47:00.540Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-10-27T15:47:30.331Z | saved | components/VoucherParamHandler.tsx
+- Summary: Line 4: replaced 14 lines with 20 lines.
+- Before: 20 lines | 598 chars | hash 06ad36daf3da | preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /..."
+- After: 26 lines | 903 chars | hash ec9c2628508d | preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
+- Previous fragment: "} from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { / const codeParam = searchParams.get('c..."
+- Current fragment: ", useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / const router = useRouter(); / co..."
+
 ### 2026-10-27T15:01:12.831Z | saved | app/dashboard/page.tsx
 - Summary: Line 17: replaced 233 lines with 306 lines.
 - Before: 299 lines | 14,024 chars | hash f235ada8fd93 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -160,30 +167,21 @@ Structured manifest: workspace.json
 - Previous fragment: "exact het cijfer van de indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatc..."
 - Current fragment: "het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMat..."
 
-### 2026-10-27T12:26:34.211Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 59 lines with 41 lines.
-- Before: 494 lines | 23,392 chars | hash 6f42b8a86751 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 476 lines | 22,549 chars | hash 003818703585 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "het indelingnummer op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatch ? indelingNu..."
-- Current fragment: "exact het cijfer van de indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMatc..."
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (15 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (14 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
+- components/VoucherParamHandler.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 52dc6a7 feat(dashboard): show details like house type and layout only when voucher status is redeemed (verzilverd)
-- Working tree summary: 4 modifieds
-- M app/dashboard/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-10-27 4ce9189 feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard
+- Working tree summary: 1 modified
+- M components/VoucherParamHandler.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- be73304 by Bas van Dooremalen on 2026-10-27
-  feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard
+- 4ce9189 by Bas van Dooremalen on 2026-10-27
+  feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

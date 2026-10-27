@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T15:01:14.576Z",
-  "generatedAtEpochMs": 1793113274576,
+  "generatedAt": "2026-10-27T15:47:32.760Z",
+  "generatedAtEpochMs": 1793116052760,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/dashboard/page.tsx",
+    "activeFile": "components/VoucherParamHandler.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/dashboard/page.tsx",
+      "components/VoucherParamHandler.tsx",
       "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
       "lib/cms.ts",
@@ -32,8 +33,7 @@
       "AGENTS.md",
       "README.md",
       "package-lock.json",
-      "package.json",
-      "tsconfig.json"
+      "package.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T15:01:12.831Z",
+    "lastActivityAt": "2026-10-27T15:47:30.331Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/VoucherParamHandler.tsx",
+      "updatedAt": 1793116050331,
+      "lineCount": 26,
+      "charCount": 903,
+      "hash": "ec9c2628508d",
+      "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
+    },
     {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1793113272831,
@@ -629,17 +637,41 @@
       "charCount": 17204,
       "hash": "7c13abe084e1",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793062020540,
-      "lineCount": 135,
-      "charCount": 5497,
-      "hash": "829aaad9c45c",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/VoucherParamHandler.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 14 lines with 20 lines.",
+      "recordedAt": "2026-10-27T15:47:30.331Z",
+      "recordedAtEpochMs": 1793116050331,
+      "before": {
+        "kind": "text",
+        "lineCount": 20,
+        "charCount": 598,
+        "hash": "06ad36daf3da",
+        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /...",
+        "updatedAt": 1793116050331
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 903,
+        "hash": "ec9c2628508d",
+        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(...",
+        "updatedAt": 1793116050331
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 14,
+        "addedLines": 20,
+        "summary": "Line 4: replaced 14 lines with 20 lines.",
+        "beforeFragment": "} from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { / const codeParam = searchParams.get('c...",
+        "afterFragment": ", useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / const router = useRouter(); / co..."
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "exact het cijfer van de indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatc...",
         "afterFragment": "het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMat..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 59 lines with 41 lines.",
-      "recordedAt": "2026-10-27T12:26:34.211Z",
-      "recordedAtEpochMs": 1793103994211,
-      "before": {
-        "kind": "text",
-        "lineCount": 494,
-        "charCount": 23392,
-        "hash": "6f42b8a86751",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103994211
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 476,
-        "charCount": 22549,
-        "hash": "003818703585",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793103994211
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 59,
-        "addedLines": 41,
-        "summary": "Line 196: replaced 59 lines with 41 lines.",
-        "beforeFragment": "het indelingnummer op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatch ? indelingNu...",
-        "afterFragment": "exact het cijfer van de indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMatc..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 15
+      "count": 14
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1143,6 +1143,10 @@
       "count": 1
     },
     {
+      "filePath": "components/VoucherParamHandler.tsx",
+      "count": 1
+    },
+    {
       "filePath": "lib/cms.ts",
       "count": 1
     }
@@ -1150,20 +1154,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 52dc6a7 feat(dashboard): show details like house type and layout only when voucher status is redeemed (verzilverd)",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-10-27 4ce9189 feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/dashboard/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/VoucherParamHandler.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- be73304 by Bas van Dooremalen on 2026-10-27\n  feat(api): include gekozenIndeling in vouchers API route to register selected layout in dashboard\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4ce9189 by Bas van Dooremalen on 2026-10-27\n  feat(dashboard): add interactive sorting capability to all table columns on the frontend dashboard\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
