@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T09:11:10.575Z",
-  "generatedAtEpochMs": 1793092270575,
+  "generatedAt": "2026-10-27T09:13:12.985Z",
+  "generatedAtEpochMs": 1793092392985,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -27,7 +27,6 @@
       "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
-      "components/configurator/StepOnewoning.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +562,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T09:11:08.194Z",
+    "lastActivityAt": "2026-10-27T09:13:11.261Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,7 +575,7 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793092268194,
+      "updatedAt": 1793092391261,
       "lineCount": 497,
       "charCount": 22259,
       "hash": "edbbeb145427",
@@ -640,6 +639,31 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-10-27T09:13:11.261Z",
+      "recordedAtEpochMs": 1793092391261,
+      "before": {
+        "kind": "text",
+        "lineCount": 497,
+        "charCount": 22259,
+        "hash": "edbbeb145427",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793092391261
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 497,
+        "charCount": 22259,
+        "hash": "edbbeb145427",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793092391261
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1052,38 +1076,6 @@
         "beforeFragment": "const huidigPakket = pakkettenLijst.find((p: any) => (p.pakket_id || p.pakketId) === designPakket) || pakkettenLijst[0]; / const pakketTitel = huidigPakket?.pakket_titel || huid...",
         "afterFragment": "// Maak de IDs schoon met .trim() zodat spaties in het CMS geen mismatch veroorzaken / const huidigPakket = pakkettenLijst.find((p: any) => { / const pId = (p.pakketId || p.pakk..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 13: replaced 17 lines with 16 lines.",
-      "recordedAt": "2026-10-27T00:47:00.540Z",
-      "recordedAtEpochMs": 1793062020540,
-      "before": {
-        "kind": "text",
-        "lineCount": 136,
-        "charCount": 5674,
-        "hash": "0cce7d67d581",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793062020540
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 135,
-        "charCount": 5497,
-        "hash": "829aaad9c45c",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793062020540
-      },
-      "diff": {
-        "lineStart": 13,
-        "removedLines": 17,
-        "addedLines": 16,
-        "summary": "Line 13: replaced 17 lines with 16 lines.",
-        "beforeFragment": "ole.log(\"Stap 2 configuratorData:\", configuratorData); / const [isConfirmed, setIsConfirmed] = useState(false); / useEffect(() => { / if (typeof window !== 'undefined') { / cons...",
-        "afterFragment": "t data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = data?.stap2omschrijving || ''; /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1101,26 +1093,20 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 1
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 54ce501 fix(components): add debug logs to inspect confirmation banner data structure in StepFourConfirmation",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
-    "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
-    ],
+    "headSummary": "2026-10-27 e7505aa fix(components): extract confirmation banner data from design_paketten repeater in StepFourConfirmation",
+    "statusSummary": "",
+    "changedFileCount": 0,
+    "statusLines": [],
     "error": ""
   },
   "github": {
