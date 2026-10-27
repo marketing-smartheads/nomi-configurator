@@ -11,13 +11,13 @@ export async function POST(request: Request) {
     let klantNaam = body.klantNaam || body.naam;
     let klantEmail = body.klantEmail || body.email;
     let woningType = body.woningType || body.selected_woningType || body.geselecteerdeWoning;
-    let designPakket = body.designPakket || body.selected_designPakket || body.geselecteerdePakket;
+    let gekozenIndeling = body.gekozenIndeling || body.selected_indeling || body.geselecteerdeIndeling || 'Standaard indeling';
+    let designPakket = body.designPakket || body.selected_designPakket || body.geselecteerdPakket;
     let woningObject = body.woningObject || 'Nomi — Object';
     let partners = body.partners;
     let bestanden = body.bestanden || body.bestandenLijst;
     let klantTelefoon = body.klantTelefoon || body.telefoon || '';
 
-    // Delen met de partner (documentatielijst) mag alleen bij expliciete toestemming
     const toestemmingPartner = body.toestemmingPartner === true;
 
     console.log("📥 Ontvangen data in API route:", { 
@@ -25,6 +25,7 @@ export async function POST(request: Request) {
       klantNaam, 
       klantEmail, 
       woningType, 
+      gekozenIndeling,
       designPakket,
       bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden
     });
@@ -48,7 +49,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // --- AUTOMATISCHE ENDPOINT FALLBACK KETEN ---
     const endpointsToTry = [
       process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || process.env.NEXT_PUBLIC_WORDPRESS_API_URL,
       process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT
@@ -62,7 +62,6 @@ export async function POST(request: Request) {
 
     async function executeWpQuery(endpoint: string) {
       const schoneToegangscode = String(toegangscode || '').trim().toUpperCase();
-      console.log(`🔍 Start WordPress query op endpoint: ${endpoint} voor toegangscode veld: "${schoneToegangscode}"`);
 
       const query = `
         query GetData($toegangscode: String!) {
@@ -157,6 +156,7 @@ export async function POST(request: Request) {
                   klant_naam: klantNaam,
                   "klant_e-mail": klantEmail,
                   gekozen_type_woning: woningType,
+                  gekozen_indeling: gekozenIndeling,
                   gekozen_designpakket: designPakket
                 }
               })
@@ -181,7 +181,6 @@ export async function POST(request: Request) {
       }
     }
 
-    // --- STAP 2: Partners verzamelen (als schone platte tekst) ---
     let frontendPartners = Array.isArray(partners) ? partners : [];
     
     const allePartnersMap = new Map();
@@ -198,85 +197,14 @@ export async function POST(request: Request) {
       .map(p => p.email)
       .filter((email) => typeof email === 'string' && email.trim() !== '' && email.toLowerCase() !== klantEmailClean.toLowerCase());
 
-    // GEEN HTML-tags zoals &bull; hierin zodat het schone platte tekst blijft in de mail
     const partnersNamenString = uniekePartners.length > 0
       ? uniekePartners.map(p => p.naam).join(' • ')
       : 'Nomi Utrecht • Thomas de Gier';
 
-    // --- STAP 3: Datum & Tijd ---
     const nu = new Date();
     const datumString = nu.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
     const tijdString = nu.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
 
-    // --- STAP 4: Diepgaande Bestanden Parser ---
-    let actieveBestanden: { naam: string; url: string }[] = [];
-
-    const extractFileUrlAndName = (obj: any) => {
-      if (!obj || typeof obj !== 'object') return;
-
-      const fileNaam = obj?.bestandTitel || obj?.titel || obj?.title || obj?.naam || obj?.name || obj?.filename || obj?.postTitle || 'Document';
-      
-      let fileUrl = '#';
-      if (typeof obj === 'string' && obj.startsWith('http')) {
-        fileUrl = obj;
-      } else if (obj?.sourceUrl) {
-        fileUrl = obj.sourceUrl;
-      } else if (obj?.mediaItemUrl) {
-        fileUrl = obj.mediaItemUrl;
-      } else if (obj?.bestandLink) {
-        fileUrl = typeof obj.bestandLink === 'string' ? obj.bestandLink : (obj.bestandLink?.sourceUrl || obj.bestandLink?.mediaItemUrl || obj.bestandLink?.url || obj.bestandLink?.uri || '#');
-      } else if (obj?.uploadBestand) {
-        if (typeof obj.uploadBestand === 'string') {
-          fileUrl = obj.uploadBestand;
-        } else {
-          fileUrl = obj.uploadBestand?.sourceUrl || obj.uploadBestand?.node?.sourceUrl || obj.uploadBestand?.node?.mediaItemUrl || obj.uploadBestand?.mediaItemUrl || obj.uploadBestand?.url || '#';
-        }
-      } else {
-        fileUrl = obj?.url || obj?.link || obj?.uri || '#';
-      }
-
-      if (fileUrl && fileUrl !== '#') {
-        if (!actieveBestanden.some(b => b.url === fileUrl)) {
-          actieveBestanden.push({ naam: fileNaam, url: fileUrl });
-        }
-      }
-    };
-
-    const parseBestandenStructure = (item: any) => {
-      if (!item) return;
-
-      if (Array.isArray(item)) {
-        item.forEach(parseBestandenStructure);
-      } else if (typeof item === 'object') {
-        if (Array.isArray(item.bestandenLijst)) {
-          item.bestandenLijst.forEach(parseBestandenStructure);
-        }
-        if (Array.isArray(item.bestanden)) {
-          item.bestanden.forEach(parseBestandenStructure);
-        }
-        if (Array.isArray(item.files)) {
-          item.files.forEach(parseBestandenStructure);
-        }
-        extractFileUrlAndName(item);
-      }
-    };
-
-    if (bestanden) {
-      parseBestandenStructure(bestanden);
-    }
-
-    if (actieveBestanden.length === 0) {
-      actieveBestanden = [
-        { naam: `MOODBOARD — HOTEL CHIC`, url: '#' },
-        { naam: 'WOONKAMER', url: '#' }
-      ];
-    }
-
-    // let bestandenHtml = actieveBestanden.map((b) => 
-    //   `<a href="${b.url}" target="_blank" style="display:inline-block;background-color:#dcd7ce;color:#1a1a1a;font-size:11px;font-weight:bold;text-transform:uppercase;text-decoration:none;padding:8px 14px;border-radius:20px;margin:0 8px 10px 0;letter-spacing:0.5px;">${b.naam}</a>&nbsp;`
-    // ).join('');
-
-    // --- STAP 5: Versturen via Resend ---
     const templateId = process.env.RESEND_TEMPLATE_ID || 'd532cedb-3f4b-4315-bf51-c3fcdf348fcc';
 
     const stuurResendMail = async (ontvangerEmail: string, aanhefTekst: string) => {
@@ -292,29 +220,23 @@ export async function POST(request: Request) {
             toegangscode: toegangscode || 'N.v.t.',
             woningObject: woningObject,
             woningType: woningType,
+            gekozenIndeling: gekozenIndeling,
             designPakket: designPakket,
             datumString: datumString,
             tijdString: tijdString,
             chequeStatus: 'Verzilverd',
             aanhef: aanhefTekst,
-            // bestandenHtml: bestandenHtml,
             verstuurdNaar: partnersNamenString
           }
         }
       });
 
       if (response.error) {
-        console.error(`❌ Resend weigerde e-mail voor ${ontvangerEmail}:`, response.error);
         throw new Error(response.error.message);
       }
-
-      console.log(`✅ E-mail succesvol verzonden naar ${ontvangerEmail}`);
       return response;
     };
 
-    // --- Documentatielijst-aanvraag naar de partner (alleen bij toestemming) ---
-    // Ontvanger wordt server-side bepaald, nooit vanuit de request.
-    // Test: zet PARTNER_EMAIL (of NEXT_PUBLIC_PARTNER_EMAIL) op het webmaster-adres.
     const PARTNER_ONTVANGER =
       process.env.PARTNER_EMAIL ||
       process.env.NEXT_PUBLIC_PARTNER_EMAIL ||
@@ -333,6 +255,7 @@ export async function POST(request: Request) {
         ['E-mail', klantEmailClean],
         ['Telefoon', String(klantTelefoon).trim()],
         ['Type woning', woningType || '-'],
+        ['Gekozen indeling', gekozenIndeling || '-'],
         ['Designpakket', designPakket || '-'],
         ['Toegangscode', toegangscode || 'N.v.t.'],
         ['Datum', `${datumString} om ${tijdString}`],
@@ -360,20 +283,15 @@ export async function POST(request: Request) {
       });
 
       if (response.error) {
-        console.error(`❌ Resend weigerde documentatie-aanvraag voor ${PARTNER_ONTVANGER}:`, response.error);
         throw new Error(response.error.message);
       }
-
-      console.log(`✅ Documentatie-aanvraag verzonden naar ${PARTNER_ONTVANGER}`);
       return response;
     };
 
-    // MAIL_TEST_MODE=true: de bevestigingsmails naar de partners uit WordPress worden overgeslagen
     const testModus = process.env.MAIL_TEST_MODE === 'true';
     const partnerBevestigingen = testModus ? [] : schonePartnersEmails;
 
     const finalEmailPromises = [
-      // Klant krijgt alleen een mail als er een geldig adres is (bij 'niet delen' is dat optioneel)
       ...(klantEmailGeldig ? [stuurResendMail(klantEmailClean, `Beste ${klantNaam},`)] : []),
       ...partnerBevestigingen.map((pEmail) => stuurResendMail(pEmail, 'Beste partners,')),
       ...(toestemmingPartner ? [stuurDocumentatieAanvraag()] : []),

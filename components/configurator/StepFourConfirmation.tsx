@@ -45,9 +45,7 @@ export default function StepFourConfirmation({
     if (typeof window !== 'undefined') {
       const opgeslagenEmail =
         sessionStorage.getItem('klantEmail') ||
-        localStorage.getItem('klantEmail') ||
-        sessionStorage.getItem('email') ||
-        localStorage.getItem('email') || '';
+        localStorage.getItem('klantEmail') || '';
       setKlantEmail(opgeslagenEmail);
 
       const opgeslagenNaam =
@@ -66,7 +64,6 @@ export default function StepFourConfirmation({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  // Gecorrigeerd: let op de dubbele 'k' (designPakketten) die overeenkomt met lib/cms.ts
   const rawDesignPakketten = data?.designPakketten || data?.designPaketten || data?.design_paketten || [];
   const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
 
@@ -85,17 +82,28 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal de bevestigingsstap nu correct op uit het gevonden designpakket
+  // Haal gekozen indeling op om te tonen op de bevestigingspagina
+  let opgeslagenIndeling = '';
+  try {
+    const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : '';
+    if (rawInd) {
+      if (rawInd.startsWith('{')) {
+        const parsed = JSON.parse(rawInd);
+        opgeslagenIndeling = parsed?.indelingTitel || parsed?.indeling_titel || '';
+      } else {
+        opgeslagenIndeling = rawInd;
+      }
+    }
+  } catch (e) {
+    opgeslagenIndeling = '';
+  }
+  if (!opgeslagenIndeling && typeof window !== 'undefined') {
+    opgeslagenIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
+  }
+
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
-
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
-  const heroImage = 
-    typeof rawImage === 'string' ? rawImage : 
-    rawImage?.node?.sourceUrl || 
-    rawImage?.sourceUrl || 
-    rawImage?.mediaItemUrl || 
-    null;
-
+  const heroImage = typeof rawImage === 'string' ? rawImage : rawImage?.node?.sourceUrl || rawImage?.sourceUrl || rawImage?.mediaItemUrl || null;
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
@@ -105,13 +113,6 @@ export default function StepFourConfirmation({
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
   const omschrijving = data?.bevestigingOmschrijving || data?.bevestiging_omschrijving;
   const waarschuwingTekst = data?.bevestigingWaarschuwingTekst || data?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
-
-  const cmsPartnersTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || data?.geselecteerdePartnersTitel || data?.geselecteerde_partners_titel;
-  const partnersTitel = (!cmsPartnersTitel || cmsPartnersTitel === "Geselecteerde partners") 
-    ? "Partners Nomi" 
-    : cmsPartnersTitel;
-
-  const partnersOmschrijving = bevData?.geselecteerdePartnersOmschrijving || bevData?.geselecteerde_partners_omschrijving || data?.geselecteerdePartnersOmschrijving || data?.geselecteerde_partners_omschrijving || "Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.";
 
   const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
   const telefoonGeldig = klantTelefoon.replace(/\D/g, '').length >= 8;
@@ -123,32 +124,12 @@ export default function StepFourConfirmation({
     !isSubmitting &&
     (agreedPartner === false || gegevensCompleet);
 
-  const mailtoHref =
-    `mailto:${PARTNER_EMAIL}` +
-    `?subject=${encodeURIComponent('Aanvraag documentatielijst')}` +
-    `&body=${encodeURIComponent(
-      `Beste ${PARTNER_CONTACT},\n\nGraag ontvang ik de documentatielijst.\n\n` +
-      `Naam: ${klantNaam}\n` +
-      (woningNaam ? `Type woning: ${woningNaam}\n` : '') +
-      (pakketNaam ? `Designpakket: ${pakketNaam}\n` : '') +
-      `\nMet vriendelijke groet,\n${klantNaam}`
-    )}`;
-
-  const handleOpenPopup = () => {
-    if (!klantNaam.trim()) {
-      setErrorMessage('Vul eerst uw volledige naam / familienaam in.');
-      return;
-    }
-    setErrorMessage('');
-    setShowPopup(true);
-  };
-
   const handleSubmit = async (toestemming: boolean) => {
     setIsSubmitting(true);
     setErrorMessage('');
 
     const opgeslagenCode = typeof window !== 'undefined'
-      ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '')
+      ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '')
       : '';
 
     const payload = {
@@ -157,6 +138,7 @@ export default function StepFourConfirmation({
       klantEmail: klantEmail.trim() || 'Niet ingevuld',
       klantTelefoon: klantTelefoon.trim() || 'Niet ingevuld',
       woningType: woningNaam,
+      gekozenIndeling: opgeslagenIndeling,
       designPakket: pakketNaam,
       partners,
       bestanden: storedWoning?.downloadCategorie || storedWoning?.download_categorieen || [],
@@ -180,6 +162,7 @@ export default function StepFourConfirmation({
       sessionStorage.setItem('klantEmail', klantEmail.trim());
       sessionStorage.setItem('klantTelefoon', klantTelefoon.trim());
       sessionStorage.setItem('geselecteerdeWoning', woningNaam);
+      sessionStorage.setItem('geselecteerdeIndeling', opgeslagenIndeling);
       sessionStorage.setItem('geselecteerdPakket', pakketNaam);
 
       setShowPopup(false);
@@ -193,31 +176,11 @@ export default function StepFourConfirmation({
     }
   };
 
-  const handleManualContact = () => {
-    setShowPopup(false);
-    setErrorMessage('');
-    setManualNotice(true);
-  };
-
-  const handleSwitchToShare = () => {
-    setManualNotice(false);
-    setAgreedPartner(true);
-    setAgreedWarning(false);
-    setShowPopup(true);
-  };
-
   return (
     <div>
-      {/* 1. HERO SECTIE */}
       <div className="relative w-full h-125 overflow-hidden flex flex-col justify-between p-8 sm:p-12">
         {heroImage && (
-          <Image
-            src={heroImage}
-            alt={heroTitle || 'Gekozen interieur sfeer'}
-            fill
-            className="absolute inset-0 object-cover object-center w-full z-0"
-            priority
-          />
+          <Image src={heroImage} alt={heroTitle || 'Sfeer'} fill className="absolute inset-0 object-cover object-center w-full z-0" priority />
         )}
         <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black/25 to-black/80" />
 
@@ -226,13 +189,18 @@ export default function StepFourConfirmation({
         </div>
 
         <div className="relative z-20 max-w-6xl mx-auto w-full flex">
-          <div className="inline-flex flex-wrap sm:flex-nowrap items-center bg-[#181820]/80 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl">
-            <div className="px-6 py-3 flex flex-col min-w-[200px]">
+          <div className="inline-flex flex-wrap sm:flex-nowrap items-center bg-[#181820]/80 backdrop-blur-md border border-white/10 rounded-2xl p-2 shadow-2xl gap-2">
+            <div className="px-6 py-3 flex flex-col min-w-[150px]">
               <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Type woning</span>
               <span className="text-lg font-serif text-white mt-0.5">{woningNaam || 'Niet geselecteerd'}</span>
             </div>
-            <div className="hidden sm:block w-[1px] h-10 bg-white/10 my-auto" />
-            <div className="px-6 py-3 flex flex-col min-w-[200px] border-t sm:border-t-0 border-white/10 w-full sm:w-auto">
+            {opgeslagenIndeling && (
+              <div className="px-6 py-3 flex flex-col min-w-[150px] border-t sm:border-t-0 border-white/10">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Gekozen indeling</span>
+                <span className="text-lg font-serif text-white mt-0.5">{opgeslagenIndeling}</span>
+              </div>
+            )}
+            <div className="px-6 py-3 flex flex-col min-w-[150px] border-t sm:border-t-0 border-white/10">
               <span className="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Designpakket</span>
               <span className="text-lg font-serif text-white mt-0.5">{pakketNaam || 'Niet geselecteerd'}</span>
             </div>
@@ -240,7 +208,6 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      {/* 2. BEVESTIGING TEKST & FORMULIER */}
       <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
         <div className="space-y-3">
           {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
@@ -250,7 +217,6 @@ export default function StepFourConfirmation({
 
         <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
           <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
-
           <div>
             <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam *</label>
             <input
@@ -259,11 +225,10 @@ export default function StepFourConfirmation({
               value={klantNaam}
               onChange={(e) => setKlantNaam(e.target.value)}
               placeholder="Bijv. Fam. de Vries"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
+              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
               required
             />
           </div>
-
           <div>
             <label htmlFor="klantEmail" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">E-mailadres</label>
             <input
@@ -272,10 +237,9 @@ export default function StepFourConfirmation({
               value={klantEmail}
               onChange={(e) => setKlantEmail(e.target.value)}
               placeholder="naam@voorbeeld.nl"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
+              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
             />
           </div>
-
           <div>
             <label htmlFor="klantTelefoon" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Telefoonnummer</label>
             <input
@@ -284,207 +248,57 @@ export default function StepFourConfirmation({
               value={klantTelefoon}
               onChange={(e) => setKlantTelefoon(e.target.value)}
               placeholder="06 12345678"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none focus:border-dark text-sm transition-all"
+              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
             />
           </div>
-
-          <p className="text-xs text-muted leading-relaxed pt-1">
-            E-mailadres en telefoonnummer zijn alleen nodig als u uw gegevens wilt delen met {PARTNER_NAAM}.
-          </p>
         </div>
 
-        {errorMessage && !showPopup && (
-          <p role="alert" className="text-sm text-red-700 text-left">{errorMessage}</p>
-        )}
-
-        {manualNotice ? (
-          <div className="space-y-6">
-            <div className="bg-[#F9F6F0] border border-[#C5A880]/40 p-6 rounded-2xl text-left space-y-4" role="status">
-              <h4 className="font-serif text-dark text-base">Documentatielijst zelf opvragen</h4>
-              <p className="text-sm text-muted leading-relaxed">
-                U heeft gekozen om uw gegevens niet te delen. Wij sturen daarom niets automatisch door.
-                Uw downloadpagina met de overige bestanden is wel beschikbaar. Wilt u ook de documentatielijst ontvangen? Neem dan zelf contact op met <strong>{PARTNER_NAAM}</strong> (t.a.v. {PARTNER_CONTACT}).
-              </p>
-              <a
-                href={mailtoHref}
-                className="inline-block text-sm font-medium text-primary underline underline-offset-2 break-all"
-              >
-                {PARTNER_EMAIL}
-              </a>
-              <p className="text-xs text-muted">
-                Vermeld uw naam, het type woning en het gekozen designpakket. De e-mail hierboven is al voor u ingevuld.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-              <Button
-                onClick={() => handleSubmit(false)}
-                disabled={isSubmitting || loading}
-                loading={isSubmitting}
-                className="px-8 py-4"
-              >
-                NAAR DOWNLOADPAGINA
-              </Button>
-              <button
-                type="button"
-                onClick={handleSwitchToShare}
-                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
-              >
-                Toch gegevens delen
-              </button>
-              <button
-                type="button"
-                onClick={onBack}
-                disabled={loading}
-                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
-              >
-                TERUG
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-center justify-center gap-8 pt-2">
-            <Button
-              onClick={handleOpenPopup}
-              disabled={!klantNaam.trim() || loading}
-              loading={loading}
-              className="px-10 py-4"
-            >
-              BEVESTIG KEUZES
-            </Button>
-
-            <button
-              type="button"
-              onClick={onBack}
-              disabled={loading}
-              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition"
-            >
-              TERUG
-            </button>
-          </div>
-        )}
+        <div className="flex items-center justify-center gap-8 pt-2">
+          <Button
+            onClick={() => {
+              if (!klantNaam.trim()) {
+                setErrorMessage('Vul eerst uw volledige naam in.');
+                return;
+              }
+              setShowPopup(true);
+            }}
+            disabled={!klantNaam.trim() || loading}
+            loading={loading}
+            className="px-10 py-4"
+          >
+            BEVESTIG KEUZES
+          </Button>
+          <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
+            TERUG
+          </button>
+        </div>
       </div>
 
-      {/* POP-UP MET KEUZE WEL/NIET AKKOORD */}
       {showPopup && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="toestemming-titel"
-        >
-          <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
-            <h3 id="toestemming-titel" className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
-            <p className="text-sm text-muted">
-              Mogen wij uw naam, e-mailadres en telefoonnummer samen met uw keuzes delen met {PARTNER_NAAM}? Zij gebruiken die om u de documentatielijst te sturen.
-            </p>
-
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
+            <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
+            <p className="text-sm text-muted">Mogen wij uw gegevens samen met uw keuzes delen met {PARTNER_NAAM}?</p>
             <div className="space-y-4 pt-2">
-              <div className="space-y-2" role="radiogroup" aria-label="Gegevens delen met partner">
-                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
-                  <input
-                    type="radio"
-                    name="partnerAkkoord"
-                    checked={agreedPartner === true}
-                    onChange={() => setAgreedPartner(true)}
-                    className="w-4 h-4 accent-[#C5A880] cursor-pointer"
-                  />
-                  <span className="text-xs font-medium text-dark">
-                    <strong>Ja, delen:</strong> deel mijn gegevens met {PARTNER_NAAM}. Ik krijg direct toegang tot de downloadpagina.
-                  </span>
-                </label>
-
-                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
-                  <input
-                    type="radio"
-                    name="partnerAkkoord"
-                    checked={agreedPartner === false}
-                    onChange={() => setAgreedPartner(false)}
-                    className="w-4 h-4 accent-[#C5A880] cursor-pointer"
-                  />
-                  <span className="text-xs font-medium text-dark">
-                    <strong>Nee, niet delen:</strong> ik neem zelf contact op om de documentatielijst te ontvangen.
-                  </span>
-                </label>
-              </div>
-
-              {agreedPartner === true && !gegevensCompleet && (
-                <p role="alert" className="text-xs text-red-700 leading-relaxed">
-                  Om te kunnen delen hebben we een naam, een geldig e-mailadres en een telefoonnummer nodig. Sluit dit venster en vul de ontbrekende velden in.
-                </p>
-              )}
-
-              <label className="flex items-start gap-3 cursor-pointer p-2 pt-2">
-                <input
-                  type="checkbox"
-                  checked={agreedWarning}
-                  onChange={(e) => setAgreedWarning(e.target.checked)}
-                  className="mt-1 w-5 h-5 accent-dark rounded cursor-pointer shrink-0"
-                />
-                <span className="text-xs font-bold text-primary uppercase tracking-wide leading-relaxed">{waarschuwingTekst}</span>
+              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+                <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="w-4 h-4 accent-[#C5A880]" />
+                <span className="text-xs font-medium text-dark"><strong>Ja, delen:</strong> deel mijn gegevens.</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+                <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="w-4 h-4 accent-[#C5A880]" />
+                <span className="text-xs font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer p-2">
+                <input type="checkbox" checked={agreedWarning} onChange={(e) => setAgreedWarning(e.target.checked)} className="mt-1 w-5 h-5 accent-dark rounded" />
+                <span className="text-xs font-bold text-primary uppercase tracking-wide">{waarschuwingTekst}</span>
               </label>
             </div>
-
-            {errorMessage && (
-              <p role="alert" className="text-sm text-red-700">{errorMessage}</p>
-            )}
-
             <div className="flex items-center justify-end gap-4 pt-4 border-t border-dark/10">
-              <button
-                type="button"
-                onClick={() => { setShowPopup(false); setErrorMessage(''); }}
-                disabled={isSubmitting}
-                className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-muted hover:text-dark transition cursor-pointer"
-              >
-                Annuleren
-              </button>
-
-              <Button
-                onClick={() => {
-                  if (!kanBevestigen) return;
-                  if (agreedPartner) {
-                    handleSubmit(true);
-                  } else {
-                    handleManualContact();
-                  }
-                }}
-                disabled={!kanBevestigen}
-                loading={isSubmitting}
-                className="px-6 py-3 text-xs"
-              >
-                {agreedPartner === false ? 'DOORGAAN ZONDER DELEN' : 'AKKOORD & VERSTUREN'}
+              <button type="button" onClick={() => setShowPopup(false)} className="px-5 py-2.5 text-xs font-bold uppercase text-muted">Annuleren</button>
+              <Button onClick={() => handleSubmit(agreedPartner === true)} disabled={!kanBevestigen} loading={isSubmitting} className="px-6 py-3 text-xs">
+                AKKOORD & VERSTUREN
               </Button>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* 3. GESELECTEERDE PARTNERS LIJST */}
-      {partners.length > 0 && (
-        <div className="max-w-4xl mx-auto max-sm:px-4 space-y-10 py-16">
-          <div className="text-center space-y-3">
-            <h3 className="text-3xl md:text-4xl font-serif text-dark">{partnersTitel}</h3>
-            <p className="text-muted text-lg max-w-xl mx-auto leading-relaxed">{partnersOmschrijving}</p>
-          </div>
-          <div className="border-t border-dark/10">
-            {partners.map((partner: any, index: number) => (
-              <div key={index} className="py-6 flex items-center justify-between border-b border-dark/10 gap-4">
-                <div className="flex items-center space-x-5">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E5E2DD] shrink-0" />
-                  <div>
-                    <h4 className="font-serif text-dark text-lg">{partner?.partnerNaam || partner?.partner_naam}</h4>
-                    {(partner?.partnerOmschrijving || partner?.partner_omschrijving) && (
-                      <p className="text-xs text-muted mt-0.5">{partner?.partnerOmschrijving || partner?.partner_omschrijving}</p>
-                    )}
-                  </div>
-                </div>
-                {(partner?.partnerRol || partner?.partner_rol) && (
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase bg-[#E5E2DD]/70 text-dark px-5 py-2.5 rounded-full shrink-0">
-                    {partner?.partnerRol || partner?.partner_rol}
-                  </span>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       )}
