@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-10-27T15:59:35.238Z
+Generated: 2026-11-01T22:01:45.462Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-10-27T15:59:32.776Z
+- Last activity: 2026-11-01T22:01:43.676Z
 ## Workspace Focus
-- Active file in focus: app/voucher/page.tsx
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (13), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: app/voucher/page.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
+- Active file in focus: components/configurator/StepFourConfirmation.tsx
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (12), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, app/layout.tsx
 ## Current Workspace
-- Active file: app/voucher/page.tsx
+- Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/configurator/StepFourConfirmation.tsx | 307 lines | 14829 chars | hash 27617c309371
+  Last snapshot: 2026-11-01T22:01:43.676Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- app/layout.tsx | 81 lines | 1593 chars | hash ed08bbfcc175
+  Last snapshot: 2026-10-27T16:32:07.771Z
+  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 - app/voucher/page.tsx | 22 lines | 730 chars | hash 950e3928e018
   Last snapshot: 2026-10-27T15:59:32.776Z
   Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc..."
@@ -57,14 +63,26 @@ Structured manifest: workspace.json
 - app/download/page.tsx | 504 lines | 23775 chars | hash 6f867323f7b2
   Last snapshot: 2026-10-27T13:02:50.504Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- components/configurator/StepFourConfirmation.tsx | 307 lines | 14831 chars | hash c65841c87fbd
-  Last snapshot: 2026-10-27T11:43:31.026Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- lib/cms.ts | 224 lines | 6049 chars | hash 15c866223c79
-  Last snapshot: 2026-10-27T10:51:01.817Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
 ## Recent Changes
+### 2026-11-01T22:01:43.676Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 281: removed 1 line.
+- Before: 307 lines | 14,830 chars | hash 876d0a69796b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 307 lines | 14,829 chars | hash 27617c309371 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- Previous fragment: "s"
+
+### 2026-11-01T22:01:25.022Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 269: removed 1 line.
+- Before: 307 lines | 14,831 chars | hash c65841c87fbd | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 307 lines | 14,830 chars | hash 876d0a69796b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- Previous fragment: "S"
+
+### 2026-10-27T16:32:07.771Z | saved | app/layout.tsx
+- Summary: Line 56: inserted 5 lines.
+- Before: 77 lines | 1,540 chars | hash 11070fac90dc | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Current fragment: "robots: { / index: true, / follow: false, / },"
+
 ### 2026-10-27T15:59:32.776Z | saved | app/voucher/page.tsx
 - Summary: Line 4: replaced 14 lines with 17 lines.
 - Before: 19 lines | 563 chars | hash 0ffd40656a77 | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
@@ -146,43 +164,25 @@ Structured manifest: workspace.json
 - Previous fragment: "Haal het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNumm..."
 - Current fragment: "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
 
-### 2026-10-27T12:53:58.859Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 39 lines with 34 lines.
-- Before: 480 lines | 22,688 chars | hash 2d0d95ca6552 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 475 lines | 22,268 chars | hash 6d6e3495277a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "exact het cijfer op van de gekozen indeling (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNu..."
-- Current fragment: "het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMat..."
-
-### 2026-10-27T12:42:45.859Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 36 lines with 39 lines.
-- Before: 477 lines | 22,508 chars | hash 0358ebd61053 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 480 lines | 22,688 chars | hash 2d0d95ca6552 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNummerMat..."
-- Current fragment: "exact het cijfer op van de gekozen indeling (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNu..."
-
-### 2026-10-27T12:35:46.347Z | saved | app/download/page.tsx
-- Summary: Line 200: replaced 67 lines with 38 lines.
-- Before: 506 lines | 23,882 chars | hash fa2fc7a584ea | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 477 lines | 22,508 chars | hash 0358ebd61053 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "EN NAUWKEURIGE FILTERFUNCTIE / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase(); // bijv. "hotel chi..."
-- Current fragment: "FILTER OP BASIS VAN DE BESTAND TITEL IN HET CMS / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase();..."
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (13 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
+- app/layout.tsx (1 tracked changes)
 - app/voucher/page.tsx (1 tracked changes)
 - components/VoucherParamHandler.tsx (1 tracked changes)
-- lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 e4c1b7f feat(voucher): remove code parameter from browser address bar after storing token
-- Working tree summary: 1 modified
-- M app/voucher/page.tsx
+- HEAD: 2026-10-27 cc6944f added robots meta tags nofollow
+- Working tree summary: 4 modifieds
+- M components/configurator/StepFourConfirmation.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -190,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e4c1b7f by Bas van Dooremalen on 2026-10-27
-  feat(voucher): remove code parameter from browser address bar after storing token
+- cc6944f by Bas van Dooremalen on 2026-10-27
+  added robots meta tags nofollow
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

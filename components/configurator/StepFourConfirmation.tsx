@@ -266,7 +266,7 @@ export default function StepFourConfirmation({
             loading={loading}
             className="px-10 py-4"
           >
-            BEVESTIG KEUZES
+            BEVESTIG KEUZE
           </Button>
           <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
             TERUG
@@ -278,7 +278,7 @@ export default function StepFourConfirmation({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
-            <p className="text-sm text-muted">Mogen wij uw gegevens samen met uw keuzes delen met {PARTNER_NAAM}?</p>
+            <p className="text-sm text-muted">Mogen wij uw gegevens samen met uw keuze delen met {PARTNER_NAAM}?</p>
             <div className="space-y-4 pt-2">
               <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="w-4 h-4 accent-[#C5A880]" />

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T15:59:35.238Z",
-  "generatedAtEpochMs": 1793116775238,
+  "generatedAt": "2026-11-01T22:01:45.462Z",
+  "generatedAtEpochMs": 1793570505462,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/voucher/page.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/voucher/page.tsx",
-      "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "app/download/page.tsx",
       "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
+      "app/layout.tsx",
+      "app/voucher/page.tsx",
       "components/VoucherParamHandler.tsx",
-      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-10-27T15:59:32.776Z",
+    "lastActivityAt": "2026-11-01T22:01:43.676Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,22 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793570503676,
+      "lineCount": 307,
+      "charCount": 14829,
+      "hash": "27617c309371",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+    },
+    {
+      "filePath": "app/layout.tsx",
+      "updatedAt": 1793118727771,
+      "lineCount": 81,
+      "charCount": 1593,
+      "hash": "ed08bbfcc175",
+      "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+    },
     {
       "filePath": "app/voucher/page.tsx",
       "updatedAt": 1793116772776,
@@ -621,25 +637,105 @@
       "charCount": 23775,
       "hash": "6f867323f7b2",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793101411026,
-      "lineCount": 307,
-      "charCount": 14831,
-      "hash": "c65841c87fbd",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793098261817,
-      "lineCount": 224,
-      "charCount": 6049,
-      "hash": "15c866223c79",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 281: removed 1 line.",
+      "recordedAt": "2026-11-01T22:01:43.676Z",
+      "recordedAtEpochMs": 1793570503676,
+      "before": {
+        "kind": "text",
+        "lineCount": 307,
+        "charCount": 14830,
+        "hash": "876d0a69796b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793570503676
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 307,
+        "charCount": 14829,
+        "hash": "27617c309371",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793570503676
+      },
+      "diff": {
+        "lineStart": 281,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 281: removed 1 line.",
+        "beforeFragment": "s",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 269: removed 1 line.",
+      "recordedAt": "2026-11-01T22:01:25.022Z",
+      "recordedAtEpochMs": 1793570485022,
+      "before": {
+        "kind": "text",
+        "lineCount": 307,
+        "charCount": 14831,
+        "hash": "c65841c87fbd",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793570485021
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 307,
+        "charCount": 14830,
+        "hash": "876d0a69796b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793570485022
+      },
+      "diff": {
+        "lineStart": 269,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 269: removed 1 line.",
+        "beforeFragment": "S",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 56: inserted 5 lines.",
+      "recordedAt": "2026-10-27T16:32:07.771Z",
+      "recordedAtEpochMs": 1793118727771,
+      "before": {
+        "kind": "text",
+        "lineCount": 77,
+        "charCount": 1540,
+        "hash": "11070fac90dc",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1793118727771
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 81,
+        "charCount": 1593,
+        "hash": "ed08bbfcc175",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1793118727771
+      },
+      "diff": {
+        "lineStart": 56,
+        "removedLines": 0,
+        "addedLines": 5,
+        "summary": "Line 56: inserted 5 lines.",
+        "beforeFragment": "",
+        "afterFragment": "robots: { / index: true, / follow: false, / },"
+      }
+    },
     {
       "type": "save",
       "path": "app/voucher/page.tsx",
@@ -1023,102 +1119,6 @@
         "beforeFragment": "Haal het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNumm...",
         "afterFragment": "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 39 lines with 34 lines.",
-      "recordedAt": "2026-10-27T12:53:58.859Z",
-      "recordedAtEpochMs": 1793105638859,
-      "before": {
-        "kind": "text",
-        "lineCount": 480,
-        "charCount": 22688,
-        "hash": "2d0d95ca6552",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793105638859
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 475,
-        "charCount": 22268,
-        "hash": "6d6e3495277a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793105638859
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 39,
-        "addedLines": 34,
-        "summary": "Line 196: replaced 39 lines with 34 lines.",
-        "beforeFragment": "exact het cijfer op van de gekozen indeling (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNu...",
-        "afterFragment": "het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMat..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 36 lines with 39 lines.",
-      "recordedAt": "2026-10-27T12:42:45.859Z",
-      "recordedAtEpochMs": 1793104965859,
-      "before": {
-        "kind": "text",
-        "lineCount": 477,
-        "charCount": 22508,
-        "hash": "0358ebd61053",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104965859
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 480,
-        "charCount": 22688,
-        "hash": "2d0d95ca6552",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104965859
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 36,
-        "addedLines": 39,
-        "summary": "Line 196: replaced 36 lines with 39 lines.",
-        "beforeFragment": "het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNummerMat...",
-        "afterFragment": "exact het cijfer op van de gekozen indeling (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNu..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 200: replaced 67 lines with 38 lines.",
-      "recordedAt": "2026-10-27T12:35:46.347Z",
-      "recordedAtEpochMs": 1793104546347,
-      "before": {
-        "kind": "text",
-        "lineCount": 506,
-        "charCount": 23882,
-        "hash": "fa2fc7a584ea",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104546347
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 477,
-        "charCount": 22508,
-        "hash": "0358ebd61053",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793104546347
-      },
-      "diff": {
-        "lineStart": 200,
-        "removedLines": 67,
-        "addedLines": 38,
-        "summary": "Line 200: replaced 67 lines with 38 lines.",
-        "beforeFragment": "EN NAUWKEURIGE FILTERFUNCTIE / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase(); // bijv. \"hotel chi...",
-        "afterFragment": "FILTER OP BASIS VAN DE BESTAND TITEL IN HET CMS / const getGefilterdeBestanden = (rawBestandenLijst: any[]) => { / const activePakketLower = (designPakket || '').toLowerCase();..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 13
+      "count": 12
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1143,32 +1143,35 @@
       "count": 1
     },
     {
+      "filePath": "app/layout.tsx",
+      "count": 1
+    },
+    {
       "filePath": "app/voucher/page.tsx",
       "count": 1
     },
     {
       "filePath": "components/VoucherParamHandler.tsx",
       "count": 1
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 e4c1b7f feat(voucher): remove code parameter from browser address bar after storing token",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-10-27 cc6944f added robots meta tags nofollow",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/voucher/page.tsx"
+      "M components/configurator/StepFourConfirmation.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e4c1b7f by Bas van Dooremalen on 2026-10-27\n  feat(voucher): remove code parameter from browser address bar after storing token\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cc6944f by Bas van Dooremalen on 2026-10-27\n  added robots meta tags nofollow\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
