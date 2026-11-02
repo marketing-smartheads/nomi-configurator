@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T10:37:59.847Z",
-  "generatedAtEpochMs": 1793615879847,
+  "generatedAt": "2026-11-02T10:45:42.092Z",
+  "generatedAtEpochMs": 1793616342092,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/LoginScreen.tsx",
+    "activeFile": "components/MainContent.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/LoginScreen.tsx",
+      "components/MainContent.tsx",
       "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
+      "components/LoginScreen.tsx",
       "app/api/vouchers/route.ts",
       "app/globals.css",
-      "app/layout.tsx",
-      "app/voucher/page.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-02T10:37:57.411Z",
+    "lastActivityAt": "2026-11-02T10:45:40.365Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,11 +575,19 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/MainContent.tsx",
+      "updatedAt": 1793616340365,
+      "lineCount": 217,
+      "charCount": 8844,
+      "hash": "e6c5e1499cef",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+    },
+    {
       "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793615877411,
-      "lineCount": 272,
-      "charCount": 9894,
-      "hash": "9b7741ac908a",
+      "updatedAt": 1793616281742,
+      "lineCount": 288,
+      "charCount": 10168,
+      "hash": "79594072f6a6",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
     },
     {
@@ -629,17 +637,105 @@
       "charCount": 18002,
       "hash": "402480d5c584",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1793112677159,
-      "lineCount": 52,
-      "charCount": 1568,
-      "hash": "0eacd0d2ae72",
-      "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/MainContent.tsx",
+      "toPath": "",
+      "summary": "Line 97: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-02T10:45:40.365Z",
+      "recordedAtEpochMs": 1793616340365,
+      "before": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 8849,
+        "hash": "a83c8dcaab63",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793616340365
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 8844,
+        "hash": "e6c5e1499cef",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793616340365
+      },
+      "diff": {
+        "lineStart": 97,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 97: replaced 1 line with 1 line.",
+        "beforeFragment": "[100dvh]",
+        "afterFragment": "dvh"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/MainContent.tsx",
+      "toPath": "",
+      "summary": "Line 97: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-02T10:45:34.061Z",
+      "recordedAtEpochMs": 1793616334061,
+      "before": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 8847,
+        "hash": "ca1e0d747e51",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793616334061
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 8849,
+        "hash": "a83c8dcaab63",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
+        "updatedAt": 1793616334061
+      },
+      "diff": {
+        "lineStart": 97,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 97: replaced 1 line with 1 line.",
+        "beforeFragment": "screen",
+        "afterFragment": "[100dvh]"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 33: replaced 205 lines with 221 lines.",
+      "recordedAt": "2026-11-02T10:44:41.742Z",
+      "recordedAtEpochMs": 1793616281742,
+      "before": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 9894,
+        "hash": "9b7741ac908a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793616281742
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10168,
+        "hash": "79594072f6a6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793616281742
+      },
+      "diff": {
+        "lineStart": 33,
+        "removedLines": 205,
+        "addedLines": 221,
+        "summary": "Line 33: replaced 205 lines with 221 lines.",
+        "beforeFragment": "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd...",
+        "afterFragment": "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1023,102 +1119,6 @@
         "beforeFragment": "uit WordPress",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 17: replaced 271 lines with 269 lines.",
-      "recordedAt": "2026-10-27T14:48:23.468Z",
-      "recordedAtEpochMs": 1793112503468,
-      "before": {
-        "kind": "text",
-        "lineCount": 304,
-        "charCount": 14012,
-        "hash": "7d7c3ff88074",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112503467
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 302,
-        "charCount": 13988,
-        "hash": "39c23fe90aa4",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112503468
-      },
-      "diff": {
-        "lineStart": 17,
-        "removedLines": 271,
-        "addedLines": 269,
-        "summary": "Line 17: replaced 271 lines with 269 lines.",
-        "beforeFragment": "// Check of de sessie al bekend is bij herladen / useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLogge...",
-        "afterFragment": "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 79: replaced 190 lines with 194 lines.",
-      "recordedAt": "2026-10-27T14:41:15.131Z",
-      "recordedAtEpochMs": 1793112075131,
-      "before": {
-        "kind": "text",
-        "lineCount": 300,
-        "charCount": 13641,
-        "hash": "39178477b1a4",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112075131
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 304,
-        "charCount": 14012,
-        "hash": "7d7c3ff88074",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112075131
-      },
-      "diff": {
-        "lineStart": 79,
-        "removedLines": 190,
-        "addedLines": 194,
-        "summary": "Line 79: replaced 190 lines with 194 lines.",
-        "beforeFragment": "Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `\"${details.toegangscod...",
-        "afterFragment": "Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `\"${details..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 247: replaced 4 lines with 4 lines.",
-      "recordedAt": "2026-10-27T13:33:01.869Z",
-      "recordedAtEpochMs": 1793107981869,
-      "before": {
-        "kind": "text",
-        "lineCount": 308,
-        "charCount": 11550,
-        "hash": "e789f59957a2",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1793107981869
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 308,
-        "charCount": 11535,
-        "hash": "ef6f9a97b4ac",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
-        "updatedAt": 1793107981869
-      },
-      "diff": {
-        "lineStart": 247,
-        "removedLines": 4,
-        "addedLines": 4,
-        "summary": "Line 247: replaced 4 lines with 4 lines.",
-        "beforeFragment": "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/\"/g, '&quot;",
-        "afterFragment": "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/\"/g, '\""
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 10
+      "count": 7
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1139,36 +1139,40 @@
       "count": 2
     },
     {
+      "filePath": "components/LoginScreen.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/MainContent.tsx",
+      "count": 2
+    },
+    {
       "filePath": "app/api/vouchers/route.ts",
       "count": 1
     },
     {
       "filePath": "app/globals.css",
       "count": 1
-    },
-    {
-      "filePath": "app/layout.tsx",
-      "count": 1
-    },
-    {
-      "filePath": "app/voucher/page.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-02 967e259 fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-02 43c78b8 fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/LoginScreen.tsx"
+      "M components/LoginScreen.tsx",
+      "M components/MainContent.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 967e259 by Bas van Dooremalen on 2026-11-02\n  fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 43c78b8 by Bas van Dooremalen on 2026-11-02\n  fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

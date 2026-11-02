@@ -30,6 +30,18 @@ export default function LoginScreen({
   const [isChecking, setIsChecking] = useState(false);
   const [customError, setCustomError] = useState<string | null>(null);
 
+  // Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent
+  const [localCode, setLocalCode] = useState(toegangscode);
+  const [localEmail, setLocalEmail] = useState(klantEmail);
+
+  useEffect(() => {
+    setLocalCode(toegangscode);
+  }, [toegangscode]);
+
+  useEffect(() => {
+    setLocalEmail(klantEmail);
+  }, [klantEmail]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const confirmed = sessionStorage.getItem('configuratorConfirmed');
@@ -40,8 +52,16 @@ export default function LoginScreen({
   }, []);
 
   const handleVouchercodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setToegangscode(e.target.value.toUpperCase());
+    const val = e.target.value.toUpperCase();
+    setLocalCode(val);
+    setToegangscode(val);
     setCustomError(null);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setLocalEmail(val);
+    setKlantEmail(val);
   };
 
   const handleSubmitWithStorage = async (e: React.FormEvent) => {
@@ -50,7 +70,6 @@ export default function LoginScreen({
     setCustomError(null);
     
     try {
-      // 1. Haal de vouchers op via jouw eigen Next.js GraphQL API route (/api/vouchers)
       const res = await fetch('/api/vouchers');
       
       if (!res.ok) {
@@ -60,8 +79,7 @@ export default function LoginScreen({
       const data = await res.json();
       const vouchers = data.vouchers || [];
 
-      // 2. Zoek of de ingevoerde code overeenkomt met een voucher uit GraphQL
-      const ingevoerdeCodeClean = toegangscode.trim().toUpperCase();
+      const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       
       const found = vouchers.find((v: any) => {
         const details = v.voucherVelden || {};
@@ -70,13 +88,11 @@ export default function LoginScreen({
       });
 
       if (!found) {
-        // Code bestaat helemaal niet in WordPress
         setCustomError('Deze vouchercode is onjuist of niet bekend in ons systeem.');
         setIsChecking(false);
         return;
       }
 
-      // 3. Check of de voucher al gebruikt/bevestigd is
       const details = found.voucherVelden || {};
       const status = details.status;
 
@@ -84,7 +100,7 @@ export default function LoginScreen({
         if (typeof window !== 'undefined') {
           sessionStorage.setItem('configuratorConfirmed', 'true');
           sessionStorage.setItem('voucherCode', ingevoerdeCodeClean);
-          sessionStorage.setItem('klantEmail', klantEmail.trim());
+          sessionStorage.setItem('klantEmail', localEmail.trim());
           localStorage.setItem('toegangscode', ingevoerdeCodeClean);
         }
         setIsReedsBevestigd(true);
@@ -102,8 +118,8 @@ export default function LoginScreen({
     setIsChecking(false);
 
     if (typeof window !== 'undefined') {
-      sessionStorage.setItem('voucherCode', toegangscode.trim());
-      sessionStorage.setItem('klantEmail', klantEmail.trim());
+      sessionStorage.setItem('voucherCode', localCode.trim());
+      sessionStorage.setItem('klantEmail', localEmail.trim());
     }
 
     onSubmit(e);
@@ -124,7 +140,7 @@ export default function LoginScreen({
           <p className="text-sm text-zinc-700 leading-relaxed">
             Deze vouchercode is al ingewisseld en kan niet meer opnieuw worden gebruikt. 
             Bij vragen kunt u contact opnemen met de makelaar: <strong className="text-dark">De Keizer Makelaarsgroep</strong> via{' '}
-            <a href="tel:0306008240" className="underline hover:opacity-80 font medium text-dark">030-600 82 40</a> of mail naar{' '}
+            <a href="tel:0306008240" className="underline hover:opacity-80 font-medium text-dark">030-600 82 40</a> of mail naar{' '}
             <a href="mailto:nieuwbouw@dekeizer.nl" className="underline hover:opacity-80 font-medium text-dark">nieuwbouw@dekeizer.nl</a>.
           </p>
         </div>
@@ -214,7 +230,7 @@ export default function LoginScreen({
             </label>
             <input
               type="text"
-              value={toegangscode}
+              value={localCode}
               onChange={handleVouchercodeChange}
               placeholder="XX-XXXX-X"
               required
@@ -233,8 +249,8 @@ export default function LoginScreen({
             </label>
             <input
               type="email"
-              value={klantEmail}
-              onChange={(e) => setKlantEmail(e.target.value)}
+              value={localEmail}
+              onChange={handleEmailChange}
               placeholder="naam@voorbeeld.nl"
               required
               className="w-full h-13 px-5 rounded-xl text-base sm:text-sm tracking-widest font-sans            

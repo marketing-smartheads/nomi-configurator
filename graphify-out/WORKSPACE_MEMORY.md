@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-02T10:37:59.847Z
+Generated: 2026-11-02T10:45:42.092Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-02T10:37:57.411Z
+- Last activity: 2026-11-02T10:45:40.365Z
 ## Workspace Focus
-- Active file in focus: components/LoginScreen.tsx
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (10), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: components/LoginScreen.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
+- Active file in focus: components/MainContent.tsx
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (7), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: components/MainContent.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, components/LoginScreen.tsx
 ## Current Workspace
-- Active file: components/LoginScreen.tsx
+- Active file: components/MainContent.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,10 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/LoginScreen.tsx | 272 lines | 9894 chars | hash 9b7741ac908a
-  Last snapshot: 2026-11-02T10:37:57.411Z
+- components/MainContent.tsx | 217 lines | 8844 chars | hash e6c5e1499cef
+  Last snapshot: 2026-11-02T10:45:40.365Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- components/LoginScreen.tsx | 288 lines | 10168 chars | hash 79594072f6a6
+  Last snapshot: 2026-11-02T10:44:41.742Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 - app/globals.css | 106 lines | 2720 chars | hash 7e080d34cd3e
   Last snapshot: 2026-11-02T10:32:36.827Z
@@ -60,11 +63,29 @@ Structured manifest: workspace.json
 - app/dashboard/page.tsx | 372 lines | 18002 chars | hash 402480d5c584
   Last snapshot: 2026-10-27T15:01:12.831Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- app/api/vouchers/route.ts | 52 lines | 1568 chars | hash 0eacd0d2ae72
-  Last snapshot: 2026-10-27T14:51:17.159Z
-  Preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
 
 ## Recent Changes
+### 2026-11-02T10:45:40.365Z | saved | components/MainContent.tsx
+- Summary: Line 97: replaced 1 line with 1 line.
+- Before: 217 lines | 8,849 chars | hash a83c8dcaab63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- After: 217 lines | 8,844 chars | hash e6c5e1499cef | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- Previous fragment: "[100dvh]"
+- Current fragment: "dvh"
+
+### 2026-11-02T10:45:34.061Z | saved | components/MainContent.tsx
+- Summary: Line 97: replaced 1 line with 1 line.
+- Before: 217 lines | 8,847 chars | hash ca1e0d747e51 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- After: 217 lines | 8,849 chars | hash a83c8dcaab63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
+- Previous fragment: "screen"
+- Current fragment: "[100dvh]"
+
+### 2026-11-02T10:44:41.742Z | saved | components/LoginScreen.tsx
+- Summary: Line 33: replaced 205 lines with 221 lines.
+- Before: 272 lines | 9,894 chars | hash 9b7741ac908a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- After: 288 lines | 10,168 chars | hash 79594072f6a6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- Previous fragment: "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd..."
+- Current fragment: "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
+
 ### 2026-11-02T10:37:57.411Z | saved | components/LoginScreen.tsx
 - Summary: Line 221: replaced 20 lines with 20 lines.
 - Before: 272 lines | 9,890 chars | hash 5c2df540a650 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
@@ -142,43 +163,26 @@ Structured manifest: workspace.json
 - After: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - Previous fragment: "uit WordPress"
 
-### 2026-10-27T14:48:23.468Z | saved | app/dashboard/page.tsx
-- Summary: Line 17: replaced 271 lines with 269 lines.
-- Before: 304 lines | 14,012 chars | hash 7d7c3ff88074 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 302 lines | 13,988 chars | hash 39c23fe90aa4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "// Check of de sessie al bekend is bij herladen / useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLogge..."
-- Current fragment: "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons..."
-
-### 2026-10-27T14:41:15.131Z | saved | app/dashboard/page.tsx
-- Summary: Line 79: replaced 190 lines with 194 lines.
-- Before: 300 lines | 13,641 chars | hash 39178477b1a4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 304 lines | 14,012 chars | hash 7d7c3ff88074 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `"${details.toegangscod..."
-- Current fragment: "Indeling', 'Klantnaam', 'Klant E-mail', 'Designpakket', 'Status']; / const rows = vouchers.map(v => { / const details = v.voucherVelden || {}; / const toegangscode = `"${details..."
-
-### 2026-10-27T13:33:01.869Z | saved | app/api/confirm/route.ts
-- Summary: Line 247: replaced 4 lines with 4 lines.
-- Before: 308 lines | 11,550 chars | hash e789f59957a2 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 308 lines | 11,535 chars | hash ef6f9a97b4ac | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- Previous fragment: "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/"/g, '&quot;"
-- Current fragment: "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/"/g, '""
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (10 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (7 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
+- components/LoginScreen.tsx (2 tracked changes)
+- components/MainContent.tsx (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
 - app/globals.css (1 tracked changes)
-- app/layout.tsx (1 tracked changes)
-- app/voucher/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-02 967e259 fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px
-- Working tree summary: 1 modified
+- HEAD: 2026-11-02 43c78b8 fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base
+- Working tree summary: 5 modifieds
 - M components/LoginScreen.tsx
+- M components/MainContent.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 967e259 by Bas van Dooremalen on 2026-11-02
-  fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px
+- 43c78b8 by Bas van Dooremalen on 2026-11-02
+  fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

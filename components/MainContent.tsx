@@ -94,7 +94,7 @@ export default function MainContent({ sections, configuratorData, initialScreen 
   }
   if (screen === 'login') {
     return (
-      <main className="w-full min-h-screen relative flex items-center justify-center font-sans text-zinc-100 px-6 py-8 sm:py-12 sm:px-0 overflow-hidden">
+      <main className="w-full min-h-dvh relative flex items-center justify-center font-sans text-zinc-100 px-6 py-8 sm:py-12 sm:px-0 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src="/assets/bg-interior.jpg"
