@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-01T22:01:45.462Z
+Generated: 2026-11-02T10:32:38.605Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-01T22:01:43.676Z
+- Last activity: 2026-11-02T10:32:36.827Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (12), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts, app/layout.tsx
+- Active file in focus: app/globals.css
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (11), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: app/globals.css, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: app/globals.css
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- app/globals.css | 106 lines | 2720 chars | hash 7e080d34cd3e
+  Last snapshot: 2026-11-02T10:32:36.827Z
+  Preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14829 chars | hash 27617c309371
   Last snapshot: 2026-11-01T22:01:43.676Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -60,11 +63,14 @@ Structured manifest: workspace.json
 - app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
   Last snapshot: 2026-10-27T13:33:01.869Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- app/download/page.tsx | 504 lines | 23775 chars | hash 6f867323f7b2
-  Last snapshot: 2026-10-27T13:02:50.504Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-02T10:32:36.827Z | saved | app/globals.css
+- Summary: Line 102: inserted 5 lines.
+- Before: 102 lines | 2,661 chars | hash b8c04f0eb1b0 | preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
+- After: 106 lines | 2,720 chars | hash 7e080d34cd3e | preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
+- Current fragment: "input, select, textarea { / font-size: 16px !important; / }"
+
 ### 2026-11-01T22:01:43.676Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 281: removed 1 line.
 - Before: 307 lines | 14,830 chars | hash 876d0a69796b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -157,29 +163,22 @@ Structured manifest: workspace.json
 - Previous fragment: "Woning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam..."
 - Current fragment: "aliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } }; /..."
 
-### 2026-10-27T12:58:32.461Z | saved | app/download/page.tsx
-- Summary: Line 196: replaced 40 lines with 57 lines.
-- Before: 475 lines | 22,268 chars | hash 6d6e3495277a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 492 lines | 23,261 chars | hash e284cbdf9fcc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "Haal het getal van de gekozen indeling op (bijv. "2" uit "Indeling 02") / const indelingNummerMatch = (gekozenIndeling || '').match(/\d+/); / const indelingNummer = indelingNumm..."
-- Current fragment: "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (12 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
+- app/globals.css (1 tracked changes)
 - app/layout.tsx (1 tracked changes)
 - app/voucher/page.tsx (1 tracked changes)
-- components/VoucherParamHandler.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-10-27 cc6944f added robots meta tags nofollow
+- HEAD: 2026-11-01 4277f0a fixed typo
 - Working tree summary: 4 modifieds
-- M components/configurator/StepFourConfirmation.tsx
+- M app/globals.css
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -190,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- cc6944f by Bas van Dooremalen on 2026-10-27
-  added robots meta tags nofollow
+- 4277f0a by Bas van Dooremalen on 2026-11-01
+  fixed typo
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

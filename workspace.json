@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T22:01:45.462Z",
-  "generatedAtEpochMs": 1793570505462,
+  "generatedAt": "2026-11-02T10:32:38.605Z",
+  "generatedAtEpochMs": 1793615558605,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "app/globals.css",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
+      "app/globals.css",
       "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
       "app/layout.tsx",
       "app/voucher/page.tsx",
-      "components/VoucherParamHandler.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-01T22:01:43.676Z",
+    "lastActivityAt": "2026-11-02T10:32:36.827Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/globals.css",
+      "updatedAt": 1793615556827,
+      "lineCount": 106,
+      "charCount": 2720,
+      "hash": "7e080d34cd3e",
+      "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793570503676,
@@ -629,17 +637,41 @@
       "charCount": 11535,
       "hash": "ef6f9a97b4ac",
       "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1793106170504,
-      "lineCount": 504,
-      "charCount": 23775,
-      "hash": "6f867323f7b2",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/globals.css",
+      "toPath": "",
+      "summary": "Line 102: inserted 5 lines.",
+      "recordedAt": "2026-11-02T10:32:36.827Z",
+      "recordedAtEpochMs": 1793615556827,
+      "before": {
+        "kind": "text",
+        "lineCount": 102,
+        "charCount": 2661,
+        "hash": "b8c04f0eb1b0",
+        "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --...",
+        "updatedAt": 1793615556827
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 106,
+        "charCount": 2720,
+        "hash": "7e080d34cd3e",
+        "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --...",
+        "updatedAt": 1793615556827
+      },
+      "diff": {
+        "lineStart": 102,
+        "removedLines": 0,
+        "addedLines": 5,
+        "summary": "Line 102: inserted 5 lines.",
+        "beforeFragment": "",
+        "afterFragment": "input, select, textarea { / font-size: 16px !important; / }"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "Woning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam...",
         "afterFragment": "aliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } }; /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 196: replaced 40 lines with 57 lines.",
-      "recordedAt": "2026-10-27T12:58:32.461Z",
-      "recordedAtEpochMs": 1793105912461,
-      "before": {
-        "kind": "text",
-        "lineCount": 475,
-        "charCount": 22268,
-        "hash": "6d6e3495277a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793105912461
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 492,
-        "charCount": 23261,
-        "hash": "e284cbdf9fcc",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793105912461
-      },
-      "diff": {
-        "lineStart": 196,
-        "removedLines": 40,
-        "addedLines": 57,
-        "summary": "Line 196: replaced 40 lines with 57 lines.",
-        "beforeFragment": "Haal het getal van de gekozen indeling op (bijv. \"2\" uit \"Indeling 02\") / const indelingNummerMatch = (gekozenIndeling || '').match(/\\d+/); / const indelingNummer = indelingNumm...",
-        "afterFragment": "--------------------------------------------------------------------- / // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam / // ---------------------..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 12
+      "count": 11
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1143,26 +1143,26 @@
       "count": 1
     },
     {
+      "filePath": "app/globals.css",
+      "count": 1
+    },
+    {
       "filePath": "app/layout.tsx",
       "count": 1
     },
     {
       "filePath": "app/voucher/page.tsx",
       "count": 1
-    },
-    {
-      "filePath": "components/VoucherParamHandler.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-10-27 cc6944f added robots meta tags nofollow",
+    "headSummary": "2026-11-01 4277f0a fixed typo",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
+      "M app/globals.css",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1171,7 +1171,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cc6944f by Bas van Dooremalen on 2026-10-27\n  added robots meta tags nofollow\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4277f0a by Bas van Dooremalen on 2026-11-01\n  fixed typo\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -100,3 +100,7 @@ body {
 .animate-slow-zoom {
   animation: slowZoom 15s ease-in-out infinite; 
 } 
+
+input, select, textarea {
+  font-size: 16px !important;
+}
