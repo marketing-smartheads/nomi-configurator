@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-02T10:32:38.605Z
+Generated: 2026-11-02T10:37:59.847Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-02T10:32:36.827Z
+- Last activity: 2026-11-02T10:37:57.411Z
 ## Workspace Focus
-- Active file in focus: app/globals.css
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (11), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: app/globals.css, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
+- Active file in focus: components/LoginScreen.tsx
+- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (10), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: components/LoginScreen.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: app/globals.css
+- Active file: components/LoginScreen.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/LoginScreen.tsx | 272 lines | 9894 chars | hash 9b7741ac908a
+  Last snapshot: 2026-11-02T10:37:57.411Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 - app/globals.css | 106 lines | 2720 chars | hash 7e080d34cd3e
   Last snapshot: 2026-11-02T10:32:36.827Z
   Preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - app/api/vouchers/route.ts | 52 lines | 1568 chars | hash 0eacd0d2ae72
   Last snapshot: 2026-10-27T14:51:17.159Z
   Preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-- app/api/confirm/route.ts | 308 lines | 11535 chars | hash ef6f9a97b4ac
-  Last snapshot: 2026-10-27T13:33:01.869Z
-  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
 
 ## Recent Changes
+### 2026-11-02T10:37:57.411Z | saved | components/LoginScreen.tsx
+- Summary: Line 221: replaced 20 lines with 20 lines.
+- Before: 272 lines | 9,890 chars | hash 5c2df540a650 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- After: 272 lines | 9,894 chars | hash 9b7741ac908a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- Previous fragment: "xs sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35 t..."
+- Current fragment: "base sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35..."
+
 ### 2026-11-02T10:32:36.827Z | saved | app/globals.css
 - Summary: Line 102: inserted 5 lines.
 - Before: 102 lines | 2,661 chars | hash b8c04f0eb1b0 | preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
@@ -156,17 +163,10 @@ Structured manifest: workspace.json
 - Previous fragment: "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/"/g, '&quot;"
 - Current fragment: "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/"/g, '""
 
-### 2026-10-27T13:02:50.504Z | saved | app/download/page.tsx
-- Summary: Line 169: replaced 53 lines with 65 lines.
-- Before: 492 lines | 23,261 chars | hash e284cbdf9fcc | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 504 lines | 23,775 chars | hash 6f867323f7b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "Woning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam..."
-- Current fragment: "aliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } }; /..."
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (10 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
@@ -176,12 +176,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-01 4277f0a fixed typo
-- Working tree summary: 4 modifieds
-- M app/globals.css
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-02 967e259 fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px
+- Working tree summary: 1 modified
+- M components/LoginScreen.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4277f0a by Bas van Dooremalen on 2026-11-01
-  fixed typo
+- 967e259 by Bas van Dooremalen on 2026-11-02
+  fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

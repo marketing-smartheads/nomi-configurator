@@ -218,7 +218,7 @@ export default function LoginScreen({
               onChange={handleVouchercodeChange}
               placeholder="XX-XXXX-X"
               required
-              className="w-full h-13 px-5 rounded-xl text-xs sm:text-sm tracking-widest font-sans
+              className="w-full h-13 px-5 rounded-xl text-base sm:text-sm tracking-widest font-sans
                 bg-dark border border-white/10 
                 backdrop-blur-[3.75rem] 
                 text-white placeholder-white/40 
@@ -237,7 +237,7 @@ export default function LoginScreen({
               onChange={(e) => setKlantEmail(e.target.value)}
               placeholder="naam@voorbeeld.nl"
               required
-              className="w-full h-13 px-5 rounded-xl text-xs sm:text-sm tracking-widest font-sans            
+              className="w-full h-13 px-5 rounded-xl text-base sm:text-sm tracking-widest font-sans            
                 bg-dark border border-white/10 backdrop-blur-[3.75rem] 
                 text-white placeholder-white/40 
                 focus:outline-none focus:border-white/35 transition-all duration-300

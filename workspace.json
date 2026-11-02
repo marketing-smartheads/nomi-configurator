@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T10:32:38.605Z",
-  "generatedAtEpochMs": 1793615558605,
+  "generatedAt": "2026-11-02T10:37:59.847Z",
+  "generatedAtEpochMs": 1793615879847,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/globals.css",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/globals.css",
+      "components/LoginScreen.tsx",
       "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/dashboard/page.tsx",
       "app/api/confirm/route.ts",
       "app/api/vouchers/route.ts",
+      "app/globals.css",
       "app/layout.tsx",
       "app/voucher/page.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-02T10:32:36.827Z",
+    "lastActivityAt": "2026-11-02T10:37:57.411Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1793615877411,
+      "lineCount": 272,
+      "charCount": 9894,
+      "hash": "9b7741ac908a",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+    },
     {
       "filePath": "app/globals.css",
       "updatedAt": 1793615556827,
@@ -629,17 +637,41 @@
       "charCount": 1568,
       "hash": "0eacd0d2ae72",
       "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-    },
-    {
-      "filePath": "app/api/confirm/route.ts",
-      "updatedAt": 1793107981869,
-      "lineCount": 308,
-      "charCount": 11535,
-      "hash": "ef6f9a97b4ac",
-      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 221: replaced 20 lines with 20 lines.",
+      "recordedAt": "2026-11-02T10:37:57.411Z",
+      "recordedAtEpochMs": 1793615877411,
+      "before": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 9890,
+        "hash": "5c2df540a650",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793615877411
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 9894,
+        "hash": "9b7741ac908a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793615877411
+      },
+      "diff": {
+        "lineStart": 221,
+        "removedLines": 20,
+        "addedLines": 20,
+        "summary": "Line 221: replaced 20 lines with 20 lines.",
+        "beforeFragment": "xs sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35 t...",
+        "afterFragment": "base sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35..."
+      }
+    },
     {
       "type": "save",
       "path": "app/globals.css",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "amp;') / .replace(/</g, '&lt;') / .replace(/>/g, '&gt;') / .replace(/\"/g, '&quot;",
         "afterFragment": "') / .replace(/</g, '<') / .replace(/>/g, '>') / .replace(/\"/g, '\""
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 169: replaced 53 lines with 65 lines.",
-      "recordedAt": "2026-10-27T13:02:50.504Z",
-      "recordedAtEpochMs": 1793106170504,
-      "before": {
-        "kind": "text",
-        "lineCount": 492,
-        "charCount": 23261,
-        "hash": "e284cbdf9fcc",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793106170504
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 504,
-        "charCount": 23775,
-        "hash": "6f867323f7b2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793106170504
-      },
-      "diff": {
-        "lineStart": 169,
-        "removedLines": 53,
-        "addedLines": 65,
-        "summary": "Line 169: replaced 53 lines with 65 lines.",
-        "beforeFragment": "Woning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam...",
-        "afterFragment": "aliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } }; /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,7 +1128,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1158,20 +1158,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-01 4277f0a fixed typo",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-02 967e259 fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/globals.css",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/LoginScreen.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4277f0a by Bas van Dooremalen on 2026-11-01\n  fixed typo\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 967e259 by Bas van Dooremalen on 2026-11-02\n  fix(inputs): prevent automatic iOS zoom on form fields by setting font-size to 16px\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
