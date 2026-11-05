@@ -65,8 +65,8 @@ export async function getPageData() {
                   }
                 }
                 stap3Omschrijving
-                visualsSlider {
-                  nodes(first: 50) {
+                visualsSlider(first: 100) {
+                  nodes {
                     sourceUrl
                     mediaItemUrl
                   }
@@ -74,8 +74,8 @@ export async function getPageData() {
                 materialenLijst {
                   materiaalTitel
                 }
-                moodboardGallery {
-                  nodes(first: 50) {
+                moodboardGallery(first: 100) {
+                  nodes {
                     sourceUrl
                     mediaItemUrl
                   }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:45:48.750Z",
-  "generatedAtEpochMs": 1793882748750,
+  "generatedAt": "2026-11-05T12:48:34.669Z",
+  "generatedAtEpochMs": 1793882914669,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:45:47.011Z",
+    "lastActivityAt": "2026-11-05T12:48:32.342Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793882747011,
+      "updatedAt": 1793882912342,
       "lineCount": 225,
-      "charCount": 6203,
-      "hash": "04694a32fc10",
+      "charCount": 6205,
+      "hash": "012326f81e88",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 68: replaced 11 lines with 11 lines.",
+      "recordedAt": "2026-11-05T12:48:32.342Z",
+      "recordedAtEpochMs": 1793882912342,
+      "before": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6203,
+        "hash": "04694a32fc10",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882912342
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6205,
+        "hash": "012326f81e88",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882912342
+      },
+      "diff": {
+        "lineStart": 68,
+        "removedLines": 11,
+        "addedLines": 11,
+        "summary": "Line 68: replaced 11 lines with 11 lines.",
+        "beforeFragment": "{ / nodes(first: 50) { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes(first: 50)",
+        "afterFragment": "(first: 100) { / nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery(first: 100) { / nodes"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1052,44 +1084,12 @@
         "beforeFragment": "const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || []; / const materialen = huidigPakket?.materialenLijs...",
         "afterFragment": "// --- ROBUUSTE VISUALS EXTRACTIE (Ondersteunt zowel array als .nodes / .edges) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / const vis..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 12: replaced 315 lines with 333 lines.",
-      "recordedAt": "2026-11-05T11:55:00.316Z",
-      "recordedAtEpochMs": 1793879700316,
-      "before": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 17204,
-        "hash": "7c13abe084e1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /...",
-        "updatedAt": 1793879700316
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 440,
-        "charCount": 18174,
-        "hash": "f1f57a0353a0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793879700316
-      },
-      "diff": {
-        "lineStart": 12,
-        "removedLines": 315,
-        "addedLines": 333,
-        "summary": "Line 12: replaced 315 lines with 333 lines.",
-        "beforeFragment": "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP...",
-        "afterFragment": "const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1101,7 +1101,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 3
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1123,7 +1123,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 d0fba2f fix(cms): remove invalid first argument from visualsSlider and moodboardGallery to resolve graphql connection error",
+    "headSummary": "2026-11-05 e7e6974 fix(cms): set nodes(first: 50) for visualsSlider and moodboardGallery to fetch all uploaded images",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1133,7 +1133,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3a4a3ff by Bas van Dooremalen on 2026-11-05\n  fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e7e6974 by Bas van Dooremalen on 2026-11-05\n  fix(cms): set nodes(first: 50) for visualsSlider and moodboardGallery to fetch all uploaded images\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

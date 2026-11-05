@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:45:48.750Z
+Generated: 2026-11-05T12:48:34.669Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:45:47.011Z
+- Last activity: 2026-11-05T12:48:32.342Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (11), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (5), app/download/page.tsx (3)
+- Hottest files right now: lib/cms.ts (12), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (5), app/download/page.tsx (2)
 - Suggested starting points: lib/cms.ts, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 225 lines | 6203 chars | hash 04694a32fc10
-  Last snapshot: 2026-11-05T12:45:47.011Z
+- lib/cms.ts | 225 lines | 6205 chars | hash 012326f81e88
+  Last snapshot: 2026-11-05T12:48:32.342Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepThreeVisuals.tsx | 491 lines | 20409 chars | hash df5ffb8d393f
   Last snapshot: 2026-11-05T12:37:46.162Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:48:32.342Z | saved | lib/cms.ts
+- Summary: Line 68: replaced 11 lines with 11 lines.
+- Before: 225 lines | 6,203 chars | hash 04694a32fc10 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 225 lines | 6,205 chars | hash 012326f81e88 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "{ / nodes(first: 50) { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes(first: 50)"
+- Current fragment: "(first: 100) { / nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery(first: 100) { / nodes"
+
 ### 2026-11-05T12:45:47.011Z | saved | lib/cms.ts
 - Summary: Line 69: replaced 10 lines with 10 lines.
 - Before: 225 lines | 6,181 chars | hash 759e72d2dd03 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -153,19 +160,12 @@ Structured manifest: workspace.json
 - Previous fragment: "const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || []; / const materialen = huidigPakket?.materialenLijs..."
 - Current fragment: "// --- ROBUUSTE VISUALS EXTRACTIE (Ondersteunt zowel array als .nodes / .edges) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / const vis..."
 
-### 2026-11-05T11:55:00.316Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 12: replaced 315 lines with 333 lines.
-- Before: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
-- After: 440 lines | 18,174 chars | hash f1f57a0353a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- Previous fragment: "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP..."
-- Current fragment: "const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray..."
-
 
 ## Hot Files
-- lib/cms.ts (11 tracked changes)
+- lib/cms.ts (12 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (5 tracked changes)
-- app/download/page.tsx (3 tracked changes)
+- app/download/page.tsx (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
@@ -173,7 +173,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 d0fba2f fix(cms): remove invalid first argument from visualsSlider and moodboardGallery to resolve graphql connection error
+- HEAD: 2026-11-05 e7e6974 fix(cms): set nodes(first: 50) for visualsSlider and moodboardGallery to fetch all uploaded images
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -183,8 +183,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 3a4a3ff by Bas van Dooremalen on 2026-11-05
-  fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails
+- e7e6974 by Bas van Dooremalen on 2026-11-05
+  fix(cms): set nodes(first: 50) for visualsSlider and moodboardGallery to fetch all uploaded images
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
