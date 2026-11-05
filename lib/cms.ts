@@ -288,6 +288,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         };
       }
     } else {
+      // Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email, status: "bevestigd" } }) {

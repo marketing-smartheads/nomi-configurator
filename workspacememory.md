@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:47:41.071Z
+Generated: 2026-11-05T23:50:56.928Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:47:39.200Z
+- Last activity: 2026-11-05T23:50:54.520Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (18), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (3)
-- Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, app/api/auth-voucher/route.ts
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (3)
+- Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, lib/useConfigurator.ts
 ## Current Workspace
 - Active file: lib/cms.ts
 - Tracked files in snapshot: 71
@@ -35,12 +35,12 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (38), create (1), delete (1)
+- Change mix: save (39), delete (1)
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 317 lines | 9139 chars | hash 6bb76d191141
-  Last snapshot: 2026-11-05T23:47:39.200Z
+- lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
+  Last snapshot: 2026-11-05T23:50:54.520Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:50:54.520Z | saved | lib/cms.ts
+- Summary: Line 291: inserted 2 lines.
+- Before: 317 lines | 9,139 chars | hash 6bb76d191141 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Current fragment: "// Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress"
+
 ### 2026-11-05T23:47:39.200Z | saved | lib/cms.ts
 - Summary: Line 232: replaced 64 lines with 59 lines.
 - Before: 322 lines | 9,591 chars | hash 226caf9bbf89 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -163,27 +169,20 @@ Structured manifest: workspace.json
 - Previous fragment: "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
 - Current fragment: ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
 
-### 2026-11-05T22:58:35.221Z | saved | lib/cms.ts
-- Summary: Line 183: replaced 41 lines with 43 lines.
-- Before: 281 lines | 7,764 chars | hash 33e5efc5d32c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 283 lines | 7,842 chars | hash 38f52a242b53 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / header..."
-- Current fragment: "gekozenIndeling / indeling / status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint,..."
-
 
 ## Hot Files
-- lib/cms.ts (18 tracked changes)
+- lib/cms.ts (19 tracked changes)
 - components/LoginScreen.tsx (7 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
-- app/api/auth-voucher/route.ts (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
 - app/api/auth-voucher (1 tracked changes)
+- app/api/auth-voucher/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 3ca7b59 fix(auth): use exact ACF GraphQL field name klantEMail from schema config
+- HEAD: 2026-11-06 cfc17aa chore(auth): remove debug logs for production
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -193,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- f3ccbdd by Bas van Dooremalen on 2026-11-05
-  fix(auth): use exact WPGraphQL field name klantEmail
+- cfc17aa by Bas van Dooremalen on 2026-11-05
+  chore(auth): remove debug logs for production
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
