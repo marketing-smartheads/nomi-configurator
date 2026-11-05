@@ -29,7 +29,8 @@ export default function StepThreeVisuals({
           }
         }
 
-        const rawPak = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
+        // Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron
+        const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
         if (rawPak) {
           setOpgeslagenPakket(rawPak);
         }
