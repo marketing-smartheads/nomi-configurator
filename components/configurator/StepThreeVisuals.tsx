@@ -73,6 +73,7 @@ export default function StepThreeVisuals({
 
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
   
+  // Moodboard gallery: pak enkel de eerste afbeelding (single moodboard visual)
   const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery;
   let moodboardGallery: any[] = [];
   if (Array.isArray(rawMoodboard)) {
@@ -82,6 +83,8 @@ export default function StepThreeVisuals({
   } else if (rawMoodboard?.edges) {
     moodboardGallery = rawMoodboard.edges.map((e: any) => e.node);
   }
+  const singleMoodboardImage = moodboardGallery[0];
+  const moodboardUrl = singleMoodboardImage?.sourceUrl || singleMoodboardImage?.node?.sourceUrl || singleMoodboardImage?.mediaItemUrl;
 
   // Pannellum 360° logica
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
@@ -465,24 +468,15 @@ export default function StepThreeVisuals({
             )}
           </div>
         </div>
-
-        {moodboardGallery.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 sm:p-0">
-            {moodboardGallery.map((img: any, idx: number) => {
-              const imageUrl = img?.sourceUrl || img?.node?.sourceUrl || img?.mediaItemUrl;
-              if (!imageUrl) return null;
-
-              return (
-                <div key={`moodboard-${idx}`} className="relative overflow-hidden bg-secondary aspect-4/5 rounded-2xl sm:rounded-none">
-                  <Image 
-                    src={imageUrl} 
-                    alt={`Moodboard afbeelding ${idx + 1}`} 
-                    fill 
-                    className="object-cover" 
-                  />
-                </div>
-              );
-            })}
+        
+        {moodboardUrl && (
+          <div className="w-full relative aspect-video overflow-hidden bg-secondary">
+            <Image 
+              src={moodboardUrl} 
+              alt={`Moodboard ${pakketTitel}`} 
+              fill 
+              className="object-cover" 
+            />
           </div>
         )}
       </div>
