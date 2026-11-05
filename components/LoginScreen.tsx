@@ -73,18 +73,19 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      const res = await fetch('/api/vouchers', {
+      // 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint
+      const res = await fetch('/api/verify-voucher', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           toegangscode: ingevoerdeCodeClean,
           klantEmail: ingevoerdeEmailClean,
         }),
-      })
+      });
 
       const data = await res.json();
 
-      // Als de API de inlog afkeurt (bijv. verkeerd e-mailadres of code), stop direct!
+      // Als de API de inlog afkeurt (bijv. verkeerd e-mailadres), stop direct!
       if (!res.ok) {
         setCustomError(data.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
         setIsChecking(false);
