@@ -44,26 +44,37 @@ export default function StepThreeVisuals({
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+  // Verzamel ALLE rijen die matchen met het woningtype en de geselecteerde indeling
+  const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const typeMatch = naam.includes(normWoning) || normWoning.includes(naam);
+    const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
     const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
     return typeMatch && indelingMatch;
-  }) || woningTypenLijst.find((w: any) => {
-    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return naam.includes(normWoning) || normWoning.includes(naam);
-  }) || woningTypenLijst[0];
+  });
 
-  const rawPakkettenWoning = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || [];
-  const rawPakkettenAlgemeen = data?.designPakketten || data?.design_pakketten || [];
-  
-  const pakkettenLijstWoning = Array.isArray(rawPakkettenWoning) ? rawPakkettenWoning : rawPakkettenWoning?.nodes || [];
-  const pakkettenLijstAlgemeen = Array.isArray(rawPakkettenAlgemeen) ? rawPakkettenAlgemeen : rawPakkettenAlgemeen?.nodes || [];
-  
-  const allePakketten = [...pakkettenLijstWoning, ...pakkettenLijstAlgemeen];
+  const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
 
-  // Super-robuuste matching: exacte match én trefwoord-fallback (raw / chic)
+  // Verzamel alle designpakketten en panorama renders uit ALLE matchende rijen
+  const allePakketten: any[] = [];
+  const allePanoramaRenders: any[] = [];
+
+  gebruikteRijen.forEach((rij: any) => {
+    const rawP = rij?.designPakketten || rij?.design_pakketten || [];
+    const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
+    pakketLijst.forEach((p: any) => allePakketten.push(p));
+
+    const rawR = rij?.panoramaRenders || rij?.panorama_renders || [];
+    const renderLijst = Array.isArray(rawR) ? rawR : rawR?.nodes || [];
+    renderLijst.forEach((r: any) => allePanoramaRenders.push(r));
+  });
+
+  if (allePakketten.length === 0 && data?.designPakketten) {
+    const algemeen = Array.isArray(data.designPakketten) ? data.designPakketten : data.designPakketten?.nodes || [];
+    algemeen.forEach((p: any) => allePakketten.push(p));
+  }
+
+  // Vind het juiste pakket op basis van het gekozen pakket (bijv. Modern Raw)
   const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -136,14 +147,10 @@ export default function StepThreeVisuals({
     }
   }, []);
 
-  const panoramaRendersLijst = 
-    huidigWoningTypeObj?.panoramaRenders || 
-    huidigWoningTypeObj?.panorama_renders || [];
-
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
 
-  const gevondenRender = panoramaRendersLijst.find((item: any) => {
+  const gevondenRender = allePanoramaRenders.find((item: any) => {
     const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(stijlNaam));
   });
@@ -165,8 +172,8 @@ export default function StepThreeVisuals({
     } else {
       geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
     }
-  } else if (panoramaRendersLijst.length > 0) {
-    const eersteItem = panoramaRendersLijst[0];
+  } else if (allePanoramaRenders.length > 0) {
+    const eersteItem = allePanoramaRenders[0];
     const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
     const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;
     if (eersteUrl) {

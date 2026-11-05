@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:02:36.507Z",
-  "generatedAtEpochMs": 1793898156507,
+  "generatedAt": "2026-11-05T17:06:58.870Z",
+  "generatedAtEpochMs": 1793898418870,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -29,11 +29,11 @@
       "components/Hero.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
-      "components/MainContent.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:02:34.730Z",
+    "lastActivityAt": "2026-11-05T17:06:56.479Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793898154730,
-      "lineCount": 502,
-      "charCount": 21036,
-      "hash": "28fb5556115b",
+      "updatedAt": 1793898416479,
+      "lineCount": 509,
+      "charCount": 21194,
+      "hash": "55a56b73a3e1",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 47: replaced 123 lines with 130 lines.",
+      "recordedAt": "2026-11-05T17:06:56.479Z",
+      "recordedAtEpochMs": 1793898416479,
+      "before": {
+        "kind": "text",
+        "lineCount": 502,
+        "charCount": 21036,
+        "hash": "28fb5556115b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793898416478
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 509,
+        "charCount": 21194,
+        "hash": "55a56b73a3e1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793898416479
+      },
+      "diff": {
+        "lineStart": 47,
+        "removedLines": 123,
+        "addedLines": 130,
+        "summary": "Line 47: replaced 123 lines with 130 lines.",
+        "beforeFragment": "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?...",
+        "afterFragment": "// Verzamel ALLE rijen die matchen met het woningtype en de geselecteerde indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam ||..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1073,44 +1105,12 @@
         "beforeFragment": "sessionStorage.setItem('configuratorConfirmed', 'true'); / sessionStorage.setItem('klantNaam', klantNaam.trim()); / sessionStorage.setItem('klantEmail', klantEmail.trim()); / se...",
         "afterFragment": "// Harde definitieve bevestigingsvlaggen instellen / sessionStorage.setItem('configuratorConfirmed', 'true'); / localStorage.setItem('configurator_definitief_bevestigd', 'true')..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 213: replaced 7 lines with 7 lines.",
-      "recordedAt": "2026-11-05T14:51:49.893Z",
-      "recordedAtEpochMs": 1793890309893,
-      "before": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 6205,
-        "hash": "012326f81e88",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793890309892
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 6176,
-        "hash": "4ba55e533623",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793890309893
-      },
-      "diff": {
-        "lineStart": 213,
-        "removedLines": 7,
-        "addedLines": 7,
-        "summary": "Line 213: replaced 7 lines with 7 lines.",
-        "beforeFragment": "|| !match.voucherVelden?.gekozenTypeWoning) { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning, / gekozenDesignpakket: match.voucherVelden",
-        "afterFragment": ") { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A', / gekozenDesignpakket: match.voucherVelden?"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 15
+      "count": 16
     },
     {
       "filePath": "lib/cms.ts",
@@ -1135,16 +1135,12 @@
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 1
-    },
-    {
-      "filePath": "components/MainContent.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 c7e3f45 fix(step3): force state to read sessionStorage.geselecteerdPakket reliably for modern raw style",
+    "headSummary": "2026-11-05 7d515c4 fix(step3): add keyword-based fallback matching for design packages like modern raw",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1154,7 +1150,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b399280 by Bas van Dooremalen on 2026-11-05\n  fix(step3): prioritize session storage package selection over stale component props\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7d515c4 by Bas van Dooremalen on 2026-11-05\n  fix(step3): add keyword-based fallback matching for design packages like modern raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

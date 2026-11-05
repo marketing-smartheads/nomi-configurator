@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T17:02:36.507Z
+Generated: 2026-11-05T17:06:58.870Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T17:02:34.730Z
+- Last activity: 2026-11-05T17:06:56.479Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (15), lib/cms.ts (13), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (16), lib/cms.ts (13), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
 - Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, app/download/page.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 502 lines | 21036 chars | hash 28fb5556115b
-  Last snapshot: 2026-11-05T17:02:34.730Z
+- components/configurator/StepThreeVisuals.tsx | 509 lines | 21194 chars | hash 55a56b73a3e1
+  Last snapshot: 2026-11-05T17:06:56.479Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 - components/configurator/StepTwoDesign.tsx | 200 lines | 8924 chars | hash 62093ff0ea75
   Last snapshot: 2026-11-05T16:19:57.343Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T17:06:56.479Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 47: replaced 123 lines with 130 lines.
+- Before: 502 lines | 21,036 chars | hash 28fb5556115b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 509 lines | 21,194 chars | hash 55a56b73a3e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?..."
+- Current fragment: "// Verzamel ALLE rijen die matchen met het woningtype en de geselecteerde indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam ||..."
+
 ### 2026-11-05T17:02:34.730Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 32: replaced 366 lines with 375 lines.
 - Before: 493 lines | 20,516 chars | hash 55481051f944 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -159,27 +166,19 @@ Structured manifest: workspace.json
 - Previous fragment: "sessionStorage.setItem('configuratorConfirmed', 'true'); / sessionStorage.setItem('klantNaam', klantNaam.trim()); / sessionStorage.setItem('klantEmail', klantEmail.trim()); / se..."
 - Current fragment: "// Harde definitieve bevestigingsvlaggen instellen / sessionStorage.setItem('configuratorConfirmed', 'true'); / localStorage.setItem('configurator_definitief_bevestigd', 'true')..."
 
-### 2026-11-05T14:51:49.893Z | saved | lib/cms.ts
-- Summary: Line 213: replaced 7 lines with 7 lines.
-- Before: 225 lines | 6,205 chars | hash 012326f81e88 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 225 lines | 6,176 chars | hash 4ba55e533623 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "|| !match.voucherVelden?.gekozenTypeWoning) { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning, / gekozenDesignpakket: match.voucherVelden"
-- Current fragment: ") { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A', / gekozenDesignpakket: match.voucherVelden?"
-
 
 ## Hot Files
-- components/configurator/StepThreeVisuals.tsx (15 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (16 tracked changes)
 - lib/cms.ts (13 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - app/download/page.tsx (1 tracked changes)
 - components/configurator/StepOnewoning.tsx (1 tracked changes)
-- components/MainContent.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 c7e3f45 fix(step3): force state to read sessionStorage.geselecteerdPakket reliably for modern raw style
+- HEAD: 2026-11-05 7d515c4 fix(step3): add keyword-based fallback matching for design packages like modern raw
 - Working tree summary: 1 modified
 - M components/configurator/StepThreeVisuals.tsx
 
@@ -189,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- b399280 by Bas van Dooremalen on 2026-11-05
-  fix(step3): prioritize session storage package selection over stale component props
+- 7d515c4 by Bas van Dooremalen on 2026-11-05
+  fix(step3): add keyword-based fallback matching for design packages like modern raw
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
