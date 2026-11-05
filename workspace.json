@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:37:01.420Z",
-  "generatedAtEpochMs": 1793918221420,
+  "generatedAt": "2026-11-05T22:41:19.484Z",
+  "generatedAtEpochMs": 1793918479484,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,12 +575,12 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:36:59.043Z",
+    "lastActivityAt": "2026-11-05T22:41:17.708Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
-      "save": 34,
-      "create": 5,
+      "save": 35,
+      "create": 4,
       "delete": 1,
       "rename": 0
     }
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793918219043,
-      "lineCount": 333,
-      "charCount": 10306,
-      "hash": "6e408770fd7e",
+      "updatedAt": 1793918477708,
+      "lineCount": 324,
+      "charCount": 9545,
+      "hash": "7d81656fd00c",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 142: replaced 162 lines with 153 lines.",
+      "recordedAt": "2026-11-05T22:41:17.708Z",
+      "recordedAtEpochMs": 1793918477708,
+      "before": {
+        "kind": "text",
+        "lineCount": 333,
+        "charCount": 10306,
+        "hash": "6e408770fd7e",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918477708
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 324,
+        "charCount": 9545,
+        "hash": "7d81656fd00c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918477708
+      },
+      "diff": {
+        "lineStart": 142,
+        "removedLines": 162,
+        "addedLines": 153,
+        "summary": "Line 142: replaced 162 lines with 153 lines.",
+        "beforeFragment": "const graphqlEndpoint = process.env.NODE_ENV === 'development' / ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql') / : (process.e...",
+        "afterFragment": "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1064,38 +1096,6 @@
         "beforeFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret...",
         "afterFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 76: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-05T21:50:19.121Z",
-      "recordedAtEpochMs": 1793915419121,
-      "before": {
-        "kind": "text",
-        "lineCount": 284,
-        "charCount": 10043,
-        "hash": "032b66f8cf72",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793915419121
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 284,
-        "charCount": 10037,
-        "hash": "c83357215be8",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793915419121
-      },
-      "diff": {
-        "lineStart": 76,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 76: replaced 1 line with 1 line.",
-        "beforeFragment": "erify-voucher",
-        "afterFragment": "ouchers"
-      }
     }
   ],
   "hotFiles": [
@@ -1113,7 +1113,11 @@
     },
     {
       "filePath": "app/api/auth/route.ts",
-      "count": 6
+      "count": 5
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "count": 3
     },
     {
       "filePath": "app/api/auth-voucher",
@@ -1124,10 +1128,6 @@
       "count": 2
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 2
-    },
-    {
       "filePath": "lib/useConfigurator.ts",
       "count": 2
     }
@@ -1135,7 +1135,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 cb03df2 fix(auth): implement direct client-side graphql voucher authentication",
+    "headSummary": "2026-11-05 08999de fix(auth): add flexible voucher matching and debug logs",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

@@ -139,9 +139,8 @@ export async function getPageData() {
     }
   `;
 
-  const graphqlEndpoint = process.env.NODE_ENV === 'development'
-    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
-    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+  // Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten
+  const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
   const res = await fetch(graphqlEndpoint, {
     method: 'POST',
@@ -189,9 +188,7 @@ export async function getVoucherData(voucherCode: string) {
     }
   `;
 
-  const graphqlEndpoint = process.env.NODE_ENV === 'development'
-    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
-    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+  const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
   try {
     const res = await fetch(graphqlEndpoint, {
@@ -224,14 +221,11 @@ export async function getVoucherData(voucherCode: string) {
   }
 }
 
-// 🛑 Flexibele en robuuste client-side voucher verificatie en e-mailkoppeling
 export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
   const cleanCode = (toegangscode || '').trim().toUpperCase();
   const cleanEmail = (klantEmail || '').trim().toLowerCase();
 
-  const graphqlEndpoint = process.env.NODE_ENV === 'development'
-    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
-    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+  const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
   const query = `
     query GetAllVouchersForAuth {
@@ -271,7 +265,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     console.log('DEBUG: Ingevoerde code:', cleanCode);
     console.log('DEBUG: Totaal aantal opgehaalde vouchers uit WP:', vouchers.length);
 
-    // Flexibele zoekopdracht op toegangscode, post-titel of slug
     const voucher = vouchers.find((v: any) => {
       const codeField = String(v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
       const titleField = String(v?.title || '').trim().toUpperCase();
@@ -291,7 +284,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     console.log('DEBUG: Gevonden voucher ID:', voucher.databaseId, '| Opgeslagen e-mail:', opgeslagenEmail);
 
-    // Strenge e-mailvalidatie
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== cleanEmail) {
         return { 
@@ -300,7 +292,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         };
       }
     } else {
-      // Eerste keer inloggen: Sla e-mail direct op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
