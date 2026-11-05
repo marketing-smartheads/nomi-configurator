@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T08:49:04.387Z
+Generated: 2026-11-05T11:55:02.057Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T08:49:02.674Z
+- Last activity: 2026-11-05T11:55:00.316Z
 ## Workspace Focus
-- Active file in focus: components/Hero.tsx
-- Hottest files right now: app/download/page.tsx (15), app/dashboard/page.tsx (6), components/configurator/StepFourConfirmation.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: components/Hero.tsx, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, components/LoginScreen.tsx
+- Active file in focus: components/configurator/StepThreeVisuals.tsx
+- Hottest files right now: app/download/page.tsx (15), app/dashboard/page.tsx (6), components/configurator/StepFourConfirmation.tsx (3), app/api/confirm/route.ts (2)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, components/Hero.tsx
 ## Current Workspace
-- Active file: components/Hero.tsx
+- Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,17 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 6 modifieds
 ## Tracked Snapshots
+- components/configurator/StepThreeVisuals.tsx | 440 lines | 18174 chars | hash f1f57a0353a0
+  Last snapshot: 2026-11-05T11:55:00.316Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- components/configurator/StepTwoDesign.tsx | 179 lines | 7987 chars | hash 6f6825fb8b83
+  Last snapshot: 2026-11-05T11:54:45.219Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- lib/cms.ts | 223 lines | 6113 chars | hash 9c180fc773a1
+  Last snapshot: 2026-11-05T11:54:32.906Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/Hero.tsx | 64 lines | 2504 chars | hash 47d3a0d89c7a
   Last snapshot: 2026-11-05T08:49:02.674Z
   Preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
@@ -54,17 +63,29 @@ Structured manifest: workspace.json
 - components/configurator/StepFourConfirmation.tsx | 307 lines | 14829 chars | hash 27617c309371
   Last snapshot: 2026-11-01T22:01:43.676Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- app/layout.tsx | 81 lines | 1593 chars | hash ed08bbfcc175
-  Last snapshot: 2026-10-27T16:32:07.771Z
-  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- app/voucher/page.tsx | 22 lines | 730 chars | hash 950e3928e018
-  Last snapshot: 2026-10-27T15:59:32.776Z
-  Preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc..."
-- components/VoucherParamHandler.tsx | 26 lines | 903 chars | hash ec9c2628508d
-  Last snapshot: 2026-10-27T15:47:30.331Z
-  Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
 
 ## Recent Changes
+### 2026-11-05T11:55:00.316Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 12: replaced 315 lines with 333 lines.
+- Before: 422 lines | 17,204 chars | hash 7c13abe084e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / /..."
+- After: 440 lines | 18,174 chars | hash f1f57a0353a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP..."
+- Current fragment: "const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray..."
+
+### 2026-11-05T11:54:45.219Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 11: replaced 119 lines with 163 lines.
+- Before: 135 lines | 5,497 chars | hash 829aaad9c45c | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 179 lines | 7,987 chars | hash 6f6825fb8b83 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "}: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = data?.stap2omschr..."
+- Current fragment: ", / woningType / }: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving =..."
+
+### 2026-11-05T11:54:32.906Z | saved | lib/cms.ts
+- Summary: Line 58: replaced 72 lines with 71 lines.
+- Before: 224 lines | 6,049 chars | hash 15c866223c79 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 223 lines | 6,113 chars | hash 9c180fc773a1 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / upload..."
+- Current fragment: "designPakketten { / pakketId / pakketTitel / pakketOmschrijving / pakketAabeelding { / node { / sourceUrl / } / } / stap3Omschrijving / visualsSlider { / nodes { / sourceUrl / }..."
+
 ### 2026-11-05T08:49:02.674Z | saved | components/Hero.tsx
 - Summary: Line 46: replaced 1 line with 1 line.
 - Before: 64 lines | 2,504 chars | hash 95bc9bcb320d | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
@@ -145,31 +166,11 @@ Structured manifest: workspace.json
 - Previous fragment: "} from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { / const codeParam = searchParams.get('c..."
 - Current fragment: ", useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / const router = useRouter(); / co..."
 
-### 2026-10-27T15:01:12.831Z | saved | app/dashboard/page.tsx
-- Summary: Line 17: replaced 233 lines with 306 lines.
-- Before: 299 lines | 14,024 chars | hash f235ada8fd93 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 372 lines | 18,002 chars | hash 402480d5c584 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "useEffect(() => { / const savedAuth = sessionStorage.getItem('nomi_dashboard_auth'); / if (savedAuth === 'true') { / setIsLoggedIn(true); / fetchVouchers(); / } / }, []); / cons..."
-- Current fragment: "// Sorteer states / const [sortField, setSortField] = useState<string>('vouchercode'); / const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc'); / useEffect((..."
-
-### 2026-10-27T15:00:15.348Z | saved | app/dashboard/page.tsx
-- Summary: Line 242: removed 1 line.
-- Before: 299 lines | 14,038 chars | hash 13465c996da3 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 299 lines | 14,024 chars | hash f235ada8fd93 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "uit WordPress"
-
-### 2026-10-27T14:58:48.731Z | saved | app/dashboard/page.tsx
-- Summary: Line 82: replaced 183 lines with 180 lines.
-- Before: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 299 lines | 14,038 chars | hash 13465c996da3 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`; / const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;..."
-- Current fragment: "statusVal = String(details.status || ''); / const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('..."
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (6 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
@@ -178,9 +179,14 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 a1684e5 changed height of hero image
-- Working tree summary: 1 modified
-- M components/Hero.tsx
+- HEAD: 2026-11-05 a18fc82 changed better height of hero image
+- Working tree summary: 6 modifieds
+- M components/configurator/StepThreeVisuals.tsx
+- M components/configurator/StepTwoDesign.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M lib/cms.ts
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 1d2b165 by Bas van Dooremalen on 2026-11-02
-  fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump
+- a18fc82 by Bas van Dooremalen on 2026-11-05
+  changed better height of hero image
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

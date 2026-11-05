@@ -55,6 +55,39 @@ export async function getPageData() {
                   sourceUrl
                 }
               }
+              designPakketten {
+                pakketId
+                pakketTitel
+                pakketOmschrijving
+                pakketAabeelding {
+                  node {
+                    sourceUrl
+                  }
+                }
+                stap3Omschrijving
+                visualsSlider {
+                  nodes {
+                    sourceUrl
+                  }
+                }
+                materialenLijst {
+                  materiaalTitel
+                }
+                moodboardGallery {
+                  nodes {
+                    sourceUrl
+                  }
+                }
+                bevestigingStap {
+                  bannerAfbeelding {
+                    node {
+                      sourceUrl
+                      mediaItemUrl
+                    }
+                  }
+                  bannerTitel
+                }
+              }
               panoramaRenders {
                 stijlNaam
                 renderBestand {
@@ -93,40 +126,6 @@ export async function getPageData() {
             bevestigingOmschrijving
             bevestigingWaarschuwingTekst
             bevestigingAkkoordTekst
-
-            designPakketten {
-              pakketId
-              pakketTitel
-              pakketOmschrijving
-              pakketAabeelding {
-                node {
-                  sourceUrl
-                }
-              }
-              stap3Omschrijving
-              visualsSlider {
-                nodes {
-                  sourceUrl
-                }
-              }
-              materialenLijst {
-                materiaalTitel
-              }
-              moodboardGallery {
-                nodes {
-                  sourceUrl
-                }
-              }
-              bevestigingStap {
-                bannerAfbeelding {
-                  node {
-                    sourceUrl
-                    mediaItemUrl
-                  }
-                }
-                bannerTitel
-              }
-            }
 
             downloadSectie {
               downloadTitel

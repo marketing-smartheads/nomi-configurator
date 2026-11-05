@@ -8,13 +8,55 @@ export default function StepTwoDesign({
   stepTitle, 
   configuratorData, 
   designPakket, 
-  setDesignPakket 
+  setDesignPakket,
+  woningType
 }: any) {
   const data = configuratorData?.configurator || configuratorData;
 
   const titel = data?.titelStap2 || 'Kies uw designpakket';
   const omschrijving = data?.stap2omschrijving || '';
-  const pakkettenLijst = data?.designPakketten || [];
+  
+  const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
+  const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
+
+  // Haal gekozen indeling op uit storage om de exacte indeling-rij te matchen
+  const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const rawInd = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || '';
+        if (rawInd) {
+          if (rawInd.startsWith('{')) {
+            const parsed = JSON.parse(rawInd);
+            setOpgeslagenIndeling(parsed?.indelingTitel || parsed?.indeling_titel || '');
+          } else {
+            setOpgeslagenIndeling(rawInd);
+          }
+        }
+      } catch (e) {
+        setOpgeslagenIndeling('');
+      }
+    }
+  }, []);
+
+  const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  // Zoek het specifieke woningtype-object dat matcht met zowel type als indeling
+  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const typeMatch = naam.includes(normWoning) || normWoning.includes(naam);
+    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    return typeMatch && indelingMatch;
+  }) || woningTypenLijst.find((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    return naam.includes(normWoning) || normWoning.includes(naam);
+  }) || woningTypenLijst[0];
+
+  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
+  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   const [isConfirmed, setIsConfirmed] = useState(false);
 
@@ -44,15 +86,17 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            const pakketId = pakket.pakketId || `pakket-${index}`;
-            const pakketTitel = pakket.pakketTitel || '';
-            const pakketOmschrijving = pakket.pakketOmschrijving || '';
-            const isSelected = designPakket === pakketId;
+            const pakketId = pakket.pakketId || pakket.pakket_id || (index === 0 ? 'modern-raw' : 'hotel-chic');
+            const pakketTitel = pakket.pakketTitel || pakket.pakket_titel || '';
+            const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || '';
+            
+            const isSelected = (designPakket || '').toLowerCase().trim() === (pakketId || '').toLowerCase().trim() ||
+                              (designPakket || '').toLowerCase().trim() === (pakketTitel || '').toLowerCase().trim();
 
-            const afbField = pakket.pakketAabeelding;
+            const afbField = pakket.pakketAabeelding || pakket.pakket_aabeelding;
             const imageUrl = afbField?.node?.sourceUrl || afbField?.sourceUrl;
 
-            const materialen = pakket.materialenLijst || [];
+            const materialen = pakket.materialenLijst || pakket.materialen_lijst || [];
 
             return (
               <div
@@ -89,7 +133,7 @@ export default function StepTwoDesign({
                         {materialen.map((mat: any, mIdx: number) => (
                           <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                            {mat.materiaalTitel}
+                            {mat.materiaalTitel || mat.materiaal_titel}
                           </li>
                         ))}
                       </ul>
@@ -126,7 +170,7 @@ export default function StepTwoDesign({
           })
         ) : (
           <div className="col-span-2 text-center py-12 text-muted text-xs">
-            Geen designpakketten beschikbaar.
+            Geen designpakketten beschikbaar voor dit type woning.
           </div>
         )}
       </div>

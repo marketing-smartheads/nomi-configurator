@@ -9,32 +9,58 @@ export default function StepThreeVisuals({
   designPakket,
   woningType 
 }: any) {
-  // Haal de configurator data op dezelfde robuuste manier op als in Stap 2
   const data = configuratorData?.configurator || configuratorData;
-  const rawPakketten = data?.designPakketten || data?.design_paketten || [];
-  const woningTypenLijst = data?.woningTypen || data?.woning_typen || [];
+  const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
+  const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const pakkettenLijst = Array.isArray(rawPakketten) 
-    ? rawPakketten 
-    : rawPakketten?.nodes || rawPakketten?.edges || [];
-  
-  // Zoek het juiste pakket op basis van ID of titel (case-insensitive en getrimd)
-  const huidigPakket = pakkettenLijst.find((p: any) => {
-    const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase();
-    const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase();
-    const selected = (designPakket || '').trim().toLowerCase();
-    
-    return pId === selected || pTitel === selected;
-  }) || pakkettenLijst[0];
+  const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const rawInd = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || '';
+        if (rawInd) {
+          if (rawInd.startsWith('{')) {
+            const parsed = JSON.parse(rawInd);
+            setOpgeslagenIndeling(parsed?.indelingTitel || parsed?.indeling_titel || '');
+          } else {
+            setOpgeslagenIndeling(rawInd);
+          }
+        }
+      } catch (e) {
+        setOpgeslagenIndeling('');
+      }
+    }
+  }, []);
+
+  const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  // Match het exacte woningtype + indeling-object
   const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const typeMatch = naam.includes(normWoning) || normWoning.includes(naam);
+    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    return typeMatch && indelingMatch;
+  }) || woningTypenLijst.find((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     return naam.includes(normWoning) || normWoning.includes(naam);
   }) || woningTypenLijst[0];
 
-  const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Modern Raw';
+  // Haal designpakketten op uit de geselecteerde woningindeling
+  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
+  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
+
+  // Zoek het actieve pakket binnen deze indeling
+  const huidigPakket = pakkettenLijst.find((p: any) => {
+    const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    return pId === normPakket || pTitel === normPakket || normPakket.includes(pId) || normPakket.includes(pTitel);
+  }) || pakkettenLijst[0];
+
+  const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Gekozen stijl';
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
   const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
@@ -42,7 +68,7 @@ export default function StepThreeVisuals({
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
   const moodboardGallery = huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery || [];
 
-  // Pannellum state & logica
+  // Pannellum 360° logica
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
 
   useEffect(() => {
@@ -77,8 +103,7 @@ export default function StepThreeVisuals({
 
   const panoramaRendersLijst = 
     huidigWoningTypeObj?.panoramaRenders || 
-    huidigWoningTypeObj?.panorama_renders || 
-    huidigWoningTypeObj?.panoramaRendersLijst || [];
+    huidigWoningTypeObj?.panorama_renders || [];
 
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
@@ -164,7 +189,6 @@ export default function StepThreeVisuals({
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [thumbPage, setThumbPage] = useState(0);
-  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('right');
   const [isAnimating, setIsAnimating] = useState(false);
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -194,11 +218,9 @@ export default function StepThreeVisuals({
   };
 
   const thumbsPerPage = 4;
-  const maxThumbPage = Math.max(0, Math.ceil(visuals.length / thumbsPerPage) - 1);
 
-  const triggerSlide = (newIndex: number, direction: 'left' | 'right') => {
+  const triggerSlide = (newIndex: number) => {
     if (isAnimating || newIndex === activeIndex) return;
-    setSlideDirection(direction);
     setIsAnimating(true);
     setTimeout(() => {
       setActiveIndex(newIndex);
@@ -210,19 +232,18 @@ export default function StepThreeVisuals({
   const handleNext = () => {
     if (visuals.length === 0 || isAnimating) return;
     const nextIndex = (activeIndex + 1) % visuals.length;
-    triggerSlide(nextIndex, 'right');
+    triggerSlide(nextIndex);
   };
 
   const handlePrev = () => {
     if (visuals.length === 0 || isAnimating) return;
     const prevIndex = (activeIndex - 1 + visuals.length) % visuals.length;
-    triggerSlide(prevIndex, 'left');
+    triggerSlide(prevIndex);
   };
 
   const handleThumbClick = (absoluteIdx: number) => {
     if (isAnimating) return;
-    const direction = absoluteIdx > activeIndex ? 'right' : 'left';
-    triggerSlide(absoluteIdx, direction);
+    triggerSlide(absoluteIdx);
   };
 
   const currentThumbs = visuals.slice(
@@ -232,7 +253,6 @@ export default function StepThreeVisuals({
 
   return (
     <div className="space-y-16">
-      
       <div className="text-center space-y-4 max-w-2xl mx-auto px-4">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
           {`Stap 3 · ${stepTitle}`}
@@ -245,7 +265,6 @@ export default function StepThreeVisuals({
         </p>
       </div>
 
-      {/* 360° Panorama Viewer Sectie */}
       {geselecteerdeMediaUrl && (
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
@@ -281,7 +300,6 @@ export default function StepThreeVisuals({
 
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">
-        
           <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
             <div>
               <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
@@ -323,7 +341,7 @@ export default function StepThreeVisuals({
                   );
                 })
               ) : (
-                <span className="text-xs text-muted z-10">[ Geen 3D visuals gevonden ]</span>
+                <span className="text-xs text-muted z-10">[ Geen 3D visuals gevonden voor deze indeling ]</span>
               )}
             </div>
           </div>
