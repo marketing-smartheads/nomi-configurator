@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:41:39.747Z",
-  "generatedAtEpochMs": 1793900499747,
+  "generatedAt": "2026-11-05T17:47:50.792Z",
+  "generatedAtEpochMs": 1793900870792,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
+      "app/download/page.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
-      "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:41:37.984Z",
+    "lastActivityAt": "2026-11-05T17:47:48.401Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1793900868401,
+      "lineCount": 394,
+      "charCount": 19207,
+      "hash": "9f8b311e0fe8",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793900497984,
       "lineCount": 351,
       "charCount": 17011,
       "hash": "ad5e8b9d9763",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1793899915668,
-      "lineCount": 433,
-      "charCount": 20838,
-      "hash": "9d517d22aa43",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 394 lines.",
+      "recordedAt": "2026-11-05T17:47:48.401Z",
+      "recordedAtEpochMs": 1793900868401,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793900868401
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 394,
+        "charCount": 19207,
+        "hash": "9f8b311e0fe8",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793900868401
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 394,
+        "summary": "Line 1: inserted 394 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1087,31 +1119,6 @@
         "beforeFragment": "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem...",
         "afterFragment": "const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || ''; / if (rawPak) { / setOpgeslagenPakket(rawPak); / } / } catch..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T16:40:49.258Z",
-      "recordedAtEpochMs": 1793896849258,
-      "before": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20286,
-        "hash": "4b884ff938b7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793896849258
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20286,
-        "hash": "4b884ff938b7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793896849258
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1121,7 +1128,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 10
+      "count": 9
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1133,7 +1140,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1143,17 +1150,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 72b8735 fix(step4): resolve confirmation banner image and package details from matching layout rows",
+    "headSummary": "2026-11-05 db21bf1 fix(step4): correct bracket typo on localStorage read for klantTelefoon",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f7e6a17 by Bas van Dooremalen on 2026-11-05\n  fix(download): resolve moodboard and download categories directly from selected design package\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- db21bf1 by Bas van Dooremalen on 2026-11-05\n  fix(step4): correct bracket typo on localStorage read for klantTelefoon\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

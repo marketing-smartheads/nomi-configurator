@@ -16,7 +16,7 @@ export default function DownloadPage() {
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
-  const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(true);
+  const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -27,11 +27,16 @@ export default function DownloadPage() {
           ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '') 
           : '';
 
-        if (!voucherCode) {
+        const isDefinitiefBevestigd = 
+          (typeof window !== 'undefined' && localStorage.getItem('configurator_definitief_bevestigd') === 'true') || 
+          (typeof window !== 'undefined' && sessionStorage.getItem('configuratorConfirmed') === 'true');
+
+        if (!voucherCode || !isDefinitiefBevestigd) {
           if (isMounted) setNeedsVoucherInput(true);
           return;
         }
 
+        // Live backend verificatie
         try {
           const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`);
           if (res.ok) {
@@ -45,14 +50,6 @@ export default function DownloadPage() {
           }
         } catch (apiErr) {
           console.warn('Kon voucher status niet verifiëren via API:', apiErr);
-          const isDefinitiefBevestigd = 
-            localStorage.getItem('configurator_definitief_bevestigd') === 'true' || 
-            sessionStorage.getItem('configuratorConfirmed') === 'true';
-
-          if (!isDefinitiefBevestigd) {
-            if (isMounted) setNeedsVoucherInput(true);
-            return;
-          }
         }
 
         let cmsData = null;
@@ -94,7 +91,7 @@ export default function DownloadPage() {
         }
 
         if (!resolvedIndeling) {
-          resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
+          resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling'] || '';
         }
 
         if (isMounted) {
@@ -147,7 +144,7 @@ export default function DownloadPage() {
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
 
-  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw)
+  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw) EXCLUSIEF
   const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -159,31 +156,11 @@ export default function DownloadPage() {
     return false;
   }) || allePakketten[0] || {};
 
-  // 4. Moodboards ophalen specifiek voor het gekozen pakket
-  const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery;
-  let moodboardNodes: any[] = [];
-  if (Array.isArray(rawMoodboard)) {
-    moodboardNodes = rawMoodboard;
-  } else if (rawMoodboard?.nodes) {
-    moodboardNodes = rawMoodboard.nodes;
-  } else if (rawMoodboard?.edges) {
-    moodboardNodes = rawMoodboard.edges.map((e: any) => e.node);
-  }
-
-  // 5. Verzamel alle download categorieën uit matchende rijen én uit het gekozen pakket
+  // 4. Uitsluitend download categorieën ophalen van het GEKOZEN PAKKET (Modern Raw)
   const alleCategorieen: any[] = [];
-  
-  // Categorieën uit gekozen pakket
   const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || huidigPakketObj?.download_categorieën || [];
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
-
-  // Categorieën uit woning type rijen
-  gebruikteRijen.forEach((rij: any) => {
-    const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || rij?.download_categorieën || [];
-    const catLijst = Array.isArray(cats) ? cats : cats?.nodes || [];
-    catLijst.forEach((c: any) => alleCategorieen.push(c));
-  });
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
@@ -321,7 +298,7 @@ export default function DownloadPage() {
     );
   }
 
-  if (!isAuthorized) {
+  if (!isAuthorized && !pageData) {
     return (
       <div className="min-h-screen bg-dark flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
@@ -367,22 +344,6 @@ export default function DownloadPage() {
             </button>
           </div>
         </div>
-
-        {moodboardNodes.length > 0 && (
-          <div className="w-full pb-20 px-6 sm:px-12">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {moodboardNodes.map((img: any, idx: number) => {
-                const imgUrl = img?.sourceUrl || img?.node?.sourceUrl || img?.url;
-                if (!imgUrl) return null;
-                return (
-                  <div key={idx} className="overflow-hidden rounded-2xl aspect-[4/3] shadow-sm bg-[#EFECE6]">
-                    <img src={imgUrl} alt={`Moodboard ${idx + 1}`} className="w-full h-full object-cover hover:scale-105 transition duration-500" />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
 
         <div className="pt-6 pb-24">
           <div className="max-w-4xl mx-auto px-6 space-y-16">
