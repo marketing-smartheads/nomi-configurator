@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:48:50.918Z",
-  "generatedAtEpochMs": 1793918930918,
+  "generatedAt": "2026-11-05T22:53:09.365Z",
+  "generatedAtEpochMs": 1793919189365,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/cms.ts",
+      "app/download/page.tsx",
       "components/LoginScreen.tsx",
       "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
+      "lib/cms.ts",
       "app/api/auth/route.ts",
       "app/api/auth-voucher",
       "app/api/auth-voucher/route.ts",
       "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,17 +575,25 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:48:49.121Z",
+    "lastActivityAt": "2026-11-05T22:53:06.944Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
-      "save": 35,
-      "create": 4,
+      "save": 36,
+      "create": 3,
       "delete": 1,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1793919186944,
+      "lineCount": 400,
+      "charCount": 19186,
+      "hash": "19a6bc5aad08",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
     {
       "filePath": "lib/cms.ts",
       "updatedAt": 1793918929121,
@@ -641,17 +649,41 @@
       "charCount": 3894,
       "hash": "aab870b5b72b",
       "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1793901849989,
-      "lineCount": 422,
-      "charCount": 20388,
-      "hash": "a12394416f45",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 39: replaced 139 lines with 117 lines.",
+      "recordedAt": "2026-11-05T22:53:06.944Z",
+      "recordedAtEpochMs": 1793919186944,
+      "before": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 20388,
+        "hash": "a12394416f45",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793919186944
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 400,
+        "charCount": 19186,
+        "hash": "19a6bc5aad08",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793919186944
+      },
+      "diff": {
+        "lineStart": 39,
+        "removedLines": 139,
+        "addedLines": 117,
+        "summary": "Line 39: replaced 139 lines with 117 lines.",
+        "beforeFragment": "try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.json(); / if (!voucherInfo || vou...",
+        "afterFragment": "let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromise = new Promise((_, reject) => / setTimeout(() => reject(new Error('CMS timeout')), 5000)..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1071,38 +1103,6 @@
         "beforeFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js...",
         "afterFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / if (!code) { / return NextResponse.json({ error: 'Geen code o..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 156 lines with 159 lines.",
-      "recordedAt": "2026-11-05T22:04:29.852Z",
-      "recordedAtEpochMs": 1793916269852,
-      "before": {
-        "kind": "text",
-        "lineCount": 170,
-        "charCount": 5387,
-        "hash": "1570ced2b270",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Vangt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORD...",
-        "updatedAt": 1793916269852
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 173,
-        "charCount": 5829,
-        "hash": "7d05d0a67a66",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = p...",
-        "updatedAt": 1793916269852
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 156,
-        "addedLines": 159,
-        "summary": "Line 5: replaced 156 lines with 159 lines.",
-        "beforeFragment": "angt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.W...",
-        "afterFragment": "oor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / c..."
-      }
     }
   ],
   "hotFiles": [
@@ -1142,17 +1142,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 c11dc66 fix(auth): clean up lib/cms.ts and hardcode live graphql endpoint for client-side verification",
+    "headSummary": "2026-11-05 9257c12 fix(auth): simplify graphql query to only use existing voucherVelden fields and eliminate query errors",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M lib/cms.ts"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 911b1d4 by Bas van Dooremalen on 2026-11-05\n  fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9257c12 by Bas van Dooremalen on 2026-11-05\n  fix(auth): simplify graphql query to only use existing voucherVelden fields and eliminate query errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
