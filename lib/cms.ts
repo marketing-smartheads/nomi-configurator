@@ -224,10 +224,10 @@ export async function getVoucherData(voucherCode: string) {
   }
 }
 
-// 🛑 NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL
+// 🛑 Flexibele en robuuste client-side voucher verificatie en e-mailkoppeling
 export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
-  const cleanCode = toegangscode.trim().toUpperCase();
-  const cleanEmail = klantEmail.trim().toLowerCase();
+  const cleanCode = (toegangscode || '').trim().toUpperCase();
+  const cleanEmail = (klantEmail || '').trim().toLowerCase();
 
   const graphqlEndpoint = process.env.NODE_ENV === 'development'
     ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
@@ -239,6 +239,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         nodes {
           databaseId
           title
+          slug
           voucherVelden {
             toegangscode
             status
@@ -267,21 +268,30 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
+    console.log('DEBUG: Ingevoerde code:', cleanCode);
+    console.log('DEBUG: Totaal aantal opgehaalde vouchers uit WP:', vouchers.length);
+
+    // Flexibele zoekopdracht op toegangscode, post-titel of slug
     const voucher = vouchers.find((v: any) => {
-      const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
-      const postTitle = (v?.title || '').trim().toUpperCase();
-      return codeField === cleanCode || postTitle === cleanCode;
+      const codeField = String(v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
+      const titleField = String(v?.title || '').trim().toUpperCase();
+      const slugField = String(v?.slug || '').trim().toUpperCase();
+      
+      return codeField === cleanCode || titleField === cleanCode || slugField === cleanCode;
     });
 
     if (!voucher) {
+      console.warn('DEBUG: Geen voucher gevonden voor code:', cleanCode);
       return { success: false, error: 'Ongeldige vouchercode. Controleer uw invoer.' };
     }
 
     const velden = voucher.voucherVelden || {};
-    const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
-    const status = (velden.status || '').trim().toLowerCase();
+    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
+    const status = String(velden.status || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILVALIDATIE:
+    console.log('DEBUG: Gevonden voucher ID:', voucher.databaseId, '| Opgeslagen e-mail:', opgeslagenEmail);
+
+    // Strenge e-mailvalidatie
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== cleanEmail) {
         return { 
@@ -313,7 +323,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
       }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
     }
 
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail);
+    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
 
     return { success: true, isBevestigd };
   } catch (err) {
