@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:17:58.487Z",
-  "generatedAtEpochMs": 1793881078487,
+  "generatedAt": "2026-11-05T12:20:54.207Z",
+  "generatedAtEpochMs": 1793881254207,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "lib/cms.ts",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
-      "lib/cms.ts",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:17:56.761Z",
+    "lastActivityAt": "2026-11-05T12:20:52.334Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793881252334,
+      "lineCount": 229,
+      "charCount": 6293,
+      "hash": "542201b41f6c",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
+    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793881076761,
       "lineCount": 487,
       "charCount": 20249,
       "hash": "154f87251e36",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793881038614,
-      "lineCount": 229,
-      "charCount": 6293,
-      "hash": "542201b41f6c",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -640,6 +640,31 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T12:20:52.334Z",
+      "recordedAtEpochMs": 1793881252334,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881252334
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881252334
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1080,55 +1105,23 @@
         "beforeFragment": "",
         "afterFragment": "input, select, textarea { / font-size: 16px !important; / }"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 281: removed 1 line.",
-      "recordedAt": "2026-11-01T22:01:43.676Z",
-      "recordedAtEpochMs": 1793570503676,
-      "before": {
-        "kind": "text",
-        "lineCount": 307,
-        "charCount": 14830,
-        "hash": "876d0a69796b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793570503676
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 307,
-        "charCount": 14829,
-        "hash": "27617c309371",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793570503676
-      },
-      "diff": {
-        "lineStart": 281,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 281: removed 1 line.",
-        "beforeFragment": "s",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 13
+      "count": 12
     },
     {
       "filePath": "app/dashboard/page.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 3
+      "filePath": "lib/cms.ts",
+      "count": 4
     },
     {
-      "filePath": "lib/cms.ts",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 3
     },
     {
@@ -1151,16 +1144,10 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 761091d fix(visuals): support both array and node formats for visualsSlider gallery",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
-    "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
-    ],
+    "headSummary": "2026-11-05 57305b3 fix(cms): update WPGraphQL query with union types for visualsSlider and moodboardGallery to fetch all uploaded images",
+    "statusSummary": "",
+    "changedFileCount": 0,
+    "statusLines": [],
     "error": ""
   },
   "github": {
