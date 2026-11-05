@@ -210,13 +210,13 @@ export async function getVoucherData(voucherCode: string) {
       return codeField === cleanCode || postTitle === cleanCode;
     });
 
-    if (!match || !match.voucherVelden?.gekozenTypeWoning) {
+    if (!match) {
       return null;
     }
 
     return {
-      gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning,
-      gekozenDesignpakket: match.voucherVelden.gekozenDesignpakket || 'Hotel Chic',
+      gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A',
+      gekozenDesignpakket: match.voucherVelden?.gekozenDesignpakket || 'Hotel Chic',
     };
   } catch (error) {
     console.error('Fout bij ophalen vouchers via GraphQL:', error);

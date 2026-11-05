@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T13:31:06.595Z",
-  "generatedAtEpochMs": 1793885466595,
+  "generatedAt": "2026-11-05T14:51:52.448Z",
+  "generatedAtEpochMs": 1793890312448,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "app/dashboard/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T13:31:04.115Z",
+    "lastActivityAt": "2026-11-05T14:51:49.893Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793890309893,
+      "lineCount": 225,
+      "charCount": 6176,
+      "hash": "4ba55e533623",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793885464115,
@@ -589,14 +597,6 @@
       "charCount": 20221,
       "hash": "a07bd0d5336f",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793882912342,
-      "lineCount": 225,
-      "charCount": 6205,
-      "hash": "012326f81e88",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 213: replaced 7 lines with 7 lines.",
+      "recordedAt": "2026-11-05T14:51:49.893Z",
+      "recordedAtEpochMs": 1793890309893,
+      "before": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6205,
+        "hash": "012326f81e88",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793890309892
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6176,
+        "hash": "4ba55e533623",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793890309893
+      },
+      "diff": {
+        "lineStart": 213,
+        "removedLines": 7,
+        "addedLines": 7,
+        "summary": "Line 213: replaced 7 lines with 7 lines.",
+        "beforeFragment": "|| !match.voucherVelden?.gekozenTypeWoning) { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning, / gekozenDesignpakket: match.voucherVelden",
+        "afterFragment": ") { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A', / gekozenDesignpakket: match.voucherVelden?"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1066,37 +1098,12 @@
         "updatedAt": 1793881411971
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T12:20:52.334Z",
-      "recordedAtEpochMs": 1793881252334,
-      "before": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881252334
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881252334
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 12
+      "count": 13
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1104,7 +1111,7 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1130,17 +1137,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 873b6e7 fix(visuals): make single moodboard image span full width of container",
+    "headSummary": "2026-11-05 9f39bce fix(frontend): correctly resolve and render confirmation banner image from design package level",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 873b6e7 by Bas van Dooremalen on 2026-11-05\n  fix(visuals): make single moodboard image span full width of container\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9f39bce by Bas van Dooremalen on 2026-11-05\n  fix(frontend): correctly resolve and render confirmation banner image from design package level\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

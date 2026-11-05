@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T13:31:06.595Z
+Generated: 2026-11-05T14:51:52.448Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T13:31:04.115Z
+- Last activity: 2026-11-05T14:51:49.893Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: lib/cms.ts (12), components/configurator/StepThreeVisuals.tsx (8), app/dashboard/page.tsx (5), components/configurator/StepFourConfirmation.tsx (3)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, app/dashboard/page.tsx, components/Hero.tsx, components/LoginScreen.tsx
+- Active file in focus: lib/cms.ts
+- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), app/dashboard/page.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
+- Suggested starting points: lib/cms.ts, components/configurator/StepThreeVisuals.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/LoginScreen.tsx
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 225 lines | 6176 chars | hash 4ba55e533623
+  Last snapshot: 2026-11-05T14:51:49.893Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepFourConfirmation.tsx | 320 lines | 15046 chars | hash a0ef13144fa5
   Last snapshot: 2026-11-05T13:31:04.115Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - components/configurator/StepThreeVisuals.tsx | 485 lines | 20221 chars | hash a07bd0d5336f
   Last snapshot: 2026-11-05T13:20:43.470Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- lib/cms.ts | 225 lines | 6205 chars | hash 012326f81e88
-  Last snapshot: 2026-11-05T12:48:32.342Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 179 lines | 7987 chars | hash 6f6825fb8b83
   Last snapshot: 2026-11-05T11:54:45.219Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
 
 ## Recent Changes
+### 2026-11-05T14:51:49.893Z | saved | lib/cms.ts
+- Summary: Line 213: replaced 7 lines with 7 lines.
+- Before: 225 lines | 6,205 chars | hash 012326f81e88 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 225 lines | 6,176 chars | hash 4ba55e533623 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "|| !match.voucherVelden?.gekozenTypeWoning) { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning, / gekozenDesignpakket: match.voucherVelden"
+- Current fragment: ") { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A', / gekozenDesignpakket: match.voucherVelden?"
+
 ### 2026-11-05T13:31:04.115Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 40: replaced 177 lines with 190 lines.
 - Before: 307 lines | 14,829 chars | hash 27617c309371 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -156,16 +163,11 @@ Structured manifest: workspace.json
 - Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
-### 2026-11-05T12:20:52.334Z | saved | lib/cms.ts
-- Summary: Saved without a textual diff.
-- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-
 
 ## Hot Files
-- lib/cms.ts (12 tracked changes)
+- lib/cms.ts (13 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
-- app/dashboard/page.tsx (5 tracked changes)
+- app/dashboard/page.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
@@ -174,9 +176,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 873b6e7 fix(visuals): make single moodboard image span full width of container
+- HEAD: 2026-11-05 9f39bce fix(frontend): correctly resolve and render confirmation banner image from design package level
 - Working tree summary: 1 modified
-- M components/configurator/StepFourConfirmation.tsx
+- M lib/cms.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -184,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 873b6e7 by Bas van Dooremalen on 2026-11-05
-  fix(visuals): make single moodboard image span full width of container
+- 9f39bce by Bas van Dooremalen on 2026-11-05
+  fix(frontend): correctly resolve and render confirmation banner image from design package level
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
