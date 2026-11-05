@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T18:04:12.746Z",
-  "generatedAtEpochMs": 1793901852746,
+  "generatedAt": "2026-11-05T20:39:41.573Z",
+  "generatedAtEpochMs": 1793911181573,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "app/api/auth/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
+      "app/api/auth/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
-      "lib/cms.ts",
+      "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "lib/cms.ts",
       "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
       "package-lock.json",
-      "package.json",
-      "tsconfig.json"
+      "package.json"
     ],
     "stats": {
-      "totalFiles": 69,
+      "totalFiles": 70,
       "topLevelAreas": [
         {
           "name": "public",
@@ -52,7 +52,7 @@
         },
         {
           "name": "app",
-          "count": 12
+          "count": 13
         },
         {
           "name": "lib",
@@ -65,11 +65,11 @@
           "count": 24
         },
         {
-          "name": ".svg",
-          "count": 9
+          "name": ".ts",
+          "count": 10
         },
         {
-          "name": ".ts",
+          "name": ".svg",
           "count": 9
         },
         {
@@ -122,6 +122,12 @@
         },
         {
           "path": "app/api/auth/login/route.ts",
+          "topLevelArea": "app",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/api/auth/route.ts",
           "topLevelArea": "app",
           "extension": ".ts",
           "isKeyFile": false
@@ -563,17 +569,25 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T18:04:09.989Z",
+    "lastActivityAt": "2026-11-05T20:39:39.791Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 44,
+    "trackedFileSnapshotCount": 45,
     "changeTypeCounts": {
-      "save": 40,
-      "create": 0,
+      "save": 39,
+      "create": 1,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/auth/route.ts",
+      "updatedAt": 1793911179791,
+      "lineCount": 110,
+      "charCount": 3696,
+      "hash": "ef793b37ea67",
+      "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793901849989,
@@ -629,17 +643,61 @@
       "charCount": 2504,
       "hash": "47d3a0d89c7a",
       "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
-    },
-    {
-      "filePath": "components/MainContent.tsx",
-      "updatedAt": 1793616340365,
-      "lineCount": 217,
-      "charCount": 8844,
-      "hash": "e6c5e1499cef",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/auth/route.ts",
+      "toPath": "",
+      "summary": "Line 1: inserted 110 lines.",
+      "recordedAt": "2026-11-05T20:39:39.791Z",
+      "recordedAtEpochMs": 1793911179791,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793911179791
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 110,
+        "charCount": 3696,
+        "hash": "ef793b37ea67",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793911179791
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 110,
+        "summary": "Line 1: inserted 110 lines.",
+        "beforeFragment": "",
+        "afterFragment": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } =..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "app/api/auth/route.ts",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-11-05T20:39:32.792Z",
+      "recordedAtEpochMs": 1793911172792,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793911172775.4907,
+        "extension": ".ts",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1055,80 +1113,12 @@
         "beforeFragment": "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?...",
         "afterFragment": "// Verzamel ALLE rijen die matchen met het woningtype en de geselecteerde indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam ||..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 32: replaced 366 lines with 375 lines.",
-      "recordedAt": "2026-11-05T17:02:34.730Z",
-      "recordedAtEpochMs": 1793898154730,
-      "before": {
-        "kind": "text",
-        "lineCount": 493,
-        "charCount": 20516,
-        "hash": "55481051f944",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793898154730
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 502,
-        "charCount": 21036,
-        "hash": "28fb5556115b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793898154730
-      },
-      "diff": {
-        "lineStart": 32,
-        "removedLines": 366,
-        "addedLines": 375,
-        "summary": "Line 32: replaced 366 lines with 375 lines.",
-        "beforeFragment": "// Haal direct op uit sessionStorage of localStorage met absolute prioriteit voor Modern Raw / const sessionPak = sessionStorage.getItem('geselecteerdPakket'); / const localPak...",
-        "afterFragment": "const sessionPak = sessionStorage.getItem('geselecteerdPakket'); / const localPak = localStorage.getItem('selected_designPakket'); / const gekozen = sessionPak || localPak || de..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 17: replaced 454 lines with 457 lines.",
-      "recordedAt": "2026-11-05T16:57:41.682Z",
-      "recordedAtEpochMs": 1793897861682,
-      "before": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20353,
-        "hash": "6e15cccf6274",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897861682
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 493,
-        "charCount": 20516,
-        "hash": "55481051f944",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897861682
-      },
-      "diff": {
-        "lineStart": 17,
-        "removedLines": 454,
-        "addedLines": 457,
-        "summary": "Line 17: replaced 454 lines with 457 lines.",
-        "beforeFragment": "opgeslagenPakket, setOpgeslagenPakket] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indelin...",
-        "afterFragment": "actiefPakket, setActiefPakket] = useState('Hotel Chic'); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indel..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 13
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "count": 7
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1143,24 +1133,35 @@
       "count": 5
     },
     {
+      "filePath": "lib/cms.ts",
+      "count": 5
+    },
+    {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
+    },
+    {
+      "filePath": "app/api/auth/route.ts",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 9dee2fc fix(download-page): correct closing bracket typo on localStorage read",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 93424e2 fix(download-page): resolve download categories from matching woning rows and filter files strictly by Modern Raw",
+    "statusSummary": "3 modifieds, 1 untracked",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md",
+      "?? app/api/auth/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9dee2fc by Bas van Dooremalen on 2026-11-05\n  fix(download-page): correct closing bracket typo on localStorage read\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 93424e2 by Bas van Dooremalen on 2026-11-05\n  fix(download-page): resolve download categories from matching woning rows and filter files strictly by Modern Raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
