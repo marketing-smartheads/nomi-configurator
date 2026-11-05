@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T22:22:19.326Z
+Generated: 2026-11-05T22:25:37.205Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T22:22:17.496Z
+- Last activity: 2026-11-05T22:25:35.368Z
 ## Workspace Focus
-- Active file in focus: lib/useConfigurator.ts
-- Hottest files right now: app/api/verify-voucher/route.ts (8), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (7), app/api/auth/route.ts (6)
-- Suggested starting points: lib/useConfigurator.ts, app/api/verify-voucher/route.ts, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/auth/route.ts, app/download/page.tsx
+- Active file in focus: components/LoginScreen.tsx
+- Hottest files right now: components/LoginScreen.tsx (9), app/api/verify-voucher/route.ts (8), app/api/vouchers/route.ts (7), app/api/auth/route.ts (6)
+- Suggested starting points: components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/api/auth/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
-- Active file: lib/useConfigurator.ts
+- Active file: components/LoginScreen.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (34), create (5), delete (1)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/LoginScreen.tsx | 284 lines | 10036 chars | hash 9ef38b12f412
+  Last snapshot: 2026-11-05T22:25:35.368Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 - lib/useConfigurator.ts | 206 lines | 6358 chars | hash 6df8a1bf9348
   Last snapshot: 2026-11-05T22:22:17.496Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- components/LoginScreen.tsx | 285 lines | 10117 chars | hash 9f4c0dcffc75
-  Last snapshot: 2026-11-05T22:18:58.957Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 - app/api/vouchers/route.ts | 170 lines | 5453 chars | hash dfb46144d938
   Last snapshot: 2026-11-05T22:16:56.146Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T22:25:35.368Z | saved | components/LoginScreen.tsx
+- Summary: Line 76: replaced 2 lines with 1 line.
+- Before: 285 lines | 10,117 chars | hash 9f4c0dcffc75 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- After: 284 lines | 10,036 chars | hash 9ef38b12f412 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+- Previous fragment: "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/vouchers"
+- Current fragment: "const res = await fetch('/api/verify-voucher"
+
 ### 2026-11-05T22:22:17.496Z | saved | lib/useConfigurator.ts
 - Summary: Saved without a textual diff.
 - Before: 206 lines | 6,358 chars | hash 6df8a1bf9348 | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
@@ -155,17 +162,10 @@ Structured manifest: workspace.json
 - Previous fragment: "async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if..."
 - Current fragment: "const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / cons..."
 
-### 2026-11-05T21:42:20.418Z | saved | components/LoginScreen.tsx
-- Summary: Line 77: replaced 1 line with 1 line.
-- Before: 285 lines | 10,122 chars | hash 032ed2f2b615 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 285 lines | 10,126 chars | hash 5cfbae817c0e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- Previous fragment: "vouchers"
-- Current fragment: "auth-voucher"
-
 
 ## Hot Files
+- components/LoginScreen.tsx (9 tracked changes)
 - app/api/verify-voucher/route.ts (8 tracked changes)
-- components/LoginScreen.tsx (8 tracked changes)
 - app/api/vouchers/route.ts (7 tracked changes)
 - app/api/auth/route.ts (6 tracked changes)
 - app/download/page.tsx (3 tracked changes)
@@ -175,12 +175,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 2e041c5 fix(auth): point login fetch back to stable /api/vouchers endpoint with strict email validation
-- Working tree summary: 4 modifieds
-- M graphify-out/WORKSPACE_MEMORY.md
-- M lib/useConfigurator.ts
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-05 ba53b51 fix(login): connect useConfigurator handleLogin directly to robust /api/verify-voucher endpoint
+- Working tree summary: 1 modified
+- M components/LoginScreen.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

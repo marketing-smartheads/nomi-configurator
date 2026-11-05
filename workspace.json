@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:22:19.326Z",
-  "generatedAtEpochMs": 1793917339326,
+  "generatedAt": "2026-11-05T22:25:37.205Z",
+  "generatedAtEpochMs": 1793917537205,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/useConfigurator.ts",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/useConfigurator.ts",
-      "app/api/verify-voucher/route.ts",
       "components/LoginScreen.tsx",
+      "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
       "app/api/auth/route.ts",
       "app/download/page.tsx",
       "app/api/auth-voucher",
       "app/api/auth-voucher/route.ts",
+      "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:22:17.496Z",
+    "lastActivityAt": "2026-11-05T22:25:35.368Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -587,20 +587,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1793917535368,
+      "lineCount": 284,
+      "charCount": 10036,
+      "hash": "9ef38b12f412",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+    },
+    {
       "filePath": "lib/useConfigurator.ts",
       "updatedAt": 1793917337496,
       "lineCount": 206,
       "charCount": 6358,
       "hash": "6df8a1bf9348",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-    },
-    {
-      "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793917138957,
-      "lineCount": 285,
-      "charCount": 10117,
-      "hash": "9f4c0dcffc75",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 76: replaced 2 lines with 1 line.",
+      "recordedAt": "2026-11-05T22:25:35.368Z",
+      "recordedAtEpochMs": 1793917535368,
+      "before": {
+        "kind": "text",
+        "lineCount": 285,
+        "charCount": 10117,
+        "hash": "9f4c0dcffc75",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793917535368
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 284,
+        "charCount": 10036,
+        "hash": "9ef38b12f412",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793917535368
+      },
+      "diff": {
+        "lineStart": 76,
+        "removedLines": 2,
+        "addedLines": 1,
+        "summary": "Line 76: replaced 2 lines with 1 line.",
+        "beforeFragment": "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/vouchers",
+        "afterFragment": "const res = await fetch('/api/verify-voucher"
+      }
+    },
     {
       "type": "save",
       "path": "lib/useConfigurator.ts",
@@ -1064,47 +1096,15 @@
         "beforeFragment": "async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if...",
         "afterFragment": "const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / cons..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 77: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-05T21:42:20.418Z",
-      "recordedAtEpochMs": 1793914940418,
-      "before": {
-        "kind": "text",
-        "lineCount": 285,
-        "charCount": 10122,
-        "hash": "032ed2f2b615",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793914940418
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 285,
-        "charCount": 10126,
-        "hash": "5cfbae817c0e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793914940418
-      },
-      "diff": {
-        "lineStart": 77,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 77: replaced 1 line with 1 line.",
-        "beforeFragment": "vouchers",
-        "afterFragment": "auth-voucher"
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "count": 8
+      "filePath": "components/LoginScreen.tsx",
+      "count": 9
     },
     {
-      "filePath": "components/LoginScreen.tsx",
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 8
     },
     {
@@ -1135,14 +1135,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 2e041c5 fix(auth): point login fetch back to stable /api/vouchers endpoint with strict email validation",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 ba53b51 fix(login): connect useConfigurator handleLogin directly to robust /api/verify-voucher endpoint",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/useConfigurator.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/LoginScreen.tsx"
     ],
     "error": ""
   },
