@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T14:51:52.448Z",
-  "generatedAtEpochMs": 1793890312448,
+  "generatedAt": "2026-11-05T15:02:46.485Z",
+  "generatedAtEpochMs": 1793890966485,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "app/download/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepThreeVisuals.tsx",
-      "app/dashboard/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "app/dashboard/page.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
-      "app/api/vouchers/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T14:51:49.893Z",
+    "lastActivityAt": "2026-11-05T15:02:44.770Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,28 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1793890964770,
+      "lineCount": 422,
+      "charCount": 19675,
+      "hash": "5a4b08bcd6c0",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793890952648,
+      "lineCount": 322,
+      "charCount": 15166,
+      "hash": "221f402a9bba",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+    },
+    {
       "filePath": "lib/cms.ts",
       "updatedAt": 1793890309893,
       "lineCount": 225,
       "charCount": 6176,
       "hash": "4ba55e533623",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793885464115,
-      "lineCount": 320,
-      "charCount": 15046,
-      "hash": "a0ef13144fa5",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -629,17 +637,98 @@
       "charCount": 10168,
       "hash": "79594072f6a6",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-    },
-    {
-      "filePath": "app/globals.css",
-      "updatedAt": 1793615556827,
-      "lineCount": 106,
-      "charCount": 2720,
-      "hash": "7e080d34cd3e",
-      "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 286 lines with 204 lines.",
+      "recordedAt": "2026-11-05T15:02:44.770Z",
+      "recordedAtEpochMs": 1793890964770,
+      "before": {
+        "kind": "text",
+        "lineCount": 504,
+        "charCount": 23775,
+        "hash": "6f867323f7b2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793890964770
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 19675,
+        "hash": "5a4b08bcd6c0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793890964770
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 286,
+        "addedLines": 204,
+        "summary": "Line 7: replaced 286 lines with 204 lines.",
+        "beforeFragment": ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se...",
+        "afterFragment": "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T15:02:32.648Z",
+      "recordedAtEpochMs": 1793890952648,
+      "before": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 15166,
+        "hash": "221f402a9bba",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793890952648
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 15166,
+        "hash": "221f402a9bba",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793890952648
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 167: replaced 7 lines with 9 lines.",
+      "recordedAt": "2026-11-05T15:02:29.082Z",
+      "recordedAtEpochMs": 1793890949082,
+      "before": {
+        "kind": "text",
+        "lineCount": 320,
+        "charCount": 15046,
+        "hash": "a0ef13144fa5",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793890949082
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 15166,
+        "hash": "221f402a9bba",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793890949082
+      },
+      "diff": {
+        "lineStart": 167,
+        "removedLines": 7,
+        "addedLines": 9,
+        "summary": "Line 167: replaced 7 lines with 9 lines.",
+        "beforeFragment": "sessionStorage.setItem('configuratorConfirmed', 'true'); / sessionStorage.setItem('klantNaam', klantNaam.trim()); / sessionStorage.setItem('klantEmail', klantEmail.trim()); / se...",
+        "afterFragment": "// Harde definitieve bevestigingsvlaggen instellen / sessionStorage.setItem('configuratorConfirmed', 'true'); / localStorage.setItem('configurator_definitief_bevestigd', 'true')..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1016,88 +1105,6 @@
         "beforeFragment": "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl",
         "afterFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 69: replaced 17 lines with 9 lines.",
-      "recordedAt": "2026-11-05T12:26:27.527Z",
-      "recordedAtEpochMs": 1793881587527,
-      "before": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881587527
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 221,
-        "charCount": 6077,
-        "hash": "426f87c5a81b",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881587527
-      },
-      "diff": {
-        "lineStart": 69,
-        "removedLines": 17,
-        "addedLines": 9,
-        "summary": "Line 69: replaced 17 lines with 9 lines.",
-        "beforeFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s...",
-        "afterFragment": "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T12:23:34.638Z",
-      "recordedAtEpochMs": 1793881414638,
-      "before": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881414638
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881414638
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T12:23:31.971Z",
-      "recordedAtEpochMs": 1793881411971,
-      "before": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881411971
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881411971
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1110,12 +1117,12 @@
       "count": 8
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 4
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 5
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 3
+      "filePath": "app/dashboard/page.tsx",
+      "count": 2
     },
     {
       "filePath": "components/Hero.tsx",
@@ -1130,24 +1137,28 @@
       "count": 2
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
+      "filePath": "app/download/page.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 9f39bce fix(frontend): correctly resolve and render confirmation banner image from design package level",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 4c24fc9 fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M lib/cms.ts"
+      "M app/download/page.tsx",
+      "M components/configurator/StepFourConfirmation.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9f39bce by Bas van Dooremalen on 2026-11-05\n  fix(frontend): correctly resolve and render confirmation banner image from design package level\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4c24fc9 by Bas van Dooremalen on 2026-11-05\n  fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

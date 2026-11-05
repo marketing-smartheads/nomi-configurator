@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getPageData, getVoucherData } from '@/lib/cms';
+import { getPageData } from '@/lib/cms';
 import { downloadZip } from 'client-zip';
 
 export default function DownloadPage() {
@@ -16,15 +16,23 @@ export default function DownloadPage() {
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
-  const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(false);
-  const [voucherInput, setVoucherInput] = useState<string>('');
-  const [voucherError, setVoucherError] = useState<string | null>(null);
+  const [needsVoucherInput, setNeedsVoucherInput] = useState<boolean>(true);
 
   useEffect(() => {
     let isMounted = true;
 
     async function initDownloadPage() {
       try {
+        // STRIKTE TOEGANGSCONTROLE: Vereist een definitieve bevestiging via de configurator-flow
+        const isDefinitiefBevestigd = 
+          localStorage.getItem('configurator_definitief_bevestigd') === 'true' || 
+          sessionStorage.getItem('configuratorConfirmed') === 'true';
+
+        if (!isDefinitiefBevestigd) {
+          if (isMounted) setNeedsVoucherInput(true);
+          return;
+        }
+
         let cmsData = null;
         try {
           const fetchPromise = getPageData();
@@ -45,32 +53,8 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        const configuratorData = cmsData?.configuratorData || cmsData?.configurator || {};
-        const instelbareDagen = Number(cmsData?.downloadLimietDagen || configuratorData?.downloadLimietDagen || 14); 
-        const maxTijd = process.env.NODE_ENV === 'development' ? 60 * 60 * 1000 : instelbareDagen * 24 * 60 * 60 * 1000;    
-
-        const isConfirmed = 
-          localStorage.getItem('configurator_bevestigd') === 'true' || 
-          localStorage.getItem('configuratorConfirmed') === 'true' ||
-          sessionStorage.getItem('configuratorConfirmed') === 'true';
-
-        const timestamp = localStorage.getItem('download_timestamp');
-        let geldig = false;
-
-        if (isConfirmed && timestamp) {
-          if (Date.now() - Number(timestamp) <= maxTijd) geldig = true;
-        }
-
-        const opgeslagenCode = localStorage.getItem('toegangscode');
-        if (!geldig && opgeslagenCode) geldig = true;
-
-        if (!geldig) {
-          if (isMounted) setNeedsVoucherInput(true);
-          return;
-        }
-
-        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
-        let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
+        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
+        let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || 'Hotel Chic';
 
         let resolvedIndeling = '';
         try {
@@ -91,23 +75,11 @@ export default function DownloadPage() {
           resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
         }
 
-        if (opgeslagenCode && (!resolvedWoning || !resolvedPakket)) {
-          const liveVoucherData = await getVoucherData(opgeslagenCode);
-          if (liveVoucherData && liveVoucherData.gekozenTypeWoning) {
-            resolvedWoning = liveVoucherData.gekozenTypeWoning;
-            resolvedPakket = liveVoucherData.gekozenDesignpakket || 'Hotel Chic';
-            localStorage.setItem('selected_woningType', resolvedWoning);
-            localStorage.setItem('selected_designPakket', resolvedPakket);
-          }
-        }
-
-        if (!resolvedWoning) resolvedWoning = 'Type A';
-        if (!resolvedPakket) resolvedPakket = 'Hotel Chic';
-
         if (isMounted) {
           setWoningType(resolvedWoning);
           setGekozenIndeling(resolvedIndeling);
           setDesignPakket(resolvedPakket);
+          setNeedsVoucherInput(false);
           setIsAuthorized(true);
         }
       } catch (err) {
@@ -119,41 +91,6 @@ export default function DownloadPage() {
     initDownloadPage();
     return () => { isMounted = false; };
   }, []);
-
-  const handleVoucherSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const code = voucherInput.trim();
-    if (!code || code.length < 3) {
-      setVoucherError('Vul een geldige vouchercode in.');
-      return;
-    }
-
-    try {
-      setVoucherError('Controleren...');
-      const voucherData = await getVoucherData(code);
-
-      if (!voucherData || !voucherData.gekozenTypeWoning) {
-        setVoucherError('Onjuiste vouchercode of geen woningkoppeling gevonden.');
-        return;
-      }
-
-      const finalWoning = voucherData.gekozenTypeWoning;
-      const finalPakket = voucherData.gekozenDesignpakket || 'Hotel Chic';
-
-      localStorage.setItem('toegangscode', code.toUpperCase());
-      localStorage.setItem('download_timestamp', Date.now().toString());
-      localStorage.setItem('selected_woningType', finalWoning);
-      localStorage.setItem('selected_designPakket', finalPakket);
-
-      setWoningType(finalWoning);
-      setDesignPakket(finalPakket);
-      setNeedsVoucherInput(false);
-      setIsAuthorized(true);
-    } catch (err) {
-      console.error(err);
-      setVoucherError('Er is een fout opgetreden bij het controleren van de code.');
-    }
-  };
 
   const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
@@ -169,14 +106,13 @@ export default function DownloadPage() {
   const normaliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
 
-  // Herkent o.a. "Type EC02", "TypeECO2", "Concept 2", "CONCEPT-02", "Concept_2", "Indeling 02"
   const haalIndelingNummers = (tekst: string): Set<number> => {
     const t = (tekst || '').toLowerCase();
     const nummers = new Set<number>();
     const patronen = [
-      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g, // Type EC02 / TypeECO2
-      /concept[\s_-]*0*(\d+)/g,                // Concept 2 / CONCEPT-02 / Concept_2
-      /indeling[\s_-]*0*(\d+)/g,               // Indeling 02 (niet "Indelingsplattegrond")
+      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g,
+      /concept[\s_-]*0*(\d+)/g,
+      /indeling[\s_-]*0*(\d+)/g,
     ];
     for (const p of patronen) {
       for (const m of t.matchAll(p)) nummers.add(Number(m[1]));
@@ -184,7 +120,6 @@ export default function DownloadPage() {
     return nummers;
   };
 
-  // Gekozen indeling (bijv. "Indeling 02" -> 2). Geen keuze = niet op nummer filteren.
   const gekozenNummers = haalIndelingNummers(gekozenIndeling || '');
   const gekozenNummer: number | null = gekozenNummers.size > 0
     ? Array.from(gekozenNummers)[0]
@@ -192,8 +127,6 @@ export default function DownloadPage() {
 
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Elk woningtype staat per indeling apart in het CMS (bijv. "Type E" + "Indeling 02").
-  // Dus eerst op typenaam filteren, daarna de kandidaat kiezen die bij de gekozen indeling hoort.
   const woningKandidaten = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     return naam && (naam.includes(normWoning) || normWoning.includes(naam));
@@ -228,11 +161,6 @@ export default function DownloadPage() {
 
   const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
 
-  // ---------------------------------------------------------------------
-  // SLIMME FILTER: matcht op pakket + indelingnummer, via titel én bestandsnaam
-  // ---------------------------------------------------------------------
-
-  // Alle bekende pakketnamen uit het CMS (met fallback)
   const alleNormPakketten: string[] = Array.from(new Set([
     ...designPakkettenLijst.map((p: any) => normaliseer(p?.pakketTitel || p?.pakket_titel || '')).filter(Boolean),
     'hotelchic',
@@ -252,11 +180,9 @@ export default function DownloadPage() {
       const url = getFileUrl(bestand) || '';
       const bestandsnaam = safeDecode(url.split('?')[0].split('/').pop() || '');
 
-      // 1. Pakket: titel wint, bestandsnaam is fallback. Geen pakket genoemd = algemeen bestand.
       const pakketInBestand = vindPakket(titel) ?? vindPakket(bestandsnaam);
       if (pakketInBestand && pakketInBestand !== actiefPakket) return false;
 
-      // 2. Indeling: titel wint, bestandsnaam is fallback. Geen nummer gevonden = algemeen bestand.
       if (gekozenNummer === null) return true;
       let nummers = haalIndelingNummers(titel);
       if (nummers.size === 0) nummers = haalIndelingNummers(bestandsnaam);
@@ -273,23 +199,15 @@ export default function DownloadPage() {
           <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-[#EFECE6] text-center space-y-6">
             <div>
               <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVEILIGDE PAGINA</span>
-              <h2 className="text-3xl font-serif text-dark mt-2">Vul uw vouchercode in</h2>
-              <p className="text-[#666] text-sm mt-2 leading-relaxed">Om de documentatielijsten te bekijken, kunt u hieronder uw unieke vouchercode opgeven.</p>
+              <h2 className="text-3xl font-serif text-dark mt-2">Geen actieve configuratie</h2>
+              <p className="text-[#666] text-sm mt-2 leading-relaxed">U heeft de configuratie nog niet doorlopen en bevestigd. Voltooi eerst alle stappen in de configurator om uw downloads te ontgrendelen.</p>
             </div>
-            {voucherError && <p className="text-red-600 text-xs font-medium">{voucherError}</p>}
-            <form onSubmit={handleVoucherSubmit} className="space-y-4">
-              <input 
-                type="text"
-                placeholder="Bijv. XX3060"
-                value={voucherInput}
-                onChange={(e) => setVoucherInput(e.target.value)}
-                className="w-full px-4 py-3 bg-[#F9F6F0] border border-[#EFECE6] rounded-xl text-dark text-sm focus:outline-none focus:border-[#C5A880]"
-                required
-              />
-              <button type="submit" className="w-full bg-dark text-white py-3.5 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer">
-                Toegang krijgen
-              </button>
-            </form>
+            <button 
+              onClick={() => router.push('/')}
+              className="w-full bg-dark text-white py-3.5 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer"
+            >
+              Naar de configurator
+            </button>
           </div>
         </main>
         <Footer />

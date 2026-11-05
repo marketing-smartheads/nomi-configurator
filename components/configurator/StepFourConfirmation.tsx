@@ -164,13 +164,15 @@ export default function StepFourConfirmation({
         throw new Error(errorData?.error || errorData?.message || 'Fout bij het verwerken van de bevestiging.');
       }
 
+      // Harde definitieve bevestigingsvlaggen instellen
       sessionStorage.setItem('configuratorConfirmed', 'true');
-      sessionStorage.setItem('klantNaam', klantNaam.trim());
-      sessionStorage.setItem('klantEmail', klantEmail.trim());
-      sessionStorage.setItem('klantTelefoon', klantTelefoon.trim());
-      sessionStorage.setItem('geselecteerdeWoning', woningNaam);
-      sessionStorage.setItem('geselecteerdeIndeling', opgeslagenIndeling);
-      sessionStorage.setItem('geselecteerdPakket', pakketNaam);
+      localStorage.setItem('configurator_definitief_bevestigd', 'true');
+      localStorage.setItem('klantNaam', klantNaam.trim());
+      localStorage.setItem('klantEmail', klantEmail.trim());
+      localStorage.setItem('klantTelefoon', klantTelefoon.trim());
+      localStorage.setItem('geselecteerdeWoning', woningNaam);
+      localStorage.setItem('geselecteerdeIndeling', opgeslagenIndeling);
+      localStorage.setItem('geselecteerdPakket', pakketNaam);
 
       setShowPopup(false);
       if (onConfirm) onConfirm();

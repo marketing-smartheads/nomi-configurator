@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T14:51:52.448Z
+Generated: 2026-11-05T15:02:46.485Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T14:51:49.893Z
+- Last activity: 2026-11-05T15:02:44.770Z
 ## Workspace Focus
-- Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), app/dashboard/page.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
-- Suggested starting points: lib/cms.ts, components/configurator/StepThreeVisuals.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/LoginScreen.tsx
+- Active file in focus: app/download/page.tsx
+- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepFourConfirmation.tsx (5), app/dashboard/page.tsx (2)
+- Suggested starting points: app/download/page.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, components/Hero.tsx
 ## Current Workspace
-- Active file: lib/cms.ts
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,17 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
+- app/download/page.tsx | 422 lines | 19675 chars | hash 5a4b08bcd6c0
+  Last snapshot: 2026-11-05T15:02:44.770Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- components/configurator/StepFourConfirmation.tsx | 322 lines | 15166 chars | hash 221f402a9bba
+  Last snapshot: 2026-11-05T15:02:32.648Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - lib/cms.ts | 225 lines | 6176 chars | hash 4ba55e533623
   Last snapshot: 2026-11-05T14:51:49.893Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- components/configurator/StepFourConfirmation.tsx | 320 lines | 15046 chars | hash a0ef13144fa5
-  Last snapshot: 2026-11-05T13:31:04.115Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - components/configurator/StepThreeVisuals.tsx | 485 lines | 20221 chars | hash a07bd0d5336f
   Last snapshot: 2026-11-05T13:20:43.470Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -60,11 +63,27 @@ Structured manifest: workspace.json
 - components/LoginScreen.tsx | 288 lines | 10168 chars | hash 79594072f6a6
   Last snapshot: 2026-11-02T10:44:41.742Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- app/globals.css | 106 lines | 2720 chars | hash 7e080d34cd3e
-  Last snapshot: 2026-11-02T10:32:36.827Z
-  Preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
 
 ## Recent Changes
+### 2026-11-05T15:02:44.770Z | saved | app/download/page.tsx
+- Summary: Line 7: replaced 286 lines with 204 lines.
+- Before: 504 lines | 23,775 chars | hash 6f867323f7b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 422 lines | 19,675 chars | hash 5a4b08bcd6c0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
+- Current fragment: "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
+
+### 2026-11-05T15:02:32.648Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Saved without a textual diff.
+- Before: 322 lines | 15,166 chars | hash 221f402a9bba | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 322 lines | 15,166 chars | hash 221f402a9bba | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+
+### 2026-11-05T15:02:29.082Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 167: replaced 7 lines with 9 lines.
+- Before: 320 lines | 15,046 chars | hash a0ef13144fa5 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 322 lines | 15,166 chars | hash 221f402a9bba | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- Previous fragment: "sessionStorage.setItem('configuratorConfirmed', 'true'); / sessionStorage.setItem('klantNaam', klantNaam.trim()); / sessionStorage.setItem('klantEmail', klantEmail.trim()); / se..."
+- Current fragment: "// Harde definitieve bevestigingsvlaggen instellen / sessionStorage.setItem('configuratorConfirmed', 'true'); / localStorage.setItem('configurator_definitief_bevestigd', 'true')..."
+
 ### 2026-11-05T14:51:49.893Z | saved | lib/cms.ts
 - Summary: Line 213: replaced 7 lines with 7 lines.
 - Before: 225 lines | 6,205 chars | hash 012326f81e88 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -146,39 +165,26 @@ Structured manifest: workspace.json
 - Previous fragment: "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
 - Current fragment: "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
 
-### 2026-11-05T12:26:27.527Z | saved | lib/cms.ts
-- Summary: Line 69: replaced 17 lines with 9 lines.
-- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 221 lines | 6,077 chars | hash 426f87c5a81b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
-- Current fragment: "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
-
-### 2026-11-05T12:23:34.638Z | saved | lib/cms.ts
-- Summary: Saved without a textual diff.
-- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-
-### 2026-11-05T12:23:31.971Z | saved | lib/cms.ts
-- Summary: Saved without a textual diff.
-- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-
 
 ## Hot Files
 - lib/cms.ts (13 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
-- app/dashboard/page.tsx (4 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (5 tracked changes)
+- app/dashboard/page.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
-- app/api/vouchers/route.ts (1 tracked changes)
+- app/download/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 9f39bce fix(frontend): correctly resolve and render confirmation banner image from design package level
-- Working tree summary: 1 modified
-- M lib/cms.ts
+- HEAD: 2026-11-05 4c24fc9 fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty
+- Working tree summary: 5 modifieds
+- M app/download/page.tsx
+- M components/configurator/StepFourConfirmation.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 9f39bce by Bas van Dooremalen on 2026-11-05
-  fix(frontend): correctly resolve and render confirmation banner image from design package level
+- 4c24fc9 by Bas van Dooremalen on 2026-11-05
+  fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
