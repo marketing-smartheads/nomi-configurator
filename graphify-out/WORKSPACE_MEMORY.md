@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T22:41:19.484Z
+Generated: 2026-11-05T22:45:19.968Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T22:41:17.708Z
+- Last activity: 2026-11-05T22:45:17.490Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: components/LoginScreen.tsx (10), app/api/verify-voucher/route.ts (8), app/api/vouchers/route.ts (7), app/api/auth/route.ts (5)
+- Hottest files right now: components/LoginScreen.tsx (10), app/api/verify-voucher/route.ts (8), app/api/vouchers/route.ts (7), app/api/auth/route.ts (4)
 - Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/api/auth/route.ts, app/api/auth-voucher
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 324 lines | 9545 chars | hash 7d81656fd00c
-  Last snapshot: 2026-11-05T22:41:17.708Z
+- lib/cms.ts | 321 lines | 9202 chars | hash ad9adb9f03c6
+  Last snapshot: 2026-11-05T22:45:17.490Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/LoginScreen.tsx | 276 lines | 9862 chars | hash 904ae93bdd1a
   Last snapshot: 2026-11-05T22:30:02.126Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-05T22:45:17.490Z | saved | lib/cms.ts
+- Summary: Line 142: replaced 166 lines with 163 lines.
+- Before: 324 lines | 9,545 chars | hash 7d81656fd00c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 321 lines | 9,202 chars | hash ad9adb9f03c6 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await..."
+- Current fragment: "const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json..."
+
 ### 2026-11-05T22:41:17.708Z | saved | lib/cms.ts
 - Summary: Line 142: replaced 162 lines with 153 lines.
 - Before: 333 lines | 10,306 chars | hash 6e408770fd7e | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -154,27 +161,20 @@ Structured manifest: workspace.json
 - Before: 123 lines | 4,121 chars | hash d299169ddd87 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
 - After: 123 lines | 4,121 chars | hash d299169ddd87 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
 
-### 2026-11-05T21:59:17.742Z | saved | app/api/verify-voucher/route.ts
-- Summary: Line 5: replaced 179 lines with 113 lines.
-- Before: 189 lines | 6,035 chars | hash 624e8459beac | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
-- After: 123 lines | 4,121 chars | hash d299169ddd87 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
-- Previous fragment: "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret..."
-- Current fragment: "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
-
 
 ## Hot Files
 - components/LoginScreen.tsx (10 tracked changes)
 - app/api/verify-voucher/route.ts (8 tracked changes)
 - app/api/vouchers/route.ts (7 tracked changes)
-- app/api/auth/route.ts (5 tracked changes)
-- lib/cms.ts (3 tracked changes)
+- app/api/auth/route.ts (4 tracked changes)
+- lib/cms.ts (4 tracked changes)
 - app/api/auth-voucher (2 tracked changes)
 - app/api/auth-voucher/route.ts (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 08999de fix(auth): add flexible voucher matching and debug logs
+- HEAD: 2026-11-05 911b1d4 fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -184,8 +184,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- cb03df2 by Bas van Dooremalen on 2026-11-05
-  fix(auth): implement direct client-side graphql voucher authentication
+- 911b1d4 by Bas van Dooremalen on 2026-11-05
+  fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

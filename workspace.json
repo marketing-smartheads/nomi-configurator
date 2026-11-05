@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:41:19.484Z",
-  "generatedAtEpochMs": 1793918479484,
+  "generatedAt": "2026-11-05T22:45:19.968Z",
+  "generatedAtEpochMs": 1793918719968,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:41:17.708Z",
+    "lastActivityAt": "2026-11-05T22:45:17.490Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793918477708,
-      "lineCount": 324,
-      "charCount": 9545,
-      "hash": "7d81656fd00c",
+      "updatedAt": 1793918717490,
+      "lineCount": 321,
+      "charCount": 9202,
+      "hash": "ad9adb9f03c6",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 142: replaced 166 lines with 163 lines.",
+      "recordedAt": "2026-11-05T22:45:17.490Z",
+      "recordedAtEpochMs": 1793918717490,
+      "before": {
+        "kind": "text",
+        "lineCount": 324,
+        "charCount": 9545,
+        "hash": "7d81656fd00c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918717490
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 321,
+        "charCount": 9202,
+        "hash": "ad9adb9f03c6",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918717490
+      },
+      "diff": {
+        "lineStart": 142,
+        "removedLines": 166,
+        "addedLines": 163,
+        "summary": "Line 142: replaced 166 lines with 163 lines.",
+        "beforeFragment": "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await...",
+        "afterFragment": "const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1064,38 +1096,6 @@
         "updatedAt": 1793916182152
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 179 lines with 113 lines.",
-      "recordedAt": "2026-11-05T21:59:17.742Z",
-      "recordedAtEpochMs": 1793915957742,
-      "before": {
-        "kind": "text",
-        "lineCount": 189,
-        "charCount": 6035,
-        "hash": "624e8459beac",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
-        "updatedAt": 1793915957742
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 123,
-        "charCount": 4121,
-        "hash": "d299169ddd87",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
-        "updatedAt": 1793915957742
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 179,
-        "addedLines": 113,
-        "summary": "Line 5: replaced 179 lines with 113 lines.",
-        "beforeFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret...",
-        "afterFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
-      }
     }
   ],
   "hotFiles": [
@@ -1113,11 +1113,11 @@
     },
     {
       "filePath": "app/api/auth/route.ts",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "app/api/auth-voucher",
@@ -1135,7 +1135,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 08999de fix(auth): add flexible voucher matching and debug logs",
+    "headSummary": "2026-11-05 911b1d4 fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1145,7 +1145,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cb03df2 by Bas van Dooremalen on 2026-11-05\n  fix(auth): implement direct client-side graphql voucher authentication\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 911b1d4 by Bas van Dooremalen on 2026-11-05\n  fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

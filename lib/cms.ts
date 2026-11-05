@@ -139,7 +139,6 @@ export async function getPageData() {
     }
   `;
 
-  // Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
   const res = await fetch(graphqlEndpoint, {
@@ -244,16 +243,11 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     }
   `;
 
-  const wpUser = process.env.WORDPRESS_AUTH_USER;
-  const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
-  const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
-
   try {
     const res = await fetch(graphqlEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(basicAuth ? { 'Authorization': basicAuth } : {}),
       },
       body: JSON.stringify({ query }),
       cache: 'no-store',
@@ -264,6 +258,10 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     console.log('DEBUG: Ingevoerde code:', cleanCode);
     console.log('DEBUG: Totaal aantal opgehaalde vouchers uit WP:', vouchers.length);
+
+    if (json.errors) {
+      console.error('DEBUG: GraphQL errors:', json.errors);
+    }
 
     const voucher = vouchers.find((v: any) => {
       const codeField = String(v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
@@ -304,7 +302,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(basicAuth ? { 'Authorization': basicAuth } : {}),
         },
         body: JSON.stringify({
           query: updateMutation,
