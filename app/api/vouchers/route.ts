@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 
-// 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app)
+export const dynamic = 'force-dynamic';
+
+// 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks)
 export async function GET() {
   try {
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
@@ -46,7 +48,7 @@ export async function GET() {
   }
 }
 
-// 2. POST: Voor de strenge e-mail- en vouchercodeverificatie tijdens het inloggen
+// 2. POST: Voor de strenge e-mail- en vouchercodeverificatie tijdens inloggen
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -97,7 +99,7 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
-    // Matching op code of titel
+    // Zoek de voucher match in de GraphQL lijst
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -114,7 +116,7 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILCONTROLE: Moet exact matchen als er al een e-mail bekend is
+    // 🛑 STRENGE E-MAILCONTROLE
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -123,7 +125,7 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Sla e-mailadres op bij eerste login
+      // Sla e-mailadres op bij eerste inlogpoging
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
