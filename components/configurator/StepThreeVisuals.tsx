@@ -29,7 +29,6 @@ export default function StepThreeVisuals({
           }
         }
 
-        // Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron
         const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
         if (rawPak) {
           setOpgeslagenPakket(rawPak);
@@ -60,10 +59,11 @@ export default function StepThreeVisuals({
   const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
+  // Robuuste match op basis van exacte of genormaliseerde titel / id
   const huidigPakketObj = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-    return pId === normPakket || pTitel === normPakket || normPakket.includes(pId) || normPakket.includes(pTitel);
+    return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
   }) || pakkettenLijst[0];
 
   const pakketTitel = huidigPakketObj?.pakketTitel || huidigPakketObj?.pakket_titel || actiefPakket;
@@ -136,7 +136,7 @@ export default function StepThreeVisuals({
 
   const gevondenRender = panoramaRendersLijst.find((item: any) => {
     const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(normPakket));
+    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(stijlNaam));
   });
 
   const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T16:40:51.123Z",
-  "generatedAtEpochMs": 1793896851123,
+  "generatedAt": "2026-11-05T16:49:56.376Z",
+  "generatedAtEpochMs": 1793897396376,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T16:40:49.258Z",
+    "lastActivityAt": "2026-11-05T16:49:53.952Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793896849258,
+      "updatedAt": 1793897393952,
       "lineCount": 490,
-      "charCount": 20286,
-      "hash": "4b884ff938b7",
+      "charCount": 20314,
+      "hash": "3e66695cda37",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 32: replaced 108 lines with 108 lines.",
+      "recordedAt": "2026-11-05T16:49:53.952Z",
+      "recordedAtEpochMs": 1793897393952,
+      "before": {
+        "kind": "text",
+        "lineCount": 490,
+        "charCount": 20286,
+        "hash": "4b884ff938b7",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793897393952
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 490,
+        "charCount": 20314,
+        "hash": "3e66695cda37",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793897393952
+      },
+      "diff": {
+        "lineStart": 32,
+        "removedLines": 108,
+        "addedLines": 108,
+        "summary": "Line 32: replaced 108 lines with 108 lines.",
+        "beforeFragment": "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem...",
+        "afterFragment": "const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || ''; / if (rawPak) { / setOpgeslagenPakket(rawPak); / } / } catch..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1073,38 +1105,6 @@
         "beforeFragment": "const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery; / let moodboardGallery: any[] = []; / if (Array.isArray(rawMoodboard)) { / moodboardGalle...",
         "afterFragment": "// Moodboard gallery: pak enkel de eerste afbeelding (single moodboard visual) / const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery; / let mo..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 469: replaced 17 lines with 8 lines.",
-      "recordedAt": "2026-11-05T13:20:31.224Z",
-      "recordedAtEpochMs": 1793884831224,
-      "before": {
-        "kind": "text",
-        "lineCount": 491,
-        "charCount": 20409,
-        "hash": "df5ffb8d393f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793884831223
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 482,
-        "charCount": 19942,
-        "hash": "2a4dc1407769",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793884831224
-      },
-      "diff": {
-        "lineStart": 469,
-        "removedLines": 17,
-        "addedLines": 8,
-        "summary": "Line 469: replaced 17 lines with 8 lines.",
-        "beforeFragment": "Gallery.length > 0 && ( / <div className=\"grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 sm:p-0\"> / {moodboardGallery.map((img: any, idx: number) => { / const imageUrl = img?.sourceU...",
-        "afterFragment": "Url && ( / <div className=\"w-full relative aspect-video overflow-hidden bg-secondary\"> / <Image / src={moodboardUrl} / alt={`Moodboard ${pakketTitel}`} / fill / className=\"objec..."
-      }
     }
   ],
   "hotFiles": [
@@ -1114,7 +1114,7 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1144,20 +1144,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 e759be4 fix(step2-3): persist selected design package to storage and reliably sync visuals in step 3",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 66c00c8 fix(step3): read selected package correctly from sessionStorage.geselecteerdPakket",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepThreeVisuals.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e759be4 by Bas van Dooremalen on 2026-11-05\n  fix(step2-3): persist selected design package to storage and reliably sync visuals in step 3\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 66c00c8 by Bas van Dooremalen on 2026-11-05\n  fix(step3): read selected package correctly from sessionStorage.geselecteerdPakket\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T16:40:51.123Z
+Generated: 2026-11-05T16:49:56.376Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T16:40:49.258Z
+- Last activity: 2026-11-05T16:49:53.952Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (11), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
+- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (12), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
 - Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/LoginScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 490 lines | 20286 chars | hash 4b884ff938b7
-  Last snapshot: 2026-11-05T16:40:49.258Z
+- components/configurator/StepThreeVisuals.tsx | 490 lines | 20314 chars | hash 3e66695cda37
+  Last snapshot: 2026-11-05T16:49:53.952Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 - components/configurator/StepTwoDesign.tsx | 200 lines | 8924 chars | hash 62093ff0ea75
   Last snapshot: 2026-11-05T16:19:57.343Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T16:49:53.952Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 32: replaced 108 lines with 108 lines.
+- Before: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 490 lines | 20,314 chars | hash 3e66695cda37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem..."
+- Current fragment: "const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || ''; / if (rawPak) { / setOpgeslagenPakket(rawPak); / } / } catch..."
+
 ### 2026-11-05T16:40:49.258Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Saved without a textual diff.
 - Before: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -158,17 +165,10 @@ Structured manifest: workspace.json
 - Previous fragment: "const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery; / let moodboardGallery: any[] = []; / if (Array.isArray(rawMoodboard)) { / moodboardGalle..."
 - Current fragment: "// Moodboard gallery: pak enkel de eerste afbeelding (single moodboard visual) / const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery; / let mo..."
 
-### 2026-11-05T13:20:31.224Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 469: replaced 17 lines with 8 lines.
-- Before: 491 lines | 20,409 chars | hash df5ffb8d393f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 482 lines | 19,942 chars | hash 2a4dc1407769 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- Previous fragment: "Gallery.length > 0 && ( / <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 sm:p-0"> / {moodboardGallery.map((img: any, idx: number) => { / const imageUrl = img?.sourceU..."
-- Current fragment: "Url && ( / <div className="w-full relative aspect-video overflow-hidden bg-secondary"> / <Image / src={moodboardUrl} / alt={`Moodboard ${pakketTitel}`} / fill / className="objec..."
-
 
 ## Hot Files
 - lib/cms.ts (13 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (11 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/Hero.tsx (2 tracked changes)
@@ -178,12 +178,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 e759be4 fix(step2-3): persist selected design package to storage and reliably sync visuals in step 3
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-05 66c00c8 fix(step3): read selected package correctly from sessionStorage.geselecteerdPakket
+- Working tree summary: 1 modified
 - M components/configurator/StepThreeVisuals.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e759be4 by Bas van Dooremalen on 2026-11-05
-  fix(step2-3): persist selected design package to storage and reliably sync visuals in step 3
+- 66c00c8 by Bas van Dooremalen on 2026-11-05
+  fix(step3): read selected package correctly from sessionStorage.geselecteerdPakket
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
