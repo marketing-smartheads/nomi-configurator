@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:47:50.792Z",
-  "generatedAtEpochMs": 1793900870792,
+  "generatedAt": "2026-11-05T17:49:50.160Z",
+  "generatedAtEpochMs": 1793900990160,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:47:48.401Z",
+    "lastActivityAt": "2026-11-05T17:49:48.314Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793900868401,
-      "lineCount": 394,
-      "charCount": 19207,
-      "hash": "9f8b311e0fe8",
+      "updatedAt": 1793900988314,
+      "lineCount": 389,
+      "charCount": 18877,
+      "hash": "242f0a80c3a9",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 39: replaced 121 lines with 116 lines.",
+      "recordedAt": "2026-11-05T17:49:48.314Z",
+      "recordedAtEpochMs": 1793900988314,
+      "before": {
+        "kind": "text",
+        "lineCount": 394,
+        "charCount": 19207,
+        "hash": "9f8b311e0fe8",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793900988314
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 389,
+        "charCount": 18877,
+        "hash": "242f0a80c3a9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793900988314
+      },
+      "diff": {
+        "lineStart": 39,
+        "removedLines": 121,
+        "addedLines": 116,
+        "summary": "Line 39: replaced 121 lines with 116 lines.",
+        "beforeFragment": "// Live backend verificatie / try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.jso...",
+        "afterFragment": "try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.json(); / if (!voucherInfo || vou..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic'; / const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const normPak...",
         "afterFragment": "// BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen / const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 32: replaced 108 lines with 108 lines.",
-      "recordedAt": "2026-11-05T16:49:53.952Z",
-      "recordedAtEpochMs": 1793897393952,
-      "before": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20286,
-        "hash": "4b884ff938b7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897393952
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20314,
-        "hash": "3e66695cda37",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897393952
-      },
-      "diff": {
-        "lineStart": 32,
-        "removedLines": 108,
-        "addedLines": 108,
-        "summary": "Line 32: replaced 108 lines with 108 lines.",
-        "beforeFragment": "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem...",
-        "afterFragment": "const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || ''; / if (rawPak) { / setOpgeslagenPakket(rawPak); / } / } catch..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,19 +1128,19 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 9
+      "count": 8
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/download/page.tsx",
       "count": 5
     },
     {
-      "filePath": "app/download/page.tsx",
-      "count": 4
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 5
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1150,7 +1150,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 db21bf1 fix(step4): correct bracket typo on localStorage read for klantTelefoon",
+    "headSummary": "2026-11-05 59cc263 fix(download-page): remove moodboard gallery, prevent secure flash, and strictly filter downloads for selected design package",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

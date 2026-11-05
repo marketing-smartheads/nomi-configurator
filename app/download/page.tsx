@@ -36,7 +36,6 @@ export default function DownloadPage() {
           return;
         }
 
-        // Live backend verificatie
         try {
           const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`);
           if (res.ok) {
@@ -91,7 +90,7 @@ export default function DownloadPage() {
         }
 
         if (!resolvedIndeling) {
-          resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling'] || '';
+          resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
         }
 
         if (isMounted) {
@@ -120,7 +119,6 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // 1. Verzamel alle matchende woningrijen voor dit type en indeling
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -131,7 +129,6 @@ export default function DownloadPage() {
 
   const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
 
-  // 2. Verzamel alle designpakketten uit de matchende rijen en algemeen
   const allePakketten: any[] = [];
   gebruikteRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
@@ -144,7 +141,6 @@ export default function DownloadPage() {
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
 
-  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw) EXCLUSIEF
   const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -156,7 +152,6 @@ export default function DownloadPage() {
     return false;
   }) || allePakketten[0] || {};
 
-  // 4. Uitsluitend download categorieën ophalen van het GEKOZEN PAKKET (Modern Raw)
   const alleCategorieen: any[] = [];
   const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || huidigPakketObj?.download_categorieën || [];
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];

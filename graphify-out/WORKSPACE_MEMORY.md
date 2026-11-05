@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T17:47:50.792Z
+Generated: 2026-11-05T17:49:50.160Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T17:47:48.401Z
+- Last activity: 2026-11-05T17:49:48.314Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (13), lib/cms.ts (9), components/configurator/StepOnewoning.tsx (6), components/configurator/StepFourConfirmation.tsx (5)
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (13), lib/cms.ts (8), components/configurator/StepOnewoning.tsx (6), app/download/page.tsx (5)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 394 lines | 19207 chars | hash 9f8b311e0fe8
-  Last snapshot: 2026-11-05T17:47:48.401Z
+- app/download/page.tsx | 389 lines | 18877 chars | hash 242f0a80c3a9
+  Last snapshot: 2026-11-05T17:49:48.314Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 351 lines | 17011 chars | hash ad5e8b9d9763
   Last snapshot: 2026-11-05T17:41:37.984Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T17:49:48.314Z | saved | app/download/page.tsx
+- Summary: Line 39: replaced 121 lines with 116 lines.
+- Before: 394 lines | 19,207 chars | hash 9f8b311e0fe8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 389 lines | 18,877 chars | hash 242f0a80c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "// Live backend verificatie / try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.jso..."
+- Current fragment: "try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.json(); / if (!voucherInfo || vou..."
+
 ### 2026-11-05T17:47:48.401Z | saved | app/download/page.tsx
 - Summary: Line 1: inserted 394 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -162,25 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic'; / const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const normPak..."
 - Current fragment: "// BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen / const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic..."
 
-### 2026-11-05T16:49:53.952Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 32: replaced 108 lines with 108 lines.
-- Before: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 490 lines | 20,314 chars | hash 3e66695cda37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- Previous fragment: "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem..."
-- Current fragment: "const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || ''; / if (rawPak) { / setOpgeslagenPakket(rawPak); / } / } catch..."
-
 
 ## Hot Files
 - components/configurator/StepThreeVisuals.tsx (13 tracked changes)
-- lib/cms.ts (9 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
+- app/download/page.tsx (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
-- app/download/page.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 db21bf1 fix(step4): correct bracket typo on localStorage read for klantTelefoon
+- HEAD: 2026-11-05 59cc263 fix(download-page): remove moodboard gallery, prevent secure flash, and strictly filter downloads for selected design package
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
