@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:49:50.160Z",
-  "generatedAtEpochMs": 1793900990160,
+  "generatedAt": "2026-11-05T18:04:12.746Z",
+  "generatedAtEpochMs": 1793901852746,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:49:48.314Z",
+    "lastActivityAt": "2026-11-05T18:04:09.989Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793900988314,
-      "lineCount": 389,
-      "charCount": 18877,
-      "hash": "242f0a80c3a9",
+      "updatedAt": 1793901849989,
+      "lineCount": 422,
+      "charCount": 20388,
+      "hash": "a12394416f45",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 122: replaced 227 lines with 260 lines.",
+      "recordedAt": "2026-11-05T18:04:09.989Z",
+      "recordedAtEpochMs": 1793901849989,
+      "before": {
+        "kind": "text",
+        "lineCount": 389,
+        "charCount": 18877,
+        "hash": "242f0a80c3a9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793901849989
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 20388,
+        "hash": "a12394416f45",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793901849989
+      },
+      "diff": {
+        "lineStart": 122,
+        "removedLines": 227,
+        "addedLines": 260,
+        "summary": "Line 122: replaced 227 lines with 260 lines.",
+        "beforeFragment": "const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?.in...",
+        "afterFragment": "// 1. Verzamel alle rijen die matchen met woningtype én indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '')..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "opgeslagenPakket, setOpgeslagenPakket] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indelin...",
         "afterFragment": "actiefPakket, setActiefPakket] = useState('Hotel Chic'); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indel..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 42: replaced 21 lines with 21 lines.",
-      "recordedAt": "2026-11-05T16:53:44.101Z",
-      "recordedAtEpochMs": 1793897624101,
-      "before": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20314,
-        "hash": "3e66695cda37",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897624101
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 490,
-        "charCount": 20353,
-        "hash": "6e15cccf6274",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793897624101
-      },
-      "diff": {
-        "lineStart": 42,
-        "removedLines": 21,
-        "addedLines": 21,
-        "summary": "Line 42: replaced 21 lines with 21 lines.",
-        "beforeFragment": "const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic'; / const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const normPak...",
-        "afterFragment": "// BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen / const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic..."
-      }
     }
   ],
   "hotFiles": [
@@ -1128,15 +1128,15 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 8
+      "count": 7
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "count": 6
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 6
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "count": 5
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1150,7 +1150,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 59cc263 fix(download-page): remove moodboard gallery, prevent secure flash, and strictly filter downloads for selected design package",
+    "headSummary": "2026-11-05 9dee2fc fix(download-page): correct closing bracket typo on localStorage read",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1160,7 +1160,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- db21bf1 by Bas van Dooremalen on 2026-11-05\n  fix(step4): correct bracket typo on localStorage read for klantTelefoon\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9dee2fc by Bas van Dooremalen on 2026-11-05\n  fix(download-page): correct closing bracket typo on localStorage read\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -119,6 +119,7 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
+  // 1. Verzamel alle rijen die matchen met woningtype én indeling
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -129,6 +130,7 @@ export default function DownloadPage() {
 
   const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
 
+  // 2. Zoek het gekozen designpakket op
   const allePakketten: any[] = [];
   gebruikteRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
@@ -136,7 +138,7 @@ export default function DownloadPage() {
     pakketLijst.forEach((p: any) => allePakketten.push(p));
   });
 
-  if (configuratorData?.designPakketten || configuratorData?.design_pakketten) {
+  if (allePakketten.length === 0 && (configuratorData?.designPakketten || configuratorData?.design_pakketten)) {
     const algemeen = Array.isArray(configuratorData.designPakketten) ? configuratorData.designPakketten : (configuratorData.designPakketten?.nodes || configuratorData.design_pakketten || []);
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
@@ -152,10 +154,43 @@ export default function DownloadPage() {
     return false;
   }) || allePakketten[0] || {};
 
+  // 3. Verzamel downloadcategorieën uit zowel de matchende woningrij als het pakket zelf
   const alleCategorieen: any[] = [];
+  
+  // Eerst uit de matchende woningrij (waar de bestanden in WordPress aan gekoppeld zijn)
+  gebruikteRijen.forEach((rij: any) => {
+    const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || rij?.download_categorieën || [];
+    const catLijst = Array.isArray(cats) ? cats : cats?.nodes || [];
+    catLijst.forEach((c: any) => alleCategorieen.push(c));
+  });
+
+  // Ook uit het pakket zelf indien aanwezig
   const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || huidigPakketObj?.download_categorieën || [];
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
+
+  // Filter categorieën/bestanden op het gekozen designpakket (Modern Raw vs Hotel Chic)
+  const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
+    const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
+    const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
+
+    // Filter enkel bestanden die bij Modern Raw horen (of geen specifieke pakketnaam in de titel hebben)
+    const matchendeBestanden = bestandenLijst.filter((bestand: any) => {
+      const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
+      if (normPakket.includes('raw')) {
+        return titel.includes('modern raw') || (!titel.includes('hotel chic') && !titel.includes('chic'));
+      }
+      if (normPakket.includes('chic')) {
+        return titel.includes('hotel chic') || (!titel.includes('modern raw') && !titel.includes('raw'));
+      }
+      return true;
+    });
+
+    return {
+      ...cat,
+      bestandenLijst: matchendeBestanden,
+    };
+  }).filter((cat: any) => (cat?.bestandenLijst || []).length > 0);
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
@@ -220,9 +255,8 @@ export default function DownloadPage() {
       setIsDownloading(true);
       const filesToZip: any[] = [];
 
-      for (const cat of alleCategorieen) {
-        const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-        const bestandenLijst = Array.isArray(rawBestandenLijst) ? rawBestandenLijst : rawBestandenLijst?.nodes || [];
+      for (const cat of gefilterdeCategorieen) {
+        const bestandenLijst = cat?.bestandenLijst || [];
 
         for (const bestand of bestandenLijst) {
           const fileName = dataTypeSafeName(bestand);
@@ -342,10 +376,9 @@ export default function DownloadPage() {
 
         <div className="pt-6 pb-24">
           <div className="max-w-4xl mx-auto px-6 space-y-16">
-            {alleCategorieen?.map((cat: any, catIndex: number) => {
+            {gefilterdeCategorieen?.map((cat: any, catIndex: number) => {
               const catTitel = cat?.categorieTitel || cat?.categorie_titel;
-              const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-              const bestandenLijst = Array.isArray(rawBestandenLijst) ? rawBestandenLijst : rawBestandenLijst?.nodes || [];
+              const bestandenLijst = cat?.bestandenLijst || [];
 
               if (bestandenLijst.length === 0) return null;
 

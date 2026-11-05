@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T17:49:50.160Z
+Generated: 2026-11-05T18:04:12.746Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T17:49:48.314Z
+- Last activity: 2026-11-05T18:04:09.989Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (13), lib/cms.ts (8), components/configurator/StepOnewoning.tsx (6), app/download/page.tsx (5)
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (13), lib/cms.ts (7), app/download/page.tsx (6), components/configurator/StepOnewoning.tsx (6)
 - Suggested starting points: app/download/page.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 389 lines | 18877 chars | hash 242f0a80c3a9
-  Last snapshot: 2026-11-05T17:49:48.314Z
+- app/download/page.tsx | 422 lines | 20388 chars | hash a12394416f45
+  Last snapshot: 2026-11-05T18:04:09.989Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - components/configurator/StepFourConfirmation.tsx | 351 lines | 17011 chars | hash ad5e8b9d9763
   Last snapshot: 2026-11-05T17:41:37.984Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T18:04:09.989Z | saved | app/download/page.tsx
+- Summary: Line 122: replaced 227 lines with 260 lines.
+- Before: 389 lines | 18,877 chars | hash 242f0a80c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 422 lines | 20,388 chars | hash a12394416f45 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?.in..."
+- Current fragment: "// 1. Verzamel alle rijen die matchen met woningtype én indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '')..."
+
 ### 2026-11-05T17:49:48.314Z | saved | app/download/page.tsx
 - Summary: Line 39: replaced 121 lines with 116 lines.
 - Before: 394 lines | 19,207 chars | hash 9f8b311e0fe8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,25 +169,18 @@ Structured manifest: workspace.json
 - Previous fragment: "opgeslagenPakket, setOpgeslagenPakket] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indelin..."
 - Current fragment: "actiefPakket, setActiefPakket] = useState('Hotel Chic'); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indel..."
 
-### 2026-11-05T16:53:44.101Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 42: replaced 21 lines with 21 lines.
-- Before: 490 lines | 20,314 chars | hash 3e66695cda37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 490 lines | 20,353 chars | hash 6e15cccf6274 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- Previous fragment: "const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic'; / const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const normPak..."
-- Current fragment: "// BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen / const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic..."
-
 
 ## Hot Files
 - components/configurator/StepThreeVisuals.tsx (13 tracked changes)
-- lib/cms.ts (8 tracked changes)
+- lib/cms.ts (7 tracked changes)
+- app/download/page.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
-- app/download/page.tsx (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 59cc263 fix(download-page): remove moodboard gallery, prevent secure flash, and strictly filter downloads for selected design package
+- HEAD: 2026-11-05 9dee2fc fix(download-page): correct closing bracket typo on localStorage read
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -190,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- db21bf1 by Bas van Dooremalen on 2026-11-05
-  fix(step4): correct bracket typo on localStorage read for klantTelefoon
+- 9dee2fc by Bas van Dooremalen on 2026-11-05
+  fix(download-page): correct closing bracket typo on localStorage read
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
