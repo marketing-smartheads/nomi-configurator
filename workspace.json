@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:23:36.362Z",
-  "generatedAtEpochMs": 1793881416362,
+  "generatedAt": "2026-11-05T12:28:16.266Z",
+  "generatedAtEpochMs": 1793881696266,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:23:34.638Z",
+    "lastActivityAt": "2026-11-05T12:28:14.539Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793881414638,
-      "lineCount": 229,
-      "charCount": 6293,
-      "hash": "542201b41f6c",
+      "updatedAt": 1793881694539,
+      "lineCount": 225,
+      "charCount": 6181,
+      "hash": "759e72d2dd03",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 69: replaced 9 lines with 13 lines.",
+      "recordedAt": "2026-11-05T12:28:14.539Z",
+      "recordedAtEpochMs": 1793881694539,
+      "before": {
+        "kind": "text",
+        "lineCount": 221,
+        "charCount": 6077,
+        "hash": "426f87c5a81b",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881694539
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6181,
+        "hash": "759e72d2dd03",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881694539
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 9,
+        "addedLines": 13,
+        "summary": "Line 69: replaced 9 lines with 13 lines.",
+        "beforeFragment": "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl",
+        "afterFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 69: replaced 17 lines with 9 lines.",
+      "recordedAt": "2026-11-05T12:26:27.527Z",
+      "recordedAtEpochMs": 1793881587527,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881587527
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 221,
+        "charCount": 6077,
+        "hash": "426f87c5a81b",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881587527
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 17,
+        "addedLines": 9,
+        "summary": "Line 69: replaced 17 lines with 9 lines.",
+        "beforeFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s...",
+        "afterFragment": "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1027,83 +1091,19 @@
         "beforeFragment": "[100dvh]",
         "afterFragment": "dvh"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/MainContent.tsx",
-      "toPath": "",
-      "summary": "Line 97: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-02T10:45:34.061Z",
-      "recordedAtEpochMs": 1793616334061,
-      "before": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 8847,
-        "hash": "ca1e0d747e51",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793616334061
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 8849,
-        "hash": "a83c8dcaab63",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor...",
-        "updatedAt": 1793616334061
-      },
-      "diff": {
-        "lineStart": 97,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 97: replaced 1 line with 1 line.",
-        "beforeFragment": "screen",
-        "afterFragment": "[100dvh]"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 33: replaced 205 lines with 221 lines.",
-      "recordedAt": "2026-11-02T10:44:41.742Z",
-      "recordedAtEpochMs": 1793616281742,
-      "before": {
-        "kind": "text",
-        "lineCount": 272,
-        "charCount": 9894,
-        "hash": "9b7741ac908a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793616281742
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 288,
-        "charCount": 10168,
-        "hash": "79594072f6a6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793616281742
-      },
-      "diff": {
-        "lineStart": 33,
-        "removedLines": 205,
-        "addedLines": 221,
-        "summary": "Line 33: replaced 205 lines with 221 lines.",
-        "beforeFragment": "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd...",
-        "afterFragment": "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 10
-    },
-    {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 6
+      "count": 8
     },
     {
       "filePath": "lib/cms.ts",
+      "count": 8
+    },
+    {
+      "filePath": "app/dashboard/page.tsx",
       "count": 6
     },
     {
@@ -1130,11 +1130,12 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 948b318 fix(cms): remove invalid root-level designPakketten field from graphql query",
-    "statusSummary": "3 modifieds",
-    "changedFileCount": 3,
+    "headSummary": "2026-11-05 fdd8249 fix(cms): ensure designPakketten is solely queried nested inside woningTypen",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
       "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
       "M workspace.json",
       "M workspacememory.md"
     ],

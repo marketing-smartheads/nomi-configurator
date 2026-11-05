@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:23:36.362Z
+Generated: 2026-11-05T12:28:16.266Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:23:34.638Z
+- Last activity: 2026-11-05T12:28:14.539Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (10), app/dashboard/page.tsx (6), lib/cms.ts (6), components/configurator/StepThreeVisuals.tsx (3)
+- Hottest files right now: app/download/page.tsx (8), lib/cms.ts (8), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (3)
 - Suggested starting points: lib/cms.ts, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 3 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- lib/cms.ts | 229 lines | 6293 chars | hash 542201b41f6c
-  Last snapshot: 2026-11-05T12:23:34.638Z
+- lib/cms.ts | 225 lines | 6181 chars | hash 759e72d2dd03
+  Last snapshot: 2026-11-05T12:28:14.539Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepThreeVisuals.tsx | 487 lines | 20249 chars | hash 154f87251e36
   Last snapshot: 2026-11-05T12:17:56.761Z
@@ -65,6 +65,20 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:28:14.539Z | saved | lib/cms.ts
+- Summary: Line 69: replaced 9 lines with 13 lines.
+- Before: 221 lines | 6,077 chars | hash 426f87c5a81b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 225 lines | 6,181 chars | hash 759e72d2dd03 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
+- Current fragment: "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
+
+### 2026-11-05T12:26:27.527Z | saved | lib/cms.ts
+- Summary: Line 69: replaced 17 lines with 9 lines.
+- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 221 lines | 6,077 chars | hash 426f87c5a81b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
+- Current fragment: "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
+
 ### 2026-11-05T12:23:34.638Z | saved | lib/cms.ts
 - Summary: Saved without a textual diff.
 - Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -148,25 +162,11 @@ Structured manifest: workspace.json
 - Previous fragment: "[100dvh]"
 - Current fragment: "dvh"
 
-### 2026-11-02T10:45:34.061Z | saved | components/MainContent.tsx
-- Summary: Line 97: replaced 1 line with 1 line.
-- Before: 217 lines | 8,847 chars | hash ca1e0d747e51 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 217 lines | 8,849 chars | hash a83c8dcaab63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "screen"
-- Current fragment: "[100dvh]"
-
-### 2026-11-02T10:44:41.742Z | saved | components/LoginScreen.tsx
-- Summary: Line 33: replaced 205 lines with 221 lines.
-- Before: 272 lines | 9,894 chars | hash 9b7741ac908a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 288 lines | 10,168 chars | hash 79594072f6a6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- Previous fragment: "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd..."
-- Current fragment: "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
-
 
 ## Hot Files
-- app/download/page.tsx (10 tracked changes)
+- app/download/page.tsx (8 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
-- lib/cms.ts (6 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
@@ -175,9 +175,10 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 948b318 fix(cms): remove invalid root-level designPakketten field from graphql query
-- Working tree summary: 3 modifieds
+- HEAD: 2026-11-05 fdd8249 fix(cms): ensure designPakketten is solely queried nested inside woningTypen
+- Working tree summary: 4 modifieds
 - M graphify-out/WORKSPACE_MEMORY.md
+- M lib/cms.ts
 - M workspace.json
 - M workspacememory.md
 
