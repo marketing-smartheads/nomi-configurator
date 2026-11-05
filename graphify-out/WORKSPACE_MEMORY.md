@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:21:47.016Z
+Generated: 2026-11-05T23:31:00.286Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:21:45.236Z
+- Last activity: 2026-11-05T23:30:57.755Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (13), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (6), app/api/verify-voucher/route.ts (4)
+- Hottest files right now: lib/cms.ts (14), components/LoginScreen.tsx (7), app/api/vouchers/route.ts (6), app/api/verify-voucher/route.ts (4)
 - Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 323 lines | 9722 chars | hash 073cca7e70e2
-  Last snapshot: 2026-11-05T23:21:45.236Z
+- lib/cms.ts | 323 lines | 9730 chars | hash dfc39aa891ec
+  Last snapshot: 2026-11-05T23:30:57.755Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:30:57.755Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 68 lines with 68 lines.
+- Before: 323 lines | 9,722 chars | hash 073cca7e70e2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 323 lines | 9,730 chars | hash dfc39aa891ec | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
+- Current fragment: "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat..."
+
 ### 2026-11-05T23:21:45.236Z | saved | lib/cms.ts
 - Summary: Line 232: replaced 57 lines with 82 lines.
 - Before: 298 lines | 8,744 chars | hash 283b32fc338c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -163,17 +170,10 @@ Structured manifest: workspace.json
 - Previous fragment: "const graphqlEndpoint = process.env.NODE_ENV === 'development' / ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql') / : (process.e..."
 - Current fragment: "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await..."
 
-### 2026-11-05T22:36:59.043Z | saved | lib/cms.ts
-- Summary: Line 227: replaced 90 lines with 100 lines.
-- Before: 323 lines | 9,727 chars | hash bba005dcc211 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 333 lines | 10,306 chars | hash 6e408770fd7e | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cl..."
-- Current fragment: "Flexibele en robuuste client-side voucher verificatie en e-mailkoppeling / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
-
 
 ## Hot Files
-- lib/cms.ts (13 tracked changes)
-- components/LoginScreen.tsx (8 tracked changes)
+- lib/cms.ts (14 tracked changes)
+- components/LoginScreen.tsx (7 tracked changes)
 - app/api/vouchers/route.ts (6 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
 - app/download/page.tsx (3 tracked changes)
@@ -183,7 +183,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 c46dc2c fix(auth): restore stable graphql query and apply robust email matching security
+- HEAD: 2026-11-06 83a1cc4 Merge branch 'feature/beveiliging'
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -193,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 2b61e13 by Bas van Dooremalen on 2026-11-05
-  security(auth): enforce strict email matching for already claimed vouchers while allowing open registration for new ones
+- 83a1cc4 by Bas van Dooremalen on 2026-11-05
+  Merge branch 'feature/beveiliging'
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

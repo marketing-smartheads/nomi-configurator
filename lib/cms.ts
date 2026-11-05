@@ -229,7 +229,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
-  // We halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`)
+  // We gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -240,7 +240,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
-            klant_email
+            klantEmail
           }
         }
       }
@@ -278,7 +278,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
-    const opgeslagenEmail = String(velden.klant_email || '').trim().toLowerCase();
+    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
 
     console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail in WP:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
 
@@ -296,7 +296,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
       // en slaan we dit e-mailadres direct dynamisch op in WordPress voor toekomstige beveiliging.
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klant_email: $email, status: "bevestigd" } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
             voucher { databaseId }
           }
         }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:21:47.016Z",
-  "generatedAtEpochMs": 1793920907016,
+  "generatedAt": "2026-11-05T23:31:00.286Z",
+  "generatedAtEpochMs": 1793921460286,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:21:45.236Z",
+    "lastActivityAt": "2026-11-05T23:30:57.755Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793920905236,
+      "updatedAt": 1793921457755,
       "lineCount": 323,
-      "charCount": 9722,
-      "hash": "073cca7e70e2",
+      "charCount": 9730,
+      "hash": "dfc39aa891ec",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 232: replaced 68 lines with 68 lines.",
+      "recordedAt": "2026-11-05T23:30:57.755Z",
+      "recordedAtEpochMs": 1793921457755,
+      "before": {
+        "kind": "text",
+        "lineCount": 323,
+        "charCount": 9722,
+        "hash": "073cca7e70e2",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793921457754
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 323,
+        "charCount": 9730,
+        "hash": "dfc39aa891ec",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793921457755
+      },
+      "diff": {
+        "lineStart": 232,
+        "removedLines": 68,
+        "addedLines": 68,
+        "summary": "Line 232: replaced 68 lines with 68 lines.",
+        "beforeFragment": "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t...",
+        "afterFragment": "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,48 +1131,16 @@
         "beforeFragment": "const graphqlEndpoint = process.env.NODE_ENV === 'development' / ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql') / : (process.e...",
         "afterFragment": "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 227: replaced 90 lines with 100 lines.",
-      "recordedAt": "2026-11-05T22:36:59.043Z",
-      "recordedAtEpochMs": 1793918219043,
-      "before": {
-        "kind": "text",
-        "lineCount": 323,
-        "charCount": 9727,
-        "hash": "bba005dcc211",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918219042
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 333,
-        "charCount": 10306,
-        "hash": "6e408770fd7e",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918219043
-      },
-      "diff": {
-        "lineStart": 227,
-        "removedLines": 90,
-        "addedLines": 100,
-        "summary": "Line 227: replaced 90 lines with 100 lines.",
-        "beforeFragment": "NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cl...",
-        "afterFragment": "Flexibele en robuuste client-side voucher verificatie en e-mailkoppeling / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 13
+      "count": 14
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 8
+      "count": 7
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1170,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 c46dc2c fix(auth): restore stable graphql query and apply robust email matching security",
+    "headSummary": "2026-11-06 83a1cc4 Merge branch 'feature/beveiliging'",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1180,7 +1180,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2b61e13 by Bas van Dooremalen on 2026-11-05\n  security(auth): enforce strict email matching for already claimed vouchers while allowing open registration for new ones\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 83a1cc4 by Bas van Dooremalen on 2026-11-05\n  Merge branch 'feature/beveiliging'\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
