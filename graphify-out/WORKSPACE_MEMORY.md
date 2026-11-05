@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:16:31.743Z
+Generated: 2026-11-05T23:19:15.634Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:16:29.964Z
+- Last activity: 2026-11-05T23:19:13.176Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (11), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (5)
+- Hottest files right now: lib/cms.ts (12), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (4)
 - Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 315 lines | 9315 chars | hash 4d4e1069a662
-  Last snapshot: 2026-11-05T23:16:29.964Z
+- lib/cms.ts | 298 lines | 8744 chars | hash 283b32fc338c
+  Last snapshot: 2026-11-05T23:19:13.176Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:19:13.176Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 74 lines with 57 lines.
+- Before: 315 lines | 9,315 chars | hash 4d4e1069a662 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 298 lines | 8,744 chars | hash 283b32fc338c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVeld..."
+- Current fragment: "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
+
 ### 2026-11-05T23:16:29.964Z | saved | lib/cms.ts
 - Summary: Line 232: replaced 45 lines with 77 lines.
 - Before: 283 lines | 7,942 chars | hash b67d52898205 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -163,18 +170,12 @@ Structured manifest: workspace.json
 - Previous fragment: "interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKlantEmail: (val: string) => void; / error: string | nu..."
 - Current fragment: "import { verifyAndAuthVoucher } from '../lib/cms'; / interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKl..."
 
-### 2026-11-05T22:29:50.941Z | saved | lib/cms.ts
-- Summary: Line 225: inserted 99 lines.
-- Before: 225 lines | 6,176 chars | hash 4ba55e533623 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 323 lines | 9,727 chars | hash bba005dcc211 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Current fragment: "// 🛑 NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / co..."
-
 
 ## Hot Files
-- lib/cms.ts (11 tracked changes)
+- lib/cms.ts (12 tracked changes)
 - components/LoginScreen.tsx (8 tracked changes)
 - app/api/vouchers/route.ts (7 tracked changes)
-- app/api/verify-voucher/route.ts (5 tracked changes)
+- app/api/verify-voucher/route.ts (4 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/auth-voucher (2 tracked changes)
 - app/api/auth-voucher/route.ts (2 tracked changes)
@@ -182,7 +183,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 62e91bf fix(auth): restore clean and working verifyAndAuthVoucher logic
+- HEAD: 2026-11-06 2b61e13 security(auth): enforce strict email matching for already claimed vouchers while allowing open registration for new ones
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -192,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 091c3f9 by Bas van Dooremalen on 2026-11-05
-  fix(auth): restore dynamic email validation for used vs unused vouchers based on WP fields
+- 2b61e13 by Bas van Dooremalen on 2026-11-05
+  security(auth): enforce strict email matching for already claimed vouchers while allowing open registration for new ones
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

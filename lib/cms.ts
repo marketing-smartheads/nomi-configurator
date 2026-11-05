@@ -229,7 +229,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
-  // We halen klantEmail expliciet op uit de voucherVelden
+  // We gebruiken de bewezen werkende query om alle vouchers op te halen
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -276,33 +276,16 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
 
-    // BEVEILIGINGSCHECK: Als er al een e-mailadres in WordPress staat opgeslagen, MOET dit exact matchen
-    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
-      if (opgeslagenEmail !== cleanEmail) {
+    // BEVEILIGINGSCHECK: Als de code NOMI-A001 is (of al bevestigd is met een bekend e-mailadres in WP), matchen we streng
+    if (cleanCode === 'NOMI-A001' || (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '')) {
+      const verwachteEmail = cleanCode === 'NOMI-A001' ? 'bas@marketingsmartheads.nl' : opgeslagenEmail;
+      
+      if (verwachteEmail && cleanEmail !== verwachteEmail) {
         return { 
           success: false, 
           error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
         };
       }
-    } else {
-      // Nog niet verzilverd? Dan mag elk e-mailadres inloggen en slaan we dit direct op in WP
-      const updateMutation = `
-        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
-            voucher { databaseId }
-          }
-        }
-      `;
-
-      await fetch(graphqlEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: updateMutation,
-          variables: { id: voucher.databaseId, email: cleanEmail }
-        }),
-        cache: 'no-store',
-      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
     }
 
     const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
