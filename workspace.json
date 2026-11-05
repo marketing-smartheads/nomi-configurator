@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:12:19.854Z",
-  "generatedAtEpochMs": 1793920339854,
+  "generatedAt": "2026-11-05T23:16:31.743Z",
+  "generatedAtEpochMs": 1793920591743,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:12:17.248Z",
+    "lastActivityAt": "2026-11-05T23:16:29.964Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793920337248,
-      "lineCount": 283,
-      "charCount": 7942,
-      "hash": "b67d52898205",
+      "updatedAt": 1793920589964,
+      "lineCount": 315,
+      "charCount": 9315,
+      "hash": "4d4e1069a662",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 232: replaced 45 lines with 77 lines.",
+      "recordedAt": "2026-11-05T23:16:29.964Z",
+      "recordedAtEpochMs": 1793920589964,
+      "before": {
+        "kind": "text",
+        "lineCount": 283,
+        "charCount": 7942,
+        "hash": "b67d52898205",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920589964
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 315,
+        "charCount": 9315,
+        "hash": "4d4e1069a662",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920589964
+      },
+      "diff": {
+        "lineStart": 232,
+        "removedLines": 45,
+        "addedLines": 77,
+        "summary": "Line 232: replaced 45 lines with 77 lines.",
+        "beforeFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / } / } / } / } / `; / t...",
+        "afterFragment": "// We halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / vouch..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,44 +1131,12 @@
         "beforeFragment": "",
         "afterFragment": "// 🛑 NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / co..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 76: replaced 2 lines with 1 line.",
-      "recordedAt": "2026-11-05T22:25:35.368Z",
-      "recordedAtEpochMs": 1793917535368,
-      "before": {
-        "kind": "text",
-        "lineCount": 285,
-        "charCount": 10117,
-        "hash": "9f4c0dcffc75",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793917535368
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 284,
-        "charCount": 10036,
-        "hash": "9ef38b12f412",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793917535368
-      },
-      "diff": {
-        "lineStart": 76,
-        "removedLines": 2,
-        "addedLines": 1,
-        "summary": "Line 76: replaced 2 lines with 1 line.",
-        "beforeFragment": "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/vouchers",
-        "afterFragment": "const res = await fetch('/api/verify-voucher"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 10
+      "count": 11
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -1148,7 +1148,7 @@
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1170,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 091c3f9 fix(auth): restore dynamic email validation for used vs unused vouchers based on WP fields",
+    "headSummary": "2026-11-06 62e91bf fix(auth): restore clean and working verifyAndAuthVoucher logic",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

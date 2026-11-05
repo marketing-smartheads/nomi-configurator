@@ -229,6 +229,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
+  // We halen klantEmail expliciet op uit de voucherVelden
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -239,6 +240,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
+            klantEmail
           }
         }
       }
@@ -270,10 +272,40 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
+    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
 
-    // Voor NOMI-A001 is de status 'bevestigd' in WordPress. 
-    // Omdat je al bent ingelogd en de downloadpagina 14 dagen geldig is, zorgen we dat deze code direct succesvol doorlaat.
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd');
+    console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
+
+    // BEVEILIGINGSCHECK: Als er al een e-mailadres in WordPress staat opgeslagen, MOET dit exact matchen
+    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
+      if (opgeslagenEmail !== cleanEmail) {
+        return { 
+          success: false, 
+          error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
+        };
+      }
+    } else {
+      // Nog niet verzilverd? Dan mag elk e-mailadres inloggen en slaan we dit direct op in WP
+      const updateMutation = `
+        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
+            voucher { databaseId }
+          }
+        }
+      `;
+
+      await fetch(graphqlEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: updateMutation,
+          variables: { id: voucher.databaseId, email: cleanEmail }
+        }),
+        cache: 'no-store',
+      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
+    }
+
+    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
 
     return { success: true, isBevestigd };
   } catch (err) {
