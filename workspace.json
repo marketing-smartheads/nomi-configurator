@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:45:19.968Z",
-  "generatedAtEpochMs": 1793918719968,
+  "generatedAt": "2026-11-05T22:48:50.918Z",
+  "generatedAtEpochMs": 1793918930918,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:45:17.490Z",
+    "lastActivityAt": "2026-11-05T22:48:49.121Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793918717490,
-      "lineCount": 321,
-      "charCount": 9202,
-      "hash": "ad9adb9f03c6",
+      "updatedAt": 1793918929121,
+      "lineCount": 281,
+      "charCount": 7764,
+      "hash": "33e5efc5d32c",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 223: replaced 92 lines with 52 lines.",
+      "recordedAt": "2026-11-05T22:48:49.121Z",
+      "recordedAtEpochMs": 1793918929121,
+      "before": {
+        "kind": "text",
+        "lineCount": 321,
+        "charCount": 9202,
+        "hash": "ad9adb9f03c6",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918929121
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 281,
+        "charCount": 7764,
+        "hash": "33e5efc5d32c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793918929121
+      },
+      "diff": {
+        "lineStart": 223,
+        "removedLines": 92,
+        "addedLines": 52,
+        "summary": "Line 223: replaced 92 lines with 52 lines.",
+        "beforeFragment": "export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCode = (toegangscode || '').trim().toUpperCase(); / const cleanEmail = (klant...",
+        "afterFragment": "// Simpele, robuuste verificatie op basis van de bewezen werkende velden / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1071,31 +1103,6 @@
         "beforeFragment": "angt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.W...",
         "afterFragment": "oor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / c..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T22:03:02.152Z",
-      "recordedAtEpochMs": 1793916182152,
-      "before": {
-        "kind": "text",
-        "lineCount": 123,
-        "charCount": 4121,
-        "hash": "d299169ddd87",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
-        "updatedAt": 1793916182152
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 123,
-        "charCount": 4121,
-        "hash": "d299169ddd87",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
-        "updatedAt": 1793916182152
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1112,12 +1119,12 @@
       "count": 7
     },
     {
-      "filePath": "app/api/auth/route.ts",
-      "count": 4
+      "filePath": "lib/cms.ts",
+      "count": 5
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 4
+      "filePath": "app/api/auth/route.ts",
+      "count": 3
     },
     {
       "filePath": "app/api/auth-voucher",
@@ -1135,7 +1142,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 911b1d4 fix(cms): hardcode live graphql endpoint to bypass env variable resolution issues",
+    "headSummary": "2026-11-05 c11dc66 fix(auth): clean up lib/cms.ts and hardcode live graphql endpoint for client-side verification",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

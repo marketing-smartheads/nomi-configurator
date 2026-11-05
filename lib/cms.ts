@@ -220,14 +220,14 @@ export async function getVoucherData(voucherCode: string) {
   }
 }
 
+// Simpele, robuuste verificatie op basis van de bewezen werkende velden
 export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
   const cleanCode = (toegangscode || '').trim().toUpperCase();
-  const cleanEmail = (klantEmail || '').trim().toLowerCase();
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
   const query = `
-    query GetAllVouchersForAuth {
+    query GetAllVouchersSimple {
       vouchers(first: 100) {
         nodes {
           databaseId
@@ -236,7 +236,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
-            klantEmail
           }
         }
       }
@@ -246,9 +245,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
   try {
     const res = await fetch(graphqlEndpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query }),
       cache: 'no-store',
     });
@@ -256,12 +253,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
-    console.log('DEBUG: Ingevoerde code:', cleanCode);
     console.log('DEBUG: Totaal aantal opgehaalde vouchers uit WP:', vouchers.length);
-
-    if (json.errors) {
-      console.error('DEBUG: GraphQL errors:', json.errors);
-    }
 
     const voucher = vouchers.find((v: any) => {
       const codeField = String(v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
@@ -277,41 +269,9 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     }
 
     const velden = voucher.voucherVelden || {};
-    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
     const status = String(velden.status || '').trim().toLowerCase();
 
-    console.log('DEBUG: Gevonden voucher ID:', voucher.databaseId, '| Opgeslagen e-mail:', opgeslagenEmail);
-
-    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
-      if (opgeslagenEmail !== cleanEmail) {
-        return { 
-          success: false, 
-          error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
-        };
-      }
-    } else {
-      const updateMutation = `
-        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
-            voucher { databaseId }
-          }
-        }
-      `;
-
-      await fetch(graphqlEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: updateMutation,
-          variables: { id: voucher.databaseId, email: cleanEmail }
-        }),
-        cache: 'no-store',
-      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
-    }
-
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
+    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd');
 
     return { success: true, isBevestigd };
   } catch (err) {
