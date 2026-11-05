@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:11:33.611Z",
-  "generatedAtEpochMs": 1793898693611,
+  "generatedAt": "2026-11-05T17:25:44.046Z",
+  "generatedAtEpochMs": 1793899544046,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "app/download/page.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "app/download/page.tsx",
-      "components/Hero.tsx",
+      "components/configurator/StepOnewoning.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
       "package-lock.json",
-      "package.json"
+      "package.json",
+      "tsconfig.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:11:31.875Z",
+    "lastActivityAt": "2026-11-05T17:25:42.312Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,12 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1793899542312,
+      "lineCount": 371,
+      "charCount": 17693,
+      "hash": "7b9bdd6162c7",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793898691875,
-      "lineCount": 122,
-      "charCount": 5571,
-      "hash": "7c52c9f0546f",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+      "updatedAt": 1793899526922,
+      "lineCount": 348,
+      "charCount": 16717,
+      "hash": "36cc8926abe6",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -597,14 +605,6 @@
       "charCount": 8924,
       "hash": "62093ff0ea75",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1793890964770,
-      "lineCount": 422,
-      "charCount": 19675,
-      "hash": "5a4b08bcd6c0",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -640,6 +640,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 15: replaced 384 lines with 333 lines.",
+      "recordedAt": "2026-11-05T17:25:42.312Z",
+      "recordedAtEpochMs": 1793899542312,
+      "before": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 19675,
+        "hash": "5a4b08bcd6c0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793899542312
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 371,
+        "charCount": 17693,
+        "hash": "7b9bdd6162c7",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793899542312
+      },
+      "diff": {
+        "lineStart": 15,
+        "removedLines": 384,
+        "addedLines": 333,
+        "summary": "Line 15: replaced 384 lines with 333 lines.",
+        "beforeFragment": "Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<boolean>(false); / const [isAuthorized, setIsAuthorized...",
+        "afterFragment": "Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<boolean>(false); / const [isAuthorized, setIsAuthorized..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 117 lines with 343 lines.",
+      "recordedAt": "2026-11-05T17:25:26.922Z",
+      "recordedAtEpochMs": 1793899526922,
+      "before": {
+        "kind": "text",
+        "lineCount": 122,
+        "charCount": 5571,
+        "hash": "7c52c9f0546f",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793899526922
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 348,
+        "charCount": 16717,
+        "hash": "36cc8926abe6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793899526922
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 117,
+        "addedLines": 343,
+        "summary": "Line 3: replaced 117 lines with 343 lines.",
+        "beforeFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilter...",
+        "afterFragment": "import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_N..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1048,63 +1112,6 @@
         "beforeFragment": "if (!woningType && woningTypenLijst.length > 0) { / return ( / <div className=\"space-y-12 min-h-[400px] flex flex-col justify-center items-center\"> / <p className=\"text-xs text-...",
         "afterFragment": "// Unieke indelingen filteren op basis van indelingstitel zodat dubbele rijen uit het CMS netjes worden samengevoegd / const uniekeIndelingen = gefilterdeLijst.filter((item: any..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 286 lines with 204 lines.",
-      "recordedAt": "2026-11-05T15:02:44.770Z",
-      "recordedAtEpochMs": 1793890964770,
-      "before": {
-        "kind": "text",
-        "lineCount": 504,
-        "charCount": 23775,
-        "hash": "6f867323f7b2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793890964770
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 19675,
-        "hash": "5a4b08bcd6c0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793890964770
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 286,
-        "addedLines": 204,
-        "summary": "Line 7: replaced 286 lines with 204 lines.",
-        "beforeFragment": ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se...",
-        "afterFragment": "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T15:02:32.648Z",
-      "recordedAtEpochMs": 1793890952648,
-      "before": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 15166,
-        "hash": "221f402a9bba",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793890952648
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 15166,
-        "hash": "221f402a9bba",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793890952648
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1114,7 +1121,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 13
+      "count": 12
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1126,31 +1133,31 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 1
-    },
-    {
-      "filePath": "components/Hero.tsx",
-      "count": 1
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 8b363dd fix(step3): aggregate design packages and panorama renders across all matching cms layout rows",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 ff4054c fix(step1): persist selected layout to both localStorage and sessionStorage",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M app/download/page.tsx",
+      "M components/configurator/StepOnewoning.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7d515c4 by Bas van Dooremalen on 2026-11-05\n  fix(step3): add keyword-based fallback matching for design packages like modern raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ff4054c by Bas van Dooremalen on 2026-11-05\n  fix(step1): persist selected layout to both localStorage and sessionStorage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

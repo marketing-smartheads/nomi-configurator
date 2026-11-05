@@ -12,7 +12,7 @@ export default function DownloadPage() {
   
   const [woningType, setWoningType] = useState<string>('Type A');
   const [gekozenIndeling, setGekozenIndeling] = useState<string>('');
-  const [designPakket, setDesignPakket] = useState<string>('Hotel Chic');
+  const [designPakket, setDesignPakket] = useState<string>('Modern Raw');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
@@ -23,7 +23,6 @@ export default function DownloadPage() {
 
     async function initDownloadPage() {
       try {
-        // STRIKTE TOEGANGSCONTROLE: Vereist een definitieve bevestiging via de configurator-flow
         const isDefinitiefBevestigd = 
           localStorage.getItem('configurator_definitief_bevestigd') === 'true' || 
           sessionStorage.getItem('configuratorConfirmed') === 'true';
@@ -54,7 +53,7 @@ export default function DownloadPage() {
         if (isMounted && cmsData) setPageData(cmsData);
 
         let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
-        let resolvedPakket = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || 'Hotel Chic';
+        let resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Modern Raw';
 
         let resolvedIndeling = '';
         try {
@@ -94,53 +93,33 @@ export default function DownloadPage() {
 
   const configuratorData = pageData?.configuratorData || pageData?.configurator || {};
   const downloadSectie = configuratorData?.downloadSectie || {};
-  const designPakkettenLijst = configuratorData?.designPaketten || configuratorData?.design_paketten || [];
-  const woningTypenLijst = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
-
-  const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const huidigPakketObj = designPakkettenLijst.find((p: any) => {
-    const titel = (p?.pakketTitel || p?.pakket_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return titel.includes(normPakket) || normPakket.includes(titel);
-  }) || designPakkettenLijst[0];
-
-  const normaliseer = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
-
-  const haalIndelingNummers = (tekst: string): Set<number> => {
-    const t = (tekst || '').toLowerCase();
-    const nummers = new Set<number>();
-    const patronen = [
-      /type[\s_-]*[a-z][\s_-]*c[o0]?0*(\d+)/g,
-      /concept[\s_-]*0*(\d+)/g,
-      /indeling[\s_-]*0*(\d+)/g,
-    ];
-    for (const p of patronen) {
-      for (const m of t.matchAll(p)) nummers.add(Number(m[1]));
-    }
-    return nummers;
-  };
-
-  const gekozenNummers = haalIndelingNummers(gekozenIndeling || '');
-  const gekozenNummer: number | null = gekozenNummers.size > 0
-    ? Array.from(gekozenNummers)[0]
-    : ((gekozenIndeling || '').match(/\d+/) ? Number((gekozenIndeling || '').match(/\d+/)![0]) : null);
+  const rawWoningTypen = configuratorData?.woningTypen || configuratorData?.woning_typen || [];
+  const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  const woningKandidaten = woningTypenLijst.filter((w: any) => {
+  // Vind alle rijen die matchen met woningtype en indeling
+  const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return naam && (naam.includes(normWoning) || normWoning.includes(naam));
+    const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
+    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    return typeMatch && indelingMatch;
   });
-  const huidigWoningTypeObj =
-    (gekozenNummer !== null &&
-      woningKandidaten.find((w: any) => {
-        const indelingTitel = w?.indelingTitel || w?.indeling_titel || w?.titel || '';
-        return haalIndelingNummers(indelingTitel).has(gekozenNummer);
-      })) ||
-    woningKandidaten[0] ||
-    woningTypenLijst[0];
 
-  const moodboardGallery = huidigPakketObj?.moodboardGallery || huidigWoningTypeObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery || [];
+  const huidigWoningTypeObj = matchendeRijen[0] || woningTypenLijst[0] || {};
+
+  // Verzamel alle download categorieën uit alle matchende rijen
+  const alleCategorieen: any[] = [];
+  const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
+  gebruikteRijen.forEach((rij: any) => {
+    const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || rij?.download_categorieën || [];
+    const catLijst = Array.isArray(cats) ? cats : cats?.nodes || [];
+    catLijst.forEach((c: any) => alleCategorieen.push(c));
+  });
+
+  const moodboardGallery = huidigWoningTypeObj?.moodboardGallery || huidigWoningTypeObj?.moodboard_gallery || [];
   const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
@@ -159,69 +138,9 @@ export default function DownloadPage() {
     return typeof url === 'string' && url.startsWith('http') ? url : null;
   };
 
-  const categorieen = huidigWoningTypeObj?.downloadCategorie || huidigWoningTypeObj?.downloadCategorieën || huidigWoningTypeObj?.download_categorieën || [];
+  const dataTypeSafeName = (bestand: any) => bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
 
-  const alleNormPakketten: string[] = Array.from(new Set([
-    ...designPakkettenLijst.map((p: any) => normaliseer(p?.pakketTitel || p?.pakket_titel || '')).filter(Boolean),
-    'hotelchic',
-    'modernraw',
-  ]));
-  const actiefPakket = alleNormPakketten.find(p => normaliseer(designPakket).includes(p));
-  const vindPakket = (tekst: string) => {
-    const n = normaliseer(tekst);
-    return alleNormPakketten.find(p => n.includes(p));
-  };
-
-  const getGefilterdeBestanden = (rawBestandenLijst: any[]) => {
-    return rawBestandenLijst.filter((bestand: any) => {
-      const titel = bestand?.bestandTitel || bestand?.bestand_titel || '';
-      if (!titel) return false;
-
-      const url = getFileUrl(bestand) || '';
-      const bestandsnaam = safeDecode(url.split('?')[0].split('/').pop() || '');
-
-      const pakketInBestand = vindPakket(titel) ?? vindPakket(bestandsnaam);
-      if (pakketInBestand && pakketInBestand !== actiefPakket) return false;
-
-      if (gekozenNummer === null) return true;
-      let nummers = haalIndelingNummers(titel);
-      if (nummers.size === 0) nummers = haalIndelingNummers(bestandsnaam);
-      if (nummers.size === 0) return true;
-      return nummers.has(gekozenNummer);
-    });
-  };
-
-  if (needsVoucherInput) {
-    return (
-      <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
-        <Header currentScreen="download" />
-        <main className="grow bg-[#F9F6F0] flex items-center justify-center px-6 py-20">
-          <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-[#EFECE6] text-center space-y-6">
-            <div>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVEILIGDE PAGINA</span>
-              <h2 className="text-3xl font-serif text-dark mt-2">Geen actieve configuratie</h2>
-              <p className="text-[#666] text-sm mt-2 leading-relaxed">U heeft de configuratie nog niet doorlopen en bevestigd. Voltooi eerst alle stappen in de configurator om uw downloads te ontgrendelen.</p>
-            </div>
-            <button 
-              onClick={() => router.push('/')}
-              className="w-full bg-dark text-white py-3.5 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer"
-            >
-              Naar de configurator
-            </button>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!isAuthorized) {
-    return (
-      <div className="min-h-screen bg-dark flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
+  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
     const subObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand || bestand;
@@ -241,7 +160,7 @@ export default function DownloadPage() {
     return ext;
   };
 
-  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string, rawBestandObj: any) => {
+  const handleSingleDownload = (e: React.MouseEvent, fileUrl: string | null, fileName: string) => {
     e.preventDefault();
     if (!fileUrl || fileUrl === '#') {
       alert('Geen geldig bestand gekoppeld in het CMS.');
@@ -267,11 +186,11 @@ export default function DownloadPage() {
       setIsDownloading(true);
       const filesToZip: any[] = [];
 
-      for (const cat of categorieen) {
+      for (const cat of alleCategorieen) {
         const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-        const gefilterdeBestanden = getGefilterdeBestanden(rawBestandenLijst);
+        const bestandenLijst = Array.isArray(rawBestandenLijst) ? rawBestandenLijst : rawBestandenLijst?.nodes || [];
 
-        for (const bestand of gefilterdeBestanden) {
+        for (const bestand of bestandenLijst) {
           const fileName = dataTypeSafeName(bestand);
           const fileUrl = getFileUrl(bestand);
           if (fileUrl) {
@@ -316,7 +235,37 @@ export default function DownloadPage() {
     }
   };
 
-  const dataTypeSafeName = (bestand: any) => bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
+  if (needsVoucherInput) {
+    return (
+      <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
+        <Header currentScreen="download" />
+        <main className="grow bg-[#F9F6F0] flex items-center justify-center px-6 py-20">
+          <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-[#EFECE6] text-center space-y-6">
+            <div>
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVEILIGDE PAGINA</span>
+              <h2 className="text-3xl font-serif text-dark mt-2">Geen actieve configuratie</h2>
+              <p className="text-[#666] text-sm mt-2 leading-relaxed">U heeft de configuratie nog niet doorlopen en bevestigd. Voltooi eerst alle stappen in de configurator om uw downloads te ontgrendelen.</p>
+            </div>
+            <button 
+              onClick={() => router.push('/')}
+              className="w-full bg-dark text-white py-3.5 rounded-full font-bold text-xs tracking-[0.2em] uppercase hover:bg-black transition shadow-md cursor-pointer"
+            >
+              Naar de configurator
+            </button>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-dark flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#C5A880] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-dark flex flex-col justify-between text-dark">
@@ -375,18 +324,18 @@ export default function DownloadPage() {
 
         <div className="pt-6 pb-24">
           <div className="max-w-4xl mx-auto px-6 space-y-16">
-            {categorieen?.map((cat: any, catIndex: number) => {
+            {alleCategorieen?.map((cat: any, catIndex: number) => {
               const catTitel = cat?.categorieTitel || cat?.categorie_titel;
               const rawBestandenLijst = cat?.bestandenLijst || cat?.bestanden_lijst || [];
-              const gefilterdeBestanden = getGefilterdeBestanden(rawBestandenLijst);
+              const bestandenLijst = Array.isArray(rawBestandenLijst) ? rawBestandenLijst : rawBestandenLijst?.nodes || [];
 
-              if (gefilterdeBestanden.length === 0) return null;
+              if (bestandenLijst.length === 0) return null;
 
               return (
                 <div key={catIndex} className="space-y-6">
                   <h3 className="text-3xl font-serif text-dark">{catTitel}</h3>
                   <div className="space-y-2">
-                    {gefilterdeBestanden.map((bestand: any, fileIndex: number) => {
+                    {bestandenLijst.map((bestand: any, fileIndex: number) => {
                       const fileUrl = getFileUrl(bestand);
                       const metaText = getFileMeta(bestand, fileUrl);
                       const fileName = dataTypeSafeName(bestand);
@@ -395,7 +344,7 @@ export default function DownloadPage() {
                         <a
                           key={fileIndex}
                           href={fileUrl && fileUrl !== '#' ? fileUrl : undefined}
-                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName, bestand)}
+                          onClick={(e) => handleSingleDownload(e, fileUrl, fileName)}
                           className="flex items-center justify-between py-4 border-b border-[#EFECE6] hover:border-[#C5A880] transition group cursor-pointer"
                         >
                           <div className="flex items-center gap-4">
