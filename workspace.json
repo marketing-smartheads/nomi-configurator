@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T16:00:16.854Z",
-  "generatedAtEpochMs": 1793894416854,
+  "generatedAt": "2026-11-05T16:07:17.768Z",
+  "generatedAtEpochMs": 1793894837768,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T16:00:14.513Z",
+    "lastActivityAt": "2026-11-05T16:07:15.323Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793894414513,
-      "lineCount": 179,
-      "charCount": 8027,
-      "hash": "4e1c09fd17ad",
+      "updatedAt": 1793894835323,
+      "lineCount": 194,
+      "charCount": 8834,
+      "hash": "13b5d12dce44",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 45: replaced 15 lines with 30 lines.",
+      "recordedAt": "2026-11-05T16:07:15.323Z",
+      "recordedAtEpochMs": 1793894835323,
+      "before": {
+        "kind": "text",
+        "lineCount": 179,
+        "charCount": 8027,
+        "hash": "4e1c09fd17ad",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793894835322
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 194,
+        "charCount": 8834,
+        "hash": "13b5d12dce44",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793894835323
+      },
+      "diff": {
+        "lineStart": 45,
+        "removedLines": 15,
+        "addedLines": 30,
+        "summary": "Line 45: replaced 15 lines with 30 lines.",
+        "beforeFragment": "het specifieke woningtype/indeling object op basis van geselecteerde indeling uit Stap 1 / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typ...",
+        "afterFragment": "alle woningtype-rijen die overeenkomen met de gekozen indeling of het woningtype / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1080,31 +1112,6 @@
         "beforeFragment": "// --- ROBUUSTE UITLEZEN VAN ALLE VISUALS (ACF Gallery) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Ar...",
         "afterFragment": "const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals; / } else if..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T12:37:19.578Z",
-      "recordedAtEpochMs": 1793882239578,
-      "before": {
-        "kind": "text",
-        "lineCount": 487,
-        "charCount": 20249,
-        "hash": "154f87251e36",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793882239577
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 487,
-        "charCount": 20249,
-        "hash": "154f87251e36",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793882239578
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1122,7 +1129,7 @@
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "components/Hero.tsx",
@@ -1144,7 +1151,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 4ef1fb4 fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug",
+    "headSummary": "2026-11-05 791fa13 fix(step2): correctly map nested design packages from selected indeling row",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1154,7 +1161,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4ef1fb4 by Bas van Dooremalen on 2026-11-05\n  fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 791fa13 by Bas van Dooremalen on 2026-11-05\n  fix(step2): correctly map nested design packages from selected indeling row\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

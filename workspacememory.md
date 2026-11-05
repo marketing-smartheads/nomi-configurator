@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T16:00:16.854Z
+Generated: 2026-11-05T16:07:17.768Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T16:00:14.513Z
+- Last activity: 2026-11-05T16:07:15.323Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepFourConfirmation.tsx (5), components/configurator/StepTwoDesign.tsx (2)
+- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepFourConfirmation.tsx (5), components/configurator/StepTwoDesign.tsx (3)
 - Suggested starting points: components/configurator/StepTwoDesign.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/LoginScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepTwoDesign.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 179 lines | 8027 chars | hash 4e1c09fd17ad
-  Last snapshot: 2026-11-05T16:00:14.513Z
+- components/configurator/StepTwoDesign.tsx | 194 lines | 8834 chars | hash 13b5d12dce44
+  Last snapshot: 2026-11-05T16:07:15.323Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - components/configurator/StepOnewoning.tsx | 109 lines | 5060 chars | hash 95cd67c49c6f
   Last snapshot: 2026-11-05T15:51:35.030Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T16:07:15.323Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 45: replaced 15 lines with 30 lines.
+- Before: 179 lines | 8,027 chars | hash 4e1c09fd17ad | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 194 lines | 8,834 chars | hash 13b5d12dce44 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "het specifieke woningtype/indeling object op basis van geselecteerde indeling uit Stap 1 / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typ..."
+- Current fragment: "alle woningtype-rijen die overeenkomen met de gekozen indeling of het woningtype / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam..."
+
 ### 2026-11-05T16:00:14.513Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 22: replaced 137 lines with 137 lines.
 - Before: 179 lines | 7,987 chars | hash 6f6825fb8b83 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -160,17 +167,12 @@ Structured manifest: workspace.json
 - Previous fragment: "// --- ROBUUSTE UITLEZEN VAN ALLE VISUALS (ACF Gallery) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Ar..."
 - Current fragment: "const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals; / } else if..."
 
-### 2026-11-05T12:37:19.578Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Saved without a textual diff.
-- Before: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-
 
 ## Hot Files
 - lib/cms.ts (13 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
-- components/configurator/StepTwoDesign.tsx (2 tracked changes)
+- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
@@ -178,7 +180,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 4ef1fb4 fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug
+- HEAD: 2026-11-05 791fa13 fix(step2): correctly map nested design packages from selected indeling row
 - Working tree summary: 1 modified
 - M components/configurator/StepTwoDesign.tsx
 
@@ -188,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4ef1fb4 by Bas van Dooremalen on 2026-11-05
-  fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug
+- 791fa13 by Bas van Dooremalen on 2026-11-05
+  fix(step2): correctly map nested design packages from selected indeling row
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

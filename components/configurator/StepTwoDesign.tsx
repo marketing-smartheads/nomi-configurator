@@ -42,21 +42,36 @@ export default function StepTwoDesign({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Zoek het specifieke woningtype/indeling object op basis van geselecteerde indeling uit Stap 1
-  const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
+  // Zoek alle woningtype-rijen die overeenkomen met de gekozen indeling of het woningtype
+  const matchendeWoningRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const typeMatch = naam.includes(normWoning) || normWoning.includes(naam);
+    const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
     const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
     return typeMatch && indelingMatch;
-  }) || woningTypenLijst.find((w: any) => {
-    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return naam.includes(normWoning) || normWoning.includes(naam);
-  }) || woningTypenLijst[0];
+  });
 
-  // Haal de designpakketten op die direct genest zitten in deze gekozen indeling/woningtype rij
-  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || [];
-  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
+  const gebruikteRijen = matchendeWoningRijen.length > 0 ? matchendeWoningRijen : woningTypenLijst;
+
+  // Verzamel alle designpakketten uit alle matchende rijen en filter op unieke pakketten (Modern Raw & Hotel Chic)
+  const alleVerzameldePakketten: any[] = [];
+  gebruikteRijen.forEach((rij: any) => {
+    const rawP = rij?.designPakketten || rij?.design_pakketten || [];
+    const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
+    pakketLijst.forEach((p: any) => alleVerzameldePakketten.push(p));
+  });
+
+  // Als er via de rijen niets wordt gevonden, valt de frontend terug op algemene designpakketten
+  if (alleVerzameldePakketten.length === 0 && data?.designPakketten) {
+    const algemeen = Array.isArray(data.designPakketten) ? data.designPakketten : data.designPakketten?.nodes || [];
+    algemeen.forEach((p: any) => alleVerzameldePakketten.push(p));
+  }
+
+  // Filter unieke pakketten op basis van pakketTitel of pakketId
+  const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => {
+    const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
+    return index === self.findIndex((obj) => (obj.pakketTitel || obj.pakket_titel || obj.pakketId || obj.pakket_id || '').trim().toLowerCase() === t);
+  });
 
   const [isConfirmed, setIsConfirmed] = useState(false);
 
