@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T21:19:24.823Z",
-  "generatedAtEpochMs": 1793913564823,
+  "generatedAt": "2026-11-05T21:23:07.045Z",
+  "generatedAtEpochMs": 1793913787045,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/LoginScreen.tsx",
+    "activeFile": "app/api/vouchers/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/LoginScreen.tsx",
+      "app/api/vouchers/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "app/api/auth/route.ts",
-      "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "app/download/page.tsx",
       "app/api/verify-voucher/route.ts",
       "components/configurator/StepTwoDesign.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
+      "components/LoginScreen.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T21:19:23.058Z",
+    "lastActivityAt": "2026-11-05T21:23:04.616Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 46,
     "changeTypeCounts": {
@@ -587,20 +587,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/api/vouchers/route.ts",
+      "updatedAt": 1793913784616,
+      "lineCount": 166,
+      "charCount": 5400,
+      "hash": "5d6cca9cae30",
+      "preview": "import { NextResponse } from 'next/server'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
+    },
+    {
       "filePath": "components/LoginScreen.tsx",
       "updatedAt": 1793913563058,
       "lineCount": 285,
       "charCount": 10122,
       "hash": "032ed2f2b615",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1793913383103,
-      "lineCount": 119,
-      "charCount": 3880,
-      "hash": "ee96066e9cc0",
-      "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 3: replaced 68 lines with 115 lines.",
+      "recordedAt": "2026-11-05T21:23:04.616Z",
+      "recordedAtEpochMs": 1793913784616,
+      "before": {
+        "kind": "text",
+        "lineCount": 119,
+        "charCount": 3880,
+        "hash": "ee96066e9cc0",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793913784616
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 166,
+        "charCount": 5400,
+        "hash": "5d6cca9cae30",
+        "preview": "import { NextResponse } from 'next/server'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_...",
+        "updatedAt": 1793913784616
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 68,
+        "addedLines": 115,
+        "summary": "Line 3: replaced 68 lines with 115 lines.",
+        "beforeFragment": "export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { /...",
+        "afterFragment": "// 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPR..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1066,26 +1098,6 @@
         "beforeFragment": "",
         "afterFragment": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } =..."
       }
-    },
-    {
-      "type": "create",
-      "path": "app/api/auth/route.ts",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-05T20:39:32.792Z",
-      "recordedAtEpochMs": 1793911172792,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793911172775.4907,
-        "extension": ".ts",
-        "sizeBytes": 0
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1098,12 +1110,12 @@
       "count": 6
     },
     {
-      "filePath": "app/download/page.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 6
+      "filePath": "app/download/page.tsx",
+      "count": 5
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1118,28 +1130,24 @@
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/api/vouchers/route.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 7a63363 fix(auth): add missing /api/auth endpoint for strict voucher and email verification",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 67504fd fix(login): route verification request to /api/vouchers to prevent 404 and enforce email match",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/api/vouchers/route.ts",
-      "M components/LoginScreen.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/api/vouchers/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7a63363 by Bas van Dooremalen on 2026-11-05\n  fix(auth): add missing /api/auth endpoint for strict voucher and email verification\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 67504fd by Bas van Dooremalen on 2026-11-05\n  fix(login): route verification request to /api/vouchers to prevent 404 and enforce email match\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

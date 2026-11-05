@@ -1,5 +1,52 @@
 import { NextResponse } from 'next/server';
 
+// 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app)
+export async function GET() {
+  try {
+    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
+    const wpUser = process.env.WORDPRESS_AUTH_USER;
+    const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
+    const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
+
+    const query = `
+      query GetAllVouchers {
+        vouchers(first: 100) {
+          nodes {
+            databaseId
+            title
+            voucherVelden {
+              toegangscode
+              status
+              klantEmail
+              klantNaam
+              gekozenTypeWoning
+              gekozenDesignpakket
+              gekozenIndeling
+            }
+          }
+        }
+      }
+    `;
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(basicAuth ? { 'Authorization': basicAuth } : {}),
+      },
+      body: JSON.stringify({ query }),
+      cache: 'no-store',
+    });
+
+    const json = await res.json();
+    return NextResponse.json(json?.data || { vouchers: { nodes: [] } });
+  } catch (error) {
+    console.error('Fout bij ophalen vouchers (GET):', error);
+    return NextResponse.json({ error: 'Interne serverfout' }, { status: 500 });
+  }
+}
+
+// 2. POST: Voor de strenge e-mail- en vouchercodeverificatie tijdens het inloggen
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -67,7 +114,7 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // 🛑 E-MAILCONTROLE: Moet exact matchen als er al een e-mail bekend is
+    // 🛑 STRENGE E-MAILCONTROLE: Moet exact matchen als er al een e-mail bekend is
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
