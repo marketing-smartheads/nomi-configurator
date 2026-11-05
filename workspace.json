@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T15:51:37.457Z",
-  "generatedAtEpochMs": 1793893897457,
+  "generatedAt": "2026-11-05T16:00:16.854Z",
+  "generatedAtEpochMs": 1793894416854,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
-      "app/dashboard/page.tsx",
       "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T15:51:35.030Z",
+    "lastActivityAt": "2026-11-05T16:00:14.513Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793894414513,
+      "lineCount": 179,
+      "charCount": 8027,
+      "hash": "4e1c09fd17ad",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1793893895030,
@@ -615,14 +623,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793879685219,
-      "lineCount": 179,
-      "charCount": 7987,
-      "hash": "6f6825fb8b83",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
       "filePath": "components/Hero.tsx",
       "updatedAt": 1793868542674,
       "lineCount": 64,
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 22: replaced 137 lines with 137 lines.",
+      "recordedAt": "2026-11-05T16:00:14.513Z",
+      "recordedAtEpochMs": 1793894414513,
+      "before": {
+        "kind": "text",
+        "lineCount": 179,
+        "charCount": 7987,
+        "hash": "6f6825fb8b83",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793894414513
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 179,
+        "charCount": 8027,
+        "hash": "4e1c09fd17ad",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793894414513
+      },
+      "diff": {
+        "lineStart": 22,
+        "removedLines": 137,
+        "addedLines": 137,
+        "summary": "Line 22: replaced 137 lines with 137 lines.",
+        "beforeFragment": "// Haal gekozen indeling op uit storage om de exacte indeling-rij te matchen / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof...",
+        "afterFragment": "const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selec..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1073,38 +1105,6 @@
         "updatedAt": 1793882239578
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 69: replaced 12 lines with 16 lines.",
-      "recordedAt": "2026-11-05T12:37:10.159Z",
-      "recordedAtEpochMs": 1793882230159,
-      "before": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 6181,
-        "hash": "759e72d2dd03",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793882230159
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 229,
-        "charCount": 6293,
-        "hash": "542201b41f6c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793882230159
-      },
-      "diff": {
-        "lineStart": 69,
-        "removedLines": 12,
-        "addedLines": 16,
-        "summary": "Line 69: replaced 12 lines with 16 lines.",
-        "beforeFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItem",
-        "afterFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
-      }
     }
   ],
   "hotFiles": [
@@ -1121,6 +1121,10 @@
       "count": 5
     },
     {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 2
+    },
+    {
       "filePath": "components/Hero.tsx",
       "count": 2
     },
@@ -1133,10 +1137,6 @@
       "count": 2
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 1
-    },
-    {
       "filePath": "app/download/page.tsx",
       "count": 1
     }
@@ -1144,17 +1144,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 b58a2a2 security(download): restrict download page access strictly to fully completed configurations via step 4",
+    "headSummary": "2026-11-05 4ef1fb4 fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepTwoDesign.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b58a2a2 by Bas van Dooremalen on 2026-11-05\n  security(download): restrict download page access strictly to fully completed configurations via step 4\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4ef1fb4 by Bas van Dooremalen on 2026-11-05\n  fix(step1): filter unique layouts by title to prevent duplicate cards and fix selection bug\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

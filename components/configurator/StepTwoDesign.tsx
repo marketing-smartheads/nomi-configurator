@@ -19,7 +19,6 @@ export default function StepTwoDesign({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  // Haal gekozen indeling op uit storage om de exacte indeling-rij te matchen
   const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
 
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function StepTwoDesign({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Zoek het specifieke woningtype-object dat matcht met zowel type als indeling
+  // Zoek het specifieke woningtype/indeling object op basis van geselecteerde indeling uit Stap 1
   const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -55,7 +54,8 @@ export default function StepTwoDesign({
     return naam.includes(normWoning) || normWoning.includes(naam);
   }) || woningTypenLijst[0];
 
-  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
+  // Haal de designpakketten op die direct genest zitten in deze gekozen indeling/woningtype rij
+  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -86,7 +86,7 @@ export default function StepTwoDesign({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">
         {pakkettenLijst.length > 0 ? (
           pakkettenLijst.map((pakket: any, index: number) => {
-            const pakketId = pakket.pakketId || pakket.pakket_id || (index === 0 ? 'modern-raw' : 'hotel-chic');
+            const pakketId = pakket.pakketId || pakket.pakket_id || `pakket-${index}`;
             const pakketTitel = pakket.pakketTitel || pakket.pakket_titel || '';
             const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || '';
             
@@ -115,7 +115,7 @@ export default function StepTwoDesign({
                         className="object-cover"
                       />
                     ) : (
-                      `[ Afbeelding ${pakketTitel} ]`
+                      <span className="text-xs text-muted">[ Afbeelding {pakketTitel} ]</span>
                     )}
                   </div>
 
@@ -155,7 +155,7 @@ export default function StepTwoDesign({
 
                   <button
                     type="button"
-                    onClick={() => setDesignPakket(pakketId)}
+                    onClick={() => setDesignPakket(pakketTitel || pakketId)}
                     className={`cursor-pointer px-6 py-3 rounded-full text-[11px] font-semibold tracking-wider transition uppercase ${
                       isSelected 
                         ? 'bg-dark text-white' 
