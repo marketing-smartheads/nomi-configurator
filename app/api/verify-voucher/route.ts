@@ -2,75 +2,6 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const code = searchParams.get('code');
-  const email = searchParams.get('email');
-
-  if (!code) {
-    return NextResponse.json({ error: 'Geen code opgegeven' }, { status: 400 });
-  }
-
-  try {
-    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
-    const wpUser = process.env.WORDPRESS_AUTH_USER;
-    const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
-    const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
-
-    const query = `
-      query GetVouchersVerify {
-        vouchers(first: 100) {
-          nodes {
-            databaseId
-            title
-            voucherVelden {
-              toegangscode
-              status
-              klantEmail
-            }
-          }
-        }
-      }
-    `;
-
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        ...(basicAuth ? { 'Authorization': basicAuth } : {}),
-      },
-      body: JSON.stringify({ query }),
-      cache: 'no-store',
-    });
-
-    const json = await res.json();
-    const vouchers = json?.data?.vouchers?.nodes || [];
-    const cleanCode = code.trim().toLowerCase();
-
-    const voucher = vouchers.find((v: any) => {
-      const cField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
-      const tField = (v?.title || '').trim().toLowerCase();
-      return cField === cleanCode || tField === cleanCode;
-    });
-
-    if (!voucher) {
-      return NextResponse.json({ error: 'Voucher niet gevonden' }, { status: 404 });
-    }
-
-    const velden = voucher.voucherVelden || {};
-    const isBevestigd = velden.status === 'bevestigd' || velden.status === 'Keuze definitief bevestigd';
-
-    return NextResponse.json({
-      success: true,
-      isBevestigd,
-      status: velden.status || 'niet_ingevuld',
-      klantEmail: velden.klantEmail || ''
-    });
-  } catch (err) {
-    return NextResponse.json({ error: 'Serverfout' }, { status: 500 });
-  }
-}
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -88,8 +19,9 @@ export async function POST(request: Request) {
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
 
+    // Haal alle vouchers op om flexibel te matchen
     const query = `
-      query GetAllVouchersForAuth {
+      query GetVouchersVerifyAuth {
         vouchers(first: 100) {
           nodes {
             databaseId
@@ -121,6 +53,7 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
+    // Zoek de voucher op basis van toegangscode of titel
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -137,7 +70,8 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILVERIFICATIE
+    // 🛑 STRENGE E-MAILVALIDATIE:
+    // Als er al een e-mailadres in het systeem staat (en het is niet leeg of '-'), moet het exact overeenkomen!
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -149,7 +83,7 @@ export async function POST(request: Request) {
       // Eerste keer inloggen: Sla het e-mailadres direct op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
             voucher {
               databaseId
             }
@@ -176,11 +110,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ 
       success: true, 
       isBevestigd, 
-      status: velden.status || 'niet_ingevuld' 
+      status: velden.status || 'bevestigd' 
     });
 
   } catch (error: any) {
-    console.error('Verify Voucher POST API fout:', error);
+    console.error('Verify Voucher API fout:', error);
     return NextResponse.json(
       { error: 'Er is een fout opgetreden bij de verificatie.' },
       { status: 500 }

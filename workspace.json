@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T21:50:20.932Z",
-  "generatedAtEpochMs": 1793915420932,
+  "generatedAt": "2026-11-05T22:04:32.361Z",
+  "generatedAtEpochMs": 1793916272361,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/LoginScreen.tsx",
+    "activeFile": "app/api/vouchers/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/LoginScreen.tsx",
-      "app/api/auth/route.ts",
-      "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
+      "app/api/verify-voucher/route.ts",
+      "app/api/auth/route.ts",
+      "components/LoginScreen.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "app/api/auth-voucher/route.ts",
@@ -581,7 +581,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T21:50:19.121Z",
+    "lastActivityAt": "2026-11-05T22:04:29.852Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -593,28 +593,28 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/api/vouchers/route.ts",
+      "updatedAt": 1793916269852,
+      "lineCount": 173,
+      "charCount": 5829,
+      "hash": "7d05d0a67a66",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = p..."
+    },
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1793916182152,
+      "lineCount": 123,
+      "charCount": 4121,
+      "hash": "d299169ddd87",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
+    },
+    {
       "filePath": "components/LoginScreen.tsx",
       "updatedAt": 1793915419121,
       "lineCount": 284,
       "charCount": 10037,
       "hash": "c83357215be8",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1793915370682,
-      "lineCount": 170,
-      "charCount": 5387,
-      "hash": "1570ced2b270",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Vangt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORD..."
-    },
-    {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "updatedAt": 1793915174270,
-      "lineCount": 189,
-      "charCount": 6035,
-      "hash": "624e8459beac",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
     },
     {
       "filePath": "app/api/auth-voucher/route.ts",
@@ -658,6 +658,95 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 156 lines with 159 lines.",
+      "recordedAt": "2026-11-05T22:04:29.852Z",
+      "recordedAtEpochMs": 1793916269852,
+      "before": {
+        "kind": "text",
+        "lineCount": 170,
+        "charCount": 5387,
+        "hash": "1570ced2b270",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Vangt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORD...",
+        "updatedAt": 1793916269852
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 173,
+        "charCount": 5829,
+        "hash": "7d05d0a67a66",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = p...",
+        "updatedAt": 1793916269852
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 156,
+        "addedLines": 159,
+        "summary": "Line 5: replaced 156 lines with 159 lines.",
+        "beforeFragment": "angt normale dataverzoeken op / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.W...",
+        "afterFragment": "oor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / c..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T22:03:02.152Z",
+      "recordedAtEpochMs": 1793916182152,
+      "before": {
+        "kind": "text",
+        "lineCount": 123,
+        "charCount": 4121,
+        "hash": "d299169ddd87",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
+        "updatedAt": 1793916182152
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 123,
+        "charCount": 4121,
+        "hash": "d299169ddd87",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
+        "updatedAt": 1793916182152
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 179 lines with 113 lines.",
+      "recordedAt": "2026-11-05T21:59:17.742Z",
+      "recordedAtEpochMs": 1793915957742,
+      "before": {
+        "kind": "text",
+        "lineCount": 189,
+        "charCount": 6035,
+        "hash": "624e8459beac",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
+        "updatedAt": 1793915957742
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 123,
+        "charCount": 4121,
+        "hash": "d299169ddd87",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
+        "updatedAt": 1793915957742
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 179,
+        "addedLines": 113,
+        "summary": "Line 5: replaced 179 lines with 113 lines.",
+        "beforeFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret...",
+        "afterFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1008,107 +1097,19 @@
         "beforeFragment": "auth endpoint aan / const res = await fetch('/api/auth', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ / toegangscode: ingevoer...",
         "afterFragment": "vouchers endpoint aan om de combinatie strikt te verifiëren / const res = await fetch('/api/vouchers', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / b..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 3: replaced 48 lines with 115 lines.",
-      "recordedAt": "2026-11-05T21:16:23.103Z",
-      "recordedAtEpochMs": 1793913383103,
-      "before": {
-        "kind": "text",
-        "lineCount": 52,
-        "charCount": 1568,
-        "hash": "0eacd0d2ae72",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons...",
-        "updatedAt": 1793913383103
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 119,
-        "charCount": 3880,
-        "hash": "ee96066e9cc0",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
-        "updatedAt": 1793913383103
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 48,
-        "addedLines": 115,
-        "summary": "Line 3: replaced 48 lines with 115 lines.",
-        "beforeFragment": "GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPass = process.env.WORDP...",
-        "afterFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 3: replaced 115 lines with 78 lines.",
-      "recordedAt": "2026-11-05T21:16:12.510Z",
-      "recordedAtEpochMs": 1793913372510,
-      "before": {
-        "kind": "text",
-        "lineCount": 119,
-        "charCount": 3880,
-        "hash": "ee96066e9cc0",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
-        "updatedAt": 1793913372510
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 82,
-        "charCount": 2711,
-        "hash": "6ee5746b80fa",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e...",
-        "updatedAt": 1793913372510
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 115,
-        "addedLines": 78,
-        "summary": "Line 3: replaced 115 lines with 78 lines.",
-        "beforeFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js...",
-        "afterFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 3: replaced 78 lines with 115 lines.",
-      "recordedAt": "2026-11-05T21:16:03.815Z",
-      "recordedAtEpochMs": 1793913363815,
-      "before": {
-        "kind": "text",
-        "lineCount": 82,
-        "charCount": 2711,
-        "hash": "6ee5746b80fa",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e...",
-        "updatedAt": 1793913363815
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 119,
-        "charCount": 3880,
-        "hash": "ee96066e9cc0",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
-        "updatedAt": 1793913363815
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 78,
-        "addedLines": 115,
-        "summary": "Line 3: replaced 78 lines with 115 lines.",
-        "beforeFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('email'); / if (!code) { / ret...",
-        "afterFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js..."
-      }
     }
   ],
   "hotFiles": [
     {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 7
+    },
+    {
       "filePath": "app/api/auth/route.ts",
+      "count": 6
+    },
+    {
+      "filePath": "app/api/vouchers/route.ts",
       "count": 6
     },
     {
@@ -1116,20 +1117,12 @@
       "count": 6
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "count": 5
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "count": 5
-    },
-    {
       "filePath": "app/download/page.tsx",
       "count": 5
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "app/api/auth-voucher/route.ts",
@@ -1143,12 +1136,12 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 ffc4e96 fix(auth): route verification request to existing /api/verify-voucher endpoint",
+    "headSummary": "2026-11-05 b8a87df fix(auth): unify login and verification into the stable /api/vouchers POST endpoint",
     "statusSummary": "5 modifieds",
     "changedFileCount": 5,
     "statusLines": [
+      "M app/api/verify-voucher/route.ts",
       "M app/api/vouchers/route.ts",
-      "M components/LoginScreen.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1157,7 +1150,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 833d3e4 by Bas van Dooremalen on 2026-11-05\n  fix(auth): create dedicated /api/auth-voucher endpoint to permanently resolve 404 routing issues\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b8a87df by Bas van Dooremalen on 2026-11-05\n  fix(auth): unify login and verification into the stable /api/vouchers POST endpoint\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-// 1. GET: Vangt normale dataverzoeken op
+// 1. GET: Voor het ophalen van alle vouchers (data-functionaliteit)
 export async function GET() {
   try {
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
@@ -50,7 +50,7 @@ export async function GET() {
   }
 }
 
-// 2. POST: Strenge e-mail- en vouchercodeverificatie tijdens inloggen
+// 2. POST: Strenge verificatie en e-mailbeveiliging tijdens inloggen
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
-    // Zoek de voucher in de lijst
+    // Zoek de voucher op basis van toegangscode of post-titel
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -117,8 +117,10 @@ export async function POST(request: Request) {
 
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
+    const status = (velden.status || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILVERIFICATIE
+    // 🛑 STRENGE VALIDATIE:
+    // Als er al een e-mailadres in WordPress staat (en het is niet leeg of '-'), dan MOET het exact overeenkomen!
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -127,10 +129,10 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Eerste keer inloggen: Sla het e-mailadres direct op in WordPress
+      // Eerste keer inloggen op een ongebruikte voucher: Sla het e-mailadres direct op in WP
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
             voucher {
               databaseId
             }
@@ -152,12 +154,13 @@ export async function POST(request: Request) {
       }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
     }
 
-    const isBevestigd = velden.status === 'bevestigd' || velden.status === 'Keuze definitief bevestigd';
+    // Bepaal of de voucher al bevestigd is (zodat de frontend weet of de downloadpagina getoond moet worden)
+    const isBevestigd = status === 'bevestigd' || status === 'keuze definitief bevestigd' || Boolean(opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '');
 
     return NextResponse.json({ 
       success: true, 
       isBevestigd, 
-      status: velden.status || 'niet_ingevuld' 
+      status: velden.status || 'bevestigd' 
     });
 
   } catch (error: any) {
