@@ -74,7 +74,7 @@ export default function LoginScreen({
       const ingevoerdeEmailClean = localEmail.trim();
 
       // 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint
-      const res = await fetch('/api/verify-voucher', {
+      const res = await fetch('/api/vouchers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
