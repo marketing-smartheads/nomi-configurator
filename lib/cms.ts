@@ -223,3 +223,101 @@ export async function getVoucherData(voucherCode: string) {
     return null;
   }
 }
+
+// 🛑 NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL
+export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
+  const cleanCode = toegangscode.trim().toUpperCase();
+  const cleanEmail = klantEmail.trim().toLowerCase();
+
+  const graphqlEndpoint = process.env.NODE_ENV === 'development'
+    ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql')
+    : (process.env.NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql');
+
+  const query = `
+    query GetAllVouchersForAuth {
+      vouchers(first: 100) {
+        nodes {
+          databaseId
+          title
+          voucherVelden {
+            toegangscode
+            status
+            klantEmail
+          }
+        }
+      }
+    }
+  `;
+
+  const wpUser = process.env.WORDPRESS_AUTH_USER;
+  const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
+  const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
+
+  try {
+    const res = await fetch(graphqlEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(basicAuth ? { 'Authorization': basicAuth } : {}),
+      },
+      body: JSON.stringify({ query }),
+      cache: 'no-store',
+    });
+
+    const json = await res.json();
+    const vouchers = json?.data?.vouchers?.nodes || [];
+
+    const voucher = vouchers.find((v: any) => {
+      const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
+      const postTitle = (v?.title || '').trim().toUpperCase();
+      return codeField === cleanCode || postTitle === cleanCode;
+    });
+
+    if (!voucher) {
+      return { success: false, error: 'Ongeldige vouchercode. Controleer uw invoer.' };
+    }
+
+    const velden = voucher.voucherVelden || {};
+    const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
+    const status = (velden.status || '').trim().toLowerCase();
+
+    // 🛑 STRENGE E-MAILVALIDATIE:
+    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
+      if (opgeslagenEmail !== cleanEmail) {
+        return { 
+          success: false, 
+          error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
+        };
+      }
+    } else {
+      // Eerste keer inloggen: Sla e-mail direct op in WordPress
+      const updateMutation = `
+        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
+            voucher { databaseId }
+          }
+        }
+      `;
+
+      await fetch(graphqlEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(basicAuth ? { 'Authorization': basicAuth } : {}),
+        },
+        body: JSON.stringify({
+          query: updateMutation,
+          variables: { id: voucher.databaseId, email: cleanEmail }
+        }),
+        cache: 'no-store',
+      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
+    }
+
+    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail);
+
+    return { success: true, isBevestigd };
+  } catch (err) {
+    console.error('GraphQL verificatie fout:', err);
+    return { success: false, error: 'Er is een technische fout opgetreden bij de verificatie.' };
+  }
+}

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from './Button';
 import { useRouter } from 'next/navigation';
+import { verifyAndAuthVoucher } from '../lib/cms';
 
 interface LoginScreenProps {
   toegangscode: string;
@@ -73,20 +74,11 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      const res = await fetch('/api/verify-voucher', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          toegangscode: ingevoerdeCodeClean,
-          klantEmail: ingevoerdeEmailClean,
-        }),
-      });
+      // 🚀 Directe aanroep van de CMS helper (geen /api/... routes meer!)
+      const result = await verifyAndAuthVoucher(ingevoerdeCodeClean, ingevoerdeEmailClean);
 
-      const data = await res.json();
-
-      // Als de API de inlog afkeurt (bijv. verkeerd e-mailadres), stop direct!
-      if (!res.ok) {
-        setCustomError(data.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
+      if (!result.success) {
+        setCustomError(result.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
         setIsChecking(false);
         return;
       }
@@ -100,7 +92,7 @@ export default function LoginScreen({
         localStorage.setItem('klantEmail', ingevoerdeEmailClean);
       }
 
-      if (data.isBevestigd) {
+      if (result.isBevestigd) {
         if (typeof window !== 'undefined') {
           sessionStorage.setItem('configuratorConfirmed', 'true');
           localStorage.setItem('configurator_definitief_bevestigd', 'true');
