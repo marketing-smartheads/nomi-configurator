@@ -73,8 +73,8 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      // Roep het /api/auth endpoint aan
-      const res = await fetch('/api/auth', {
+      // Roep het /api/vouchers endpoint aan om de combinatie strikt te verifiëren
+      const res = await fetch('/api/vouchers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -92,7 +92,7 @@ export default function LoginScreen({
         return;
       }
 
-      // Sla gegevens op
+      // Sla gegevens op in storage
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('voucherCode', ingevoerdeCodeClean);
         sessionStorage.setItem('klantEmail', ingevoerdeEmailClean);
