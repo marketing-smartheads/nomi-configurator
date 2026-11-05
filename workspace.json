@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:19:00.774Z",
-  "generatedAtEpochMs": 1793917140774,
+  "generatedAt": "2026-11-05T22:22:19.326Z",
+  "generatedAtEpochMs": 1793917339326,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/LoginScreen.tsx",
+    "activeFile": "lib/useConfigurator.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/LoginScreen.tsx",
+      "lib/useConfigurator.ts",
       "app/api/verify-voucher/route.ts",
+      "components/LoginScreen.tsx",
       "app/api/vouchers/route.ts",
       "app/api/auth/route.ts",
       "app/download/page.tsx",
       "app/api/auth-voucher",
       "app/api/auth-voucher/route.ts",
-      "components/configurator/StepFourConfirmation.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:18:58.957Z",
+    "lastActivityAt": "2026-11-05T22:22:17.496Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "lib/useConfigurator.ts",
+      "updatedAt": 1793917337496,
+      "lineCount": 206,
+      "charCount": 6358,
+      "hash": "6df8a1bf9348",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
+    },
     {
       "filePath": "components/LoginScreen.tsx",
       "updatedAt": 1793917138957,
@@ -641,17 +649,66 @@
       "charCount": 17011,
       "hash": "ad5e8b9d9763",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793899714891,
-      "lineCount": 122,
-      "charCount": 5571,
-      "hash": "7c52c9f0546f",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T22:22:17.496Z",
+      "recordedAtEpochMs": 1793917337496,
+      "before": {
+        "kind": "text",
+        "lineCount": 206,
+        "charCount": 6358,
+        "hash": "6df8a1bf9348",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793917337496
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 206,
+        "charCount": 6358,
+        "hash": "6df8a1bf9348",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793917337496
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "lib/useConfigurator.ts",
+      "toPath": "",
+      "summary": "Line 104: replaced 49 lines with 64 lines.",
+      "recordedAt": "2026-11-05T22:22:12.866Z",
+      "recordedAtEpochMs": 1793917332866,
+      "before": {
+        "kind": "text",
+        "lineCount": 191,
+        "charCount": 5604,
+        "hash": "6b9a1c08487a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793917332866
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 206,
+        "charCount": 6358,
+        "hash": "6df8a1bf9348",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
+        "updatedAt": 1793917332866
+      },
+      "diff": {
+        "lineStart": 104,
+        "removedLines": 49,
+        "addedLines": 64,
+        "summary": "Line 104: replaced 49 lines with 64 lines.",
+        "beforeFragment": "const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = toegangscode.trim().toUpperCase(); / if (type...",
+        "afterFragment": "// 🛑 CENTRALE INLOG- EN VERIFICATIEPUNT / const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = to..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1039,58 +1096,6 @@
         "beforeFragment": "vouchers",
         "afterFragment": "auth-voucher"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/auth-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 1: inserted 122 lines.",
-      "recordedAt": "2026-11-05T21:41:45.970Z",
-      "recordedAtEpochMs": 1793914905970,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793914905970
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 4017,
-        "hash": "78581114598f",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
-        "updatedAt": 1793914905970
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 122,
-        "summary": "Line 1: inserted 122 lines.",
-        "beforeFragment": "",
-        "afterFragment": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(..."
-      }
-    },
-    {
-      "type": "create",
-      "path": "app/api/auth-voucher/route.ts",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-05T21:41:40.944Z",
-      "recordedAtEpochMs": 1793914900944,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793914900940.1372,
-        "extension": ".ts",
-        "sizeBytes": 0
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1112,7 +1117,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "app/api/auth-voucher",
@@ -1123,20 +1128,19 @@
       "count": 2
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "lib/useConfigurator.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 842e4d7 fix(login): update fetch url to point to /api/verify-voucher",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 2e041c5 fix(auth): point login fetch back to stable /api/vouchers endpoint with strict email validation",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/api/vouchers/route.ts",
-      "M components/LoginScreen.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/useConfigurator.ts",
       "M workspace.json",
       "M workspacememory.md"
     ],
@@ -1144,7 +1148,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 842e4d7 by Bas van Dooremalen on 2026-11-05\n  fix(login): update fetch url to point to /api/verify-voucher\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2e041c5 by Bas van Dooremalen on 2026-11-05\n  fix(auth): point login fetch back to stable /api/vouchers endpoint with strict email validation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

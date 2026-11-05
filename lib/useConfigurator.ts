@@ -101,55 +101,70 @@ export function useConfigurator() {
     }
   };
 
+  // 🛑 CENTRALE INLOG- EN VERIFICATIEPUNT
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     const cleanCode = toegangscode.trim().toUpperCase();
+    const cleanEmail = klantEmail.trim().toLowerCase();
 
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('toegangscode', cleanCode);
-      localStorage.setItem('klantEmail', klantEmail.trim());
+    if (!cleanCode || !cleanEmail) {
+      setError('Vul zowel een vouchercode als een e-mailadres in.');
+      setLoading(false);
+      return;
     }
 
     try {
-      const res = await fetch('/api/vouchers');
+      // Roep de API aan die de strenge e-mailvalidatie en database-update afhandelt
+      const res = await fetch('/api/verify-voucher', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          toegangscode: cleanCode,
+          klantEmail: cleanEmail,
+        }),
+      });
+
       const data = await res.json();
 
-      if (data.vouchers) {
-        const found = data.vouchers.find((v: any) => {
-          const details = v.voucherVelden || {};
-          const code = String(details.toegangscode || v.title || '').trim().toUpperCase();
-          return code === cleanCode;
-        });
-
-        if (found) {
-          const details = found.voucherVelden || {};
-          const statusVal = String(details.status || '');
-          const isVerzilverd = 
-            statusVal === 'bevestigd' || 
-            statusVal.toLowerCase().includes('bevestigd') || 
-            statusVal.toLowerCase().includes('verzilverd');
-
-          if (isVerzilverd) {
-            if (typeof window !== 'undefined') {
-              sessionStorage.setItem('configuratorConfirmed', 'true');
-            }
-            setScreen('configurator');
-            setLoading(false);
-            return;
-          }
-        }
+      if (!res.ok) {
+        setError(data.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
+        setLoading(false);
+        return;
       }
-    } catch (err) {
-      console.error('Fout bij controleren voucher status:', err);
-    }
 
-    setTimeout(() => {
+      // Sla succesvolle gegevens op in storage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('toegangscode', cleanCode);
+        localStorage.setItem('voucherCode', cleanCode);
+        localStorage.setItem('klantEmail', cleanEmail);
+        sessionStorage.setItem('toegangscode', cleanCode);
+        sessionStorage.setItem('voucherCode', cleanCode);
+        sessionStorage.setItem('klantEmail', cleanEmail);
+      }
+
+      // Als de voucher al bevestigd/verzilverd is, stuur direct door naar de download/reeds-gebruikt flow
+      if (data.isBevestigd) {
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('configuratorConfirmed', 'true');
+          localStorage.setItem('configurator_definitief_bevestigd', 'true');
+        }
+        setScreen('configurator'); // Of laat het loginscherm de 'reeds bevestigd' melding tonen
+        setLoading(false);
+        return;
+      }
+
+      // Anders: Start de normale interieurreis (welkomsscherm / configurator)
       setLoading(false);
       setScreen('welcome');
-    }, 500);
+
+    } catch (err) {
+      console.error('Fout bij inloggen:', err);
+      setError('Er is een technische fout opgetreden bij de verificatie. Probeer het opnieuw.');
+      setLoading(false);
+    }
   };
 
   const handleSaveChoices = () => {
