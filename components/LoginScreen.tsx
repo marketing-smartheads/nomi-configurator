@@ -74,7 +74,7 @@ export default function LoginScreen({
       const ingevoerdeEmailClean = localEmail.trim();
 
       // Roep het /api/vouchers endpoint aan om de combinatie strikt te verifiëren
-      const res = await fetch('/api/vouchers', {
+      const res = await fetch('/api/auth-voucher', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

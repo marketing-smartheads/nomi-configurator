@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T21:35:40.647Z",
-  "generatedAtEpochMs": 1793914540647,
+  "generatedAt": "2026-11-05T21:42:22.162Z",
+  "generatedAtEpochMs": 1793914942162,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/vouchers/route.ts",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/vouchers/route.ts",
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/LoginScreen.tsx",
       "app/api/auth/route.ts",
+      "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "app/api/verify-voucher/route.ts",
-      "components/LoginScreen.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
+      "app/api/vouchers/route.ts",
+      "app/api/auth-voucher/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
       "package-lock.json"
     ],
     "stats": {
-      "totalFiles": 71,
+      "totalFiles": 72,
       "topLevelAreas": [
         {
           "name": "public",
@@ -52,7 +52,7 @@
         },
         {
           "name": "app",
-          "count": 14
+          "count": 15
         },
         {
           "name": "lib",
@@ -66,7 +66,7 @@
         },
         {
           "name": ".ts",
-          "count": 11
+          "count": 12
         },
         {
           "name": ".svg",
@@ -119,6 +119,12 @@
           "topLevelArea": "[root]",
           "extension": ".md",
           "isKeyFile": true
+        },
+        {
+          "path": "app/api/auth-voucher/route.ts",
+          "topLevelArea": "app",
+          "extension": ".ts",
+          "isKeyFile": false
         },
         {
           "path": "app/api/auth/login/route.ts",
@@ -575,17 +581,33 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T21:35:38.578Z",
+    "lastActivityAt": "2026-11-05T21:42:20.418Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 46,
+    "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
-      "save": 37,
-      "create": 3,
+      "save": 35,
+      "create": 5,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1793914940418,
+      "lineCount": 285,
+      "charCount": 10126,
+      "hash": "5cfbae817c0e",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+    },
+    {
+      "filePath": "app/api/auth-voucher/route.ts",
+      "updatedAt": 1793914905970,
+      "lineCount": 122,
+      "charCount": 4017,
+      "hash": "78581114598f",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
+    },
     {
       "filePath": "app/api/vouchers/route.ts",
       "updatedAt": 1793914538578,
@@ -593,14 +615,6 @@
       "charCount": 5400,
       "hash": "91dd6934c722",
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUB..."
-    },
-    {
-      "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793913563058,
-      "lineCount": 285,
-      "charCount": 10122,
-      "hash": "032ed2f2b615",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -641,17 +655,104 @@
       "charCount": 5571,
       "hash": "7c52c9f0546f",
       "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793898416479,
-      "lineCount": 509,
-      "charCount": 21194,
-      "hash": "55a56b73a3e1",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 77: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-05T21:42:20.418Z",
+      "recordedAtEpochMs": 1793914940418,
+      "before": {
+        "kind": "text",
+        "lineCount": 285,
+        "charCount": 10122,
+        "hash": "032ed2f2b615",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793914940418
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 285,
+        "charCount": 10126,
+        "hash": "5cfbae817c0e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793914940418
+      },
+      "diff": {
+        "lineStart": 77,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 77: replaced 1 line with 1 line.",
+        "beforeFragment": "vouchers",
+        "afterFragment": "auth-voucher"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/auth-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 1: inserted 122 lines.",
+      "recordedAt": "2026-11-05T21:41:45.970Z",
+      "recordedAtEpochMs": 1793914905970,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793914905970
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 122,
+        "charCount": 4017,
+        "hash": "78581114598f",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
+        "updatedAt": 1793914905970
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 122,
+        "summary": "Line 1: inserted 122 lines.",
+        "beforeFragment": "",
+        "afterFragment": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "app/api/auth-voucher/route.ts",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-11-05T21:41:40.944Z",
+      "recordedAtEpochMs": 1793914900944,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793914900940.1372,
+        "extension": ".ts",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
+    {
+      "type": "create",
+      "path": "app/api/auth-voucher",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-11-05T21:41:32.383Z",
+      "recordedAtEpochMs": 1793914892383,
+      "before": null,
+      "after": null,
+      "diff": null
+    },
     {
       "type": "save",
       "path": "app/api/vouchers/route.ts",
@@ -1003,110 +1104,15 @@
         "beforeFragment": "const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title / voucherVelden { / toegangscode / status / klantEmail...",
         "afterFragment": "// Haal de eerste 100 vouchers op om zeker te zijn dat we de juiste vinden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 33: replaced 92 lines with 94 lines.",
-      "recordedAt": "2026-11-05T21:00:38.755Z",
-      "recordedAtEpochMs": 1793912438755,
-      "before": {
-        "kind": "text",
-        "lineCount": 288,
-        "charCount": 10168,
-        "hash": "79594072f6a6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793912438755
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 290,
-        "charCount": 10590,
-        "hash": "811f6f13c11b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793912438755
-      },
-      "diff": {
-        "lineStart": 33,
-        "removedLines": 92,
-        "addedLines": 94,
-        "summary": "Line 33: replaced 92 lines with 94 lines.",
-        "beforeFragment": "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal...",
-        "afterFragment": "const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocalEmail] = useState(klantEmail); / useEffect(() => { / setLocalCode(toegangscode); / }, [toe..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 1: inserted 82 lines.",
-      "recordedAt": "2026-11-05T20:52:17.775Z",
-      "recordedAtEpochMs": 1793911937775,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793911937775
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 82,
-        "charCount": 2711,
-        "hash": "6ee5746b80fa",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e...",
-        "updatedAt": 1793911937775
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 82,
-        "summary": "Line 1: inserted 82 lines.",
-        "beforeFragment": "",
-        "afterFragment": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('cod..."
-      }
-    },
-    {
-      "type": "create",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-05T20:52:11.775Z",
-      "recordedAtEpochMs": 1793911931775,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793911931769.7664,
-        "extension": ".ts",
-        "sizeBytes": 0
-      },
-      "diff": null
-    },
-    {
-      "type": "create",
-      "path": "app/api/verify-voucher",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-05T20:52:07.165Z",
-      "recordedAtEpochMs": 1793911927165,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 8
+      "filePath": "app/api/auth/route.ts",
+      "count": 6
     },
     {
-      "filePath": "app/api/auth/route.ts",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 6
     },
     {
@@ -1127,27 +1133,31 @@
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 3
+      "count": 4
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/api/auth-voucher/route.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 25c467f fix(api): add force-dynamic export to /api/vouchers route handler",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 63008f4 fix(api): ensure safe array response in GET and fix POST handler for vouchers",
+    "statusSummary": "4 modifieds, 1 untracked",
+    "changedFileCount": 5,
     "statusLines": [
-      "M app/api/vouchers/route.ts"
+      "M components/LoginScreen.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md",
+      "?? app/api/auth-voucher/"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c2197b9 by Bas van Dooremalen on 2026-11-05\n  fix(api): add GET and POST handlers to /api/vouchers for data fetching and strict email validation\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 63008f4 by Bas van Dooremalen on 2026-11-05\n  fix(api): ensure safe array response in GET and fix POST handler for vouchers\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
