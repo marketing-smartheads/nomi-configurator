@@ -22,6 +22,19 @@ export default function StepOneWoning({
     return index === self.findIndex((t: any) => (t.indelingTitel || t.indeling_titel || '').trim().toLowerCase() === titel);
   });
 
+  const handleSelectIndeling = (item: any, indelingTitel: string) => {
+    setSelectedIndeling(item);
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('selected_indeling', JSON.stringify(item));
+        sessionStorage.setItem('selected_indeling', JSON.stringify(item));
+        sessionStorage.setItem('geselecteerdeIndeling', indelingTitel);
+      } catch (e) {
+        console.error('Kon indeling niet opslaan in storage:', e);
+      }
+    }
+  };
+
   if (!woningType && woningTypenLijst.length > 0) {
     return (
       <div className="space-y-12 min-h-[400px] flex flex-col justify-center items-center">
@@ -65,7 +78,7 @@ export default function StepOneWoning({
               <button
                 key={`indeling-${index}-${indelingTitel}`}
                 type="button"
-                onClick={() => setSelectedIndeling(item)}
+                onClick={() => handleSelectIndeling(item, indelingTitel)}
                 className={`bg-white p-6 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md border ${
                   isSelected ? 'border-primary ring-2 ring-primary' : 'border-dark/15 hover:border-primary/50'
                 }`}
