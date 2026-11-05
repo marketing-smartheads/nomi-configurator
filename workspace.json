@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:20:54.207Z",
-  "generatedAtEpochMs": 1793881254207,
+  "generatedAt": "2026-11-05T12:23:36.362Z",
+  "generatedAtEpochMs": 1793881416362,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:20:52.334Z",
+    "lastActivityAt": "2026-11-05T12:23:34.638Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,7 +576,7 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793881252334,
+      "updatedAt": 1793881414638,
       "lineCount": 229,
       "charCount": 6293,
       "hash": "542201b41f6c",
@@ -640,6 +640,56 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T12:23:34.638Z",
+      "recordedAtEpochMs": 1793881414638,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881414638
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881414638
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T12:23:31.971Z",
+      "recordedAtEpochMs": 1793881411971,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881411971
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881411971
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1041,76 +1091,12 @@
         "beforeFragment": "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd...",
         "afterFragment": "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 221: replaced 20 lines with 20 lines.",
-      "recordedAt": "2026-11-02T10:37:57.411Z",
-      "recordedAtEpochMs": 1793615877411,
-      "before": {
-        "kind": "text",
-        "lineCount": 272,
-        "charCount": 9890,
-        "hash": "5c2df540a650",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793615877411
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 272,
-        "charCount": 9894,
-        "hash": "9b7741ac908a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
-        "updatedAt": 1793615877411
-      },
-      "diff": {
-        "lineStart": 221,
-        "removedLines": 20,
-        "addedLines": 20,
-        "summary": "Line 221: replaced 20 lines with 20 lines.",
-        "beforeFragment": "xs sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35 t...",
-        "afterFragment": "base sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/globals.css",
-      "toPath": "",
-      "summary": "Line 102: inserted 5 lines.",
-      "recordedAt": "2026-11-02T10:32:36.827Z",
-      "recordedAtEpochMs": 1793615556827,
-      "before": {
-        "kind": "text",
-        "lineCount": 102,
-        "charCount": 2661,
-        "hash": "b8c04f0eb1b0",
-        "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --...",
-        "updatedAt": 1793615556827
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 106,
-        "charCount": 2720,
-        "hash": "7e080d34cd3e",
-        "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --...",
-        "updatedAt": 1793615556827
-      },
-      "diff": {
-        "lineStart": 102,
-        "removedLines": 0,
-        "addedLines": 5,
-        "summary": "Line 102: inserted 5 lines.",
-        "beforeFragment": "",
-        "afterFragment": "input, select, textarea { / font-size: 16px !important; / }"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 12
+      "count": 10
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1118,7 +1104,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 4
+      "count": 6
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1144,15 +1130,19 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 57305b3 fix(cms): update WPGraphQL query with union types for visualsSlider and moodboardGallery to fetch all uploaded images",
-    "statusSummary": "",
-    "changedFileCount": 0,
-    "statusLines": [],
+    "headSummary": "2026-11-05 948b318 fix(cms): remove invalid root-level designPakketten field from graphql query",
+    "statusSummary": "3 modifieds",
+    "changedFileCount": 3,
+    "statusLines": [
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
+    ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 761091d by Bas van Dooremalen on 2026-11-05\n  fix(visuals): support both array and node formats for visualsSlider gallery\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 948b318 by Bas van Dooremalen on 2026-11-05\n  fix(cms): remove invalid root-level designPakketten field from graphql query\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

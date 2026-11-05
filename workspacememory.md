@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:20:54.207Z
+Generated: 2026-11-05T12:23:36.362Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:20:52.334Z
+- Last activity: 2026-11-05T12:23:34.638Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (12), app/dashboard/page.tsx (6), lib/cms.ts (4), components/configurator/StepThreeVisuals.tsx (3)
+- Hottest files right now: app/download/page.tsx (10), app/dashboard/page.tsx (6), lib/cms.ts (6), components/configurator/StepThreeVisuals.tsx (3)
 - Suggested starting points: lib/cms.ts, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: clean
+- Working tree summary: 3 modifieds
 ## Tracked Snapshots
 - lib/cms.ts | 229 lines | 6293 chars | hash 542201b41f6c
-  Last snapshot: 2026-11-05T12:20:52.334Z
+  Last snapshot: 2026-11-05T12:23:34.638Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepThreeVisuals.tsx | 487 lines | 20249 chars | hash 154f87251e36
   Last snapshot: 2026-11-05T12:17:56.761Z
@@ -65,6 +65,16 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:23:34.638Z | saved | lib/cms.ts
+- Summary: Saved without a textual diff.
+- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+
+### 2026-11-05T12:23:31.971Z | saved | lib/cms.ts
+- Summary: Saved without a textual diff.
+- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+
 ### 2026-11-05T12:20:52.334Z | saved | lib/cms.ts
 - Summary: Saved without a textual diff.
 - Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -152,24 +162,11 @@ Structured manifest: workspace.json
 - Previous fragment: "useEffect(() => { / if (typeof window !== 'undefined') { / const confirmed = sessionStorage.getItem('configuratorConfirmed'); / if (confirmed === 'true') { / setIsReedsBevestigd..."
 - Current fragment: "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal..."
 
-### 2026-11-02T10:37:57.411Z | saved | components/LoginScreen.tsx
-- Summary: Line 221: replaced 20 lines with 20 lines.
-- Before: 272 lines | 9,890 chars | hash 5c2df540a650 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 272 lines | 9,894 chars | hash 9b7741ac908a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- Previous fragment: "xs sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35 t..."
-- Current fragment: "base sm:text-sm tracking-widest font-sans / bg-dark border border-white/10 / backdrop-blur-[3.75rem] / text-white placeholder-white/40 / focus:outline-none focus:border-white/35..."
-
-### 2026-11-02T10:32:36.827Z | saved | app/globals.css
-- Summary: Line 102: inserted 5 lines.
-- Before: 102 lines | 2,661 chars | hash b8c04f0eb1b0 | preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
-- After: 106 lines | 2,720 chars | hash 7e080d34cd3e | preview: "@import "tailwindcss"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
-- Current fragment: "input, select, textarea { / font-size: 16px !important; / }"
-
 
 ## Hot Files
-- app/download/page.tsx (12 tracked changes)
+- app/download/page.tsx (10 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
-- lib/cms.ts (4 tracked changes)
+- lib/cms.ts (6 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
@@ -178,9 +175,11 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 57305b3 fix(cms): update WPGraphQL query with union types for visualsSlider and moodboardGallery to fetch all uploaded images
-- Working tree summary: clean
-- Working tree: clean
+- HEAD: 2026-11-05 948b318 fix(cms): remove invalid root-level designPakketten field from graphql query
+- Working tree summary: 3 modifieds
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 761091d by Bas van Dooremalen on 2026-11-05
-  fix(visuals): support both array and node formats for visualsSlider gallery
+- 948b318 by Bas van Dooremalen on 2026-11-05
+  fix(cms): remove invalid root-level designPakketten field from graphql query
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
