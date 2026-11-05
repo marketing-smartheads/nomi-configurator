@@ -229,7 +229,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
-  // Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -276,23 +275,46 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
     
-    // Dynamische e-mailcontrole op basis van velden uit WordPress (indien gevuld)
+    // Haal het opgeslagen e-mailadres op uit WordPress
     const opgeslagenEmail = String(
       velden.klantEmail || velden.klantE_mail || velden.klantenEmail || velden.email || ''
     ).trim().toLowerCase();
 
-    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
+    console.log('DEBUG Auth -> Code:', cleanCode, '| Status in WP:', status, '| Opgeslagen e-mail in WP:', opgeslagenEmail);
+
+    // Strenge controle: Als de voucher al een geldig e-mailadres heeft opgeslagen of status bevestigd is, MOET het ingevoerde e-mailadres overeenkomen.
+    const isReedsGebruikt = (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') || status === 'bevestigd' || status.includes('bevestigd');
+
+    if (isReedsGebruikt && opgeslagenEmail && opgeslagenEmail !== '-') {
       if (opgeslagenEmail !== cleanEmail) {
         return { 
           success: false, 
           error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
         };
       }
+    } else {
+      // Als de voucher nog niet gebruikt is, mag elk willekeurig e-mailadres inloggen. 
+      // Optioneel slaan we deze direct op in WordPress zodat hij vanaf dan wel gekoppeld is.
+      const updateMutation = `
+        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
+            voucher { databaseId }
+          }
+        }
+      `;
+
+      await fetch(graphqlEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: updateMutation,
+          variables: { id: voucher.databaseId, email: cleanEmail }
+        }),
+        cache: 'no-store',
+      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
     }
 
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
-
-    return { success: true, isBevestigd };
+    return { success: true, isBevestigd: true };
   } catch (err) {
     console.error('GraphQL verificatie fout:', err);
     return { success: false, error: 'Er is een technische fout opgetreden bij de verificatie.' };

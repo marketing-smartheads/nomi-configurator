@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:03:38.372Z
+Generated: 2026-11-05T23:08:36.586Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:03:35.990Z
+- Last activity: 2026-11-05T23:08:34.867Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: components/LoginScreen.tsx (9), lib/cms.ts (8), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (6)
-- Suggested starting points: app/download/page.tsx, components/LoginScreen.tsx, lib/cms.ts, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/api/auth-voucher
+- Active file in focus: lib/cms.ts
+- Hottest files right now: components/LoginScreen.tsx (9), lib/cms.ts (9), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (6)
+- Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), delete (1)
 - Remembered file snapshots: 47
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 322 lines | 9598 chars | hash e0c9e452ea51
+  Last snapshot: 2026-11-05T23:08:34.867Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- lib/cms.ts | 300 lines | 8553 chars | hash a23a93ea3aee
-  Last snapshot: 2026-11-05T23:03:04.458Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/LoginScreen.tsx | 276 lines | 9862 chars | hash 904ae93bdd1a
   Last snapshot: 2026-11-05T22:30:02.126Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:08:34.867Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 64 lines with 86 lines.
+- Before: 300 lines | 8,553 chars | hash a23a93ea3aee | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 322 lines | 9,598 chars | hash e0c9e452ea51 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "// Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databas..."
+- Current fragment: "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEmail / klantE_ma..."
+
 ### 2026-11-05T23:03:35.990Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 64 lines with 65 lines.
 - Before: 398 lines | 19,266 chars | hash 34de51cfb2e4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -160,17 +167,10 @@ Structured manifest: workspace.json
 - Before: 206 lines | 6,358 chars | hash 6df8a1bf9348 | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 - After: 206 lines | 6,358 chars | hash 6df8a1bf9348 | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
 
-### 2026-11-05T22:22:12.866Z | saved | lib/useConfigurator.ts
-- Summary: Line 104: replaced 49 lines with 64 lines.
-- Before: 191 lines | 5,604 chars | hash 6b9a1c08487a | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- After: 206 lines | 6,358 chars | hash 6df8a1bf9348 | preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- Previous fragment: "const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = toegangscode.trim().toUpperCase(); / if (type..."
-- Current fragment: "// 🛑 CENTRALE INLOG- EN VERIFICATIEPUNT / const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = to..."
-
 
 ## Hot Files
 - components/LoginScreen.tsx (9 tracked changes)
-- lib/cms.ts (8 tracked changes)
+- lib/cms.ts (9 tracked changes)
 - app/api/vouchers/route.ts (7 tracked changes)
 - app/api/verify-voucher/route.ts (6 tracked changes)
 - app/download/page.tsx (3 tracked changes)
@@ -180,13 +180,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 74ade46 feat(download): add gekozenIndeling label next to woning and package labels
-- Working tree summary: 5 modifieds
-- M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
+- HEAD: 2026-11-06 34803be fix(auth & download): make email validation fully dynamic from WordPress CMS fields and fix indeling rendering
+- Working tree summary: 1 modified
 - M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

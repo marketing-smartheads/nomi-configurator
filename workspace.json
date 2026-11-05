@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:03:38.372Z",
-  "generatedAtEpochMs": 1793919818372,
+  "generatedAt": "2026-11-05T23:08:36.586Z",
+  "generatedAtEpochMs": 1793920116586,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
-      "components/LoginScreen.tsx",
       "lib/cms.ts",
+      "components/LoginScreen.tsx",
       "app/api/vouchers/route.ts",
       "app/api/verify-voucher/route.ts",
+      "app/download/page.tsx",
       "app/api/auth-voucher",
       "app/api/auth-voucher/route.ts",
       "lib/useConfigurator.ts",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:03:35.990Z",
+    "lastActivityAt": "2026-11-05T23:08:34.867Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -587,20 +587,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793920114867,
+      "lineCount": 322,
+      "charCount": 9598,
+      "hash": "e0c9e452ea51",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
+    {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793919815990,
       "lineCount": 399,
       "charCount": 19298,
       "hash": "d6c80bb2a10b",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793919784458,
-      "lineCount": 300,
-      "charCount": 8553,
-      "hash": "a23a93ea3aee",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 232: replaced 64 lines with 86 lines.",
+      "recordedAt": "2026-11-05T23:08:34.867Z",
+      "recordedAtEpochMs": 1793920114867,
+      "before": {
+        "kind": "text",
+        "lineCount": 300,
+        "charCount": 8553,
+        "hash": "a23a93ea3aee",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920114866
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 9598,
+        "hash": "e0c9e452ea51",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920114867
+      },
+      "diff": {
+        "lineStart": 232,
+        "removedLines": 64,
+        "addedLines": 86,
+        "summary": "Line 232: replaced 64 lines with 86 lines.",
+        "beforeFragment": "// Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databas...",
+        "afterFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEmail / klantE_ma..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1092,38 +1124,6 @@
         "updatedAt": 1793917337496
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "lib/useConfigurator.ts",
-      "toPath": "",
-      "summary": "Line 104: replaced 49 lines with 64 lines.",
-      "recordedAt": "2026-11-05T22:22:12.866Z",
-      "recordedAtEpochMs": 1793917332866,
-      "before": {
-        "kind": "text",
-        "lineCount": 191,
-        "charCount": 5604,
-        "hash": "6b9a1c08487a",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793917332866
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 206,
-        "charCount": 6358,
-        "hash": "6df8a1bf9348",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793917332866
-      },
-      "diff": {
-        "lineStart": 104,
-        "removedLines": 49,
-        "addedLines": 64,
-        "summary": "Line 104: replaced 49 lines with 64 lines.",
-        "beforeFragment": "const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = toegangscode.trim().toUpperCase(); / if (type...",
-        "afterFragment": "// 🛑 CENTRALE INLOG- EN VERIFICATIEPUNT / const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = to..."
-      }
     }
   ],
   "hotFiles": [
@@ -1133,7 +1133,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 8
+      "count": 9
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1163,15 +1163,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 74ade46 feat(download): add gekozenIndeling label next to woning and package labels",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-06 34803be fix(auth & download): make email validation fully dynamic from WordPress CMS fields and fix indeling rendering",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
