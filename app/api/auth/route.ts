@@ -17,9 +17,10 @@ export async function POST(request: Request) {
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
 
+    // Haal de eerste 100 vouchers op om zeker te zijn dat we de juiste vinden
     const query = `
-      query GetVoucher($code: String!) {
-        vouchers(where: { search: $code }) {
+      query GetAllVouchersForAuth {
+        vouchers(first: 100) {
           nodes {
             databaseId
             title
@@ -40,16 +41,22 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
         ...(basicAuth ? { 'Authorization': basicAuth } : {}),
       },
-      body: JSON.stringify({ query, variables: { code: toegangscode.trim() } }),
+      body: JSON.stringify({ query }),
       cache: 'no-store',
     });
 
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
-    const voucher = vouchers.find((v: any) => 
-      (v?.voucherVelden?.toegangscode || '').trim().toLowerCase() === toegangscode.trim().toLowerCase()
-    );
+    const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
+    const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
+
+    // Zoek de voucher feilloos op basis van het veld 'toegangscode' of de titel van de post
+    const voucher = vouchers.find((v: any) => {
+      const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
+      const titleField = (v?.title || '').trim().toLowerCase();
+      return codeField === ingevoerdeCodeClean || titleField === ingevoerdeCodeClean;
+    });
 
     if (!voucher) {
       return NextResponse.json(
@@ -60,9 +67,8 @@ export async function POST(request: Request) {
 
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
-    const ingevoerdeEmail = klantEmail.trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAIL CHECK
+    // STRENGE E-MAIL CHECK: Als er al een e-mailadres in WP staat, moet dit exact overeenkomen
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmail) {
         return NextResponse.json(
@@ -71,7 +77,7 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Eerste keer inloggen: koppel het ingevoerde e-mailadres aan de voucher in WordPress
+      // Eerste keer inloggen: Sla het e-mailadres automatisch op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
@@ -93,7 +99,7 @@ export async function POST(request: Request) {
           variables: { id: voucher.databaseId, email: ingevoerdeEmail } 
         }),
         cache: 'no-store',
-      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
+      }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
     }
 
     return NextResponse.json({ success: true, message: 'Toegang verleend' });

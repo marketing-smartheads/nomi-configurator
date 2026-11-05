@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T21:00:41.177Z
+Generated: 2026-11-05T21:03:19.286Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T21:00:38.755Z
+- Last activity: 2026-11-05T21:03:17.487Z
 ## Workspace Focus
-- Active file in focus: components/LoginScreen.tsx
+- Active file in focus: app/api/auth/route.ts
 - Hottest files right now: components/configurator/StepThreeVisuals.tsx (11), app/download/page.tsx (6), components/configurator/StepOnewoning.tsx (6), components/configurator/StepFourConfirmation.tsx (5)
-- Suggested starting points: components/LoginScreen.tsx, components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, app/api/auth/route.ts
+- Suggested starting points: app/api/auth/route.ts, components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
-- Active file: components/LoginScreen.tsx
+- Active file: app/api/auth/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 46
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/auth/route.ts | 114 lines | 3891 chars | hash d9f5be722e52
+  Last snapshot: 2026-11-05T21:03:17.487Z
+  Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 - components/LoginScreen.tsx | 290 lines | 10590 chars | hash 811f6f13c11b
   Last snapshot: 2026-11-05T21:00:38.755Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 - app/api/verify-voucher/route.ts | 82 lines | 2711 chars | hash 6ee5746b80fa
   Last snapshot: 2026-11-05T20:52:17.775Z
   Preview: "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e..."
-- app/api/auth/route.ts | 108 lines | 3505 chars | hash 9b430fcc09dc
-  Last snapshot: 2026-11-05T20:50:48.614Z
-  Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 - app/download/page.tsx | 422 lines | 20388 chars | hash a12394416f45
   Last snapshot: 2026-11-05T18:04:09.989Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-11-05T21:03:17.487Z | saved | app/api/auth/route.ts
+- Summary: Line 20: replaced 77 lines with 83 lines.
+- Before: 108 lines | 3,505 chars | hash 9b430fcc09dc | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
+- After: 114 lines | 3,891 chars | hash d9f5be722e52 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
+- Previous fragment: "const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title / voucherVelden { / toegangscode / status / klantEmail..."
+- Current fragment: "// Haal de eerste 100 vouchers op om zeker te zijn dat we de juiste vinden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
+
 ### 2026-11-05T21:00:38.755Z | saved | components/LoginScreen.tsx
 - Summary: Line 33: replaced 92 lines with 94 lines.
 - Before: 288 lines | 10,168 chars | hash 79594072f6a6 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
@@ -150,29 +157,22 @@ Structured manifest: workspace.json
 - Previous fragment: "git commit -m "fix(step1): correct bracket typo on localStorage read""
 - Current fragment: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
 
-### 2026-11-05T17:28:26.644Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 1: replaced 122 lines with 1 line.
-- Before: 122 lines | 5,571 chars | hash 7c52c9f0546f | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-- After: 1 line | 69 chars | hash 4147d60acd7f | preview: "git commit -m "fix(step1): correct bracket typo on localStorage read""
-- Previous fragment: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
-- Current fragment: "git commit -m "fix(step1): correct bracket typo on localStorage read""
-
 
 ## Hot Files
 - components/configurator/StepThreeVisuals.tsx (11 tracked changes)
 - app/download/page.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
-- app/api/auth/route.ts (3 tracked changes)
+- app/api/auth/route.ts (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - app/api/verify-voucher/route.ts (2 tracked changes)
-- lib/cms.ts (2 tracked changes)
+- app/api/verify-voucher (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 63a7a78 security(auth): strictly validate email address matching voucher record on login and verification endpoints
+- HEAD: 2026-11-05 acf5303 security(login): enforce strict server-side email verification in LoginScreen component
 - Working tree summary: 1 modified
-- M components/LoginScreen.tsx
+- M app/api/auth/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
