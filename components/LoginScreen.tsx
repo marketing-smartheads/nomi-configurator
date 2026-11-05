@@ -30,7 +30,6 @@ export default function LoginScreen({
   const [isChecking, setIsChecking] = useState(false);
   const [customError, setCustomError] = useState<string | null>(null);
 
-  // Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent
   const [localCode, setLocalCode] = useState(toegangscode);
   const [localEmail, setLocalEmail] = useState(klantEmail);
 
@@ -62,6 +61,7 @@ export default function LoginScreen({
     const val = e.target.value;
     setLocalEmail(val);
     setKlantEmail(val);
+    setCustomError(null);
   };
 
   const handleSubmitWithStorage = async (e: React.FormEvent) => {
@@ -70,58 +70,60 @@ export default function LoginScreen({
     setCustomError(null);
     
     try {
-      const res = await fetch('/api/vouchers');
-      
-      if (!res.ok) {
-        throw new Error('Kon geen verbinding maken met de server');
-      }
-
-      const data = await res.json();
-      const vouchers = data.vouchers || [];
-
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
-      
-      const found = vouchers.find((v: any) => {
-        const details = v.voucherVelden || {};
-        const code = String(details.toegangscode || v.title || '').trim().toUpperCase();
-        return code === ingevoerdeCodeClean;
+      const ingevoerdeEmailClean = localEmail.trim();
+
+      // 1. Strenge server-side validatie via /api/auth
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          toegangscode: ingevoerdeCodeClean,
+          klantEmail: ingevoerdeEmailClean,
+        }),
       });
 
-      if (!found) {
-        setCustomError('Deze vouchercode is onjuist of niet bekend in ons systeem.');
+      const data = await res.json();
+
+      // 2. Als de API een fout geeft (zoals een e-mail mismatch of ongeldige code), stop direct!
+      if (!res.ok) {
+        setCustomError(data.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
         setIsChecking(false);
         return;
       }
 
-      const details = found.voucherVelden || {};
-      const status = details.status;
+      // 3. Vlaggen instellen in opslag
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('voucherCode', ingevoerdeCodeClean);
+        sessionStorage.setItem('klantEmail', ingevoerdeEmailClean);
+        sessionStorage.setItem('toegangscode', ingevoerdeCodeClean);
+        localStorage.setItem('toegangscode', ingevoerdeCodeClean);
+        localStorage.setItem('klantEmail', ingevoerdeEmailClean);
+      }
 
-      if (status === 'Keuze definitief bevestigd' || (details.gekozenTypeWoning && details.gekozenDesignpakket)) {
-        if (typeof window !== 'undefined') {
-          sessionStorage.setItem('configuratorConfirmed', 'true');
-          sessionStorage.setItem('voucherCode', ingevoerdeCodeClean);
-          sessionStorage.setItem('klantEmail', localEmail.trim());
-          localStorage.setItem('toegangscode', ingevoerdeCodeClean);
+      // 4. Controleer via een extra fetch of de voucher al bevestigd was om te bepalen of we naar de downloadpagina gaan
+      const verifyRes = await fetch(`/api/verify-voucher?code=${encodeURIComponent(ingevoerdeCodeClean)}&email=${encodeURIComponent(ingevoerdeEmailClean)}`);
+      if (verifyRes.ok) {
+        const verifyData = await verifyRes.json();
+        if (verifyData.isBevestigd || verifyData.status === 'bevestigd' || verifyData.status === 'Keuze definitief bevestigd') {
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem('configuratorConfirmed', 'true');
+            localStorage.setItem('configurator_definitief_bevestigd', 'true');
+          }
+          setIsReedsBevestigd(true);
+          setIsChecking(false);
+          return;
         }
-        setIsReedsBevestigd(true);
-        setIsChecking(false);
-        return;
       }
 
     } catch (err) {
-      console.error('Fout bij controleren voucher:', err);
-      setCustomError('Er ging iets mis bij het controleren van de code. Probeer het opnieuw.');
+      console.error('Fout bij verifiëren voucher:', err);
+      setCustomError('Er ging iets mis bij het controleren van de gegevens. Probeer het opnieuw.');
       setIsChecking(false);
       return;
     }
 
     setIsChecking(false);
-
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('voucherCode', localCode.trim());
-      sessionStorage.setItem('klantEmail', localEmail.trim());
-    }
-
     onSubmit(e);
   };
 

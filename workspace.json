@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T20:52:19.578Z",
-  "generatedAtEpochMs": 1793911939578,
+  "generatedAt": "2026-11-05T21:00:41.177Z",
+  "generatedAtEpochMs": 1793912441177,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/verify-voucher/route.ts",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/verify-voucher/route.ts",
+      "components/LoginScreen.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "app/api/auth/route.ts",
       "components/configurator/StepTwoDesign.tsx",
+      "app/api/verify-voucher/route.ts",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T20:52:17.775Z",
+    "lastActivityAt": "2026-11-05T21:00:38.755Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 46,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1793912438755,
+      "lineCount": 290,
+      "charCount": 10590,
+      "hash": "811f6f13c11b",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
+    },
     {
       "filePath": "app/api/verify-voucher/route.ts",
       "updatedAt": 1793911937775,
@@ -641,17 +649,41 @@
       "charCount": 8924,
       "hash": "62093ff0ea75",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793890309893,
-      "lineCount": 225,
-      "charCount": 6176,
-      "hash": "4ba55e533623",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 33: replaced 92 lines with 94 lines.",
+      "recordedAt": "2026-11-05T21:00:38.755Z",
+      "recordedAtEpochMs": 1793912438755,
+      "before": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10168,
+        "hash": "79594072f6a6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793912438755
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 290,
+        "charCount": 10590,
+        "hash": "811f6f13c11b",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac...",
+        "updatedAt": 1793912438755
+      },
+      "diff": {
+        "lineStart": 33,
+        "removedLines": 92,
+        "addedLines": 94,
+        "summary": "Line 33: replaced 92 lines with 94 lines.",
+        "beforeFragment": "// Lokale state voor vloeiend typen op mobiel zonder direct te herrenderen in de parent / const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocal...",
+        "afterFragment": "const [localCode, setLocalCode] = useState(toegangscode); / const [localEmail, setLocalEmail] = useState(klantEmail); / useEffect(() => { / setLocalCode(toegangscode); / }, [toe..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/verify-voucher/route.ts",
@@ -1054,38 +1086,6 @@
         "beforeFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {...",
         "afterFragment": "git commit -m \"fix(step1): correct bracket typo on localStorage read\""
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 3: replaced 343 lines with 117 lines.",
-      "recordedAt": "2026-11-05T17:27:41.003Z",
-      "recordedAtEpochMs": 1793899661003,
-      "before": {
-        "kind": "text",
-        "lineCount": 348,
-        "charCount": 16717,
-        "hash": "36cc8926abe6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793899661003
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5571,
-        "hash": "7c52c9f0546f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793899661003
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 343,
-        "addedLines": 117,
-        "summary": "Line 3: replaced 343 lines with 117 lines.",
-        "beforeFragment": "import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_N...",
-        "afterFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilter..."
-      }
     }
   ],
   "hotFiles": [
@@ -1114,32 +1114,28 @@
       "count": 3
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 3
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 2
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
+      "filePath": "lib/cms.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 1cc1177 security(auth): enforce strict email matching against WordPress voucher record",
-    "statusSummary": "4 modifieds, 1 untracked",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 63a7a78 security(auth): strictly validate email address matching voucher record on login and verification endpoints",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/api/auth/route.ts",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md",
-      "?? app/api/verify-voucher/"
+      "M components/LoginScreen.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1cc1177 by Bas van Dooremalen on 2026-11-05\n  security(auth): enforce strict email matching against WordPress voucher record\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 63a7a78 by Bas van Dooremalen on 2026-11-05\n  security(auth): strictly validate email address matching voucher record on login and verification endpoints\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
