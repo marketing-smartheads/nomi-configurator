@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
 
-    // Haal de eerste 100 vouchers op om zeker te zijn dat we de juiste vinden
     const query = `
       query GetAllVouchersForAuth {
         vouchers(first: 100) {
@@ -51,7 +50,7 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
-    // Zoek de voucher feilloos op basis van het veld 'toegangscode' of de titel van de post
+    // Zoek de voucher in de GraphQL respons
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -68,7 +67,7 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // STRENGE E-MAIL CHECK: Als er al een e-mailadres in WP staat, moet dit exact overeenkomen
+    // 🛑 STRENGE VERGELIJKING VAN HET E-MAILADRES
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -77,7 +76,7 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Eerste keer inloggen: Sla het e-mailadres automatisch op in WordPress
+      // Eerste keer inloggen: koppel het ingevoerde e-mailadres aan de voucher in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
@@ -99,10 +98,16 @@ export async function POST(request: Request) {
           variables: { id: voucher.databaseId, email: ingevoerdeEmailClean } 
         }),
         cache: 'no-store',
-      }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
+      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
     }
 
-    return NextResponse.json({ success: true, message: 'Toegang verleend' });
+    const isBevestigd = velden.status === 'bevestigd' || velden.status === 'Keuze definitief bevestigd';
+
+    return NextResponse.json({ 
+      success: true, 
+      isBevestigd, 
+      status: velden.status || 'niet_ingevuld' 
+    });
 
   } catch (error: any) {
     console.error('Auth API fout:', error);

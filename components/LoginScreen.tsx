@@ -73,7 +73,7 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      // 1. Strenge server-side validatie via /api/auth
+      // Roep het /api/auth endpoint aan
       const res = await fetch('/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -85,14 +85,14 @@ export default function LoginScreen({
 
       const data = await res.json();
 
-      // 2. Als de API een fout geeft (zoals een e-mail mismatch of ongeldige code), stop direct!
+      // Als de API de inlog afkeurt (bijv. verkeerd e-mailadres of code), stop direct!
       if (!res.ok) {
         setCustomError(data.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
         setIsChecking(false);
         return;
       }
 
-      // 3. Vlaggen instellen in opslag
+      // Sla gegevens op
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('voucherCode', ingevoerdeCodeClean);
         sessionStorage.setItem('klantEmail', ingevoerdeEmailClean);
@@ -101,19 +101,14 @@ export default function LoginScreen({
         localStorage.setItem('klantEmail', ingevoerdeEmailClean);
       }
 
-      // 4. Controleer via een extra fetch of de voucher al bevestigd was om te bepalen of we naar de downloadpagina gaan
-      const verifyRes = await fetch(`/api/verify-voucher?code=${encodeURIComponent(ingevoerdeCodeClean)}&email=${encodeURIComponent(ingevoerdeEmailClean)}`);
-      if (verifyRes.ok) {
-        const verifyData = await verifyRes.json();
-        if (verifyData.isBevestigd || verifyData.status === 'bevestigd' || verifyData.status === 'Keuze definitief bevestigd') {
-          if (typeof window !== 'undefined') {
-            sessionStorage.setItem('configuratorConfirmed', 'true');
-            localStorage.setItem('configurator_definitief_bevestigd', 'true');
-          }
-          setIsReedsBevestigd(true);
-          setIsChecking(false);
-          return;
+      if (data.isBevestigd) {
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('configuratorConfirmed', 'true');
+          localStorage.setItem('configurator_definitief_bevestigd', 'true');
         }
+        setIsReedsBevestigd(true);
+        setIsChecking(false);
+        return;
       }
 
     } catch (err) {
