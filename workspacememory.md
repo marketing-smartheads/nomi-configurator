@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:38:10.393Z
+Generated: 2026-11-05T23:45:07.873Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:38:07.867Z
+- Last activity: 2026-11-05T23:45:05.463Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (16), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (4)
+- Hottest files right now: lib/cms.ts (17), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (3)
 - Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 322 lines | 9555 chars | hash 1b9f059103c2
-  Last snapshot: 2026-11-05T23:38:07.867Z
+- lib/cms.ts | 322 lines | 9591 chars | hash 226caf9bbf89
+  Last snapshot: 2026-11-05T23:45:05.463Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:45:05.463Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 67 lines with 67 lines.
+- Before: 322 lines | 9,555 chars | hash 1b9f059103c2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 322 lines | 9,591 chars | hash 226caf9bbf89 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title..."
+- Current fragment: "Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
+
 ### 2026-11-05T23:38:07.867Z | saved | lib/cms.ts
 - Summary: Line 232: replaced 73 lines with 67 lines.
 - Before: 328 lines | 9,753 chars | hash 89e4fbac150b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -163,19 +170,12 @@ Structured manifest: workspace.json
 - Previous fragment: "try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.json(); / if (!voucherInfo || vou..."
 - Current fragment: "let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromise = new Promise((_, reject) => / setTimeout(() => reject(new Error('CMS timeout')), 5000)..."
 
-### 2026-11-05T22:48:49.121Z | saved | lib/cms.ts
-- Summary: Line 223: replaced 92 lines with 52 lines.
-- Before: 321 lines | 9,202 chars | hash ad9adb9f03c6 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 281 lines | 7,764 chars | hash 33e5efc5d32c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCode = (toegangscode || '').trim().toUpperCase(); / const cleanEmail = (klant..."
-- Current fragment: "// Simpele, robuuste verificatie op basis van de bewezen werkende velden / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
-
 
 ## Hot Files
-- lib/cms.ts (16 tracked changes)
+- lib/cms.ts (17 tracked changes)
 - components/LoginScreen.tsx (7 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
-- app/api/vouchers/route.ts (4 tracked changes)
+- app/api/vouchers/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/auth-voucher (2 tracked changes)
 - app/api/auth-voucher/route.ts (2 tracked changes)
@@ -183,7 +183,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 67fac03 fix(auth): support alternative ACF email field variations in GraphQL query
+- HEAD: 2026-11-06 f3ccbdd fix(auth): use exact WPGraphQL field name klantEmail
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
@@ -193,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 67fac03 by Bas van Dooremalen on 2026-11-05
-  fix(auth): support alternative ACF email field variations in GraphQL query
+- f3ccbdd by Bas van Dooremalen on 2026-11-05
+  fix(auth): use exact WPGraphQL field name klantEmail
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

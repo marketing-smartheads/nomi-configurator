@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:38:10.393Z",
-  "generatedAtEpochMs": 1793921890393,
+  "generatedAt": "2026-11-05T23:45:07.873Z",
+  "generatedAtEpochMs": 1793922307873,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:38:07.867Z",
+    "lastActivityAt": "2026-11-05T23:45:05.463Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793921887867,
+      "updatedAt": 1793922305463,
       "lineCount": 322,
-      "charCount": 9555,
-      "hash": "1b9f059103c2",
+      "charCount": 9591,
+      "hash": "226caf9bbf89",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 232: replaced 67 lines with 67 lines.",
+      "recordedAt": "2026-11-05T23:45:05.463Z",
+      "recordedAtEpochMs": 1793922305463,
+      "before": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 9555,
+        "hash": "1b9f059103c2",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793922305463
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 9591,
+        "hash": "226caf9bbf89",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793922305463
+      },
+      "diff": {
+        "lineStart": 232,
+        "removedLines": 67,
+        "addedLines": 67,
+        "summary": "Line 232: replaced 67 lines with 67 lines.",
+        "beforeFragment": "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title...",
+        "afterFragment": "Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,44 +1131,12 @@
         "beforeFragment": "try { / const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`); / if (res.ok) { / const voucherInfo = await res.json(); / if (!voucherInfo || vou...",
         "afterFragment": "let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromise = new Promise((_, reject) => / setTimeout(() => reject(new Error('CMS timeout')), 5000)..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 223: replaced 92 lines with 52 lines.",
-      "recordedAt": "2026-11-05T22:48:49.121Z",
-      "recordedAtEpochMs": 1793918929121,
-      "before": {
-        "kind": "text",
-        "lineCount": 321,
-        "charCount": 9202,
-        "hash": "ad9adb9f03c6",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918929121
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 281,
-        "charCount": 7764,
-        "hash": "33e5efc5d32c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918929121
-      },
-      "diff": {
-        "lineStart": 223,
-        "removedLines": 92,
-        "addedLines": 52,
-        "summary": "Line 223: replaced 92 lines with 52 lines.",
-        "beforeFragment": "export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCode = (toegangscode || '').trim().toUpperCase(); / const cleanEmail = (klant...",
-        "afterFragment": "// Simpele, robuuste verificatie op basis van de bewezen werkende velden / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 16
+      "count": 17
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -1148,7 +1148,7 @@
     },
     {
       "filePath": "app/api/vouchers/route.ts",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1170,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 67fac03 fix(auth): support alternative ACF email field variations in GraphQL query",
+    "headSummary": "2026-11-06 f3ccbdd fix(auth): use exact WPGraphQL field name klantEmail",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1180,7 +1180,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 67fac03 by Bas van Dooremalen on 2026-11-05\n  fix(auth): support alternative ACF email field variations in GraphQL query\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f3ccbdd by Bas van Dooremalen on 2026-11-05\n  fix(auth): use exact WPGraphQL field name klantEmail\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
