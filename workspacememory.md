@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:42:27.707Z
+Generated: 2026-11-05T12:45:48.750Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:42:25.375Z
+- Last activity: 2026-11-05T12:45:47.011Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (10), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (5), app/download/page.tsx (4)
+- Hottest files right now: lib/cms.ts (11), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (5), app/download/page.tsx (3)
 - Suggested starting points: lib/cms.ts, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 225 lines | 6181 chars | hash 759e72d2dd03
-  Last snapshot: 2026-11-05T12:42:25.375Z
+- lib/cms.ts | 225 lines | 6203 chars | hash 04694a32fc10
+  Last snapshot: 2026-11-05T12:45:47.011Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepThreeVisuals.tsx | 491 lines | 20409 chars | hash df5ffb8d393f
   Last snapshot: 2026-11-05T12:37:46.162Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:45:47.011Z | saved | lib/cms.ts
+- Summary: Line 69: replaced 10 lines with 10 lines.
+- Before: 225 lines | 6,181 chars | hash 759e72d2dd03 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 225 lines | 6,203 chars | hash 04694a32fc10 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "{ / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes"
+- Current fragment: "(first: 50) { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes(first: 50)"
+
 ### 2026-11-05T12:42:25.375Z | saved | lib/cms.ts
 - Summary: Line 69: replaced 16 lines with 12 lines.
 - Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -153,19 +160,12 @@ Structured manifest: workspace.json
 - Previous fragment: "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP..."
 - Current fragment: "const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray..."
 
-### 2026-11-05T11:54:45.219Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 11: replaced 119 lines with 163 lines.
-- Before: 135 lines | 5,497 chars | hash 829aaad9c45c | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 179 lines | 7,987 chars | hash 6f6825fb8b83 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- Previous fragment: "}: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = data?.stap2omschr..."
-- Current fragment: ", / woningType / }: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving =..."
-
 
 ## Hot Files
-- lib/cms.ts (10 tracked changes)
+- lib/cms.ts (11 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (5 tracked changes)
-- app/download/page.tsx (4 tracked changes)
+- app/download/page.tsx (3 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
@@ -173,7 +173,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 3a4a3ff fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails
+- HEAD: 2026-11-05 d0fba2f fix(cms): remove invalid first argument from visualsSlider and moodboardGallery to resolve graphql connection error
 - Working tree summary: 1 modified
 - M lib/cms.ts
 

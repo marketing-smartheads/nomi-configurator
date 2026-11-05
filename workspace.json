@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:42:27.707Z",
-  "generatedAtEpochMs": 1793882547707,
+  "generatedAt": "2026-11-05T12:45:48.750Z",
+  "generatedAtEpochMs": 1793882748750,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:42:25.375Z",
+    "lastActivityAt": "2026-11-05T12:45:47.011Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793882545375,
+      "updatedAt": 1793882747011,
       "lineCount": 225,
-      "charCount": 6181,
-      "hash": "759e72d2dd03",
+      "charCount": 6203,
+      "hash": "04694a32fc10",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 69: replaced 10 lines with 10 lines.",
+      "recordedAt": "2026-11-05T12:45:47.011Z",
+      "recordedAtEpochMs": 1793882747011,
+      "before": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6181,
+        "hash": "759e72d2dd03",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882747011
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6203,
+        "hash": "04694a32fc10",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882747011
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 10,
+        "addedLines": 10,
+        "summary": "Line 69: replaced 10 lines with 10 lines.",
+        "beforeFragment": "{ / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes",
+        "afterFragment": "(first: 50) { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes(first: 50)"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1052,44 +1084,12 @@
         "beforeFragment": "// Haal de configurator data op dezelfde robuuste manier op als in Stap 2 / const data = configuratorData?.configurator || configuratorData; / const rawPakketten = data?.designP...",
         "afterFragment": "const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 11: replaced 119 lines with 163 lines.",
-      "recordedAt": "2026-11-05T11:54:45.219Z",
-      "recordedAtEpochMs": 1793879685219,
-      "before": {
-        "kind": "text",
-        "lineCount": 135,
-        "charCount": 5497,
-        "hash": "829aaad9c45c",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793879685219
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 179,
-        "charCount": 7987,
-        "hash": "6f6825fb8b83",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793879685219
-      },
-      "diff": {
-        "lineStart": 11,
-        "removedLines": 119,
-        "addedLines": 163,
-        "summary": "Line 11: replaced 119 lines with 163 lines.",
-        "beforeFragment": "}: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = data?.stap2omschr...",
-        "afterFragment": ", / woningType / }: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving =..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 10
+      "count": 11
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1101,7 +1101,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1123,7 +1123,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 3a4a3ff fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails",
+    "headSummary": "2026-11-05 d0fba2f fix(cms): remove invalid first argument from visualsSlider and moodboardGallery to resolve graphql connection error",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
