@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T10:45:42.092Z",
-  "generatedAtEpochMs": 1793616342092,
+  "generatedAt": "2026-11-05T08:46:45.563Z",
+  "generatedAtEpochMs": 1793868405563,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/MainContent.tsx",
+    "activeFile": "components/Hero.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/MainContent.tsx",
+      "components/Hero.tsx",
       "app/download/page.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
       "app/dashboard/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "app/api/confirm/route.ts",
       "components/LoginScreen.tsx",
+      "components/MainContent.tsx",
       "app/api/vouchers/route.ts",
       "app/globals.css",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-02T10:45:40.365Z",
+    "lastActivityAt": "2026-11-05T08:46:43.172Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/Hero.tsx",
+      "updatedAt": 1793868403172,
+      "lineCount": 64,
+      "charCount": 2504,
+      "hash": "95bc9bcb320d",
+      "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
+    },
     {
       "filePath": "components/MainContent.tsx",
       "updatedAt": 1793616340365,
@@ -629,17 +637,41 @@
       "charCount": 903,
       "hash": "ec9c2628508d",
       "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
-    },
-    {
-      "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1793113272831,
-      "lineCount": 372,
-      "charCount": 18002,
-      "hash": "402480d5c584",
-      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Hero.tsx",
+      "toPath": "",
+      "summary": "Line 46: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-05T08:46:43.172Z",
+      "recordedAtEpochMs": 1793868403172,
+      "before": {
+        "kind": "text",
+        "lineCount": 64,
+        "charCount": 2504,
+        "hash": "e230570e5702",
+        "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s...",
+        "updatedAt": 1793868403172
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 64,
+        "charCount": 2504,
+        "hash": "95bc9bcb320d",
+        "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s...",
+        "updatedAt": 1793868403172
+      },
+      "diff": {
+        "lineStart": 46,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 46: replaced 1 line with 1 line.",
+        "beforeFragment": "25",
+        "afterFragment": "40"
+      }
+    },
     {
       "type": "save",
       "path": "components/MainContent.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "",
         "afterFragment": "gekozenIndeling"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 243: removed 1 line.",
-      "recordedAt": "2026-10-27T14:50:01.149Z",
-      "recordedAtEpochMs": 1793112601149,
-      "before": {
-        "kind": "text",
-        "lineCount": 302,
-        "charCount": 13988,
-        "hash": "39c23fe90aa4",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112601149
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 302,
-        "charCount": 13974,
-        "hash": "bdc42371f0d2",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1793112601149
-      },
-      "diff": {
-        "lineStart": 243,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 243: removed 1 line.",
-        "beforeFragment": "uit WordPress",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1127,11 +1127,11 @@
       "count": 15
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 7
+      "filePath": "app/dashboard/page.tsx",
+      "count": 6
     },
     {
-      "filePath": "app/dashboard/page.tsx",
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 6
     },
     {
@@ -1158,12 +1158,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-02 43c78b8 fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-02 1d2b165 fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/LoginScreen.tsx",
-      "M components/MainContent.tsx",
+      "M components/Hero.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1172,7 +1171,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 43c78b8 by Bas van Dooremalen on 2026-11-02\n  fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1d2b165 by Bas van Dooremalen on 2026-11-02\n  fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

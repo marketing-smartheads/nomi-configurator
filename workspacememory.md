@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-02T10:45:42.092Z
+Generated: 2026-11-05T08:46:45.563Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-02T10:45:40.365Z
+- Last activity: 2026-11-05T08:46:43.172Z
 ## Workspace Focus
-- Active file in focus: components/MainContent.tsx
-- Hottest files right now: app/download/page.tsx (15), components/configurator/StepFourConfirmation.tsx (7), app/dashboard/page.tsx (6), app/api/confirm/route.ts (2)
-- Suggested starting points: components/MainContent.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, app/api/confirm/route.ts, components/LoginScreen.tsx
+- Active file in focus: components/Hero.tsx
+- Hottest files right now: app/download/page.tsx (15), app/dashboard/page.tsx (6), components/configurator/StepFourConfirmation.tsx (6), app/api/confirm/route.ts (2)
+- Suggested starting points: components/Hero.tsx, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, components/LoginScreen.tsx
 ## Current Workspace
-- Active file: components/MainContent.tsx
+- Active file: components/Hero.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 5 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/Hero.tsx | 64 lines | 2504 chars | hash 95bc9bcb320d
+  Last snapshot: 2026-11-05T08:46:43.172Z
+  Preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
 - components/MainContent.tsx | 217 lines | 8844 chars | hash e6c5e1499cef
   Last snapshot: 2026-11-02T10:45:40.365Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/VoucherParamHandler.tsx | 26 lines | 903 chars | hash ec9c2628508d
   Last snapshot: 2026-10-27T15:47:30.331Z
   Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
-- app/dashboard/page.tsx | 372 lines | 18002 chars | hash 402480d5c584
-  Last snapshot: 2026-10-27T15:01:12.831Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 
 ## Recent Changes
+### 2026-11-05T08:46:43.172Z | saved | components/Hero.tsx
+- Summary: Line 46: replaced 1 line with 1 line.
+- Before: 64 lines | 2,504 chars | hash e230570e5702 | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
+- After: 64 lines | 2,504 chars | hash 95bc9bcb320d | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
+- Previous fragment: "25"
+- Current fragment: "40"
+
 ### 2026-11-02T10:45:40.365Z | saved | components/MainContent.tsx
 - Summary: Line 97: replaced 1 line with 1 line.
 - Before: 217 lines | 8,849 chars | hash a83c8dcaab63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
@@ -157,17 +164,11 @@ Structured manifest: workspace.json
 - After: 52 lines | 1,568 chars | hash 0eacd0d2ae72 | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
 - Current fragment: "gekozenIndeling"
 
-### 2026-10-27T14:50:01.149Z | saved | app/dashboard/page.tsx
-- Summary: Line 243: removed 1 line.
-- Before: 302 lines | 13,988 chars | hash 39c23fe90aa4 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 302 lines | 13,974 chars | hash bdc42371f0d2 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "uit WordPress"
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (7 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
@@ -176,10 +177,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-02 43c78b8 fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base
-- Working tree summary: 5 modifieds
-- M components/LoginScreen.tsx
-- M components/MainContent.tsx
+- HEAD: 2026-11-02 1d2b165 fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump
+- Working tree summary: 4 modifieds
+- M components/Hero.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -190,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 43c78b8 by Bas van Dooremalen on 2026-11-02
-  fix(login): prevent iOS zoom and layout jumping on mobile input fields by using text-base
+- 1d2b165 by Bas van Dooremalen on 2026-11-02
+  fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

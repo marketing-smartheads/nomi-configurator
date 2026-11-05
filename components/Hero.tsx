@@ -43,7 +43,7 @@ export default function Hero({ onStart, data }: HeroProps) {
                 </Button>
             </div>
 
-            <div className="relative w-full aspect-4/3 lg:aspect-auto h-125">
+            <div className="relative w-full aspect-4/3 lg:aspect-auto h-140">
                 <div className="absolute top-10 right-0 w-[90%] h-[90%] bg-[#D7C9F0] rounded-4xl" />
 
                 <div className="absolute top-0 left-0 w-[90%] h-[90%] overflow-hidden rounded-4xl shadow-2xl">
