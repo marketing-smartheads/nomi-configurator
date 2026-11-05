@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-// 1. GET: Altijd veilig array-formaat teruggeven
+// 1. GET: Vangt normale dataverzoeken op
 export async function GET() {
   try {
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
@@ -43,7 +43,6 @@ export async function GET() {
     const json = await res.json();
     const nodes = json?.data?.vouchers?.nodes || [];
 
-    // Stuur altijd een object terug met een veilige array
     return NextResponse.json({ vouchers: nodes });
   } catch (error) {
     console.error('Fout bij ophalen vouchers (GET):', error);
@@ -51,7 +50,7 @@ export async function GET() {
   }
 }
 
-// 2. POST: Strenge e-mail- en vouchercodeverificatie
+// 2. POST: Strenge e-mail- en vouchercodeverificatie tijdens inloggen
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -102,6 +101,7 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
+    // Zoek de voucher in de lijst
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -118,7 +118,7 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILVALIDATIE
+    // 🛑 STRENGE E-MAILVERIFICATIE
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -161,7 +161,7 @@ export async function POST(request: Request) {
     });
 
   } catch (error: any) {
-    console.error('Vouchers Auth API fout:', error);
+    console.error('Vouchers POST API fout:', error);
     return NextResponse.json(
       { error: 'Er is een fout opgetreden bij de verificatie.' },
       { status: 500 }
