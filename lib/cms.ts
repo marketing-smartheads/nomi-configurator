@@ -229,7 +229,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
-  // We gebruiken de bewezen werkende query om alle vouchers op te halen
+  // We halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`)
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -240,7 +240,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
-            klantEmail
+            klant_email
           }
         }
       }
@@ -256,6 +256,12 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     });
 
     const json = await res.json();
+    
+    if (json.errors) {
+      console.error('GraphQL fouten bij authenticatie:', json.errors);
+      return { success: false, error: 'Technische fout bij verificatie.' };
+    }
+
     const vouchers = json?.data?.vouchers?.nodes || [];
 
     const voucher = vouchers.find((v: any) => {
@@ -272,20 +278,39 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
-    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
+    const opgeslagenEmail = String(velden.klant_email || '').trim().toLowerCase();
 
-    console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
+    console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail in WP:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
 
-    // BEVEILIGINGSCHECK: Als de code NOMI-A001 is (of al bevestigd is met een bekend e-mailadres in WP), matchen we streng
-    if (cleanCode === 'NOMI-A001' || (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '')) {
-      const verwachteEmail = cleanCode === 'NOMI-A001' ? 'bas@marketingsmartheads.nl' : opgeslagenEmail;
-      
-      if (verwachteEmail && cleanEmail !== verwachteEmail) {
+    // DYNAMISCHE BEVEILIGINGSCHECK:
+    // Als er al een e-mailadres in WordPress bekend is (en het is niet leeg of '-'), dan MOET het ingevoerde e-mailadres exact matchen!
+    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
+      if (opgeslagenEmail !== cleanEmail) {
         return { 
           success: false, 
           error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
         };
       }
+    } else {
+      // Als de voucher nog niet is gebruikt/gekoppeld, mag elk willekeurig e-mailadres inloggen 
+      // en slaan we dit e-mailadres direct dynamisch op in WordPress voor toekomstige beveiliging.
+      const updateMutation = `
+        mutation UpdateVoucherEmail($id: ID!, $email: String!) {
+          updateVoucher(input: { id: $id, voucherVelden: { klant_email: $email, status: "bevestigd" } }) {
+            voucher { databaseId }
+          }
+        }
+      `;
+
+      await fetch(graphqlEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: updateMutation,
+          variables: { id: voucher.databaseId, email: cleanEmail }
+        }),
+        cache: 'no-store',
+      }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
     }
 
     const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');

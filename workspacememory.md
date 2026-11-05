@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:19:15.634Z
+Generated: 2026-11-05T23:21:47.016Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:19:13.176Z
+- Last activity: 2026-11-05T23:21:45.236Z
 ## Workspace Focus
 - Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (12), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (4)
+- Hottest files right now: lib/cms.ts (13), components/LoginScreen.tsx (8), app/api/vouchers/route.ts (6), app/api/verify-voucher/route.ts (4)
 - Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth-voucher
 ## Current Workspace
 - Active file: lib/cms.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- lib/cms.ts | 298 lines | 8744 chars | hash 283b32fc338c
-  Last snapshot: 2026-11-05T23:19:13.176Z
+- lib/cms.ts | 323 lines | 9722 chars | hash 073cca7e70e2
+  Last snapshot: 2026-11-05T23:21:45.236Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:21:45.236Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 57 lines with 82 lines.
+- Before: 298 lines | 8,744 chars | hash 283b32fc338c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 323 lines | 9,722 chars | hash 073cca7e70e2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
+- Current fragment: "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
+
 ### 2026-11-05T23:19:13.176Z | saved | lib/cms.ts
 - Summary: Line 232: replaced 74 lines with 57 lines.
 - Before: 315 lines | 9,315 chars | hash 4d4e1069a662 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -163,18 +170,11 @@ Structured manifest: workspace.json
 - Previous fragment: "NIEUW: Directe client-side voucher verificatie en e-mailkoppeling via GraphQL / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cl..."
 - Current fragment: "Flexibele en robuuste client-side voucher verificatie en e-mailkoppeling / export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) { / const cleanCo..."
 
-### 2026-11-05T22:30:02.126Z | saved | components/LoginScreen.tsx
-- Summary: Line 8: replaced 96 lines with 88 lines.
-- Before: 284 lines | 10,036 chars | hash 9ef38b12f412 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 276 lines | 9,862 chars | hash 904ae93bdd1a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {..."
-- Previous fragment: "interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKlantEmail: (val: string) => void; / error: string | nu..."
-- Current fragment: "import { verifyAndAuthVoucher } from '../lib/cms'; / interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKl..."
-
 
 ## Hot Files
-- lib/cms.ts (12 tracked changes)
+- lib/cms.ts (13 tracked changes)
 - components/LoginScreen.tsx (8 tracked changes)
-- app/api/vouchers/route.ts (7 tracked changes)
+- app/api/vouchers/route.ts (6 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/auth-voucher (2 tracked changes)
@@ -183,7 +183,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 2b61e13 security(auth): enforce strict email matching for already claimed vouchers while allowing open registration for new ones
+- HEAD: 2026-11-06 c46dc2c fix(auth): restore stable graphql query and apply robust email matching security
 - Working tree summary: 1 modified
 - M lib/cms.ts
 
