@@ -54,7 +54,7 @@ export default function StepFourConfirmation({
 
       const opgeslagenTel =
         sessionStorage.getItem('klantTelefoon') ||
-        localStorage.getItem('klantTelefoon') || '';
+        localStorage.getItem('klantTelefoon'] || '';
       if (opgeslagenTel) setKlantTelefoon(opgeslagenTel);
     }
   }, []);
@@ -63,25 +63,7 @@ export default function StepFourConfirmation({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const storedWoning = woningTypenLijst.find((w: any) => {
-    const wNaam = (w?.typeNaam || w?.type_naam || '').trim().toLowerCase();
-    return wNaam === (woningType || '').trim().toLowerCase();
-  }) || woningTypenLijst[0];
-
-  const rawDesignPakketten = storedWoning?.designPakketten || storedWoning?.design_pakketten || data?.designPakketten || [];
-  const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
-
-  const storedPakket = designPakkettenLijst.find((p: any) => {
-    const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase();
-    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
-    const selected = (designPakket || '').trim().toLowerCase();
-    return pId === selected || pTitel === selected;
-  }) || designPakkettenLijst[0];
-
-  const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
-  const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
-
-  // Haal gekozen indeling op
+  // Haal gekozen indeling robuust op
   let opgeslagenIndeling = '';
   try {
     const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : '';
@@ -100,7 +82,55 @@ export default function StepFourConfirmation({
     opgeslagenIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
   }
 
-  // Robuust uitlezen van de Bevestiging Stap gegevens uit het gekozen designpakket
+  const sessionPakket = typeof window !== 'undefined' ? (sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket')) : '';
+  const actiefPakket = designPakket || sessionPakket || 'Modern Raw';
+
+  const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  // 1. Verzamel ALLE rijen die matchen met woningtype én gekozen indeling
+  const matchendeRijen = woningTypenLijst.filter((w: any) => {
+    const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
+    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    return typeMatch && indelingMatch;
+  });
+
+  const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
+
+  // 2. Verzamel alle designpakketten uit de matchende rijen en algemeen
+  const allePakketten: any[] = [];
+  gebruikteRijen.forEach((rij: any) => {
+    const rawP = rij?.designPakketten || rij?.design_pakketten || [];
+    const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
+    pakketLijst.forEach((p: any) => allePakketten.push(p));
+  });
+
+  if (allePakketten.length === 0 && (data?.designPakketten || data?.design_pakketten)) {
+    const algemeen = Array.isArray(data.designPakketten) ? data.designPakketten : (data.designPakketten?.nodes || data.design_pakketten || []);
+    algemeen.forEach((p: any) => allePakketten.push(p));
+  }
+
+  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw)
+  const storedPakket = allePakketten.find((p: any) => {
+    const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
+  }) || allePakketten.find((p: any) => {
+    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
+    if (normPakket.includes('raw') && pTitel.includes('raw')) return true;
+    if (normPakket.includes('chic') && pTitel.includes('chic')) return true;
+    return false;
+  }) || allePakketten[0] || {};
+
+  const storedWoning = gebruikteRijen[0] || woningTypenLijst[0] || {};
+
+  const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
+  const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || actiefPakket;
+
+  // 4. Haal bevestigingsdata en banner op uit het geselecteerde pakket
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
   
@@ -113,7 +143,7 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || [];
+  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
@@ -164,7 +194,6 @@ export default function StepFourConfirmation({
         throw new Error(errorData?.error || errorData?.message || 'Fout bij het verwerken van de bevestiging.');
       }
 
-      // Harde definitieve bevestigingsvlaggen instellen
       sessionStorage.setItem('configuratorConfirmed', 'true');
       localStorage.setItem('configurator_definitief_bevestigd', 'true');
       localStorage.setItem('klantNaam', klantNaam.trim());

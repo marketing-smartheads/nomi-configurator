@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:31:58.060Z",
-  "generatedAtEpochMs": 1793899918060,
+  "generatedAt": "2026-11-05T17:38:42.761Z",
+  "generatedAtEpochMs": 1793900322761,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
+      "app/download/page.tsx",
       "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:31:55.668Z",
+    "lastActivityAt": "2026-11-05T17:38:40.377Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793900320377,
+      "lineCount": 351,
+      "charCount": 17011,
+      "hash": "34c0c7bfcdaa",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793899915668,
@@ -607,14 +615,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793890952648,
-      "lineCount": 322,
-      "charCount": 15166,
-      "hash": "221f402a9bba",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-    },
-    {
       "filePath": "lib/cms.ts",
       "updatedAt": 1793890309893,
       "lineCount": 225,
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 57: replaced 111 lines with 140 lines.",
+      "recordedAt": "2026-11-05T17:38:40.377Z",
+      "recordedAtEpochMs": 1793900320377,
+      "before": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 15166,
+        "hash": "221f402a9bba",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793900320377
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 351,
+        "charCount": 17011,
+        "hash": "34c0c7bfcdaa",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793900320377
+      },
+      "diff": {
+        "lineStart": 57,
+        "removedLines": 111,
+        "addedLines": 140,
+        "summary": "Line 57: replaced 111 lines with 140 lines.",
+        "beforeFragment": ") || ''; / if (opgeslagenTel) setKlantTelefoon(opgeslagenTel); / } / }, []); / const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.wo...",
+        "afterFragment": "] || ''; / if (opgeslagenTel) setKlantTelefoon(opgeslagenTel); / } / }, []); / const data = configuratorData?.configurator || configuratorData; / const rawWoningTypen = data?.wo..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1080,38 +1112,6 @@
         "beforeFragment": "const rawPak = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerd",
         "afterFragment": "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 17: replaced 412 lines with 416 lines.",
-      "recordedAt": "2026-11-05T16:20:05.701Z",
-      "recordedAtEpochMs": 1793895605701,
-      "before": {
-        "kind": "text",
-        "lineCount": 485,
-        "charCount": 20221,
-        "hash": "a07bd0d5336f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793895605701
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 489,
-        "charCount": 20185,
-        "hash": "4dfd31317796",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793895605701
-      },
-      "diff": {
-        "lineStart": 17,
-        "removedLines": 412,
-        "addedLines": 416,
-        "summary": "Line 17: replaced 412 lines with 416 lines.",
-        "beforeFragment": "useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || '';...",
-        "afterFragment": "const [opgeslagenPakket, setOpgeslagenPakket] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_..."
-      }
     }
   ],
   "hotFiles": [
@@ -1121,18 +1121,18 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 6
     },
     {
-      "filePath": "app/download/page.tsx",
-      "count": 3
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 4
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/download/page.tsx",
       "count": 3
     },
     {
@@ -1143,20 +1143,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 2577784 fix(step1): correct bracket typo on localStorage read",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 f7e6a17 fix(download): resolve moodboard and download categories directly from selected design package",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2577784 by Bas van Dooremalen on 2026-11-05\n  fix(step1): correct bracket typo on localStorage read\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f7e6a17 by Bas van Dooremalen on 2026-11-05\n  fix(download): resolve moodboard and download categories directly from selected design package\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
