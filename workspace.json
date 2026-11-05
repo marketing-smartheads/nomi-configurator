@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T08:46:45.563Z",
-  "generatedAtEpochMs": 1793868405563,
+  "generatedAt": "2026-11-05T08:49:04.387Z",
+  "generatedAtEpochMs": 1793868544387,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -30,10 +30,10 @@
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
       "app/api/vouchers/route.ts",
-      "app/globals.css",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T08:46:43.172Z",
+    "lastActivityAt": "2026-11-05T08:49:02.674Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/Hero.tsx",
-      "updatedAt": 1793868403172,
+      "updatedAt": 1793868542674,
       "lineCount": 64,
       "charCount": 2504,
-      "hash": "95bc9bcb320d",
+      "hash": "47d3a0d89c7a",
       "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Hero.tsx",
+      "toPath": "",
+      "summary": "Line 46: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-05T08:49:02.674Z",
+      "recordedAtEpochMs": 1793868542674,
+      "before": {
+        "kind": "text",
+        "lineCount": 64,
+        "charCount": 2504,
+        "hash": "95bc9bcb320d",
+        "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s...",
+        "updatedAt": 1793868542673
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 64,
+        "charCount": 2504,
+        "hash": "47d3a0d89c7a",
+        "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s...",
+        "updatedAt": 1793868542674
+      },
+      "diff": {
+        "lineStart": 46,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 46: replaced 1 line with 1 line.",
+        "beforeFragment": "40",
+        "afterFragment": "57"
+      }
+    },
     {
       "type": "save",
       "path": "components/Hero.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "woningType = `\"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}\"`; / const indeling = `\"${details.gekozenIndeling || details.gekozen_indeling || '—'}\"`;...",
         "afterFragment": "statusVal = String(details.status || ''); / const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 23: inserted 2 lines.",
-      "recordedAt": "2026-10-27T14:51:17.159Z",
-      "recordedAtEpochMs": 1793112677159,
-      "before": {
-        "kind": "text",
-        "lineCount": 51,
-        "charCount": 1537,
-        "hash": "8e387415497b",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons...",
-        "updatedAt": 1793112677159
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 52,
-        "charCount": 1568,
-        "hash": "0eacd0d2ae72",
-        "preview": "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons...",
-        "updatedAt": 1793112677159
-      },
-      "diff": {
-        "lineStart": 23,
-        "removedLines": 0,
-        "addedLines": 2,
-        "summary": "Line 23: inserted 2 lines.",
-        "beforeFragment": "",
-        "afterFragment": "gekozenIndeling"
-      }
     }
   ],
   "hotFiles": [
@@ -1139,6 +1139,10 @@
       "count": 2
     },
     {
+      "filePath": "components/Hero.tsx",
+      "count": 2
+    },
+    {
       "filePath": "components/LoginScreen.tsx",
       "count": 2
     },
@@ -1149,23 +1153,16 @@
     {
       "filePath": "app/api/vouchers/route.ts",
       "count": 1
-    },
-    {
-      "filePath": "app/globals.css",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-02 1d2b165 fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 a1684e5 changed height of hero image",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/Hero.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/Hero.tsx"
     ],
     "error": ""
   },

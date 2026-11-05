@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T08:46:45.563Z
+Generated: 2026-11-05T08:49:04.387Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T08:46:43.172Z
+- Last activity: 2026-11-05T08:49:02.674Z
 ## Workspace Focus
 - Active file in focus: components/Hero.tsx
 - Hottest files right now: app/download/page.tsx (15), app/dashboard/page.tsx (6), components/configurator/StepFourConfirmation.tsx (6), app/api/confirm/route.ts (2)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/Hero.tsx | 64 lines | 2504 chars | hash 95bc9bcb320d
-  Last snapshot: 2026-11-05T08:46:43.172Z
+- components/Hero.tsx | 64 lines | 2504 chars | hash 47d3a0d89c7a
+  Last snapshot: 2026-11-05T08:49:02.674Z
   Preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
 - components/MainContent.tsx | 217 lines | 8844 chars | hash e6c5e1499cef
   Last snapshot: 2026-11-02T10:45:40.365Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(..."
 
 ## Recent Changes
+### 2026-11-05T08:49:02.674Z | saved | components/Hero.tsx
+- Summary: Line 46: replaced 1 line with 1 line.
+- Before: 64 lines | 2,504 chars | hash 95bc9bcb320d | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
+- After: 64 lines | 2,504 chars | hash 47d3a0d89c7a | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
+- Previous fragment: "40"
+- Current fragment: "57"
+
 ### 2026-11-05T08:46:43.172Z | saved | components/Hero.tsx
 - Summary: Line 46: replaced 1 line with 1 line.
 - Before: 64 lines | 2,504 chars | hash e230570e5702 | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
@@ -158,31 +165,22 @@ Structured manifest: workspace.json
 - Previous fragment: "woningType = `"${details.gekozenTypeWoning || details.gekozen_type_woning || 'Onbekend'}"`; / const indeling = `"${details.gekozenIndeling || details.gekozen_indeling || '—'}"`;..."
 - Current fragment: "statusVal = String(details.status || ''); / const isVerzilverd = statusVal === 'bevestigd' || statusVal.toLowerCase().includes('bevestigd') || statusVal.toLowerCase().includes('..."
 
-### 2026-10-27T14:51:17.159Z | saved | app/api/vouchers/route.ts
-- Summary: Line 23: inserted 2 lines.
-- Before: 51 lines | 1,537 chars | hash 8e387415497b | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-- After: 52 lines | 1,568 chars | hash 0eacd0d2ae72 | preview: "import { NextResponse } from 'next/server'; / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / cons..."
-- Current fragment: "gekozenIndeling"
-
 
 ## Hot Files
 - app/download/page.tsx (15 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (6 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
+- components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 - app/api/vouchers/route.ts (1 tracked changes)
-- app/globals.css (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-02 1d2b165 fix(login): use local input state and dvh layout to prevent typing jitter and iOS screen jump
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-05 a1684e5 changed height of hero image
+- Working tree summary: 1 modified
 - M components/Hero.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
