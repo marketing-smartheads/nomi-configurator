@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T21:31:29.972Z
+Generated: 2026-11-05T21:35:40.647Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T21:31:27.484Z
+- Last activity: 2026-11-05T21:35:38.578Z
 ## Workspace Focus
 - Active file in focus: app/api/vouchers/route.ts
 - Hottest files right now: components/configurator/StepThreeVisuals.tsx (8), app/api/auth/route.ts (6), app/download/page.tsx (5), components/configurator/StepOnewoning.tsx (5)
@@ -39,9 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 46
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/api/vouchers/route.ts | 168 lines | 5397 chars | hash 4871544f8023
-  Last snapshot: 2026-11-05T21:31:27.484Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoi..."
+- app/api/vouchers/route.ts | 170 lines | 5400 chars | hash 91dd6934c722
+  Last snapshot: 2026-11-05T21:35:38.578Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUB..."
 - components/LoginScreen.tsx | 285 lines | 10122 chars | hash 032ed2f2b615
   Last snapshot: 2026-11-05T21:19:23.058Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 
 ## Recent Changes
+### 2026-11-05T21:35:38.578Z | saved | app/api/vouchers/route.ts
+- Summary: Line 5: replaced 124 lines with 126 lines.
+- Before: 168 lines | 5,397 chars | hash 4871544f8023 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoi..."
+- After: 170 lines | 5,400 chars | hash 91dd6934c722 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUB..."
+- Previous fragment: "Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT ||..."
+- Current fragment: "Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = proc..."
+
 ### 2026-11-05T21:31:27.484Z | saved | app/api/vouchers/route.ts
 - Summary: Line 3: replaced 124 lines with 126 lines.
 - Before: 166 lines | 5,400 chars | hash 5d6cca9cae30 | preview: "import { NextResponse } from 'next/server'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor andere componenten in de app) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
@@ -155,13 +162,6 @@ Structured manifest: workspace.json
 ### 2026-11-05T20:52:07.165Z | created | app/api/verify-voucher
 - Summary: Created file.
 
-### 2026-11-05T20:50:48.614Z | saved | app/api/auth/route.ts
-- Summary: Line 20: replaced 79 lines with 77 lines.
-- Before: 110 lines | 3,696 chars | hash ef793b37ea67 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
-- After: 108 lines | 3,505 chars | hash 9b430fcc09dc | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
-- Previous fragment: "// 1. Zoek de voucher op in WordPress via GraphQL / const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title /..."
-- Current fragment: "const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title / voucherVelden { / toegangscode / status / klantEmail..."
-
 
 ## Hot Files
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
@@ -169,13 +169,13 @@ Structured manifest: workspace.json
 - app/download/page.tsx (5 tracked changes)
 - components/configurator/StepOnewoning.tsx (5 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
-- app/api/vouchers/route.ts (3 tracked changes)
-- components/configurator/StepTwoDesign.tsx (3 tracked changes)
+- app/api/vouchers/route.ts (4 tracked changes)
 - components/LoginScreen.tsx (3 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 c2197b9 fix(api): add GET and POST handlers to /api/vouchers for data fetching and strict email validation
+- HEAD: 2026-11-05 25c467f fix(api): add force-dynamic export to /api/vouchers route handler
 - Working tree summary: 1 modified
 - M app/api/vouchers/route.ts
 

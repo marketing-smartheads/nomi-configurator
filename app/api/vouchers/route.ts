@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-// 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks)
+// 1. GET: Altijd veilig array-formaat teruggeven
 export async function GET() {
   try {
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
@@ -41,14 +41,17 @@ export async function GET() {
     });
 
     const json = await res.json();
-    return NextResponse.json(json?.data || { vouchers: { nodes: [] } });
+    const nodes = json?.data?.vouchers?.nodes || [];
+
+    // Stuur altijd een object terug met een veilige array
+    return NextResponse.json({ vouchers: nodes });
   } catch (error) {
     console.error('Fout bij ophalen vouchers (GET):', error);
-    return NextResponse.json({ error: 'Interne serverfout' }, { status: 500 });
+    return NextResponse.json({ vouchers: [] }, { status: 500 });
   }
 }
 
-// 2. POST: Voor de strenge e-mail- en vouchercodeverificatie tijdens inloggen
+// 2. POST: Strenge e-mail- en vouchercodeverificatie
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -99,7 +102,6 @@ export async function POST(request: Request) {
     const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
     const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
 
-    // Zoek de voucher match in de GraphQL lijst
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -116,7 +118,7 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILCONTROLE
+    // 🛑 STRENGE E-MAILVALIDATIE
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -125,7 +127,7 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Sla e-mailadres op bij eerste inlogpoging
+      // Eerste keer inloggen: Sla het e-mailadres direct op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {

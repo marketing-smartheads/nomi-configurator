@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T21:31:29.972Z",
-  "generatedAtEpochMs": 1793914289972,
+  "generatedAt": "2026-11-05T21:35:40.647Z",
+  "generatedAtEpochMs": 1793914540647,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -28,8 +28,8 @@
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "app/api/verify-voucher/route.ts",
-      "components/configurator/StepTwoDesign.tsx",
       "components/LoginScreen.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T21:31:27.484Z",
+    "lastActivityAt": "2026-11-05T21:35:38.578Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 46,
     "changeTypeCounts": {
@@ -588,11 +588,11 @@
   "trackedSnapshots": [
     {
       "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1793914287484,
-      "lineCount": 168,
-      "charCount": 5397,
-      "hash": "4871544f8023",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoi..."
+      "updatedAt": 1793914538578,
+      "lineCount": 170,
+      "charCount": 5400,
+      "hash": "91dd6934c722",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUB..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 124 lines with 126 lines.",
+      "recordedAt": "2026-11-05T21:35:38.578Z",
+      "recordedAtEpochMs": 1793914538578,
+      "before": {
+        "kind": "text",
+        "lineCount": 168,
+        "charCount": 5397,
+        "hash": "4871544f8023",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoi...",
+        "updatedAt": 1793914538578
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 170,
+        "charCount": 5400,
+        "hash": "91dd6934c722",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUB...",
+        "updatedAt": 1793914538578
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 124,
+        "addedLines": 126,
+        "summary": "Line 5: replaced 124 lines with 126 lines.",
+        "beforeFragment": "Voor het ophalen van alle vouchers (nodig voor frontend checks) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT ||...",
+        "afterFragment": "Altijd veilig array-formaat teruggeven / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = proc..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/vouchers/route.ts",
@@ -1066,38 +1098,6 @@
       "before": null,
       "after": null,
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/api/auth/route.ts",
-      "toPath": "",
-      "summary": "Line 20: replaced 79 lines with 77 lines.",
-      "recordedAt": "2026-11-05T20:50:48.614Z",
-      "recordedAtEpochMs": 1793911848614,
-      "before": {
-        "kind": "text",
-        "lineCount": 110,
-        "charCount": 3696,
-        "hash": "ef793b37ea67",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
-        "updatedAt": 1793911848614
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 108,
-        "charCount": 3505,
-        "hash": "9b430fcc09dc",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
-        "updatedAt": 1793911848614
-      },
-      "diff": {
-        "lineStart": 20,
-        "removedLines": 79,
-        "addedLines": 77,
-        "summary": "Line 20: replaced 79 lines with 77 lines.",
-        "beforeFragment": "// 1. Zoek de voucher op in WordPress via GraphQL / const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title /...",
-        "afterFragment": "const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title / voucherVelden { / toegangscode / status / klantEmail..."
-      }
     }
   ],
   "hotFiles": [
@@ -1123,21 +1123,21 @@
     },
     {
       "filePath": "app/api/vouchers/route.ts",
-      "count": 3
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "components/LoginScreen.tsx",
       "count": 3
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 c2197b9 fix(api): add GET and POST handlers to /api/vouchers for data fetching and strict email validation",
+    "headSummary": "2026-11-05 25c467f fix(api): add force-dynamic export to /api/vouchers route handler",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
