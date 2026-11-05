@@ -14,7 +14,7 @@ export default function StepThreeVisuals({
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
   const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
-  const [opgeslagenPakket, setOpgeslagenPakket] = useState('');
+  const [actiefPakket, setActiefPakket] = useState('Hotel Chic');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -29,18 +29,17 @@ export default function StepThreeVisuals({
           }
         }
 
-        const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
-        if (rawPak) {
-          setOpgeslagenPakket(rawPak);
-        }
+        // Haal direct op uit sessionStorage of localStorage met absolute prioriteit voor Modern Raw
+        const sessionPak = sessionStorage.getItem('geselecteerdPakket');
+        const localPak = localStorage.getItem('selected_designPakket');
+        
+        const gekozen = sessionPak || localPak || designPakket || 'Hotel Chic';
+        setActiefPakket(gekozen);
       } catch (e) {
         // ignore
       }
     }
   }, [designPakket]);
-
-  // BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen
-  const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic';
 
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -60,6 +59,7 @@ export default function StepThreeVisuals({
   const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
+  // Super-strenge match: zoekt exact op Modern Raw of Hotel Chic
   const huidigPakketObj = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -462,12 +462,15 @@ export default function StepThreeVisuals({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-12 pt-2">
             {materialen.length > 0 ? (
-              materialen.map((mat: any, idx: number) => (
-                <div key={idx} className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
-                  <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0" />
-                  <span className="text-xs sm:text-sm font-normal text-dark">{mat.materiaal_titel || mat.materiaalTitel}</span>
-                </div>
-              ))
+              materialen.map((mat: any, idx: number) => {
+                const matTitel = mat.materiaal_titel || mat.materiaalTitel || '';
+                return (
+                  <div key={idx} className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                    <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0" />
+                    <span className="text-xs sm:text-sm font-normal text-dark">{matTitel}</span>
+                  </div>
+                );
+              })
             ) : (
               <p className="text-xs text-muted">Geen materialen ingevoerd voor dit pakket.</p>
             )}
