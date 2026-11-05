@@ -37,7 +37,6 @@ export default function StepFourConfirmation({
   const [klantTelefoon, setKlantTelefoon] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [manualNotice, setManualNotice] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
@@ -64,13 +63,13 @@ export default function StepFourConfirmation({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  const rawDesignPakketten = data?.designPakketten || data?.designPaketten || data?.design_paketten || [];
-  const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
-
   const storedWoning = woningTypenLijst.find((w: any) => {
     const wNaam = (w?.typeNaam || w?.type_naam || '').trim().toLowerCase();
     return wNaam === (woningType || '').trim().toLowerCase();
-  }) || null;
+  }) || woningTypenLijst[0];
+
+  const rawDesignPakketten = storedWoning?.designPakketten || storedWoning?.design_pakketten || data?.designPakketten || [];
+  const designPakkettenLijst = Array.isArray(rawDesignPakketten) ? rawDesignPakketten : rawDesignPakketten?.nodes || [];
 
   const storedPakket = designPakkettenLijst.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase();
@@ -82,7 +81,7 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || designPakket || '';
 
-  // Haal gekozen indeling op om te tonen op de bevestigingspagina
+  // Haal gekozen indeling op
   let opgeslagenIndeling = '';
   try {
     const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : '';
@@ -101,13 +100,21 @@ export default function StepFourConfirmation({
     opgeslagenIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
   }
 
+  // Robuust uitlezen van de Bevestiging Stap gegevens uit het gekozen designpakket
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
-  const heroImage = typeof rawImage === 'string' ? rawImage : rawImage?.node?.sourceUrl || rawImage?.sourceUrl || rawImage?.mediaItemUrl || null;
+  
+  const heroImage = 
+    rawImage?.node?.sourceUrl || 
+    rawImage?.sourceUrl || 
+    rawImage?.node?.mediaItemUrl || 
+    rawImage?.mediaItemUrl || 
+    null;
+
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || storedWoning?.partnerLijst?.nodes || [];
-  const partners = Array.isArray(rawPartners) ? rawPartners : [];
+  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || [];
+  const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
@@ -214,6 +221,12 @@ export default function StepFourConfirmation({
           {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
           {omschrijving && <p className="text-muted text-base leading-relaxed pt-2">{omschrijving}</p>}
         </div>
+
+        {errorMessage && (
+          <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
+            {errorMessage}
+          </div>
+        )}
 
         <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
           <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>

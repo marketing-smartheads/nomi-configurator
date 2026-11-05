@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T13:20:45.235Z",
-  "generatedAtEpochMs": 1793884845235,
+  "generatedAt": "2026-11-05T13:31:06.595Z",
+  "generatedAtEpochMs": 1793885466595,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
-      "lib/cms.ts",
-      "app/dashboard/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "lib/cms.ts",
+      "components/configurator/StepThreeVisuals.tsx",
+      "app/dashboard/page.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T13:20:43.470Z",
+    "lastActivityAt": "2026-11-05T13:31:04.115Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793885464115,
+      "lineCount": 320,
+      "charCount": 15046,
+      "hash": "a0ef13144fa5",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793884843470,
@@ -629,17 +637,41 @@
       "charCount": 2720,
       "hash": "7e080d34cd3e",
       "preview": "@import \"tailwindcss\"; / @theme { / /* --- Kleuren (Design System) --- */ / --color-primary: #C2A06A;       /* De goud/bronskleur */ / --color-dark: #181820;          /* De diepe, donkere kleur (geeft bg-dark) */ / --..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1793570503676,
-      "lineCount": 307,
-      "charCount": 14829,
-      "hash": "27617c309371",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 40: replaced 177 lines with 190 lines.",
+      "recordedAt": "2026-11-05T13:31:04.115Z",
+      "recordedAtEpochMs": 1793885464115,
+      "before": {
+        "kind": "text",
+        "lineCount": 307,
+        "charCount": 14829,
+        "hash": "27617c309371",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793885464115
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 320,
+        "charCount": 15046,
+        "hash": "a0ef13144fa5",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793885464115
+      },
+      "diff": {
+        "lineStart": 40,
+        "removedLines": 177,
+        "addedLines": 190,
+        "summary": "Line 40: replaced 177 lines with 190 lines.",
+        "beforeFragment": "manualNotice, setManualNotice] = useState(false); / const [errorMessage, setErrorMessage] = useState(''); / const router = useRouter(); / useEffect(() => { / if (typeof window !...",
+        "afterFragment": "errorMessage, setErrorMessage] = useState(''); / const router = useRouter(); / useEffect(() => { / if (typeof window !== 'undefined') { / const opgeslagenEmail = / sessionStorag..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1059,38 +1091,6 @@
         "updatedAt": 1793881252334
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 40: replaced 359 lines with 397 lines.",
-      "recordedAt": "2026-11-05T12:17:56.761Z",
-      "recordedAtEpochMs": 1793881076761,
-      "before": {
-        "kind": "text",
-        "lineCount": 449,
-        "charCount": 18529,
-        "hash": "faa41e22a89e",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793881076761
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 487,
-        "charCount": 20249,
-        "hash": "154f87251e36",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793881076761
-      },
-      "diff": {
-        "lineStart": 40,
-        "removedLines": 359,
-        "addedLines": 397,
-        "summary": "Line 40: replaced 359 lines with 397 lines.",
-        "beforeFragment": "// Match het exacte woningtype + indeling-object / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase(...",
-        "afterFragment": "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?..."
-      }
     }
   ],
   "hotFiles": [
@@ -1104,11 +1104,11 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "components/Hero.tsx",
@@ -1130,20 +1130,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 9ac450e fix(cms): move first: 100 argument to visualsSlider and moodboardGallery connection fields",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 873b6e7 fix(visuals): make single moodboard image span full width of container",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9ac450e by Bas van Dooremalen on 2026-11-05\n  fix(cms): move first: 100 argument to visualsSlider and moodboardGallery connection fields\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 873b6e7 by Bas van Dooremalen on 2026-11-05\n  fix(visuals): make single moodboard image span full width of container\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
