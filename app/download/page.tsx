@@ -11,7 +11,7 @@ export default function DownloadPage() {
   const router = useRouter();
   
   const [woningType, setWoningType] = useState<string>('Type A');
-  const [gekozenIndeling, setGekozenIndeling] = useState<string>('');
+  const [gekozenIndeling, setGekozenIndeling] = useState<string>('Indeling 01');
   const [designPakket, setDesignPakket] = useState<string>('Modern Raw');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
@@ -60,7 +60,7 @@ export default function DownloadPage() {
         let resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
         let resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || '';
 
-        if ((!resolvedWoning || !resolvedIndeling) && voucherCode) {
+        if (voucherCode) {
           try {
             const voucherDataFromWP = await getVoucherData(voucherCode);
             if (voucherDataFromWP) {
@@ -75,6 +75,7 @@ export default function DownloadPage() {
 
         resolvedWoning = resolvedWoning || 'Type A';
         resolvedPakket = resolvedPakket || 'Modern Raw';
+        resolvedIndeling = resolvedIndeling || 'Indeling 01';
 
         if (isMounted) {
           setWoningType(resolvedWoning);

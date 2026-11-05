@@ -215,7 +215,7 @@ export async function getVoucherData(voucherCode: string) {
     return {
       gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A',
       gekozenDesignpakket: match.voucherVelden?.gekozenDesignpakket || 'Modern Raw',
-      gekozenIndeling: match.voucherVelden?.gekozenIndeling || match.voucherVelden?.indeling || '',
+      gekozenIndeling: match.voucherVelden?.gekozenIndeling || match.voucherVelden?.indeling || 'Indeling 01',
     };
   } catch (error) {
     console.error('Fout bij ophalen vouchers via GraphQL:', error);
@@ -225,11 +225,13 @@ export async function getVoucherData(voucherCode: string) {
 
 export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
   const cleanCode = (toegangscode || '').trim().toUpperCase();
+  const cleanEmail = (klantEmail || '').trim().toLowerCase();
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
+  // Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF
   const query = `
-    query GetAllVouchersSimple {
+    query GetAllVouchersForAuth {
       vouchers(first: 100) {
         nodes {
           databaseId
@@ -238,6 +240,10 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
+            klantEmail
+            klantE_mail
+            klantenEmail
+            email
           }
         }
       }
@@ -255,8 +261,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
-    console.log('DEBUG: Totaal aantal opgehaalde vouchers uit WP:', vouchers.length);
-
     const voucher = vouchers.find((v: any) => {
       const codeField = String(v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
       const titleField = String(v?.title || '').trim().toUpperCase();
@@ -266,14 +270,27 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     });
 
     if (!voucher) {
-      console.warn('DEBUG: Geen voucher gevonden voor code:', cleanCode);
       return { success: false, error: 'Ongeldige vouchercode. Controleer uw invoer.' };
     }
 
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
+    
+    // Dynamische e-mailcontrole op basis van velden uit WordPress (indien gevuld)
+    const opgeslagenEmail = String(
+      velden.klantEmail || velden.klantE_mail || velden.klantenEmail || velden.email || ''
+    ).trim().toLowerCase();
 
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd');
+    if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
+      if (opgeslagenEmail !== cleanEmail) {
+        return { 
+          success: false, 
+          error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' 
+        };
+      }
+    }
+
+    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
 
     return { success: true, isBevestigd };
   } catch (err) {

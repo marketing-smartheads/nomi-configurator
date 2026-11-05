@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T22:59:08.720Z
+Generated: 2026-11-05T23:03:38.372Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T22:59:06.876Z
+- Last activity: 2026-11-05T23:03:35.990Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: components/LoginScreen.tsx (10), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (6), lib/cms.ts (6)
-- Suggested starting points: app/download/page.tsx, components/LoginScreen.tsx, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/route.ts
+- Hottest files right now: components/LoginScreen.tsx (9), lib/cms.ts (8), app/api/vouchers/route.ts (7), app/api/verify-voucher/route.ts (6)
+- Suggested starting points: app/download/page.tsx, components/LoginScreen.tsx, lib/cms.ts, app/api/vouchers/route.ts, app/api/verify-voucher/route.ts, app/api/auth-voucher
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 71
@@ -39,11 +39,11 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 398 lines | 19266 chars | hash 34de51cfb2e4
-  Last snapshot: 2026-11-05T22:59:06.876Z
+- app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
+  Last snapshot: 2026-11-05T23:03:35.990Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- lib/cms.ts | 283 lines | 7842 chars | hash 38f52a242b53
-  Last snapshot: 2026-11-05T22:58:35.221Z
+- lib/cms.ts | 300 lines | 8553 chars | hash a23a93ea3aee
+  Last snapshot: 2026-11-05T23:03:04.458Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/LoginScreen.tsx | 276 lines | 9862 chars | hash 904ae93bdd1a
   Last snapshot: 2026-11-05T22:30:02.126Z
@@ -65,6 +65,27 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:03:35.990Z | saved | app/download/page.tsx
+- Summary: Line 14: replaced 64 lines with 65 lines.
+- Before: 398 lines | 19,266 chars | hash 34de51cfb2e4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 399 lines | 19,298 chars | hash d6c80bb2a10b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+- Current fragment: "Indeling 01'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDown..."
+
+### 2026-11-05T23:03:04.458Z | saved | lib/cms.ts
+- Summary: Line 232: replaced 58 lines with 62 lines.
+- Before: 296 lines | 8,639 chars | hash 20e8ad72b3de | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 300 lines | 8,553 chars | hash a23a93ea3aee | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "We vragen nu veilig velden op zonder te crashen; let op: we valideren de opgeslagen e-mail indien aanwezig in de title/slug/status of via een veilige check. / const query = ` /..."
+- Current fragment: "Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId..."
+
+### 2026-11-05T23:02:07.588Z | saved | lib/cms.ts
+- Summary: Line 218: replaced 57 lines with 70 lines.
+- Before: 283 lines | 7,842 chars | hash 38f52a242b53 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 296 lines | 8,639 chars | hash 20e8ad72b3de | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toegangscode: s..."
+- Current fragment: "Indeling 01', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toeg..."
+
 ### 2026-11-05T22:59:06.876Z | saved | app/download/page.tsx
 - Summary: Line 7: replaced 73 lines with 71 lines.
 - Before: 400 lines | 19,186 chars | hash 19a6bc5aad08 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -146,41 +167,20 @@ Structured manifest: workspace.json
 - Previous fragment: "const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = toegangscode.trim().toUpperCase(); / if (type..."
 - Current fragment: "// 🛑 CENTRALE INLOG- EN VERIFICATIEPUNT / const handleLogin = async (e: React.FormEvent) => { / e.preventDefault(); / setLoading(true); / setError(null); / const cleanCode = to..."
 
-### 2026-11-05T22:18:58.957Z | saved | components/LoginScreen.tsx
-- Summary: Line 77: replaced 1 line with 1 line.
-- Before: 285 lines | 10,123 chars | hash 2c9a8b6c518a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 285 lines | 10,117 chars | hash 9f4c0dcffc75 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- Previous fragment: "erify-voucher"
-- Current fragment: "ouchers"
-
-### 2026-11-05T22:16:56.146Z | saved | app/api/vouchers/route.ts
-- Summary: Line 5: replaced 154 lines with 151 lines.
-- Before: 173 lines | 5,829 chars | hash 7d05d0a67a66 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers (data-functionaliteit) / export async function GET() { / try { / const endpoint = p..."
-- After: 170 lines | 5,453 chars | hash dfb46144d938 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
-- Previous fragment: "(data-functionaliteit) / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRES..."
-- Current fragment: "export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPa..."
-
-### 2026-11-05T22:12:37.421Z | saved | components/LoginScreen.tsx
-- Summary: Line 76: replaced 12 lines with 13 lines.
-- Before: 284 lines | 10,037 chars | hash c83357215be8 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- After: 285 lines | 10,123 chars | hash 2c9a8b6c518a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
-- Previous fragment: "const res = await fetch('/api/vouchers', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ / toegangscode: ingevoerdeCodeClean, / k..."
-- Current fragment: "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/verify-voucher', { / method: 'POST', / headers: { 'Content-Type':..."
-
 
 ## Hot Files
-- components/LoginScreen.tsx (10 tracked changes)
+- components/LoginScreen.tsx (9 tracked changes)
+- lib/cms.ts (8 tracked changes)
 - app/api/vouchers/route.ts (7 tracked changes)
 - app/api/verify-voucher/route.ts (6 tracked changes)
-- lib/cms.ts (6 tracked changes)
-- app/api/auth/route.ts (3 tracked changes)
+- app/download/page.tsx (3 tracked changes)
 - app/api/auth-voucher (2 tracked changes)
 - app/api/auth-voucher/route.ts (2 tracked changes)
-- app/download/page.tsx (2 tracked changes)
+- lib/useConfigurator.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 20dabc0 fix(download): remove obsolete verify-voucher api fetch to eliminate 404 errors
+- HEAD: 2026-11-05 74ade46 feat(download): add gekozenIndeling label next to woning and package labels
 - Working tree summary: 5 modifieds
 - M app/download/page.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -194,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 20dabc0 by Bas van Dooremalen on 2026-11-05
-  fix(download): remove obsolete verify-voucher api fetch to eliminate 404 errors
+- 74ade46 by Bas van Dooremalen on 2026-11-05
+  feat(download): add gekozenIndeling label next to woning and package labels
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
