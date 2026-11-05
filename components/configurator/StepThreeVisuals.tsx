@@ -14,6 +14,7 @@ export default function StepThreeVisuals({
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
   const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
+  const [opgeslagenPakket, setOpgeslagenPakket] = useState('');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -27,14 +28,21 @@ export default function StepThreeVisuals({
             setOpgeslagenIndeling(rawInd);
           }
         }
+
+        const rawPak = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || '';
+        if (rawPak) {
+          setOpgeslagenPakket(rawPak);
+        }
       } catch (e) {
-        setOpgeslagenIndeling('');
+        // ignore
       }
     }
-  }, []);
+  }, [designPakket]);
+
+  const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic';
 
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
   const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
@@ -51,17 +59,17 @@ export default function StepThreeVisuals({
   const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
-  const huidigPakket = pakkettenLijst.find((p: any) => {
+  const huidigPakketObj = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     return pId === normPakket || pTitel === normPakket || normPakket.includes(pId) || normPakket.includes(pTitel);
   }) || pakkettenLijst[0];
 
-  const pakketTitel = huidigPakket?.pakketTitel || huidigPakket?.pakket_titel || 'Gekozen stijl';
+  const pakketTitel = huidigPakketObj?.pakketTitel || huidigPakketObj?.pakket_titel || actiefPakket;
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
-  const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
+  const stapOmschrijving = huidigPakketObj?.stap3Omschrijving || huidigPakketObj?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider;
+  const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider;
   let visuals: any[] = [];
   if (Array.isArray(rawVisuals)) {
     visuals = rawVisuals;
@@ -71,10 +79,9 @@ export default function StepThreeVisuals({
     visuals = rawVisuals.edges.map((e: any) => e.node);
   }
 
-  const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
+  const materialen = huidigPakketObj?.materialenLijst || huidigPakketObj?.materialen_lijst || [];
   
-  // Moodboard gallery: pak enkel de eerste afbeelding (single moodboard visual)
-  const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery;
+  const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery;
   let moodboardGallery: any[] = [];
   if (Array.isArray(rawMoodboard)) {
     moodboardGallery = rawMoodboard;
@@ -386,7 +393,6 @@ export default function StepThreeVisuals({
           )}
         </div>
 
-        {/* Thumbnails grid met zwarte helft-overlay op eerste (vorige) en laatste (volgende) thumb indien van toepassing */}
         {visuals.length > 0 && (
           <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
             {currentThumbs.map((vis: any, relativeIdx: number) => {
@@ -411,7 +417,6 @@ export default function StepThreeVisuals({
                     <Image src={imgSrc} alt={`Thumbnail ${absoluteIdx + 1}`} fill className="object-cover" />
                   )}
 
-                  {/* Vorig-overlay op de eerste thumb indien we niet op pagina 0 zitten */}
                   {isFirstOfPage && canGoPrev && (
                     <div 
                       onClick={(e) => {
@@ -425,7 +430,6 @@ export default function StepThreeVisuals({
                     </div>
                   )}
 
-                  {/* Volgend-overlay op de laatste thumb indien er nog volgende pagina's zijn */}
                   {isLastOfPage && canGoNext && (
                     <div 
                       onClick={(e) => {
