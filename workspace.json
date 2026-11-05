@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T20:39:41.573Z",
-  "generatedAtEpochMs": 1793911181573,
+  "generatedAt": "2026-11-05T20:52:19.578Z",
+  "generatedAtEpochMs": 1793911939578,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/auth/route.ts",
+    "activeFile": "app/api/verify-voucher/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/auth/route.ts",
+      "app/api/verify-voucher/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "lib/cms.ts",
+      "app/api/auth/route.ts",
       "components/configurator/StepTwoDesign.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
-      "totalFiles": 70,
+      "totalFiles": 71,
       "topLevelAreas": [
         {
           "name": "public",
@@ -52,7 +52,7 @@
         },
         {
           "name": "app",
-          "count": 13
+          "count": 14
         },
         {
           "name": "lib",
@@ -66,7 +66,7 @@
         },
         {
           "name": ".ts",
-          "count": 10
+          "count": 11
         },
         {
           "name": ".svg",
@@ -140,6 +140,12 @@
         },
         {
           "path": "app/api/download/route.ts",
+          "topLevelArea": "app",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "app/api/verify-voucher/route.ts",
           "topLevelArea": "app",
           "extension": ".ts",
           "isKeyFile": false
@@ -569,23 +575,31 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T20:39:39.791Z",
+    "lastActivityAt": "2026-11-05T20:52:17.775Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 45,
+    "trackedFileSnapshotCount": 46,
     "changeTypeCounts": {
-      "save": 39,
-      "create": 1,
+      "save": 37,
+      "create": 3,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1793911937775,
+      "lineCount": 82,
+      "charCount": 2711,
+      "hash": "6ee5746b80fa",
+      "preview": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e..."
+    },
+    {
       "filePath": "app/api/auth/route.ts",
-      "updatedAt": 1793911179791,
-      "lineCount": 110,
-      "charCount": 3696,
-      "hash": "ef793b37ea67",
+      "updatedAt": 1793911848614,
+      "lineCount": 108,
+      "charCount": 3505,
+      "hash": "9b430fcc09dc",
       "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
     },
     {
@@ -635,17 +649,104 @@
       "charCount": 6176,
       "hash": "4ba55e533623",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/Hero.tsx",
-      "updatedAt": 1793868542674,
-      "lineCount": 64,
-      "charCount": 2504,
-      "hash": "47d3a0d89c7a",
-      "preview": "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 1: inserted 82 lines.",
+      "recordedAt": "2026-11-05T20:52:17.775Z",
+      "recordedAtEpochMs": 1793911937775,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793911937775
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 82,
+        "charCount": 2711,
+        "hash": "6ee5746b80fa",
+        "preview": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / const email = searchParams.get('e...",
+        "updatedAt": 1793911937775
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 82,
+        "summary": "Line 1: inserted 82 lines.",
+        "beforeFragment": "",
+        "afterFragment": "import { NextResponse } from 'next/server'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('cod..."
+      }
+    },
+    {
+      "type": "create",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-11-05T20:52:11.775Z",
+      "recordedAtEpochMs": 1793911931775,
+      "before": null,
+      "after": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793911931769.7664,
+        "extension": ".ts",
+        "sizeBytes": 0
+      },
+      "diff": null
+    },
+    {
+      "type": "create",
+      "path": "app/api/verify-voucher",
+      "toPath": "",
+      "summary": "Created file.",
+      "recordedAt": "2026-11-05T20:52:07.165Z",
+      "recordedAtEpochMs": 1793911927165,
+      "before": null,
+      "after": null,
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "app/api/auth/route.ts",
+      "toPath": "",
+      "summary": "Line 20: replaced 79 lines with 77 lines.",
+      "recordedAt": "2026-11-05T20:50:48.614Z",
+      "recordedAtEpochMs": 1793911848614,
+      "before": {
+        "kind": "text",
+        "lineCount": 110,
+        "charCount": 3696,
+        "hash": "ef793b37ea67",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793911848614
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 108,
+        "charCount": 3505,
+        "hash": "9b430fcc09dc",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793911848614
+      },
+      "diff": {
+        "lineStart": 20,
+        "removedLines": 79,
+        "addedLines": 77,
+        "summary": "Line 20: replaced 79 lines with 77 lines.",
+        "beforeFragment": "// 1. Zoek de voucher op in WordPress via GraphQL / const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title /...",
+        "afterFragment": "const query = ` / query GetVoucher($code: String!) { / vouchers(where: { search: $code }) { / nodes { / databaseId / title / voucherVelden { / toegangscode / status / klantEmail..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/route.ts",
@@ -985,140 +1086,12 @@
         "beforeFragment": "import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_N...",
         "afterFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilter..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 15: replaced 384 lines with 333 lines.",
-      "recordedAt": "2026-11-05T17:25:42.312Z",
-      "recordedAtEpochMs": 1793899542312,
-      "before": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 19675,
-        "hash": "5a4b08bcd6c0",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793899542312
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 371,
-        "charCount": 17693,
-        "hash": "7b9bdd6162c7",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793899542312
-      },
-      "diff": {
-        "lineStart": 15,
-        "removedLines": 384,
-        "addedLines": 333,
-        "summary": "Line 15: replaced 384 lines with 333 lines.",
-        "beforeFragment": "Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<boolean>(false); / const [isAuthorized, setIsAuthorized...",
-        "afterFragment": "Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] = useState<boolean>(false); / const [isAuthorized, setIsAuthorized..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 3: replaced 117 lines with 343 lines.",
-      "recordedAt": "2026-11-05T17:25:26.922Z",
-      "recordedAtEpochMs": 1793899526922,
-      "before": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5571,
-        "hash": "7c52c9f0546f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793899526922
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 348,
-        "charCount": 16717,
-        "hash": "36cc8926abe6",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793899526922
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 117,
-        "addedLines": 343,
-        "summary": "Line 3: replaced 117 lines with 343 lines.",
-        "beforeFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilter...",
-        "afterFragment": "import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_N..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 25: replaced 44 lines with 57 lines.",
-      "recordedAt": "2026-11-05T17:11:31.875Z",
-      "recordedAtEpochMs": 1793898691875,
-      "before": {
-        "kind": "text",
-        "lineCount": 109,
-        "charCount": 5060,
-        "hash": "95cd67c49c6f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793898691875
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5571,
-        "hash": "7c52c9f0546f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793898691875
-      },
-      "diff": {
-        "lineStart": 25,
-        "removedLines": 44,
-        "addedLines": 57,
-        "summary": "Line 25: replaced 44 lines with 57 lines.",
-        "beforeFragment": "if (!woningType && woningTypenLijst.length > 0) { / return ( / <div className=\"space-y-12 min-h-[400px] flex flex-col justify-center items-center\"> / <p className=\"text-xs text-...",
-        "afterFragment": "const handleSelectIndeling = (item: any, indelingTitel: string) => { / setSelectedIndeling(item); / if (typeof window !== 'undefined') { / try { / localStorage.setItem('selected..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 47: replaced 123 lines with 130 lines.",
-      "recordedAt": "2026-11-05T17:06:56.479Z",
-      "recordedAtEpochMs": 1793898416479,
-      "before": {
-        "kind": "text",
-        "lineCount": 502,
-        "charCount": 21036,
-        "hash": "28fb5556115b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793898416478
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 509,
-        "charCount": 21194,
-        "hash": "55a56b73a3e1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793898416479
-      },
-      "diff": {
-        "lineStart": 47,
-        "removedLines": 123,
-        "addedLines": 130,
-        "summary": "Line 47: replaced 123 lines with 130 lines.",
-        "beforeFragment": "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?...",
-        "afterFragment": "// Verzamel ALLE rijen die matchen met het woningtype en de geselecteerde indeling / const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam ||..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 13
+      "count": 11
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1133,35 +1106,40 @@
       "count": 5
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 5
+      "filePath": "app/api/auth/route.ts",
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
-      "filePath": "app/api/auth/route.ts",
+      "filePath": "lib/cms.ts",
+      "count": 3
+    },
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 93424e2 fix(download-page): resolve download categories from matching woning rows and filter files strictly by Modern Raw",
-    "statusSummary": "3 modifieds, 1 untracked",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-05 1cc1177 security(auth): enforce strict email matching against WordPress voucher record",
+    "statusSummary": "4 modifieds, 1 untracked",
+    "changedFileCount": 5,
     "statusLines": [
+      "M app/api/auth/route.ts",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md",
-      "?? app/api/auth/route.ts"
+      "?? app/api/verify-voucher/"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 93424e2 by Bas van Dooremalen on 2026-11-05\n  fix(download-page): resolve download categories from matching woning rows and filter files strictly by Modern Raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 1cc1177 by Bas van Dooremalen on 2026-11-05\n  security(auth): enforce strict email matching against WordPress voucher record\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

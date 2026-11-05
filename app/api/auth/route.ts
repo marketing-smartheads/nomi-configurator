@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
 
-    // 1. Zoek de voucher op in WordPress via GraphQL
     const query = `
       query GetVoucher($code: String!) {
         vouchers(where: { search: $code }) {
@@ -48,7 +47,6 @@ export async function POST(request: Request) {
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
-    // Exacte vergelijking op vouchercode
     const voucher = vouchers.find((v: any) => 
       (v?.voucherVelden?.toegangscode || '').trim().toLowerCase() === toegangscode.trim().toLowerCase()
     );
@@ -64,7 +62,7 @@ export async function POST(request: Request) {
     const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
     const ingevoerdeEmail = klantEmail.trim().toLowerCase();
 
-    // 2. STRENGE VALIDATIE: Als het e-mailadres al in WordPress staat gekoppeld, moet dit exact overeenkomen
+    // 🛑 STRENGE E-MAIL CHECK
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmail) {
         return NextResponse.json(
@@ -73,7 +71,7 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // 3. Eerste login: Als het e-mailadres nog leeg is in WP, koppel het direct automatisch
+      // Eerste keer inloggen: koppel het ingevoerde e-mailadres aan de voucher in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email } }) {
@@ -95,7 +93,7 @@ export async function POST(request: Request) {
           variables: { id: voucher.databaseId, email: ingevoerdeEmail } 
         }),
         cache: 'no-store',
-      }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
+      }).catch(err => console.warn('Kon e-mailadres niet updaten in WP:', err));
     }
 
     return NextResponse.json({ success: true, message: 'Toegang verleend' });
