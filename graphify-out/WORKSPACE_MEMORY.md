@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T15:02:46.485Z
+Generated: 2026-11-05T15:51:37.457Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T15:02:44.770Z
+- Last activity: 2026-11-05T15:51:35.030Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepFourConfirmation.tsx (5), app/dashboard/page.tsx (2)
-- Suggested starting points: app/download/page.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, app/dashboard/page.tsx, components/Hero.tsx
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: lib/cms.ts (13), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepFourConfirmation.tsx (5), components/Hero.tsx (2)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/LoginScreen.tsx
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 109 lines | 5060 chars | hash 95cd67c49c6f
+  Last snapshot: 2026-11-05T15:51:35.030Z
+  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
 - app/download/page.tsx | 422 lines | 19675 chars | hash 5a4b08bcd6c0
   Last snapshot: 2026-11-05T15:02:44.770Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/MainContent.tsx | 217 lines | 8844 chars | hash e6c5e1499cef
   Last snapshot: 2026-11-02T10:45:40.365Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- components/LoginScreen.tsx | 288 lines | 10168 chars | hash 79594072f6a6
-  Last snapshot: 2026-11-02T10:44:41.742Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
 
 ## Recent Changes
+### 2026-11-05T15:51:35.030Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 19: replaced 49 lines with 55 lines.
+- Before: 103 lines | 4,563 chars | hash 3c15fc14d5bc | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+- After: 109 lines | 5,060 chars | hash 95cd67c49c6f | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+- Previous fragment: "if (!woningType && woningTypenLijst.length > 0) { / return ( / <div className="space-y-12 min-h-[400px] flex flex-col justify-center items-center"> / <p className="text-xs text-..."
+- Current fragment: "// Unieke indelingen filteren op basis van indelingstitel zodat dubbele rijen uit het CMS netjes worden samengevoegd / const uniekeIndelingen = gefilterdeLijst.filter((item: any..."
+
 ### 2026-11-05T15:02:44.770Z | saved | app/download/page.tsx
 - Summary: Line 7: replaced 286 lines with 204 lines.
 - Before: 504 lines | 23,775 chars | hash 6f867323f7b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -158,33 +165,22 @@ Structured manifest: workspace.json
 - Previous fragment: "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItem"
 - Current fragment: "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
 
-### 2026-11-05T12:28:14.539Z | saved | lib/cms.ts
-- Summary: Line 69: replaced 9 lines with 13 lines.
-- Before: 221 lines | 6,077 chars | hash 426f87c5a81b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 225 lines | 6,181 chars | hash 759e72d2dd03 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl"
-- Current fragment: "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
-
 
 ## Hot Files
 - lib/cms.ts (13 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
-- app/dashboard/page.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
+- app/dashboard/page.tsx (1 tracked changes)
 - app/download/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 4c24fc9 fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty
-- Working tree summary: 5 modifieds
-- M app/download/page.tsx
-- M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-05 b58a2a2 security(download): restrict download page access strictly to fully completed configurations via step 4
+- Working tree summary: 1 modified
+- M components/configurator/StepOnewoning.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4c24fc9 by Bas van Dooremalen on 2026-11-05
-  fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty
+- b58a2a2 by Bas van Dooremalen on 2026-11-05
+  security(download): restrict download page access strictly to fully completed configurations via step 4
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

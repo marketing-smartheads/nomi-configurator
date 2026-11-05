@@ -16,6 +16,12 @@ export default function StepOneWoning({
       })
     : woningTypenLijst;
 
+  // Unieke indelingen filteren op basis van indelingstitel zodat dubbele rijen uit het CMS netjes worden samengevoegd
+  const uniekeIndelingen = gefilterdeLijst.filter((item: any, index: number, self: any[]) => {
+    const titel = (item.indelingTitel || item.indeling_titel || `Indeling 0${index + 1}`).trim().toLowerCase();
+    return index === self.findIndex((t: any) => (t.indelingTitel || t.indeling_titel || '').trim().toLowerCase() === titel);
+  });
+
   if (!woningType && woningTypenLijst.length > 0) {
     return (
       <div className="space-y-12 min-h-[400px] flex flex-col justify-center items-center">
@@ -41,22 +47,23 @@ export default function StepOneWoning({
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 max-w-4xl mx-auto">
-        {gefilterdeLijst.length > 0 ? (
-          gefilterdeLijst.map((item: any, index: number) => {
+        {uniekeIndelingen.length > 0 ? (
+          uniekeIndelingen.map((item: any, index: number) => {
             const typeNaam = item.typeNaam || item.type_naam || woningType;
             const indelingTitel = item.indelingTitel || item.indeling_titel || `Indeling 0${index + 1}`;
             const metrage = item.metrage || '';
             const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
             
+            // Unieke vergelijking op basis van exact object of indelingstitel
+            const geselecteerdeTitel = selectedIndeling?.indelingTitel || selectedIndeling?.indeling_titel || selectedIndeling;
             const isSelected = selectedIndeling && (
               selectedIndeling === item || 
-              selectedIndeling?.indelingTitel === indelingTitel || 
-              selectedIndeling?.indeling_titel === indelingTitel
+              geselecteerdeTitel === indelingTitel
             );
 
             return (
               <button
-                key={indelingTitel + index}
+                key={`indeling-${index}-${indelingTitel}`}
                 type="button"
                 onClick={() => setSelectedIndeling(item)}
                 className={`bg-white p-6 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md border ${
@@ -64,7 +71,6 @@ export default function StepOneWoning({
                 }`}
               >
                 <div>
-                  {/* Container met object-contain en padding zodat de hele plattegrond zichtbaar blijft */}
                   <div className="w-full aspect-16/10 bg-white rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
                     {imageUrl ? (
                       <img 

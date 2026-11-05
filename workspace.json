@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T15:02:46.485Z",
-  "generatedAtEpochMs": 1793890966485,
+  "generatedAt": "2026-11-05T15:51:37.457Z",
+  "generatedAtEpochMs": 1793893897457,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "lib/cms.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "app/dashboard/page.tsx",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
+      "app/dashboard/page.tsx",
+      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T15:02:44.770Z",
+    "lastActivityAt": "2026-11-05T15:51:35.030Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -574,6 +574,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1793893895030,
+      "lineCount": 109,
+      "charCount": 5060,
+      "hash": "95cd67c49c6f",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+    },
     {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793890964770,
@@ -629,17 +637,41 @@
       "charCount": 8844,
       "hash": "e6c5e1499cef",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-    },
-    {
-      "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793616281742,
-      "lineCount": 288,
-      "charCount": 10168,
-      "hash": "79594072f6a6",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / interfac..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 19: replaced 49 lines with 55 lines.",
+      "recordedAt": "2026-11-05T15:51:35.030Z",
+      "recordedAtEpochMs": 1793893895030,
+      "before": {
+        "kind": "text",
+        "lineCount": 103,
+        "charCount": 4563,
+        "hash": "3c15fc14d5bc",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793893895030
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 109,
+        "charCount": 5060,
+        "hash": "95cd67c49c6f",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793893895030
+      },
+      "diff": {
+        "lineStart": 19,
+        "removedLines": 49,
+        "addedLines": 55,
+        "summary": "Line 19: replaced 49 lines with 55 lines.",
+        "beforeFragment": "if (!woningType && woningTypenLijst.length > 0) { / return ( / <div className=\"space-y-12 min-h-[400px] flex flex-col justify-center items-center\"> / <p className=\"text-xs text-...",
+        "afterFragment": "// Unieke indelingen filteren op basis van indelingstitel zodat dubbele rijen uit het CMS netjes worden samengevoegd / const uniekeIndelingen = gefilterdeLijst.filter((item: any..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1073,38 +1105,6 @@
         "beforeFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItem",
         "afterFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 69: replaced 9 lines with 13 lines.",
-      "recordedAt": "2026-11-05T12:28:14.539Z",
-      "recordedAtEpochMs": 1793881694539,
-      "before": {
-        "kind": "text",
-        "lineCount": 221,
-        "charCount": 6077,
-        "hash": "426f87c5a81b",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881694539
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 6181,
-        "hash": "759e72d2dd03",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793881694539
-      },
-      "diff": {
-        "lineStart": 69,
-        "removedLines": 9,
-        "addedLines": 13,
-        "summary": "Line 69: replaced 9 lines with 13 lines.",
-        "beforeFragment": "sourceUrl / mediaItemUrl / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / sourceUrl / mediaItemUrl",
-        "afterFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItemUrl / }"
-      }
     }
   ],
   "hotFiles": [
@@ -1121,10 +1121,6 @@
       "count": 5
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 2
-    },
-    {
       "filePath": "components/Hero.tsx",
       "count": 2
     },
@@ -1137,6 +1133,10 @@
       "count": 2
     },
     {
+      "filePath": "app/dashboard/page.tsx",
+      "count": 1
+    },
+    {
       "filePath": "app/download/page.tsx",
       "count": 1
     }
@@ -1144,21 +1144,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 4c24fc9 fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 b58a2a2 security(download): restrict download page access strictly to fully completed configurations via step 4",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4c24fc9 by Bas van Dooremalen on 2026-11-05\n  fix(cms): make getVoucherData robust with fallback defaults when ACF fields are empty\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b58a2a2 by Bas van Dooremalen on 2026-11-05\n  security(download): restrict download page access strictly to fully completed configurations via step 4\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
