@@ -29,7 +29,6 @@ export default function StepThreeVisuals({
           }
         }
 
-        // Haal direct op uit sessionStorage of localStorage met absolute prioriteit voor Modern Raw
         const sessionPak = sessionStorage.getItem('geselecteerdPakket');
         const localPak = localStorage.getItem('selected_designPakket');
         
@@ -56,15 +55,25 @@ export default function StepThreeVisuals({
     return naam.includes(normWoning) || normWoning.includes(naam);
   }) || woningTypenLijst[0];
 
-  const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
-  const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
+  const rawPakkettenWoning = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || [];
+  const rawPakkettenAlgemeen = data?.designPakketten || data?.design_pakketten || [];
+  
+  const pakkettenLijstWoning = Array.isArray(rawPakkettenWoning) ? rawPakkettenWoning : rawPakkettenWoning?.nodes || [];
+  const pakkettenLijstAlgemeen = Array.isArray(rawPakkettenAlgemeen) ? rawPakkettenAlgemeen : rawPakkettenAlgemeen?.nodes || [];
+  
+  const allePakketten = [...pakkettenLijstWoning, ...pakkettenLijstAlgemeen];
 
-  // Super-strenge match: zoekt exact op Modern Raw of Hotel Chic
-  const huidigPakketObj = pakkettenLijst.find((p: any) => {
+  // Super-robuuste matching: exacte match én trefwoord-fallback (raw / chic)
+  const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
-  }) || pakkettenLijst[0];
+  }) || allePakketten.find((p: any) => {
+    const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase();
+    if (normPakket.includes('raw') && pTitel.includes('raw')) return true;
+    if (normPakket.includes('chic') && pTitel.includes('chic')) return true;
+    return false;
+  }) || allePakketten[0] || {};
 
   const pakketTitel = huidigPakketObj?.pakketTitel || huidigPakketObj?.pakket_titel || actiefPakket;
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
@@ -394,7 +403,7 @@ export default function StepThreeVisuals({
           )}
         </div>
 
-        {visuals.length > 0 && (
+        {visuals.length > 1 && (
           <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
             {currentThumbs.map((vis: any, relativeIdx: number) => {
               const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;

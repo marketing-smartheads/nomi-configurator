@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T16:57:44.017Z
+Generated: 2026-11-05T17:02:36.507Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T16:57:41.682Z
+- Last activity: 2026-11-05T17:02:34.730Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (14), lib/cms.ts (13), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, components/MainContent.tsx
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (15), lib/cms.ts (13), components/configurator/StepTwoDesign.tsx (4), components/configurator/StepFourConfirmation.tsx (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepTwoDesign.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx, app/download/page.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 493 lines | 20516 chars | hash 55481051f944
-  Last snapshot: 2026-11-05T16:57:41.682Z
+- components/configurator/StepThreeVisuals.tsx | 502 lines | 21036 chars | hash 28fb5556115b
+  Last snapshot: 2026-11-05T17:02:34.730Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 - components/configurator/StepTwoDesign.tsx | 200 lines | 8924 chars | hash 62093ff0ea75
   Last snapshot: 2026-11-05T16:19:57.343Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T17:02:34.730Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 32: replaced 366 lines with 375 lines.
+- Before: 493 lines | 20,516 chars | hash 55481051f944 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 502 lines | 21,036 chars | hash 28fb5556115b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "// Haal direct op uit sessionStorage of localStorage met absolute prioriteit voor Modern Raw / const sessionPak = sessionStorage.getItem('geselecteerdPakket'); / const localPak..."
+- Current fragment: "const sessionPak = sessionStorage.getItem('geselecteerdPakket'); / const localPak = localStorage.getItem('selected_designPakket'); / const gekozen = sessionPak || localPak || de..."
+
 ### 2026-11-05T16:57:41.682Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 17: replaced 454 lines with 457 lines.
 - Before: 490 lines | 20,353 chars | hash 6e15cccf6274 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -159,27 +166,20 @@ Structured manifest: workspace.json
 - Previous fragment: "|| !match.voucherVelden?.gekozenTypeWoning) { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden.gekozenTypeWoning, / gekozenDesignpakket: match.voucherVelden"
 - Current fragment: ") { / return null; / } / return { / gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A', / gekozenDesignpakket: match.voucherVelden?"
 
-### 2026-11-05T13:31:04.115Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 40: replaced 177 lines with 190 lines.
-- Before: 307 lines | 14,829 chars | hash 27617c309371 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 320 lines | 15,046 chars | hash a0ef13144fa5 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "manualNotice, setManualNotice] = useState(false); / const [errorMessage, setErrorMessage] = useState(''); / const router = useRouter(); / useEffect(() => { / if (typeof window !..."
-- Current fragment: "errorMessage, setErrorMessage] = useState(''); / const router = useRouter(); / useEffect(() => { / if (typeof window !== 'undefined') { / const opgeslagenEmail = / sessionStorag..."
-
 
 ## Hot Files
-- components/configurator/StepThreeVisuals.tsx (14 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (15 tracked changes)
 - lib/cms.ts (13 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/Hero.tsx (2 tracked changes)
-- components/MainContent.tsx (2 tracked changes)
 - app/download/page.tsx (1 tracked changes)
 - components/configurator/StepOnewoning.tsx (1 tracked changes)
+- components/MainContent.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 b399280 fix(step3): prioritize session storage package selection over stale component props
+- HEAD: 2026-11-05 c7e3f45 fix(step3): force state to read sessionStorage.geselecteerdPakket reliably for modern raw style
 - Working tree summary: 1 modified
 - M components/configurator/StepThreeVisuals.tsx
 
