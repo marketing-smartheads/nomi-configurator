@@ -64,9 +64,18 @@ export default function StepThreeVisuals({
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
   const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || [];
+  // --- ROBUUSTE VISUALS EXTRACTIE (Ondersteunt zowel array als .nodes / .edges) ---
+  const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider;
+  const visuals = Array.isArray(rawVisuals) 
+    ? rawVisuals 
+    : (rawVisuals?.nodes || rawVisuals?.edges?.map((e: any) => e.node) || []);
+
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
-  const moodboardGallery = huidigPakket?.moodboardGallery?.nodes || huidigPakket?.moodboard_gallery?.nodes || huidigPakket?.moodboardGallery || [];
+  
+  const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery;
+  const moodboardGallery = Array.isArray(rawMoodboard)
+    ? rawMoodboard
+    : (rawMoodboard?.nodes || rawMoodboard?.edges?.map((e: any) => e.node) || []);
 
   // Pannellum 360° logica
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
@@ -318,7 +327,7 @@ export default function StepThreeVisuals({
               {visuals.length > 0 ? (
                 visuals.map((vis: any, idx: number) => {
                   const isActive = idx === activeIndex;
-                  const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl;
+                  const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
                   return (
                     <div 
                       key={idx} 
@@ -371,7 +380,7 @@ export default function StepThreeVisuals({
           <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
             {currentThumbs.map((vis: any, relativeIdx: number) => {
               const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;
-              const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl;
+              const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
               
               return (
                 <div
@@ -418,7 +427,7 @@ export default function StepThreeVisuals({
         {moodboardGallery.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 sm:p-0">
             {moodboardGallery.map((img: any, idx: number) => {
-              const imageUrl = img?.sourceUrl || img?.node?.sourceUrl;
+              const imageUrl = img?.sourceUrl || img?.node?.sourceUrl || img?.mediaItemUrl;
               if (!imageUrl) return null;
 
               return (

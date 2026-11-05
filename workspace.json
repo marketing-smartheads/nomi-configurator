@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T11:55:02.057Z",
-  "generatedAtEpochMs": 1793879702057,
+  "generatedAt": "2026-11-05T12:03:03.398Z",
+  "generatedAtEpochMs": 1793880183398,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -30,10 +30,10 @@
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
-      "app/api/vouchers/route.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 69,
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T11:55:00.316Z",
+    "lastActivityAt": "2026-11-05T12:03:00.964Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,10 +576,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793879700316,
-      "lineCount": 440,
-      "charCount": 18174,
-      "hash": "f1f57a0353a0",
+      "updatedAt": 1793880180964,
+      "lineCount": 449,
+      "charCount": 18529,
+      "hash": "faa41e22a89e",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     },
     {
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 67: replaced 355 lines with 364 lines.",
+      "recordedAt": "2026-11-05T12:03:00.964Z",
+      "recordedAtEpochMs": 1793880180964,
+      "before": {
+        "kind": "text",
+        "lineCount": 440,
+        "charCount": 18174,
+        "hash": "f1f57a0353a0",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793880180963
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 449,
+        "charCount": 18529,
+        "hash": "faa41e22a89e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793880180964
+      },
+      "diff": {
+        "lineStart": 67,
+        "removedLines": 355,
+        "addedLines": 364,
+        "summary": "Line 67: replaced 355 lines with 364 lines.",
+        "beforeFragment": "const visuals = huidigPakket?.visualsSlider?.nodes || huidigPakket?.visuals_slider?.nodes || huidigPakket?.visualsSlider || []; / const materialen = huidigPakket?.materialenLijs...",
+        "afterFragment": "// --- ROBUUSTE VISUALS EXTRACTIE (Ondersteunt zowel array als .nodes / .edges) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / const vis..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1087,44 +1119,12 @@
         "beforeFragment": "export default async function VoucherLandingPage() { / const { sections, configuratorData } = await getPageData(); / return ( / <> / {/* Activeert automatisch de welkomst-popup...",
         "afterFragment": "import VoucherParamHandler from '@/components/VoucherParamHandler'; / import { Suspense } from 'react'; / export default async function VoucherLandingPage() { / const { sections..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/VoucherParamHandler.tsx",
-      "toPath": "",
-      "summary": "Line 4: replaced 14 lines with 20 lines.",
-      "recordedAt": "2026-10-27T15:47:30.331Z",
-      "recordedAtEpochMs": 1793116050331,
-      "before": {
-        "kind": "text",
-        "lineCount": 20,
-        "charCount": 598,
-        "hash": "06ad36daf3da",
-        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { /...",
-        "updatedAt": 1793116050331
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 26,
-        "charCount": 903,
-        "hash": "ec9c2628508d",
-        "preview": "'use client'; / import { useEffect } from 'react'; / import { useSearchParams, useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(...",
-        "updatedAt": 1793116050331
-      },
-      "diff": {
-        "lineStart": 4,
-        "removedLines": 14,
-        "addedLines": 20,
-        "summary": "Line 4: replaced 14 lines with 20 lines.",
-        "beforeFragment": "} from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / useEffect(() => { / const codeParam = searchParams.get('c...",
-        "afterFragment": ", useRouter, usePathname } from 'next/navigation'; / export default function VoucherParamHandler() { / const searchParams = useSearchParams(); / const router = useRouter(); / co..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 15
+      "count": 14
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1139,6 +1139,10 @@
       "count": 2
     },
     {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 2
+    },
+    {
       "filePath": "components/Hero.tsx",
       "count": 2
     },
@@ -1149,31 +1153,22 @@
     {
       "filePath": "components/MainContent.tsx",
       "count": 2
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 a18fc82 changed better height of hero image",
-    "statusSummary": "6 modifieds",
-    "changedFileCount": 6,
+    "headSummary": "2026-11-05 6557f6f feat(configurator): nest design packages inside woning_typen for indeling-specific renders",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M components/configurator/StepTwoDesign.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepThreeVisuals.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- a18fc82 by Bas van Dooremalen on 2026-11-05\n  changed better height of hero image\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6557f6f by Bas van Dooremalen on 2026-11-05\n  feat(configurator): nest design packages inside woning_typen for indeling-specific renders\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
