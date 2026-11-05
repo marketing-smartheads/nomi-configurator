@@ -39,7 +39,8 @@ export default function StepThreeVisuals({
     }
   }, [designPakket]);
 
-  const actiefPakket = designPakket || opgeslagenPakket || 'Hotel Chic';
+  // BELANGRIJK: Geef sessionStorage (opgeslagenPakket) prioriteit boven de prop om stale state te voorkomen
+  const actiefPakket = opgeslagenPakket || designPakket || 'Hotel Chic';
 
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -59,7 +60,6 @@ export default function StepThreeVisuals({
   const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
-  // Robuuste match op basis van exacte of genormaliseerde titel / id
   const huidigPakketObj = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
