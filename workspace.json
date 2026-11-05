@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T17:25:44.046Z",
-  "generatedAtEpochMs": 1793899544046,
+  "generatedAt": "2026-11-05T17:27:42.770Z",
+  "generatedAtEpochMs": 1793899662770,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/download/page.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,12 +22,12 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/download/page.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
-      "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
+      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T17:25:42.312Z",
+    "lastActivityAt": "2026-11-05T17:27:41.003Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1793899661003,
+      "lineCount": 122,
+      "charCount": 5571,
+      "hash": "7c52c9f0546f",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
+    },
+    {
       "filePath": "app/download/page.tsx",
       "updatedAt": 1793899542312,
       "lineCount": 371,
       "charCount": 17693,
       "hash": "7b9bdd6162c7",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1793899526922,
-      "lineCount": 348,
-      "charCount": 16717,
-      "hash": "36cc8926abe6",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 343 lines with 117 lines.",
+      "recordedAt": "2026-11-05T17:27:41.003Z",
+      "recordedAtEpochMs": 1793899661003,
+      "before": {
+        "kind": "text",
+        "lineCount": 348,
+        "charCount": 16717,
+        "hash": "36cc8926abe6",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793899661003
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 122,
+        "charCount": 5571,
+        "hash": "7c52c9f0546f",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
+        "updatedAt": 1793899661003
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 343,
+        "addedLines": 117,
+        "summary": "Line 3: replaced 343 lines with 117 lines.",
+        "beforeFragment": "import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_N...",
+        "afterFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilter..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1080,38 +1112,6 @@
         "beforeFragment": "// Haal gekozen indeling op uit storage om de exacte indeling-rij te matchen / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof...",
         "afterFragment": "const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selec..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 19: replaced 49 lines with 55 lines.",
-      "recordedAt": "2026-11-05T15:51:35.030Z",
-      "recordedAtEpochMs": 1793893895030,
-      "before": {
-        "kind": "text",
-        "lineCount": 103,
-        "charCount": 4563,
-        "hash": "3c15fc14d5bc",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793893895030
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 109,
-        "charCount": 5060,
-        "hash": "95cd67c49c6f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793893895030
-      },
-      "diff": {
-        "lineStart": 19,
-        "removedLines": 49,
-        "addedLines": 55,
-        "summary": "Line 19: replaced 49 lines with 55 lines.",
-        "beforeFragment": "if (!woningType && woningTypenLijst.length > 0) { / return ( / <div className=\"space-y-12 min-h-[400px] flex flex-col justify-center items-center\"> / <p className=\"text-xs text-...",
-        "afterFragment": "// Unieke indelingen filteren op basis van indelingstitel zodat dubbele rijen uit het CMS netjes worden samengevoegd / const uniekeIndelingen = gefilterdeLijst.filter((item: any..."
-      }
     }
   ],
   "hotFiles": [
@@ -1124,7 +1124,7 @@
       "count": 12
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 4
     },
     {
@@ -1132,7 +1132,7 @@
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
@@ -1143,15 +1143,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 ff4054c fix(step1): persist selected layout to both localStorage and sessionStorage",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 67f1eb1 fix(confirmation-and-downloads): correctly resolve active style in step 4 and render all attached category files on download page",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/download/page.tsx",
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
