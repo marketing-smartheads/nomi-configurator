@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:03:03.398Z",
-  "generatedAtEpochMs": 1793880183398,
+  "generatedAt": "2026-11-05T12:17:58.487Z",
+  "generatedAtEpochMs": 1793881078487,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,8 +25,8 @@
       "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
+      "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
-      "app/api/confirm/route.ts",
       "components/Hero.tsx",
       "components/LoginScreen.tsx",
       "components/MainContent.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:03:00.964Z",
+    "lastActivityAt": "2026-11-05T12:17:56.761Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -576,11 +576,19 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793880180964,
-      "lineCount": 449,
-      "charCount": 18529,
-      "hash": "faa41e22a89e",
+      "updatedAt": 1793881076761,
+      "lineCount": 487,
+      "charCount": 20249,
+      "hash": "154f87251e36",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793881038614,
+      "lineCount": 229,
+      "charCount": 6293,
+      "hash": "542201b41f6c",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -589,14 +597,6 @@
       "charCount": 7987,
       "hash": "6f6825fb8b83",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793879672906,
-      "lineCount": 223,
-      "charCount": 6113,
-      "hash": "9c180fc773a1",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/Hero.tsx",
@@ -640,6 +640,95 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 40: replaced 359 lines with 397 lines.",
+      "recordedAt": "2026-11-05T12:17:56.761Z",
+      "recordedAtEpochMs": 1793881076761,
+      "before": {
+        "kind": "text",
+        "lineCount": 449,
+        "charCount": 18529,
+        "hash": "faa41e22a89e",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793881076761
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 487,
+        "charCount": 20249,
+        "hash": "154f87251e36",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793881076761
+      },
+      "diff": {
+        "lineStart": 40,
+        "removedLines": 359,
+        "addedLines": 397,
+        "summary": "Line 40: replaced 359 lines with 397 lines.",
+        "beforeFragment": "// Match het exacte woningtype + indeling-object / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase(...",
+        "afterFragment": "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-05T12:17:18.614Z",
+      "recordedAtEpochMs": 1793881038614,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881038614
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793881038614
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 69: replaced 8 lines with 14 lines.",
+      "recordedAt": "2026-11-05T12:16:38.467Z",
+      "recordedAtEpochMs": 1793880998467,
+      "before": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 6113,
+        "hash": "9c180fc773a1",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793880998467
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793880998467
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 8,
+        "addedLines": 14,
+        "summary": "Line 69: replaced 8 lines with 14 lines.",
+        "beforeFragment": "nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery {",
+        "afterFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / }"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1023,123 +1112,27 @@
         "beforeFragment": "s",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 269: removed 1 line.",
-      "recordedAt": "2026-11-01T22:01:25.022Z",
-      "recordedAtEpochMs": 1793570485022,
-      "before": {
-        "kind": "text",
-        "lineCount": 307,
-        "charCount": 14831,
-        "hash": "c65841c87fbd",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793570485021
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 307,
-        "charCount": 14830,
-        "hash": "876d0a69796b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
-        "updatedAt": 1793570485022
-      },
-      "diff": {
-        "lineStart": 269,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 269: removed 1 line.",
-        "beforeFragment": "S",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/layout.tsx",
-      "toPath": "",
-      "summary": "Line 56: inserted 5 lines.",
-      "recordedAt": "2026-10-27T16:32:07.771Z",
-      "recordedAtEpochMs": 1793118727771,
-      "before": {
-        "kind": "text",
-        "lineCount": 77,
-        "charCount": 1540,
-        "hash": "11070fac90dc",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1793118727771
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 81,
-        "charCount": 1593,
-        "hash": "ed08bbfcc175",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1793118727771
-      },
-      "diff": {
-        "lineStart": 56,
-        "removedLines": 0,
-        "addedLines": 5,
-        "summary": "Line 56: inserted 5 lines.",
-        "beforeFragment": "",
-        "afterFragment": "robots: { / index: true, / follow: false, / },"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/voucher/page.tsx",
-      "toPath": "",
-      "summary": "Line 4: replaced 14 lines with 17 lines.",
-      "recordedAt": "2026-10-27T15:59:32.776Z",
-      "recordedAtEpochMs": 1793116772776,
-      "before": {
-        "kind": "text",
-        "lineCount": 19,
-        "charCount": 563,
-        "hash": "0ffd40656a77",
-        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()...",
-        "updatedAt": 1793116772776
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 22,
-        "charCount": 730,
-        "hash": "950e3928e018",
-        "preview": "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc...",
-        "updatedAt": 1793116772776
-      },
-      "diff": {
-        "lineStart": 4,
-        "removedLines": 14,
-        "addedLines": 17,
-        "summary": "Line 4: replaced 14 lines with 17 lines.",
-        "beforeFragment": "export default async function VoucherLandingPage() { / const { sections, configuratorData } = await getPageData(); / return ( / <> / {/* Activeert automatisch de welkomst-popup...",
-        "afterFragment": "import VoucherParamHandler from '@/components/VoucherParamHandler'; / import { Suspense } from 'react'; / export default async function VoucherLandingPage() { / const { sections..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 14
+      "count": 13
     },
     {
       "filePath": "app/dashboard/page.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 3
     },
     {
-      "filePath": "app/api/confirm/route.ts",
-      "count": 2
+      "filePath": "lib/cms.ts",
+      "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
     {
@@ -1158,17 +1151,21 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 6557f6f feat(configurator): nest design packages inside woning_typen for indeling-specific renders",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 761091d fix(visuals): support both array and node formats for visualsSlider gallery",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx"
+      "M components/configurator/StepThreeVisuals.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6557f6f by Bas van Dooremalen on 2026-11-05\n  feat(configurator): nest design packages inside woning_typen for indeling-specific renders\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 761091d by Bas van Dooremalen on 2026-11-05\n  fix(visuals): support both array and node formats for visualsSlider gallery\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

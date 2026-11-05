@@ -37,7 +37,6 @@ export default function StepThreeVisuals({
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Match het exacte woningtype + indeling-object
   const huidigWoningTypeObj = woningTypenLijst.find((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -49,11 +48,9 @@ export default function StepThreeVisuals({
     return naam.includes(normWoning) || normWoning.includes(naam);
   }) || woningTypenLijst[0];
 
-  // Haal designpakketten op uit de geselecteerde woningindeling
   const rawPakketten = huidigWoningTypeObj?.designPakketten || huidigWoningTypeObj?.design_pakketten || data?.designPakketten || [];
   const pakkettenLijst = Array.isArray(rawPakketten) ? rawPakketten : rawPakketten?.nodes || [];
 
-  // Zoek het actieve pakket binnen deze indeling
   const huidigPakket = pakkettenLijst.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -64,18 +61,28 @@ export default function StepThreeVisuals({
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
   const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  // --- ROBUUSTE VISUALS EXTRACTIE (Ondersteunt zowel array als .nodes / .edges) ---
+  // --- ROBUUSTE UITLEZEN VAN ALLE VISUALS (ACF Gallery) ---
   const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider;
-  const visuals = Array.isArray(rawVisuals) 
-    ? rawVisuals 
-    : (rawVisuals?.nodes || rawVisuals?.edges?.map((e: any) => e.node) || []);
+  let visuals: any[] = [];
+  if (Array.isArray(rawVisuals)) {
+    visuals = rawVisuals;
+  } else if (rawVisuals?.nodes) {
+    visuals = rawVisuals.nodes;
+  } else if (rawVisuals?.edges) {
+    visuals = rawVisuals.edges.map((e: any) => e.node);
+  }
 
   const materialen = huidigPakket?.materialenLijst || huidigPakket?.materialen_lijst || [];
   
   const rawMoodboard = huidigPakket?.moodboardGallery || huidigPakket?.moodboard_gallery;
-  const moodboardGallery = Array.isArray(rawMoodboard)
-    ? rawMoodboard
-    : (rawMoodboard?.nodes || rawMoodboard?.edges?.map((e: any) => e.node) || []);
+  let moodboardGallery: any[] = [];
+  if (Array.isArray(rawMoodboard)) {
+    moodboardGallery = rawMoodboard;
+  } else if (rawMoodboard?.nodes) {
+    moodboardGallery = rawMoodboard.nodes;
+  } else if (rawMoodboard?.edges) {
+    moodboardGallery = rawMoodboard.edges.map((e: any) => e.node);
+  }
 
   // Pannellum 360° logica
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
@@ -227,6 +234,7 @@ export default function StepThreeVisuals({
   };
 
   const thumbsPerPage = 4;
+  const maxThumbPage = Math.max(0, Math.ceil(visuals.length / thumbsPerPage) - 1);
 
   const triggerSlide = (newIndex: number) => {
     if (isAnimating || newIndex === activeIndex) return;
@@ -315,7 +323,9 @@ export default function StepThreeVisuals({
                 3D Visuals
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Visuals en sferen</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van uw gekozen designpakket.</p>
+              <p className="text-xs sm:text-sm text-muted mt-1">
+                Bekijk de visuals van uw gekozen designpakket ({visuals.length} afbeeldingen beschikbaar).
+              </p>
             </div>
 
             <div 
@@ -376,26 +386,54 @@ export default function StepThreeVisuals({
           )}
         </div>
 
+        {/* Thumbnails grid met paginering controls als er meer dan 4 zijn */}
         {visuals.length > 0 && (
-          <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
-            {currentThumbs.map((vis: any, relativeIdx: number) => {
-              const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;
-              const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
-              
-              return (
-                <div
-                  key={absoluteIdx}
-                  onClick={() => handleThumbClick(absoluteIdx)}
-                  className={`relative w-full aspect-4/3 rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
-                    activeIndex === absoluteIdx ? 'ring-2 ring-primary' : ''
-                  }`}
+          <div className="space-y-4">
+            <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
+              {currentThumbs.map((vis: any, relativeIdx: number) => {
+                const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;
+                const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
+                
+                return (
+                  <div
+                    key={absoluteIdx}
+                    onClick={() => handleThumbClick(absoluteIdx)}
+                    className={`relative w-full aspect-4/3 rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
+                      activeIndex === absoluteIdx ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    {imgSrc && (
+                      <Image src={imgSrc} alt={`Thumbnail ${absoluteIdx + 1}`} fill className="object-cover" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Paginering knoppen voor thumbnails indien meer dan 4 */}
+            {visuals.length > thumbsPerPage && (
+              <div className="flex justify-between items-center px-2 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setThumbPage((p) => Math.max(0, p - 1))}
+                  disabled={thumbPage === 0}
+                  className="px-4 py-2 rounded-full bg-white text-xs font-semibold text-dark disabled:opacity-30 border border-dark/10 shadow-sm cursor-pointer"
                 >
-                  {imgSrc && (
-                    <Image src={imgSrc} alt={`Thumbnail ${absoluteIdx + 1}`} fill className="object-cover" />
-                  )}
-                </div>
-              );
-            })}
+                  ← Vorige 4 thumbnails
+                </button>
+                <span className="text-xs text-muted">
+                  Pagina {thumbPage + 1} van {maxThumbPage + 1} ({visuals.length} totaal)
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setThumbPage((p) => Math.min(maxThumbPage, p + 1))}
+                  disabled={thumbPage >= maxThumbPage}
+                  className="px-4 py-2 rounded-full bg-white text-xs font-semibold text-dark disabled:opacity-30 border border-dark/10 shadow-sm cursor-pointer"
+                >
+                  Volgende 4 thumbnails →
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

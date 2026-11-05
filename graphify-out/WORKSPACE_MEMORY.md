@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:03:03.398Z
+Generated: 2026-11-05T12:17:58.487Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:03:00.964Z
+- Last activity: 2026-11-05T12:17:56.761Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: app/download/page.tsx (14), app/dashboard/page.tsx (6), components/configurator/StepFourConfirmation.tsx (3), app/api/confirm/route.ts (2)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, app/api/confirm/route.ts, components/Hero.tsx
+- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (3), lib/cms.ts (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, app/dashboard/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
@@ -37,17 +37,17 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 449 lines | 18529 chars | hash faa41e22a89e
-  Last snapshot: 2026-11-05T12:03:00.964Z
+- components/configurator/StepThreeVisuals.tsx | 487 lines | 20249 chars | hash 154f87251e36
+  Last snapshot: 2026-11-05T12:17:56.761Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- lib/cms.ts | 229 lines | 6293 chars | hash 542201b41f6c
+  Last snapshot: 2026-11-05T12:17:18.614Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 179 lines | 7987 chars | hash 6f6825fb8b83
   Last snapshot: 2026-11-05T11:54:45.219Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- lib/cms.ts | 223 lines | 6113 chars | hash 9c180fc773a1
-  Last snapshot: 2026-11-05T11:54:32.906Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/Hero.tsx | 64 lines | 2504 chars | hash 47d3a0d89c7a
   Last snapshot: 2026-11-05T08:49:02.674Z
   Preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
@@ -65,6 +65,25 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:17:56.761Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 40: replaced 359 lines with 397 lines.
+- Before: 449 lines | 18,529 chars | hash faa41e22a89e | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "// Match het exacte woningtype + indeling-object / const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase(..."
+- Current fragment: "const huidigWoningTypeObj = woningTypenLijst.find((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?..."
+
+### 2026-11-05T12:17:18.614Z | saved | lib/cms.ts
+- Summary: Saved without a textual diff.
+- Before: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+
+### 2026-11-05T12:16:38.467Z | saved | lib/cms.ts
+- Summary: Line 69: replaced 8 lines with 14 lines.
+- Before: 223 lines | 6,113 chars | hash 9c180fc773a1 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery {"
+- Current fragment: "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / }"
+
 ### 2026-11-05T12:03:00.964Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 67: replaced 355 lines with 364 lines.
 - Before: 440 lines | 18,174 chars | hash f1f57a0353a0 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -147,41 +166,26 @@ Structured manifest: workspace.json
 - After: 307 lines | 14,829 chars | hash 27617c309371 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - Previous fragment: "s"
 
-### 2026-11-01T22:01:25.022Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 269: removed 1 line.
-- Before: 307 lines | 14,831 chars | hash c65841c87fbd | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 307 lines | 14,830 chars | hash 876d0a69796b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- Previous fragment: "S"
-
-### 2026-10-27T16:32:07.771Z | saved | app/layout.tsx
-- Summary: Line 56: inserted 5 lines.
-- Before: 77 lines | 1,540 chars | hash 11070fac90dc | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- Current fragment: "robots: { / index: true, / follow: false, / },"
-
-### 2026-10-27T15:59:32.776Z | saved | app/voucher/page.tsx
-- Summary: Line 4: replaced 14 lines with 17 lines.
-- Before: 19 lines | 563 chars | hash 0ffd40656a77 | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / export default async function VoucherLandingPage()..."
-- After: 22 lines | 730 chars | hash 950e3928e018 | preview: "import { getPageData } from '@/lib/cms'; / import MainContent from '@/components/MainContent'; / import VoucherWelcomeModal from '@/components/VoucherWelcomeModal'; / import VoucherParamHandler from '@/components/Vouc..."
-- Previous fragment: "export default async function VoucherLandingPage() { / const { sections, configuratorData } = await getPageData(); / return ( / <> / {/* Activeert automatisch de welkomst-popup..."
-- Current fragment: "import VoucherParamHandler from '@/components/VoucherParamHandler'; / import { Suspense } from 'react'; / export default async function VoucherLandingPage() { / const { sections..."
-
 
 ## Hot Files
-- app/download/page.tsx (14 tracked changes)
+- app/download/page.tsx (13 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
-- app/api/confirm/route.ts (2 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- lib/cms.ts (3 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
 - components/MainContent.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 6557f6f feat(configurator): nest design packages inside woning_typen for indeling-specific renders
-- Working tree summary: 1 modified
+- HEAD: 2026-11-05 761091d fix(visuals): support both array and node formats for visualsSlider gallery
+- Working tree summary: 5 modifieds
 - M components/configurator/StepThreeVisuals.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M lib/cms.ts
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +193,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 6557f6f by Bas van Dooremalen on 2026-11-05
-  feat(configurator): nest design packages inside woning_typen for indeling-specific renders
+- 761091d by Bas van Dooremalen on 2026-11-05
+  fix(visuals): support both array and node formats for visualsSlider gallery
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
