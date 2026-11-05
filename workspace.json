@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T12:37:47.930Z",
-  "generatedAtEpochMs": 1793882267930,
+  "generatedAt": "2026-11-05T12:42:27.707Z",
+  "generatedAtEpochMs": 1793882547707,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "lib/cms.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "app/dashboard/page.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/Hero.tsx",
@@ -563,7 +563,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T12:37:46.162Z",
+    "lastActivityAt": "2026-11-05T12:42:25.375Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 44,
     "changeTypeCounts": {
@@ -575,20 +575,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1793882545375,
+      "lineCount": 225,
+      "charCount": 6181,
+      "hash": "759e72d2dd03",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+    },
+    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793882266162,
       "lineCount": 491,
       "charCount": 20409,
       "hash": "df5ffb8d393f",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793882230159,
-      "lineCount": 229,
-      "charCount": 6293,
-      "hash": "542201b41f6c",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -640,6 +640,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 69: replaced 16 lines with 12 lines.",
+      "recordedAt": "2026-11-05T12:42:25.375Z",
+      "recordedAtEpochMs": 1793882545375,
+      "before": {
+        "kind": "text",
+        "lineCount": 229,
+        "charCount": 6293,
+        "hash": "542201b41f6c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882545375
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 6181,
+        "hash": "759e72d2dd03",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793882545375
+      },
+      "diff": {
+        "lineStart": 69,
+        "removedLines": 16,
+        "addedLines": 12,
+        "summary": "Line 69: replaced 16 lines with 12 lines.",
+        "beforeFragment": "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s...",
+        "afterFragment": "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItem"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1052,56 +1084,24 @@
         "beforeFragment": "}: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving = data?.stap2omschr...",
         "afterFragment": ", / woningType / }: any) { / const data = configuratorData?.configurator || configuratorData; / const titel = data?.titelStap2 || 'Kies uw designpakket'; / const omschrijving =..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 58: replaced 72 lines with 71 lines.",
-      "recordedAt": "2026-11-05T11:54:32.906Z",
-      "recordedAtEpochMs": 1793879672906,
-      "before": {
-        "kind": "text",
-        "lineCount": 224,
-        "charCount": 6049,
-        "hash": "15c866223c79",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793879672906
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 223,
-        "charCount": 6113,
-        "hash": "9c180fc773a1",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793879672906
-      },
-      "diff": {
-        "lineStart": 58,
-        "removedLines": 72,
-        "addedLines": 71,
-        "summary": "Line 58: replaced 72 lines with 71 lines.",
-        "beforeFragment": "panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / upload...",
-        "afterFragment": "designPakketten { / pakketId / pakketTitel / pakketOmschrijving / pakketAabeelding { / node { / sourceUrl / } / } / stap3Omschrijving / visualsSlider { / nodes { / sourceUrl / }..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 9
+      "count": 10
     },
     {
       "filePath": "app/dashboard/page.tsx",
       "count": 6
     },
     {
-      "filePath": "app/download/page.tsx",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 5
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 5
+      "filePath": "app/download/page.tsx",
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1123,21 +1123,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 c0cd6e7 fix(cms): fix graphql connection syntax with nodes for visualsSlider and moodboardGallery",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-05 3a4a3ff fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M lib/cms.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c0cd6e7 by Bas van Dooremalen on 2026-11-05\n  fix(cms): fix graphql connection syntax with nodes for visualsSlider and moodboardGallery\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3a4a3ff by Bas van Dooremalen on 2026-11-05\n  fix(visuals): fetch up to 50 images and add half-width dark overlay navigation directly on edge thumbnails\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
