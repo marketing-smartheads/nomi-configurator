@@ -23,13 +23,36 @@ export default function DownloadPage() {
 
     async function initDownloadPage() {
       try {
-        const isDefinitiefBevestigd = 
-          localStorage.getItem('configurator_definitief_bevestigd') === 'true' || 
-          sessionStorage.getItem('configuratorConfirmed') === 'true';
+        const voucherCode = typeof window !== 'undefined' 
+          ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '') 
+          : '';
 
-        if (!isDefinitiefBevestigd) {
+        if (!voucherCode) {
           if (isMounted) setNeedsVoucherInput(true);
           return;
+        }
+
+        try {
+          const res = await fetch(`/api/verify-voucher?code=${encodeURIComponent(voucherCode)}`);
+          if (res.ok) {
+            const voucherInfo = await res.json();
+            if (!voucherInfo || voucherInfo.status === 'niet_ingevuld' || !voucherInfo.isBevestigd) {
+              localStorage.removeItem('configurator_definitief_bevestigd');
+              sessionStorage.removeItem('configuratorConfirmed');
+              if (isMounted) setNeedsVoucherInput(true);
+              return;
+            }
+          }
+        } catch (apiErr) {
+          console.warn('Kon voucher status niet verifiëren via API:', apiErr);
+          const isDefinitiefBevestigd = 
+            localStorage.getItem('configurator_definitief_bevestigd') === 'true' || 
+            sessionStorage.getItem('configuratorConfirmed') === 'true';
+
+          if (!isDefinitiefBevestigd) {
+            if (isMounted) setNeedsVoucherInput(true);
+            return;
+          }
         }
 
         let cmsData = null;
@@ -98,8 +121,9 @@ export default function DownloadPage() {
 
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Vind alle rijen die matchen met woningtype en indeling
+  // 1. Verzamel alle matchende woningrijen voor dit type en indeling
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -108,19 +132,59 @@ export default function DownloadPage() {
     return typeMatch && indelingMatch;
   });
 
-  const huidigWoningTypeObj = matchendeRijen[0] || woningTypenLijst[0] || {};
-
-  // Verzamel alle download categorieën uit alle matchende rijen
-  const alleCategorieen: any[] = [];
   const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
+
+  // 2. Verzamel alle designpakketten uit de matchende rijen en algemeen
+  const allePakketten: any[] = [];
+  gebruikteRijen.forEach((rij: any) => {
+    const rawP = rij?.designPakketten || rij?.design_pakketten || [];
+    const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
+    pakketLijst.forEach((p: any) => allePakketten.push(p));
+  });
+
+  if (configuratorData?.designPakketten || configuratorData?.design_pakketten) {
+    const algemeen = Array.isArray(configuratorData.designPakketten) ? configuratorData.designPakketten : (configuratorData.designPakketten?.nodes || configuratorData.design_pakketten || []);
+    algemeen.forEach((p: any) => allePakketten.push(p));
+  }
+
+  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw)
+  const huidigPakketObj = allePakketten.find((p: any) => {
+    const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
+  }) || allePakketten.find((p: any) => {
+    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
+    if (normPakket.includes('raw') && pTitel.includes('raw')) return true;
+    if (normPakket.includes('chic') && pTitel.includes('chic')) return true;
+    return false;
+  }) || allePakketten[0] || {};
+
+  // 4. Moodboards ophalen specifiek voor het gekozen pakket
+  const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery;
+  let moodboardNodes: any[] = [];
+  if (Array.isArray(rawMoodboard)) {
+    moodboardNodes = rawMoodboard;
+  } else if (rawMoodboard?.nodes) {
+    moodboardNodes = rawMoodboard.nodes;
+  } else if (rawMoodboard?.edges) {
+    moodboardNodes = rawMoodboard.edges.map((e: any) => e.node);
+  }
+
+  // 5. Verzamel alle download categorieën uit matchende rijen én uit het gekozen pakket
+  const alleCategorieen: any[] = [];
+  
+  // Categorieën uit gekozen pakket
+  const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || huidigPakketObj?.download_categorieën || [];
+  const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
+  pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
+
+  // Categorieën uit woning type rijen
   gebruikteRijen.forEach((rij: any) => {
     const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || rij?.download_categorieën || [];
     const catLijst = Array.isArray(cats) ? cats : cats?.nodes || [];
     catLijst.forEach((c: any) => alleCategorieen.push(c));
   });
 
-  const moodboardGallery = huidigWoningTypeObj?.moodboardGallery || huidigWoningTypeObj?.moodboard_gallery || [];
-  const moodboardNodes = moodboardGallery?.nodes || moodboardGallery;
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
   const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
@@ -139,8 +203,6 @@ export default function DownloadPage() {
   };
 
   const dataTypeSafeName = (bestand: any) => bestand?.bestandTitel || bestand?.bestand_titel || 'download-bestand';
-
-  const safeDecode = (s: string) => { try { return decodeURIComponent(s); } catch { return s; } };
 
   const getFileMeta = (bestand: any, fileUrl: string | null) => {
     const subObj = bestand?.uploadBestand || bestand?.upload_bestand || bestand?.bestand || bestand?.pdfBestand || bestand;
