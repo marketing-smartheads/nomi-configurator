@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:08:36.586Z",
-  "generatedAtEpochMs": 1793920116586,
+  "generatedAt": "2026-11-05T23:12:19.854Z",
+  "generatedAtEpochMs": 1793920339854,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:08:34.867Z",
+    "lastActivityAt": "2026-11-05T23:12:17.248Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793920114867,
-      "lineCount": 322,
-      "charCount": 9598,
-      "hash": "e0c9e452ea51",
+      "updatedAt": 1793920337248,
+      "lineCount": 283,
+      "charCount": 7942,
+      "hash": "b67d52898205",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 242: replaced 76 lines with 37 lines.",
+      "recordedAt": "2026-11-05T23:12:17.248Z",
+      "recordedAtEpochMs": 1793920337248,
+      "before": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 9598,
+        "hash": "e0c9e452ea51",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920337248
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 283,
+        "charCount": 7942,
+        "hash": "b67d52898205",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793920337248
+      },
+      "diff": {
+        "lineStart": 242,
+        "removedLines": 76,
+        "addedLines": 37,
+        "summary": "Line 242: replaced 76 lines with 37 lines.",
+        "beforeFragment": "klantEmail / klantE_mail / klantenEmail / email / } / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'applica...",
+        "afterFragment": "} / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ query }), /..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,41 +1131,16 @@
         "beforeFragment": "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/vouchers",
         "afterFragment": "const res = await fetch('/api/verify-voucher"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/useConfigurator.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-05T22:22:17.496Z",
-      "recordedAtEpochMs": 1793917337496,
-      "before": {
-        "kind": "text",
-        "lineCount": 206,
-        "charCount": 6358,
-        "hash": "6df8a1bf9348",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793917337496
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 206,
-        "charCount": 6358,
-        "hash": "6df8a1bf9348",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr...",
-        "updatedAt": 1793917337496
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/LoginScreen.tsx",
-      "count": 9
+      "filePath": "lib/cms.ts",
+      "count": 10
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 9
+      "filePath": "components/LoginScreen.tsx",
+      "count": 8
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1163,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 34803be fix(auth & download): make email validation fully dynamic from WordPress CMS fields and fix indeling rendering",
+    "headSummary": "2026-11-06 091c3f9 fix(auth): restore dynamic email validation for used vs unused vouchers based on WP fields",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1173,7 +1180,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 74ade46 by Bas van Dooremalen on 2026-11-05\n  feat(download): add gekozenIndeling label next to woning and package labels\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 091c3f9 by Bas van Dooremalen on 2026-11-05\n  fix(auth): restore dynamic email validation for used vs unused vouchers based on WP fields\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
