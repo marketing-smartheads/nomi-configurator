@@ -61,7 +61,6 @@ export default function StepThreeVisuals({
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
   const stapOmschrijving = huidigPakket?.stap3Omschrijving || huidigPakket?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
 
-  // --- ROBUUSTE UITLEZEN VAN ALLE VISUALS (ACF Gallery) ---
   const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider;
   let visuals: any[] = [];
   if (Array.isArray(rawVisuals)) {
@@ -323,9 +322,7 @@ export default function StepThreeVisuals({
                 3D Visuals
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Visuals en sferen</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">
-                Bekijk de visuals van uw gekozen designpakket ({visuals.length} afbeeldingen beschikbaar).
-              </p>
+              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van uw gekozen designpakket.</p>
             </div>
 
             <div 
@@ -386,54 +383,61 @@ export default function StepThreeVisuals({
           )}
         </div>
 
-        {/* Thumbnails grid met paginering controls als er meer dan 4 zijn */}
+        {/* Thumbnails grid met zwarte helft-overlay op eerste (vorige) en laatste (volgende) thumb indien van toepassing */}
         {visuals.length > 0 && (
-          <div className="space-y-4">
-            <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
-              {currentThumbs.map((vis: any, relativeIdx: number) => {
-                const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;
-                const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
-                
-                return (
-                  <div
-                    key={absoluteIdx}
-                    onClick={() => handleThumbClick(absoluteIdx)}
-                    className={`relative w-full aspect-4/3 rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
-                      activeIndex === absoluteIdx ? 'ring-2 ring-primary' : 'opacity-70 hover:opacity-100'
-                    }`}
-                  >
-                    {imgSrc && (
-                      <Image src={imgSrc} alt={`Thumbnail ${absoluteIdx + 1}`} fill className="object-cover" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+          <div className="hidden sm:grid grid-cols-4 gap-6 pt-4">
+            {currentThumbs.map((vis: any, relativeIdx: number) => {
+              const absoluteIdx = thumbPage * thumbsPerPage + relativeIdx;
+              const imgSrc = vis?.sourceUrl || vis?.node?.sourceUrl || vis?.mediaItemUrl;
+              
+              const isFirstOfPage = relativeIdx === 0;
+              const isLastOfPage = relativeIdx === currentThumbs.length - 1;
 
-            {/* Paginering knoppen voor thumbnails indien meer dan 4 */}
-            {visuals.length > thumbsPerPage && (
-              <div className="flex justify-between items-center px-2 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setThumbPage((p) => Math.max(0, p - 1))}
-                  disabled={thumbPage === 0}
-                  className="px-4 py-2 rounded-full bg-white text-xs font-semibold text-dark disabled:opacity-30 border border-dark/10 shadow-sm cursor-pointer"
+              const canGoPrev = thumbPage > 0;
+              const canGoNext = thumbPage < maxThumbPage;
+
+              return (
+                <div
+                  key={absoluteIdx}
+                  onClick={() => handleThumbClick(absoluteIdx)}
+                  className={`relative w-full aspect-4/3 rounded-3xl overflow-hidden bg-white transition-all text-left shadow-sm cursor-pointer group ${
+                    activeIndex === absoluteIdx ? 'ring-2 ring-primary' : ''
+                  }`}
                 >
-                  ← Vorige 4 thumbnails
-                </button>
-                <span className="text-xs text-muted">
-                  Pagina {thumbPage + 1} van {maxThumbPage + 1} ({visuals.length} totaal)
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setThumbPage((p) => Math.min(maxThumbPage, p + 1))}
-                  disabled={thumbPage >= maxThumbPage}
-                  className="px-4 py-2 rounded-full bg-white text-xs font-semibold text-dark disabled:opacity-30 border border-dark/10 shadow-sm cursor-pointer"
-                >
-                  Volgende 4 thumbnails →
-                </button>
-              </div>
-            )}
+                  {imgSrc && (
+                    <Image src={imgSrc} alt={`Thumbnail ${absoluteIdx + 1}`} fill className="object-cover" />
+                  )}
+
+                  {/* Vorig-overlay op de eerste thumb indien we niet op pagina 0 zitten */}
+                  {isFirstOfPage && canGoPrev && (
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setThumbPage((p) => Math.max(0, p - 1));
+                      }}
+                      className="absolute inset-y-0 left-0 w-1/2 bg-black/60 hover:bg-black/75 transition flex items-center justify-center text-white font-semibold text-xs z-20 cursor-pointer"
+                      title="Vorige thumbnails"
+                    >
+                      ‹ Vorige
+                    </div>
+                  )}
+
+                  {/* Volgend-overlay op de laatste thumb indien er nog volgende pagina's zijn */}
+                  {isLastOfPage && canGoNext && (
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setThumbPage((p) => Math.min(maxThumbPage, p + 1));
+                      }}
+                      className="absolute inset-y-0 right-0 w-1/2 bg-black/60 hover:bg-black/75 transition flex items-center justify-center text-white font-semibold text-xs z-20 cursor-pointer"
+                      title="Volgende thumbnails"
+                    >
+                      Volgende ›
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

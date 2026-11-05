@@ -66,18 +66,22 @@ export async function getPageData() {
                 }
                 stap3Omschrijving
                 visualsSlider {
+                  ... on MediaItem {
+                    sourceUrl
+                  }
                   nodes {
                     sourceUrl
-                    mediaItemUrl
                   }
                 }
                 materialenLijst {
                   materiaalTitel
                 }
                 moodboardGallery {
+                  ... on MediaItem {
+                    sourceUrl
+                  }
                   nodes {
                     sourceUrl
-                    mediaItemUrl
                   }
                 }
                 bevestigingStap {

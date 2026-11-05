@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T12:28:16.266Z
+Generated: 2026-11-05T12:37:47.930Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T12:28:14.539Z
+- Last activity: 2026-11-05T12:37:46.162Z
 ## Workspace Focus
-- Active file in focus: lib/cms.ts
-- Hottest files right now: app/download/page.tsx (8), lib/cms.ts (8), app/dashboard/page.tsx (6), components/configurator/StepThreeVisuals.tsx (3)
-- Suggested starting points: lib/cms.ts, app/download/page.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
+- Active file in focus: components/configurator/StepThreeVisuals.tsx
+- Hottest files right now: lib/cms.ts (9), app/dashboard/page.tsx (6), app/download/page.tsx (5), components/configurator/StepThreeVisuals.tsx (5)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, app/dashboard/page.tsx, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/Hero.tsx
 ## Current Workspace
-- Active file: lib/cms.ts
+- Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 69
 - Top-level areas: public (21), components (18), [root] (15), app (12), lib (3)
 - Primary file types: .tsx (24), .svg (9), .ts (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 44
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- lib/cms.ts | 225 lines | 6181 chars | hash 759e72d2dd03
-  Last snapshot: 2026-11-05T12:28:14.539Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- components/configurator/StepThreeVisuals.tsx | 487 lines | 20249 chars | hash 154f87251e36
-  Last snapshot: 2026-11-05T12:17:56.761Z
+- components/configurator/StepThreeVisuals.tsx | 491 lines | 20409 chars | hash df5ffb8d393f
+  Last snapshot: 2026-11-05T12:37:46.162Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- lib/cms.ts | 229 lines | 6293 chars | hash 542201b41f6c
+  Last snapshot: 2026-11-05T12:37:10.159Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - components/configurator/StepTwoDesign.tsx | 179 lines | 7987 chars | hash 6f6825fb8b83
   Last snapshot: 2026-11-05T11:54:45.219Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -65,6 +65,25 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 
 ## Recent Changes
+### 2026-11-05T12:37:46.162Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 64: replaced 373 lines with 377 lines.
+- Before: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 491 lines | 20,409 chars | hash df5ffb8d393f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- Previous fragment: "// --- ROBUUSTE UITLEZEN VAN ALLE VISUALS (ACF Gallery) --- / const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Ar..."
+- Current fragment: "const rawVisuals = huidigPakket?.visualsSlider || huidigPakket?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals; / } else if..."
+
+### 2026-11-05T12:37:19.578Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Saved without a textual diff.
+- Before: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 487 lines | 20,249 chars | hash 154f87251e36 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+
+### 2026-11-05T12:37:10.159Z | saved | lib/cms.ts
+- Summary: Line 69: replaced 12 lines with 16 lines.
+- Before: 225 lines | 6,181 chars | hash 759e72d2dd03 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 229 lines | 6,293 chars | hash 542201b41f6c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "nodes { / sourceUrl / mediaItemUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / nodes { / sourceUrl / mediaItem"
+- Current fragment: "... on MediaItem { / sourceUrl / } / nodes { / sourceUrl / } / } / materialenLijst { / materiaalTitel / } / moodboardGallery { / ... on MediaItem { / sourceUrl / } / nodes { / s..."
+
 ### 2026-11-05T12:28:14.539Z | saved | lib/cms.ts
 - Summary: Line 69: replaced 9 lines with 13 lines.
 - Before: 221 lines | 6,077 chars | hash 426f87c5a81b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -141,33 +160,12 @@ Structured manifest: workspace.json
 - Previous fragment: "panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel / upload..."
 - Current fragment: "designPakketten { / pakketId / pakketTitel / pakketOmschrijving / pakketAabeelding { / node { / sourceUrl / } / } / stap3Omschrijving / visualsSlider { / nodes { / sourceUrl / }..."
 
-### 2026-11-05T08:49:02.674Z | saved | components/Hero.tsx
-- Summary: Line 46: replaced 1 line with 1 line.
-- Before: 64 lines | 2,504 chars | hash 95bc9bcb320d | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
-- After: 64 lines | 2,504 chars | hash 47d3a0d89c7a | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
-- Previous fragment: "40"
-- Current fragment: "57"
-
-### 2026-11-05T08:46:43.172Z | saved | components/Hero.tsx
-- Summary: Line 46: replaced 1 line with 1 line.
-- Before: 64 lines | 2,504 chars | hash e230570e5702 | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
-- After: 64 lines | 2,504 chars | hash 95bc9bcb320d | preview: "import React from 'react'; / import Image from 'next/image'; / import Button from './Button'; / interface HeroProps { / onStart: () => void; / data?: { // Maak data optioneel met een ? / subtitel?: string; / titel?: s..."
-- Previous fragment: "25"
-- Current fragment: "40"
-
-### 2026-11-02T10:45:40.365Z | saved | components/MainContent.tsx
-- Summary: Line 97: replaced 1 line with 1 line.
-- Before: 217 lines | 8,849 chars | hash a83c8dcaab63 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- After: 217 lines | 8,844 chars | hash e6c5e1499cef | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
-- Previous fragment: "[100dvh]"
-- Current fragment: "dvh"
-
 
 ## Hot Files
-- app/download/page.tsx (8 tracked changes)
-- lib/cms.ts (8 tracked changes)
+- lib/cms.ts (9 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- app/download/page.tsx (5 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/Hero.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
@@ -175,8 +173,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 fdd8249 fix(cms): ensure designPakketten is solely queried nested inside woningTypen
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-05 c0cd6e7 fix(cms): fix graphql connection syntax with nodes for visualsSlider and moodboardGallery
+- Working tree summary: 5 modifieds
+- M components/configurator/StepThreeVisuals.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M lib/cms.ts
 - M workspace.json
@@ -188,8 +187,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 948b318 by Bas van Dooremalen on 2026-11-05
-  fix(cms): remove invalid root-level designPakketten field from graphql query
+- c0cd6e7 by Bas van Dooremalen on 2026-11-05
+  fix(cms): fix graphql connection syntax with nodes for visualsSlider and moodboardGallery
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
