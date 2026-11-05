@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T23:50:56.928Z
+Generated: 2026-11-05T23:55:53.773Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T23:50:54.520Z
+- Last activity: 2026-11-05T23:55:51.869Z
 ## Workspace Focus
-- Active file in focus: lib/cms.ts
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (3)
-- Suggested starting points: lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, lib/useConfigurator.ts
+- Active file in focus: components/LoginScreen.tsx
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (8), app/api/verify-voucher/route.ts (4), app/api/vouchers/route.ts (3)
+- Suggested starting points: components/LoginScreen.tsx, lib/cms.ts, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, lib/useConfigurator.ts
 ## Current Workspace
-- Active file: lib/cms.ts
+- Active file: components/LoginScreen.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/LoginScreen.tsx | 272 lines | 9764 chars | hash 7c0b97494bc5
+  Last snapshot: 2026-11-05T23:55:51.869Z
+  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 - lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
   Last snapshot: 2026-11-05T23:50:54.520Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
   Last snapshot: 2026-11-05T23:03:35.990Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- components/LoginScreen.tsx | 276 lines | 9862 chars | hash 904ae93bdd1a
-  Last snapshot: 2026-11-05T22:30:02.126Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {..."
 - lib/useConfigurator.ts | 206 lines | 6358 chars | hash 6df8a1bf9348
   Last snapshot: 2026-11-05T22:22:17.496Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-05T23:55:51.869Z | saved | components/LoginScreen.tsx
+- Summary: Line 1: replaced 102 lines with 98 lines.
+- Before: 276 lines | 9,862 chars | hash 904ae93bdd1a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {..."
+- After: 272 lines | 9,764 chars | hash 7c0b97494bc5 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRou..."
+- Current fragment: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button fr..."
+
 ### 2026-11-05T23:50:54.520Z | saved | lib/cms.ts
 - Summary: Line 291: inserted 2 lines.
 - Before: 317 lines | 9,139 chars | hash 6bb76d191141 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -162,29 +169,21 @@ Structured manifest: workspace.json
 - Previous fragment: "', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toegangscode: s..."
 - Current fragment: "Indeling 01', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toeg..."
 
-### 2026-11-05T22:59:06.876Z | saved | app/download/page.tsx
-- Summary: Line 7: replaced 73 lines with 71 lines.
-- Before: 400 lines | 19,186 chars | hash 19a6bc5aad08 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 398 lines | 19,266 chars | hash 34de51cfb2e4 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us..."
-- Current fragment: ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
-- components/LoginScreen.tsx (7 tracked changes)
+- components/LoginScreen.tsx (8 tracked changes)
 - app/api/verify-voucher/route.ts (4 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
 - app/api/auth-voucher (1 tracked changes)
-- app/api/auth-voucher/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 cfc17aa chore(auth): remove debug logs for production
+- HEAD: 2026-11-06 9190a8d fix(auth): ensure client-side graphql verification handles unused vouchers properly without 404 api calls
 - Working tree summary: 1 modified
-- M lib/cms.ts
+- M components/LoginScreen.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

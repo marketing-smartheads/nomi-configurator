@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:50:56.928Z",
-  "generatedAtEpochMs": 1793922656928,
+  "generatedAt": "2026-11-05T23:55:53.773Z",
+  "generatedAtEpochMs": 1793922953773,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/cms.ts",
       "components/LoginScreen.tsx",
+      "lib/cms.ts",
       "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
       "app/download/page.tsx",
       "lib/useConfigurator.ts",
       "app/api/auth-voucher",
-      "app/api/auth-voucher/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:50:54.520Z",
+    "lastActivityAt": "2026-11-05T23:55:51.869Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1793922951869,
+      "lineCount": 272,
+      "charCount": 9764,
+      "hash": "7c0b97494bc5",
+      "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+    },
     {
       "filePath": "lib/cms.ts",
       "updatedAt": 1793922654520,
@@ -601,14 +609,6 @@
       "charCount": 19298,
       "hash": "d6c80bb2a10b",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793917802126,
-      "lineCount": 276,
-      "charCount": 9862,
-      "hash": "904ae93bdd1a",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {..."
     },
     {
       "filePath": "lib/useConfigurator.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 102 lines with 98 lines.",
+      "recordedAt": "2026-11-05T23:55:51.869Z",
+      "recordedAtEpochMs": 1793922951869,
+      "before": {
+        "kind": "text",
+        "lineCount": 276,
+        "charCount": 9862,
+        "hash": "904ae93bdd1a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } from 'next/navigation'; / import {...",
+        "updatedAt": 1793922951869
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 9764,
+        "hash": "7c0b97494bc5",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1793922951869
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 102,
+        "addedLines": 98,
+        "summary": "Line 1: replaced 102 lines with 98 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRou...",
+        "afterFragment": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button fr..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toegangscode: s...",
         "afterFragment": "Indeling 01', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toeg..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 73 lines with 71 lines.",
-      "recordedAt": "2026-11-05T22:59:06.876Z",
-      "recordedAtEpochMs": 1793919546876,
-      "before": {
-        "kind": "text",
-        "lineCount": 400,
-        "charCount": 19186,
-        "hash": "19a6bc5aad08",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793919546876
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 398,
-        "charCount": 19266,
-        "hash": "34de51cfb2e4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793919546876
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 73,
-        "addedLines": 71,
-        "summary": "Line 7: replaced 73 lines with 71 lines.",
-        "beforeFragment": "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us...",
-        "afterFragment": ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
-      }
     }
   ],
   "hotFiles": [
@@ -1140,7 +1140,7 @@
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 7
+      "count": 8
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1161,20 +1161,16 @@
     {
       "filePath": "app/api/auth-voucher",
       "count": 1
-    },
-    {
-      "filePath": "app/api/auth-voucher/route.ts",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 cfc17aa chore(auth): remove debug logs for production",
+    "headSummary": "2026-11-06 9190a8d fix(auth): ensure client-side graphql verification handles unused vouchers properly without 404 api calls",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M lib/cms.ts"
+      "M components/LoginScreen.tsx"
     ],
     "error": ""
   },

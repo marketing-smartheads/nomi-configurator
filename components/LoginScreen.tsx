@@ -1,3 +1,4 @@
+// components/LoginScreen.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -74,7 +75,7 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      // 🚀 Directe aanroep van de CMS helper (geen /api/... routes meer!)
+      // Directe client-side aanroep van de CMS helper (geen /api/... routes meer)
       const result = await verifyAndAuthVoucher(ingevoerdeCodeClean, ingevoerdeEmailClean);
 
       if (!result.success) {
@@ -90,16 +91,11 @@ export default function LoginScreen({
         sessionStorage.setItem('toegangscode', ingevoerdeCodeClean);
         localStorage.setItem('toegangscode', ingevoerdeCodeClean);
         localStorage.setItem('klantEmail', ingevoerdeEmailClean);
-      }
 
-      if (result.isBevestigd) {
-        if (typeof window !== 'undefined') {
+        if (result.isBevestigd) {
           sessionStorage.setItem('configuratorConfirmed', 'true');
           localStorage.setItem('configurator_definitief_bevestigd', 'true');
         }
-        setIsReedsBevestigd(true);
-        setIsChecking(false);
-        return;
       }
 
     } catch (err) {
