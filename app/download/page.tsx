@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getPageData } from '@/lib/cms';
+import { getPageData, getVoucherData } from '@/lib/cms';
 import { downloadZip } from 'client-zip';
 
 export default function DownloadPage() {
@@ -56,27 +56,25 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
-        let resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Modern Raw';
+        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
+        let resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
+        let resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || '';
 
-        let resolvedIndeling = '';
-        try {
-          const rawLocalStorageIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling');
-          if (rawLocalStorageIndeling) {
-            if (rawLocalStorageIndeling.startsWith('{')) {
-              const parsedObj = JSON.parse(rawLocalStorageIndeling);
-              resolvedIndeling = parsedObj?.indelingTitel || parsedObj?.indeling_titel || parsedObj?.titel || '';
-            } else {
-              resolvedIndeling = rawLocalStorageIndeling;
+        if ((!resolvedWoning || !resolvedIndeling) && voucherCode) {
+          try {
+            const voucherDataFromWP = await getVoucherData(voucherCode);
+            if (voucherDataFromWP) {
+              if (!resolvedWoning) resolvedWoning = voucherDataFromWP.gekozenTypeWoning;
+              if (!resolvedPakket) resolvedPakket = voucherDataFromWP.gekozenDesignpakket;
+              if (!resolvedIndeling) resolvedIndeling = voucherDataFromWP.gekozenIndeling;
             }
+          } catch (wpErr) {
+            console.warn('Kon voucher data niet ophalen van WP:', wpErr);
           }
-        } catch (e) {
-          resolvedIndeling = '';
         }
 
-        if (!resolvedIndeling) {
-          resolvedIndeling = sessionStorage.getItem('geselecteerdeIndeling') || localStorage.getItem('geselecteerdeIndeling') || '';
-        }
+        resolvedWoning = resolvedWoning || 'Type A';
+        resolvedPakket = resolvedPakket || 'Modern Raw';
 
         if (isMounted) {
           setWoningType(resolvedWoning);

@@ -180,6 +180,8 @@ export async function getVoucherData(voucherCode: string) {
             toegangscode
             gekozenTypeWoning
             gekozenDesignpakket
+            gekozenIndeling
+            indeling
             status
           }
         }
@@ -212,7 +214,8 @@ export async function getVoucherData(voucherCode: string) {
 
     return {
       gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A',
-      gekozenDesignpakket: match.voucherVelden?.gekozenDesignpakket || 'Hotel Chic',
+      gekozenDesignpakket: match.voucherVelden?.gekozenDesignpakket || 'Modern Raw',
+      gekozenIndeling: match.voucherVelden?.gekozenIndeling || match.voucherVelden?.indeling || '',
     };
   } catch (error) {
     console.error('Fout bij ophalen vouchers via GraphQL:', error);
@@ -220,7 +223,6 @@ export async function getVoucherData(voucherCode: string) {
   }
 }
 
-// Simpele, robuuste verificatie op basis van de bewezen werkende velden
 export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: string) {
   const cleanCode = (toegangscode || '').trim().toUpperCase();
 

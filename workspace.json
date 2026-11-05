@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T22:53:09.365Z",
-  "generatedAtEpochMs": 1793919189365,
+  "generatedAt": "2026-11-05T22:59:08.720Z",
+  "generatedAtEpochMs": 1793919548720,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,16 +24,16 @@
     "suggestedStartingPoints": [
       "app/download/page.tsx",
       "components/LoginScreen.tsx",
-      "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
+      "app/api/verify-voucher/route.ts",
       "lib/cms.ts",
       "app/api/auth/route.ts",
       "app/api/auth-voucher",
       "app/api/auth-voucher/route.ts",
-      "lib/useConfigurator.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,12 +575,12 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T22:53:06.944Z",
+    "lastActivityAt": "2026-11-05T22:59:06.876Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
-      "save": 36,
-      "create": 3,
+      "save": 37,
+      "create": 2,
       "delete": 1,
       "rename": 0
     }
@@ -588,18 +588,18 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1793919186944,
-      "lineCount": 400,
-      "charCount": 19186,
-      "hash": "19a6bc5aad08",
+      "updatedAt": 1793919546876,
+      "lineCount": 398,
+      "charCount": 19266,
+      "hash": "34de51cfb2e4",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793918929121,
-      "lineCount": 281,
-      "charCount": 7764,
-      "hash": "33e5efc5d32c",
+      "updatedAt": 1793919515221,
+      "lineCount": 283,
+      "charCount": 7842,
+      "hash": "38f52a242b53",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 73 lines with 71 lines.",
+      "recordedAt": "2026-11-05T22:59:06.876Z",
+      "recordedAtEpochMs": 1793919546876,
+      "before": {
+        "kind": "text",
+        "lineCount": 400,
+        "charCount": 19186,
+        "hash": "19a6bc5aad08",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793919546876
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 398,
+        "charCount": 19266,
+        "hash": "34de51cfb2e4",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1793919546876
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 73,
+        "addedLines": 71,
+        "summary": "Line 7: replaced 73 lines with 71 lines.",
+        "beforeFragment": "} from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, setWoningType] = us...",
+        "afterFragment": ", getVoucherData } from '@/lib/cms'; / import { downloadZip } from 'client-zip'; / export default function DownloadPage() { / const router = useRouter(); / const [woningType, se..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 183: replaced 41 lines with 43 lines.",
+      "recordedAt": "2026-11-05T22:58:35.221Z",
+      "recordedAtEpochMs": 1793919515221,
+      "before": {
+        "kind": "text",
+        "lineCount": 281,
+        "charCount": 7764,
+        "hash": "33e5efc5d32c",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793919515221
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 283,
+        "charCount": 7842,
+        "hash": "38f52a242b53",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793919515221
+      },
+      "diff": {
+        "lineStart": 183,
+        "removedLines": 41,
+        "addedLines": 43,
+        "summary": "Line 183: replaced 41 lines with 43 lines.",
+        "beforeFragment": "status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / header...",
+        "afterFragment": "gekozenIndeling / indeling / status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint,..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1060,49 +1124,6 @@
         "beforeFragment": "const res = await fetch('/api/vouchers', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ / toegangscode: ingevoerdeCodeClean, / k...",
         "afterFragment": "// 🛑 HIER GING HET MIS: Wijst nu correct naar het /api/verify-voucher endpoint / const res = await fetch('/api/verify-voucher', { / method: 'POST', / headers: { 'Content-Type':..."
       }
-    },
-    {
-      "type": "delete",
-      "path": "app/api/auth-voucher",
-      "toPath": "",
-      "summary": "Deleted file.",
-      "recordedAt": "2026-11-05T22:10:43.146Z",
-      "recordedAtEpochMs": 1793916643146,
-      "before": null,
-      "after": null,
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 113 lines with 179 lines.",
-      "recordedAt": "2026-11-05T22:07:48.581Z",
-      "recordedAtEpochMs": 1793916468581,
-      "before": {
-        "kind": "text",
-        "lineCount": 123,
-        "charCount": 4121,
-        "hash": "d299169ddd87",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }...",
-        "updatedAt": 1793916468581
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 189,
-        "charCount": 6106,
-        "hash": "110421b695dd",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
-        "updatedAt": 1793916468581
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 113,
-        "addedLines": 179,
-        "summary": "Line 5: replaced 113 lines with 179 lines.",
-        "beforeFragment": "POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail) { / return NextResponse.js...",
-        "afterFragment": "GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / if (!code) { / return NextResponse.json({ error: 'Geen code o..."
-      }
     }
   ],
   "hotFiles": [
@@ -1111,16 +1132,16 @@
       "count": 10
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "count": 8
-    },
-    {
       "filePath": "app/api/vouchers/route.ts",
       "count": 7
     },
     {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 6
+    },
+    {
       "filePath": "lib/cms.ts",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "app/api/auth/route.ts",
@@ -1135,24 +1156,28 @@
       "count": 2
     },
     {
-      "filePath": "lib/useConfigurator.ts",
+      "filePath": "app/download/page.tsx",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 9257c12 fix(auth): simplify graphql query to only use existing voucherVelden fields and eliminate query errors",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-05 20dabc0 fix(download): remove obsolete verify-voucher api fetch to eliminate 404 errors",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M app/download/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9257c12 by Bas van Dooremalen on 2026-11-05\n  fix(auth): simplify graphql query to only use existing voucherVelden fields and eliminate query errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 20dabc0 by Bas van Dooremalen on 2026-11-05\n  fix(download): remove obsolete verify-voucher api fetch to eliminate 404 errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
