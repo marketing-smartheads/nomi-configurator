@@ -229,7 +229,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
   const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql';
 
-  // We gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL
+  // We vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt
   const query = `
     query GetAllVouchersForAuth {
       vouchers(first: 100) {
@@ -240,7 +240,9 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           voucherVelden {
             toegangscode
             status
-            klantEmail
+            klantE_mail
+            klantenEmail
+            email
           }
         }
       }
@@ -278,12 +280,16 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
 
     const velden = voucher.voucherVelden || {};
     const status = String(velden.status || '').trim().toLowerCase();
-    const opgeslagenEmail = String(velden.klantEmail || '').trim().toLowerCase();
+    
+    // Pak automatisch het e-mailadres uit het veld dat wel gevuld is in WordPress
+    const opgeslagenEmail = String(
+      velden.klantE_mail || velden.klantenEmail || velden.email || ''
+    ).trim().toLowerCase();
 
     console.log('DEBUG Auth -> Code:', cleanCode, '| Status:', status, '| Opgeslagen e-mail in WP:', opgeslagenEmail, '| Ingelogde e-mail:', cleanEmail);
 
     // DYNAMISCHE BEVEILIGINGSCHECK:
-    // Als er al een e-mailadres in WordPress bekend is (en het is niet leeg of '-'), dan MOET het ingevoerde e-mailadres exact matchen!
+    // Als er al een e-mailadres in WordPress bekend is, MOET het ingevoerde e-mailadres exact matchen!
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== cleanEmail) {
         return { 
@@ -292,11 +298,10 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         };
       }
     } else {
-      // Als de voucher nog niet is gebruikt/gekoppeld, mag elk willekeurig e-mailadres inloggen 
-      // en slaan we dit e-mailadres direct dynamisch op in WordPress voor toekomstige beveiliging.
+      // Als de voucher nog niet is gekoppeld, mag elk e-mailadres inloggen
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantE_mail: $email, status: "bevestigd" } }) {
             voucher { databaseId }
           }
         }

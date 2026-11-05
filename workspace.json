@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:31:00.286Z",
-  "generatedAtEpochMs": 1793921460286,
+  "generatedAt": "2026-11-05T23:35:03.530Z",
+  "generatedAtEpochMs": 1793921703530,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:30:57.755Z",
+    "lastActivityAt": "2026-11-05T23:35:01.560Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "lib/cms.ts",
-      "updatedAt": 1793921457755,
-      "lineCount": 323,
-      "charCount": 9730,
-      "hash": "dfc39aa891ec",
+      "updatedAt": 1793921701560,
+      "lineCount": 328,
+      "charCount": 9753,
+      "hash": "89e4fbac150b",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 232: replaced 68 lines with 73 lines.",
+      "recordedAt": "2026-11-05T23:35:01.560Z",
+      "recordedAtEpochMs": 1793921701560,
+      "before": {
+        "kind": "text",
+        "lineCount": 323,
+        "charCount": 9730,
+        "hash": "dfc39aa891ec",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793921701560
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 328,
+        "charCount": 9753,
+        "hash": "89e4fbac150b",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1793921701560
+      },
+      "diff": {
+        "lineStart": 232,
+        "removedLines": 68,
+        "addedLines": 73,
+        "summary": "Line 232: replaced 68 lines with 73 lines.",
+        "beforeFragment": "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat...",
+        "afterFragment": "vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,44 +1131,12 @@
         "beforeFragment": "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await...",
         "afterFragment": "const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 142: replaced 162 lines with 153 lines.",
-      "recordedAt": "2026-11-05T22:41:17.708Z",
-      "recordedAtEpochMs": 1793918477708,
-      "before": {
-        "kind": "text",
-        "lineCount": 333,
-        "charCount": 10306,
-        "hash": "6e408770fd7e",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918477708
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 324,
-        "charCount": 9545,
-        "hash": "7d81656fd00c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793918477708
-      },
-      "diff": {
-        "lineStart": 142,
-        "removedLines": 162,
-        "addedLines": 153,
-        "summary": "Line 142: replaced 162 lines with 153 lines.",
-        "beforeFragment": "const graphqlEndpoint = process.env.NODE_ENV === 'development' / ? (process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'http://tg-backend.development/graphql') / : (process.e...",
-        "afterFragment": "// Directe hardcoded endpoint om omgevingsvariabele-problemen op Vercel uit te sluiten / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / const res = await..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 14
+      "count": 15
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -1144,7 +1144,7 @@
     },
     {
       "filePath": "app/api/vouchers/route.ts",
-      "count": 6
+      "count": 5
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1170,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 83a1cc4 Merge branch 'feature/beveiliging'",
+    "headSummary": "2026-11-06 eb3793a fix(auth): correct GraphQL field name from klant_email to klantEmail",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
