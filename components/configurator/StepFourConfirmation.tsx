@@ -54,7 +54,7 @@ export default function StepFourConfirmation({
 
       const opgeslagenTel =
         sessionStorage.getItem('klantTelefoon') ||
-        localStorage.getItem('klantTelefoon'] || '';
+        localStorage.getItem('klantTelefoon') || '';
       if (opgeslagenTel) setKlantTelefoon(opgeslagenTel);
     }
   }, []);

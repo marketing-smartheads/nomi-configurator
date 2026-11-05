@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T17:38:42.761Z
+Generated: 2026-11-05T17:41:39.747Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T17:38:40.377Z
+- Last activity: 2026-11-05T17:41:37.984Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (14), lib/cms.ts (10), components/configurator/StepOnewoning.tsx (6), components/configurator/StepFourConfirmation.tsx (4)
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (13), lib/cms.ts (10), components/configurator/StepOnewoning.tsx (6), components/configurator/StepFourConfirmation.tsx (5)
 - Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/configurator/StepOnewoning.tsx, app/download/page.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 44
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 351 lines | 17011 chars | hash 34c0c7bfcdaa
-  Last snapshot: 2026-11-05T17:38:40.377Z
+- components/configurator/StepFourConfirmation.tsx | 351 lines | 17011 chars | hash ad5e8b9d9763
+  Last snapshot: 2026-11-05T17:41:37.984Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
 - app/download/page.tsx | 433 lines | 20838 chars | hash 9d517d22aa43
   Last snapshot: 2026-11-05T17:31:55.668Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useConfigurator } from '../lib/useConfigurator'; / import LoginScreen from '../components/LoginScreen'; / impor..."
 
 ## Recent Changes
+### 2026-11-05T17:41:37.984Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 57: replaced 1 line with 1 line.
+- Before: 351 lines | 17,011 chars | hash 34c0c7bfcdaa | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 351 lines | 17,011 chars | hash ad5e8b9d9763 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- Previous fragment: "]"
+- Current fragment: ")"
+
 ### 2026-11-05T17:38:40.377Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 57: replaced 111 lines with 140 lines.
 - Before: 322 lines | 15,166 chars | hash 221f402a9bba | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
@@ -161,25 +168,18 @@ Structured manifest: workspace.json
 - Before: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 - After: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 
-### 2026-11-05T16:40:44.417Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 32: replaced 1 line with 2 lines.
-- Before: 489 lines | 20,185 chars | hash 4dfd31317796 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 490 lines | 20,286 chars | hash 4b884ff938b7 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- Previous fragment: "const rawPak = localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerd"
-- Current fragment: "// Lees sessionStorage.geselecteerdPakket uit (zoals te zien in DevTools) als primaire bron / const rawPak = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem..."
-
 
 ## Hot Files
-- components/configurator/StepThreeVisuals.tsx (14 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (13 tracked changes)
 - lib/cms.ts (10 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (4 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (5 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 f7e6a17 fix(download): resolve moodboard and download categories directly from selected design package
+- HEAD: 2026-11-05 72b8735 fix(step4): resolve confirmation banner image and package details from matching layout rows
 - Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
 
