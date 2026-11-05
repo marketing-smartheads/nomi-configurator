@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-05T21:03:19.286Z
+Generated: 2026-11-05T21:06:28.074Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-05T21:03:17.487Z
+- Last activity: 2026-11-05T21:06:25.699Z
 ## Workspace Focus
 - Active file in focus: app/api/auth/route.ts
-- Hottest files right now: components/configurator/StepThreeVisuals.tsx (11), app/download/page.tsx (6), components/configurator/StepOnewoning.tsx (6), components/configurator/StepFourConfirmation.tsx (5)
+- Hottest files right now: components/configurator/StepThreeVisuals.tsx (10), app/download/page.tsx (6), components/configurator/StepOnewoning.tsx (6), app/api/auth/route.ts (5)
 - Suggested starting points: app/api/auth/route.ts, components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
 - Active file: app/api/auth/route.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 46
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/api/auth/route.ts | 114 lines | 3891 chars | hash d9f5be722e52
-  Last snapshot: 2026-11-05T21:03:17.487Z
+- app/api/auth/route.ts | 114 lines | 3901 chars | hash e9346bfe8afb
+  Last snapshot: 2026-11-05T21:06:25.699Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 - components/LoginScreen.tsx | 290 lines | 10590 chars | hash 811f6f13c11b
   Last snapshot: 2026-11-05T21:00:38.755Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-11-05T21:06:25.699Z | saved | app/api/auth/route.ts
+- Summary: Line 73: replaced 27 lines with 27 lines.
+- Before: 114 lines | 3,891 chars | hash d9f5be722e52 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
+- After: 114 lines | 3,901 chars | hash e9346bfe8afb | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
+- Previous fragment: ") { / return NextResponse.json( / { error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' }, / { status: 401 } / ); / } / } else..."
+- Current fragment: "Clean) { / return NextResponse.json( / { error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' }, / { status: 401 } / ); / } / }..."
+
 ### 2026-11-05T21:03:17.487Z | saved | app/api/auth/route.ts
 - Summary: Line 20: replaced 77 lines with 83 lines.
 - Before: 108 lines | 3,505 chars | hash 9b430fcc09dc | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
@@ -150,27 +157,20 @@ Structured manifest: workspace.json
 - Previous fragment: "isDefinitiefBevestigd = / localStorage.getItem('configurator_definitief_bevestigd') === 'true' || / sessionStorage.getItem('configuratorConfirmed') === 'true'; / if (!isDefiniti..."
 - Current fragment: "voucherCode = typeof window !== 'undefined' / ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '') / : ''; / if (!voucherCode) { / if (isMoun..."
 
-### 2026-11-05T17:28:34.891Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 1: replaced 1 line with 122 lines.
-- Before: 1 line | 69 chars | hash 4147d60acd7f | preview: "git commit -m "fix(step1): correct bracket typo on localStorage read""
-- After: 122 lines | 5,571 chars | hash 7c52c9f0546f | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?..."
-- Previous fragment: "git commit -m "fix(step1): correct bracket typo on localStorage read""
-- Current fragment: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
-
 
 ## Hot Files
-- components/configurator/StepThreeVisuals.tsx (11 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (10 tracked changes)
 - app/download/page.tsx (6 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
+- app/api/auth/route.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (5 tracked changes)
-- app/api/auth/route.ts (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - app/api/verify-voucher/route.ts (2 tracked changes)
 - app/api/verify-voucher (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-05 acf5303 security(login): enforce strict server-side email verification in LoginScreen component
+- HEAD: 2026-11-05 6163e5c fix(auth): fetch all vouchers and robustly match access code case-insensitively
 - Working tree summary: 1 modified
 - M app/api/auth/route.ts
 
@@ -180,8 +180,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 63a7a78 by Bas van Dooremalen on 2026-11-05
-  security(auth): strictly validate email address matching voucher record on login and verification endpoints
+- 6163e5c by Bas van Dooremalen on 2026-11-05
+  fix(auth): fetch all vouchers and robustly match access code case-insensitively
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

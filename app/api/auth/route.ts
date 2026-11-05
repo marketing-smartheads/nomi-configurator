@@ -70,7 +70,7 @@ export async function POST(request: Request) {
 
     // STRENGE E-MAIL CHECK: Als er al een e-mailadres in WP staat, moet dit exact overeenkomen
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
-      if (opgeslagenEmail !== ingevoerdeEmail) {
+      if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
           { error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' },
           { status: 401 }
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({ 
           query: updateMutation, 
-          variables: { id: voucher.databaseId, email: ingevoerdeEmail } 
+          variables: { id: voucher.databaseId, email: ingevoerdeEmailClean } 
         }),
         cache: 'no-store',
       }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T21:03:19.286Z",
-  "generatedAtEpochMs": 1793912599286,
+  "generatedAt": "2026-11-05T21:06:28.074Z",
+  "generatedAtEpochMs": 1793912788074,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T21:03:17.487Z",
+    "lastActivityAt": "2026-11-05T21:06:25.699Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 46,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/api/auth/route.ts",
-      "updatedAt": 1793912597487,
+      "updatedAt": 1793912785699,
       "lineCount": 114,
-      "charCount": 3891,
-      "hash": "d9f5be722e52",
+      "charCount": 3901,
+      "hash": "e9346bfe8afb",
       "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/auth/route.ts",
+      "toPath": "",
+      "summary": "Line 73: replaced 27 lines with 27 lines.",
+      "recordedAt": "2026-11-05T21:06:25.699Z",
+      "recordedAtEpochMs": 1793912785699,
+      "before": {
+        "kind": "text",
+        "lineCount": 114,
+        "charCount": 3891,
+        "hash": "d9f5be722e52",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793912785699
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 114,
+        "charCount": 3901,
+        "hash": "e9346bfe8afb",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail...",
+        "updatedAt": 1793912785699
+      },
+      "diff": {
+        "lineStart": 73,
+        "removedLines": 27,
+        "addedLines": 27,
+        "summary": "Line 73: replaced 27 lines with 27 lines.",
+        "beforeFragment": ") { / return NextResponse.json( / { error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' }, / { status: 401 } / ); / } / } else...",
+        "afterFragment": "Clean) { / return NextResponse.json( / { error: 'Dit e-mailadres komt niet overeen met het e-mailadres dat aan deze vouchercode is gekoppeld.' }, / { status: 401 } / ); / } / }..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/route.ts",
@@ -1054,44 +1086,12 @@
         "beforeFragment": "isDefinitiefBevestigd = / localStorage.getItem('configurator_definitief_bevestigd') === 'true' || / sessionStorage.getItem('configuratorConfirmed') === 'true'; / if (!isDefiniti...",
         "afterFragment": "voucherCode = typeof window !== 'undefined' / ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '') / : ''; / if (!voucherCode) { / if (isMoun..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 1 line with 122 lines.",
-      "recordedAt": "2026-11-05T17:28:34.891Z",
-      "recordedAtEpochMs": 1793899714891,
-      "before": {
-        "kind": "text",
-        "lineCount": 1,
-        "charCount": 69,
-        "hash": "4147d60acd7f",
-        "preview": "git commit -m \"fix(step1): correct bracket typo on localStorage read\"",
-        "updatedAt": 1793899714891
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5571,
-        "hash": "7c52c9f0546f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1793899714891
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 1,
-        "addedLines": 122,
-        "summary": "Line 1: replaced 1 line with 122 lines.",
-        "beforeFragment": "git commit -m \"fix(step1): correct bracket typo on localStorage read\"",
-        "afterFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "app/download/page.tsx",
@@ -1102,12 +1102,12 @@
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/api/auth/route.ts",
       "count": 5
     },
     {
-      "filePath": "app/api/auth/route.ts",
-      "count": 4
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 5
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1125,7 +1125,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-05 acf5303 security(login): enforce strict server-side email verification in LoginScreen component",
+    "headSummary": "2026-11-05 6163e5c fix(auth): fetch all vouchers and robustly match access code case-insensitively",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1135,7 +1135,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 63a7a78 by Bas van Dooremalen on 2026-11-05\n  security(auth): strictly validate email address matching voucher record on login and verification endpoints\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6163e5c by Bas van Dooremalen on 2026-11-05\n  fix(auth): fetch all vouchers and robustly match access code case-insensitively\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
