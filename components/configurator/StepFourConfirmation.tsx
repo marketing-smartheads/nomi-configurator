@@ -1,3 +1,4 @@
+// components/StepFourConfirmation.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,6 +9,7 @@ import Button from '../Button';
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
+const PARTNER_TELEFOON = '030 - 600 82 40'; // of desgewenst aanpasbaar
 
 interface StepFourConfirmationProps {
   stepTitle: string;
@@ -89,7 +91,6 @@ export default function StepFourConfirmation({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // 1. Verzamel ALLE rijen die matchen met woningtype én gekozen indeling
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -100,7 +101,6 @@ export default function StepFourConfirmation({
 
   const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
 
-  // 2. Verzamel alle designpakketten uit de matchende rijen en algemeen
   const allePakketten: any[] = [];
   gebruikteRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
@@ -113,7 +113,6 @@ export default function StepFourConfirmation({
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
 
-  // 3. VIND HET GEKOZEN PAKKET (bijv. Modern Raw)
   const storedPakket = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -130,7 +129,6 @@ export default function StepFourConfirmation({
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || actiefPakket;
 
-  // 4. Haal bevestigingsdata en banner op uit het geselecteerde pakket
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
   
@@ -322,7 +320,9 @@ export default function StepFourConfirmation({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
-            <p className="text-sm text-muted">Mogen wij uw gegevens samen met uw keuze delen met {PARTNER_NAAM}?</p>
+            <p className="text-sm text-muted">
+              We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken?
+            </p>
             <div className="space-y-4 pt-2">
               <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="w-4 h-4 accent-[#C5A880]" />
@@ -332,6 +332,17 @@ export default function StepFourConfirmation({
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="w-4 h-4 accent-[#C5A880]" />
                 <span className="text-xs font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
               </label>
+
+              {/* Als de koper kiest voor NEE, tonen we direct de contactgegevens van Aanhuis Spijk */}
+              {agreedPartner === false && (
+                <div className="p-4 rounded-xl bg-[#EFECE6] border border-dark/10 text-xs text-dark space-y-2 animate-fadeIn">
+                  <p className="font-semibold uppercase tracking-wider text-[11px] text-primary">Contactgegevens {PARTNER_NAAM}:</p>
+                  <p>Contactpersoon: <strong>{PARTNER_CONTACT}</strong></p>
+                  <p>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">{PARTNER_EMAIL}</a></p>
+                  <p>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">{PARTNER_TELEFOON}</a></p>
+                </div>
+              )}
+
               <label className="flex items-start gap-3 cursor-pointer p-2">
                 <input type="checkbox" checked={agreedWarning} onChange={(e) => setAgreedWarning(e.target.checked)} className="mt-1 w-5 h-5 accent-dark rounded" />
                 <span className="text-xs font-bold text-primary uppercase tracking-wide">{waarschuwingTekst}</span>
