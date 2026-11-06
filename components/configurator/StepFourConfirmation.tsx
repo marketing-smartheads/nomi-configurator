@@ -332,13 +332,13 @@ export default function StepFourConfirmation({
                 <span className="text-sm font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
               </label>
 
-              {/* Subtiel en strak afgestemd contactblok */}
+              {/* Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */}
               {agreedPartner === false && (
-                <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 animate-fadeIn">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-dark/70 mb-2">Direct contact met {PARTNER_NAAM}:</p>
-                  <p className="flex justify-between items-center"><span className="text-muted">Contactpersoon:</span> <span className="text-dark font-medium">{PARTNER_CONTACT}</span></p>
-                  <p className="flex justify-between items-center"><span className="text-muted">E-mail:</span> <a href={`mailto:${PARTNER_EMAIL}`} className="text-dark font-medium underline hover:text-primary">{PARTNER_EMAIL}</a></p>
-                  <p className="flex justify-between items-center"><span className="text-muted">Telefoon:</span> <a href={`tel:${PARTNER_TELEFOON}`} className="text-dark font-medium underline hover:text-primary">{PARTNER_TELEFOON}</a></p>
+                <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-dark space-y-1 animate-fadeIn">
+                  <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">Direct contact met {PARTNER_NAAM}:</p>
+                  <div>Contactpersoon: <span className="font-medium">{PARTNER_CONTACT}</span></div>
+                  <div>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">{PARTNER_EMAIL}</a></div>
+                  <div>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">{PARTNER_TELEFOON}</a></div>
                 </div>
               )}
 
