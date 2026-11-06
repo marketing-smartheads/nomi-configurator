@@ -1,3 +1,4 @@
+// components/StepTwoDesign.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -42,6 +43,7 @@ export default function StepTwoDesign({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
+  // STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling
   const matchendeWoningRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -50,7 +52,8 @@ export default function StepTwoDesign({
     return typeMatch && indelingMatch;
   });
 
-  const gebruikteRijen = matchendeWoningRijen.length > 0 ? matchendeWoningRijen : woningTypenLijst;
+  // GEEN FALLBACK NAAR ALLE WONINGTYPEN MEER! Wat niet bestaat voor dit type, wordt niet getoond.
+  const gebruikteRijen = matchendeWoningRijen;
 
   const alleVerzameldePakketten: any[] = [];
   gebruikteRijen.forEach((rij: any) => {
@@ -58,11 +61,6 @@ export default function StepTwoDesign({
     const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
     pakketLijst.forEach((p: any) => alleVerzameldePakketten.push(p));
   });
-
-  if (alleVerzameldePakketten.length === 0 && data?.designPakketten) {
-    const algemeen = Array.isArray(data.designPakketten) ? data.designPakketten : data.designPakketten?.nodes || [];
-    algemeen.forEach((p: any) => alleVerzameldePakketten.push(p));
-  }
 
   const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => {
     const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();

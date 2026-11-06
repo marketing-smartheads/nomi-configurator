@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-06T08:23:11.913Z
+Generated: 2026-11-06T10:58:07.519Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-06T08:23:10.084Z
+- Last activity: 2026-11-06T10:58:05.109Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (5), app/download/page.tsx (3)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/vouchers/route.ts
+- Active file in focus: components/configurator/StepTwoDesign.tsx
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (6), app/api/verify-voucher/route.ts (5), app/download/page.tsx (3)
+- Suggested starting points: components/configurator/StepTwoDesign.tsx, lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepThreeVisuals.tsx
+- Active file: components/configurator/StepTwoDesign.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (39), delete (1)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepTwoDesign.tsx | 198 lines | 8826 chars | hash e227e7a1b445
+  Last snapshot: 2026-11-06T10:58:05.109Z
+  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - components/configurator/StepThreeVisuals.tsx | 517 lines | 21684 chars | hash 0c1bb76eb05c
   Last snapshot: 2026-11-06T08:23:10.084Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - app/api/vouchers/route.ts | 170 lines | 5453 chars | hash dfb46144d938
   Last snapshot: 2026-11-05T22:16:56.146Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
-- app/api/auth-voucher/route.ts | 122 lines | 4017 chars | hash 78581114598f
-  Last snapshot: 2026-11-05T21:41:45.970Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
 
 ## Recent Changes
+### 2026-11-06T10:58:05.109Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 1: replaced 65 lines with 63 lines.
+- Before: 200 lines | 8,924 chars | hash 62093ff0ea75 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 198 lines | 8,826 chars | hash e227e7a1b445 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
+- Current fragment: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
+
 ### 2026-11-06T08:23:10.084Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 1: replaced 175 lines with 183 lines.
 - Before: 509 lines | 21,194 chars | hash 55a56b73a3e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
@@ -161,17 +168,10 @@ Structured manifest: workspace.json
 - Previous fragment: "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / } / } / } / } / `; / t..."
 - Current fragment: "// We halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / vouch..."
 
-### 2026-11-05T23:12:17.248Z | saved | lib/cms.ts
-- Summary: Line 242: replaced 76 lines with 37 lines.
-- Before: 322 lines | 9,598 chars | hash e0c9e452ea51 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 283 lines | 7,942 chars | hash b67d52898205 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "klantEmail / klantE_mail / klantenEmail / email / } / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'applica..."
-- Current fragment: "} / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ query }), /..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
-- components/LoginScreen.tsx (7 tracked changes)
+- components/LoginScreen.tsx (6 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
@@ -181,12 +181,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 2357349 fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration
-- Working tree summary: 4 modifieds
-- M components/configurator/StepThreeVisuals.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-06 c8def89 fix(panorama): strictly match active design package to correct panorama render
+- Working tree summary: 1 modified
+- M components/configurator/StepTwoDesign.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -194,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 2357349 by Bas van Dooremalen on 2026-11-06
-  fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration
+- c8def89 by Bas van Dooremalen on 2026-11-06
+  fix(panorama): strictly match active design package to correct panorama render
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T08:23:11.913Z",
-  "generatedAtEpochMs": 1793953391913,
+  "generatedAt": "2026-11-06T10:58:07.519Z",
+  "generatedAtEpochMs": 1793962687519,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,7 +22,7 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
       "components/LoginScreen.tsx",
       "app/api/verify-voucher/route.ts",
@@ -30,10 +30,10 @@
       "app/api/vouchers/route.ts",
       "lib/useConfigurator.ts",
       "app/api/auth-voucher",
+      "components/configurator/StepThreeVisuals.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-06T08:23:10.084Z",
+    "lastActivityAt": "2026-11-06T10:58:05.109Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793962685109,
+      "lineCount": 198,
+      "charCount": 8826,
+      "hash": "e227e7a1b445",
+      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793953390084,
@@ -641,17 +649,41 @@
       "charCount": 5453,
       "hash": "dfb46144d938",
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
-    },
-    {
-      "filePath": "app/api/auth-voucher/route.ts",
-      "updatedAt": 1793914905970,
-      "lineCount": 122,
-      "charCount": 4017,
-      "hash": "78581114598f",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 65 lines with 63 lines.",
+      "recordedAt": "2026-11-06T10:58:05.109Z",
+      "recordedAtEpochMs": 1793962685109,
+      "before": {
+        "kind": "text",
+        "lineCount": 200,
+        "charCount": 8924,
+        "hash": "62093ff0ea75",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1793962685109
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 198,
+        "charCount": 8826,
+        "hash": "e227e7a1b445",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793962685109
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 65,
+        "addedLines": 63,
+        "summary": "Line 1: replaced 65 lines with 63 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi...",
+        "afterFragment": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / } / } / } / } / `; / t...",
         "afterFragment": "// We halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / vouch..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 242: replaced 76 lines with 37 lines.",
-      "recordedAt": "2026-11-05T23:12:17.248Z",
-      "recordedAtEpochMs": 1793920337248,
-      "before": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 9598,
-        "hash": "e0c9e452ea51",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920337248
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 283,
-        "charCount": 7942,
-        "hash": "b67d52898205",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920337248
-      },
-      "diff": {
-        "lineStart": 242,
-        "removedLines": 76,
-        "addedLines": 37,
-        "summary": "Line 242: replaced 76 lines with 37 lines.",
-        "beforeFragment": "klantEmail / klantE_mail / klantenEmail / email / } / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'applica...",
-        "afterFragment": "} / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ query }), /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1140,7 +1140,7 @@
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 7
+      "count": 6
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1170,20 +1170,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 2357349 fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-06 c8def89 fix(panorama): strictly match active design package to correct panorama render",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepTwoDesign.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2357349 by Bas van Dooremalen on 2026-11-06\n  fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c8def89 by Bas van Dooremalen on 2026-11-06\n  fix(panorama): strictly match active design package to correct panorama render\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
