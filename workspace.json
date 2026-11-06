@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T00:00:57.228Z",
-  "generatedAtEpochMs": 1793923257228,
+  "generatedAt": "2026-11-06T08:23:11.913Z",
+  "generatedAtEpochMs": 1793953391913,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/LoginScreen.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/LoginScreen.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
+      "components/LoginScreen.tsx",
       "app/api/verify-voucher/route.ts",
-      "app/api/vouchers/route.ts",
       "app/download/page.tsx",
+      "app/api/vouchers/route.ts",
       "lib/useConfigurator.ts",
       "app/api/auth-voucher",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-06T00:00:55.468Z",
+    "lastActivityAt": "2026-11-06T08:23:10.084Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1793953390084,
+      "lineCount": 517,
+      "charCount": 21684,
+      "hash": "0c1bb76eb05c",
+      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+    },
     {
       "filePath": "components/LoginScreen.tsx",
       "updatedAt": 1793923255468,
@@ -641,17 +649,41 @@
       "charCount": 4017,
       "hash": "78581114598f",
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
-    },
-    {
-      "filePath": "app/api/auth/route.ts",
-      "updatedAt": 1793912956942,
-      "lineCount": 119,
-      "charCount": 3894,
-      "hash": "aab870b5b72b",
-      "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 175 lines with 183 lines.",
+      "recordedAt": "2026-11-06T08:23:10.084Z",
+      "recordedAtEpochMs": 1793953390084,
+      "before": {
+        "kind": "text",
+        "lineCount": 509,
+        "charCount": 21194,
+        "hash": "55a56b73a3e1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1793953390083
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 517,
+        "charCount": 21684,
+        "hash": "0c1bb76eb05c",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1793953390084
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 175,
+        "addedLines": 183,
+        "summary": "Line 1: replaced 175 lines with 183 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de...",
+        "afterFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "klantEmail / klantE_mail / klantenEmail / email / } / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'applica...",
         "afterFragment": "} / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ query }), /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 64 lines with 86 lines.",
-      "recordedAt": "2026-11-05T23:08:34.867Z",
-      "recordedAtEpochMs": 1793920114867,
-      "before": {
-        "kind": "text",
-        "lineCount": 300,
-        "charCount": 8553,
-        "hash": "a23a93ea3aee",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920114866
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 9598,
-        "hash": "e0c9e452ea51",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920114867
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 64,
-        "addedLines": 86,
-        "summary": "Line 232: replaced 64 lines with 86 lines.",
-        "beforeFragment": "// Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databas...",
-        "afterFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEmail / klantE_ma..."
-      }
     }
   ],
   "hotFiles": [
@@ -1147,12 +1147,12 @@
       "count": 5
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
+      "filePath": "app/download/page.tsx",
       "count": 3
     },
     {
-      "filePath": "app/download/page.tsx",
-      "count": 3
+      "filePath": "app/api/vouchers/route.ts",
+      "count": 2
     },
     {
       "filePath": "lib/useConfigurator.ts",
@@ -1161,17 +1161,20 @@
     {
       "filePath": "app/api/auth-voucher",
       "count": 1
+    },
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 7fc4dad fix(login): remove legacy api-route fetch and route verification through client-side cms helper",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-06 2357349 fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/api/verify-voucher/route.ts",
-      "M components/LoginScreen.tsx",
+      "M components/configurator/StepThreeVisuals.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1180,7 +1183,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7fc4dad by Bas van Dooremalen on 2026-11-05\n  fix(login): remove legacy api-route fetch and route verification through client-side cms helper\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2357349 by Bas van Dooremalen on 2026-11-06\n  fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

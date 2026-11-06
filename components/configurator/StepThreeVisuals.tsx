@@ -1,3 +1,4 @@
+// components/StepThreeVisuals.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -74,7 +75,7 @@ export default function StepThreeVisuals({
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
 
-  // Vind het juiste pakket op basis van het gekozen pakket (bijv. Modern Raw)
+  // Vind het juiste pakket op basis van het gekozen pakket
   const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p.pakketId || p.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p.pakketTitel || p.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -150,9 +151,15 @@ export default function StepThreeVisuals({
   let geselecteerdeMediaUrl: string | null = null;
   let isVideo = false;
 
+  // STRICTE MATCHING: Zoek exact op de stijlnaam van het actieve pakket
   const gevondenRender = allePanoramaRenders.find((item: any) => {
     const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    return stijlNaam && (normPakket.includes(stijlNaam) || stijlNaam.includes(stijlNaam));
+    return stijlNaam && (normPakket === stijlNaam || normPakket.includes(stijlNaam) || stijlNaam.includes(normPakket));
+  }) || allePanoramaRenders.find((item: any) => {
+    const stijlNaam = (item?.stijlNaam || item?.stijl_naam || '').toLowerCase();
+    if (normPakket.includes('raw') && stijlNaam.includes('raw')) return true;
+    if (normPakket.includes('chic') && stijlNaam.includes('chic')) return true;
+    return false;
   });
 
   const renderBestandObj = gevondenRender?.renderBestand || gevondenRender?.render_bestand;
@@ -173,6 +180,7 @@ export default function StepThreeVisuals({
       geselecteerdeMediaUrl = `/api/download?url=${encodeURIComponent(rawMediaUrl)}&name=panorama.jpg`;
     }
   } else if (allePanoramaRenders.length > 0) {
+    // Fallback naar de eerste als er echt geen match is
     const eersteItem = allePanoramaRenders[0];
     const eersteBestand = eersteItem?.renderBestand || eersteItem?.render_bestand;
     const eersteUrl = eersteBestand?.mediaItemUrl || eersteBestand?.node?.mediaItemUrl || eersteBestand?.sourceUrl || eersteBestand?.url;

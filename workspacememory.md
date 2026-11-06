@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-06T00:00:57.228Z
+Generated: 2026-11-06T08:23:11.913Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-06T00:00:55.468Z
+- Last activity: 2026-11-06T08:23:10.084Z
 ## Workspace Focus
-- Active file in focus: components/LoginScreen.tsx
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (5), app/api/vouchers/route.ts (3)
-- Suggested starting points: components/LoginScreen.tsx, lib/cms.ts, app/api/verify-voucher/route.ts, app/api/vouchers/route.ts, app/download/page.tsx, lib/useConfigurator.ts
+- Active file in focus: components/configurator/StepThreeVisuals.tsx
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (7), app/api/verify-voucher/route.ts (5), app/download/page.tsx (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: components/LoginScreen.tsx
+- Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (39), delete (1)
 - Remembered file snapshots: 47
-- Working tree summary: 5 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/configurator/StepThreeVisuals.tsx | 517 lines | 21684 chars | hash 0c1bb76eb05c
+  Last snapshot: 2026-11-06T08:23:10.084Z
+  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - components/LoginScreen.tsx | 280 lines | 9936 chars | hash 7dfb1719bf66
   Last snapshot: 2026-11-06T00:00:55.468Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - app/api/auth-voucher/route.ts | 122 lines | 4017 chars | hash 78581114598f
   Last snapshot: 2026-11-05T21:41:45.970Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail }..."
-- app/api/auth/route.ts | 119 lines | 3894 chars | hash aab870b5b72b
-  Last snapshot: 2026-11-05T21:09:16.942Z
-  Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const body = await request.json(); / const { toegangscode, klantEmail } = body; / if (!toegangscode || !klantEmail..."
 
 ## Recent Changes
+### 2026-11-06T08:23:10.084Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 1: replaced 175 lines with 183 lines.
+- Before: 509 lines | 21,194 chars | hash 55a56b73a3e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 517 lines | 21,684 chars | hash 0c1bb76eb05c | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
+- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+
 ### 2026-11-06T00:00:55.468Z | saved | components/LoginScreen.tsx
 - Summary: Line 9: replaced 73 lines with 81 lines.
 - Before: 272 lines | 9,764 chars | hash 7c0b97494bc5 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -161,29 +168,22 @@ Structured manifest: workspace.json
 - Previous fragment: "klantEmail / klantE_mail / klantenEmail / email / } / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'applica..."
 - Current fragment: "} / } / } / } / `; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.stringify({ query }), /..."
 
-### 2026-11-05T23:08:34.867Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 64 lines with 86 lines.
-- Before: 300 lines | 8,553 chars | hash a23a93ea3aee | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 322 lines | 9,598 chars | hash e0c9e452ea51 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "// Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databas..."
-- Current fragment: "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEmail / klantE_ma..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
 - components/LoginScreen.tsx (7 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
-- app/api/vouchers/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
+- app/api/vouchers/route.ts (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
 - app/api/auth-voucher (1 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 7fc4dad fix(login): remove legacy api-route fetch and route verification through client-side cms helper
-- Working tree summary: 5 modifieds
-- M app/api/verify-voucher/route.ts
-- M components/LoginScreen.tsx
+- HEAD: 2026-11-06 2357349 fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration
+- Working tree summary: 4 modifieds
+- M components/configurator/StepThreeVisuals.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -194,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 7fc4dad by Bas van Dooremalen on 2026-11-05
-  fix(login): remove legacy api-route fetch and route verification through client-side cms helper
+- 2357349 by Bas van Dooremalen on 2026-11-06
+  fix(auth): implement robust api verify-voucher route with correct klantEMail mapping and frontend integration
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
