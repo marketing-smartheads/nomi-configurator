@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-05T23:55:53.773Z",
-  "generatedAtEpochMs": 1793922953773,
+  "generatedAt": "2026-11-06T00:00:57.228Z",
+  "generatedAtEpochMs": 1793923257228,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-05T23:55:51.869Z",
+    "lastActivityAt": "2026-11-06T00:00:55.468Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,11 +588,19 @@
   "trackedSnapshots": [
     {
       "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1793922951869,
-      "lineCount": 272,
-      "charCount": 9764,
-      "hash": "7c0b97494bc5",
+      "updatedAt": 1793923255468,
+      "lineCount": 280,
+      "charCount": 9936,
+      "hash": "7dfb1719bf66",
       "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+    },
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1793923247474,
+      "lineCount": 188,
+      "charCount": 6103,
+      "hash": "c41fe8ed1e83",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
     },
     {
       "filePath": "lib/cms.ts",
@@ -627,14 +635,6 @@
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "updatedAt": 1793916468581,
-      "lineCount": 189,
-      "charCount": 6106,
-      "hash": "110421b695dd",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
-    },
-    {
       "filePath": "app/api/auth-voucher/route.ts",
       "updatedAt": 1793914905970,
       "lineCount": 122,
@@ -652,6 +652,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 9: replaced 73 lines with 81 lines.",
+      "recordedAt": "2026-11-06T00:00:55.468Z",
+      "recordedAtEpochMs": 1793923255468,
+      "before": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 9764,
+        "hash": "7c0b97494bc5",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1793923255468
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 280,
+        "charCount": 9936,
+        "hash": "7dfb1719bf66",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1793923255468
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 73,
+        "addedLines": 81,
+        "summary": "Line 9: replaced 73 lines with 81 lines.",
+        "beforeFragment": "import { verifyAndAuthVoucher } from '../lib/cms'; / interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKl...",
+        "afterFragment": "interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKlantEmail: (val: string) => void; / error: string | nu..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 131: inserted 58 lines.",
+      "recordedAt": "2026-11-06T00:00:47.474Z",
+      "recordedAtEpochMs": 1793923247474,
+      "before": {
+        "kind": "text",
+        "lineCount": 131,
+        "charCount": 4145,
+        "hash": "879d9623513b",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
+        "updatedAt": 1793923247474
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 188,
+        "charCount": 6103,
+        "hash": "c41fe8ed1e83",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
+        "updatedAt": 1793923247474
+      },
+      "diff": {
+        "lineStart": 131,
+        "removedLines": 0,
+        "addedLines": 58,
+        "summary": "Line 131: inserted 58 lines.",
+        "beforeFragment": "",
+        "afterFragment": "ige vouchercode. Controleer uw invoer.' }, / { status: 404 } / ); / } / const velden = voucher.voucherVelden || {}; / const opgeslagenEmail = (velden.klantEMail || '').trim().to..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 14: replaced 176 lines with 118 lines.",
+      "recordedAt": "2026-11-06T00:00:41.491Z",
+      "recordedAtEpochMs": 1793923241491,
+      "before": {
+        "kind": "text",
+        "lineCount": 189,
+        "charCount": 6106,
+        "hash": "110421b695dd",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
+        "updatedAt": 1793923241491
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 131,
+        "charCount": 4145,
+        "hash": "879d9623513b",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
+        "updatedAt": 1793923241491
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 176,
+        "addedLines": 118,
+        "summary": "Line 14: replaced 176 lines with 118 lines.",
+        "beforeFragment": "'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPass = process.env.WORDPRESS_AUTH_PASSWORD; / const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUse...",
+        "afterFragment": "https://cms.nomi-configurator.nl/graphql'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPass = process.env.WORDPRESS_AUTH_PASSWORD; / const basicAuth = wpUser &&..."
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1035,102 +1131,6 @@
         "beforeFragment": "// Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databas...",
         "afterFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEmail / klantE_ma..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 64 lines with 65 lines.",
-      "recordedAt": "2026-11-05T23:03:35.990Z",
-      "recordedAtEpochMs": 1793919815990,
-      "before": {
-        "kind": "text",
-        "lineCount": 398,
-        "charCount": 19266,
-        "hash": "34de51cfb2e4",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793919815990
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 19298,
-        "hash": "d6c80bb2a10b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1793919815990
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 64,
-        "addedLines": 65,
-        "summary": "Line 14: replaced 64 lines with 65 lines.",
-        "beforeFragment": "'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
-        "afterFragment": "Indeling 01'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDown..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 58 lines with 62 lines.",
-      "recordedAt": "2026-11-05T23:03:04.458Z",
-      "recordedAtEpochMs": 1793919784458,
-      "before": {
-        "kind": "text",
-        "lineCount": 296,
-        "charCount": 8639,
-        "hash": "20e8ad72b3de",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793919784458
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 300,
-        "charCount": 8553,
-        "hash": "a23a93ea3aee",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793919784458
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 58,
-        "addedLines": 62,
-        "summary": "Line 232: replaced 58 lines with 62 lines.",
-        "beforeFragment": "We vragen nu veilig velden op zonder te crashen; let op: we valideren de opgeslagen e-mail indien aanwezig in de title/slug/status of via een veilige check. / const query = ` /...",
-        "afterFragment": "Dynamische opvraag van alle mogelijke e-mail en status velden uit WordPress ACF / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 218: replaced 57 lines with 70 lines.",
-      "recordedAt": "2026-11-05T23:02:07.588Z",
-      "recordedAtEpochMs": 1793919727588,
-      "before": {
-        "kind": "text",
-        "lineCount": 283,
-        "charCount": 7842,
-        "hash": "38f52a242b53",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793919727588
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 296,
-        "charCount": 8639,
-        "hash": "20e8ad72b3de",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793919727588
-      },
-      "diff": {
-        "lineStart": 218,
-        "removedLines": 57,
-        "addedLines": 70,
-        "summary": "Line 218: replaced 57 lines with 70 lines.",
-        "beforeFragment": "', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toegangscode: s...",
-        "afterFragment": "Indeling 01', / }; / } catch (error) { / console.error('Fout bij ophalen vouchers via GraphQL:', error); / return null; / } / } / export async function verifyAndAuthVoucher(toeg..."
-      }
     }
   ],
   "hotFiles": [
@@ -1140,11 +1140,11 @@
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 8
+      "count": 7
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
-      "count": 4
+      "count": 5
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1166,17 +1166,21 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 9190a8d fix(auth): ensure client-side graphql verification handles unused vouchers properly without 404 api calls",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-06 7fc4dad fix(login): remove legacy api-route fetch and route verification through client-side cms helper",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/LoginScreen.tsx"
+      "M app/api/verify-voucher/route.ts",
+      "M components/LoginScreen.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cfc17aa by Bas van Dooremalen on 2026-11-05\n  chore(auth): remove debug logs for production\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7fc4dad by Bas van Dooremalen on 2026-11-05\n  fix(login): remove legacy api-route fetch and route verification through client-side cms helper\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
+    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpUser = process.env.WORDPRESS_AUTH_USER;
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
@@ -25,7 +25,7 @@ export async function GET(request: Request) {
             voucherVelden {
               toegangscode
               status
-              klantEmail
+              klantEMail
             }
           }
         }
@@ -63,7 +63,7 @@ export async function GET(request: Request) {
       success: true,
       isBevestigd,
       status: velden.status || 'niet_ingevuld',
-      klantEmail: velden.klantEmail || ''
+      klantEmail: velden.klantEMail || ''
     });
   } catch (err) {
     return NextResponse.json({ error: 'Serverfout' }, { status: 500 });
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || '';
+    const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpUser = process.env.WORDPRESS_AUTH_USER;
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
     const basicAuth = wpUser && wpPass ? 'Basic ' + Buffer.from(`${wpUser}:${wpPass}`).toString('base64') : '';
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
             voucherVelden {
               toegangscode
               status
-              klantEmail
+              klantEMail
               klantNaam
             }
           }
@@ -134,10 +134,9 @@ export async function POST(request: Request) {
     }
 
     const velden = voucher.voucherVelden || {};
-    const opgeslagenEmail = (velden.klantEmail || '').trim().toLowerCase();
+    const opgeslagenEmail = (velden.klantEMail || '').trim().toLowerCase();
 
     // 🛑 STRENGE E-MAILVALIDATIE:
-    // Als de voucher al een gekoppeld e-mailadres heeft, moet het exact matchen.
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -149,7 +148,7 @@ export async function POST(request: Request) {
       // Eerste keer inloggen: Sla het e-mailadres direct op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEmail: $email, status: "bevestigd" } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email, status: "bevestigd" } }) {
             voucher {
               databaseId
             }

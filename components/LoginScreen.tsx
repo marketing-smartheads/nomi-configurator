@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from './Button';
 import { useRouter } from 'next/navigation';
-import { verifyAndAuthVoucher } from '../lib/cms';
 
 interface LoginScreenProps {
   toegangscode: string;
@@ -75,10 +74,19 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      // Directe client-side aanroep van de CMS helper (geen /api/... routes meer)
-      const result = await verifyAndAuthVoucher(ingevoerdeCodeClean, ingevoerdeEmailClean);
+      // Aanroep naar onze stabiele API-route
+      const response = await fetch('/api/verify-voucher', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          toegangscode: ingevoerdeCodeClean,
+          klantEmail: ingevoerdeEmailClean,
+        }),
+      });
 
-      if (!result.success) {
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
         setCustomError(result.error || 'De combinatie van vouchercode en e-mailadres is onjuist.');
         setIsChecking(false);
         return;
