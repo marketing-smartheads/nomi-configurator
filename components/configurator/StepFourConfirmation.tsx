@@ -9,7 +9,7 @@ import Button from '../Button';
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
 const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
-const PARTNER_TELEFOON = '030 - 600 82 40'; // of desgewenst aanpasbaar
+const PARTNER_TELEFOON = '030 - 600 82 40';
 
 interface StepFourConfirmationProps {
   stepTitle: string;
@@ -65,7 +65,6 @@ export default function StepFourConfirmation({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
-  // Haal gekozen indeling robuust op
   let opgeslagenIndeling = '';
   try {
     const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : '';
@@ -333,13 +332,13 @@ export default function StepFourConfirmation({
                 <span className="text-xs font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
               </label>
 
-              {/* Als de koper kiest voor NEE, tonen we direct de contactgegevens van Aanhuis Spijk */}
+              {/* Subtieler blok voor contactgegevens */}
               {agreedPartner === false && (
-                <div className="p-4 rounded-xl bg-[#EFECE6] border border-dark/10 text-xs text-dark space-y-2 animate-fadeIn">
-                  <p className="font-semibold uppercase tracking-wider text-[11px] text-primary">Contactgegevens {PARTNER_NAAM}:</p>
-                  <p>Contactpersoon: <strong>{PARTNER_CONTACT}</strong></p>
-                  <p>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">{PARTNER_EMAIL}</a></p>
-                  <p>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">{PARTNER_TELEFOON}</a></p>
+                <div className="px-4 py-3 rounded-xl bg-[#FAF9F6] border border-dark/5 text-xs text-muted space-y-1 animate-fadeIn">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-dark/70 mb-1">Direct contact met {PARTNER_NAAM}:</p>
+                  <p>Contactpersoon: <span className="text-dark font-medium">{PARTNER_CONTACT}</span></p>
+                  <p>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium text-dark hover:text-primary">{PARTNER_EMAIL}</a></p>
+                  <p>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium text-dark hover:text-primary">{PARTNER_TELEFOON}</a></p>
                 </div>
               )}
 

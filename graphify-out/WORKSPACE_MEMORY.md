@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-06T11:15:52.667Z
+Generated: 2026-11-06T15:28:58.698Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-06T11:15:50.269Z
+- Last activity: 2026-11-06T15:28:56.836Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (5), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/LoginScreen.tsx, components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: components/configurator/StepFourConfirmation.tsx
+- Hottest files right now: lib/cms.ts (19), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4), components/LoginScreen.tsx (4)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, lib/cms.ts, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, components/LoginScreen.tsx, app/download/page.tsx
 ## Current Workspace
-- Active file: components/configurator/StepThreeVisuals.tsx
+- Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/configurator/StepFourConfirmation.tsx | 361 lines | 17744 chars | hash ffaaf6547f67
+  Last snapshot: 2026-11-06T15:28:56.836Z
+  Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
 - components/configurator/StepThreeVisuals.tsx | 492 lines | 20311 chars | hash 230088061fb3
   Last snapshot: 2026-11-06T11:15:50.269Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -60,11 +63,22 @@ Structured manifest: workspace.json
 - lib/useConfigurator.ts | 206 lines | 6358 chars | hash 6df8a1bf9348
   Last snapshot: 2026-11-05T22:22:17.496Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-- app/api/vouchers/route.ts | 170 lines | 5453 chars | hash dfb46144d938
-  Last snapshot: 2026-11-05T22:16:56.146Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
 
 ## Recent Changes
+### 2026-11-06T15:28:56.836Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 12: replaced 331 lines with 330 lines.
+- Before: 362 lines | 17,797 chars | hash 2c1519ef8a98 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+- After: 361 lines | 17,744 chars | hash ffaaf6547f67 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+- Previous fragment: "// of desgewenst aanpasbaar / interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / o..."
+- Current fragment: "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
+
+### 2026-11-06T15:24:23.613Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 1: replaced 334 lines with 345 lines.
+- Before: 351 lines | 17,011 chars | hash ad5e8b9d9763 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
+- After: 362 lines | 17,797 chars | hash 2c1519ef8a98 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
+- Current fragment: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigat..."
+
 ### 2026-11-06T11:15:50.269Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 82: replaced 61 lines with 407 lines.
 - Before: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -149,36 +163,25 @@ Structured manifest: workspace.json
 - After: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - Current fragment: "// Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress"
 
-### 2026-11-05T23:47:39.200Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 64 lines with 59 lines.
-- Before: 322 lines | 9,591 chars | hash 226caf9bbf89 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 317 lines | 9,139 chars | hash 6bb76d191141 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "// Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId /..."
-- Current fragment: "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEMail / } / } / }..."
-
-### 2026-11-05T23:45:05.463Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 67 lines with 67 lines.
-- Before: 322 lines | 9,555 chars | hash 1b9f059103c2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 322 lines | 9,591 chars | hash 226caf9bbf89 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title..."
-- Current fragment: "Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
-- components/LoginScreen.tsx (5 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
+- components/LoginScreen.tsx (4 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/verify-voucher/route.ts (2 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
-- app/api/vouchers/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 3ef0fc7 fix(filtering): read woningType robustly from storage and enforce strict filtering per housing type
-- Working tree summary: 1 modified
-- M components/configurator/StepThreeVisuals.tsx
+- HEAD: 2026-11-06 e8e9d17 feat(confirmation): update partner consent copy and display partner contact details when 'No' is selected
+- Working tree summary: 4 modifieds
+- M components/configurator/StepFourConfirmation.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 3ef0fc7 by Bas van Dooremalen on 2026-11-06
-  fix(filtering): read woningType robustly from storage and enforce strict filtering per housing type
+- c941b89 by Bas van Dooremalen on 2026-11-06
+  fix(step3): restore full interactive slider, navigation controls, 360 viewer and materials list
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

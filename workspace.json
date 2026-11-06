@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T11:15:52.667Z",
-  "generatedAtEpochMs": 1793963752667,
+  "generatedAt": "2026-11-06T15:28:58.698Z",
+  "generatedAtEpochMs": 1793978938698,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
-      "components/LoginScreen.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "components/LoginScreen.tsx",
       "app/download/page.tsx",
       "app/api/verify-voucher/route.ts",
       "lib/useConfigurator.ts",
-      "app/api/vouchers/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-06T11:15:50.269Z",
+    "lastActivityAt": "2026-11-06T15:28:56.836Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1793978936836,
+      "lineCount": 361,
+      "charCount": 17744,
+      "hash": "ffaaf6547f67",
+      "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1793963750269,
@@ -641,17 +649,73 @@
       "charCount": 6358,
       "hash": "6df8a1bf9348",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / type ScreenType = 'welcome' | 'configurator' | 'download' | 'login'; / export function useConfigurator() { / const [screen, setScreenState] = useState<Scr..."
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1793917016146,
-      "lineCount": 170,
-      "charCount": 5453,
-      "hash": "dfb46144d938",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 12: replaced 331 lines with 330 lines.",
+      "recordedAt": "2026-11-06T15:28:56.836Z",
+      "recordedAtEpochMs": 1793978936836,
+      "before": {
+        "kind": "text",
+        "lineCount": 362,
+        "charCount": 17797,
+        "hash": "2c1519ef8a98",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1793978936836
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17744,
+        "hash": "ffaaf6547f67",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1793978936836
+      },
+      "diff": {
+        "lineStart": 12,
+        "removedLines": 331,
+        "addedLines": 330,
+        "summary": "Line 12: replaced 331 lines with 330 lines.",
+        "beforeFragment": "// of desgewenst aanpasbaar / interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / o...",
+        "afterFragment": "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 334 lines with 345 lines.",
+      "recordedAt": "2026-11-06T15:24:23.613Z",
+      "recordedAtEpochMs": 1793978663613,
+      "before": {
+        "kind": "text",
+        "lineCount": 351,
+        "charCount": 17011,
+        "hash": "ad5e8b9d9763",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /...",
+        "updatedAt": 1793978663613
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 362,
+        "charCount": 17797,
+        "hash": "2c1519ef8a98",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1793978663613
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 334,
+        "addedLines": 345,
+        "summary": "Line 1: replaced 334 lines with 345 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /...",
+        "afterFragment": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigat..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1053,70 +1117,6 @@
         "beforeFragment": "",
         "afterFragment": "// Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 64 lines with 59 lines.",
-      "recordedAt": "2026-11-05T23:47:39.200Z",
-      "recordedAtEpochMs": 1793922459200,
-      "before": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 9591,
-        "hash": "226caf9bbf89",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793922459200
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 317,
-        "charCount": 9139,
-        "hash": "6bb76d191141",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793922459200
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 64,
-        "addedLines": 59,
-        "summary": "Line 232: replaced 64 lines with 59 lines.",
-        "beforeFragment": "// Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId /...",
-        "afterFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / klantEMail / } / } / }..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 67 lines with 67 lines.",
-      "recordedAt": "2026-11-05T23:45:05.463Z",
-      "recordedAtEpochMs": 1793922305463,
-      "before": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 9555,
-        "hash": "1b9f059103c2",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793922305463
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 322,
-        "charCount": 9591,
-        "hash": "226caf9bbf89",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793922305463
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 67,
-        "addedLines": 67,
-        "summary": "Line 232: replaced 67 lines with 67 lines.",
-        "beforeFragment": "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title...",
-        "afterFragment": "Gebruik de exacte graphql_field_name uit je ACF configuratie: 'klantEMail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
-      }
     }
   ],
   "hotFiles": [
@@ -1125,15 +1125,15 @@
       "count": 19
     },
     {
-      "filePath": "components/LoginScreen.tsx",
-      "count": 5
-    },
-    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 4
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 4
+    },
+    {
+      "filePath": "components/LoginScreen.tsx",
       "count": 4
     },
     {
@@ -1145,28 +1145,31 @@
       "count": 2
     },
     {
-      "filePath": "lib/useConfigurator.ts",
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
-      "count": 1
+      "filePath": "lib/useConfigurator.ts",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 3ef0fc7 fix(filtering): read woningType robustly from storage and enforce strict filtering per housing type",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-06 e8e9d17 feat(confirmation): update partner consent copy and display partner contact details when 'No' is selected",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx"
+      "M components/configurator/StepFourConfirmation.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3ef0fc7 by Bas van Dooremalen on 2026-11-06\n  fix(filtering): read woningType robustly from storage and enforce strict filtering per housing type\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c941b89 by Bas van Dooremalen on 2026-11-06\n  fix(step3): restore full interactive slider, navigation controls, 360 viewer and materials list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
