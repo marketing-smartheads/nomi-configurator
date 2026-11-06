@@ -319,36 +319,36 @@ export default function StepFourConfirmation({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
-            <p className="text-sm text-muted">
+            <p className="text-sm text-muted leading-relaxed">
               We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken?
             </p>
-            <div className="space-y-4 pt-2">
-              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+            <div className="space-y-3 pt-1">
+              <label className="flex items-center gap-3 cursor-pointer p-3.5 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="w-4 h-4 accent-[#C5A880]" />
-                <span className="text-xs font-medium text-dark"><strong>Ja, delen:</strong> deel mijn gegevens.</span>
+                <span className="text-sm font-medium text-dark"><strong>Ja, delen:</strong> deel mijn gegevens.</span>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer p-3 rounded-xl bg-[#F9F6F0] border border-dark/10">
+              <label className="flex items-center gap-3 cursor-pointer p-3.5 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="w-4 h-4 accent-[#C5A880]" />
-                <span className="text-xs font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
+                <span className="text-sm font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
               </label>
 
-              {/* Subtieler blok voor contactgegevens */}
+              {/* Subtiel en strak afgestemd contactblok */}
               {agreedPartner === false && (
-                <div className="px-4 py-3 rounded-xl bg-[#FAF9F6] border border-dark/5 text-xs text-muted space-y-1 animate-fadeIn">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-dark/70 mb-1">Direct contact met {PARTNER_NAAM}:</p>
-                  <p>Contactpersoon: <span className="text-dark font-medium">{PARTNER_CONTACT}</span></p>
-                  <p>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium text-dark hover:text-primary">{PARTNER_EMAIL}</a></p>
-                  <p>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium text-dark hover:text-primary">{PARTNER_TELEFOON}</a></p>
+                <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 animate-fadeIn">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-dark/70 mb-2">Direct contact met {PARTNER_NAAM}:</p>
+                  <p className="flex justify-between items-center"><span className="text-muted">Contactpersoon:</span> <span className="text-dark font-medium">{PARTNER_CONTACT}</span></p>
+                  <p className="flex justify-between items-center"><span className="text-muted">E-mail:</span> <a href={`mailto:${PARTNER_EMAIL}`} className="text-dark font-medium underline hover:text-primary">{PARTNER_EMAIL}</a></p>
+                  <p className="flex justify-between items-center"><span className="text-muted">Telefoon:</span> <a href={`tel:${PARTNER_TELEFOON}`} className="text-dark font-medium underline hover:text-primary">{PARTNER_TELEFOON}</a></p>
                 </div>
               )}
 
-              <label className="flex items-start gap-3 cursor-pointer p-2">
-                <input type="checkbox" checked={agreedWarning} onChange={(e) => setAgreedWarning(e.target.checked)} className="mt-1 w-5 h-5 accent-dark rounded" />
-                <span className="text-xs font-bold text-primary uppercase tracking-wide">{waarschuwingTekst}</span>
+              <label className="flex items-start gap-3 cursor-pointer pt-2 px-1">
+                <input type="checkbox" checked={agreedWarning} onChange={(e) => setAgreedWarning(e.target.checked)} className="mt-0.5 w-4 h-4 accent-dark rounded" />
+                <span className="text-[11px] font-bold text-primary uppercase tracking-wide leading-snug">{waarschuwingTekst}</span>
               </label>
             </div>
             <div className="flex items-center justify-end gap-4 pt-4 border-t border-dark/10">
-              <button type="button" onClick={() => setShowPopup(false)} className="px-5 py-2.5 text-xs font-bold uppercase text-muted">Annuleren</button>
+              <button type="button" onClick={() => setShowPopup(false)} className="px-5 py-2.5 text-xs font-bold uppercase text-muted hover:text-dark transition">Annuleren</button>
               <Button onClick={() => handleSubmit(agreedPartner === true)} disabled={!kanBevestigen} loading={isSubmitting} className="px-6 py-3 text-xs">
                 AKKOORD & VERSTUREN
               </Button>
