@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T10:58:07.519Z",
-  "generatedAtEpochMs": 1793962687519,
+  "generatedAt": "2026-11-06T11:04:07.548Z",
+  "generatedAtEpochMs": 1793963047548,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -30,10 +30,10 @@
       "app/api/vouchers/route.ts",
       "lib/useConfigurator.ts",
       "app/api/auth-voucher",
-      "components/configurator/StepThreeVisuals.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-06T10:58:05.109Z",
+    "lastActivityAt": "2026-11-06T11:04:05.762Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793962685109,
-      "lineCount": 198,
-      "charCount": 8826,
-      "hash": "e227e7a1b445",
+      "updatedAt": 1793963045762,
+      "lineCount": 202,
+      "charCount": 9066,
+      "hash": "f757dfabf6eb",
       "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
     },
     {
@@ -652,6 +652,63 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-06T11:04:05.762Z",
+      "recordedAtEpochMs": 1793963045762,
+      "before": {
+        "kind": "text",
+        "lineCount": 202,
+        "charCount": 9066,
+        "hash": "f757dfabf6eb",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963045762
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 202,
+        "charCount": 9066,
+        "hash": "f757dfabf6eb",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963045762
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 46: replaced 19 lines with 23 lines.",
+      "recordedAt": "2026-11-06T11:03:21.027Z",
+      "recordedAtEpochMs": 1793963001027,
+      "before": {
+        "kind": "text",
+        "lineCount": 198,
+        "charCount": 8826,
+        "hash": "e227e7a1b445",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963001027
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 202,
+        "charCount": 9066,
+        "hash": "f757dfabf6eb",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963001027
+      },
+      "diff": {
+        "lineStart": 46,
+        "removedLines": 19,
+        "addedLines": 23,
+        "summary": "Line 46: replaced 19 lines with 23 lines.",
+        "beforeFragment": "STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam...",
+        "afterFragment": "1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1067,70 +1124,6 @@
         "beforeFragment": "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug...",
         "afterFragment": "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 74 lines with 57 lines.",
-      "recordedAt": "2026-11-05T23:19:13.176Z",
-      "recordedAtEpochMs": 1793920753176,
-      "before": {
-        "kind": "text",
-        "lineCount": 315,
-        "charCount": 9315,
-        "hash": "4d4e1069a662",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920753176
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 298,
-        "charCount": 8744,
-        "hash": "283b32fc338c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920753176
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 74,
-        "addedLines": 57,
-        "summary": "Line 232: replaced 74 lines with 57 lines.",
-        "beforeFragment": "halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVeld...",
-        "afterFragment": "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 45 lines with 77 lines.",
-      "recordedAt": "2026-11-05T23:16:29.964Z",
-      "recordedAtEpochMs": 1793920589964,
-      "before": {
-        "kind": "text",
-        "lineCount": 283,
-        "charCount": 7942,
-        "hash": "b67d52898205",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920589964
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 315,
-        "charCount": 9315,
-        "hash": "4d4e1069a662",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920589964
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 45,
-        "addedLines": 77,
-        "summary": "Line 232: replaced 45 lines with 77 lines.",
-        "beforeFragment": "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / } / } / } / } / `; / t...",
-        "afterFragment": "// We halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / vouch..."
-      }
     }
   ],
   "hotFiles": [
@@ -1144,10 +1137,14 @@
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
-      "count": 5
+      "count": 3
     },
     {
       "filePath": "app/download/page.tsx",
+      "count": 3
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
@@ -1161,26 +1158,25 @@
     {
       "filePath": "app/api/auth-voucher",
       "count": 1
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 c8def89 fix(panorama): strictly match active design package to correct panorama render",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-06 3191c36 fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx"
+      "M components/configurator/StepTwoDesign.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c8def89 by Bas van Dooremalen on 2026-11-06\n  fix(panorama): strictly match active design package to correct panorama render\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3191c36 by Bas van Dooremalen on 2026-11-06\n  fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

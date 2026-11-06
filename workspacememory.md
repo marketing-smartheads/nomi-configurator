@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-06T10:58:07.519Z
+Generated: 2026-11-06T11:04:07.548Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-06T10:58:05.109Z
+- Last activity: 2026-11-06T11:04:05.762Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (6), app/api/verify-voucher/route.ts (5), app/download/page.tsx (3)
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (6), app/api/verify-voucher/route.ts (3), app/download/page.tsx (3)
 - Suggested starting points: components/configurator/StepTwoDesign.tsx, lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/vouchers/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepTwoDesign.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (39), delete (1)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 198 lines | 8826 chars | hash e227e7a1b445
-  Last snapshot: 2026-11-06T10:58:05.109Z
+- components/configurator/StepTwoDesign.tsx | 202 lines | 9066 chars | hash f757dfabf6eb
+  Last snapshot: 2026-11-06T11:04:05.762Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - components/configurator/StepThreeVisuals.tsx | 517 lines | 21684 chars | hash 0c1bb76eb05c
   Last snapshot: 2026-11-06T08:23:10.084Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
 
 ## Recent Changes
+### 2026-11-06T11:04:05.762Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Saved without a textual diff.
+- Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+
+### 2026-11-06T11:03:21.027Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 46: replaced 19 lines with 23 lines.
+- Before: 198 lines | 8,826 chars | hash e227e7a1b445 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Previous fragment: "STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam..."
+- Current fragment: "1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?..."
+
 ### 2026-11-06T10:58:05.109Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 1: replaced 65 lines with 63 lines.
 - Before: 200 lines | 8,924 chars | hash 62093ff0ea75 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -154,36 +166,25 @@ Structured manifest: workspace.json
 - Previous fragment: "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
 - Current fragment: "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
 
-### 2026-11-05T23:19:13.176Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 74 lines with 57 lines.
-- Before: 315 lines | 9,315 chars | hash 4d4e1069a662 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 298 lines | 8,744 chars | hash 283b32fc338c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVeld..."
-- Current fragment: "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
-
-### 2026-11-05T23:16:29.964Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 45 lines with 77 lines.
-- Before: 283 lines | 7,942 chars | hash b67d52898205 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 315 lines | 9,315 chars | hash 4d4e1069a662 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / voucherVelden { / toegangscode / status / } / } / } / } / `; / t..."
-- Current fragment: "// We halen klantEmail expliciet op uit de voucherVelden / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug / vouch..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
 - components/LoginScreen.tsx (6 tracked changes)
-- app/api/verify-voucher/route.ts (5 tracked changes)
+- app/api/verify-voucher/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
 - app/api/auth-voucher (1 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 c8def89 fix(panorama): strictly match active design package to correct panorama render
-- Working tree summary: 1 modified
+- HEAD: 2026-11-06 3191c36 fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown
+- Working tree summary: 4 modifieds
 - M components/configurator/StepTwoDesign.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c8def89 by Bas van Dooremalen on 2026-11-06
-  fix(panorama): strictly match active design package to correct panorama render
+- 3191c36 by Bas van Dooremalen on 2026-11-06
+  fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

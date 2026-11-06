@@ -43,7 +43,7 @@ export default function StepTwoDesign({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling
+  // 1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling
   const matchendeWoningRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -52,16 +52,20 @@ export default function StepTwoDesign({
     return typeMatch && indelingMatch;
   });
 
-  // GEEN FALLBACK NAAR ALLE WONINGTYPEN MEER! Wat niet bestaat voor dit type, wordt niet getoond.
-  const gebruikteRijen = matchendeWoningRijen;
-
+  // 2. Verzamel ALLEEN de pakketten die direct in deze specifieke rijen zijn opgeslagen
   const alleVerzameldePakketten: any[] = [];
-  gebruikteRijen.forEach((rij: any) => {
+  matchendeWoningRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
     const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
-    pakketLijst.forEach((p: any) => alleVerzameldePakketten.push(p));
+    pakketLijst.forEach((p: any) => {
+      // Controleer of het pakket wel een geldige titel of ID heeft (geen lege rijen)
+      if (p && (p.pakketTitel || p.pakket_titel || p.pakketId || p.pakket_id)) {
+        alleVerzameldePakketten.push(p);
+      }
+    });
   });
 
+  // GEEN globale fallback meer naar data.designPakketten! Wat niet in Type C staat, komt er niet in.
   const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => {
     const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
     return index === self.findIndex((obj) => (obj.pakketTitel || obj.pakket_titel || obj.pakketId || obj.pakket_id || '').trim().toLowerCase() === t);
