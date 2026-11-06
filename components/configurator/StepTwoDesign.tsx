@@ -20,11 +20,15 @@ export default function StepTwoDesign({
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
+  const [opgeslagenWoning, setOpgeslagenWoning] = useState(woningType || '');
   const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
+        const rawW = woningType || localStorage.getItem('selected_woningType') || sessionStorage.getItem('selected_woningType') || '';
+        setOpgeslagenWoning(rawW);
+
         const rawInd = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || '';
         if (rawInd) {
           if (rawInd.startsWith('{')) {
@@ -38,34 +42,33 @@ export default function StepTwoDesign({
         setOpgeslagenIndeling('');
       }
     }
-  }, []);
+  }, [woningType]);
 
+  const normWoning = (opgeslagenWoning || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // 1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling
+  // STRIKTE FILTERING: Alleen rijen die exact matchen met het opgeslagen woningtype en indeling
   const matchendeWoningRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
-    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    
+    const typeMatch = normWoning ? naam === normWoning || naam.includes(normWoning) || normWoning.includes(naam) : true;
+    const indelingMatch = normIndeling ? indTitel === normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel) : true;
+    
     return typeMatch && indelingMatch;
   });
 
-  // 2. Verzamel ALLEEN de pakketten die direct in deze specifieke rijen zijn opgeslagen
   const alleVerzameldePakketten: any[] = [];
   matchendeWoningRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
     const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
     pakketLijst.forEach((p: any) => {
-      // Controleer of het pakket wel een geldige titel of ID heeft (geen lege rijen)
       if (p && (p.pakketTitel || p.pakket_titel || p.pakketId || p.pakket_id)) {
         alleVerzameldePakketten.push(p);
       }
     });
   });
 
-  // GEEN globale fallback meer naar data.designPakketten! Wat niet in Type C staat, komt er niet in.
   const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => {
     const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
     return index === self.findIndex((obj) => (obj.pakketTitel || obj.pakket_titel || obj.pakketId || obj.pakket_id || '').trim().toLowerCase() === t);

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-06T11:04:07.548Z
+Generated: 2026-11-06T11:10:39.961Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-06T11:04:05.762Z
+- Last activity: 2026-11-06T11:10:38.163Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (6), app/api/verify-voucher/route.ts (3), app/download/page.tsx (3)
-- Suggested starting points: components/configurator/StepTwoDesign.tsx, lib/cms.ts, components/LoginScreen.tsx, app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/vouchers/route.ts
+- Active file in focus: components/configurator/StepThreeVisuals.tsx
+- Hottest files right now: lib/cms.ts (19), components/LoginScreen.tsx (6), components/configurator/StepTwoDesign.tsx (4), app/download/page.tsx (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, lib/cms.ts, components/LoginScreen.tsx, components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepTwoDesign.tsx
+- Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -35,16 +35,16 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (39), delete (1)
+- Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 202 lines | 9066 chars | hash f757dfabf6eb
-  Last snapshot: 2026-11-06T11:04:05.762Z
-  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/configurator/StepThreeVisuals.tsx | 517 lines | 21684 chars | hash 0c1bb76eb05c
-  Last snapshot: 2026-11-06T08:23:10.084Z
+- components/configurator/StepThreeVisuals.tsx | 146 lines | 6722 chars | hash bceddf87e6e2
+  Last snapshot: 2026-11-06T11:10:38.163Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- components/configurator/StepTwoDesign.tsx | 205 lines | 9146 chars | hash 14bc4f3bcec2
+  Last snapshot: 2026-11-06T11:10:28.030Z
+  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - components/LoginScreen.tsx | 280 lines | 9936 chars | hash 7dfb1719bf66
   Last snapshot: 2026-11-06T00:00:55.468Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -65,6 +65,24 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
 
 ## Recent Changes
+### 2026-11-06T11:10:38.163Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Saved without a textual diff.
+- Before: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+
+### 2026-11-06T11:10:33.193Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 1: inserted 146 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+
+### 2026-11-06T11:10:28.030Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 23: replaced 46 lines with 49 lines.
+- Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 205 lines | 9,146 chars | hash 14bc4f3bcec2 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Previous fragment: "Indeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indeling') ||..."
+- Current fragment: "Woning, setOpgeslagenWoning] = useState(woningType || ''); / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undef..."
+
 ### 2026-11-06T11:04:05.762Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Saved without a textual diff.
 - Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
@@ -145,42 +163,22 @@ Structured manifest: workspace.json
 - Previous fragment: "We vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId /..."
 - Current fragment: "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title..."
 
-### 2026-11-05T23:35:01.560Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 68 lines with 73 lines.
-- Before: 323 lines | 9,730 chars | hash dfc39aa891ec | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 328 lines | 9,753 chars | hash 89e4fbac150b | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat..."
-- Current fragment: "vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
-
-### 2026-11-05T23:30:57.755Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 68 lines with 68 lines.
-- Before: 323 lines | 9,722 chars | hash 073cca7e70e2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 323 lines | 9,730 chars | hash dfc39aa891ec | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
-- Current fragment: "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat..."
-
-### 2026-11-05T23:21:45.236Z | saved | lib/cms.ts
-- Summary: Line 232: replaced 57 lines with 82 lines.
-- Before: 298 lines | 8,744 chars | hash 283b32fc338c | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 323 lines | 9,722 chars | hash 073cca7e70e2 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug..."
-- Current fragment: "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
-
 
 ## Hot Files
 - lib/cms.ts (19 tracked changes)
 - components/LoginScreen.tsx (6 tracked changes)
-- app/api/verify-voucher/route.ts (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/download/page.tsx (3 tracked changes)
-- components/configurator/StepTwoDesign.tsx (3 tracked changes)
-- app/api/vouchers/route.ts (2 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- app/api/verify-voucher/route.ts (2 tracked changes)
 - lib/useConfigurator.ts (2 tracked changes)
-- app/api/auth-voucher (1 tracked changes)
+- app/api/vouchers/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 3191c36 fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-06 b8c5675 fix(packages): completely remove global design package fallback so type-specific packages render exclusively
+- Working tree summary: 5 modifieds
+- M components/configurator/StepThreeVisuals.tsx
 - M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
@@ -192,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 3191c36 by Bas van Dooremalen on 2026-11-06
-  fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown
+- b8c5675 by Bas van Dooremalen on 2026-11-06
+  fix(packages): completely remove global design package fallback so type-specific packages render exclusively
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

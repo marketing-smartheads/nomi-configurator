@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T11:04:07.548Z",
-  "generatedAtEpochMs": 1793963047548,
+  "generatedAt": "2026-11-06T11:10:39.961Z",
+  "generatedAtEpochMs": 1793963439961,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "components/LoginScreen.tsx",
-      "app/api/verify-voucher/route.ts",
+      "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
-      "app/api/vouchers/route.ts",
+      "app/api/verify-voucher/route.ts",
       "lib/useConfigurator.ts",
-      "app/api/auth-voucher",
+      "app/api/vouchers/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,32 +575,32 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-06T11:04:05.762Z",
+    "lastActivityAt": "2026-11-06T11:10:38.163Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
-      "save": 39,
+      "save": 40,
       "create": 0,
-      "delete": 1,
+      "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793963045762,
-      "lineCount": 202,
-      "charCount": 9066,
-      "hash": "f757dfabf6eb",
-      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1793963438163,
+      "lineCount": 146,
+      "charCount": 6722,
+      "hash": "bceddf87e6e2",
+      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1793953390084,
-      "lineCount": 517,
-      "charCount": 21684,
-      "hash": "0c1bb76eb05c",
-      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1793963428030,
+      "lineCount": 205,
+      "charCount": 9146,
+      "hash": "14bc4f3bcec2",
+      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -652,6 +652,95 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-06T11:10:38.163Z",
+      "recordedAtEpochMs": 1793963438163,
+      "before": {
+        "kind": "text",
+        "lineCount": 146,
+        "charCount": 6722,
+        "hash": "bceddf87e6e2",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1793963438162
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 146,
+        "charCount": 6722,
+        "hash": "bceddf87e6e2",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1793963438163
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 146 lines.",
+      "recordedAt": "2026-11-06T11:10:33.193Z",
+      "recordedAtEpochMs": 1793963433193,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1793963433193
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 146,
+        "charCount": 6722,
+        "hash": "bceddf87e6e2",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1793963433193
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 146,
+        "summary": "Line 1: inserted 146 lines.",
+        "beforeFragment": "",
+        "afterFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 23: replaced 46 lines with 49 lines.",
+      "recordedAt": "2026-11-06T11:10:28.030Z",
+      "recordedAtEpochMs": 1793963428030,
+      "before": {
+        "kind": "text",
+        "lineCount": 202,
+        "charCount": 9066,
+        "hash": "f757dfabf6eb",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963428030
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 205,
+        "charCount": 9146,
+        "hash": "14bc4f3bcec2",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1793963428030
+      },
+      "diff": {
+        "lineStart": 23,
+        "removedLines": 46,
+        "addedLines": 49,
+        "summary": "Line 23: replaced 46 lines with 49 lines.",
+        "beforeFragment": "Indeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indeling') ||...",
+        "afterFragment": "Woning, setOpgeslagenWoning] = useState(woningType || ''); / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undef..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1028,102 +1117,6 @@
         "beforeFragment": "We vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId /...",
         "afterFragment": "Dit is de correcte veldnaam volgens het WordPress schema: 'klantEmail' / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 68 lines with 73 lines.",
-      "recordedAt": "2026-11-05T23:35:01.560Z",
-      "recordedAtEpochMs": 1793921701560,
-      "before": {
-        "kind": "text",
-        "lineCount": 323,
-        "charCount": 9730,
-        "hash": "dfc39aa891ec",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793921701560
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 328,
-        "charCount": 9753,
-        "hash": "89e4fbac150b",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793921701560
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 68,
-        "addedLines": 73,
-        "summary": "Line 232: replaced 68 lines with 73 lines.",
-        "beforeFragment": "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat...",
-        "afterFragment": "vangen alle mogelijke ACF veldnaam-varianten op zodat de query nooit faalt / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / ti..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 68 lines with 68 lines.",
-      "recordedAt": "2026-11-05T23:30:57.755Z",
-      "recordedAtEpochMs": 1793921457755,
-      "before": {
-        "kind": "text",
-        "lineCount": 323,
-        "charCount": 9722,
-        "hash": "073cca7e70e2",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793921457754
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 323,
-        "charCount": 9730,
-        "hash": "dfc39aa891ec",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793921457755
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 68,
-        "addedLines": 68,
-        "summary": "Line 232: replaced 68 lines with 68 lines.",
-        "beforeFragment": "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t...",
-        "afterFragment": "gebruiken nu de juiste veldnaam 'klantEmail' zoals gedefinieerd in WordPress WPGraphQL / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / dat..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 232: replaced 57 lines with 82 lines.",
-      "recordedAt": "2026-11-05T23:21:45.236Z",
-      "recordedAtEpochMs": 1793920905236,
-      "before": {
-        "kind": "text",
-        "lineCount": 298,
-        "charCount": 8744,
-        "hash": "283b32fc338c",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920905236
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 323,
-        "charCount": 9722,
-        "hash": "073cca7e70e2",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1793920905236
-      },
-      "diff": {
-        "lineStart": 232,
-        "removedLines": 57,
-        "addedLines": 82,
-        "summary": "Line 232: replaced 57 lines with 82 lines.",
-        "beforeFragment": "gebruiken de bewezen werkende query om alle vouchers op te halen / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / title / slug...",
-        "afterFragment": "halen het e-mailveld feilloos op via de juiste ACF veldnaam (`klant_email`) / const query = ` / query GetAllVouchersForAuth { / vouchers(first: 100) { / nodes { / databaseId / t..."
-      }
     }
   ],
   "hotFiles": [
@@ -1136,19 +1129,19 @@
       "count": 6
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "count": 3
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 4
     },
     {
       "filePath": "app/download/page.tsx",
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 3
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 2
     },
     {
@@ -1156,17 +1149,18 @@
       "count": 2
     },
     {
-      "filePath": "app/api/auth-voucher",
+      "filePath": "app/api/vouchers/route.ts",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-06 3191c36 fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-06 b8c5675 fix(packages): completely remove global design package fallback so type-specific packages render exclusively",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
+      "M components/configurator/StepThreeVisuals.tsx",
       "M components/configurator/StepTwoDesign.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
@@ -1176,7 +1170,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3191c36 by Bas van Dooremalen on 2026-11-06\n  fix(packages): remove fallback behavior so only packages explicitly configured for the selected housing type and layout are shown\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b8c5675 by Bas van Dooremalen on 2026-11-06\n  fix(packages): completely remove global design package fallback so type-specific packages render exclusively\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
