@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T15:13:14.752Z
+Generated: 2026-11-11T15:33:05.366Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T15:13:12.682Z
+- Last activity: 2026-11-11T15:33:02.102Z
 ## Workspace Focus
-- Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), app/dashboard/page.tsx (5), components/configurator/StepFourConfirmation.tsx (4)
-- Suggested starting points: app/dashboard/page.tsx, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, app/api/verify-voucher/route.ts, components/configurator/StepThreeVisuals.tsx
+- Active file in focus: app/api/verify-voucher/route.ts
+- Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), app/dashboard/page.tsx (5), app/api/verify-voucher/route.ts (4)
+- Suggested starting points: app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth/login/route.ts, app/dashboard/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: app/dashboard/page.tsx
+- Active file: app/api/verify-voucher/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,12 +39,12 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/verify-voucher/route.ts | 220 lines | 7360 chars | hash ce975addae9c
+  Last snapshot: 2026-11-11T15:33:02.102Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - app/dashboard/page.tsx | 397 lines | 19782 chars | hash f472d95f0ee7
   Last snapshot: 2026-11-11T15:13:12.682Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-- app/api/verify-voucher/route.ts | 217 lines | 7296 chars | hash 29f0ec9ff7a4
-  Last snapshot: 2026-11-11T15:00:35.551Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - lib/cms.ts | 316 lines | 9024 chars | hash 96f317a135a3
   Last snapshot: 2026-11-11T13:24:54.106Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-11T15:33:02.102Z | saved | app/api/verify-voucher/route.ts
+- Summary: Line 7: replaced 5 lines with 8 lines.
+- Before: 217 lines | 7,296 chars | hash 29f0ec9ff7a4 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- After: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- Previous fragment: "'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-..."
+- Current fragment: "// Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'no..."
+
 ### 2026-11-11T15:13:12.682Z | saved | app/dashboard/page.tsx
 - Summary: Line 345: removed 1 line.
 - Before: 397 lines | 19,811 chars | hash c6c46a934ccb | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
@@ -161,29 +168,22 @@ Structured manifest: workspace.json
 - Previous fragment: "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod..."
 - Current fragment: "LEIDEND: Haal ALTIJD eerst de echte configuratie op uit de WordPress Voucher tabel op basis van vouchercode / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedI..."
 
-### 2026-11-11T11:55:57.864Z | saved | app/download/page.tsx
-- Summary: Line 59: replaced 289 lines with 272 lines.
-- Before: 422 lines | 20,250 chars | hash 7815a2fe9606 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 405 lines | 19,557 chars | hash f4ac65e82e83 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "1. Haal ALTIJD eerst de gegevens op uit WordPress op basis van de vouchercode (deze zijn leidend!) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling =..."
-- Current fragment: "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
 - app/dashboard/page.tsx (5 tracked changes)
+- app/api/verify-voucher/route.ts (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
-- app/api/verify-voucher/route.ts (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - lib/cms.ts (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 9fab2db feat(dashboard & security): filter out rental vouchers to show only relevant buy-side homes
+- HEAD: 2026-11-11 ea0445e feat(dashboard): filter out rental vouchers to show only relevant buy-side homes for broker
 - Working tree summary: 1 modified
-- M app/dashboard/page.tsx
+- M app/api/verify-voucher/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- ecdfcf8 by Bas van Dooremalen on 2026-11-11
-  fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list
+- ea0445e by Bas van Dooremalen on 2026-11-11
+  feat(dashboard): filter out rental vouchers to show only relevant buy-side homes for broker
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

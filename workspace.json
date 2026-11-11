@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T15:13:14.752Z",
-  "generatedAtEpochMs": 1794409994752,
+  "generatedAt": "2026-11-11T15:33:05.366Z",
+  "generatedAtEpochMs": 1794411185366,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/dashboard/page.tsx",
+    "activeFile": "app/api/verify-voucher/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/dashboard/page.tsx",
+      "app/api/verify-voucher/route.ts",
       "app/download/page.tsx",
       "app/api/auth/login/route.ts",
+      "app/dashboard/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "app/api/verify-voucher/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       "app/api/vouchers/route.ts",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T15:13:12.682Z",
+    "lastActivityAt": "2026-11-11T15:33:02.102Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -587,20 +587,20 @@
   },
   "trackedSnapshots": [
     {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1794411182102,
+      "lineCount": 220,
+      "charCount": 7360,
+      "hash": "ce975addae9c",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+    },
+    {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1794409992682,
       "lineCount": 397,
       "charCount": 19782,
       "hash": "f472d95f0ee7",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-    },
-    {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "updatedAt": 1794409235551,
-      "lineCount": 217,
-      "charCount": 7296,
-      "hash": "29f0ec9ff7a4",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
     },
     {
       "filePath": "lib/cms.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 7: replaced 5 lines with 8 lines.",
+      "recordedAt": "2026-11-11T15:33:02.102Z",
+      "recordedAtEpochMs": 1794411182102,
+      "before": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 7296,
+        "hash": "29f0ec9ff7a4",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794411182102
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 220,
+        "charCount": 7360,
+        "hash": "ce975addae9c",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794411182102
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 5,
+        "addedLines": 8,
+        "summary": "Line 7: replaced 5 lines with 8 lines.",
+        "beforeFragment": "'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-...",
+        "afterFragment": "// Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'no..."
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod...",
         "afterFragment": "LEIDEND: Haal ALTIJD eerst de echte configuratie op uit de WordPress Voucher tabel op basis van vouchercode / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedI..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 59: replaced 289 lines with 272 lines.",
-      "recordedAt": "2026-11-11T11:55:57.864Z",
-      "recordedAtEpochMs": 1794398157864,
-      "before": {
-        "kind": "text",
-        "lineCount": 422,
-        "charCount": 20250,
-        "hash": "7815a2fe9606",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794398157864
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 405,
-        "charCount": 19557,
-        "hash": "f4ac65e82e83",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794398157864
-      },
-      "diff": {
-        "lineStart": 59,
-        "removedLines": 289,
-        "addedLines": 272,
-        "summary": "Line 59: replaced 289 lines with 272 lines.",
-        "beforeFragment": "1. Haal ALTIJD eerst de gegevens op uit WordPress op basis van de vouchercode (deze zijn leidend!) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling =...",
-        "afterFragment": "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod..."
-      }
     }
   ],
   "hotFiles": [
@@ -1147,12 +1147,12 @@
       "count": 5
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 4
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "count": 3
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1170,17 +1170,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 9fab2db feat(dashboard & security): filter out rental vouchers to show only relevant buy-side homes",
+    "headSummary": "2026-11-11 ea0445e feat(dashboard): filter out rental vouchers to show only relevant buy-side homes for broker",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/dashboard/page.tsx"
+      "M app/api/verify-voucher/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ecdfcf8 by Bas van Dooremalen on 2026-11-11\n  fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ea0445e by Bas van Dooremalen on 2026-11-11\n  feat(dashboard): filter out rental vouchers to show only relevant buy-side homes for broker\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
