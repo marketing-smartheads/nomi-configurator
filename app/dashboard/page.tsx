@@ -342,7 +342,7 @@ export default function DashboardPage() {
                         <td colSpan={7} className="py-8 text-center text-[#888]">Geen koopwoningen gevonden.</td>
                       </tr>
                     ) : (
-                      sortedVouchers.main ? null : sortedVouchers.map((v, index) => {
+                      sortedVouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
                         const statusVal = String(details.status || '');
                         const isVerzilverd = 
