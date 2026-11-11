@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:51:10.444Z
+Generated: 2026-11-11T11:02:56.262Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:51:07.877Z
+- Last activity: 2026-11-11T11:02:54.488Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
-- Hottest files right now: lib/cms.ts (13), app/download/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: app/dashboard/page.tsx
+- Hottest files right now: lib/cms.ts (11), app/download/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
+- Suggested starting points: app/dashboard/page.tsx, lib/cms.ts, app/download/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,20 +37,20 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
+- app/dashboard/page.tsx | 382 lines | 18813 chars | hash 7355bba0f367
+  Last snapshot: 2026-11-11T11:02:54.488Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- app/api/auth/login/route.ts | 72 lines | 2206 chars | hash be83984de81f
+  Last snapshot: 2026-11-11T11:02:07.087Z
+  Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
 - app/download/page.tsx | 415 lines | 20274 chars | hash 386c73b4cf72
   Last snapshot: 2026-11-11T10:51:07.877Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- app/dashboard/page.tsx | 382 lines | 18835 chars | hash f5b869b5ccb5
-  Last snapshot: 2026-11-11T10:24:52.809Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
   Last snapshot: 2026-11-11T10:14:40.122Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
-- app/api/auth/login/route.ts | 66 lines | 2182 chars | hash 6e4b2b5d2090
-  Last snapshot: 2026-11-11T09:21:43.523Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
 - app/api/verify-voucher/route.ts | 217 lines | 7325 chars | hash 640b4a1e61dd
   Last snapshot: 2026-11-11T09:04:13.793Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -65,6 +65,20 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T11:02:54.488Z | saved | app/dashboard/page.tsx
+- Summary: Line 195: replaced 22 lines with 22 lines.
+- Before: 382 lines | 18,835 chars | hash f5b869b5ccb5 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 382 lines | 18,813 chars | hash 7355bba0f367 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "Applicatie wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} /..."
+- Current fragment: "wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onSub..."
+
+### 2026-11-11T11:02:07.087Z | saved | app/api/auth/login/route.ts
+- Summary: Line 3: replaced 62 lines with 68 lines.
+- Before: 66 lines | 2,182 chars | hash 6e4b2b5d2090 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
+- After: 72 lines | 2,206 chars | hash be83984de81f | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
+- Previous fragment: "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {..."
+- Current fragment: "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { error: 'Ge..."
+
 ### 2026-11-11T10:51:07.877Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 176 lines with 180 lines.
 - Before: 411 lines | 19,595 chars | hash 385ae959c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -151,36 +165,26 @@ Structured manifest: workspace.json
 - Previous fragment: "// of desgewenst aanpasbaar / interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / o..."
 - Current fragment: "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
 
-### 2026-11-06T15:24:23.613Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: replaced 334 lines with 345 lines.
-- Before: 351 lines | 17,011 chars | hash ad5e8b9d9763 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; / const PARTNER_NAAM = 'Aanhuis Spijk'; /..."
-- After: 362 lines | 17,797 chars | hash 2c1519ef8a98 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button'; /..."
-- Current fragment: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigat..."
-
-### 2026-11-06T11:15:50.269Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 82: replaced 61 lines with 407 lines.
-- Before: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 492 lines | 20,311 chars | hash 230088061fb3 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals;..."
-- Current fragment: "Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; /..."
-
 
 ## Hot Files
-- lib/cms.ts (13 tracked changes)
+- lib/cms.ts (11 tracked changes)
 - app/download/page.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
+- app/api/auth/login/route.ts (3 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
-- app/api/auth/login/route.ts (2 tracked changes)
-- app/api/vouchers/route.ts (2 tracked changes)
+- app/dashboard/page.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 df2ebb1 fix(download): implement strict validation to completely strip JSON object outputs from download page intro
-- Working tree summary: 1 modified
-- M app/download/page.tsx
+- HEAD: 2026-11-11 1d285a6 fix(download): prioritize WP voucher details for correct indeling and enforce strict package asset filtering
+- Working tree summary: 5 modifieds
+- M app/api/auth/login/route.ts
+- M app/dashboard/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- df2ebb1 by Bas van Dooremalen on 2026-11-11
-  fix(download): implement strict validation to completely strip JSON object outputs from download page intro
+- 1d285a6 by Bas van Dooremalen on 2026-11-11
+  fix(download): prioritize WP voucher details for correct indeling and enforce strict package asset filtering
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

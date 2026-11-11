@@ -1,66 +1,72 @@
 import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
-
 export async function POST(request: Request) {
   try {
     const { username, password } = await request.json();
 
     if (!username || !password) {
-      return NextResponse.json({ error: 'Vul zowel gebruikersnaam als wachtwoord in.' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Gebruikersnaam en wachtwoord zijn verplicht.' },
+        { status: 400 }
+      );
     }
 
     const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
-    const wpBaseUrl = wpEndpoint.replace(/\/(graphql|wp-json)\/?$/, '');
+    const wpBaseUrl = wpEndpoint.replace('/graphql', '');
 
-    // Mogelijke varianten van de gebruikersnaam proberen (om spaties/hoofdletters in WP op te vangen)
-    const rawUser = username.trim();
-    const usernamesToTry = [
-      rawUser,                               // "Thomas NC"
-      rawUser.toLowerCase(),                 // "thomas nc"
-      rawUser.toLowerCase().replace(/\s+/g, '-'), // "thomas-nc"
-      rawUser.toLowerCase().replace(/\s+/g, '')   // "thomasnc"
-    ];
-
-    let authSuccess = false;
-    let userData: any = null;
-
-    for (const u of usernamesToTry) {
-      const basicAuth = 'Basic ' + Buffer.from(`${u}:${password.trim()}`).toString('base64');
-      
-      const authRes = await fetch(`${wpBaseUrl}/wp-json/wp/v2/users/me?context=edit`, {
-        method: 'GET',
-        headers: {
-          'Authorization': basicAuth,
-          'Content-Type': 'application/json'
-        },
-        cache: 'no-store'
-      });
-
-      if (authRes.ok) {
-        authSuccess = true;
-        userData = await authRes.json();
-        break;
-      }
-    }
-
-    if (!authSuccess) {
-      return NextResponse.json({ error: 'Ongeldige gebruikersnaam of application password.' }, { status: 401 });
-    }
-
-    const roles: string[] = userData.roles || ['contributor'];
-
-    return NextResponse.json({ 
-      success: true, 
-      user: { 
-        name: userData.name || rawUser, 
-        email: userData.email || '',
-        roles: roles
-      } 
+    // Verifieer het reguliere WordPress wachtwoord via de JWT / REST API
+    const authRes = await fetch(`${wpBaseUrl}/wp-json/jwt-auth/v1/token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
     });
 
+    const authData = await authRes.json();
+
+    if (!authRes.ok || !authData.token) {
+      // Fallback: Als JWT plugin niet actief is, controleer via Basic Auth GraphQL met normale credentials
+      const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64');
+      const testQuery = await fetch(wpEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': basicAuth,
+        },
+        body: JSON.stringify({
+          query: `query { viewer { id name email } }`,
+        }),
+      });
+
+      const testJson = await testQuery.json();
+      if (!testJson?.data?.viewer) {
+        return NextResponse.json(
+          { error: 'Ongeldige gebruikersnaam of wachtwoord.' },
+          { status: 401 }
+        );
+      }
+
+      return NextResponse.json({
+        success: true,
+        user: testJson.data.viewer,
+        authHeader: basicAuth,
+      });
+    }
+
+    return NextResponse.json({
+      success: true,
+      token: authData.token,
+      user: authData.user_display_name,
+    });
   } catch (error) {
-    console.error('Login error:', error);
-    return NextResponse.json({ error: 'Er is een fout opgetreden bij het inloggen.' }, { status: 500 });
+    console.error('Fout bij inloggen:', error);
+    return NextResponse.json(
+      { error: 'Er is een fout opgetreden bij het inloggen.' },
+      { status: 500 }
+    );
   }
 }

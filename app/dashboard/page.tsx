@@ -192,7 +192,7 @@ export default function DashboardPage() {
           <div className="flex items-center justify-center py-24 px-6">
             <div className="bg-white p-8 rounded-2xl w-full max-w-md shadow-lg border border-[#E5E2DD]">
               <h2 className="font-serif text-2xl text-dark mb-2">Dashboard Inloggen</h2>
-              <p className="text-[#666] text-sm mb-6">Log in met je Gebruikersnaam en Applicatie wachtwoord.</p>
+              <p className="text-[#666] text-sm mb-6">Log in met je Gebruikersnaam en wachtwoord.</p>
 
               {loginError && (
                 <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4">
@@ -213,7 +213,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-xs font-bold uppercase text-[#888] mb-2">Applicatie wachtwoord</label>
+                  <label className="block text-xs font-bold uppercase text-[#888] mb-2">Wachtwoord</label>
                   <input 
                     type="password" 
                     value={password} 
