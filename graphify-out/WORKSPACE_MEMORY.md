@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T09:21:45.310Z
+Generated: 2026-11-11T10:14:42.526Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T09:21:43.523Z
+- Last activity: 2026-11-11T10:14:40.122Z
 ## Workspace Focus
-- Active file in focus: app/api/auth/login/route.ts
-- Hottest files right now: lib/cms.ts (17), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/api/auth/login/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: app/api/vouchers/route.ts
+- Hottest files right now: lib/cms.ts (16), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
+- Suggested starting points: app/api/vouchers/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: app/api/auth/login/route.ts
+- Active file: app/api/vouchers/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
+  Last snapshot: 2026-11-11T10:14:40.122Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
 - app/api/auth/login/route.ts | 66 lines | 2182 chars | hash 6e4b2b5d2090
   Last snapshot: 2026-11-11T09:21:43.523Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/LoginScreen.tsx | 280 lines | 9936 chars | hash 7dfb1719bf66
   Last snapshot: 2026-11-06T00:00:55.468Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
-  Last snapshot: 2026-11-05T23:50:54.520Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
 ## Recent Changes
+### 2026-11-11T10:14:40.122Z | saved | app/api/vouchers/route.ts
+- Summary: Line 5: replaced 164 lines with 46 lines.
+- Before: 170 lines | 5,453 chars | hash dfb46144d938 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
+- After: 52 lines | 1,666 chars | hash a0397091837f | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
+- Previous fragment: "// 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser..."
+- Current fragment: "export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / // O..."
+
 ### 2026-11-11T09:21:43.523Z | saved | app/api/auth/login/route.ts
 - Summary: Line 15: replaced 67 lines with 46 lines.
 - Before: 87 lines | 2,640 chars | hash f8f182e6ec97 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
@@ -158,16 +165,9 @@ Structured manifest: workspace.json
 - Previous fragment: "STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam..."
 - Current fragment: "1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?..."
 
-### 2026-11-06T10:58:05.109Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 1: replaced 65 lines with 63 lines.
-- Before: 200 lines | 8,924 chars | hash 62093ff0ea75 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 198 lines | 8,826 chars | hash e227e7a1b445 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
-- Current fragment: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
-
 
 ## Hot Files
-- lib/cms.ts (17 tracked changes)
+- lib/cms.ts (16 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
@@ -178,9 +178,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 64a8433 fix(auth): add REST API and GraphQL fallback to support Contributor role with Application Passwords
+- HEAD: 2026-11-11 64ddca4 fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces
 - Working tree summary: 1 modified
-- M app/api/auth/login/route.ts
+- M app/api/vouchers/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 8529092 by Bas van Dooremalen on 2026-11-11
-  feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api
+- 64ddca4 by Bas van Dooremalen on 2026-11-11
+  fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

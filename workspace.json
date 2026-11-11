@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T09:21:45.310Z",
-  "generatedAtEpochMs": 1794388905310,
+  "generatedAt": "2026-11-11T10:14:42.526Z",
+  "generatedAtEpochMs": 1794392082526,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/auth/login/route.ts",
+    "activeFile": "app/api/vouchers/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/auth/login/route.ts",
+      "app/api/vouchers/route.ts",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/download/page.tsx",
+      "app/api/auth/login/route.ts",
       "components/LoginScreen.tsx",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T09:21:43.523Z",
+    "lastActivityAt": "2026-11-11T10:14:40.122Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/vouchers/route.ts",
+      "updatedAt": 1794392080122,
+      "lineCount": 52,
+      "charCount": 1666,
+      "hash": "a0397091837f",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
+    },
     {
       "filePath": "app/api/auth/login/route.ts",
       "updatedAt": 1794388903523,
@@ -641,17 +649,41 @@
       "charCount": 9936,
       "hash": "7dfb1719bf66",
       "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1793922654520,
-      "lineCount": 318,
-      "charCount": 9223,
-      "hash": "32e06f359223",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 5: replaced 164 lines with 46 lines.",
+      "recordedAt": "2026-11-11T10:14:40.122Z",
+      "recordedAtEpochMs": 1794392080122,
+      "before": {
+        "kind": "text",
+        "lineCount": 170,
+        "charCount": 5453,
+        "hash": "dfb46144d938",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_...",
+        "updatedAt": 1794392080122
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 52,
+        "charCount": 1666,
+        "hash": "a0397091837f",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h...",
+        "updatedAt": 1794392080122
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 164,
+        "addedLines": 46,
+        "summary": "Line 5: replaced 164 lines with 46 lines.",
+        "beforeFragment": "// 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || ''; / const wpUser...",
+        "afterFragment": "export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / // O..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/login/route.ts",
@@ -1085,44 +1117,12 @@
         "beforeFragment": "STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam...",
         "afterFragment": "1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 65 lines with 63 lines.",
-      "recordedAt": "2026-11-06T10:58:05.109Z",
-      "recordedAtEpochMs": 1793962685109,
-      "before": {
-        "kind": "text",
-        "lineCount": 200,
-        "charCount": 8924,
-        "hash": "62093ff0ea75",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1793962685109
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 198,
-        "charCount": 8826,
-        "hash": "e227e7a1b445",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1793962685109
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 65,
-        "addedLines": 63,
-        "summary": "Line 1: replaced 65 lines with 63 lines.",
-        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi...",
-        "afterFragment": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 17
+      "count": 16
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1156,17 +1156,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 64a8433 fix(auth): add REST API and GraphQL fallback to support Contributor role with Application Passwords",
+    "headSummary": "2026-11-11 64ddca4 fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/api/auth/login/route.ts"
+      "M app/api/vouchers/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8529092 by Bas van Dooremalen on 2026-11-11\n  feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 64ddca4 by Bas van Dooremalen on 2026-11-11\n  fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
