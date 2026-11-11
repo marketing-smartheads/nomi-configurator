@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T12:35:44.730Z",
-  "generatedAtEpochMs": 1794400544730,
+  "generatedAt": "2026-11-11T12:47:23.001Z",
+  "generatedAtEpochMs": 1794401243001,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T12:35:42.323Z",
+    "lastActivityAt": "2026-11-11T12:47:20.512Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794400542323,
-      "lineCount": 412,
-      "charCount": 20005,
-      "hash": "7a1a33f7788a",
+      "updatedAt": 1794401240512,
+      "lineCount": 417,
+      "charCount": 20121,
+      "hash": "00549e87a8a1",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 14: replaced 163 lines with 168 lines.",
+      "recordedAt": "2026-11-11T12:47:20.512Z",
+      "recordedAtEpochMs": 1794401240512,
+      "before": {
+        "kind": "text",
+        "lineCount": 412,
+        "charCount": 20005,
+        "hash": "7a1a33f7788a",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794401240511
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 417,
+        "charCount": 20121,
+        "hash": "00549e87a8a1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794401240512
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 163,
+        "addedLines": 168,
+        "summary": "Line 14: replaced 163 lines with 168 lines.",
+        "beforeFragment": "3'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
+        "afterFragment": "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1099,44 +1131,12 @@
         "beforeFragment": "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all...",
         "afterFragment": "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 174: replaced 83 lines with 87 lines.",
-      "recordedAt": "2026-11-11T10:38:50.578Z",
-      "recordedAtEpochMs": 1794393530578,
-      "before": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 19298,
-        "hash": "d6c80bb2a10b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794393530578
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 403,
-        "charCount": 19534,
-        "hash": "6d6c33b404e3",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794393530578
-      },
-      "diff": {
-        "lineStart": 174,
-        "removedLines": 83,
-        "addedLines": 87,
-        "summary": "Line 174: replaced 83 lines with 87 lines.",
-        "beforeFragment": "const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of a...",
-        "afterFragment": "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1170,7 +1170,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 7e4c206 fix(download): force wordpress voucher data to immediately overwrite local storage and render correct package and files",
+    "headSummary": "2026-11-11 7753b68 fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1180,7 +1180,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7e4c206 by Bas van Dooremalen on 2026-11-11\n  fix(download): force wordpress voucher data to immediately overwrite local storage and render correct package and files\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7753b68 by Bas van Dooremalen on 2026-11-11\n  fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

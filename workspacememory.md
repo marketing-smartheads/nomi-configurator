@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T12:35:44.730Z
+Generated: 2026-11-11T12:47:23.001Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T12:35:42.323Z
+- Last activity: 2026-11-11T12:47:20.512Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (11), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
+- Hottest files right now: app/download/page.tsx (12), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
 - Suggested starting points: app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 412 lines | 20005 chars | hash 7a1a33f7788a
-  Last snapshot: 2026-11-11T12:35:42.323Z
+- app/download/page.tsx | 417 lines | 20121 chars | hash 00549e87a8a1
+  Last snapshot: 2026-11-11T12:47:20.512Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T12:47:20.512Z | saved | app/download/page.tsx
+- Summary: Line 14: replaced 163 lines with 168 lines.
+- Before: 412 lines | 20,005 chars | hash 7a1a33f7788a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 417 lines | 20,121 chars | hash 00549e87a8a1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "3'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+- Current fragment: "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+
 ### 2026-11-11T12:35:42.323Z | saved | app/download/page.tsx
 - Summary: Line 39: replaced 146 lines with 138 lines.
 - Before: 420 lines | 20,448 chars | hash 7e834601ad89 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,16 +169,9 @@ Structured manifest: workspace.json
 - Previous fragment: "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
 - Current fragment: "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
 
-### 2026-11-11T10:38:50.578Z | saved | app/download/page.tsx
-- Summary: Line 174: replaced 83 lines with 87 lines.
-- Before: 399 lines | 19,298 chars | hash d6c80bb2a10b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 403 lines | 19,534 chars | hash 6d6c33b404e3 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of a..."
-- Current fragment: "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
-
 
 ## Hot Files
-- app/download/page.tsx (11 tracked changes)
+- app/download/page.tsx (12 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
@@ -182,7 +182,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 7e4c206 fix(download): force wordpress voucher data to immediately overwrite local storage and render correct package and files
+- HEAD: 2026-11-11 7753b68 fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -192,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 7e4c206 by Bas van Dooremalen on 2026-11-11
-  fix(download): force wordpress voucher data to immediately overwrite local storage and render correct package and files
+- 7753b68 by Bas van Dooremalen on 2026-11-11
+  fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
