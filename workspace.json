@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T15:00:38.080Z",
-  "generatedAtEpochMs": 1794409238080,
+  "generatedAt": "2026-11-11T15:10:19.601Z",
+  "generatedAtEpochMs": 1794409819601,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/verify-voucher/route.ts",
+    "activeFile": "app/dashboard/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,13 +22,13 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/verify-voucher/route.ts",
+      "app/dashboard/page.tsx",
       "app/download/page.tsx",
       "app/api/auth/login/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepTwoDesign.tsx",
-      "app/dashboard/page.tsx",
+      "app/api/verify-voucher/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T15:00:35.551Z",
+    "lastActivityAt": "2026-11-11T15:10:16.937Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/dashboard/page.tsx",
+      "updatedAt": 1794409816937,
+      "lineCount": 397,
+      "charCount": 19811,
+      "hash": "c6c46a934ccb",
+      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
+    },
     {
       "filePath": "app/api/verify-voucher/route.ts",
       "updatedAt": 1794409235551,
@@ -619,14 +627,6 @@
       "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1794394974488,
-      "lineCount": 382,
-      "charCount": 18813,
-      "hash": "7355bba0f367",
-      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-    },
-    {
       "filePath": "app/api/vouchers/route.ts",
       "updatedAt": 1794392080122,
       "lineCount": 52,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 324 lines with 339 lines.",
+      "recordedAt": "2026-11-11T15:10:16.937Z",
+      "recordedAtEpochMs": 1794409816937,
+      "before": {
+        "kind": "text",
+        "lineCount": 382,
+        "charCount": 18813,
+        "hash": "7355bba0f367",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
+        "updatedAt": 1794409816937
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 397,
+        "charCount": 19811,
+        "hash": "c6c46a934ccb",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f...",
+        "updatedAt": 1794409816937
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 324,
+        "addedLines": 339,
+        "summary": "Line 7: replaced 324 lines with 339 lines.",
+        "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]...",
+        "afterFragment": "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/verify-voucher/route.ts",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
         "afterFragment": "3'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 166: replaced 28 lines with 36 lines.",
-      "recordedAt": "2026-11-11T11:23:03.729Z",
-      "recordedAtEpochMs": 1794396183729,
-      "before": {
-        "kind": "text",
-        "lineCount": 415,
-        "charCount": 20274,
-        "hash": "386c73b4cf72",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794396183729
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 423,
-        "charCount": 20214,
-        "hash": "d0374c981d6d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794396183729
-      },
-      "diff": {
-        "lineStart": 166,
-        "removedLines": 28,
-        "addedLines": 36,
-        "summary": "Line 166: replaced 28 lines with 36 lines.",
-        "beforeFragment": "// Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit / if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if...",
-        "afterFragment": "if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if (isHotelChic) { / if (titel.includes('modern raw') || titel.includes('pakke..."
-      }
     }
   ],
   "hotFiles": [
@@ -1143,11 +1143,11 @@
       "count": 5
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "filePath": "app/dashboard/page.tsx",
       "count": 4
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 4
     },
     {
@@ -1155,11 +1155,11 @@
       "count": 3
     },
     {
-      "filePath": "app/dashboard/page.tsx",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
@@ -1170,17 +1170,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 83a5b2a refactor(auth): simplify restricted voucher error message for clean user experience",
+    "headSummary": "2026-11-11 ecdfcf8 fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/api/verify-voucher/route.ts"
+      "M app/dashboard/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 83a5b2a by Bas van Dooremalen on 2026-11-11\n  refactor(auth): simplify restricted voucher error message for clean user experience\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ecdfcf8 by Bas van Dooremalen on 2026-11-11\n  fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

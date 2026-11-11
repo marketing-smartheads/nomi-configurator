@@ -4,6 +4,16 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar
+const VERHUUR_VOUCHERS_SET = new Set([
+  'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013',
+  'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-a024',
+  'nomi-a025', 'nomi-a026', 'nomi-a027', 'nomi-a028', 'nomi-a029', 'nomi-a030',
+  'nomi-a031', 'nomi-a032', 'nomi-a033', 'nomi-a034', 'nomi-a035', 'nomi-a036',
+  'nomi-c001', 'nomi-c002', 'nomi-c003',
+  'nomi-d003', 'nomi-d004', 'nomi-d005', 'nomi-d006', 'nomi-d007'
+]);
+
 export default function DashboardPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
@@ -61,7 +71,12 @@ export default function DashboardPage() {
       const data = await res.json();
 
       if (res.ok && data.vouchers) {
-        setVouchers(data.vouchers);
+        // Filter direct de huurwoningen eruit zodat de makelaar enkel de relevante koopwoningen ziet
+        const koopVouchersOnly = data.vouchers.filter((v: any) => {
+          const code = String(v.voucherVelden?.toegangscode || v.title || '').trim().toLowerCase();
+          return !VERHUUR_VOUCHERS_SET.has(code);
+        });
+        setVouchers(koopVouchersOnly);
       } else {
         console.error('Kon vouchers niet laden:', data.error);
       }
@@ -162,7 +177,7 @@ export default function DashboardPage() {
     
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `nomi-cheque-dashboard-${new Date().toISOString().slice(0, 10)}.csv`);
+    link.setAttribute('download', `nomi-koopwoningen-dashboard-${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -239,17 +254,17 @@ export default function DashboardPage() {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase block mb-2">
-                  INTERN • OVERZICHT
+                  INTERN • OVERZICHT (KOOPWONINGEN)
                 </span>
                 <h1 className="text-4xl md:text-5xl font-serif text-dark mb-3">
                   Cheque-dashboard
                 </h1>
                 <p className="text-[#666] text-base">
-                  Live overzicht op basis van alle actieve vouchers in de database.
+                  Live overzicht van alle actieve koopwoningen en hun configuratiestatus.
                 </p>
               </div>
 
-      <button 
+              <button 
                 onClick={() => { sessionStorage.removeItem('nomi_dashboard_auth'); setIsLoggedIn(false); }}
                 className="bg-transparent border border-dark/20 text-dark px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-dark hover:text-white transition cursor-pointer"
               >
@@ -260,7 +275,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <div className="bg-white p-6 rounded-2xl border border-[#E5E2DD] shadow-sm">
                 <div className="font-serif text-4xl text-dark mb-1">{totaalWoningen}</div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#888]">Totaal woningen</div>
+                <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#888]">Totaal koopwoningen</div>
               </div>
 
               <div className="bg-white p-6 rounded-2xl border border-[#E5E2DD] shadow-sm">
@@ -281,7 +296,7 @@ export default function DashboardPage() {
 
             <div className="bg-white rounded-2xl border border-[#E5E2DD] shadow-sm overflow-hidden">
               <div className="p-6 border-b border-[#E5E2DD] flex justify-between items-center">
-                <h3 className="m-0 text-lg font-serif text-dark">Alle woningen</h3>
+                <h3 className="m-0 text-lg font-serif text-dark">Koopwoningen overzicht</h3>
                 <button 
                   onClick={handleExportCsv}
                   className="bg-transparent border-none text-dark text-xs font-bold cursor-pointer uppercase tracking-wider hover:text-[#C5A880] transition"
@@ -324,10 +339,10 @@ export default function DashboardPage() {
                       </tr>
                     ) : sortedVouchers.length === 0 ? (
                       <tr>
-                        <td colSpan={7} className="py-8 text-center text-[#888]">Geen vouchers gevonden in de backend.</td>
+                        <td colSpan={7} className="py-8 text-center text-[#888]">Geen koopwoningen gevonden.</td>
                       </tr>
                     ) : (
-                      sortedVouchers.map((v, index) => {
+                      sortedVouchers.main ? null : sortedVouchers.map((v, index) => {
                         const details = v.voucherVelden || {};
                         const statusVal = String(details.status || '');
                         const isVerzilverd = 

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T15:00:38.080Z
+Generated: 2026-11-11T15:10:19.601Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T15:00:35.551Z
+- Last activity: 2026-11-11T15:10:16.937Z
 ## Workspace Focus
-- Active file in focus: app/api/verify-voucher/route.ts
-- Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx
+- Active file in focus: app/dashboard/page.tsx
+- Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), app/dashboard/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4)
+- Suggested starting points: app/dashboard/page.tsx, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, app/api/verify-voucher/route.ts, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: app/api/verify-voucher/route.ts
+- Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/dashboard/page.tsx | 397 lines | 19811 chars | hash c6c46a934ccb
+  Last snapshot: 2026-11-11T15:10:16.937Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
 - app/api/verify-voucher/route.ts | 217 lines | 7296 chars | hash 29f0ec9ff7a4
   Last snapshot: 2026-11-11T15:00:35.551Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -51,9 +54,6 @@ Structured manifest: workspace.json
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
-- app/dashboard/page.tsx | 382 lines | 18813 chars | hash 7355bba0f367
-  Last snapshot: 2026-11-11T11:02:54.488Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
   Last snapshot: 2026-11-11T10:14:40.122Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-11T15:10:16.937Z | saved | app/dashboard/page.tsx
+- Summary: Line 7: replaced 324 lines with 339 lines.
+- Before: 382 lines | 18,813 chars | hash 7355bba0f367 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- After: 397 lines | 19,811 chars | hash c6c46a934ccb | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
+- Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]..."
+- Current fragment: "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
+
 ### 2026-11-11T15:00:35.551Z | saved | app/api/verify-voucher/route.ts
 - Summary: Line 7: replaced 1 line with 1 line.
 - Before: 217 lines | 7,270 chars | hash ceae6ca859f8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -162,29 +169,22 @@ Structured manifest: workspace.json
 - Previous fragment: "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
 - Current fragment: "3'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
 
-### 2026-11-11T11:23:03.729Z | saved | app/download/page.tsx
-- Summary: Line 166: replaced 28 lines with 36 lines.
-- Before: 415 lines | 20,274 chars | hash 386c73b4cf72 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 423 lines | 20,214 chars | hash d0374c981d6d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "// Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit / if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if..."
-- Current fragment: "if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if (isHotelChic) { / if (titel.includes('modern raw') || titel.includes('pakke..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
+- app/dashboard/page.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
-- components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
-- app/dashboard/page.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - lib/cms.ts (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 83a5b2a refactor(auth): simplify restricted voucher error message for clean user experience
+- HEAD: 2026-11-11 ecdfcf8 fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list
 - Working tree summary: 1 modified
-- M app/api/verify-voucher/route.ts
+- M app/dashboard/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 83a5b2a by Bas van Dooremalen on 2026-11-11
-  refactor(auth): simplify restricted voucher error message for clean user experience
+- ecdfcf8 by Bas van Dooremalen on 2026-11-11
+  fix(auth): add NOMI-A002 and NOMI-A004 to restricted rental vouchers list
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
