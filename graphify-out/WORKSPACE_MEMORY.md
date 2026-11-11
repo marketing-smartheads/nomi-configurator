@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:24:55.318Z
+Generated: 2026-11-11T10:34:02.241Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:24:52.809Z
+- Last activity: 2026-11-11T10:33:59.499Z
 ## Workspace Focus
-- Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: lib/cms.ts (15), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/dashboard/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: app/api/vouchers/route.ts
+- Hottest files right now: lib/cms.ts (14), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
+- Suggested starting points: app/api/vouchers/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: app/dashboard/page.tsx
+- Active file: app/api/vouchers/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -65,6 +65,8 @@ Structured manifest: workspace.json
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-11T10:33:59.499Z | saved | app/api/vouchers/route.ts
+
 ### 2026-11-11T10:24:52.809Z | saved | app/dashboard/page.tsx
 - Summary: Line 7: replaced 350 lines with 344 lines.
 - Before: 388 lines | 19,068 chars | hash 77f48e1eac2d | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashbo..."
@@ -160,27 +162,22 @@ Structured manifest: workspace.json
 - Previous fragment: "Indeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indeling') ||..."
 - Current fragment: "Woning, setOpgeslagenWoning] = useState(woningType || ''); / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undef..."
 
-### 2026-11-06T11:04:05.762Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Saved without a textual diff.
-- Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-
 
 ## Hot Files
-- lib/cms.ts (15 tracked changes)
+- lib/cms.ts (14 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/auth/login/route.ts (2 tracked changes)
-- app/dashboard/page.tsx (2 tracked changes)
+- app/api/vouchers/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 404ec88 fix(dashboard): ensure vouchers endpoint correctly fetches and returns all nodes for dashboard display
+- HEAD: 2026-11-11 d8a2dda feat(dashboard): add customer email column to dashboard table and CSV export
 - Working tree summary: 1 modified
-- M app/dashboard/page.tsx
+- M app/api/vouchers/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +185,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 404ec88 by Bas van Dooremalen on 2026-11-11
-  fix(dashboard): ensure vouchers endpoint correctly fetches and returns all nodes for dashboard display
+- d8a2dda by Bas van Dooremalen on 2026-11-11
+  feat(dashboard): add customer email column to dashboard table and CSV export
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
