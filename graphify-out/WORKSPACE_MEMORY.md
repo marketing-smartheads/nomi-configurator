@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:14:42.526Z
+Generated: 2026-11-11T10:24:55.318Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:14:40.122Z
+- Last activity: 2026-11-11T10:24:52.809Z
 ## Workspace Focus
-- Active file in focus: app/api/vouchers/route.ts
-- Hottest files right now: lib/cms.ts (16), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/api/vouchers/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: app/dashboard/page.tsx
+- Hottest files right now: lib/cms.ts (15), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
+- Suggested starting points: app/dashboard/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: app/api/vouchers/route.ts
+- Active file: app/dashboard/page.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/dashboard/page.tsx | 382 lines | 18835 chars | hash f5b869b5ccb5
+  Last snapshot: 2026-11-11T10:24:52.809Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
 - app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
   Last snapshot: 2026-11-11T10:14:40.122Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
@@ -48,9 +51,6 @@ Structured manifest: workspace.json
 - app/api/verify-voucher/route.ts | 217 lines | 7325 chars | hash 640b4a1e61dd
   Last snapshot: 2026-11-11T09:04:13.793Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- app/dashboard/page.tsx | 388 lines | 19068 chars | hash 77f48e1eac2d
-  Last snapshot: 2026-11-11T09:03:01.039Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashbo..."
 - components/configurator/StepFourConfirmation.tsx | 361 lines | 17897 chars | hash 56051d42a992
   Last snapshot: 2026-11-06T15:36:52.529Z
   Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-11T10:24:52.809Z | saved | app/dashboard/page.tsx
+- Summary: Line 7: replaced 350 lines with 344 lines.
+- Before: 388 lines | 19,068 chars | hash 77f48e1eac2d | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashbo..."
+- After: 382 lines | 18,835 chars | hash f5b869b5ccb5 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
+- Previous fragment: "// 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashboard zijn gefilterd (op wens van Chester) / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005',..."
+- Current fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]..."
+
 ### 2026-11-11T10:14:40.122Z | saved | app/api/vouchers/route.ts
 - Summary: Line 5: replaced 164 lines with 46 lines.
 - Before: 170 lines | 5,453 chars | hash dfb46144d938 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 1. GET: Voor het ophalen van alle vouchers / export async function GET() { / try { / const endpoint = process.env.NEXT_PUBLIC_..."
@@ -158,29 +165,22 @@ Structured manifest: workspace.json
 - Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - After: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
-### 2026-11-06T11:03:21.027Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 46: replaced 19 lines with 23 lines.
-- Before: 198 lines | 8,826 chars | hash e227e7a1b445 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "STRIKTE FILTERING: Alleen rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam..."
-- Current fragment: "1. Zoek uitsluitend rijen die exact matchen met het woningtype en indeling / const matchendeWoningRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?..."
-
 
 ## Hot Files
-- lib/cms.ts (16 tracked changes)
+- lib/cms.ts (15 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
 - app/api/auth/login/route.ts (2 tracked changes)
-- components/LoginScreen.tsx (2 tracked changes)
+- app/dashboard/page.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 64ddca4 fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces
+- HEAD: 2026-11-11 404ec88 fix(dashboard): ensure vouchers endpoint correctly fetches and returns all nodes for dashboard display
 - Working tree summary: 1 modified
-- M app/api/vouchers/route.ts
+- M app/dashboard/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 64ddca4 by Bas van Dooremalen on 2026-11-11
-  fix(auth): add automatic username normalization and slug fallbacks for WordPress login with spaces
+- 404ec88 by Bas van Dooremalen on 2026-11-11
+  fix(dashboard): ensure vouchers endpoint correctly fetches and returns all nodes for dashboard display
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
