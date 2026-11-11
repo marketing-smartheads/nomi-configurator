@@ -56,7 +56,7 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        // WordPress database is ALTIJD leidend bij een vouchercode!
+        // STAP 1: WordPress database is ALTIJD 100% leidend bij een vouchercode!
         let resolvedWoning = '';
         let resolvedPakket = '';
         let resolvedIndeling = '';
@@ -74,7 +74,7 @@ export default function DownloadPage() {
           }
         }
 
-        // Als WordPress waardes teruggeeft, update direct de storage zodat alles weer 100% synchroon loopt
+        // Als WordPress waardes teruggeeft, overschrijf direct de localStorage/sessionStorage zodat deze nooit meer conflicteren
         if (resolvedWoning) {
           localStorage.setItem('selected_woningType', resolvedWoning);
           sessionStorage.setItem('geselecteerdeWoning', resolvedWoning);
@@ -88,7 +88,7 @@ export default function DownloadPage() {
           sessionStorage.setItem('geselecteerdeIndeling', resolvedIndeling);
         }
 
-        // Fallback naar localStorage als WP onverhoopt leeg is
+        // STAP 2: Fallback naar storage als WP onverhoopt leeg is
         resolvedWoning = resolvedWoning || localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
         resolvedPakket = resolvedPakket || localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || 'Hotel Chic';
         resolvedIndeling = resolvedIndeling || localStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || 'Indeling 03';
@@ -165,7 +165,7 @@ export default function DownloadPage() {
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
 
-  // Strikte filtering: Verberg Hotel Chic als Modern Raw is geselecteerd, en vice versa
+  // STRIKTE FILTERING: Toon exact het gekozen pakket (Hotel Chic of Modern Raw)
   const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
     const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
     const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
