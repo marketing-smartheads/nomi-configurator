@@ -56,7 +56,7 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        // 1. Haal ALTIJD eerst de gegevens op uit WordPress op basis van de vouchercode (deze zijn leidend!)
+        // Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend)
         let resolvedWoning = '';
         let resolvedPakket = '';
         let resolvedIndeling = '';
@@ -74,7 +74,7 @@ export default function DownloadPage() {
           }
         }
 
-        // 2. Fallback naar localStorage / sessionStorage als WordPress onverhoopt leeg is
+        // Fallback naar storage
         if (!resolvedWoning) resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
         if (!resolvedPakket) resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Hotel Chic';
         if (!resolvedIndeling) resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || 'Indeling 03';
@@ -105,7 +105,6 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Matchen op basis van WoningType en de exacte Indeling (bijv. Indeling 03)
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -151,7 +150,6 @@ export default function DownloadPage() {
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
 
-  // Strikte filtering op basis van het gekozen designpakket
   const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
     const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
     const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
@@ -181,23 +179,8 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie;
-  if (
-    !rawIntro || 
-    typeof rawIntro !== 'string' || 
-    rawIntro.trim().startsWith('{') || 
-    rawIntro.trim().startsWith('[') ||
-    rawIntro.includes('TYPENAAM') ||
-    rawIntro.includes('INDELINGTITEL') ||
-    rawIntro.includes('METRAGE') ||
-    rawIntro.length > 300
-  ) {
-    rawIntro = 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
-  }
-
-  const formattedIntro = rawIntro
-    .replace('%type%', woningType || '')
-    .replace('%designpakket%', designPakket || '');
+  // GEGARANDEERD SCHONE INTROTEKST (geen CMS objecten / JSON rotzooi meer)
+  const formattedIntro = `Alle designbestanden voor ${woningType} — ${designPakket}. Download losse bestanden of alles in één keer.`;
 
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
@@ -344,7 +327,7 @@ export default function DownloadPage() {
           <div className="relative z-20 text-center max-w-3xl mx-auto pt-6">
             <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVESTIGD • UW PAKKET STAAT KLAAR</span>
             <h1 className="text-4xl md:text-6xl font-serif mt-3 text-dark">{downloadTitel}</h1>
-            <div className="text-[#666] text-base md:text-lg leading-relaxed pt-4 mx-auto" dangerouslySetInnerHTML={{ __html: formattedIntro }} />
+            <p className="text-[#666] text-base md:text-lg leading-relaxed pt-4 mx-auto">{formattedIntro}</p>
           </div>
 
           <div className="relative z-20 max-w-6xl mx-auto w-full flex flex-col sm:flex-row justify-center items-center gap-3 mt-8">

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T11:44:15.630Z",
-  "generatedAtEpochMs": 1794397455630,
+  "generatedAt": "2026-11-11T11:56:00.173Z",
+  "generatedAtEpochMs": 1794398160173,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T11:44:13.062Z",
+    "lastActivityAt": "2026-11-11T11:55:57.864Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794397453062,
-      "lineCount": 422,
-      "charCount": 20250,
-      "hash": "7815a2fe9606",
+      "updatedAt": 1794398157864,
+      "lineCount": 405,
+      "charCount": 19557,
+      "hash": "f4ac65e82e83",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 59: replaced 289 lines with 272 lines.",
+      "recordedAt": "2026-11-11T11:55:57.864Z",
+      "recordedAtEpochMs": 1794398157864,
+      "before": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 20250,
+        "hash": "7815a2fe9606",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794398157864
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 405,
+        "charCount": 19557,
+        "hash": "f4ac65e82e83",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794398157864
+      },
+      "diff": {
+        "lineStart": 59,
+        "removedLines": 289,
+        "addedLines": 272,
+        "summary": "Line 59: replaced 289 lines with 272 lines.",
+        "beforeFragment": "1. Haal ALTIJD eerst de gegevens op uit WordPress op basis van de vouchercode (deze zijn leidend!) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling =...",
+        "afterFragment": "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1078,51 +1110,19 @@
         "beforeFragment": "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json({ error: 'Vul z...",
         "afterFragment": "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 144 lines with 173 lines.",
-      "recordedAt": "2026-11-11T09:04:13.793Z",
-      "recordedAtEpochMs": 1794387853793,
-      "before": {
-        "kind": "text",
-        "lineCount": 188,
-        "charCount": 6103,
-        "hash": "c41fe8ed1e83",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c...",
-        "updatedAt": 1794387853792
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7325,
-        "hash": "640b4a1e61dd",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794387853793
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 144,
-        "addedLines": 173,
-        "summary": "Line 5: replaced 144 lines with 173 lines.",
-        "beforeFragment": "export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / if (!code) { / return NextResponse.json...",
-        "afterFragment": "// 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a00..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 8
-    },
-    {
-      "filePath": "app/api/auth/login/route.ts",
-      "count": 5
+      "count": 7
     },
     {
       "filePath": "app/download/page.tsx",
+      "count": 6
+    },
+    {
+      "filePath": "app/api/auth/login/route.ts",
       "count": 5
     },
     {
@@ -1149,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 ef5f518 fix(download): fix raw json object rendering on download page intro text",
+    "headSummary": "2026-11-11 5fccd0c fix(download): prioritize wordpress voucher database values for indeling and designpakket over local storage",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1159,7 +1159,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ef5f518 by Bas van Dooremalen on 2026-11-11\n  fix(download): fix raw json object rendering on download page intro text\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5fccd0c by Bas van Dooremalen on 2026-11-11\n  fix(download): prioritize wordpress voucher database values for indeling and designpakket over local storage\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

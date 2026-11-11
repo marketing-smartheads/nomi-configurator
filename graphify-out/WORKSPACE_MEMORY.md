@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T11:44:15.630Z
+Generated: 2026-11-11T11:56:00.173Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T11:44:13.062Z
+- Last activity: 2026-11-11T11:55:57.864Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: lib/cms.ts (8), app/api/auth/login/route.ts (5), app/download/page.tsx (5), components/configurator/StepFourConfirmation.tsx (4)
+- Hottest files right now: lib/cms.ts (7), app/download/page.tsx (6), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4)
 - Suggested starting points: app/download/page.tsx, lib/cms.ts, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 422 lines | 20250 chars | hash 7815a2fe9606
-  Last snapshot: 2026-11-11T11:44:13.062Z
+- app/download/page.tsx | 405 lines | 19557 chars | hash f4ac65e82e83
+  Last snapshot: 2026-11-11T11:55:57.864Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T11:55:57.864Z | saved | app/download/page.tsx
+- Summary: Line 59: replaced 289 lines with 272 lines.
+- Before: 422 lines | 20,250 chars | hash 7815a2fe9606 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 405 lines | 19,557 chars | hash f4ac65e82e83 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "1. Haal ALTIJD eerst de gegevens op uit WordPress op basis van de vouchercode (deze zijn leidend!) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling =..."
+- Current fragment: "Haal altijd eerst de echte WordPress gegevens op via de vouchercode (leidend) / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCod..."
+
 ### 2026-11-11T11:44:13.062Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 171 lines with 170 lines.
 - Before: 423 lines | 20,214 chars | hash d0374c981d6d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -158,18 +165,11 @@ Structured manifest: workspace.json
 - Previous fragment: "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json({ error: 'Vul z..."
 - Current fragment: "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {..."
 
-### 2026-11-11T09:04:13.793Z | saved | app/api/verify-voucher/route.ts
-- Summary: Line 5: replaced 144 lines with 173 lines.
-- Before: 188 lines | 6,103 chars | hash c41fe8ed1e83 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
-- After: 217 lines | 7,325 chars | hash 640b4a1e61dd | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- Previous fragment: "export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / if (!code) { / return NextResponse.json..."
-- Current fragment: "// 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a00..."
-
 
 ## Hot Files
-- lib/cms.ts (8 tracked changes)
+- lib/cms.ts (7 tracked changes)
+- app/download/page.tsx (6 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
-- app/download/page.tsx (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
@@ -178,7 +178,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 ef5f518 fix(download): fix raw json object rendering on download page intro text
+- HEAD: 2026-11-11 5fccd0c fix(download): prioritize wordpress voucher database values for indeling and designpakket over local storage
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- ef5f518 by Bas van Dooremalen on 2026-11-11
-  fix(download): fix raw json object rendering on download page intro text
+- 5fccd0c by Bas van Dooremalen on 2026-11-11
+  fix(download): prioritize wordpress voucher database values for indeling and designpakket over local storage
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
