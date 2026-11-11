@@ -2,12 +2,35 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
+// 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn
+const VERHUUR_VOUCHERS = new Set([
+  'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013',
+  'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-a024',
+  'nomi-a025', 'nomi-a026', 'nomi-a027', 'nomi-a028', 'nomi-a029', 'nomi-a030',
+  'nomi-a031', 'nomi-a032', 'nomi-a033', 'nomi-a034', 'nomi-a035', 'nomi-a036',
+  'nomi-c001', 'nomi-c002', 'nomi-c003',
+  'nomi-d003', 'nomi-d004', 'nomi-d005', 'nomi-d006', 'nomi-d007'
+]);
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
 
   if (!code) {
     return NextResponse.json({ error: 'Geen code opgegeven' }, { status: 400 });
+  }
+
+  const cleanCode = code.trim().toLowerCase();
+
+  // Controleer of de vouchercode bij een verhuurwoning hoort
+  if (VERHUUR_VOUCHERS.has(cleanCode)) {
+    return NextResponse.json({
+      success: true,
+      isVerhuur: true,
+      isBevestigd: true,
+      status: 'verhuurd',
+      message: 'Deze woning is bestemd voor de verhuur (Jongerius). De opties en indelingen voor deze woning zijn reeds vastgelegd.'
+    });
   }
 
   try {
@@ -44,7 +67,6 @@ export async function GET(request: Request) {
 
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
-    const cleanCode = code.trim().toLowerCase();
 
     const voucher = vouchers.find((v: any) => {
       const cField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
@@ -82,6 +104,18 @@ export async function POST(request: Request) {
       );
     }
 
+    const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
+    const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
+
+    // 🛑 Directe afscherming voor verhuurwoningen bij inlogpoging
+    if (VERHUUR_VOUCHERS.has(ingevoerdeCodeClean)) {
+      return NextResponse.json({
+        success: false,
+        isVerhuur: true,
+        error: 'Dit bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd.'
+      }, { status: 403 });
+    }
+
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpUser = process.env.WORDPRESS_AUTH_USER;
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
@@ -117,9 +151,6 @@ export async function POST(request: Request) {
     const json = await res.json();
     const vouchers = json?.data?.vouchers?.nodes || [];
 
-    const ingevoerdeCodeClean = toegangscode.trim().toLowerCase();
-    const ingevoerdeEmailClean = klantEmail.trim().toLowerCase();
-
     const voucher = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
@@ -136,7 +167,6 @@ export async function POST(request: Request) {
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = (velden.klantEMail || '').trim().toLowerCase();
 
-    // 🛑 STRENGE E-MAILVALIDATIE:
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== ingevoerdeEmailClean) {
         return NextResponse.json(
@@ -145,7 +175,6 @@ export async function POST(request: Request) {
         );
       }
     } else {
-      // Eerste keer inloggen: Sla het e-mailadres direct op in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email, status: "bevestigd" } }) {
