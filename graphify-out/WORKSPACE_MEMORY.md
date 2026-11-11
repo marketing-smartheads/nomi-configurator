@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:38:52.437Z
+Generated: 2026-11-11T10:45:01.807Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:38:50.578Z
+- Last activity: 2026-11-11T10:44:59.008Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: lib/cms.ts (14), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
+- Hottest files right now: lib/cms.ts (13), app/download/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
 - Suggested starting points: app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
 - Active file: app/download/page.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 403 lines | 19534 chars | hash 6d6c33b404e3
-  Last snapshot: 2026-11-11T10:38:50.578Z
+- app/download/page.tsx | 411 lines | 19595 chars | hash 385ae959c3a9
+  Last snapshot: 2026-11-11T10:44:59.008Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/dashboard/page.tsx | 382 lines | 18835 chars | hash f5b869b5ccb5
   Last snapshot: 2026-11-11T10:24:52.809Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T10:44:59.008Z | saved | app/download/page.tsx
+- Summary: Line 174: replaced 8 lines with 16 lines.
+- Before: 403 lines | 19,534 chars | hash 6d6c33b404e3 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 411 lines | 19,595 chars | hash 385ae959c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
+- Current fragment: "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
+
 ### 2026-11-11T10:38:50.578Z | saved | app/download/page.tsx
 - Summary: Line 174: replaced 83 lines with 87 lines.
 - Before: 399 lines | 19,298 chars | hash d6c80bb2a10b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -156,26 +163,20 @@ Structured manifest: workspace.json
 - Before: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
-### 2026-11-06T11:10:33.193Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 1: inserted 146 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
-
 
 ## Hot Files
-- lib/cms.ts (14 tracked changes)
+- lib/cms.ts (13 tracked changes)
+- app/download/page.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
-- app/download/page.tsx (3 tracked changes)
 - app/api/auth/login/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 4976aa7 fix(dashboard): enforce strict case-insensitive filtering of rental vouchers in API response
+- HEAD: 2026-11-11 4d93ca3 fix(download): clean up download intro and restore proper rendering of file lists
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -185,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- d8a2dda by Bas van Dooremalen on 2026-11-11
-  feat(dashboard): add customer email column to dashboard table and CSV export
+- 4d93ca3 by Bas van Dooremalen on 2026-11-11
+  fix(download): clean up download intro and restore proper rendering of file lists
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

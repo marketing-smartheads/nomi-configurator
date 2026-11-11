@@ -171,14 +171,22 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
-  if (typeof rawIntro === 'string' && (rawIntro.trim().startsWith('{') || rawIntro.trim().startsWith('['))) {
+  // Strikte controle: negeer alles wat op JSON of ongewenste data lijkt
+  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || '';
+  if (
+    !rawIntro || 
+    typeof rawIntro !== 'string' || 
+    rawIntro.trim().startsWith('{') || 
+    rawIntro.trim().startsWith('[') ||
+    rawIntro.includes('TYPENAAM') ||
+    rawIntro.includes('INDELINGTITEL')
+  ) {
     rawIntro = 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
   }
 
-  const formattedIntro = typeof rawIntro === 'string' ? rawIntro
+  const formattedIntro = rawIntro
     .replace('%type%', woningType || '')
-    .replace('%designpakket%', designPakket || '') : '';
+    .replace('%designpakket%', designPakket || '');
 
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;

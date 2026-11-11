@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T10:38:52.437Z",
-  "generatedAtEpochMs": 1794393532437,
+  "generatedAt": "2026-11-11T10:45:01.807Z",
+  "generatedAtEpochMs": 1794393901807,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T10:38:50.578Z",
+    "lastActivityAt": "2026-11-11T10:44:59.008Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794393530578,
-      "lineCount": 403,
-      "charCount": 19534,
-      "hash": "6d6c33b404e3",
+      "updatedAt": 1794393899008,
+      "lineCount": 411,
+      "charCount": 19595,
+      "hash": "385ae959c3a9",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 174: replaced 8 lines with 16 lines.",
+      "recordedAt": "2026-11-11T10:44:59.008Z",
+      "recordedAtEpochMs": 1794393899008,
+      "before": {
+        "kind": "text",
+        "lineCount": 403,
+        "charCount": 19534,
+        "hash": "6d6c33b404e3",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794393899008
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 411,
+        "charCount": 19595,
+        "hash": "385ae959c3a9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794393899008
+      },
+      "diff": {
+        "lineStart": 174,
+        "removedLines": 8,
+        "addedLines": 16,
+        "summary": "Line 174: replaced 8 lines with 16 lines.",
+        "beforeFragment": "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all...",
+        "afterFragment": "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1071,44 +1103,16 @@
         "updatedAt": 1793963438163
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 146 lines.",
-      "recordedAt": "2026-11-06T11:10:33.193Z",
-      "recordedAtEpochMs": 1793963433193,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1793963433193
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 146,
-        "charCount": 6722,
-        "hash": "bceddf87e6e2",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1793963433193
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 146,
-        "summary": "Line 1: inserted 146 lines.",
-        "beforeFragment": "",
-        "afterFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 14
+      "count": 13
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1127,10 +1131,6 @@
       "count": 3
     },
     {
-      "filePath": "app/download/page.tsx",
-      "count": 3
-    },
-    {
       "filePath": "app/api/auth/login/route.ts",
       "count": 2
     },
@@ -1142,7 +1142,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 4976aa7 fix(dashboard): enforce strict case-insensitive filtering of rental vouchers in API response",
+    "headSummary": "2026-11-11 4d93ca3 fix(download): clean up download intro and restore proper rendering of file lists",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1152,7 +1152,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- d8a2dda by Bas van Dooremalen on 2026-11-11\n  feat(dashboard): add customer email column to dashboard table and CSV export\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4d93ca3 by Bas van Dooremalen on 2026-11-11\n  fix(download): clean up download intro and restore proper rendering of file lists\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
