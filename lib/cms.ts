@@ -181,8 +181,7 @@ export async function getVoucherData(voucherCode: string) {
             gekozenTypeWoning
             gekozenDesignpakket
             gekozenIndeling
-            indeling
-            status
+            klantEMail
           }
         }
       }
@@ -205,17 +204,20 @@ export async function getVoucherData(voucherCode: string) {
     const match = vouchers.find((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toUpperCase();
       const postTitle = (v?.title || '').trim().toUpperCase();
-      return codeField === cleanCode || postTitle === cleanCode;
+      const postSlug = (v?.slug || '').trim().toUpperCase();
+      return codeField === cleanCode || postTitle === cleanCode || postSlug === cleanCode;
     });
 
     if (!match) {
       return null;
     }
 
+    const velden = match.voucherVelden || {};
+
     return {
-      gekozenTypeWoning: match.voucherVelden?.gekozenTypeWoning || 'Type A',
-      gekozenDesignpakket: match.voucherVelden?.gekozenDesignpakket || 'Modern Raw',
-      gekozenIndeling: match.voucherVelden?.gekozenIndeling || match.voucherVelden?.indeling || 'Indeling 01',
+      gekozenTypeWoning: velden.gekozenTypeWoning || 'Type A',
+      gekozenDesignpakket: velden.gekozenDesignpakket || 'Modern Raw',
+      gekozenIndeling: velden.gekozenIndeling || 'Indeling 02',
     };
   } catch (error) {
     console.error('Fout bij ophalen vouchers via GraphQL:', error);
@@ -238,7 +240,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
           slug
           voucherVelden {
             toegangscode
-            status
             klantEMail
           }
         }
@@ -276,7 +277,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     }
 
     const velden = voucher.voucherVelden || {};
-    const status = String(velden.status || '').trim().toLowerCase();
     const opgeslagenEmail = String(velden.klantEMail || '').trim().toLowerCase();
 
     // DYNAMISCHE BEVEILIGINGSCHECK:
@@ -291,7 +291,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
       // Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
-          updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email, status: "bevestigd" } }) {
+          updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email } }) {
             voucher { databaseId }
           }
         }
@@ -308,9 +308,7 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
       }).catch(err => console.warn('Kon e-mailadres niet automatisch updaten in WP:', err));
     }
 
-    const isBevestigd = status === 'bevestigd' || status.includes('bevestigd') || Boolean(opgeslagenEmail && opgeslagenEmail !== '-');
-
-    return { success: true, isBevestigd };
+    return { success: true, isBevestigd: true };
   } catch (err) {
     console.error('GraphQL verificatie fout:', err);
     return { success: false, error: 'Er is een technische fout opgetreden bij de verificatie.' };

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T13:12:36.623Z
+Generated: 2026-11-11T13:24:56.849Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T13:12:34.040Z
+- Last activity: 2026-11-11T13:24:54.106Z
 ## Workspace Focus
-- Active file in focus: app/download/page.tsx
+- Active file in focus: lib/cms.ts
 - Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx
+- Suggested starting points: lib/cms.ts, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
-- Active file: app/download/page.tsx
+- Active file: lib/cms.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,14 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- lib/cms.ts | 316 lines | 9024 chars | hash 96f317a135a3
+  Last snapshot: 2026-11-11T13:24:54.106Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/download/page.tsx | 418 lines | 20106 chars | hash 172d883371d9
   Last snapshot: 2026-11-11T13:12:34.040Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
-  Last snapshot: 2026-11-11T12:57:11.153Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-11T13:24:54.106Z | saved | lib/cms.ts
+- Summary: Line 184: replaced 130 lines with 128 lines.
+- Before: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 316 lines | 9,024 chars | hash 96f317a135a3 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "indeling / status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST..."
+- Current fragment: "klantEMail / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / he..."
+
 ### 2026-11-11T13:12:34.040Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 181 lines with 182 lines.
 - Before: 417 lines | 20,121 chars | hash 00549e87a8a1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -162,13 +169,6 @@ Structured manifest: workspace.json
 - Previous fragment: "Gebruikersnaam en wachtwoord zijn verplicht.' }, / { status: 400 } / ); / } / const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur..."
 - Current fragment: "Vul zowel je gebruikersnaam als wachtwoord in.' }, / { status: 400 } / ); / } / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur..."
 
-### 2026-11-11T11:02:54.488Z | saved | app/dashboard/page.tsx
-- Summary: Line 195: replaced 22 lines with 22 lines.
-- Before: 382 lines | 18,835 chars | hash f5b869b5ccb5 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 382 lines | 18,813 chars | hash 7355bba0f367 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- Previous fragment: "Applicatie wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} /..."
-- Current fragment: "wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onSub..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
@@ -177,17 +177,14 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/dashboard/page.tsx (3 tracked changes)
-- app/api/verify-voucher/route.ts (2 tracked changes)
+- lib/cms.ts (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 3e1f4ac fix(download): force storage and state keys to sync with active voucher data from wordpress on load
-- Working tree summary: 4 modifieds
-- M app/download/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-11 cdf48d9 fix(download): update default state and implement flexible indeling matching for wordpress vouchers
+- Working tree summary: 1 modified
+- M lib/cms.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -195,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 3e1f4ac by Bas van Dooremalen on 2026-11-11
-  fix(download): force storage and state keys to sync with active voucher data from wordpress on load
+- cdf48d9 by Bas van Dooremalen on 2026-11-11
+  fix(download): update default state and implement flexible indeling matching for wordpress vouchers
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
