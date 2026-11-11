@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   try {
     const { username, password } = await request.json();
@@ -8,45 +10,75 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Vul zowel gebruikersnaam als wachtwoord in.' }, { status: 400 });
     }
 
-    const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
-    if (!wpEndpoint) {
-      return NextResponse.json({ error: 'WordPress endpoint niet geconfigureerd.' }, { status: 500 });
-    }
-
+    const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpBaseUrl = wpEndpoint.replace(/\/(graphql|wp-json)\/?$/, '');
-    
-    // Authenticeer bij WordPress via de REST API met Application Passwords
+    const basicAuth = 'Basic ' + Buffer.from(`${username.trim()}:${password.trim()}`).toString('base64');
+
+    // 1. Probeer authenticatie via WordPress REST API met Application Passwords
     const authRes = await fetch(`${wpBaseUrl}/wp-json/wp/v2/users/me?context=edit`, {
       method: 'GET',
       headers: {
-        'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')
-      }
+        'Authorization': basicAuth,
+        'Content-Type': 'application/json'
+      },
+      cache: 'no-store'
     });
 
-    if (!authRes.ok) {
-      return NextResponse.json({ error: 'Ongeldige gebruikersnaam of application password.' }, { status: 401 });
-    }
+    if (authRes.ok) {
+      const userData = await authRes.json();
+      const roles: string[] = userData.roles || ['contributor'];
 
-    const userData = await authRes.json();
-    const roles: string[] = userData.roles || [];
-
-    // Toegestane rollen voor het dashboard (Administrator en Contributor, of pas dit naar wens aan)
-    const isAllowed = roles.includes('administrator') || roles.includes('contributor') || roles.includes('subscriber');
-
-    if (!isAllowed) {
       return NextResponse.json({ 
-        error: 'Dit account heeft geen rechten om het dashboard te bekijken.' 
-      }, { status: 403 });
+        success: true, 
+        user: { 
+          name: userData.name || username, 
+          email: userData.email || '',
+          roles: roles
+        } 
+      });
     }
 
-    return NextResponse.json({ 
-      success: true, 
-      user: { 
-        name: userData.name, 
-        email: userData.email,
-        roles: roles
-      } 
+    // 2. Fallback: Als REST API faalt, verifieer via WordPress GraphQL viewer query
+    const graphqlQuery = `
+      query TestAuthViewer {
+        viewer {
+          username
+          email
+          roles {
+            nodes {
+              name
+            }
+          }
+        }
+      }
+    `;
+
+    const gqlRes = await fetch(wpEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': basicAuth,
+      },
+      body: JSON.stringify({ query: graphqlQuery }),
+      cache: 'no-store',
     });
+
+    const gqlJson = await gqlRes.json();
+
+    if (gqlRes.ok && gqlJson?.data?.viewer) {
+      const viewer = gqlJson.data.viewer;
+      return NextResponse.json({ 
+        success: true, 
+        user: { 
+          name: viewer.username || username, 
+          email: viewer.email || '',
+          roles: ['contributor']
+        } 
+      });
+    }
+
+    // Als beide falen is de inlog onjuist
+    return NextResponse.json({ error: 'Ongeldige gebruikersnaam of application password.' }, { status: 401 });
 
   } catch (error) {
     console.error('Login error:', error);

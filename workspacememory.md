@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T09:04:15.576Z
+Generated: 2026-11-11T09:17:48.168Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T09:04:13.793Z
+- Last activity: 2026-11-11T09:17:45.741Z
 ## Workspace Focus
-- Active file in focus: app/api/verify-voucher/route.ts
+- Active file in focus: app/api/auth/login/route.ts
 - Hottest files right now: lib/cms.ts (18), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/api/verify-voucher/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/download/page.tsx
+- Suggested starting points: app/api/auth/login/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: app/api/verify-voucher/route.ts
+- Active file: app/api/auth/login/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/auth/login/route.ts | 87 lines | 2640 chars | hash f8f182e6ec97
+  Last snapshot: 2026-11-11T09:17:45.741Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
 - app/api/verify-voucher/route.ts | 217 lines | 7325 chars | hash 640b4a1e61dd
   Last snapshot: 2026-11-11T09:04:13.793Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
   Last snapshot: 2026-11-05T23:50:54.520Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- app/download/page.tsx | 399 lines | 19298 chars | hash d6c80bb2a10b
-  Last snapshot: 2026-11-05T23:03:35.990Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-11T09:17:45.741Z | saved | app/api/auth/login/route.ts
+- Summary: Line 3: replaced 47 lines with 79 lines.
+- Before: 55 lines | 1,971 chars | hash 212f4454a10b | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json({..."
+- After: 87 lines | 2,640 chars | hash f8f182e6ec97 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
+- Previous fragment: "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json({ error: 'Vul z..."
+- Current fragment: "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {..."
+
 ### 2026-11-11T09:04:13.793Z | saved | app/api/verify-voucher/route.ts
 - Summary: Line 5: replaced 144 lines with 173 lines.
 - Before: 188 lines | 6,103 chars | hash c41fe8ed1e83 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('c..."
@@ -158,13 +165,6 @@ Structured manifest: workspace.json
 - Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
 - Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
 
-### 2026-11-06T00:00:55.468Z | saved | components/LoginScreen.tsx
-- Summary: Line 9: replaced 73 lines with 81 lines.
-- Before: 272 lines | 9,764 chars | hash 7c0b97494bc5 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- After: 280 lines | 9,936 chars | hash 7dfb1719bf66 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- Previous fragment: "import { verifyAndAuthVoucher } from '../lib/cms'; / interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKl..."
-- Current fragment: "interface LoginScreenProps { / toegangscode: string; / setToegangscode: (val: string) => void; / klantEmail: string; / setKlantEmail: (val: string) => void; / error: string | nu..."
-
 
 ## Hot Files
 - lib/cms.ts (18 tracked changes)
@@ -173,18 +173,14 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
-- components/LoginScreen.tsx (3 tracked changes)
-- app/dashboard/page.tsx (1 tracked changes)
+- components/LoginScreen.tsx (2 tracked changes)
+- app/api/auth/login/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-06 e84d8cd style(modal): left-align partner contact info and match font size cleanly to text-sm
-- Working tree summary: 5 modifieds
-- M app/api/verify-voucher/route.ts
-- M app/dashboard/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-11 8529092 feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api
+- Working tree summary: 1 modified
+- M app/api/auth/login/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e84d8cd by Bas van Dooremalen on 2026-11-06
-  style(modal): left-align partner contact info and match font size cleanly to text-sm
+- 8529092 by Bas van Dooremalen on 2026-11-11
+  feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
