@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T11:23:06.323Z",
-  "generatedAtEpochMs": 1794396186323,
+  "generatedAt": "2026-11-11T11:44:15.630Z",
+  "generatedAtEpochMs": 1794397455630,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T11:23:03.729Z",
+    "lastActivityAt": "2026-11-11T11:44:13.062Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794396183729,
-      "lineCount": 423,
-      "charCount": 20214,
-      "hash": "d0374c981d6d",
+      "updatedAt": 1794397453062,
+      "lineCount": 422,
+      "charCount": 20250,
+      "hash": "7815a2fe9606",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 14: replaced 171 lines with 170 lines.",
+      "recordedAt": "2026-11-11T11:44:13.062Z",
+      "recordedAtEpochMs": 1794397453062,
+      "before": {
+        "kind": "text",
+        "lineCount": 423,
+        "charCount": 20214,
+        "hash": "d0374c981d6d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794397453062
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 422,
+        "charCount": 20250,
+        "hash": "7815a2fe9606",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794397453062
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 171,
+        "addedLines": 170,
+        "summary": "Line 14: replaced 171 lines with 170 lines.",
+        "beforeFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
+        "afterFragment": "3'); / const [designPakket, setDesignPakket] = useState<string>('Hotel Chic'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1078,44 +1110,12 @@
         "beforeFragment": "export async function GET(request: Request) { / const { searchParams } = new URL(request.url); / const code = searchParams.get('code'); / if (!code) { / return NextResponse.json...",
         "afterFragment": "// 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a00..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 313 lines with 329 lines.",
-      "recordedAt": "2026-11-11T09:03:01.039Z",
-      "recordedAtEpochMs": 1794387781039,
-      "before": {
-        "kind": "text",
-        "lineCount": 372,
-        "charCount": 18002,
-        "hash": "402480d5c584",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1794387781039
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 388,
-        "charCount": 19068,
-        "hash": "77f48e1eac2d",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashbo...",
-        "updatedAt": 1794387781039
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 313,
-        "addedLines": 329,
-        "summary": "Line 7: replaced 313 lines with 329 lines.",
-        "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]...",
-        "afterFragment": "// 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashboard zijn gefilterd (op wens van Chester) / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005',..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 9
+      "count": 8
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1123,7 +1123,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 4
+      "count": 5
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1149,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 cd406df fix(auth): authenticate standard wordpress credentials via wp-login.php session check",
+    "headSummary": "2026-11-11 ef5f518 fix(download): fix raw json object rendering on download page intro text",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1159,7 +1159,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cd406df by Bas van Dooremalen on 2026-11-11\n  fix(auth): authenticate standard wordpress credentials via wp-login.php session check\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ef5f518 by Bas van Dooremalen on 2026-11-11\n  fix(download): fix raw json object rendering on download page intro text\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
