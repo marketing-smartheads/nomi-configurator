@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T09:17:48.168Z",
-  "generatedAtEpochMs": 1794388668168,
+  "generatedAt": "2026-11-11T09:21:45.310Z",
+  "generatedAtEpochMs": 1794388905310,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T09:17:45.741Z",
+    "lastActivityAt": "2026-11-11T09:21:43.523Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/api/auth/login/route.ts",
-      "updatedAt": 1794388665741,
-      "lineCount": 87,
-      "charCount": 2640,
-      "hash": "f8f182e6ec97",
+      "updatedAt": 1794388903523,
+      "lineCount": 66,
+      "charCount": 2182,
+      "hash": "6e4b2b5d2090",
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/auth/login/route.ts",
+      "toPath": "",
+      "summary": "Line 15: replaced 67 lines with 46 lines.",
+      "recordedAt": "2026-11-11T09:21:43.523Z",
+      "recordedAtEpochMs": 1794388903523,
+      "before": {
+        "kind": "text",
+        "lineCount": 87,
+        "charCount": 2640,
+        "hash": "f8f182e6ec97",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||...",
+        "updatedAt": 1794388903523
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 66,
+        "charCount": 2182,
+        "hash": "6e4b2b5d2090",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||...",
+        "updatedAt": 1794388903523
+      },
+      "diff": {
+        "lineStart": 15,
+        "removedLines": 67,
+        "addedLines": 46,
+        "summary": "Line 15: replaced 67 lines with 46 lines.",
+        "beforeFragment": "const basicAuth = 'Basic ' + Buffer.from(`${username.trim()}:${password.trim()}`).toString('base64'); / // 1. Probeer authenticatie via WordPress REST API met Application Passwo...",
+        "afterFragment": "// Mogelijke varianten van de gebruikersnaam proberen (om spaties/hoofdletters in WP op te vangen) / const rawUser = username.trim(); / const usernamesToTry = [ / rawUser,..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/login/route.ts",
@@ -1085,44 +1117,12 @@
         "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi...",
         "afterFragment": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 175 lines with 183 lines.",
-      "recordedAt": "2026-11-06T08:23:10.084Z",
-      "recordedAtEpochMs": 1793953390084,
-      "before": {
-        "kind": "text",
-        "lineCount": 509,
-        "charCount": 21194,
-        "hash": "55a56b73a3e1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1793953390083
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 517,
-        "charCount": 21684,
-        "hash": "0c1bb76eb05c",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1793953390084
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 175,
-        "addedLines": 183,
-        "summary": "Line 1: replaced 175 lines with 183 lines.",
-        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de...",
-        "afterFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 18
+      "count": 17
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1145,18 +1145,18 @@
       "count": 3
     },
     {
-      "filePath": "components/LoginScreen.tsx",
+      "filePath": "app/api/auth/login/route.ts",
       "count": 2
     },
     {
-      "filePath": "app/api/auth/login/route.ts",
-      "count": 1
+      "filePath": "components/LoginScreen.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 8529092 feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api",
+    "headSummary": "2026-11-11 64a8433 fix(auth): add REST API and GraphQL fallback to support Contributor role with Application Passwords",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

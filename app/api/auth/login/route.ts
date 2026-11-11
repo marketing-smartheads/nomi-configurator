@@ -12,73 +12,52 @@ export async function POST(request: Request) {
 
     const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpBaseUrl = wpEndpoint.replace(/\/(graphql|wp-json)\/?$/, '');
-    const basicAuth = 'Basic ' + Buffer.from(`${username.trim()}:${password.trim()}`).toString('base64');
 
-    // 1. Probeer authenticatie via WordPress REST API met Application Passwords
-    const authRes = await fetch(`${wpBaseUrl}/wp-json/wp/v2/users/me?context=edit`, {
-      method: 'GET',
-      headers: {
-        'Authorization': basicAuth,
-        'Content-Type': 'application/json'
-      },
-      cache: 'no-store'
-    });
+    // Mogelijke varianten van de gebruikersnaam proberen (om spaties/hoofdletters in WP op te vangen)
+    const rawUser = username.trim();
+    const usernamesToTry = [
+      rawUser,                               // "Thomas NC"
+      rawUser.toLowerCase(),                 // "thomas nc"
+      rawUser.toLowerCase().replace(/\s+/g, '-'), // "thomas-nc"
+      rawUser.toLowerCase().replace(/\s+/g, '')   // "thomasnc"
+    ];
 
-    if (authRes.ok) {
-      const userData = await authRes.json();
-      const roles: string[] = userData.roles || ['contributor'];
+    let authSuccess = false;
+    let userData: any = null;
 
-      return NextResponse.json({ 
-        success: true, 
-        user: { 
-          name: userData.name || username, 
-          email: userData.email || '',
-          roles: roles
-        } 
+    for (const u of usernamesToTry) {
+      const basicAuth = 'Basic ' + Buffer.from(`${u}:${password.trim()}`).toString('base64');
+      
+      const authRes = await fetch(`${wpBaseUrl}/wp-json/wp/v2/users/me?context=edit`, {
+        method: 'GET',
+        headers: {
+          'Authorization': basicAuth,
+          'Content-Type': 'application/json'
+        },
+        cache: 'no-store'
       });
-    }
 
-    // 2. Fallback: Als REST API faalt, verifieer via WordPress GraphQL viewer query
-    const graphqlQuery = `
-      query TestAuthViewer {
-        viewer {
-          username
-          email
-          roles {
-            nodes {
-              name
-            }
-          }
-        }
+      if (authRes.ok) {
+        authSuccess = true;
+        userData = await authRes.json();
+        break;
       }
-    `;
-
-    const gqlRes = await fetch(wpEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': basicAuth,
-      },
-      body: JSON.stringify({ query: graphqlQuery }),
-      cache: 'no-store',
-    });
-
-    const gqlJson = await gqlRes.json();
-
-    if (gqlRes.ok && gqlJson?.data?.viewer) {
-      const viewer = gqlJson.data.viewer;
-      return NextResponse.json({ 
-        success: true, 
-        user: { 
-          name: viewer.username || username, 
-          email: viewer.email || '',
-          roles: ['contributor']
-        } 
-      });
     }
 
-    // Als beide falen is de inlog onjuist
-    return NextResponse.json({ error: 'Ongeldige gebruikersnaam of application password.' }, { status: 401 });
+    if (!authSuccess) {
+      return NextResponse.json({ error: 'Ongeldige gebruikersnaam of application password.' }, { status: 401 });
+    }
+
+    const roles: string[] = userData.roles || ['contributor'];
+
+    return NextResponse.json({ 
+      success: true, 
+      user: { 
+        name: userData.name || rawUser, 
+        email: userData.email || '',
+        roles: roles
+      } 
+    });
 
   } catch (error) {
     console.error('Login error:', error);

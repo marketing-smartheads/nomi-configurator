@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T09:17:48.168Z
+Generated: 2026-11-11T09:21:45.310Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T09:17:45.741Z
+- Last activity: 2026-11-11T09:21:43.523Z
 ## Workspace Focus
 - Active file in focus: app/api/auth/login/route.ts
-- Hottest files right now: lib/cms.ts (18), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
+- Hottest files right now: lib/cms.ts (17), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
 - Suggested starting points: app/api/auth/login/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
 - Active file: app/api/auth/login/route.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/api/auth/login/route.ts | 87 lines | 2640 chars | hash f8f182e6ec97
-  Last snapshot: 2026-11-11T09:17:45.741Z
+- app/api/auth/login/route.ts | 66 lines | 2182 chars | hash 6e4b2b5d2090
+  Last snapshot: 2026-11-11T09:21:43.523Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
 - app/api/verify-voucher/route.ts | 217 lines | 7325 chars | hash 640b4a1e61dd
   Last snapshot: 2026-11-11T09:04:13.793Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
 ## Recent Changes
+### 2026-11-11T09:21:43.523Z | saved | app/api/auth/login/route.ts
+- Summary: Line 15: replaced 67 lines with 46 lines.
+- Before: 87 lines | 2,640 chars | hash f8f182e6ec97 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
+- After: 66 lines | 2,182 chars | hash 6e4b2b5d2090 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
+- Previous fragment: "const basicAuth = 'Basic ' + Buffer.from(`${username.trim()}:${password.trim()}`).toString('base64'); / // 1. Probeer authenticatie via WordPress REST API met Application Passwo..."
+- Current fragment: "// Mogelijke varianten van de gebruikersnaam proberen (om spaties/hoofdletters in WP op te vangen) / const rawUser = username.trim(); / const usernamesToTry = [ / rawUser,..."
+
 ### 2026-11-11T09:17:45.741Z | saved | app/api/auth/login/route.ts
 - Summary: Line 3: replaced 47 lines with 79 lines.
 - Before: 55 lines | 1,971 chars | hash 212f4454a10b | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json({..."
@@ -158,27 +165,20 @@ Structured manifest: workspace.json
 - Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
 - Current fragment: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
 
-### 2026-11-06T08:23:10.084Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 1: replaced 175 lines with 183 lines.
-- Before: 509 lines | 21,194 chars | hash 55a56b73a3e1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 517 lines | 21,684 chars | hash 0c1bb76eb05c | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
-- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
-
 
 ## Hot Files
-- lib/cms.ts (18 tracked changes)
+- lib/cms.ts (17 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
 - app/download/page.tsx (3 tracked changes)
+- app/api/auth/login/route.ts (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
-- app/api/auth/login/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 8529092 feat(dashboard & security): filter out 32 rental units (Jongerius) from dashboard & block rental vouchers in login api
+- HEAD: 2026-11-11 64a8433 fix(auth): add REST API and GraphQL fallback to support Contributor role with Application Passwords
 - Working tree summary: 1 modified
 - M app/api/auth/login/route.ts
 
