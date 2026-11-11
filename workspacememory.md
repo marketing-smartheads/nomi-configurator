@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T15:38:10.760Z
+Generated: 2026-11-11T15:40:54.220Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T15:38:08.301Z
+- Last activity: 2026-11-11T15:40:52.436Z
 ## Workspace Focus
 - Active file in focus: app/dashboard/page.tsx
-- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (6), app/api/auth/login/route.ts (5), app/api/verify-voucher/route.ts (5)
+- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/auth/login/route.ts (5), app/api/verify-voucher/route.ts (5)
 - Suggested starting points: app/dashboard/page.tsx, app/download/page.tsx, app/api/auth/login/route.ts, app/api/verify-voucher/route.ts, components/configurator/StepFourConfirmation.tsx, lib/cms.ts
 ## Current Workspace
 - Active file: app/dashboard/page.tsx
@@ -37,11 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/dashboard/page.tsx | 399 lines | 19757 chars | hash 17780e409e0e
-  Last snapshot: 2026-11-11T15:38:08.301Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc..."
+- app/dashboard/page.tsx | 400 lines | 19842 chars | hash e7f0442aa21f
+  Last snapshot: 2026-11-11T15:40:52.436Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
 - app/api/verify-voucher/route.ts | 220 lines | 7360 chars | hash ce975addae9c
   Last snapshot: 2026-11-11T15:37:44.580Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-11T15:40:52.436Z | saved | app/dashboard/page.tsx
+- Summary: Line 7: replaced 73 lines with 74 lines.
+- Before: 399 lines | 19,757 chars | hash 17780e409e0e | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc..."
+- After: 400 lines | 19,842 chars | hash e7f0442aa21f | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
+- Previous fragment: "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi..."
+- Current fragment: "// Lijst van verhuur-vouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a0..."
+
 ### 2026-11-11T15:38:08.301Z | saved | app/dashboard/page.tsx
 - Summary: Line 7: replaced 7 lines with 9 lines.
 - Before: 397 lines | 19,782 chars | hash f472d95f0ee7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
@@ -160,32 +167,22 @@ Structured manifest: workspace.json
 - Previous fragment: "WordPress database is ALTIJD leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { / try { / const..."
 - Current fragment: "STAP 1: WordPress database is ALTIJD 100% leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { /..."
 
-### 2026-11-11T12:25:01.645Z | saved | app/download/page.tsx
-- Summary: Line 27: replaced 158 lines with 171 lines.
-- Before: 407 lines | 19,955 chars | hash 3693fadf8a3c | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 420 lines | 20,418 chars | hash efe0c973525b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "'') / : ''; / const isDefinitiefBevestigd = / (typeof window !== 'undefined' && localStorage.getItem('configurator_definitief_bevestigd') === 'true') || / (typeof window !== 'un..."
-- Current fragment: "sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '') / : ''; / const isDefinitiefBevestigd = / (typeof window !== 'undefined' && localStorage.getI..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
-- app/dashboard/page.tsx (6 tracked changes)
+- app/dashboard/page.tsx (7 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - lib/cms.ts (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 b92fe02 feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-11 26fd4d3 feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list
+- Working tree summary: 1 modified
 - M app/dashboard/page.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator

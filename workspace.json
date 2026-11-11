@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T15:38:10.760Z",
-  "generatedAtEpochMs": 1794411490760,
+  "generatedAt": "2026-11-11T15:40:54.220Z",
+  "generatedAtEpochMs": 1794411654220,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T15:38:08.301Z",
+    "lastActivityAt": "2026-11-11T15:40:52.436Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,11 +588,11 @@
   "trackedSnapshots": [
     {
       "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1794411488301,
-      "lineCount": 399,
-      "charCount": 19757,
-      "hash": "17780e409e0e",
-      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc..."
+      "updatedAt": 1794411652436,
+      "lineCount": 400,
+      "charCount": 19842,
+      "hash": "e7f0442aa21f",
+      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 7: replaced 73 lines with 74 lines.",
+      "recordedAt": "2026-11-11T15:40:52.436Z",
+      "recordedAtEpochMs": 1794411652436,
+      "before": {
+        "kind": "text",
+        "lineCount": 399,
+        "charCount": 19757,
+        "hash": "17780e409e0e",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc...",
+        "updatedAt": 1794411652436
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 400,
+        "charCount": 19842,
+        "hash": "e7f0442aa21f",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will...",
+        "updatedAt": 1794411652436
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 73,
+        "addedLines": 74,
+        "summary": "Line 7: replaced 73 lines with 74 lines.",
+        "beforeFragment": "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi...",
+        "afterFragment": "// Lijst van verhuur-vouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a0..."
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1092,38 +1124,6 @@
         "beforeFragment": "WordPress database is ALTIJD leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { / try { / const...",
         "afterFragment": "STAP 1: WordPress database is ALTIJD 100% leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 27: replaced 158 lines with 171 lines.",
-      "recordedAt": "2026-11-11T12:25:01.645Z",
-      "recordedAtEpochMs": 1794399901645,
-      "before": {
-        "kind": "text",
-        "lineCount": 407,
-        "charCount": 19955,
-        "hash": "3693fadf8a3c",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794399901645
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 420,
-        "charCount": 20418,
-        "hash": "efe0c973525b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794399901645
-      },
-      "diff": {
-        "lineStart": 27,
-        "removedLines": 158,
-        "addedLines": 171,
-        "summary": "Line 27: replaced 158 lines with 171 lines.",
-        "beforeFragment": "'') / : ''; / const isDefinitiefBevestigd = / (typeof window !== 'undefined' && localStorage.getItem('configurator_definitief_bevestigd') === 'true') || / (typeof window !== 'un...",
-        "afterFragment": "sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '') / : ''; / const isDefinitiefBevestigd = / (typeof window !== 'undefined' && localStorage.getI..."
-      }
     }
   ],
   "hotFiles": [
@@ -1133,7 +1133,7 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 6
+      "count": 7
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1157,20 +1157,17 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 b92fe02 feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-11 26fd4d3 feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/dashboard/page.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/dashboard/page.tsx"
     ],
     "error": ""
   },

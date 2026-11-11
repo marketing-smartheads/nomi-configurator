@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+// Lijst van verhuur-vouchers die we uit het dashboard willen filteren voor de makelaar
 const VERHUUR_VOUCHERS = new Set([
   // Type A verhuur vouchers
   'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013',
@@ -76,7 +77,7 @@ export default function DashboardPage() {
         // Filter direct de huurwoningen eruit zodat de makelaar enkel de relevante koopwoningen ziet
         const koopVouchersOnly = data.vouchers.filter((v: any) => {
           const code = String(v.voucherVelden?.toegangscode || v.title || '').trim().toLowerCase();
-          return !VERHUUR_VOUCHERS_SET.has(code);
+          return !VERHUUR_VOUCHERS.has(code);
         });
         setVouchers(koopVouchersOnly);
       } else {
