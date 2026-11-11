@@ -63,7 +63,7 @@ export default function DownloadPage() {
 
         if (voucherCode) {
           try {
-            const voucherDataFromWP = await getVoucherData(voucherCode);
+            const voucherDataFromWP = await getVoucherData(voucherCode) as any;
             if (voucherDataFromWP) {
               resolvedWoning = voucherDataFromWP.gekozenTypeWoning || voucherDataFromWP.typeWoning || voucherDataFromWP.woningType || '';
               resolvedPakket = voucherDataFromWP.gekozenDesignpakket || voucherDataFromWP.designPakket || voucherDataFromWP.pakket || '';
