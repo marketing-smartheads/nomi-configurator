@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T13:24:56.849Z",
-  "generatedAtEpochMs": 1794403496849,
+  "generatedAt": "2026-11-11T13:48:41.907Z",
+  "generatedAtEpochMs": 1794404921907,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "lib/cms.ts",
+    "activeFile": "app/api/verify-voucher/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "lib/cms.ts",
+      "app/api/verify-voucher/route.ts",
       "app/download/page.tsx",
       "app/api/auth/login/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/dashboard/page.tsx",
-      "app/api/vouchers/route.ts",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T13:24:54.106Z",
+    "lastActivityAt": "2026-11-11T13:48:39.211Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1794404919211,
+      "lineCount": 217,
+      "charCount": 7270,
+      "hash": "ceae6ca859f8",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+    },
     {
       "filePath": "lib/cms.ts",
       "updatedAt": 1794403494106,
@@ -627,14 +635,6 @@
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "updatedAt": 1794387853793,
-      "lineCount": 217,
-      "charCount": 7325,
-      "hash": "640b4a1e61dd",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-    },
-    {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1793979412529,
       "lineCount": 361,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 115: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-11T13:48:39.211Z",
+      "recordedAtEpochMs": 1794404919211,
+      "before": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 7325,
+        "hash": "640b4a1e61dd",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794404919211
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 217,
+        "charCount": 7270,
+        "hash": "ceae6ca859f8",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794404919211
+      },
+      "diff": {
+        "lineStart": 115,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 115: replaced 1 line with 1 line.",
+        "beforeFragment": "it bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd",
+        "afterFragment": "eze vouchercode is niet beschikbaar voor online configuratie"
+      }
+    },
     {
       "type": "save",
       "path": "lib/cms.ts",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "// Probeer in te loggen door te testen of de credentials werken via WordPress Basic Auth / const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')...",
         "afterFragment": "const wpBaseUrl = endpoint.replace('/graphql', ''); / // Verifieer direct via de ingebouwde WordPress REST API / wp-login endpoint / // Dit ondersteunt de standaard gebruikersna..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/auth/login/route.ts",
-      "toPath": "",
-      "summary": "Line 9: replaced 60 lines with 47 lines.",
-      "recordedAt": "2026-11-11T11:11:29.098Z",
-      "recordedAtEpochMs": 1794395489098,
-      "before": {
-        "kind": "text",
-        "lineCount": 72,
-        "charCount": 2206,
-        "hash": "be83984de81f",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
-        "updatedAt": 1794395489098
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 59,
-        "charCount": 1580,
-        "hash": "e10c9943f1a5",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
-        "updatedAt": 1794395489098
-      },
-      "diff": {
-        "lineStart": 9,
-        "removedLines": 60,
-        "addedLines": 47,
-        "summary": "Line 9: replaced 60 lines with 47 lines.",
-        "beforeFragment": "Gebruikersnaam en wachtwoord zijn verplicht.' }, / { status: 400 } / ); / } / const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur...",
-        "afterFragment": "Vul zowel je gebruikersnaam als wachtwoord in.' }, / { status: 400 } / ); / } / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur..."
-      }
     }
   ],
   "hotFiles": [
@@ -1163,24 +1163,24 @@
       "count": 3
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 cdf48d9 fix(download): update default state and implement flexible indeling matching for wordpress vouchers",
+    "headSummary": "2026-11-11 5a2d9dd fix(download): align graphql voucher query with exact wordpress schema and enforce strict state/storage syncing",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M lib/cms.ts"
+      "M app/api/verify-voucher/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cdf48d9 by Bas van Dooremalen on 2026-11-11\n  fix(download): update default state and implement flexible indeling matching for wordpress vouchers\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5a2d9dd by Bas van Dooremalen on 2026-11-11\n  fix(download): align graphql voucher query with exact wordpress schema and enforce strict state/storage syncing\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

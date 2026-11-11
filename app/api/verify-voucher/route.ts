@@ -112,7 +112,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: false,
         isVerhuur: true,
-        error: 'Dit bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd.'
+        error: 'Deze vouchercode is niet beschikbaar voor online configuratie.'
       }, { status: 403 });
     }
 

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T13:24:56.849Z
+Generated: 2026-11-11T13:48:41.907Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T13:24:54.106Z
+- Last activity: 2026-11-11T13:48:39.211Z
 ## Workspace Focus
-- Active file in focus: lib/cms.ts
+- Active file in focus: app/api/verify-voucher/route.ts
 - Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: lib/cms.ts, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
+- Suggested starting points: app/api/verify-voucher/route.ts, app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
-- Active file: lib/cms.ts
+- Active file: app/api/verify-voucher/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/verify-voucher/route.ts | 217 lines | 7270 chars | hash ceae6ca859f8
+  Last snapshot: 2026-11-11T13:48:39.211Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - lib/cms.ts | 316 lines | 9024 chars | hash 96f317a135a3
   Last snapshot: 2026-11-11T13:24:54.106Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -54,9 +57,6 @@ Structured manifest: workspace.json
 - app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
   Last snapshot: 2026-11-11T10:14:40.122Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
-- app/api/verify-voucher/route.ts | 217 lines | 7325 chars | hash 640b4a1e61dd
-  Last snapshot: 2026-11-11T09:04:13.793Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - components/configurator/StepFourConfirmation.tsx | 361 lines | 17897 chars | hash 56051d42a992
   Last snapshot: 2026-11-06T15:36:52.529Z
   Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-11T13:48:39.211Z | saved | app/api/verify-voucher/route.ts
+- Summary: Line 115: replaced 1 line with 1 line.
+- Before: 217 lines | 7,325 chars | hash 640b4a1e61dd | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- After: 217 lines | 7,270 chars | hash ceae6ca859f8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- Previous fragment: "it bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd"
+- Current fragment: "eze vouchercode is niet beschikbaar voor online configuratie"
+
 ### 2026-11-11T13:24:54.106Z | saved | lib/cms.ts
 - Summary: Line 184: replaced 130 lines with 128 lines.
 - Before: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -162,13 +169,6 @@ Structured manifest: workspace.json
 - Previous fragment: "// Probeer in te loggen door te testen of de credentials werken via WordPress Basic Auth / const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')..."
 - Current fragment: "const wpBaseUrl = endpoint.replace('/graphql', ''); / // Verifieer direct via de ingebouwde WordPress REST API / wp-login endpoint / // Dit ondersteunt de standaard gebruikersna..."
 
-### 2026-11-11T11:11:29.098Z | saved | app/api/auth/login/route.ts
-- Summary: Line 9: replaced 60 lines with 47 lines.
-- Before: 72 lines | 2,206 chars | hash be83984de81f | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
-- After: 59 lines | 1,580 chars | hash e10c9943f1a5 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
-- Previous fragment: "Gebruikersnaam en wachtwoord zijn verplicht.' }, / { status: 400 } / ); / } / const wpEndpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur..."
-- Current fragment: "Vul zowel je gebruikersnaam als wachtwoord in.' }, / { status: 400 } / ); / } / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configur..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
@@ -178,13 +178,13 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/dashboard/page.tsx (3 tracked changes)
 - lib/cms.ts (3 tracked changes)
-- app/api/vouchers/route.ts (2 tracked changes)
+- app/api/verify-voucher/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 cdf48d9 fix(download): update default state and implement flexible indeling matching for wordpress vouchers
+- HEAD: 2026-11-11 5a2d9dd fix(download): align graphql voucher query with exact wordpress schema and enforce strict state/storage syncing
 - Working tree summary: 1 modified
-- M lib/cms.ts
+- M app/api/verify-voucher/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- cdf48d9 by Bas van Dooremalen on 2026-11-11
-  fix(download): update default state and implement flexible indeling matching for wordpress vouchers
+- 5a2d9dd by Bas van Dooremalen on 2026-11-11
+  fix(download): align graphql voucher query with exact wordpress schema and enforce strict state/storage syncing
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
