@@ -24,7 +24,7 @@ export default function DownloadPage() {
     async function initDownloadPage() {
       try {
         const voucherCode = typeof window !== 'undefined' 
-          ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || '') 
+          ? (sessionStorage.getItem('toegangscode') || localStorage.getItem('toegangscode') || sessionStorage.getItem('voucherCode') || localStorage.getItem('voucherCode') || '') 
           : '';
 
         const isDefinitiefBevestigd = 
@@ -56,7 +56,7 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        // LEIDEND: Haal ALTIJD eerst de echte configuratie op uit de WordPress Voucher tabel op basis van vouchercode
+        // WordPress database is ALTIJD leidend bij een vouchercode!
         let resolvedWoning = '';
         let resolvedPakket = '';
         let resolvedIndeling = '';
@@ -74,10 +74,24 @@ export default function DownloadPage() {
           }
         }
 
-        // Fallback naar localStorage / sessionStorage als WP onverhoopt leeg is
-        if (!resolvedWoning) resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
-        if (!resolvedPakket) resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Hotel Chic';
-        if (!resolvedIndeling) resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || 'Indeling 03';
+        // Als WordPress waardes teruggeeft, update direct de storage zodat alles weer 100% synchroon loopt
+        if (resolvedWoning) {
+          localStorage.setItem('selected_woningType', resolvedWoning);
+          sessionStorage.setItem('geselecteerdeWoning', resolvedWoning);
+        }
+        if (resolvedPakket) {
+          localStorage.setItem('selected_designPakket', resolvedPakket);
+          sessionStorage.setItem('geselecteerdPakket', resolvedPakket);
+        }
+        if (resolvedIndeling) {
+          localStorage.setItem('selected_indeling', resolvedIndeling);
+          sessionStorage.setItem('geselecteerdeIndeling', resolvedIndeling);
+        }
+
+        // Fallback naar localStorage als WP onverhoopt leeg is
+        resolvedWoning = resolvedWoning || localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
+        resolvedPakket = resolvedPakket || localStorage.getItem('selected_designPakket') || sessionStorage.getItem('geselecteerdPakket') || 'Hotel Chic';
+        resolvedIndeling = resolvedIndeling || localStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || 'Indeling 03';
 
         if (isMounted) {
           setWoningType(resolvedWoning);
@@ -105,7 +119,7 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Matchen op basis van WoningType en de exacte Indeling (bijv. Indeling 03)
+  // Matchen op basis van WoningType en exacte Indeling (bijv. Indeling 03)
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -134,8 +148,8 @@ export default function DownloadPage() {
     return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
   }) || allePakketten.find((p: any) => {
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
-    if ((normPakket.includes('raw') || normPakket.includes('pakketa') || normPakket.includes('a')) && (pTitel.includes('raw') || pTitel.includes('a'))) return true;
-    if ((normPakket.includes('chic') || normPakket.includes('pakketb') || normPakket.includes('b')) && (pTitel.includes('chic') || pTitel.includes('b'))) return true;
+    if (normPakket.includes('raw') && (pTitel.includes('raw') || pTitel.includes('a'))) return true;
+    if (normPakket.includes('chic') && (pTitel.includes('chic') || pTitel.includes('b'))) return true;
     return false;
   }) || allePakketten[0] || {};
 
@@ -151,7 +165,7 @@ export default function DownloadPage() {
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
 
-  // Strikte filtering: Toon exact het gekozen pakket (Modern Raw / Pakket A of Hotel Chic / Pakket B)
+  // Strikte filtering: Verberg Hotel Chic als Modern Raw is geselecteerd, en vice versa
   const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
     const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
     const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
@@ -159,15 +173,15 @@ export default function DownloadPage() {
     const matchendeBestanden = bestandenLijst.filter((bestand: any) => {
       const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
       
-      const isModernRaw = normPakket.includes('raw') || normPakket.includes('pakketa') || (normPakket.includes('a') && !normPakket.includes('chic'));
-      const isHotelChic = normPakket.includes('chic') || normPakket.includes('pakketb') || normPakket.includes('b');
+      const isModernRaw = normPakket.includes('raw') || (normPakket.includes('a') && !normPakket.includes('chic'));
+      const isHotelChic = normPakket.includes('chic') || normPakket.includes('b');
 
       if (isModernRaw) {
-        if (titel.includes('hotel chic') || titel.includes('pakket b')) return false;
+        if (titel.includes('hotel chic') || titel.includes('pakket b') || titel.includes('chic')) return false;
         return true;
       }
       if (isHotelChic) {
-        if (titel.includes('modern raw') || titel.includes('pakket a')) return false;
+        if (titel.includes('modern raw') || titel.includes('pakket a') || (titel.includes(' raw') && !titel.includes('hotel chic'))) return false;
         return true;
       }
       return true;
@@ -181,7 +195,6 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  // Schone introductietekst zonder CMS objecten
   const formattedIntro = `Alle designbestanden voor ${woningType} — ${designPakket}. Download losse bestanden of alles in één keer.`;
 
   const getFileUrl = (bestand: any) => {
