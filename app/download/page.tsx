@@ -171,7 +171,11 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
+  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
+  if (typeof rawIntro === 'string' && (rawIntro.trim().startsWith('{') || rawIntro.trim().startsWith('['))) {
+    rawIntro = 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
+  }
+
   const formattedIntro = typeof rawIntro === 'string' ? rawIntro
     .replace('%type%', woningType || '')
     .replace('%designpakket%', designPakket || '') : '';
@@ -253,7 +257,7 @@ export default function DownloadPage() {
               const blob = await response.blob();
 
               filesToZip.push({ name: `${safeName}.${extension}`, lastModified: new Date(), input: blob });
-            } catch (fetchErr) {
+            } catch (fetchImgErr) {
               console.warn('Kon bestand niet ophalen:', fileUrl);
             }
           }

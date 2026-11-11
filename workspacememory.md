@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:34:02.241Z
+Generated: 2026-11-11T10:38:52.437Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:33:59.499Z
+- Last activity: 2026-11-11T10:38:50.578Z
 ## Workspace Focus
-- Active file in focus: app/api/vouchers/route.ts
+- Active file in focus: app/download/page.tsx
 - Hottest files right now: lib/cms.ts (14), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (4)
-- Suggested starting points: app/api/vouchers/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Suggested starting points: app/download/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
-- Active file: app/api/vouchers/route.ts
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/download/page.tsx | 403 lines | 19534 chars | hash 6d6c33b404e3
+  Last snapshot: 2026-11-11T10:38:50.578Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/dashboard/page.tsx | 382 lines | 18835 chars | hash f5b869b5ccb5
   Last snapshot: 2026-11-11T10:24:52.809Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 205 lines | 9146 chars | hash 14bc4f3bcec2
   Last snapshot: 2026-11-06T11:10:28.030Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/LoginScreen.tsx | 280 lines | 9936 chars | hash 7dfb1719bf66
-  Last snapshot: 2026-11-06T00:00:55.468Z
-  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-11T10:38:50.578Z | saved | app/download/page.tsx
+- Summary: Line 174: replaced 83 lines with 87 lines.
+- Before: 399 lines | 19,298 chars | hash d6c80bb2a10b | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 403 lines | 19,534 chars | hash 6d6c33b404e3 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "const rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of a..."
+- Current fragment: "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
+
 ### 2026-11-11T10:33:59.499Z | saved | app/api/vouchers/route.ts
 
 ### 2026-11-11T10:24:52.809Z | saved | app/dashboard/page.tsx
@@ -155,13 +162,6 @@ Structured manifest: workspace.json
 - After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
 
-### 2026-11-06T11:10:28.030Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 23: replaced 46 lines with 49 lines.
-- Before: 202 lines | 9,066 chars | hash f757dfabf6eb | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 205 lines | 9,146 chars | hash 14bc4f3bcec2 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "Indeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undefined') { / try { / const rawInd = localStorage.getItem('selected_indeling') ||..."
-- Current fragment: "Woning, setOpgeslagenWoning] = useState(woningType || ''); / const [opgeslagenIndeling, setOpgeslagenIndeling] = useState(''); / useEffect(() => { / if (typeof window !== 'undef..."
-
 
 ## Hot Files
 - lib/cms.ts (14 tracked changes)
@@ -175,9 +175,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 d8a2dda feat(dashboard): add customer email column to dashboard table and CSV export
+- HEAD: 2026-11-11 4976aa7 fix(dashboard): enforce strict case-insensitive filtering of rental vouchers in API response
 - Working tree summary: 1 modified
-- M app/api/vouchers/route.ts
+- M app/download/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
