@@ -11,7 +11,7 @@ export default function DownloadPage() {
   const router = useRouter();
   
   const [woningType, setWoningType] = useState<string>('Type A');
-  const [gekozenIndeling, setGekozenIndeling] = useState<string>('Indeling 01');
+  const [gekozenIndeling, setGekozenIndeling] = useState<string>('Indeling 02');
   const [designPakket, setDesignPakket] = useState<string>('Modern Raw');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
@@ -23,7 +23,6 @@ export default function DownloadPage() {
 
     async function initDownloadPage() {
       try {
-        // Haal de actieve vouchercode op uit alle mogelijke locaties
         const activeVoucher = typeof window !== 'undefined' 
           ? (localStorage.getItem('toegangscode') || sessionStorage.getItem('toegangscode') || localStorage.getItem('voucherCode') || sessionStorage.getItem('voucherCode') || '') 
           : '';
@@ -37,10 +36,10 @@ export default function DownloadPage() {
           return;
         }
 
-        // STAP 1: Vraag ALTIJD direct de echte data op uit WordPress voor DEZE specifieke vouchercode
+        // Haal direct de ware data op uit WordPress via jouw lib/cms.ts
         let resolvedWoning = 'Type A';
         let resolvedPakket = 'Modern Raw';
-        let resolvedIndeling = 'Indeling 01';
+        let resolvedIndeling = 'Indeling 02';
 
         try {
           const voucherDataFromWP = await getVoucherData(activeVoucher) as any;
@@ -53,19 +52,14 @@ export default function DownloadPage() {
           console.warn('Kon voucher data niet ophalen van WP:', wpErr);
         }
 
-        // STAP 2: Overschrijf DIRECT alle storage keys zodat oude cache van NOMI-A004 volledig wordt gewist
+        // Schrijf direct geforceerd weg naar storage
         if (typeof window !== 'undefined') {
           localStorage.setItem('toegangscode', activeVoucher);
           sessionStorage.setItem('toegangscode', activeVoucher);
-          localStorage.setItem('voucherCode', activeVoucher);
-          sessionStorage.setItem('voucherCode', activeVoucher);
-
           localStorage.setItem('selected_woningType', resolvedWoning);
           sessionStorage.setItem('geselecteerdeWoning', resolvedWoning);
-
           localStorage.setItem('selected_designPakket', resolvedPakket);
           sessionStorage.setItem('geselecteerdPakket', resolvedPakket);
-
           localStorage.setItem('selected_indeling', resolvedIndeling);
           sessionStorage.setItem('geselecteerdeIndeling', resolvedIndeling);
         }
@@ -115,12 +109,20 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Matchen op basis van WoningType en exacte Indeling (bijv. Indeling 02)
+  // Robuuste matching voor woningtype en indeling (vangt zowel 'Indeling 02' als '02' af)
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    
     const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
-    const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
+    
+    // Flexibele indeling match (controleer op volledige string én op getal/code zoals '02')
+    const indelingNummer = normIndeling.replace(/indeling/g, '').trim();
+    const indelingMatch = !normIndeling || 
+      indTitel.includes(normIndeling) || 
+      normIndeling.includes(indTitel) || 
+      (indelingNummer && indTitel.includes(indelingNummer));
+
     return typeMatch && indelingMatch;
   });
 
@@ -138,7 +140,7 @@ export default function DownloadPage() {
     algemeen.forEach((p: any) => allePakketten.push(p));
   }
 
-  // ULTRA-ROBUUSTE PAKKET MATCHING
+  // Pakket matching voor Modern Raw of Hotel Chic
   const huidigPakketObj = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -162,7 +164,7 @@ export default function DownloadPage() {
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
 
-  // ABSOLUTE FILTERING: Toon exact het gekozen pakket en filter de rest weg
+  // Strikte filtering voor Modern Raw vs Hotel Chic bestanden
   const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
     const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
     const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
@@ -191,7 +193,6 @@ export default function DownloadPage() {
   }).filter((cat: any) => (cat?.bestandenLijst || []).length > 0);
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
-  
   const formattedIntro = `Alle designbestanden voor ${woningType} — ${designPakket}. Download losse bestanden of alles in één keer.`;
 
   const getFileUrl = (bestand: any) => {

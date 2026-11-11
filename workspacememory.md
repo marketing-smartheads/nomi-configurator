@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T12:47:23.001Z
+Generated: 2026-11-11T13:12:36.623Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T12:47:20.512Z
+- Last activity: 2026-11-11T13:12:34.040Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
-- Hottest files right now: app/download/page.tsx (12), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Hottest files right now: app/download/page.tsx (13), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
+- Suggested starting points: app/download/page.tsx, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx
 ## Current Workspace
 - Active file: app/download/page.tsx
 - Tracked files in snapshot: 71
@@ -37,11 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- app/download/page.tsx | 417 lines | 20121 chars | hash 00549e87a8a1
-  Last snapshot: 2026-11-11T12:47:20.512Z
+- app/download/page.tsx | 418 lines | 20106 chars | hash 172d883371d9
+  Last snapshot: 2026-11-11T13:12:34.040Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- lib/cms.ts | 318 lines | 9223 chars | hash 32e06f359223
+  Last snapshot: 2026-11-11T12:57:11.153Z
+  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
@@ -60,11 +63,29 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx | 492 lines | 20311 chars | hash 230088061fb3
   Last snapshot: 2026-11-06T11:15:50.269Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- components/configurator/StepTwoDesign.tsx | 205 lines | 9146 chars | hash 14bc4f3bcec2
-  Last snapshot: 2026-11-06T11:10:28.030Z
-  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T13:12:34.040Z | saved | app/download/page.tsx
+- Summary: Line 14: replaced 181 lines with 182 lines.
+- Before: 417 lines | 20,121 chars | hash 00549e87a8a1 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 418 lines | 20,106 chars | hash 172d883371d9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+- Current fragment: "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+
+### 2026-11-11T12:57:11.153Z | saved | lib/cms.ts
+- Summary: Line 1: replaced 56 lines with 316 lines.
+- Before: 58 lines | 1,758 chars | hash fb9ca5b354eb | preview: "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherV..."
+- After: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- Previous fragment: "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 10..."
+- Current fragment: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel /..."
+
+### 2026-11-11T12:52:14.634Z | saved | lib/cms.ts
+- Summary: Line 1: replaced 316 lines with 56 lines.
+- Before: 318 lines | 9,223 chars | hash 32e06f359223 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
+- After: 58 lines | 1,758 chars | hash fb9ca5b354eb | preview: "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherV..."
+- Previous fragment: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel /..."
+- Current fragment: "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 10..."
+
 ### 2026-11-11T12:47:20.512Z | saved | app/download/page.tsx
 - Summary: Line 14: replaced 163 lines with 168 lines.
 - Before: 412 lines | 20,005 chars | hash 7a1a33f7788a | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -148,43 +169,25 @@ Structured manifest: workspace.json
 - Previous fragment: "Applicatie wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} /..."
 - Current fragment: "wachtwoord.</p> / {loginError && ( / <div className="bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4"> / {loginError} / </div> / )} / <form onSub..."
 
-### 2026-11-11T11:02:07.087Z | saved | app/api/auth/login/route.ts
-- Summary: Line 3: replaced 62 lines with 68 lines.
-- Before: 66 lines | 2,182 chars | hash 6e4b2b5d2090 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||..."
-- After: 72 lines | 2,206 chars | hash be83984de81f | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
-- Previous fragment: "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {..."
-- Current fragment: "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { error: 'Ge..."
-
-### 2026-11-11T10:51:07.877Z | saved | app/download/page.tsx
-- Summary: Line 14: replaced 176 lines with 180 lines.
-- Before: 411 lines | 19,595 chars | hash 385ae959c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 415 lines | 20,274 chars | hash 386c73b4cf72 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
-- Current fragment: "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
-
-### 2026-11-11T10:44:59.008Z | saved | app/download/page.tsx
-- Summary: Line 174: replaced 8 lines with 16 lines.
-- Before: 403 lines | 19,534 chars | hash 6d6c33b404e3 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 411 lines | 19,595 chars | hash 385ae959c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- Previous fragment: "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all..."
-- Current fragment: "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
-
 
 ## Hot Files
-- app/download/page.tsx (12 tracked changes)
+- app/download/page.tsx (13 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
-- app/api/verify-voucher/route.ts (3 tracked changes)
 - app/dashboard/page.tsx (3 tracked changes)
+- app/api/verify-voucher/route.ts (2 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 7753b68 fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw
-- Working tree summary: 1 modified
+- HEAD: 2026-11-11 3e1f4ac fix(download): force storage and state keys to sync with active voucher data from wordpress on load
+- Working tree summary: 4 modifieds
 - M app/download/page.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -192,8 +195,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 7753b68 by Bas van Dooremalen on 2026-11-11
-  fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw
+- 3e1f4ac by Bas van Dooremalen on 2026-11-11
+  fix(download): force storage and state keys to sync with active voucher data from wordpress on load
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

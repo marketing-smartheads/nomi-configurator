@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T12:47:23.001Z",
-  "generatedAtEpochMs": 1794401243001,
+  "generatedAt": "2026-11-11T13:12:36.623Z",
+  "generatedAtEpochMs": 1794402756623,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -27,8 +27,8 @@
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
-      "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
+      "app/api/verify-voucher/route.ts",
       "app/api/vouchers/route.ts",
       ".gitignore",
       "AGENTS.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T12:47:20.512Z",
+    "lastActivityAt": "2026-11-11T13:12:34.040Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,11 +588,19 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794401240512,
-      "lineCount": 417,
-      "charCount": 20121,
-      "hash": "00549e87a8a1",
+      "updatedAt": 1794402754040,
+      "lineCount": 418,
+      "charCount": 20106,
+      "hash": "172d883371d9",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "updatedAt": 1794401831153,
+      "lineCount": 318,
+      "charCount": 9223,
+      "hash": "32e06f359223",
+      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -641,17 +649,105 @@
       "charCount": 20311,
       "hash": "230088061fb3",
       "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1793963428030,
-      "lineCount": 205,
-      "charCount": 9146,
-      "hash": "14bc4f3bcec2",
-      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 14: replaced 181 lines with 182 lines.",
+      "recordedAt": "2026-11-11T13:12:34.040Z",
+      "recordedAtEpochMs": 1794402754040,
+      "before": {
+        "kind": "text",
+        "lineCount": 417,
+        "charCount": 20121,
+        "hash": "00549e87a8a1",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794402754040
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 418,
+        "charCount": 20106,
+        "hash": "172d883371d9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794402754040
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 181,
+        "addedLines": 182,
+        "summary": "Line 14: replaced 181 lines with 182 lines.",
+        "beforeFragment": "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
+        "afterFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 1: replaced 56 lines with 316 lines.",
+      "recordedAt": "2026-11-11T12:57:11.153Z",
+      "recordedAtEpochMs": 1794401831153,
+      "before": {
+        "kind": "text",
+        "lineCount": 58,
+        "charCount": 1758,
+        "hash": "fb9ca5b354eb",
+        "preview": "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherV...",
+        "updatedAt": 1794401831152
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 318,
+        "charCount": 9223,
+        "hash": "32e06f359223",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1794401831153
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 56,
+        "addedLines": 316,
+        "summary": "Line 1: replaced 56 lines with 316 lines.",
+        "beforeFragment": "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 10...",
+        "afterFragment": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel /..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "Line 1: replaced 316 lines with 56 lines.",
+      "recordedAt": "2026-11-11T12:52:14.634Z",
+      "recordedAtEpochMs": 1794401534634,
+      "before": {
+        "kind": "text",
+        "lineCount": 318,
+        "charCount": 9223,
+        "hash": "32e06f359223",
+        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
+        "updatedAt": 1794401534634
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 58,
+        "charCount": 1758,
+        "hash": "fb9ca5b354eb",
+        "preview": "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 100) { / nodes { / title / slug / voucherV...",
+        "updatedAt": 1794401534634
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 316,
+        "addedLines": 56,
+        "summary": "Line 1: replaced 316 lines with 56 lines.",
+        "beforeFragment": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel /...",
+        "afterFragment": "export async function getVoucherData(voucherCode: string) { / const cleanCode = voucherCode.trim().toUpperCase(); / const query = ` / query GetAllVouchers { / vouchers(first: 10..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1035,108 +1131,12 @@
         "beforeFragment": "Applicatie wachtwoord.</p> / {loginError && ( / <div className=\"bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4\"> / {loginError} / </div> / )} /...",
         "afterFragment": "wachtwoord.</p> / {loginError && ( / <div className=\"bg-[#FDF2F2] border border-[#F5C6CB] text-[#721C24] p-3 rounded-lg text-xs mb-4\"> / {loginError} / </div> / )} / <form onSub..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/auth/login/route.ts",
-      "toPath": "",
-      "summary": "Line 3: replaced 62 lines with 68 lines.",
-      "recordedAt": "2026-11-11T11:02:07.087Z",
-      "recordedAtEpochMs": 1794394927087,
-      "before": {
-        "kind": "text",
-        "lineCount": 66,
-        "charCount": 2182,
-        "hash": "6e4b2b5d2090",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username ||...",
-        "updatedAt": 1794394927087
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 72,
-        "charCount": 2206,
-        "hash": "be83984de81f",
-        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
-        "updatedAt": 1794394927087
-      },
-      "diff": {
-        "lineStart": 3,
-        "removedLines": 62,
-        "addedLines": 68,
-        "summary": "Line 3: replaced 62 lines with 68 lines.",
-        "beforeFragment": "const dynamic = 'force-dynamic'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) {...",
-        "afterFragment": "async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { error: 'Ge..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 176 lines with 180 lines.",
-      "recordedAt": "2026-11-11T10:51:07.877Z",
-      "recordedAtEpochMs": 1794394267877,
-      "before": {
-        "kind": "text",
-        "lineCount": 411,
-        "charCount": 19595,
-        "hash": "385ae959c3a9",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794394267876
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 415,
-        "charCount": 20274,
-        "hash": "386c73b4cf72",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794394267877
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 176,
-        "addedLines": 180,
-        "summary": "Line 14: replaced 176 lines with 180 lines.",
-        "beforeFragment": "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
-        "afterFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 174: replaced 8 lines with 16 lines.",
-      "recordedAt": "2026-11-11T10:44:59.008Z",
-      "recordedAtEpochMs": 1794393899008,
-      "before": {
-        "kind": "text",
-        "lineCount": 403,
-        "charCount": 19534,
-        "hash": "6d6c33b404e3",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794393899008
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 411,
-        "charCount": 19595,
-        "hash": "385ae959c3a9",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794393899008
-      },
-      "diff": {
-        "lineStart": 174,
-        "removedLines": 8,
-        "addedLines": 16,
-        "summary": "Line 174: replaced 8 lines with 16 lines.",
-        "beforeFragment": "let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of all...",
-        "afterFragment": "// Strikte controle: negeer alles wat op JSON of ongewenste data lijkt / let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || ''; / if (..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 12
+      "count": 13
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1155,12 +1155,12 @@
       "count": 4
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
+      "filePath": "app/dashboard/page.tsx",
       "count": 3
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 3
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 2
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1170,17 +1170,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 7753b68 fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-11 3e1f4ac fix(download): force storage and state keys to sync with active voucher data from wordpress on load",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/download/page.tsx"
+      "M app/download/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7753b68 by Bas van Dooremalen on 2026-11-11\n  fix(download): guarantee robust package matching and strict file filtering for hotel chic and modern raw\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3e1f4ac by Bas van Dooremalen on 2026-11-11\n  fix(download): force storage and state keys to sync with active voucher data from wordpress on load\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
