@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T11:11:31.625Z",
-  "generatedAtEpochMs": 1794395491625,
+  "generatedAt": "2026-11-11T11:15:03.407Z",
+  "generatedAtEpochMs": 1794395703407,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T11:11:29.098Z",
+    "lastActivityAt": "2026-11-11T11:15:01.634Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/api/auth/login/route.ts",
-      "updatedAt": 1794395489098,
-      "lineCount": 59,
-      "charCount": 1580,
-      "hash": "e10c9943f1a5",
+      "updatedAt": 1794395701634,
+      "lineCount": 57,
+      "charCount": 2010,
+      "hash": "7282b64cb271",
       "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/auth/login/route.ts",
+      "toPath": "",
+      "summary": "Line 15: replaced 36 lines with 34 lines.",
+      "recordedAt": "2026-11-11T11:15:01.634Z",
+      "recordedAtEpochMs": 1794395701634,
+      "before": {
+        "kind": "text",
+        "lineCount": 59,
+        "charCount": 1580,
+        "hash": "e10c9943f1a5",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
+        "updatedAt": 1794395701634
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 57,
+        "charCount": 2010,
+        "hash": "7282b64cb271",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
+        "updatedAt": 1794395701634
+      },
+      "diff": {
+        "lineStart": 15,
+        "removedLines": 36,
+        "addedLines": 34,
+        "summary": "Line 15: replaced 36 lines with 34 lines.",
+        "beforeFragment": "// Probeer in te loggen door te testen of de credentials werken via WordPress Basic Auth / const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')...",
+        "afterFragment": "const wpBaseUrl = endpoint.replace('/graphql', ''); / // Verifieer direct via de ingebouwde WordPress REST API / wp-login endpoint / // Dit ondersteunt de standaard gebruikersna..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/login/route.ts",
@@ -1078,48 +1110,16 @@
         "beforeFragment": "Subtiel en strak afgestemd contactblok */} / {agreedPartner === false && ( / <div className=\"p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 ani...",
         "afterFragment": "Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */} / {agreedPartner === false && ( / <div className=\"p-4 rounded-xl bg-[#F9F6F0] border border-dark..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 322: replaced 30 lines with 30 lines.",
-      "recordedAt": "2026-11-06T15:32:55.043Z",
-      "recordedAtEpochMs": 1793979175043,
-      "before": {
-        "kind": "text",
-        "lineCount": 361,
-        "charCount": 17744,
-        "hash": "ffaaf6547f67",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1793979175043
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 361,
-        "charCount": 18126,
-        "hash": "03f518673507",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1793979175043
-      },
-      "diff": {
-        "lineStart": 322,
-        "removedLines": 30,
-        "addedLines": 30,
-        "summary": "Line 322: replaced 30 lines with 30 lines.",
-        "beforeFragment": "\"> / We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken? / </p> / <div...",
-        "afterFragment": "leading-relaxed\"> / We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "app/api/auth/login/route.ts",
-      "count": 4
+      "count": 5
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1149,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 f0024b7 refactor(auth): switch dashboard login from application password to standard wordpress user credentials",
+    "headSummary": "2026-11-11 1a33106 feat(auth): support standard wordpress credentials verification in login api via basic auth query",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

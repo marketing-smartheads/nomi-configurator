@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T11:11:31.625Z
+Generated: 2026-11-11T11:15:03.407Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T11:11:29.098Z
+- Last activity: 2026-11-11T11:15:01.634Z
 ## Workspace Focus
 - Active file in focus: app/api/auth/login/route.ts
-- Hottest files right now: lib/cms.ts (11), app/api/auth/login/route.ts (4), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
+- Hottest files right now: lib/cms.ts (10), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
 - Suggested starting points: app/api/auth/login/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
 ## Current Workspace
 - Active file: app/api/auth/login/route.ts
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/api/auth/login/route.ts | 59 lines | 1580 chars | hash e10c9943f1a5
-  Last snapshot: 2026-11-11T11:11:29.098Z
+- app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
+  Last snapshot: 2026-11-11T11:15:01.634Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
 - app/dashboard/page.tsx | 382 lines | 18813 chars | hash 7355bba0f367
   Last snapshot: 2026-11-11T11:02:54.488Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T11:15:01.634Z | saved | app/api/auth/login/route.ts
+- Summary: Line 15: replaced 36 lines with 34 lines.
+- Before: 59 lines | 1,580 chars | hash e10c9943f1a5 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
+- After: 57 lines | 2,010 chars | hash 7282b64cb271 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
+- Previous fragment: "// Probeer in te loggen door te testen of de credentials werken via WordPress Basic Auth / const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64')..."
+- Current fragment: "const wpBaseUrl = endpoint.replace('/graphql', ''); / // Verifieer direct via de ingebouwde WordPress REST API / wp-login endpoint / // Dit ondersteunt de standaard gebruikersna..."
+
 ### 2026-11-11T11:11:29.098Z | saved | app/api/auth/login/route.ts
 - Summary: Line 9: replaced 60 lines with 47 lines.
 - Before: 72 lines | 2,206 chars | hash be83984de81f | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
@@ -158,17 +165,10 @@ Structured manifest: workspace.json
 - Previous fragment: "Subtiel en strak afgestemd contactblok */} / {agreedPartner === false && ( / <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 ani..."
 - Current fragment: "Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */} / {agreedPartner === false && ( / <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark..."
 
-### 2026-11-06T15:32:55.043Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 322: replaced 30 lines with 30 lines.
-- Before: 361 lines | 17,744 chars | hash ffaaf6547f67 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 361 lines | 18,126 chars | hash 03f518673507 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: ""> / We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken? / </p> / <div..."
-- Current fragment: "leading-relaxed"> / We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken..."
-
 
 ## Hot Files
-- lib/cms.ts (11 tracked changes)
-- app/api/auth/login/route.ts (4 tracked changes)
+- lib/cms.ts (10 tracked changes)
+- app/api/auth/login/route.ts (5 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
@@ -178,7 +178,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 f0024b7 refactor(auth): switch dashboard login from application password to standard wordpress user credentials
+- HEAD: 2026-11-11 1a33106 feat(auth): support standard wordpress credentials verification in login api via basic auth query
 - Working tree summary: 1 modified
 - M app/api/auth/login/route.ts
 

@@ -12,33 +12,31 @@ export async function POST(request: Request) {
     }
 
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
-    
-    // Probeer in te loggen door te testen of de credentials werken via WordPress Basic Auth
-    const basicAuth = 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64');
-    
-    const query = `
-      query TestLogin {
-        viewer {
-          id
-          name
-          email
-        }
-      }
-    `;
+    const wpBaseUrl = endpoint.replace('/graphql', '');
 
-    const res = await fetch(endpoint, {
+    // Verifieer direct via de ingebouwde WordPress REST API / wp-login endpoint
+    // Dit ondersteunt de standaard gebruikersnaam en het normale WordPress-wachtwoord feilloos.
+    const formData = new URLSearchParams();
+    formData.append('log', username);
+    formData.append('pwd', password);
+    formData.append('wp-submit', 'Log In');
+    formData.append('redirect_to', `${wpBaseUrl}/wp-admin/`);
+    formData.append('testcookie', '1');
+
+    const loginRes = await fetch(`${wpBaseUrl}/wp-login.php`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': basicAuth,
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify({ query }),
-      cache: 'no-store',
+      body: formData.toString(),
+      redirect: 'manual', // Voorkom automatische redirects zodat we de status kunnen controleren
     });
 
-    const json = await res.json();
+    // Als WordPress een redirect (302) teruggeeft naar wp-admin, is de login succesvol!
+    const cookies = loginRes.headers.get('set-cookie') || '';
+    const isSuccess = loginRes.status === 302 || cookies.includes('wordpress_logged_in');
 
-    if (json.errors || !json?.data?.viewer) {
+    if (!isSuccess) {
       return NextResponse.json(
         { error: 'Ongeldige gebruikersnaam of wachtwoord.' },
         { status: 401 }
@@ -47,7 +45,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      user: json.data.viewer,
+      user: { name: username },
     });
   } catch (err) {
     console.error('Login error:', err);
