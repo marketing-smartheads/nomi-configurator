@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T10:45:01.807Z",
-  "generatedAtEpochMs": 1794393901807,
+  "generatedAt": "2026-11-11T10:51:10.444Z",
+  "generatedAtEpochMs": 1794394270444,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T10:44:59.008Z",
+    "lastActivityAt": "2026-11-11T10:51:07.877Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/download/page.tsx",
-      "updatedAt": 1794393899008,
-      "lineCount": 411,
-      "charCount": 19595,
-      "hash": "385ae959c3a9",
+      "updatedAt": 1794394267877,
+      "lineCount": 415,
+      "charCount": 20274,
+      "hash": "386c73b4cf72",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 14: replaced 176 lines with 180 lines.",
+      "recordedAt": "2026-11-11T10:51:07.877Z",
+      "recordedAtEpochMs": 1794394267877,
+      "before": {
+        "kind": "text",
+        "lineCount": 411,
+        "charCount": 19595,
+        "hash": "385ae959c3a9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794394267876
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 415,
+        "charCount": 20274,
+        "hash": "386c73b4cf72",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794394267877
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 176,
+        "addedLines": 180,
+        "summary": "Line 14: replaced 176 lines with 180 lines.",
+        "beforeFragment": "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
+        "afterFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+      }
+    },
     {
       "type": "save",
       "path": "app/download/page.tsx",
@@ -1078,31 +1110,6 @@
         "beforeFragment": "'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals;...",
         "afterFragment": "Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-06T11:10:38.163Z",
-      "recordedAtEpochMs": 1793963438163,
-      "before": {
-        "kind": "text",
-        "lineCount": 146,
-        "charCount": 6722,
-        "hash": "bceddf87e6e2",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1793963438162
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 146,
-        "charCount": 6722,
-        "hash": "bceddf87e6e2",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1793963438163
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1142,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 4d93ca3 fix(download): clean up download intro and restore proper rendering of file lists",
+    "headSummary": "2026-11-11 df2ebb1 fix(download): implement strict validation to completely strip JSON object outputs from download page intro",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1152,7 +1159,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4d93ca3 by Bas van Dooremalen on 2026-11-11\n  fix(download): clean up download intro and restore proper rendering of file lists\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- df2ebb1 by Bas van Dooremalen on 2026-11-11\n  fix(download): implement strict validation to completely strip JSON object outputs from download page intro\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T10:45:01.807Z
+Generated: 2026-11-11T10:51:10.444Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T10:44:59.008Z
+- Last activity: 2026-11-11T10:51:07.877Z
 ## Workspace Focus
 - Active file in focus: app/download/page.tsx
 - Hottest files right now: lib/cms.ts (13), app/download/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/download/page.tsx | 411 lines | 19595 chars | hash 385ae959c3a9
-  Last snapshot: 2026-11-11T10:44:59.008Z
+- app/download/page.tsx | 415 lines | 20274 chars | hash 386c73b4cf72
+  Last snapshot: 2026-11-11T10:51:07.877Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/dashboard/page.tsx | 382 lines | 18835 chars | hash f5b869b5ccb5
   Last snapshot: 2026-11-11T10:24:52.809Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T10:51:07.877Z | saved | app/download/page.tsx
+- Summary: Line 14: replaced 176 lines with 180 lines.
+- Before: 411 lines | 19,595 chars | hash 385ae959c3a9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 415 lines | 20,274 chars | hash 386c73b4cf72 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+- Current fragment: "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
+
 ### 2026-11-11T10:44:59.008Z | saved | app/download/page.tsx
 - Summary: Line 174: replaced 8 lines with 16 lines.
 - Before: 403 lines | 19,534 chars | hash 6d6c33b404e3 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
@@ -158,11 +165,6 @@ Structured manifest: workspace.json
 - Previous fragment: "'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; / let visuals: any[] = []; / if (Array.isArray(rawVisuals)) { / visuals = rawVisuals;..."
 - Current fragment: "Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.'; / const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider; /..."
 
-### 2026-11-06T11:10:38.163Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Saved without a textual diff.
-- Before: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 146 lines | 6,722 chars | hash bceddf87e6e2 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-
 
 ## Hot Files
 - lib/cms.ts (13 tracked changes)
@@ -176,7 +178,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 4d93ca3 fix(download): clean up download intro and restore proper rendering of file lists
+- HEAD: 2026-11-11 df2ebb1 fix(download): implement strict validation to completely strip JSON object outputs from download page intro
 - Working tree summary: 1 modified
 - M app/download/page.tsx
 
@@ -186,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4d93ca3 by Bas van Dooremalen on 2026-11-11
-  fix(download): clean up download intro and restore proper rendering of file lists
+- df2ebb1 by Bas van Dooremalen on 2026-11-11
+  fix(download): implement strict validation to completely strip JSON object outputs from download page intro
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

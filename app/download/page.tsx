@@ -11,7 +11,7 @@ export default function DownloadPage() {
   const router = useRouter();
   
   const [woningType, setWoningType] = useState<string>('Type A');
-  const [gekozenIndeling, setGekozenIndeling] = useState<string>('Indeling 01');
+  const [gekozenIndeling, setGekozenIndeling] = useState<string>('Indeling 02');
   const [designPakket, setDesignPakket] = useState<string>('Modern Raw');
   const [pageData, setPageData] = useState<any>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
@@ -56,26 +56,28 @@ export default function DownloadPage() {
 
         if (isMounted && cmsData) setPageData(cmsData);
 
-        let resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || '';
-        let resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || '';
-        let resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || '';
+        // Haal ALTIJD eerst de echte gegevens op uit WordPress op basis van de vouchercode voor maximale betrouwbaarheid
+        let resolvedWoning = '';
+        let resolvedPakket = '';
+        let resolvedIndeling = '';
 
         if (voucherCode) {
           try {
             const voucherDataFromWP = await getVoucherData(voucherCode);
             if (voucherDataFromWP) {
-              if (!resolvedWoning) resolvedWoning = voucherDataFromWP.gekozenTypeWoning;
-              if (!resolvedPakket) resolvedPakket = voucherDataFromWP.gekozenDesignpakket;
-              if (!resolvedIndeling) resolvedIndeling = voucherDataFromWP.gekozenIndeling;
+              resolvedWoning = voucherDataFromWP.gekozenTypeWoning;
+              resolvedPakket = voucherDataFromWP.gekozenDesignpakket;
+              resolvedIndeling = voucherDataFromWP.gekozenIndeling;
             }
           } catch (wpErr) {
             console.warn('Kon voucher data niet ophalen van WP:', wpErr);
           }
         }
 
-        resolvedWoning = resolvedWoning || 'Type A';
-        resolvedPakket = resolvedPakket || 'Modern Raw';
-        resolvedIndeling = resolvedIndeling || 'Indeling 01';
+        // Fallback naar localStorage / sessionStorage als WP onverhoopt leeg is
+        if (!resolvedWoning) resolvedWoning = localStorage.getItem('selected_woningType') || sessionStorage.getItem('geselecteerdeWoning') || 'Type A';
+        if (!resolvedPakket) resolvedPakket = sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket') || 'Modern Raw';
+        if (!resolvedIndeling) resolvedIndeling = localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling') || sessionStorage.getItem('geselecteerdeIndeling') || 'Indeling 02';
 
         if (isMounted) {
           setWoningType(resolvedWoning);
@@ -103,6 +105,7 @@ export default function DownloadPage() {
   const normIndeling = (gekozenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (designPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
+  // Matchen op basis van WoningType en de exacte Indeling (bijv. Indeling 02)
   const matchendeRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -131,34 +134,43 @@ export default function DownloadPage() {
     return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
   }) || allePakketten.find((p: any) => {
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
-    if (normPakket.includes('raw') && pTitel.includes('raw')) return true;
-    if (normPakket.includes('chic') && pTitel.includes('chic')) return true;
+    if ((normPakket.includes('raw') || normPakket.includes('pakketa')) && (pTitel.includes('raw') || pTitel.includes('a'))) return true;
+    if ((normPakket.includes('chic') || normPakket.includes('pakketb')) && (pTitel.includes('chic') || pTitel.includes('b'))) return true;
     return false;
   }) || allePakketten[0] || {};
 
   const alleCategorieen: any[] = [];
   
   gebruikteRijen.forEach((rij: any) => {
-    const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || rij?.download_categorieën || [];
+    const cats = rij?.downloadCategorie || rij?.downloadCategorieën || rij?.download_categorieen || [];
     const catLijst = Array.isArray(cats) ? cats : cats?.nodes || [];
     catLijst.forEach((c: any) => alleCategorieen.push(c));
   });
 
-  const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || huidigPakketObj?.download_categorieën || [];
+  const pakketCats = huidigPakketObj?.downloadCategorie || huidigPakketObj?.downloadCategorieën || huidigPakketObj?.download_categorieen || [];
   const pakketCatLijst = Array.isArray(pakketCats) ? pakketCats : pakketCats?.nodes || [];
   pakketCatLijst.forEach((c: any) => alleCategorieen.push(c));
 
+  // Strikte filtering: Verberg Hotel Chic / Pakket B als Modern Raw / Pakket A is geselecteerd
   const gefilterdeCategorieen = alleCategorieen.map((cat: any) => {
     const rawBestanden = cat?.bestandenLijst || cat?.bestanden_lijst || [];
     const bestandenLijst = Array.isArray(rawBestanden) ? rawBestanden : rawBestanden?.nodes || [];
 
     const matchendeBestanden = bestandenLijst.filter((bestand: any) => {
       const titel = (bestand?.bestandTitel || bestand?.bestand_titel || '').toLowerCase();
-      if (normPakket.includes('raw')) {
-        return titel.includes('modern raw') || (!titel.includes('hotel chic') && !titel.includes('chic'));
+      
+      const isModernRaw = normPakket.includes('raw') || normPakket.includes('pakketa');
+      const isHotelChic = normPakket.includes('chic') || normPakket.includes('pakketb');
+
+      if (isModernRaw) {
+        // Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit
+        if (titel.includes('hotel chic') || titel.includes('pakket b')) return false;
+        return true;
       }
-      if (normPakket.includes('chic')) {
-        return titel.includes('hotel chic') || (!titel.includes('modern raw') && !titel.includes('raw'));
+      if (isHotelChic) {
+        // Toon alleen Hotel Chic / Pakket B, filter Modern Raw en Pakket A eruit
+        if (titel.includes('modern raw') || titel.includes('pakket a')) return false;
+        return true;
       }
       return true;
     });
@@ -171,22 +183,14 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  // Strikte controle: negeer alles wat op JSON of ongewenste data lijkt
-  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || '';
-  if (
-    !rawIntro || 
-    typeof rawIntro !== 'string' || 
-    rawIntro.trim().startsWith('{') || 
-    rawIntro.trim().startsWith('[') ||
-    rawIntro.includes('TYPENAAM') ||
-    rawIntro.includes('INDELINGTITEL')
-  ) {
+  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
+  if (typeof rawIntro === 'string' && (rawIntro.trim().startsWith('{') || rawIntro.trim().startsWith('[') || rawIntro.includes('TYPENAAM'))) {
     rawIntro = 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
   }
 
-  const formattedIntro = rawIntro
+  const formattedIntro = typeof rawIntro === 'string' ? rawIntro
     .replace('%type%', woningType || '')
-    .replace('%designpakket%', designPakket || '');
+    .replace('%designpakket%', designPakket || '') : '';
 
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
