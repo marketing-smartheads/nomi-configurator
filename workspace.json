@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T11:15:03.407Z",
-  "generatedAtEpochMs": 1794395703407,
+  "generatedAt": "2026-11-11T11:23:06.323Z",
+  "generatedAtEpochMs": 1794396186323,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/auth/login/route.ts",
+    "activeFile": "app/download/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/auth/login/route.ts",
+      "app/download/page.tsx",
       "lib/cms.ts",
+      "app/api/auth/login/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
-      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T11:15:01.634Z",
+    "lastActivityAt": "2026-11-11T11:23:03.729Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1794396183729,
+      "lineCount": 423,
+      "charCount": 20214,
+      "hash": "d0374c981d6d",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+    },
     {
       "filePath": "app/api/auth/login/route.ts",
       "updatedAt": 1794395701634,
@@ -601,14 +609,6 @@
       "charCount": 18813,
       "hash": "7355bba0f367",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1794394267877,
-      "lineCount": 415,
-      "charCount": 20274,
-      "hash": "386c73b4cf72",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 166: replaced 28 lines with 36 lines.",
+      "recordedAt": "2026-11-11T11:23:03.729Z",
+      "recordedAtEpochMs": 1794396183729,
+      "before": {
+        "kind": "text",
+        "lineCount": 415,
+        "charCount": 20274,
+        "hash": "386c73b4cf72",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794396183729
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 423,
+        "charCount": 20214,
+        "hash": "d0374c981d6d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1794396183729
+      },
+      "diff": {
+        "lineStart": 166,
+        "removedLines": 28,
+        "addedLines": 36,
+        "summary": "Line 166: replaced 28 lines with 36 lines.",
+        "beforeFragment": "// Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit / if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if...",
+        "afterFragment": "if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if (isHotelChic) { / if (titel.includes('modern raw') || titel.includes('pakke..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/auth/login/route.ts",
@@ -1078,48 +1110,20 @@
         "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]...",
         "afterFragment": "// 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashboard zijn gefilterd (op wens van Chester) / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005',..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 335: replaced 7 lines with 7 lines.",
-      "recordedAt": "2026-11-06T15:36:52.529Z",
-      "recordedAtEpochMs": 1793979412529,
-      "before": {
-        "kind": "text",
-        "lineCount": 361,
-        "charCount": 18126,
-        "hash": "03f518673507",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1793979412529
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 361,
-        "charCount": 17897,
-        "hash": "56051d42a992",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1793979412529
-      },
-      "diff": {
-        "lineStart": 335,
-        "removedLines": 7,
-        "addedLines": 7,
-        "summary": "Line 335: replaced 7 lines with 7 lines.",
-        "beforeFragment": "Subtiel en strak afgestemd contactblok */} / {agreedPartner === false && ( / <div className=\"p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 ani...",
-        "afterFragment": "Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */} / {agreedPartner === false && ( / <div className=\"p-4 rounded-xl bg-[#F9F6F0] border border-dark..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "lib/cms.ts",
-      "count": 10
+      "count": 9
     },
     {
       "filePath": "app/api/auth/login/route.ts",
       "count": 5
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1140,26 +1144,22 @@
     {
       "filePath": "app/dashboard/page.tsx",
       "count": 3
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "count": 3
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 1a33106 feat(auth): support standard wordpress credentials verification in login api via basic auth query",
+    "headSummary": "2026-11-11 cd406df fix(auth): authenticate standard wordpress credentials via wp-login.php session check",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M app/api/auth/login/route.ts"
+      "M app/download/page.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f0024b7 by Bas van Dooremalen on 2026-11-11\n  refactor(auth): switch dashboard login from application password to standard wordpress user credentials\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cd406df by Bas van Dooremalen on 2026-11-11\n  fix(auth): authenticate standard wordpress credentials via wp-login.php session check\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

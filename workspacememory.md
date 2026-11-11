@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-11T11:15:03.407Z
+Generated: 2026-11-11T11:23:06.323Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-11T11:15:01.634Z
+- Last activity: 2026-11-11T11:23:03.729Z
 ## Workspace Focus
-- Active file in focus: app/api/auth/login/route.ts
-- Hottest files right now: lib/cms.ts (10), app/api/auth/login/route.ts (5), components/configurator/StepFourConfirmation.tsx (4), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: app/api/auth/login/route.ts, lib/cms.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts
+- Active file in focus: app/download/page.tsx
+- Hottest files right now: lib/cms.ts (9), app/api/auth/login/route.ts (5), app/download/page.tsx (4), components/configurator/StepFourConfirmation.tsx (4)
+- Suggested starting points: app/download/page.tsx, lib/cms.ts, app/api/auth/login/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx
 ## Current Workspace
-- Active file: app/api/auth/login/route.ts
+- Active file: app/download/page.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/download/page.tsx | 423 lines | 20214 chars | hash d0374c981d6d
+  Last snapshot: 2026-11-11T11:23:03.729Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/api/auth/login/route.ts | 57 lines | 2010 chars | hash 7282b64cb271
   Last snapshot: 2026-11-11T11:15:01.634Z
   Preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
 - app/dashboard/page.tsx | 382 lines | 18813 chars | hash 7355bba0f367
   Last snapshot: 2026-11-11T11:02:54.488Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- app/download/page.tsx | 415 lines | 20274 chars | hash 386c73b4cf72
-  Last snapshot: 2026-11-11T10:51:07.877Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 - app/api/vouchers/route.ts | 52 lines | 1666 chars | hash a0397091837f
   Last snapshot: 2026-11-11T10:14:40.122Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / export async function GET(request: Request) { / try { / const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'h..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
 ## Recent Changes
+### 2026-11-11T11:23:03.729Z | saved | app/download/page.tsx
+- Summary: Line 166: replaced 28 lines with 36 lines.
+- Before: 415 lines | 20,274 chars | hash 386c73b4cf72 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 423 lines | 20,214 chars | hash d0374c981d6d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- Previous fragment: "// Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit / if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if..."
+- Current fragment: "if (titel.includes('hotel chic') || titel.includes('pakket b')) return false; / return true; / } / if (isHotelChic) { / if (titel.includes('modern raw') || titel.includes('pakke..."
+
 ### 2026-11-11T11:15:01.634Z | saved | app/api/auth/login/route.ts
 - Summary: Line 15: replaced 36 lines with 34 lines.
 - Before: 59 lines | 1,580 chars | hash e10c9943f1a5 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
@@ -158,29 +165,22 @@ Structured manifest: workspace.json
 - Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]..."
 - Current fragment: "// 🛑 32 Verhuur-bouwnummers (Jongerius) die uit het Dashboard zijn gefilterd (op wens van Chester) / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005',..."
 
-### 2026-11-06T15:36:52.529Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 335: replaced 7 lines with 7 lines.
-- Before: 361 lines | 18,126 chars | hash 03f518673507 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 361 lines | 17,897 chars | hash 56051d42a992 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: "Subtiel en strak afgestemd contactblok */} / {agreedPartner === false && ( / <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-muted space-y-1.5 ani..."
-- Current fragment: "Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */} / {agreedPartner === false && ( / <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark..."
-
 
 ## Hot Files
-- lib/cms.ts (10 tracked changes)
+- lib/cms.ts (9 tracked changes)
 - app/api/auth/login/route.ts (5 tracked changes)
+- app/download/page.tsx (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
 - app/dashboard/page.tsx (3 tracked changes)
-- app/download/page.tsx (3 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-11 1a33106 feat(auth): support standard wordpress credentials verification in login api via basic auth query
+- HEAD: 2026-11-11 cd406df fix(auth): authenticate standard wordpress credentials via wp-login.php session check
 - Working tree summary: 1 modified
-- M app/api/auth/login/route.ts
+- M app/download/page.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- f0024b7 by Bas van Dooremalen on 2026-11-11
-  refactor(auth): switch dashboard login from application password to standard wordpress user credentials
+- cd406df by Bas van Dooremalen on 2026-11-11
+  fix(auth): authenticate standard wordpress credentials via wp-login.php session check
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

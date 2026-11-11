@@ -163,12 +163,10 @@ export default function DownloadPage() {
       const isHotelChic = normPakket.includes('chic') || normPakket.includes('pakketb');
 
       if (isModernRaw) {
-        // Toon alleen Modern Raw / Pakket A, filter Hotel Chic en Pakket B eruit
         if (titel.includes('hotel chic') || titel.includes('pakket b')) return false;
         return true;
       }
       if (isHotelChic) {
-        // Toon alleen Hotel Chic / Pakket B, filter Modern Raw en Pakket A eruit
         if (titel.includes('modern raw') || titel.includes('pakket a')) return false;
         return true;
       }
@@ -183,14 +181,24 @@ export default function DownloadPage() {
 
   const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
   
-  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie || 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
-  if (typeof rawIntro === 'string' && (rawIntro.trim().startsWith('{') || rawIntro.trim().startsWith('[') || rawIntro.includes('TYPENAAM'))) {
+  // Strikte typecontrole om te voorkomen dat ruwe JSON-data of objecten worden gerenderd
+  let rawIntro = downloadSectie?.downloadIntroductie || downloadSectie?.download_introductie;
+  if (
+    !rawIntro || 
+    typeof rawIntro !== 'string' || 
+    rawIntro.trim().startsWith('{') || 
+    rawIntro.trim().startsWith('[') ||
+    rawIntro.includes('TYPENAAM') ||
+    rawIntro.includes('INDELINGTITEL') ||
+    rawIntro.includes('METRAGE') ||
+    rawIntro.length > 300
+  ) {
     rawIntro = 'Alle designbestanden voor %type% — %designpakket%. Download losse bestanden of alles in één keer.';
   }
 
-  const formattedIntro = typeof rawIntro === 'string' ? rawIntro
+  const formattedIntro = rawIntro
     .replace('%type%', woningType || '')
-    .replace('%designpakket%', designPakket || '') : '';
+    .replace('%designpakket%', designPakket || '');
 
   const getFileUrl = (bestand: any) => {
     if (!bestand) return null;
