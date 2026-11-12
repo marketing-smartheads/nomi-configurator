@@ -1,4 +1,3 @@
-// components/StepTwoDesign.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,9 +12,10 @@ export default function StepTwoDesign({
   woningType
 }: any) {
   const data = configuratorData?.configurator || configuratorData;
+  const stappenBalk = data?.stappenBalk || data?.stappen_balk || [];
 
   const titel = data?.titelStap2 || 'Kies uw designpakket';
-  const omschrijving = data?.stap2omschrijving || '';
+  const omschrijving = stappenBalk[1]?.stapOmschrijving || stappenBalk[1]?.stap_omschrijving || '';
   
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
@@ -103,9 +103,11 @@ export default function StepTwoDesign({
         <h2 className="text-4xl sm:text-5xl font-serif text-dark font-normal">
           {titel}
         </h2>
-        <p className="text-muted leading-relaxed">
-          {omschrijving}
-        </p>
+        {omschrijving && (
+          <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+            {omschrijving}
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-4">

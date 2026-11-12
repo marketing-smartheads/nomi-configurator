@@ -1,4 +1,3 @@
-// components/StepThreeVisuals.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,6 +10,7 @@ export default function StepThreeVisuals({
   woningType 
 }: any) {
   const data = configuratorData?.configurator || configuratorData;
+  const stappenBalk = data?.stappenBalk || data?.stappen_balk || [];
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
@@ -79,7 +79,7 @@ export default function StepThreeVisuals({
 
   const pakketTitel = huidigPakketObj?.pakketTitel || huidigPakketObj?.pakket_titel || actiefPakket;
   const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
-  const stapOmschrijving = huidigPakketObj?.stap3Omschrijving || huidigPakketObj?.stap3_omschrijving || data?.stap3Omschrijving || 'Bekijk hieronder de 3D-visuals van uw woning. Zo ervaart u vooraf hoe het eindresultaat eruitziet — tot in de materialen en sferen.';
+  const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || '';
 
   const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider;
   let visuals: any[] = [];
@@ -276,16 +276,18 @@ export default function StepThreeVisuals({
 
   return (
     <div className="space-y-16">
-      <div className="text-center space-y-4 max-w-2xl mx-auto px-4">
+      <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
           {`Stap 3 · ${stepTitle}`}
         </p>
         <h2 className="text-3xl sm:text-5xl font-serif text-dark font-normal">
           {stapTitel}
         </h2>
-        <p className="text-xs sm:text-sm text-muted leading-relaxed">
-          {stapOmschrijving}
-        </p>
+        {stapOmschrijving && (
+          <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+            {stapOmschrijving}
+          </p>
+        )}
       </div>
 
       {/* 1. 360° Panorama Viewer */}

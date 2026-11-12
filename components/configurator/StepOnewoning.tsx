@@ -8,6 +8,9 @@ export default function StepOneWoning({
   selectedIndeling, 
   setSelectedIndeling 
 }: any) {
+  const data = configuratorData?.configurator || configuratorData;
+  const stappenBalk = data?.stappenBalk || data?.stappen_balk || [];
+  const stap1Omschrijving = stappenBalk[0]?.stapOmschrijving || stappenBalk[0]?.stap_omschrijving || '';
   
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
@@ -52,11 +55,13 @@ export default function StepOneWoning({
           {`Stap 1 · ${stepTitle}`}
         </p>
         <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">
-          {configuratorData?.stap1Titel || 'Kies uw gewenste indeling'}
+          {data?.titelStap1 || data?.stap1Titel || 'Kies uw gewenste indeling'}
         </h2>
-        <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
-          {configuratorData?.stap1Omschrijving || 'Thomas de Gier stelde verschillende indelingen samen voor uw woning. Kies de indeling die het beste bij uw levensstijl past.'}
-        </p>
+        {stap1Omschrijving && (
+          <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+            {stap1Omschrijving}
+          </p>
+        )}
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 max-w-4xl mx-auto">

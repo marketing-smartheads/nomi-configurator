@@ -43,6 +43,7 @@ export async function getPageData() {
           configurator {
             stappenBalk {
               stapTitel
+              stapOmschrijving
             }
             titelStap1
             stap1Omschrijving
