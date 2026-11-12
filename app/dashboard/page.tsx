@@ -358,7 +358,8 @@ export default function DashboardPage() {
                         const klantNaam = isVerzilverd ? (details.klantNaam || details.klant_naam || '—') : '—';
                         const klantEmail = isVerzilverd ? (details.klantEMail || details.klant_email || '—') : '—';
                         const designPakket = isVerzilverd ? (details.gekozenDesignpakket || details.gekozen_designpakket || '—') : '—';
-                        const vouchercode = details.toegangscode || v.title || '—';
+                        const rawCode = String(details.toegangscode || v.title || '').trim();
+                        const vouchercode = rawCode || '—';
 
                         return (
                           <tr key={v.databaseId || index} className="border-b border-[#EFECE6] hover:bg-[#FAF9F6] transition">
@@ -380,7 +381,21 @@ export default function DashboardPage() {
                                 </span>
                               )}
                             </td>
-                            <td className="py-4 px-6 font-mono text-xs text-dark">{vouchercode}</td>
+                            <td className="py-4 px-6 font-mono text-xs text-dark">
+                              {rawCode ? (
+                                <a
+                                  href={`/voucher?code=${encodeURIComponent(rawCode)}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="underline decoration-[#C5A880] underline-offset-4 hover:text-[#9E835E] transition inline-flex items-center gap-1"
+                                  title={`Open ${rawCode} in een nieuw tabblad`}
+                                >
+                                  {vouchercode} ↗
+                                </a>
+                              ) : (
+                                vouchercode
+                              )}
+                            </td>
                           </tr>
                         );
                       })

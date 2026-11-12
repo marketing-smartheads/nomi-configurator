@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T15:40:54.220Z",
-  "generatedAtEpochMs": 1794411654220,
+  "generatedAt": "2026-11-12T06:52:21.973Z",
+  "generatedAtEpochMs": 1794466341973,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -29,11 +29,11 @@
       "components/configurator/StepFourConfirmation.tsx",
       "lib/cms.ts",
       "app/api/vouchers/route.ts",
-      "components/configurator/StepThreeVisuals.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-11T15:40:52.436Z",
+    "lastActivityAt": "2026-11-12T06:52:19.528Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "app/dashboard/page.tsx",
-      "updatedAt": 1794411652436,
-      "lineCount": 400,
-      "charCount": 19842,
-      "hash": "e7f0442aa21f",
+      "updatedAt": 1794466339528,
+      "lineCount": 415,
+      "charCount": 20693,
+      "hash": "04b3d6a61487",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 415 lines.",
+      "recordedAt": "2026-11-12T06:52:19.528Z",
+      "recordedAtEpochMs": 1794466339528,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1794466339528
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 415,
+        "charCount": 20693,
+        "hash": "04b3d6a61487",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will...",
+        "updatedAt": 1794466339528
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 415,
+        "summary": "Line 1: inserted 415 lines.",
+        "beforeFragment": "",
+        "afterFragment": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuu..."
+      }
+    },
     {
       "type": "save",
       "path": "app/dashboard/page.tsx",
@@ -1092,38 +1124,6 @@
         "beforeFragment": "let cmsData = null; / try { / const fetchPromise = getPageData(); / const timeoutPromise = new Promise((_, reject) => / setTimeout(() => reject(new Error('CMS timeout')), 5000)...",
         "afterFragment": "// 1. Haal ALTIJD direct de echte data op uit WordPress op basis van de vouchercode (100% Leidend) / let resolvedWoning = 'Type A'; / let resolvedPakket = 'Hotel Chic'; / let re..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 59: replaced 110 lines with 110 lines.",
-      "recordedAt": "2026-11-11T12:30:14.059Z",
-      "recordedAtEpochMs": 1794400214059,
-      "before": {
-        "kind": "text",
-        "lineCount": 420,
-        "charCount": 20418,
-        "hash": "efe0c973525b",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794400214058
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 420,
-        "charCount": 20448,
-        "hash": "7e834601ad89",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794400214059
-      },
-      "diff": {
-        "lineStart": 59,
-        "removedLines": 110,
-        "addedLines": 110,
-        "summary": "Line 59: replaced 110 lines with 110 lines.",
-        "beforeFragment": "WordPress database is ALTIJD leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { / try { / const...",
-        "afterFragment": "STAP 1: WordPress database is ALTIJD 100% leidend bij een vouchercode! / let resolvedWoning = ''; / let resolvedPakket = ''; / let resolvedIndeling = ''; / if (voucherCode) { /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1133,7 +1133,7 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 7
+      "count": 8
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1154,26 +1154,25 @@
     {
       "filePath": "app/api/vouchers/route.ts",
       "count": 2
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-11 26fd4d3 feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-11 8b107e7 fix(dashboard): correct variable name from VERHUUR_VOUCHERS_SET to VERHUUR_VOUCHERS",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M app/dashboard/page.tsx"
+      "M app/dashboard/page.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b92fe02 by Bas van Dooremalen on 2026-11-11\n  feat(auth & dashboard): perfectly align restricted rental vouchers with De Keizer official price list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8b107e7 by Bas van Dooremalen on 2026-11-11\n  fix(dashboard): correct variable name from VERHUUR_VOUCHERS_SET to VERHUUR_VOUCHERS\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
