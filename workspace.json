@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T10:39:27.425Z",
-  "generatedAtEpochMs": 1794479967425,
+  "generatedAt": "2026-11-12T10:49:39.349Z",
+  "generatedAtEpochMs": 1794480579349,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,7 +22,7 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
       "app/api/auth/login/route.ts",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-12T10:39:25.575Z",
+    "lastActivityAt": "2026-11-12T10:49:37.611Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1794480577611,
+      "lineCount": 361,
+      "charCount": 17901,
+      "hash": "f7fdb39517cd",
+      "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1794479965575,
@@ -641,17 +649,73 @@
       "charCount": 20106,
       "hash": "172d883371d9",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-    },
-    {
-      "filePath": "app/api/auth/login/route.ts",
-      "updatedAt": 1794395701634,
-      "lineCount": 57,
-      "charCount": 2010,
-      "hash": "7282b64cb271",
-      "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 250: removed 1 line.",
+      "recordedAt": "2026-11-12T10:49:37.611Z",
+      "recordedAtEpochMs": 1794480577611,
+      "before": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17919,
+        "hash": "5581ebfa135c",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794480577611
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17901,
+        "hash": "f7fdb39517cd",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794480577611
+      },
+      "diff": {
+        "lineStart": 250,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 250: removed 1 line.",
+        "beforeFragment": "max-w-2xl mx-auto",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 250: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-12T10:49:25.071Z",
+      "recordedAtEpochMs": 1794480565071,
+      "before": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17897,
+        "hash": "56051d42a992",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794480565070
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17919,
+        "hash": "5581ebfa135c",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794480565071
+      },
+      "diff": {
+        "lineStart": 250,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 250: replaced 1 line with 1 line.",
+        "beforeFragment": "muted text-base leading-relaxed pt-2",
+        "afterFragment": "xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1039,70 +1103,6 @@
         "beforeFragment": "it bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd",
         "afterFragment": "eze vouchercode is niet beschikbaar voor online configuratie"
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "Line 184: replaced 130 lines with 128 lines.",
-      "recordedAt": "2026-11-11T13:24:54.106Z",
-      "recordedAtEpochMs": 1794403494106,
-      "before": {
-        "kind": "text",
-        "lineCount": 318,
-        "charCount": 9223,
-        "hash": "32e06f359223",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1794403494106
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 316,
-        "charCount": 9024,
-        "hash": "96f317a135a3",
-        "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no...",
-        "updatedAt": 1794403494106
-      },
-      "diff": {
-        "lineStart": 184,
-        "removedLines": 130,
-        "addedLines": 128,
-        "summary": "Line 184: replaced 130 lines with 128 lines.",
-        "beforeFragment": "indeling / status / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST...",
-        "afterFragment": "klantEMail / } / } / } / } / `; / const graphqlEndpoint = 'https://cms.nomi-configurator.nl/graphql'; / try { / const res = await fetch(graphqlEndpoint, { / method: 'POST', / he..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 14: replaced 181 lines with 182 lines.",
-      "recordedAt": "2026-11-11T13:12:34.040Z",
-      "recordedAtEpochMs": 1794402754040,
-      "before": {
-        "kind": "text",
-        "lineCount": 417,
-        "charCount": 20121,
-        "hash": "00549e87a8a1",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794402754040
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 418,
-        "charCount": 20106,
-        "hash": "172d883371d9",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1794402754040
-      },
-      "diff": {
-        "lineStart": 14,
-        "removedLines": 181,
-        "addedLines": 182,
-        "summary": "Line 14: replaced 181 lines with 182 lines.",
-        "beforeFragment": "1'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =...",
-        "afterFragment": "2'); / const [designPakket, setDesignPakket] = useState<string>('Modern Raw'); / const [pageData, setPageData] = useState<any>(null); / const [isDownloading, setIsDownloading] =..."
-      }
     }
   ],
   "hotFiles": [
@@ -1112,7 +1112,7 @@
     },
     {
       "filePath": "app/dashboard/page.tsx",
-      "count": 8
+      "count": 7
     },
     {
       "filePath": "app/api/auth/login/route.ts",
@@ -1120,7 +1120,7 @@
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
-      "count": 5
+      "count": 4
     },
     {
       "filePath": "lib/cms.ts",
@@ -1131,26 +1131,23 @@
       "count": 2
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 1
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 2
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-12 7cea902 feat(dashboard): make voucher codes clickable to open in new tab via /voucher?code=",
-    "statusSummary": "7 modifieds",
-    "changedFileCount": 7,
+    "headSummary": "2026-11-12 4b8ca54 feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx",
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M components/configurator/StepTwoDesign.tsx",
+      "M components/configurator/StepFourConfirmation.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
       "M workspace.json",
       "M workspacememory.md"
     ],
@@ -1158,7 +1155,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7cea902 by Bas van Dooremalen on 2026-11-12\n  feat(dashboard): make voucher codes clickable to open in new tab via /voucher?code=\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4b8ca54 by Bas van Dooremalen on 2026-11-12\n  feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

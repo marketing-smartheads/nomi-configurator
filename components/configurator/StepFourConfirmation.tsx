@@ -247,7 +247,7 @@ export default function StepFourConfirmation({
         <div className="space-y-3">
           {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
           {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
-          {omschrijving && <p className="text-muted text-base leading-relaxed pt-2">{omschrijving}</p>}
+          {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
         </div>
 
         {errorMessage && (
