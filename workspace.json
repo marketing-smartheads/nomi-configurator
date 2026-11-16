@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T13:17:51.188Z",
-  "generatedAtEpochMs": 1794835071188,
+  "generatedAt": "2026-11-16T13:40:12.604Z",
+  "generatedAtEpochMs": 1794836412604,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
       "app/api/verify-voucher/route.ts",
       "lib/cms.ts",
       "app/api/auth/login/route.ts",
-      "app/api/vouchers/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepOnewoning.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T13:17:48.708Z",
+    "lastActivityAt": "2026-11-16T13:40:10.038Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1794836410038,
+      "lineCount": 212,
+      "charCount": 9434,
+      "hash": "2d7e4427fb95",
+      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1794835068708,
@@ -619,14 +627,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794479956276,
-      "lineCount": 207,
-      "charCount": 9312,
-      "hash": "bd7debac65d2",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-    },
-    {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1794466339528,
       "lineCount": 415,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 72: replaced 4 lines with 9 lines.",
+      "recordedAt": "2026-11-16T13:40:10.038Z",
+      "recordedAtEpochMs": 1794836410038,
+      "before": {
+        "kind": "text",
+        "lineCount": 207,
+        "charCount": 9312,
+        "hash": "bd7debac65d2",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794836410038
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 212,
+        "charCount": 9434,
+        "hash": "2d7e4427fb95",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794836410038
+      },
+      "diff": {
+        "lineStart": 72,
+        "removedLines": 4,
+        "addedLines": 9,
+        "summary": "Line 72: replaced 4 lines with 9 lines.",
+        "beforeFragment": "const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => { / const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id ||...",
+        "afterFragment": "// WATERDICHTE DUBBELEN-FILTER: Sorteer en filter op unieke titel/id via een Map / const uniekePakketMap = new Map(); / alleVerzameldePakketten.forEach((pakket) => { / const sch..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1071,38 +1103,6 @@
         "beforeFragment": "in ? null : sortedVouchers.ma",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 324 lines with 339 lines.",
-      "recordedAt": "2026-11-11T15:10:16.937Z",
-      "recordedAtEpochMs": 1794409816937,
-      "before": {
-        "kind": "text",
-        "lineCount": 382,
-        "charCount": 18813,
-        "hash": "7355bba0f367",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged...",
-        "updatedAt": 1794409816937
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 397,
-        "charCount": 19811,
-        "hash": "c6c46a934ccb",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f...",
-        "updatedAt": 1794409816937
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 324,
-        "addedLines": 339,
-        "summary": "Line 7: replaced 324 lines with 339 lines.",
-        "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]...",
-        "afterFragment": "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
-      }
     }
   ],
   "hotFiles": [
@@ -1127,32 +1127,32 @@
       "count": 3
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
-      "count": 2
-    },
-    {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 2
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 97b5dd4 fix(auth): strictly block rental vouchers in GET verify route with 403 response",
+    "headSummary": "2026-11-16 e8b75e2 remove unwanted text",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepTwoDesign.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 97b5dd4 by Bas van Dooremalen on 2026-11-16\n  fix(auth): strictly block rental vouchers in GET verify route with 403 response\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e8b75e2 by Bas van Dooremalen on 2026-11-16\n  remove unwanted text\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

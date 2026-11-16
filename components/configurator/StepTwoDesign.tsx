@@ -69,10 +69,15 @@ export default function StepTwoDesign({
     });
   });
 
-  const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => {
-    const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
-    return index === self.findIndex((obj) => (obj.pakketTitel || obj.pakket_titel || obj.pakketId || obj.pakket_id || '').trim().toLowerCase() === t);
+  // WATERDICHTE DUBBELEN-FILTER: Sorteer en filter op unieke titel/id via een Map
+  const uniekePakketMap = new Map();
+  alleVerzameldePakketten.forEach((pakket) => {
+    const schoneNaam = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
+    if (schoneNaam && !uniekePakketMap.has(schoneNaam)) {
+      uniekePakketMap.set(schoneNaam, pakket);
+    }
   });
+  const pakkettenLijst = Array.from(uniekePakketMap.values());
 
   const [isConfirmed, setIsConfirmed] = useState(false);
 

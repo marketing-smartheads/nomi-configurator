@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T13:17:51.188Z
+Generated: 2026-11-16T13:40:12.604Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T13:17:48.708Z
+- Last activity: 2026-11-16T13:40:10.038Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
+- Active file in focus: components/configurator/StepTwoDesign.tsx
 - Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/verify-voucher/route.ts (5), lib/cms.ts (4)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
+- Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/configurator/StepTwoDesign.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepTwoDesign.tsx | 212 lines | 9434 chars | hash 2d7e4427fb95
+  Last snapshot: 2026-11-16T13:40:10.038Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
   Last snapshot: 2026-11-16T13:17:48.708Z
   Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
@@ -51,9 +54,6 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx | 494 lines | 20251 chars | hash 3918fdaf7ddf
   Last snapshot: 2026-11-12T10:39:25.575Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- components/configurator/StepTwoDesign.tsx | 207 lines | 9312 chars | hash bd7debac65d2
-  Last snapshot: 2026-11-12T10:39:16.276Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
   Last snapshot: 2026-11-12T06:52:19.528Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T13:40:10.038Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 72: replaced 4 lines with 9 lines.
+- Before: 207 lines | 9,312 chars | hash bd7debac65d2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 212 lines | 9,434 chars | hash 2d7e4427fb95 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => { / const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id ||..."
+- Current fragment: "// WATERDICHTE DUBBELEN-FILTER: Sorteer en filter op unieke titel/id via een Map / const uniekePakketMap = new Map(); / alleVerzameldePakketten.forEach((pakket) => { / const sch..."
+
 ### 2026-11-16T13:17:48.708Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 55: removed 1 line.
 - Before: 127 lines | 5,726 chars | hash a94e30c9f639 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
@@ -152,13 +159,6 @@ Structured manifest: workspace.json
 - After: 397 lines | 19,782 chars | hash f472d95f0ee7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
 - Previous fragment: "in ? null : sortedVouchers.ma"
 
-### 2026-11-11T15:10:16.937Z | saved | app/dashboard/page.tsx
-- Summary: Line 7: replaced 324 lines with 339 lines.
-- Before: 382 lines | 18,813 chars | hash 7355bba0f367 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DashboardPage() { / const [isLogged..."
-- After: 397 lines | 19,811 chars | hash c6c46a934ccb | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-- Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]..."
-- Current fragment: "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
@@ -166,15 +166,15 @@ Structured manifest: workspace.json
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - lib/cms.ts (4 tracked changes)
 - app/api/auth/login/route.ts (3 tracked changes)
-- app/api/vouchers/route.ts (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
+- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 97b5dd4 fix(auth): strictly block rental vouchers in GET verify route with 403 response
+- HEAD: 2026-11-16 e8b75e2 remove unwanted text
 - Working tree summary: 1 modified
-- M components/configurator/StepOnewoning.tsx
+- M components/configurator/StepTwoDesign.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 97b5dd4 by Bas van Dooremalen on 2026-11-16
-  fix(auth): strictly block rental vouchers in GET verify route with 403 response
+- e8b75e2 by Bas van Dooremalen on 2026-11-16
+  remove unwanted text
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
