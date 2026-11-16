@@ -89,6 +89,8 @@ export async function getPageData() {
                     }
                   }
                   bannerTitel
+                  geselecteerdePartnersTitel
+                  geselecteerdePartnersOmschrijving
                 }
               }
               panoramaRenders {
@@ -280,7 +282,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
     const velden = voucher.voucherVelden || {};
     const opgeslagenEmail = String(velden.klantEMail || '').trim().toLowerCase();
 
-    // DYNAMISCHE BEVEILIGINGSCHECK:
     if (opgeslagenEmail && opgeslagenEmail !== '-' && opgeslagenEmail !== '') {
       if (opgeslagenEmail !== cleanEmail) {
         return { 
@@ -289,7 +290,6 @@ export async function verifyAndAuthVoucher(toegangscode: string, klantEmail: str
         };
       }
     } else {
-      // Ongebruikte voucher: koppel het e-mailadres direct dynamisch in WordPress
       const updateMutation = `
         mutation UpdateVoucherEmail($id: ID!, $email: String!) {
           updateVoucher(input: { id: $id, voucherVelden: { klantEMail: $email } }) {

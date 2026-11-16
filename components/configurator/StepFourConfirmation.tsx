@@ -1,4 +1,4 @@
-// components/StepFourConfirmation.tsx
+// components/configurator/StepFourConfirmation.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -125,7 +125,7 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (met veilige fallbacks)
+  // Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep
   const partnersSectieTitel = 
     bevData?.geselecteerdePartnersTitel || 
     bevData?.geselecteerde_partners_titel || 
@@ -136,7 +136,6 @@ export default function StepFourConfirmation({
     bevData?.geselecteerde_partners_omschrijving || 
     'Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.';
 
-  // Rotsvaste ophaallogica voor partners (zowel uit het woningType als globaal)
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
@@ -297,18 +296,38 @@ export default function StepFourConfirmation({
           </div>
         </div>
 
-        {/* GESELECTEERDE PARTNERS SECTIE (Exact onder het formulier volgens design) */}
+        <div className="flex items-center justify-center gap-8 pt-2">
+          <Button
+            onClick={() => {
+              if (!klantNaam.trim()) {
+                setErrorMessage('Vul eerst uw volledige naam in.');
+                return;
+              }
+              setShowPopup(true);
+            }}
+            disabled={!klantNaam.trim() || loading}
+            loading={loading}
+            className="px-10 py-4"
+          >
+            BEVESTIG KEUZE
+          </Button>
+          <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
+            TERUG
+          </button>
+        </div>
+
+        {/* GESELECTEERDE PARTNERS SECTIE (Exact onder de knoppen/formulier zoals in het design) */}
         {partners.length > 0 && (
-          <div className="bg-white p-8 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 my-8">
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl md:text-3xl font-serif text-dark">{partnersSectieTitel}</h3>
+          <div className="bg-white p-8 sm:p-12 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 mt-16">
+            <div className="text-center space-y-3 max-w-lg mx-auto">
+              <h3 className="text-3xl md:text-4xl font-serif text-dark">{partnersSectieTitel}</h3>
               {partnersSectieOmschrijving && (
-                <p className="text-xs sm:text-sm text-muted">
+                <p className="text-xs sm:text-sm text-muted leading-relaxed">
                   {partnersSectieOmschrijving}
                 </p>
               )}
             </div>
-            <div className="divide-y divide-dark/10 pt-2">
+            <div className="divide-y divide-dark/10 pt-4">
               {partners.map((partner: any, pIdx: number) => {
                 const pNaam = partner.partnerNaam || partner.partner_naam || '';
                 const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
@@ -333,26 +352,6 @@ export default function StepFourConfirmation({
             </div>
           </div>
         )}
-
-        <div className="flex items-center justify-center gap-8 pt-2">
-          <Button
-            onClick={() => {
-              if (!klantNaam.trim()) {
-                setErrorMessage('Vul eerst uw volledige naam in.');
-                return;
-              }
-              setShowPopup(true);
-            }}
-            disabled={!klantNaam.trim() || loading}
-            loading={loading}
-            className="px-10 py-4"
-          >
-            BEVESTIG KEUZE
-          </Button>
-          <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
-            TERUG
-          </button>
-        </div>
       </div>
 
       {showPopup && (
