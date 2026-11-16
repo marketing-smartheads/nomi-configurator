@@ -6,10 +6,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
-// Vaste partnergegevens volgens de instructies van Thomas de Gier
 const PARTNER_NAAM = 'Aanhuis Spijk';
 const PARTNER_CONTACT = 'Tobias';
-const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'Tobias@aanhuis-spijk.nl';
+const PARTNER_EMAIL = 'Tobias@aanhuis-spijk.nl';
 const PARTNER_TELEFOON = '030 - 600 82 40';
 
 interface StepFourConfirmationProps {
@@ -178,7 +177,7 @@ export default function StepFourConfirmation({
       partners,
       bestanden: storedWoning?.downloadCategorie || storedWoning?.download_categorieen || [],
       toestemmingPartner: toestemming,
-      partnerEmailTarget: PARTNER_EMAIL, // Richting Tobias@aanhuis-spijk.nl
+      partnerEmailTarget: PARTNER_EMAIL,
     };
 
     try {
@@ -354,49 +353,95 @@ export default function StepFourConfirmation({
         </div>
       )}
 
-      {/* POP-UP VOLGENS THOMAS DE GIER (Scenario 1 & 2 met correcte partner Aanhuis Spijk / Tobias) */}
+      {/* POP-UP TOESTEMMING CONTACTGEGEVENS */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
             <p className="text-sm text-muted leading-relaxed">
-              Wilt u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u kunnen opnemen om de opties te bespreken?
+              Wilt u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u kunnen opnemen om de mogelijkheden te bespreken?
             </p>
             <div className="space-y-3 pt-1">
               <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
-                <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
+                <input
+                  type="radio"
+                  name="partnerAkkoord"
+                  checked={agreedPartner === true}
+                  onChange={() => setAgreedPartner(true)}
+                  className="mt-1 w-4 h-4 accent-[#C5A880]"
+                />
                 <div className="text-sm text-dark space-y-0.5">
-                  <strong className="block font-semibold">Scenario 1: Wel akkoord (Automatisch)</strong>
-                  <span className="text-xs text-muted block leading-relaxed">Deel mijn gegevens met {PARTNER_NAAM} zodat Tobias automatisch contact kan opnemen en ik direct toegang krijg tot de downloadpagina.</span>
+                  <strong className="block font-semibold">Ja, partners mogen contact met mij opnemen</strong>
+                  <span className="text-xs text-muted block leading-relaxed">
+                    Deel mijn gegevens met {PARTNER_NAAM}, zodat {PARTNER_CONTACT} vrijblijvend contact opneemt en ik direct toegang krijg tot mijn documentatie.
+                  </span>
                 </div>
               </label>
 
               <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
-                <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
+                <input
+                  type="radio"
+                  name="partnerAkkoord"
+                  checked={agreedPartner === false}
+                  onChange={() => setAgreedPartner(false)}
+                  className="mt-1 w-4 h-4 accent-[#C5A880]"
+                />
                 <div className="text-sm text-dark space-y-0.5">
-                  <strong className="block font-semibold">Scenario 2: Geen akkoord (Handmatig)</strong>
-                  <span className="text-xs text-muted block leading-relaxed">Deel mijn gegevens niet automatisch. Ik wil zelf contact opnemen met {PARTNER_NAAM} om de documentatielijst te bemachtigen.</span>
+                  <strong className="block font-semibold">Nee, ik neem zelf contact op</strong>
+                  <span className="text-xs text-muted block leading-relaxed">
+                    Deel mijn gegevens niet automatisch. Ik neem zelf contact op met {PARTNER_NAAM} om de mogelijkheden en documentatie te bespreken.
+                  </span>
                 </div>
               </label>
 
               {agreedPartner === false && (
                 <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-dark space-y-1.5 animate-fadeIn">
-                  <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">Direct zelf contact opnemen met {PARTNER_NAAM}:</p>
+                  <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">
+                    Direct contact opnemen met {PARTNER_NAAM}:
+                  </p>
                   <div>Contactpersoon: <span className="font-medium">{PARTNER_CONTACT}</span></div>
-                  <div>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">{PARTNER_EMAIL}</a></div>
-                  <div>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">{PARTNER_TELEFOON}</a></div>
+                  <div>
+                    E-mail:{' '}
+                    <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">
+                      {PARTNER_EMAIL}
+                    </a>
+                  </div>
+                  <div>
+                    Telefoon:{' '}
+                    <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">
+                      {PARTNER_TELEFOON}
+                    </a>
+                  </div>
                 </div>
               )}
 
               <label className="flex items-start gap-3 cursor-pointer pt-2 px-1">
-                <input type="checkbox" checked={agreedWarning} onChange={(e) => setAgreedWarning(e.target.checked)} className="mt-0.5 w-4 h-4 accent-dark rounded" />
-                <span className="text-[11px] font-bold text-primary uppercase tracking-wide leading-snug">{waarschuwingTekst}</span>
+                <input
+                  type="checkbox"
+                  checked={agreedWarning}
+                  onChange={(e) => setAgreedWarning(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 accent-dark rounded"
+                />
+                <span className="text-[11px] font-bold text-primary uppercase tracking-wide leading-snug">
+                  {waarschuwingTekst}
+                </span>
               </label>
             </div>
             <div className="flex items-center justify-end gap-4 pt-4 border-t border-dark/10">
-              <button type="button" onClick={() => setShowPopup(false)} className="px-5 py-2.5 text-xs font-bold uppercase text-muted hover:text-dark transition">Annuleren</button>
-              <Button onClick={() => handleSubmit(agreedPartner === true)} disabled={!kanBevestigen} loading={isSubmitting} className="px-6 py-3 text-xs">
-                {agreedPartner === false ? 'BEVESTIG & OMSLAG OPSLAAN' : 'AKKOORD & VERSTUREN'}
+              <button
+                type="button"
+                onClick={() => setShowPopup(false)}
+                className="px-5 py-2.5 text-xs font-bold uppercase text-muted hover:text-dark transition"
+              >
+                Annuleren
+              </button>
+              <Button
+                onClick={() => handleSubmit(agreedPartner === true)}
+                disabled={!kanBevestigen}
+                loading={isSubmitting}
+                className="px-6 py-3 text-xs"
+              >
+                {agreedPartner === false ? 'KEUZE OPSLAAN' : 'AKKOORD & VERSTUREN'}
               </Button>
             </div>
           </div>

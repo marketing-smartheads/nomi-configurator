@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T15:49:54.794Z",
-  "generatedAtEpochMs": 1794844194794,
+  "generatedAt": "2026-11-16T16:07:40.938Z",
+  "generatedAtEpochMs": 1794845260938,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T15:49:53.011Z",
+    "lastActivityAt": "2026-11-16T16:07:38.565Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794844193011,
-      "lineCount": 407,
-      "charCount": 20495,
-      "hash": "a4464314b6cc",
+      "updatedAt": 1794845258565,
+      "lineCount": 452,
+      "charCount": 21190,
+      "hash": "1af2672256b8",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 9: replaced 391 lines with 436 lines.",
+      "recordedAt": "2026-11-16T16:07:38.565Z",
+      "recordedAtEpochMs": 1794845258565,
+      "before": {
+        "kind": "text",
+        "lineCount": 407,
+        "charCount": 20495,
+        "hash": "a4464314b6cc",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794845258565
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 452,
+        "charCount": 21190,
+        "hash": "1af2672256b8",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794845258565
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 391,
+        "addedLines": 436,
+        "summary": "Line 9: replaced 391 lines with 436 lines.",
+        "beforeFragment": "// Vaste partnergegevens volgens de instructies van Thomas de Gier / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.en...",
+        "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = 'Tobias@aanhuis-spijk.nl'; / const PARTNER_TELEFOON = '030 - 600 82 40'; / inte..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1085,44 +1117,12 @@
         "updatedAt": 1794838892259
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 112: inserted 1 line.",
-      "recordedAt": "2026-11-16T14:08:50.327Z",
-      "recordedAtEpochMs": 1794838130327,
-      "before": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9651,
-        "hash": "95f84782fc37",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838130327
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9662,
-        "hash": "76facdd6978d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838130327
-      },
-      "diff": {
-        "lineStart": 112,
-        "removedLines": 0,
-        "addedLines": 1,
-        "summary": "Line 112: inserted 1 line.",
-        "beforeFragment": "",
-        "afterFragment": "sm:text-sm"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 11
+      "count": 12
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1138,7 +1138,7 @@
     },
     {
       "filePath": "lib/cms.ts",
-      "count": 4
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1156,20 +1156,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 af3958e fix(step4): resolve contact person fallback so correct contact name appears instead of partner role",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-16 cfb01e0 fix(step4): enforce correct Aanhuis Spijk partner name and Tobias contact details for both confirmation scenarios",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- af3958e by Bas van Dooremalen on 2026-11-16\n  fix(step4): resolve contact person fallback so correct contact name appears instead of partner role\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cfb01e0 by Bas van Dooremalen on 2026-11-16\n  fix(step4): enforce correct Aanhuis Spijk partner name and Tobias contact details for both confirmation scenarios\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
