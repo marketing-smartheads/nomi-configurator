@@ -125,7 +125,10 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback)
+  // Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF)
+  const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || 'Geselecteerde partners';
+  const partnersSectieOmschrijving = bevData?.geselecteerdePartnersOmschrijving || bevData?.geselecteerde_partners_omschrijving || 'Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.';
+
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
@@ -248,14 +251,16 @@ export default function StepFourConfirmation({
           </div>
         )}
 
-        {/* GESELECTEERDE PARTNERS SECTIE */}
+        {/* GESELECTEERDE PARTNERS SECTIE (Exact volgens CMS en design) */}
         {partners.length > 0 && (
           <div className="bg-white p-8 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 my-8">
             <div className="text-center space-y-2">
-              <h3 className="text-2xl md:text-3xl font-serif text-dark">Geselecteerde partners</h3>
-              <p className="text-xs sm:text-sm text-muted">
-                Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.
-              </p>
+              <h3 className="text-2xl md:text-3xl font-serif text-dark">{partnersSectieTitel}</h3>
+              {partnersSectieOmschrijving && (
+                <p className="text-xs sm:text-sm text-muted">
+                  {partnersSectieOmschrijving}
+                </p>
+              )}
             </div>
             <div className="divide-y divide-dark/10 pt-2">
               {partners.map((partner: any, pIdx: number) => {

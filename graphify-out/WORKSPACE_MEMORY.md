@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T14:55:30.318Z
+Generated: 2026-11-16T15:06:42.849Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T14:55:27.956Z
+- Last activity: 2026-11-16T15:06:40.332Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepTwoDesign.tsx (10), app/download/page.tsx (9), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
+- Hottest files right now: components/configurator/StepTwoDesign.tsx (10), app/download/page.tsx (8), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
 - Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, lib/cms.ts
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 387 lines | 19566 chars | hash 74acf90b8b68
-  Last snapshot: 2026-11-16T14:55:27.956Z
+- components/configurator/StepFourConfirmation.tsx | 392 lines | 19972 chars | hash 3cc9d626399a
+  Last snapshot: 2026-11-16T15:06:40.332Z
   Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
 - components/configurator/StepThreeVisuals.tsx | 495 lines | 20323 chars | hash 21d3217c9bba
   Last snapshot: 2026-11-16T14:30:34.311Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T15:06:40.332Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 128: replaced 131 lines with 136 lines.
+- Before: 387 lines | 19,566 chars | hash 74acf90b8b68 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+- After: 392 lines | 19,972 chars | hash 3cc9d626399a | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+- Previous fragment: "Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback) / const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.par..."
+- Current fragment: "Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerd..."
+
 ### 2026-11-16T14:55:27.956Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 9: replaced 327 lines with 353 lines.
 - Before: 361 lines | 17,901 chars | hash f7fdb39517cd | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
@@ -151,27 +158,20 @@ Structured manifest: workspace.json
 - After: 361 lines | 17,901 chars | hash f7fdb39517cd | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
 - Previous fragment: "max-w-2xl mx-auto"
 
-### 2026-11-12T10:49:25.071Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 250: replaced 1 line with 1 line.
-- Before: 361 lines | 17,897 chars | hash 56051d42a992 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 361 lines | 17,919 chars | hash 5581ebfa135c | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: "muted text-base leading-relaxed pt-2"
-- Current fragment: "xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto"
-
 
 ## Hot Files
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
-- app/download/page.tsx (9 tracked changes)
+- app/download/page.tsx (8 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - app/dashboard/page.tsx (5 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (4 tracked changes)
 - lib/cms.ts (4 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 20eb8d0 refactor(step3): reorder sections to place 360 panorama viewer below 3d visuals slider
+- HEAD: 2026-11-16 2405734 feat(step4): restore partners section list extracted correctly from the updated woningtypen repeater
 - Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
 
@@ -181,8 +181,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 20eb8d0 by Bas van Dooremalen on 2026-11-16
-  refactor(step3): reorder sections to place 360 panorama viewer below 3d visuals slider
+- 2405734 by Bas van Dooremalen on 2026-11-16
+  feat(step4): restore partners section list extracted correctly from the updated woningtypen repeater
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
