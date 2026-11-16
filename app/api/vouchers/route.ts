@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-// 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd
 const VERHUUR_VOUCHERS = new Set([
   'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013',
   'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-a024',
@@ -14,17 +13,17 @@ const VERHUUR_VOUCHERS = new Set([
 
 export async function GET(request: Request) {
   try {
-    // BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien
-    const authHeader = request.headers.get('authorization');
+    // Check of het verzoek van het interne dashboard komt via een speciale header
     const secretKey = request.headers.get('x-admin-secret');
-    
-    // Je kunt hier optioneel een environment variable controleren (bijv. process.env.ADMIN_SECRET_KEY)
-    // Als er geen geldige autorisatie is, blokkeer je direct de toegang:
     const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier';
+    const referer = request.headers.get('referer') || '';
     
-    if (secretKey !== expectedSecret && (!authHeader || !authHeader.startsWith('Bearer '))) {
+    // Als het niet vanuit de dashboard-pagina komt én geen geheime key heeft, weren we het af
+    const isDashboardInternal = referer.includes('/dashboard');
+
+    if (!isDashboardInternal && secretKey !== expectedSecret) {
       return NextResponse.json(
-        { success: false, error: 'Niet geautoriseerd om deze gegevens in te zien.' },
+        { success: false, error: 'Niet geautoriseerd.' },
         { status: 403 }
       );
     }
@@ -67,7 +66,6 @@ export async function GET(request: Request) {
     const json = await res.json();
     const allVouchers = json?.data?.vouchers?.nodes || [];
 
-    // Filter de verhuurwoningen er keihard uit op basis van zowel toegangscode als post titel
     const vouchers = allVouchers.filter((v: any) => {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
