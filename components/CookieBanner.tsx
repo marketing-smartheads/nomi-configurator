@@ -29,18 +29,7 @@ export default function CookieBanner() {
     marketing: false,
   });
 
-  const applyConsentScripts = (consent: { necessary: boolean; analytics: boolean; marketing: boolean }) => {
-    if (consent.analytics) {
-      console.log('[Cookies] Analytische toestemming verleend.');
-    } else {
-      console.log('[Cookies] Analytische cookies uitgeschakeld.');
-    }
-
-    if (consent.marketing) {
-      console.log('[Cookies] Marketing toestemming verleend.');
-    } else {
-      console.log('[Cookies] Marketing cookies uitgeschakeld.');
-    }
+  const applyConsentScripts = (consent: { necessary: boolean; analytics: boolean; marketing: boolean }) => {   
   };
 
   useEffect(() => {

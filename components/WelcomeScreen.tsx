@@ -17,7 +17,6 @@ export default function WelcomeScreen({ onStart }: { onStart: () => void }) {
   useEffect(() => {
     getPageData().then(data => {
       if (data) {
-        console.log('Ontvangen data uit WordPress:', data); // Handig om te debuggen in F12 console
         setSectionsData(data);
         localStorage.setItem('nomi_pagedata', JSON.stringify(data));
       }

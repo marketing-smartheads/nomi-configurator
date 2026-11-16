@@ -20,16 +20,6 @@ export async function POST(request: Request) {
 
     const toestemmingPartner = body.toestemmingPartner === true;
 
-    console.log("📥 Ontvangen data in API route:", { 
-      toegangscode, 
-      klantNaam, 
-      klantEmail, 
-      woningType, 
-      gekozenIndeling,
-      designPakket,
-      bestandenStructuur: Array.isArray(bestanden) ? `Array met ${bestanden.length} items` : typeof bestanden
-    });
-
     const klantEmailGeldig =
       typeof klantEmail === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
     const klantEmailClean = klantEmailGeldig ? klantEmail.trim() : '';

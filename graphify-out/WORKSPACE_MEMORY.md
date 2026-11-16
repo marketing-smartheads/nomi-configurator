@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T16:44:36.619Z
+Generated: 2026-11-16T18:15:37.988Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T16:44:34.274Z
+- Last activity: 2026-11-16T18:15:36.213Z
 ## Workspace Focus
-- Active file in focus: components/Faq.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
-- Suggested starting points: components/Faq.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx
+- Active file in focus: components/CookieBanner.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/dashboard/page.tsx (4), app/api/verify-voucher/route.ts (3)
+- Suggested starting points: components/CookieBanner.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: components/Faq.tsx
+- Active file: components/CookieBanner.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,17 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 6 modifieds
 ## Tracked Snapshots
+- components/CookieBanner.tsx | 202 lines | 9136 chars | hash 9dd1c03bc3b1
+  Last snapshot: 2026-11-16T18:15:36.213Z
+  Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
+- app/api/confirm/route.ts | 298 lines | 11232 chars | hash 8705fe271979
+  Last snapshot: 2026-11-16T18:14:37.532Z
+  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- components/WelcomeScreen.tsx | 46 lines | 1424 chars | hash 14a8ac3eab2d
+  Last snapshot: 2026-11-16T18:13:19.803Z
+  Preview: "import { useState, useEffect } from 'react'; / import Hero from './Hero'; / import Story from './Story'; / import Cta from './Cta'; / import Faq from './Faq'; / import { getPageData } from '../lib/cms'; / export defau..."
 - components/Faq.tsx | 73 lines | 2892 chars | hash 383bd60b41f2
   Last snapshot: 2026-11-16T16:44:34.274Z
   Preview: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:..."
@@ -54,17 +63,26 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 272 lines | 12314 chars | hash 19f36b2caade
   Last snapshot: 2026-11-16T14:25:34.510Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
-  Last snapshot: 2026-11-16T13:17:48.708Z
-  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
-- app/api/verify-voucher/route.ts | 218 lines | 7299 chars | hash 4cc859d6c53a
-  Last snapshot: 2026-11-16T13:09:16.604Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
-  Last snapshot: 2026-11-12T06:52:19.528Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
 
 ## Recent Changes
+### 2026-11-16T18:15:36.213Z | saved | components/CookieBanner.tsx
+- Summary: Line 32: replaced 12 lines with 1 line.
+- Before: 213 lines | 9,503 chars | hash d679e25f6e7a | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
+- After: 202 lines | 9,136 chars | hash 9dd1c03bc3b1 | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
+- Previous fragment: "if (consent.analytics) { / console.log('[Cookies] Analytische toestemming verleend.'); / } else { / console.log('[Cookies] Analytische cookies uitgeschakeld.'); / } / if (consen..."
+
+### 2026-11-16T18:14:37.532Z | saved | app/api/confirm/route.ts
+- Summary: Line 23: removed 11 lines.
+- Before: 308 lines | 11,535 chars | hash ef6f9a97b4ac | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 298 lines | 11,232 chars | hash 8705fe271979 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- Previous fragment: "ole.log("📥 Ontvangen data in API route:", { / toegangscode, / klantNaam, / klantEmail, / woningType, / gekozenIndeling, / designPakket, / bestandenStructuur: Array.isArray(best..."
+
+### 2026-11-16T18:13:19.803Z | saved | components/WelcomeScreen.tsx
+- Summary: Line 20: removed 2 lines.
+- Before: 47 lines | 1,525 chars | hash 08e1ef7a07ae | preview: "import { useState, useEffect } from 'react'; / import Hero from './Hero'; / import Story from './Story'; / import Cta from './Cta'; / import Faq from './Faq'; / import { getPageData } from '../lib/cms'; / export defau..."
+- After: 46 lines | 1,424 chars | hash 14a8ac3eab2d | preview: "import { useState, useEffect } from 'react'; / import Hero from './Hero'; / import Story from './Story'; / import Cta from './Cta'; / import Faq from './Faq'; / import { getPageData } from '../lib/cms'; / export defau..."
+- Previous fragment: "console.log('Ontvangen data uit WordPress:', data); // Handig om te debuggen in F12 console"
+
 ### 2026-11-16T16:44:34.274Z | saved | components/Faq.tsx
 - Summary: Line 1: replaced 62 lines with 64 lines.
 - Before: 71 lines | 2,765 chars | hash bc96fb7b690d | preview: "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen: FaqItem[]; / }; / } / ex..."
@@ -148,42 +166,27 @@ Structured manifest: workspace.json
 - Previous fragment: "Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback) / const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.par..."
 - Current fragment: "Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerd..."
 
-### 2026-11-16T14:55:27.956Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 9: replaced 327 lines with 353 lines.
-- Before: 361 lines | 17,901 chars | hash f7fdb39517cd | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 387 lines | 19,566 chars | hash 74acf90b8b68 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / const PAR..."
-- Current fragment: "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
-
-### 2026-11-16T14:30:34.311Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 1: replaced 451 lines with 452 lines.
-- Before: 494 lines | 20,251 chars | hash 3918fdaf7ddf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-- After: 495 lines | 20,323 chars | hash 21d3217c9bba | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
-- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
-
-### 2026-11-16T14:25:34.510Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 193: inserted 1 line.
-- Before: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 272 lines | 12,314 chars | hash 19f36b2caade | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- Current fragment: "sm:"
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
-- app/api/verify-voucher/route.ts (5 tracked changes)
-- app/dashboard/page.tsx (5 tracked changes)
+- app/dashboard/page.tsx (4 tracked changes)
+- app/api/verify-voucher/route.ts (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 - lib/cms.ts (2 tracked changes)
-- components/Faq.tsx (1 tracked changes)
+- app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 4925cc9 refactor(step3): remove moodboard image below materials list
-- Working tree summary: 1 modified
-- M components/Faq.tsx
+- HEAD: 2026-11-16 5f08c4b fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags
+- Working tree summary: 6 modifieds
+- M app/api/confirm/route.ts
+- M components/CookieBanner.tsx
+- M  components/WelcomeScreen.tsx
+- MM graphify-out/WORKSPACE_MEMORY.md
+- MM workspace.json
+- MM workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4925cc9 by Bas van Dooremalen on 2026-11-16
-  refactor(step3): remove moodboard image below materials list
+- 5f08c4b by Bas van Dooremalen on 2026-11-16
+  fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
