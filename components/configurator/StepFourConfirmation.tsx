@@ -125,7 +125,6 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep
   const partnersSectieTitel = 
     bevData?.geselecteerdePartnersTitel || 
     bevData?.geselecteerde_partners_titel || 
@@ -140,10 +139,10 @@ export default function StepFourConfirmation({
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
   const primairePartner = partners[0] || {};
-  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Aanhuis Spijk';
+  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Nomi Utrecht';
   const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'info@nomi-configurator.nl';
-  const PARTNER_CONTACT = primairePartner.partnerRol || primairePartner.partner_rol || 'Partner';
-  const PARTNER_TELEFOON = '030 - 600 82 40';
+  const PARTNER_CONTACT = primairePartner.partnerRol || primairePartner.partner_rol || 'Hoofdaannemer';
+  const PARTNER_TELEFOON = primairePartner.partnerTelefoon || primairePartner.partner_telefoon || '030 - 600 82 40';
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
@@ -317,7 +316,7 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      {/* GESELECTEERDE PARTNERS SECTIE (Exact in de stijl van het design: open structuur op de achtergrond zonder lompe kaart-container) */}
+      {/* GESELECTEERDE PARTNERS SECTIE */}
       {partners.length > 0 && (
         <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10">
           <div className="space-y-3 max-w-xl mx-auto">
@@ -354,26 +353,34 @@ export default function StepFourConfirmation({
         </div>
       )}
 
+      {/* VERBETERDE POP-UP MET VOLLEDIG DUIDELIJKE KEUZESTRUCTUUR */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
             <p className="text-sm text-muted leading-relaxed">
-              We brengen u graag in contact met {PARTNER_NAAM}. Mogen we uw gegevens en keuze met hen delen, zodat zij de mogelijkheden vrijblijvend met u kunnen bespreken?
+              Wilt u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u kunnen opnemen om de opties te bespreken?
             </p>
             <div className="space-y-3 pt-1">
-              <label className="flex items-center gap-3 cursor-pointer p-3.5 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
-                <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="w-4 h-4 accent-[#C5A880]" />
-                <span className="text-sm font-medium text-dark"><strong>Ja, delen:</strong> deel mijn gegevens.</span>
+              <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
+                <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
+                <div className="text-sm text-dark space-y-0.5">
+                  <strong className="block font-semibold">Ja, delen met de partner</strong>
+                  <span className="text-xs text-muted block leading-relaxed">De partner ontvangt uw gegevens en neemt vrijblijvend contact met u op.</span>
+                </div>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer p-3.5 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
-                <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="w-4 h-4 accent-[#C5A880]" />
-                <span className="text-sm font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
+
+              <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
+                <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
+                <div className="text-sm text-dark space-y-0.5">
+                  <strong className="block font-semibold">Nee, niet delen (zelf contact opnemen)</strong>
+                  <span className="text-xs text-muted block leading-relaxed">Uw gegevens worden niet gedeeld. U houdt het in eigen hand en neemt zelf contact op.</span>
+                </div>
               </label>
 
               {agreedPartner === false && (
-                <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-dark space-y-1 animate-fadeIn">
-                  <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">Direct contact met {PARTNER_NAAM}:</p>
+                <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-dark space-y-1.5 animate-fadeIn">
+                  <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">Direct zelf contact opnemen met {PARTNER_NAAM}:</p>
                   <div>Contactpersoon: <span className="font-medium">{PARTNER_CONTACT}</span></div>
                   <div>E-mail: <a href={`mailto:${PARTNER_EMAIL}`} className="underline font-medium hover:text-primary">{PARTNER_EMAIL}</a></div>
                   <div>Telefoon: <a href={`tel:${PARTNER_TELEFOON}`} className="underline font-medium hover:text-primary">{PARTNER_TELEFOON}</a></div>
@@ -388,7 +395,7 @@ export default function StepFourConfirmation({
             <div className="flex items-center justify-end gap-4 pt-4 border-t border-dark/10">
               <button type="button" onClick={() => setShowPopup(false)} className="px-5 py-2.5 text-xs font-bold uppercase text-muted hover:text-dark transition">Annuleren</button>
               <Button onClick={() => handleSubmit(agreedPartner === true)} disabled={!kanBevestigen} loading={isSubmitting} className="px-6 py-3 text-xs">
-                AKKOORD & VERSTUREN
+                {agreedPartner === false ? 'BEVESTIG & OMSLAG OPSLAAN' : 'AKKOORD & VERSTUREN'}
               </Button>
             </div>
           </div>
