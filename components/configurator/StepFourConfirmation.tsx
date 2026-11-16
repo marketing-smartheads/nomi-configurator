@@ -6,11 +6,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
-const PARTNER_NAAM = 'Aanhuis Spijk';
-const PARTNER_CONTACT = 'Tobias';
-const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
-const PARTNER_TELEFOON = '030 - 600 82 40';
-
 interface StepFourConfirmationProps {
   stepTitle: string;
   configuratorData: any;
@@ -107,20 +102,10 @@ export default function StepFourConfirmation({
     pakketLijst.forEach((p: any) => allePakketten.push(p));
   });
 
-  if (allePakketten.length === 0 && (data?.designPakketten || data?.design_pakketten)) {
-    const algemeen = Array.isArray(data.designPakketten) ? data.designPakketten : (data.designPakketten?.nodes || data.design_pakketten || []);
-    algemeen.forEach((p: any) => allePakketten.push(p));
-  }
-
   const storedPakket = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
-  }) || allePakketten.find((p: any) => {
-    const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase();
-    if (normPakket.includes('raw') && pTitel.includes('raw')) return true;
-    if (normPakket.includes('chic') && pTitel.includes('chic')) return true;
-    return false;
   }) || allePakketten[0] || {};
 
   const storedWoning = gebruikteRijen[0] || woningTypenLijst[0] || {};
@@ -140,8 +125,15 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || [];
+  // Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback)
+  const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
+
+  const primairePartner = partners[0] || {};
+  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Aanhuis Spijk';
+  const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'info@nomi-configurator.nl';
+  const PARTNER_CONTACT = primairePartner.partnerRol || primairePartner.partner_rol || 'Partner';
+  const PARTNER_TELEFOON = '030 - 600 82 40';
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
@@ -256,6 +248,41 @@ export default function StepFourConfirmation({
           </div>
         )}
 
+        {/* GESELECTEERDE PARTNERS SECTIE */}
+        {partners.length > 0 && (
+          <div className="bg-white p-8 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 my-8">
+            <div className="text-center space-y-2">
+              <h3 className="text-2xl md:text-3xl font-serif text-dark">Geselecteerde partners</h3>
+              <p className="text-xs sm:text-sm text-muted">
+                Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.
+              </p>
+            </div>
+            <div className="divide-y divide-dark/10 pt-2">
+              {partners.map((partner: any, pIdx: number) => {
+                const pNaam = partner.partnerNaam || partner.partner_naam || '';
+                const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
+                const pRol = partner.partnerRol || partner.partner_rol || '';
+                return (
+                  <div key={pIdx} className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-[#E8E2D5] shrink-0" />
+                      <div>
+                        <h4 className="font-serif text-lg text-dark">{pNaam}</h4>
+                        {pOmschrijving && <p className="text-xs text-muted mt-0.5">{pOmschrijving}</p>}
+                      </div>
+                    </div>
+                    {pRol && (
+                      <span className="self-start sm:self-center px-4 py-1.5 rounded-full bg-[#EFECE6] text-dark text-[10px] tracking-widest uppercase font-semibold">
+                        {pRol}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
           <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
           <div>
@@ -332,7 +359,6 @@ export default function StepFourConfirmation({
                 <span className="text-sm font-medium text-dark"><strong>Nee, niet delen:</strong> ik neem zelf contact op.</span>
               </label>
 
-              {/* Netjes links uitgelijnd contactblok op exact dezelfde tekstgrootte (text-sm) */}
               {agreedPartner === false && (
                 <div className="p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 text-sm text-dark space-y-1 animate-fadeIn">
                   <p className="font-semibold text-xs uppercase tracking-wider text-dark/70 mb-2">Direct contact met {PARTNER_NAAM}:</p>

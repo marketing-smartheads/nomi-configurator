@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T14:30:36.701Z",
-  "generatedAtEpochMs": 1794839436701,
+  "generatedAt": "2026-11-16T14:55:30.318Z",
+  "generatedAtEpochMs": 1794840930318,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
-      "app/download/page.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "app/download/page.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
       "lib/cms.ts",
-      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T14:30:34.311Z",
+    "lastActivityAt": "2026-11-16T14:55:27.956Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1794840927956,
+      "lineCount": 387,
+      "charCount": 19566,
+      "hash": "74acf90b8b68",
+      "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1794839434311,
@@ -619,14 +627,6 @@
       "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794480577611,
-      "lineCount": 361,
-      "charCount": 17901,
-      "hash": "f7fdb39517cd",
-      "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-    },
-    {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1794466339528,
       "lineCount": 415,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 9: replaced 327 lines with 353 lines.",
+      "recordedAt": "2026-11-16T14:55:27.956Z",
+      "recordedAtEpochMs": 1794840927956,
+      "before": {
+        "kind": "text",
+        "lineCount": 361,
+        "charCount": 17901,
+        "hash": "f7fdb39517cd",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794840927956
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 387,
+        "charCount": 19566,
+        "hash": "74acf90b8b68",
+        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
+        "updatedAt": 1794840927956
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 327,
+        "addedLines": 353,
+        "summary": "Line 9: replaced 327 lines with 353 lines.",
+        "beforeFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / const PAR...",
+        "afterFragment": "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1078,48 +1110,16 @@
         "beforeFragment": "muted text-base leading-relaxed pt-2",
         "afterFragment": "xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 288 lines with 290 lines.",
-      "recordedAt": "2026-11-12T10:39:25.575Z",
-      "recordedAtEpochMs": 1794479965575,
-      "before": {
-        "kind": "text",
-        "lineCount": 492,
-        "charCount": 20311,
-        "hash": "230088061fb3",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1794479965575
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 494,
-        "charCount": 20251,
-        "hash": "3918fdaf7ddf",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
-        "updatedAt": 1794479965575
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 288,
-        "addedLines": 290,
-        "summary": "Line 1: replaced 288 lines with 290 lines.",
-        "beforeFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({...",
-        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "app/download/page.tsx",
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 10
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 10
+      "filePath": "app/download/page.tsx",
+      "count": 9
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1135,7 +1135,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1149,17 +1149,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 7ce40cb added breakpoint class to material list",
+    "headSummary": "2026-11-16 20eb8d0 refactor(step3): reorder sections to place 360 panorama viewer below 3d visuals slider",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7ce40cb by Bas van Dooremalen on 2026-11-16\n  added breakpoint class to material list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 20eb8d0 by Bas van Dooremalen on 2026-11-16\n  refactor(step3): reorder sections to place 360 panorama viewer below 3d visuals slider\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
