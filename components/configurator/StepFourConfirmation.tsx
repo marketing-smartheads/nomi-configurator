@@ -125,7 +125,7 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep
+  // Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep
   const partnersSectieTitel = 
     bevData?.geselecteerdePartnersTitel || 
     bevData?.geselecteerde_partners_titel || 
@@ -315,44 +315,44 @@ export default function StepFourConfirmation({
             TERUG
           </button>
         </div>
-
-        {/* GESELECTEERDE PARTNERS SECTIE (Exact onder de knoppen/formulier zoals in het design) */}
-        {partners.length > 0 && (
-          <div className="bg-white p-8 sm:p-12 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 mt-16">
-            <div className="text-center space-y-3 max-w-lg mx-auto">
-              <h3 className="text-3xl md:text-4xl font-serif text-dark">{partnersSectieTitel}</h3>
-              {partnersSectieOmschrijving && (
-                <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                  {partnersSectieOmschrijving}
-                </p>
-              )}
-            </div>
-            <div className="divide-y divide-dark/10 pt-4">
-              {partners.map((partner: any, pIdx: number) => {
-                const pNaam = partner.partnerNaam || partner.partner_naam || '';
-                const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
-                const pRol = partner.partnerRol || partner.partner_rol || '';
-                return (
-                  <div key={pIdx} className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#E8E2D5] shrink-0" />
-                      <div>
-                        <h4 className="font-serif text-lg text-dark">{pNaam}</h4>
-                        {pOmschrijving && <p className="text-xs text-muted mt-0.5">{pOmschrijving}</p>}
-                      </div>
-                    </div>
-                    {pRol && (
-                      <span className="self-start sm:self-center px-4 py-1.5 rounded-full bg-[#EFECE6] text-dark text-[10px] tracking-widest uppercase font-semibold">
-                        {pRol}
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* GESELECTEERDE PARTNERS SECTIE (Exact in de stijl van het design: open structuur op de achtergrond zonder lompe kaart-container) */}
+      {partners.length > 0 && (
+        <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10">
+          <div className="space-y-3 max-w-xl mx-auto">
+            <h3 className="text-3xl md:text-5xl font-serif text-dark font-normal">{partnersSectieTitel}</h3>
+            {partnersSectieOmschrijving && (
+              <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                {partnersSectieOmschrijving}
+              </p>
+            )}
+          </div>
+          <div className="text-left divide-y divide-[#E6E1D6]">
+            {partners.map((partner: any, pIdx: number) => {
+              const pNaam = partner.partnerNaam || partner.partner_naam || '';
+              const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
+              const pRol = partner.partnerRol || partner.partner_rol || '';
+              return (
+                <div key={pIdx} className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
+                  <div className="flex items-center gap-5">
+                    <div className="w-12 h-12 rounded-2xl bg-[#D9D3CB] shrink-0" />
+                    <div>
+                      <h4 className="font-serif text-xl text-dark">{pNaam}</h4>
+                      {pOmschrijving && <p className="text-xs text-muted mt-1">{pOmschrijving}</p>}
+                    </div>
+                  </div>
+                  {pRol && (
+                    <span className="self-start sm:self-center px-5 py-2 rounded-full bg-[#E8E2D5] text-dark text-[10px] tracking-[0.2em] uppercase font-semibold">
+                      {pRol}
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">

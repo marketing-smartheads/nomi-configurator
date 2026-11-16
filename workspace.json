@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T15:26:07.127Z",
-  "generatedAtEpochMs": 1794842767127,
+  "generatedAt": "2026-11-16T15:31:55.544Z",
+  "generatedAtEpochMs": 1794843115544,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -26,8 +26,8 @@
       "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
-      "app/download/page.tsx",
       "lib/cms.ts",
+      "app/download/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       ".gitignore",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T15:26:05.314Z",
+    "lastActivityAt": "2026-11-16T15:31:53.031Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794842765314,
+      "updatedAt": 1794843113031,
       "lineCount": 399,
-      "charCount": 20088,
-      "hash": "e69f90a5ab8d",
+      "charCount": 20008,
+      "hash": "65733ad4b8cc",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 128: replaced 228 lines with 228 lines.",
+      "recordedAt": "2026-11-16T15:31:53.031Z",
+      "recordedAtEpochMs": 1794843113031,
+      "before": {
+        "kind": "text",
+        "lineCount": 399,
+        "charCount": 20088,
+        "hash": "e69f90a5ab8d",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794843113031
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 399,
+        "charCount": 20008,
+        "hash": "65733ad4b8cc",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794843113031
+      },
+      "diff": {
+        "lineStart": 128,
+        "removedLines": 228,
+        "addedLines": 228,
+        "summary": "Line 128: replaced 228 lines with 228 lines.",
+        "beforeFragment": "Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselectee...",
+        "afterFragment": "Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partner..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1078,38 +1110,6 @@
         "beforeFragment": "const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || ''; / const actueelGekozen = designPakket || (typeof window !== 'undefined' ? localStorage....",
         "afterFragment": "// Haal de omschrijving zuiver uit het CMS veld (zonder hardcoded fallback) / const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || ''; / const a..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 72: replaced 4 lines with 9 lines.",
-      "recordedAt": "2026-11-16T13:40:10.038Z",
-      "recordedAtEpochMs": 1794836410038,
-      "before": {
-        "kind": "text",
-        "lineCount": 207,
-        "charCount": 9312,
-        "hash": "bd7debac65d2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794836410038
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 212,
-        "charCount": 9434,
-        "hash": "2d7e4427fb95",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794836410038
-      },
-      "diff": {
-        "lineStart": 72,
-        "removedLines": 4,
-        "addedLines": 9,
-        "summary": "Line 72: replaced 4 lines with 9 lines.",
-        "beforeFragment": "const pakkettenLijst = alleVerzameldePakketten.filter((pakket, index, self) => { / const t = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id ||...",
-        "afterFragment": "// WATERDICHTE DUBBELEN-FILTER: Sorteer en filter op unieke titel/id via een Map / const uniekePakketMap = new Map(); / alleVerzameldePakketten.forEach((pakket) => { / const sch..."
-      }
     }
   ],
   "hotFiles": [
@@ -1119,7 +1119,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 6
+      "count": 7
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1130,12 +1130,12 @@
       "count": 5
     },
     {
-      "filePath": "app/download/page.tsx",
+      "filePath": "lib/cms.ts",
       "count": 5
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 5
+      "filePath": "app/download/page.tsx",
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1149,21 +1149,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 05e531e fix(step4): correctly pull dynamic partner title/description and place partners block below the form matching design",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-16 7db2258 fix(step4): include geselecteerde_partners fields in graphql query and position partner list below form matching design",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M lib/cms.ts",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 05e531e by Bas van Dooremalen on 2026-11-16\n  fix(step4): correctly pull dynamic partner title/description and place partners block below the form matching design\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7db2258 by Bas van Dooremalen on 2026-11-16\n  fix(step4): include geselecteerde_partners fields in graphql query and position partner list below form matching design\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
