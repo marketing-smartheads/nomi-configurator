@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T16:07:40.938Z",
-  "generatedAtEpochMs": 1794845260938,
+  "generatedAt": "2026-11-16T16:18:23.735Z",
+  "generatedAtEpochMs": 1794845903735,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepOnewoning.tsx",
-      "components/configurator/StepThreeVisuals.tsx",
-      "app/download/page.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "package.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T16:07:38.565Z",
+    "lastActivityAt": "2026-11-16T16:18:20.984Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1794845900984,
+      "lineCount": 472,
+      "charCount": 19362,
+      "hash": "faf34aeee9fa",
+      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1794845258565,
@@ -601,14 +609,6 @@
       "charCount": 9033,
       "hash": "0406b70d3127",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1794839434311,
-      "lineCount": 495,
-      "charCount": 20323,
-      "hash": "21d3217c9bba",
-      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 96: replaced 396 lines with 373 lines.",
+      "recordedAt": "2026-11-16T16:18:20.984Z",
+      "recordedAtEpochMs": 1794845900984,
+      "before": {
+        "kind": "text",
+        "lineCount": 495,
+        "charCount": 20323,
+        "hash": "21d3217c9bba",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794845900984
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19362,
+        "hash": "faf34aeee9fa",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794845900984
+      },
+      "diff": {
+        "lineStart": 96,
+        "removedLines": 396,
+        "addedLines": 373,
+        "summary": "Line 96: replaced 396 lines with 373 lines.",
+        "beforeFragment": "const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery; / let moodboardGallery: any[] = []; / if (Array.isArray(rawMoodboard)) { / moodboar...",
+        "afterFragment": "// Pannellum 360° logica / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / useEffect(() => { / if (typeof window !== 'undefined' && (window as any)..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1092,31 +1124,6 @@
         "updatedAt": 1794838895241
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-16T14:21:32.259Z",
-      "recordedAtEpochMs": 1794838892259,
-      "before": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9662,
-        "hash": "76facdd6978d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838892259
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9662,
-        "hash": "76facdd6978d",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838892259
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1137,36 +1144,32 @@
       "count": 5
     },
     {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 3
+    },
+    {
       "filePath": "lib/cms.ts",
       "count": 3
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 2
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 cfb01e0 fix(step4): enforce correct Aanhuis Spijk partner name and Tobias contact details for both confirmation scenarios",
+    "headSummary": "2026-11-16 eaabea8 fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M components/configurator/StepThreeVisuals.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cfb01e0 by Bas van Dooremalen on 2026-11-16\n  fix(step4): enforce correct Aanhuis Spijk partner name and Tobias contact details for both confirmation scenarios\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- eaabea8 by Bas van Dooremalen on 2026-11-16\n  fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

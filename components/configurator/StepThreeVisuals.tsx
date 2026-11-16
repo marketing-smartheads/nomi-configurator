@@ -93,18 +93,6 @@ export default function StepThreeVisuals({
   }
 
   const materialen = huidigPakketObj?.materialenLijst || huidigPakketObj?.materialen_lijst || [];
-  
-  const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery;
-  let moodboardGallery: any[] = [];
-  if (Array.isArray(rawMoodboard)) {
-    moodboardGallery = rawMoodboard;
-  } else if (rawMoodboard?.nodes) {
-    moodboardGallery = rawMoodboard.nodes;
-  } else if (rawMoodboard?.edges) {
-    moodboardGallery = rawMoodboard.edges.map((e: any) => e.node);
-  }
-  const singleMoodboardImage = moodboardGallery[0];
-  const moodboardUrl = singleMoodboardImage?.sourceUrl || singleMoodboardImage?.node?.sourceUrl || singleMoodboardImage?.mediaItemUrl;
 
   // Pannellum 360° logica
   const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false);
@@ -451,9 +439,9 @@ export default function StepThreeVisuals({
         </div>
       )}
 
-      {/* 3. Materialenlijst en Moodboard Afbeelding */}
+      {/* 3. Materialenlijst */}
       <div className="bg-white rounded-[2.5rem] max-w-6xl mx-auto overflow-hidden shadow-sm flex flex-col sm:mx-auto">
-        <div className="p-6 sm:p-12 pb-8 space-y-8">
+        <div className="p-6 sm:p-12 space-y-8">
           <div>
             <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
               {`Moodboard ${pakketTitel}`}
@@ -478,17 +466,6 @@ export default function StepThreeVisuals({
             )}
           </div>
         </div>
-        
-        {moodboardUrl && (
-          <div className="w-full relative aspect-video overflow-hidden bg-secondary">
-            <Image 
-              src={moodboardUrl} 
-              alt={`Moodboard ${pakketTitel}`} 
-              fill 
-              className="object-cover" 
-            />
-          </div>
-        )}
       </div>
     </div>
   );
