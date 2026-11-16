@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T13:52:56.227Z",
-  "generatedAtEpochMs": 1794837176227,
+  "generatedAt": "2026-11-16T14:08:53.250Z",
+  "generatedAtEpochMs": 1794838133250,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T13:52:53.594Z",
+    "lastActivityAt": "2026-11-16T14:08:50.327Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794837173594,
+      "updatedAt": 1794838130327,
       "lineCount": 219,
-      "charCount": 9671,
-      "hash": "2161041e64cf",
+      "charCount": 9662,
+      "hash": "76facdd6978d",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
@@ -652,6 +652,127 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 112: inserted 1 line.",
+      "recordedAt": "2026-11-16T14:08:50.327Z",
+      "recordedAtEpochMs": 1794838130327,
+      "before": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9651,
+        "hash": "95f84782fc37",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838130327
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9662,
+        "hash": "76facdd6978d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838130327
+      },
+      "diff": {
+        "lineStart": 112,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 112: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "sm:text-sm"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 106: removed 1 line.",
+      "recordedAt": "2026-11-16T14:01:26.333Z",
+      "recordedAtEpochMs": 1794837686333,
+      "before": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9660,
+        "hash": "352962670873",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837686332
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9651,
+        "hash": "95f84782fc37",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837686333
+      },
+      "diff": {
+        "lineStart": 106,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 106: removed 1 line.",
+        "beforeFragment": "Stap 2 ·",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-16T14:01:21.707Z",
+      "recordedAtEpochMs": 1794837681707,
+      "before": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9660,
+        "hash": "352962670873",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837681707
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9660,
+        "hash": "352962670873",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837681707
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 112: removed 1 line.",
+      "recordedAt": "2026-11-16T14:01:10.079Z",
+      "recordedAtEpochMs": 1794837670079,
+      "before": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9671,
+        "hash": "2161041e64cf",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837670079
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9660,
+        "hash": "352962670873",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794837670079
+      },
+      "diff": {
+        "lineStart": 112,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 112: removed 1 line.",
+        "beforeFragment": "sm:text-sm",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -982,133 +1103,16 @@
         "beforeFragment": "",
         "afterFragment": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuu..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 73 lines with 74 lines.",
-      "recordedAt": "2026-11-11T15:40:52.436Z",
-      "recordedAtEpochMs": 1794411652436,
-      "before": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 19757,
-        "hash": "17780e409e0e",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc...",
-        "updatedAt": 1794411652436
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 400,
-        "charCount": 19842,
-        "hash": "e7f0442aa21f",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will...",
-        "updatedAt": 1794411652436
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 73,
-        "addedLines": 74,
-        "summary": "Line 7: replaced 73 lines with 74 lines.",
-        "beforeFragment": "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi...",
-        "afterFragment": "// Lijst van verhuur-vouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a0..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 7: replaced 7 lines with 9 lines.",
-      "recordedAt": "2026-11-11T15:38:08.301Z",
-      "recordedAtEpochMs": 1794411488301,
-      "before": {
-        "kind": "text",
-        "lineCount": 397,
-        "charCount": 19782,
-        "hash": "f472d95f0ee7",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f...",
-        "updatedAt": 1794411488301
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 19757,
-        "hash": "17780e409e0e",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc...",
-        "updatedAt": 1794411488301
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 7,
-        "addedLines": 9,
-        "summary": "Line 7: replaced 7 lines with 9 lines.",
-        "beforeFragment": "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'...",
-        "afterFragment": "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-11T15:37:44.580Z",
-      "recordedAtEpochMs": 1794411464580,
-      "before": {
-        "kind": "text",
-        "lineCount": 220,
-        "charCount": 7360,
-        "hash": "ce975addae9c",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794411464580
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 220,
-        "charCount": 7360,
-        "hash": "ce975addae9c",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794411464580
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 7: replaced 5 lines with 8 lines.",
-      "recordedAt": "2026-11-11T15:33:02.102Z",
-      "recordedAtEpochMs": 1794411182102,
-      "before": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7296,
-        "hash": "29f0ec9ff7a4",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794411182102
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 220,
-        "charCount": 7360,
-        "hash": "ce975addae9c",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794411182102
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 5,
-        "addedLines": 8,
-        "summary": "Line 7: replaced 5 lines with 8 lines.",
-        "beforeFragment": "'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-...",
-        "afterFragment": "// Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'no..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "app/download/page.tsx",
-      "count": 13
+      "count": 10
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 7
     },
     {
       "filePath": "app/dashboard/page.tsx",
@@ -1127,10 +1131,6 @@
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 3
-    },
-    {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
@@ -1142,17 +1142,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 ea79c3f fix(step2): prevent duplicate design packages using a normalized Map filter",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-16 ff2c621 fix(step2): ensure unique cms package descriptions are correctly rendered per card",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx"
+      "M components/configurator/StepTwoDesign.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ea79c3f by Bas van Dooremalen on 2026-11-16\n  fix(step2): prevent duplicate design packages using a normalized Map filter\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ff2c621 by Bas van Dooremalen on 2026-11-16\n  fix(step2): ensure unique cms package descriptions are correctly rendered per card\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

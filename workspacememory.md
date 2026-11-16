@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T13:52:56.227Z
+Generated: 2026-11-16T14:08:53.250Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T13:52:53.594Z
+- Last activity: 2026-11-16T14:08:50.327Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (6), app/api/verify-voucher/route.ts (5), lib/cms.ts (4)
+- Hottest files right now: app/download/page.tsx (10), components/configurator/StepTwoDesign.tsx (7), app/dashboard/page.tsx (6), app/api/verify-voucher/route.ts (5)
 - Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepTwoDesign.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 219 lines | 9671 chars | hash 2161041e64cf
-  Last snapshot: 2026-11-16T13:52:53.594Z
+- components/configurator/StepTwoDesign.tsx | 219 lines | 9662 chars | hash 76facdd6978d
+  Last snapshot: 2026-11-16T14:08:50.327Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
   Last snapshot: 2026-11-16T13:17:48.708Z
@@ -65,6 +65,29 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T14:08:50.327Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 112: inserted 1 line.
+- Before: 219 lines | 9,651 chars | hash 95f84782fc37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,662 chars | hash 76facdd6978d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Current fragment: "sm:text-sm"
+
+### 2026-11-16T14:01:26.333Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 106: removed 1 line.
+- Before: 219 lines | 9,660 chars | hash 352962670873 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,651 chars | hash 95f84782fc37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "Stap 2 ·"
+
+### 2026-11-16T14:01:21.707Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Saved without a textual diff.
+- Before: 219 lines | 9,660 chars | hash 352962670873 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,660 chars | hash 352962670873 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+
+### 2026-11-16T14:01:10.079Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 112: removed 1 line.
+- Before: 219 lines | 9,671 chars | hash 2161041e64cf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,660 chars | hash 352962670873 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "sm:text-sm"
+
 ### 2026-11-16T13:52:53.594Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 123: replaced 38 lines with 45 lines.
 - Before: 212 lines | 9,434 chars | hash 2d7e4427fb95 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -134,48 +157,25 @@ Structured manifest: workspace.json
 - After: 415 lines | 20,693 chars | hash 04b3d6a61487 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
 - Current fragment: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuu..."
 
-### 2026-11-11T15:40:52.436Z | saved | app/dashboard/page.tsx
-- Summary: Line 7: replaced 73 lines with 74 lines.
-- Before: 399 lines | 19,757 chars | hash 17780e409e0e | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc..."
-- After: 400 lines | 19,842 chars | hash e7f0442aa21f | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
-- Previous fragment: "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi..."
-- Current fragment: "// Lijst van verhuur-vouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a0..."
-
-### 2026-11-11T15:38:08.301Z | saved | app/dashboard/page.tsx
-- Summary: Line 7: replaced 7 lines with 9 lines.
-- Before: 397 lines | 19,782 chars | hash f472d95f0ee7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-- After: 399 lines | 19,757 chars | hash 17780e409e0e | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouc..."
-- Previous fragment: "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
-- Current fragment: "const VERHUUR_VOUCHERS = new Set([ / // Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi..."
-
-### 2026-11-11T15:37:44.580Z | saved | app/api/verify-voucher/route.ts
-- Summary: Saved without a textual diff.
-- Before: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- After: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-
-### 2026-11-11T15:33:02.102Z | saved | app/api/verify-voucher/route.ts
-- Summary: Line 7: replaced 5 lines with 8 lines.
-- Before: 217 lines | 7,296 chars | hash 29f0ec9ff7a4 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- After: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- Previous fragment: "'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-..."
-- Current fragment: "// Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'no..."
-
 
 ## Hot Files
-- app/download/page.tsx (13 tracked changes)
+- app/download/page.tsx (10 tracked changes)
+- components/configurator/StepTwoDesign.tsx (7 tracked changes)
 - app/dashboard/page.tsx (6 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - lib/cms.ts (4 tracked changes)
 - app/api/auth/login/route.ts (3 tracked changes)
-- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 ea79c3f fix(step2): prevent duplicate design packages using a normalized Map filter
-- Working tree summary: 1 modified
+- HEAD: 2026-11-16 ff2c621 fix(step2): ensure unique cms package descriptions are correctly rendered per card
+- Working tree summary: 4 modifieds
 - M components/configurator/StepTwoDesign.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -183,8 +183,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- ea79c3f by Bas van Dooremalen on 2026-11-16
-  fix(step2): prevent duplicate design packages using a normalized Map filter
+- ff2c621 by Bas van Dooremalen on 2026-11-16
+  fix(step2): ensure unique cms package descriptions are correctly rendered per card
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
