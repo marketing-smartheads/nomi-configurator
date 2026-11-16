@@ -125,10 +125,18 @@ export default function StepFourConfirmation({
 
   const heroTitle = bevData?.bannerTitel || bevData?.banner_titel || '';
 
-  // Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF)
-  const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || 'Geselecteerde partners';
-  const partnersSectieOmschrijving = bevData?.geselecteerdePartnersOmschrijving || bevData?.geselecteerde_partners_omschrijving || 'Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.';
+  // Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (met veilige fallbacks)
+  const partnersSectieTitel = 
+    bevData?.geselecteerdePartnersTitel || 
+    bevData?.geselecteerde_partners_titel || 
+    'Geselecteerde partners';
 
+  const partnersSectieOmschrijving = 
+    bevData?.geselecteerdePartnersOmschrijving || 
+    bevData?.geselecteerde_partners_omschrijving || 
+    'Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.';
+
+  // Rotsvaste ophaallogica voor partners (zowel uit het woningType als globaal)
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
@@ -251,43 +259,6 @@ export default function StepFourConfirmation({
           </div>
         )}
 
-        {/* GESELECTEERDE PARTNERS SECTIE (Exact volgens CMS en design) */}
-        {partners.length > 0 && (
-          <div className="bg-white p-8 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 my-8">
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl md:text-3xl font-serif text-dark">{partnersSectieTitel}</h3>
-              {partnersSectieOmschrijving && (
-                <p className="text-xs sm:text-sm text-muted">
-                  {partnersSectieOmschrijving}
-                </p>
-              )}
-            </div>
-            <div className="divide-y divide-dark/10 pt-2">
-              {partners.map((partner: any, pIdx: number) => {
-                const pNaam = partner.partnerNaam || partner.partner_naam || '';
-                const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
-                const pRol = partner.partnerRol || partner.partner_rol || '';
-                return (
-                  <div key={pIdx} className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#E8E2D5] shrink-0" />
-                      <div>
-                        <h4 className="font-serif text-lg text-dark">{pNaam}</h4>
-                        {pOmschrijving && <p className="text-xs text-muted mt-0.5">{pOmschrijving}</p>}
-                      </div>
-                    </div>
-                    {pRol && (
-                      <span className="self-start sm:self-center px-4 py-1.5 rounded-full bg-[#EFECE6] text-dark text-[10px] tracking-widest uppercase font-semibold">
-                        {pRol}
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
         <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
           <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
           <div>
@@ -325,6 +296,43 @@ export default function StepFourConfirmation({
             />
           </div>
         </div>
+
+        {/* GESELECTEERDE PARTNERS SECTIE (Exact onder het formulier volgens design) */}
+        {partners.length > 0 && (
+          <div className="bg-white p-8 rounded-[2.5rem] border border-dark/10 shadow-sm text-left space-y-6 my-8">
+            <div className="text-center space-y-2">
+              <h3 className="text-2xl md:text-3xl font-serif text-dark">{partnersSectieTitel}</h3>
+              {partnersSectieOmschrijving && (
+                <p className="text-xs sm:text-sm text-muted">
+                  {partnersSectieOmschrijving}
+                </p>
+              )}
+            </div>
+            <div className="divide-y divide-dark/10 pt-2">
+              {partners.map((partner: any, pIdx: number) => {
+                const pNaam = partner.partnerNaam || partner.partner_naam || '';
+                const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
+                const pRol = partner.partnerRol || partner.partner_rol || '';
+                return (
+                  <div key={pIdx} className="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-[#E8E2D5] shrink-0" />
+                      <div>
+                        <h4 className="font-serif text-lg text-dark">{pNaam}</h4>
+                        {pOmschrijving && <p className="text-xs text-muted mt-0.5">{pOmschrijving}</p>}
+                      </div>
+                    </div>
+                    {pRol && (
+                      <span className="self-start sm:self-center px-4 py-1.5 rounded-full bg-[#EFECE6] text-dark text-[10px] tracking-widest uppercase font-semibold">
+                        {pRol}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center justify-center gap-8 pt-2">
           <Button
