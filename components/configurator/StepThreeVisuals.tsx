@@ -1,3 +1,4 @@
+// components/StepThreeVisuals.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -290,41 +291,7 @@ export default function StepThreeVisuals({
         )}
       </div>
 
-      {/* 1. 360° Panorama Viewer */}
-      {geselecteerdeMediaUrl && (
-        <div className="max-w-6xl mx-auto space-y-6">
-          <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
-            <div>
-              <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
-                360° Beleving
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-serif text-dark">Interactieve 360° ruimte</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar uw gekozen stijl in een interactieve panorama weergave.</p>
-            </div>
-
-            {isVideo ? (
-              <div className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden rounded-4xl bg-black shadow-inner">
-                <video 
-                  src={geselecteerdeMediaUrl} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ) : (
-              <div 
-                id="step3-panorama-container" 
-                style={{ width: '100%', height: '500px' }} 
-                className="w-full aspect-4/3 sm:aspect-16/10 rounded-4xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
-              />
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* 2. 3D Visuals Slider + Thumbnails */}
+      {/* 1. 3D Visuals Slider + Thumbnails (Nu bovenaan) */}
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">
           <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
@@ -449,6 +416,40 @@ export default function StepThreeVisuals({
           </div>
         )}
       </div>
+
+      {/* 2. 360° Panorama Viewer (Nu onder de visuals) */}
+      {geselecteerdeMediaUrl && (
+        <div className="max-w-6xl mx-auto space-y-6">
+          <div className="w-full bg-white p-6 sm:p-12 rounded-[2.5rem] space-y-6 sm:space-y-8 shadow-sm">
+            <div>
+              <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
+                360° Beleving
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif text-dark">Interactieve 360° ruimte</h3>
+              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar uw gekozen stijl in een interactieve panorama weergave.</p>
+            </div>
+
+            {isVideo ? (
+              <div className="w-full aspect-4/3 sm:aspect-16/10 relative overflow-hidden rounded-4xl bg-black shadow-inner">
+                <video 
+                  src={geselecteerdeMediaUrl} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div 
+                id="step3-panorama-container" 
+                style={{ width: '100%', height: '500px' }} 
+                className="w-full aspect-4/3 sm:aspect-16/10 rounded-4xl overflow-hidden bg-[#EFECE6] shadow-inner relative"
+              />
+            )}
+          </div>
+        </div>
+      )}
 
       {/* 3. Materialenlijst en Moodboard Afbeelding */}
       <div className="bg-white rounded-[2.5rem] max-w-6xl mx-auto overflow-hidden shadow-sm flex flex-col sm:mx-auto">

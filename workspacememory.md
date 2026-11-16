@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T14:25:36.243Z
+Generated: 2026-11-16T14:30:36.701Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T14:25:34.510Z
+- Last activity: 2026-11-16T14:30:34.311Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepTwoDesign.tsx
+- Active file in focus: components/configurator/StepThreeVisuals.tsx
 - Hottest files right now: app/download/page.tsx (10), components/configurator/StepTwoDesign.tsx (10), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
-- Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, lib/cms.ts, components/configurator/StepFourConfirmation.tsx
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, app/download/page.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, lib/cms.ts
 ## Current Workspace
-- Active file: components/configurator/StepTwoDesign.tsx
+- Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepThreeVisuals.tsx | 495 lines | 20323 chars | hash 21d3217c9bba
+  Last snapshot: 2026-11-16T14:30:34.311Z
+  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - components/configurator/StepTwoDesign.tsx | 272 lines | 12314 chars | hash 19f36b2caade
   Last snapshot: 2026-11-16T14:25:34.510Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -51,9 +54,6 @@ Structured manifest: workspace.json
 - components/configurator/StepFourConfirmation.tsx | 361 lines | 17901 chars | hash f7fdb39517cd
   Last snapshot: 2026-11-12T10:49:37.611Z
   Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- components/configurator/StepThreeVisuals.tsx | 494 lines | 20251 chars | hash 3918fdaf7ddf
-  Last snapshot: 2026-11-12T10:39:25.575Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
 - app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
   Last snapshot: 2026-11-12T06:52:19.528Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T14:30:34.311Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 1: replaced 451 lines with 452 lines.
+- Before: 494 lines | 20,251 chars | hash 3918fdaf7ddf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
+- After: 495 lines | 20,323 chars | hash 21d3217c9bba | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
+- Current fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+
 ### 2026-11-16T14:25:34.510Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 193: inserted 1 line.
 - Before: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -151,13 +158,6 @@ Structured manifest: workspace.json
 - Previous fragment: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
 - Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
 
-### 2026-11-12T10:39:16.276Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 1: replaced 108 lines with 110 lines.
-- Before: 205 lines | 9,146 chars | hash 14bc4f3bcec2 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 207 lines | 9,312 chars | hash bd7debac65d2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- Previous fragment: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
-- Current fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
-
 
 ## Hot Files
 - app/download/page.tsx (10 tracked changes)
@@ -167,13 +167,13 @@ Structured manifest: workspace.json
 - lib/cms.ts (4 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
-- app/api/auth/login/route.ts (1 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 8d1d65a feat(step2): add zoom magnifying glass icon and fancybox lightbox modal for package images
+- HEAD: 2026-11-16 7ce40cb added breakpoint class to material list
 - Working tree summary: 1 modified
-- M components/configurator/StepTwoDesign.tsx
+- M components/configurator/StepThreeVisuals.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -181,8 +181,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 929fae6 by Bas van Dooremalen on 2026-11-16
-  style(step2): align step description font size with step 1 and step 3
+- 7ce40cb by Bas van Dooremalen on 2026-11-16
+  added breakpoint class to material list
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

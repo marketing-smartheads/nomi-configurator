@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T14:25:36.243Z",
-  "generatedAtEpochMs": 1794839136243,
+  "generatedAt": "2026-11-16T14:30:36.701Z",
+  "generatedAtEpochMs": 1794839436701,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "components/configurator/StepThreeVisuals.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "app/download/page.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
       "lib/cms.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
-      "app/api/auth/login/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T14:25:34.510Z",
+    "lastActivityAt": "2026-11-16T14:30:34.311Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "updatedAt": 1794839434311,
+      "lineCount": 495,
+      "charCount": 20323,
+      "hash": "21d3217c9bba",
+      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+    },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1794839134510,
@@ -619,14 +627,6 @@
       "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1794479965575,
-      "lineCount": 494,
-      "charCount": 20251,
-      "hash": "3918fdaf7ddf",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c..."
-    },
-    {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1794466339528,
       "lineCount": 415,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 451 lines with 452 lines.",
+      "recordedAt": "2026-11-16T14:30:34.311Z",
+      "recordedAtEpochMs": 1794839434311,
+      "before": {
+        "kind": "text",
+        "lineCount": 494,
+        "charCount": 20251,
+        "hash": "3918fdaf7ddf",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / designPakket, / woningType / }: any) { / c...",
+        "updatedAt": 1794839434310
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 495,
+        "charCount": 20323,
+        "hash": "21d3217c9bba",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794839434311
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 451,
+        "addedLines": 452,
+        "summary": "Line 1: replaced 451 lines with 452 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de...",
+        "afterFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1078,38 +1110,6 @@
         "beforeFragment": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({...",
         "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / de..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 108 lines with 110 lines.",
-      "recordedAt": "2026-11-12T10:39:16.276Z",
-      "recordedAtEpochMs": 1794479956276,
-      "before": {
-        "kind": "text",
-        "lineCount": 205,
-        "charCount": 9146,
-        "hash": "14bc4f3bcec2",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1794479956276
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 207,
-        "charCount": 9312,
-        "hash": "bd7debac65d2",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794479956276
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 108,
-        "addedLines": 110,
-        "summary": "Line 1: replaced 108 lines with 110 lines.",
-        "beforeFragment": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default...",
-        "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
-      }
     }
   ],
   "hotFiles": [
@@ -1142,24 +1142,24 @@
       "count": 2
     },
     {
-      "filePath": "app/api/auth/login/route.ts",
-      "count": 1
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 8d1d65a feat(step2): add zoom magnifying glass icon and fancybox lightbox modal for package images",
+    "headSummary": "2026-11-16 7ce40cb added breakpoint class to material list",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx"
+      "M components/configurator/StepThreeVisuals.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 929fae6 by Bas van Dooremalen on 2026-11-16\n  style(step2): align step description font size with step 1 and step 3\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 7ce40cb by Bas van Dooremalen on 2026-11-16\n  added breakpoint class to material list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
