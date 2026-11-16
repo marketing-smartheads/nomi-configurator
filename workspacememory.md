@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T16:18:23.735Z
+Generated: 2026-11-16T16:44:36.619Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T16:18:20.984Z
+- Last activity: 2026-11-16T16:44:34.274Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepThreeVisuals.tsx
+- Active file in focus: components/Faq.tsx
 - Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, lib/cms.ts
+- Suggested starting points: components/Faq.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: components/configurator/StepThreeVisuals.tsx
+- Active file: components/Faq.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/Faq.tsx | 73 lines | 2892 chars | hash 383bd60b41f2
+  Last snapshot: 2026-11-16T16:44:34.274Z
+  Preview: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:..."
 - components/configurator/StepThreeVisuals.tsx | 472 lines | 19362 chars | hash faf34aeee9fa
   Last snapshot: 2026-11-16T16:18:20.984Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
   Last snapshot: 2026-11-12T06:52:19.528Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
-- app/download/page.tsx | 418 lines | 20106 chars | hash 172d883371d9
-  Last snapshot: 2026-11-11T13:12:34.040Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T16:44:34.274Z | saved | components/Faq.tsx
+- Summary: Line 1: replaced 62 lines with 64 lines.
+- Before: 71 lines | 2,765 chars | hash bc96fb7b690d | preview: "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen: FaqItem[]; / }; / } / ex..."
+- After: 73 lines | 2,892 chars | hash 383bd60b41f2 | preview: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:..."
+- Previous fragment: "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: st..."
+- Current fragment: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subti..."
+
 ### 2026-11-16T16:18:20.984Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 96: replaced 396 lines with 373 lines.
 - Before: 495 lines | 20,323 chars | hash 21d3217c9bba | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -161,11 +168,6 @@ Structured manifest: workspace.json
 - After: 272 lines | 12,314 chars | hash 19f36b2caade | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - Current fragment: "sm:"
 
-### 2026-11-16T14:21:35.241Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Saved without a textual diff.
-- Before: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
@@ -173,14 +175,15 @@ Structured manifest: workspace.json
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - app/dashboard/page.tsx (5 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
-- lib/cms.ts (3 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
+- lib/cms.ts (2 tracked changes)
+- components/Faq.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 eaabea8 fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling
+- HEAD: 2026-11-16 4925cc9 refactor(step3): remove moodboard image below materials list
 - Working tree summary: 1 modified
-- M components/configurator/StepThreeVisuals.tsx
+- M components/Faq.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -188,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- eaabea8 by Bas van Dooremalen on 2026-11-16
-  fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling
+- 4925cc9 by Bas van Dooremalen on 2026-11-16
+  refactor(step3): remove moodboard image below materials list
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

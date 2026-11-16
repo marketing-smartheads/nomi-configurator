@@ -1,3 +1,4 @@
+// components/Faq.tsx
 'use client';
 
 import { useState } from 'react';
@@ -57,9 +58,10 @@ export default function Faq({ data }: FaqProps) {
                                     </span>
                                 </button>
                                 {isOpen && (
-                                    <p className="pb-6 text-[#55504A] font-sans text-sm md:text-base leading-relaxed">
-                                        {item.antwoord}
-                                    </p>
+                                    <div 
+                                        className="pb-6 text-[#55504A] font-sans text-sm md:text-base leading-relaxed [&>p]:mb-4 last:[&>p]:mb-0"
+                                        dangerouslySetInnerHTML={{ __html: item.antwoord }}
+                                    />
                                 )}
                             </div>
                         );

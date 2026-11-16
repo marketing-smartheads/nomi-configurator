@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T16:18:23.735Z",
-  "generatedAtEpochMs": 1794845903735,
+  "generatedAt": "2026-11-16T16:44:36.619Z",
+  "generatedAtEpochMs": 1794847476619,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/Faq.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
+      "components/Faq.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
-      "lib/cms.ts",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 71,
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T16:18:20.984Z",
+    "lastActivityAt": "2026-11-16T16:44:34.274Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/Faq.tsx",
+      "updatedAt": 1794847474274,
+      "lineCount": 73,
+      "charCount": 2892,
+      "hash": "383bd60b41f2",
+      "preview": "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1794845900984,
@@ -641,17 +649,41 @@
       "charCount": 20693,
       "hash": "04b3d6a61487",
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1794402754040,
-      "lineCount": 418,
-      "charCount": 20106,
-      "hash": "172d883371d9",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Faq.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 62 lines with 64 lines.",
+      "recordedAt": "2026-11-16T16:44:34.274Z",
+      "recordedAtEpochMs": 1794847474274,
+      "before": {
+        "kind": "text",
+        "lineCount": 71,
+        "charCount": 2765,
+        "hash": "bc96fb7b690d",
+        "preview": "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen: FaqItem[]; / }; / } / ex...",
+        "updatedAt": 1794847474274
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 73,
+        "charCount": 2892,
+        "hash": "383bd60b41f2",
+        "preview": "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:...",
+        "updatedAt": 1794847474274
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 62,
+        "addedLines": 64,
+        "summary": "Line 1: replaced 62 lines with 64 lines.",
+        "beforeFragment": "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: st...",
+        "afterFragment": "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subti..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1099,31 +1131,6 @@
         "beforeFragment": "",
         "afterFragment": "sm:"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-16T14:21:35.241Z",
-      "recordedAtEpochMs": 1794838895241,
-      "before": {
-        "kind": "text",
-        "lineCount": 272,
-        "charCount": 12311,
-        "hash": "2dfe6999bb5f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838895241
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 272,
-        "charCount": 12311,
-        "hash": "2dfe6999bb5f",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794838895241
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1148,28 +1155,32 @@
       "count": 3
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 3
-    },
-    {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 2
+    },
+    {
+      "filePath": "lib/cms.ts",
+      "count": 2
+    },
+    {
+      "filePath": "components/Faq.tsx",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 eaabea8 fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling",
+    "headSummary": "2026-11-16 4925cc9 refactor(step3): remove moodboard image below materials list",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx"
+      "M components/Faq.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- eaabea8 by Bas van Dooremalen on 2026-11-16\n  fix(step4): finalize partner consent modal copy, Tobias@aanhuis-spijk.nl contact details, and partner section styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4925cc9 by Bas van Dooremalen on 2026-11-16\n  refactor(step3): remove moodboard image below materials list\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
