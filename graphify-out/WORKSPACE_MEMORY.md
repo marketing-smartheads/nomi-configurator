@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T18:31:11.592Z
+Generated: 2026-11-16T18:34:34.919Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T18:31:09.181Z
+- Last activity: 2026-11-16T18:34:33.145Z
 ## Workspace Focus
 - Active file in focus: app/api/vouchers/route.ts
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/dashboard/page.tsx (3), components/configurator/StepThreeVisuals.tsx (3)
-- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, app/api/verify-voucher/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/vouchers/route.ts (3), app/dashboard/page.tsx (3)
+- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx
 ## Current Workspace
 - Active file: app/api/vouchers/route.ts
 - Tracked files in snapshot: 71
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- app/api/vouchers/route.ts | 84 lines | 3030 chars | hash bdaba5dab9ef
-  Last snapshot: 2026-11-16T18:31:09.181Z
+- app/api/vouchers/route.ts | 80 lines | 2922 chars | hash dac1e1e8ab6f
+  Last snapshot: 2026-11-16T18:34:33.145Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 - components/CookieBanner.tsx | 202 lines | 9136 chars | hash 9dd1c03bc3b1
   Last snapshot: 2026-11-16T18:15:36.213Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
 ## Recent Changes
+### 2026-11-16T18:34:33.145Z | saved | app/api/vouchers/route.ts
+- Summary: Line 16: replaced 13 lines with 9 lines.
+- Before: 84 lines | 3,030 chars | hash bdaba5dab9ef | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
+- After: 80 lines | 2,922 chars | hash dac1e1e8ab6f | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
+- Previous fragment: "// Check of het verzoek van het interne dashboard komt via een speciale header / const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.AD..."
+- Current fragment: "const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier'; / const referer = request.headers.get..."
+
 ### 2026-11-16T18:31:09.181Z | saved | app/api/vouchers/route.ts
 - Summary: Line 5: replaced 66 lines with 64 lines.
 - Before: 86 lines | 3,361 chars | hash 177755a9b846 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
@@ -159,27 +166,20 @@ Structured manifest: workspace.json
 - Previous fragment: "StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import..."
 - Current fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
 
-### 2026-11-16T15:25:58.489Z | saved | lib/cms.ts
-- Summary: Line 92: replaced 201 lines with 201 lines.
-- Before: 317 lines | 9,056 chars | hash 2ba4a52a9efc | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- After: 317 lines | 9,033 chars | hash 0406b70d3127 | preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- Previous fragment: "} / } / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / } / downloadCategorie { / categorieTitel / bestandenLijst { / bestandTitel..."
-- Current fragment: "geselecteerdePartnersTitel / geselecteerdePartnersOmschrijving / } / } / panoramaRenders { / stijlNaam / renderBestand { / node { / sourceUrl / mediaItemUrl / } / } / } / downlo..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
+- app/api/vouchers/route.ts (3 tracked changes)
 - app/dashboard/page.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
-- app/api/verify-voucher/route.ts (2 tracked changes)
-- app/api/vouchers/route.ts (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 - lib/cms.ts (2 tracked changes)
+- app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 60c5b41 security(api): protect vouchers endpoint to prevent public data exposure and unauthorized access
+- HEAD: 2026-11-16 26dbb85 fix(api): allow internal dashboard requests to vouchers endpoint while blocking public url access
 - Working tree summary: 1 modified
 - M app/api/vouchers/route.ts
 

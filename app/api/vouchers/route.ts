@@ -13,19 +13,15 @@ const VERHUUR_VOUCHERS = new Set([
 
 export async function GET(request: Request) {
   try {
-    // Check of het verzoek van het interne dashboard komt via een speciale header
     const secretKey = request.headers.get('x-admin-secret');
     const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier';
     const referer = request.headers.get('referer') || '';
     
-    // Als het niet vanuit de dashboard-pagina komt én geen geheime key heeft, weren we het af
+    // Als het verzoek NIET van het dashboard komt, sturen we uit veiligheid een lege lijst terug i.p.v. een 403 fout in de console
     const isDashboardInternal = referer.includes('/dashboard');
 
     if (!isDashboardInternal && secretKey !== expectedSecret) {
-      return NextResponse.json(
-        { success: false, error: 'Niet geautoriseerd.' },
-        { status: 403 }
-      );
+      return NextResponse.json({ success: true, vouchers: [] });
     }
 
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
