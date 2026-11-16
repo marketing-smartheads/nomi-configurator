@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T10:49:39.349Z",
-  "generatedAtEpochMs": 1794480579349,
+  "generatedAt": "2026-11-16T13:09:19.226Z",
+  "generatedAtEpochMs": 1794834559226,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "app/api/verify-voucher/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,13 +22,13 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
+      "app/api/verify-voucher/route.ts",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
       "app/api/auth/login/route.ts",
-      "app/api/verify-voucher/route.ts",
       "lib/cms.ts",
       "app/api/vouchers/route.ts",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-12T10:49:37.611Z",
+    "lastActivityAt": "2026-11-16T13:09:16.604Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "updatedAt": 1794834556604,
+      "lineCount": 218,
+      "charCount": 7299,
+      "hash": "4cc859d6c53a",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1794480577611,
@@ -627,14 +635,6 @@
       "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
-      "updatedAt": 1794411464580,
-      "lineCount": 220,
-      "charCount": 7360,
-      "hash": "ce975addae9c",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-    },
-    {
       "filePath": "lib/cms.ts",
       "updatedAt": 1794403494106,
       "lineCount": 316,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/verify-voucher/route.ts",
+      "toPath": "",
+      "summary": "Line 28: replaced 9 lines with 7 lines.",
+      "recordedAt": "2026-11-16T13:09:16.604Z",
+      "recordedAtEpochMs": 1794834556604,
+      "before": {
+        "kind": "text",
+        "lineCount": 220,
+        "charCount": 7360,
+        "hash": "ce975addae9c",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794834556604
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 218,
+        "charCount": 7299,
+        "hash": "4cc859d6c53a",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
+        "updatedAt": 1794834556604
+      },
+      "diff": {
+        "lineStart": 28,
+        "removedLines": 9,
+        "addedLines": 7,
+        "summary": "Line 28: replaced 9 lines with 7 lines.",
+        "beforeFragment": "Controleer of de vouchercode bij een verhuurwoning hoort / if (VERHUUR_VOUCHERS.has(cleanCode)) { / return NextResponse.json({ / success: true, / isVerhuur: true, / isBevestigd:...",
+        "afterFragment": "🛑 Strenge blokkade voor verhuurwoningen bij GET-requests (zoals rechtstreekse links) / if (VERHUUR_VOUCHERS.has(cleanCode)) { / return NextResponse.json({ / success: false, / i..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1071,38 +1103,6 @@
         "beforeFragment": "3",
         "afterFragment": "2', 'nomi-a003', 'nomi-a004"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 115: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-11T13:48:39.211Z",
-      "recordedAtEpochMs": 1794404919211,
-      "before": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7325,
-        "hash": "640b4a1e61dd",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794404919211
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7270,
-        "hash": "ceae6ca859f8",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794404919211
-      },
-      "diff": {
-        "lineStart": 115,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 115: replaced 1 line with 1 line.",
-        "beforeFragment": "it bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd",
-        "afterFragment": "eze vouchercode is niet beschikbaar voor online configuratie"
-      }
     }
   ],
   "hotFiles": [
@@ -1115,11 +1115,11 @@
       "count": 7
     },
     {
-      "filePath": "app/api/auth/login/route.ts",
+      "filePath": "app/api/verify-voucher/route.ts",
       "count": 5
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
+      "filePath": "app/api/auth/login/route.ts",
       "count": 4
     },
     {
@@ -1142,11 +1142,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-12 4b8ca54 feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling",
+    "headSummary": "2026-11-12 53a9e53 same style for paragraph in confirmation step",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
+      "M app/api/verify-voucher/route.ts",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
       "M workspacememory.md"
@@ -1155,7 +1155,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4b8ca54 by Bas van Dooremalen on 2026-11-12\n  feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 53a9e53 by Bas van Dooremalen on 2026-11-12\n  same style for paragraph in confirmation step\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

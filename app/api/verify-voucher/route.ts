@@ -25,15 +25,13 @@ export async function GET(request: Request) {
 
   const cleanCode = code.trim().toLowerCase();
 
-  // Controleer of de vouchercode bij een verhuurwoning hoort
+  // 🛑 Strenge blokkade voor verhuurwoningen bij GET-requests (zoals rechtstreekse links)
   if (VERHUUR_VOUCHERS.has(cleanCode)) {
     return NextResponse.json({
-      success: true,
+      success: false,
       isVerhuur: true,
-      isBevestigd: true,
-      status: 'verhuurd',
-      message: 'Deze woning is bestemd voor de verhuur (Jongerius). De opties en indelingen voor deze woning zijn reeds vastgelegd.'
-    });
+      error: 'Deze vouchercode is niet beschikbaar voor online configuratie.'
+    }, { status: 403 });
   }
 
   try {

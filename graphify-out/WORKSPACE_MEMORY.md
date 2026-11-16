@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-12T10:49:39.349Z
+Generated: 2026-11-16T13:09:19.226Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-12T10:49:37.611Z
+- Last activity: 2026-11-16T13:09:16.604Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/auth/login/route.ts (5), app/api/verify-voucher/route.ts (4)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/auth/login/route.ts, app/api/verify-voucher/route.ts, lib/cms.ts
+- Active file in focus: app/api/verify-voucher/route.ts
+- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/verify-voucher/route.ts (5), app/api/auth/login/route.ts (4)
+- Suggested starting points: app/api/verify-voucher/route.ts, app/download/page.tsx, app/dashboard/page.tsx, app/api/auth/login/route.ts, lib/cms.ts, app/api/vouchers/route.ts
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: app/api/verify-voucher/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- app/api/verify-voucher/route.ts | 218 lines | 7299 chars | hash 4cc859d6c53a
+  Last snapshot: 2026-11-16T13:09:16.604Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - components/configurator/StepFourConfirmation.tsx | 361 lines | 17901 chars | hash f7fdb39517cd
   Last snapshot: 2026-11-12T10:49:37.611Z
   Preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
@@ -54,9 +57,6 @@ Structured manifest: workspace.json
 - app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
   Last snapshot: 2026-11-12T06:52:19.528Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
-- app/api/verify-voucher/route.ts | 220 lines | 7360 chars | hash ce975addae9c
-  Last snapshot: 2026-11-11T15:37:44.580Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
 - lib/cms.ts | 316 lines | 9024 chars | hash 96f317a135a3
   Last snapshot: 2026-11-11T13:24:54.106Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T13:09:16.604Z | saved | app/api/verify-voucher/route.ts
+- Summary: Line 28: replaced 9 lines with 7 lines.
+- Before: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- After: 218 lines | 7,299 chars | hash 4cc859d6c53a | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
+- Previous fragment: "Controleer of de vouchercode bij een verhuurwoning hoort / if (VERHUUR_VOUCHERS.has(cleanCode)) { / return NextResponse.json({ / success: true, / isVerhuur: true, / isBevestigd:..."
+- Current fragment: "🛑 Strenge blokkade voor verhuurwoningen bij GET-requests (zoals rechtstreekse links) / if (VERHUUR_VOUCHERS.has(cleanCode)) { / return NextResponse.json({ / success: false, / i..."
+
 ### 2026-11-12T10:49:37.611Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 250: removed 1 line.
 - Before: 361 lines | 17,919 chars | hash 5581ebfa135c | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
@@ -153,19 +160,12 @@ Structured manifest: workspace.json
 - Previous fragment: "3"
 - Current fragment: "2', 'nomi-a003', 'nomi-a004"
 
-### 2026-11-11T13:48:39.211Z | saved | app/api/verify-voucher/route.ts
-- Summary: Line 115: replaced 1 line with 1 line.
-- Before: 217 lines | 7,325 chars | hash 640b4a1e61dd | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- After: 217 lines | 7,270 chars | hash ceae6ca859f8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- Previous fragment: "it bouwnummer betreft een verhuurwoning (Jongerius). De indeling en afwerking van deze woning zijn reeds vastgelegd"
-- Current fragment: "eze vouchercode is niet beschikbaar voor online configuratie"
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
 - app/dashboard/page.tsx (7 tracked changes)
-- app/api/auth/login/route.ts (5 tracked changes)
-- app/api/verify-voucher/route.ts (4 tracked changes)
+- app/api/verify-voucher/route.ts (5 tracked changes)
+- app/api/auth/login/route.ts (4 tracked changes)
 - lib/cms.ts (4 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
@@ -173,9 +173,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-12 4b8ca54 feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling
+- HEAD: 2026-11-12 53a9e53 same style for paragraph in confirmation step
 - Working tree summary: 4 modifieds
-- M components/configurator/StepFourConfirmation.tsx
+- M app/api/verify-voucher/route.ts
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -186,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4b8ca54 by Bas van Dooremalen on 2026-11-12
-  feat(configurator): bind step descriptions to stappenBalk repeater and unify paragraph styling
+- 53a9e53 by Bas van Dooremalen on 2026-11-12
+  same style for paragraph in confirmation step
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
