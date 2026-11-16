@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T15:40:00.539Z",
-  "generatedAtEpochMs": 1794843600539,
+  "generatedAt": "2026-11-16T15:44:20.227Z",
+  "generatedAtEpochMs": 1794843860227,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T15:39:57.815Z",
+    "lastActivityAt": "2026-11-16T15:44:18.428Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794843597815,
-      "lineCount": 406,
-      "charCount": 20526,
-      "hash": "3eb9a9a89ad1",
+      "updatedAt": 1794843858428,
+      "lineCount": 407,
+      "charCount": 20675,
+      "hash": "68789188bcc4",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 142: replaced 215 lines with 216 lines.",
+      "recordedAt": "2026-11-16T15:44:18.428Z",
+      "recordedAtEpochMs": 1794843858428,
+      "before": {
+        "kind": "text",
+        "lineCount": 406,
+        "charCount": 20526,
+        "hash": "3eb9a9a89ad1",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794843858428
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 407,
+        "charCount": 20675,
+        "hash": "68789188bcc4",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794843858428
+      },
+      "diff": {
+        "lineStart": 142,
+        "removedLines": 215,
+        "addedLines": 216,
+        "summary": "Line 142: replaced 215 lines with 216 lines.",
+        "beforeFragment": "Nomi Utrecht'; / const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'info@nomi-configurator.nl'; / c...",
+        "afterFragment": "Aanhuis Spijk'; / const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / //..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1078,38 +1110,6 @@
         "updatedAt": 1794837681707
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 112: removed 1 line.",
-      "recordedAt": "2026-11-16T14:01:10.079Z",
-      "recordedAtEpochMs": 1794837670079,
-      "before": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9671,
-        "hash": "2161041e64cf",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794837670079
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 219,
-        "charCount": 9660,
-        "hash": "352962670873",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
-        "updatedAt": 1794837670079
-      },
-      "diff": {
-        "lineStart": 112,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 112: removed 1 line.",
-        "beforeFragment": "sm:text-sm",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1119,7 +1119,7 @@
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 8
+      "count": 9
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1135,7 +1135,7 @@
     },
     {
       "filePath": "app/download/page.tsx",
-      "count": 3
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1149,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 e5a20eb style(step4): match partners section styling exactly with design (clean open background layout, subtle dividers, styled badges)",
+    "headSummary": "2026-11-16 fdfb476 fix(step4): clarify partner consent choices and update confirmation button state for self-contact flow",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [

@@ -139,9 +139,10 @@ export default function StepFourConfirmation({
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
   const primairePartner = partners[0] || {};
-  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Nomi Utrecht';
-  const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'info@nomi-configurator.nl';
-  const PARTNER_CONTACT = primairePartner.partnerRol || primairePartner.partner_rol || 'Hoofdaannemer';
+  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Aanhuis Spijk';
+  const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
+  // Correcte scheiding tussen contactpersoon (of rol als fallback)
+  const PARTNER_CONTACT = primairePartner.partnerContactpersoon || primairePartner.partner_contactpersoon || primairePartner.partnerRol || primairePartner.partner_rol || 'Tobias';
   const PARTNER_TELEFOON = primairePartner.partnerTelefoon || primairePartner.partner_telefoon || '030 - 600 82 40';
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
@@ -353,7 +354,7 @@ export default function StepFourConfirmation({
         </div>
       )}
 
-      {/* VERBETERDE POP-UP MET VOLLEDIG DUIDELIJKE KEUZESTRUCTUUR */}
+      {/* POP-UP MET CORRECTE CONTACTPERSOON (Tobias / Partnergegevens) */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
