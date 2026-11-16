@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T18:15:37.988Z",
-  "generatedAtEpochMs": 1794852937988,
+  "generatedAt": "2026-11-16T18:23:29.858Z",
+  "generatedAtEpochMs": 1794853409858,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/CookieBanner.tsx",
+    "activeFile": "app/api/vouchers/route.ts",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/CookieBanner.tsx",
+      "app/api/vouchers/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
-      "app/dashboard/page.tsx",
       "app/api/verify-voucher/route.ts",
+      "app/dashboard/page.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepOnewoning.tsx",
       "lib/cms.ts",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T18:15:36.213Z",
+    "lastActivityAt": "2026-11-16T18:23:27.210Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/api/vouchers/route.ts",
+      "updatedAt": 1794853407210,
+      "lineCount": 86,
+      "charCount": 3361,
+      "hash": "177755a9b846",
+      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
+    },
     {
       "filePath": "components/CookieBanner.tsx",
       "updatedAt": 1794852936213,
@@ -641,17 +649,41 @@
       "charCount": 9033,
       "hash": "0406b70d3127",
       "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794839134510,
-      "lineCount": 272,
-      "charCount": 12314,
-      "hash": "19f36b2caade",
-      "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/api/vouchers/route.ts",
+      "toPath": "",
+      "summary": "Line 17: replaced 44 lines with 58 lines.",
+      "recordedAt": "2026-11-16T18:23:27.210Z",
+      "recordedAtEpochMs": 1794853407210,
+      "before": {
+        "kind": "text",
+        "lineCount": 72,
+        "charCount": 2656,
+        "hash": "792080aa23e8",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_...",
+        "updatedAt": 1794853407210
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 86,
+        "charCount": 3361,
+        "hash": "177755a9b846",
+        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_...",
+        "updatedAt": 1794853407210
+      },
+      "diff": {
+        "lineStart": 17,
+        "removedLines": 44,
+        "addedLines": 58,
+        "summary": "Line 17: replaced 44 lines with 58 lines.",
+        "beforeFragment": "const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPa...",
+        "afterFragment": "// BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien / const authHeader = request.headers.get('authorization'); /..."
+      }
+    },
     {
       "type": "save",
       "path": "components/CookieBanner.tsx",
@@ -1099,38 +1131,6 @@
         "beforeFragment": "ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || 'Geselecteerde partners'; / const partnersSectieOmschrijving =...",
         "afterFragment": "met veilige fallbacks) / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partners_titel || / 'Geselecteerde partners'; / const part..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 128: replaced 131 lines with 136 lines.",
-      "recordedAt": "2026-11-16T15:06:40.332Z",
-      "recordedAtEpochMs": 1794841600332,
-      "before": {
-        "kind": "text",
-        "lineCount": 387,
-        "charCount": 19566,
-        "hash": "74acf90b8b68",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1794841600332
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 392,
-        "charCount": 19972,
-        "hash": "3cc9d626399a",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1794841600332
-      },
-      "diff": {
-        "lineStart": 128,
-        "removedLines": 131,
-        "addedLines": 136,
-        "summary": "Line 128: replaced 131 lines with 136 lines.",
-        "beforeFragment": "Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback) / const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.par...",
-        "afterFragment": "Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerd..."
-      }
     }
   ],
   "hotFiles": [
@@ -1143,11 +1143,11 @@
       "count": 10
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 4
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 3
     },
     {
-      "filePath": "app/api/verify-voucher/route.ts",
+      "filePath": "app/dashboard/page.tsx",
       "count": 3
     },
     {
@@ -1170,22 +1170,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 5f08c4b fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags",
-    "statusSummary": "6 modifieds",
-    "changedFileCount": 6,
+    "headSummary": "2026-11-16 c89447c remove console.log functions, no longer needed",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/api/confirm/route.ts",
-      "M components/CookieBanner.tsx",
-      "M  components/WelcomeScreen.tsx",
-      "MM graphify-out/WORKSPACE_MEMORY.md",
-      "MM workspace.json",
-      "MM workspacememory.md"
+      "M app/api/vouchers/route.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 5f08c4b by Bas van Dooremalen on 2026-11-16\n  fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c89447c by Bas van Dooremalen on 2026-11-16\n  remove console.log functions, no longer needed\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

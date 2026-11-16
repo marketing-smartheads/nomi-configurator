@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T18:15:37.988Z
+Generated: 2026-11-16T18:23:29.858Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T18:15:36.213Z
+- Last activity: 2026-11-16T18:23:27.210Z
 ## Workspace Focus
-- Active file in focus: components/CookieBanner.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/dashboard/page.tsx (4), app/api/verify-voucher/route.ts (3)
-- Suggested starting points: components/CookieBanner.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, components/configurator/StepThreeVisuals.tsx
+- Active file in focus: app/api/vouchers/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/verify-voucher/route.ts (3), app/dashboard/page.tsx (3)
+- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: components/CookieBanner.tsx
+- Active file: app/api/vouchers/route.ts
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 6 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- app/api/vouchers/route.ts | 86 lines | 3361 chars | hash 177755a9b846
+  Last snapshot: 2026-11-16T18:23:27.210Z
+  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
 - components/CookieBanner.tsx | 202 lines | 9136 chars | hash 9dd1c03bc3b1
   Last snapshot: 2026-11-16T18:15:36.213Z
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - lib/cms.ts | 317 lines | 9033 chars | hash 0406b70d3127
   Last snapshot: 2026-11-16T15:25:58.489Z
   Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
-- components/configurator/StepTwoDesign.tsx | 272 lines | 12314 chars | hash 19f36b2caade
-  Last snapshot: 2026-11-16T14:25:34.510Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 
 ## Recent Changes
+### 2026-11-16T18:23:27.210Z | saved | app/api/vouchers/route.ts
+- Summary: Line 17: replaced 44 lines with 58 lines.
+- Before: 72 lines | 2,656 chars | hash 792080aa23e8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
+- After: 86 lines | 3,361 chars | hash 177755a9b846 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
+- Previous fragment: "const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPa..."
+- Current fragment: "// BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien / const authHeader = request.headers.get('authorization'); /..."
+
 ### 2026-11-16T18:15:36.213Z | saved | components/CookieBanner.tsx
 - Summary: Line 32: replaced 12 lines with 1 line.
 - Before: 213 lines | 9,503 chars | hash d679e25f6e7a | preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
@@ -159,19 +166,12 @@ Structured manifest: workspace.json
 - Previous fragment: "ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerde_partners_titel || 'Geselecteerde partners'; / const partnersSectieOmschrijving =..."
 - Current fragment: "met veilige fallbacks) / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partners_titel || / 'Geselecteerde partners'; / const part..."
 
-### 2026-11-16T15:06:40.332Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 128: replaced 131 lines with 136 lines.
-- Before: 387 lines | 19,566 chars | hash 74acf90b8b68 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 392 lines | 19,972 chars | hash 3cc9d626399a | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- Previous fragment: "Rotsvaste ophaallogica voor partners (zowel uit de gematchte woningrij als fallback) / const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.par..."
-- Current fragment: "Haal dynamische partner koptekst en omschrijving op uit de bevestigingStap groep (ACF) / const partnersSectieTitel = bevData?.geselecteerdePartnersTitel || bevData?.geselecteerd..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
-- app/dashboard/page.tsx (4 tracked changes)
 - app/api/verify-voucher/route.ts (3 tracked changes)
+- app/dashboard/page.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 - lib/cms.ts (2 tracked changes)
@@ -179,14 +179,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 5f08c4b fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags
-- Working tree summary: 6 modifieds
-- M app/api/confirm/route.ts
-- M components/CookieBanner.tsx
-- M  components/WelcomeScreen.tsx
-- MM graphify-out/WORKSPACE_MEMORY.md
-- MM workspace.json
-- MM workspacememory.md
+- HEAD: 2026-11-16 c89447c remove console.log functions, no longer needed
+- Working tree summary: 1 modified
+- M app/api/vouchers/route.ts
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -194,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 5f08c4b by Bas van Dooremalen on 2026-11-16
-  fix(faq): render wysiwyg html content properly using dangerouslySetInnerHTML to remove visible p tags
+- c89447c by Bas van Dooremalen on 2026-11-16
+  remove console.log functions, no longer needed
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

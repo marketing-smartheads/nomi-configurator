@@ -14,6 +14,21 @@ const VERHUUR_VOUCHERS = new Set([
 
 export async function GET(request: Request) {
   try {
+    // BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien
+    const authHeader = request.headers.get('authorization');
+    const secretKey = request.headers.get('x-admin-secret');
+    
+    // Je kunt hier optioneel een environment variable controleren (bijv. process.env.ADMIN_SECRET_KEY)
+    // Als er geen geldige autorisatie is, blokkeer je direct de toegang:
+    const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier';
+    
+    if (secretKey !== expectedSecret && (!authHeader || !authHeader.startsWith('Bearer '))) {
+      return NextResponse.json(
+        { success: false, error: 'Niet geautoriseerd om deze gegevens in te zien.' },
+        { status: 403 }
+      );
+    }
+
     const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql';
     const wpUser = process.env.WORDPRESS_AUTH_USER;
     const wpPass = process.env.WORDPRESS_AUTH_PASSWORD;
@@ -57,7 +72,6 @@ export async function GET(request: Request) {
       const codeField = (v?.voucherVelden?.toegangscode || '').trim().toLowerCase();
       const titleField = (v?.title || '').trim().toLowerCase();
       
-      // Als de code of titel voorkomt in de verhuurset, slaan we deze over
       if (VERHUUR_VOUCHERS.has(codeField) || VERHUUR_VOUCHERS.has(titleField)) {
         return false;
       }
