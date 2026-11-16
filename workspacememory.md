@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T18:34:34.919Z
+Generated: 2026-11-16T18:41:16.635Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T18:34:33.145Z
+- Last activity: 2026-11-16T18:41:14.101Z
 ## Workspace Focus
-- Active file in focus: app/api/vouchers/route.ts
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/vouchers/route.ts (3), app/dashboard/page.tsx (3)
-- Suggested starting points: app/api/vouchers/route.ts, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx
+- Active file in focus: app/privacy/page.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/vouchers/route.ts (3), components/configurator/StepThreeVisuals.tsx (3)
+- Suggested starting points: app/privacy/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx, app/dashboard/page.tsx
 ## Current Workspace
-- Active file: app/api/vouchers/route.ts
-- Tracked files in snapshot: 71
-- Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
-- Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
+- Active file: app/privacy/page.tsx
+- Tracked files in snapshot: 73
+- Top-level areas: public (23), components (18), [root] (15), app (14), lib (3)
+- Primary file types: .tsx (24), .svg (11), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 1 modified, 2 untrackeds
 ## Tracked Snapshots
+- app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
+  Last snapshot: 2026-11-16T18:41:14.101Z
+  Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
 - app/api/vouchers/route.ts | 80 lines | 2922 chars | hash dac1e1e8ab6f
   Last snapshot: 2026-11-16T18:34:33.145Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/configurator/StepFourConfirmation.tsx | 452 lines | 21190 chars | hash 1af2672256b8
   Last snapshot: 2026-11-16T16:07:38.565Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- lib/cms.ts | 317 lines | 9033 chars | hash 0406b70d3127
-  Last snapshot: 2026-11-16T15:25:58.489Z
-  Preview: "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: "28", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
 
 ## Recent Changes
+### 2026-11-16T18:41:14.101Z | saved | app/privacy/page.tsx
+- Summary: Line 26: replaced 100 lines with 92 lines.
+- Before: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- After: 127 lines | 7,550 chars | hash e35fdd4c7a5a | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- Previous fragment: "gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-..."
+- Current fragment: "opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-white pt..."
+
 ### 2026-11-16T18:34:33.145Z | saved | app/api/vouchers/route.ts
 - Summary: Line 16: replaced 13 lines with 9 lines.
 - Before: 84 lines | 3,030 chars | hash bdaba5dab9ef | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
@@ -159,29 +166,24 @@ Structured manifest: workspace.json
 - Previous fragment: "Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselectee..."
 - Current fragment: "Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partner..."
 
-### 2026-11-16T15:26:05.314Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: replaced 355 lines with 354 lines.
-- Before: 400 lines | 20,123 chars | hash 19c214557917 | preview: "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';..."
-- After: 399 lines | 20,088 chars | hash e69f90a5ab8d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import..."
-- Current fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
-- app/dashboard/page.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- app/dashboard/page.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 - lib/cms.ts (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 26dbb85 fix(api): allow internal dashboard requests to vouchers endpoint while blocking public url access
-- Working tree summary: 1 modified
-- M app/api/vouchers/route.ts
+- HEAD: 2026-11-16 6b1da29 fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors
+- Working tree summary: 1 modified, 2 untrackeds
+- M app/privacy/page.tsx
+- ?? "public/assets/Logo Thomas de Gier donkerblauw.svg"
+- ?? public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -189,8 +191,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 60c5b41 by Bas van Dooremalen on 2026-11-16
-  security(api): protect vouchers endpoint to prevent public data exposure and unauthorized access
+- 6b1da29 by Bas van Dooremalen on 2026-11-16
+  fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

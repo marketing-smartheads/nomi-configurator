@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T18:34:34.919Z",
-  "generatedAtEpochMs": 1794854074919,
+  "generatedAt": "2026-11-16T18:41:16.635Z",
+  "generatedAtEpochMs": 1794854476635,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/vouchers/route.ts",
+    "activeFile": "app/privacy/page.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,25 +22,25 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/vouchers/route.ts",
+      "app/privacy/page.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
-      "app/dashboard/page.tsx",
+      "app/api/vouchers/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
+      "app/dashboard/page.tsx",
       "components/configurator/StepOnewoning.tsx",
       "lib/cms.ts",
       "app/api/confirm/route.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md",
-      "package-lock.json"
+      "README.md"
     ],
     "stats": {
-      "totalFiles": 71,
+      "totalFiles": 73,
       "topLevelAreas": [
         {
           "name": "public",
-          "count": 21
+          "count": 23
         },
         {
           "name": "components",
@@ -65,12 +65,12 @@
           "count": 24
         },
         {
-          "name": ".ts",
+          "name": ".svg",
           "count": 11
         },
         {
-          "name": ".svg",
-          "count": 9
+          "name": ".ts",
+          "count": 11
         },
         {
           "name": ".json",
@@ -379,6 +379,18 @@
           "isKeyFile": false
         },
         {
+          "path": "public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/Logo Thomas de Gier donkerblauw.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/logo-nomi-white.svg",
           "topLevelArea": "public",
           "extension": ".svg",
@@ -575,7 +587,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T18:34:33.145Z",
+    "lastActivityAt": "2026-11-16T18:41:14.101Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +598,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "app/privacy/page.tsx",
+      "updatedAt": 1794854474101,
+      "lineCount": 127,
+      "charCount": 7550,
+      "hash": "e35fdd4c7a5a",
+      "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
+    },
     {
       "filePath": "app/api/vouchers/route.ts",
       "updatedAt": 1794854073145,
@@ -641,17 +661,41 @@
       "charCount": 21190,
       "hash": "1af2672256b8",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-    },
-    {
-      "filePath": "lib/cms.ts",
-      "updatedAt": 1794842758489,
-      "lineCount": 317,
-      "charCount": 9033,
-      "hash": "0406b70d3127",
-      "preview": "// lib/cms.ts / export async function getPageData() { / const query = ` / query GetConfiguratorPage { / page(id: \"28\", idType: DATABASE_ID) { / sections { / hero { / subtitel / titel / omschrijving / afbeelding { / no..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/privacy/page.tsx",
+      "toPath": "",
+      "summary": "Line 26: replaced 100 lines with 92 lines.",
+      "recordedAt": "2026-11-16T18:41:14.101Z",
+      "recordedAtEpochMs": 1794854474101,
+      "before": {
+        "kind": "text",
+        "lineCount": 135,
+        "charCount": 8229,
+        "hash": "1fa058bba875",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1794854474101
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 127,
+        "charCount": 7550,
+        "hash": "e35fdd4c7a5a",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1794854474101
+      },
+      "diff": {
+        "lineStart": 26,
+        "removedLines": 100,
+        "addedLines": 92,
+        "summary": "Line 26: replaced 100 lines with 92 lines.",
+        "beforeFragment": "gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag. / </p> / </section> / <div className=\"space-y-3\"> / <h2 className=\"text-lg sm:text-xl font-serif text-...",
+        "afterFragment": "opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag. / </p> / </section> / <div className=\"space-y-3\"> / <h2 className=\"text-lg sm:text-xl font-serif text-white pt..."
+      }
+    },
     {
       "type": "save",
       "path": "app/api/vouchers/route.ts",
@@ -1099,38 +1143,6 @@
         "beforeFragment": "Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselectee...",
         "afterFragment": "Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partner..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 355 lines with 354 lines.",
-      "recordedAt": "2026-11-16T15:26:05.314Z",
-      "recordedAtEpochMs": 1794842765314,
-      "before": {
-        "kind": "text",
-        "lineCount": 400,
-        "charCount": 20123,
-        "hash": "19c214557917",
-        "preview": "// components/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from '../Button';...",
-        "updatedAt": 1794842765314
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 20088,
-        "hash": "e69f90a5ab8d",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794842765314
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 355,
-        "addedLines": 354,
-        "summary": "Line 1: replaced 355 lines with 354 lines.",
-        "beforeFragment": "StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import...",
-        "afterFragment": "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
-      }
     }
   ],
   "hotFiles": [
@@ -1147,12 +1159,12 @@
       "count": 3
     },
     {
-      "filePath": "app/dashboard/page.tsx",
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 3
+      "filePath": "app/dashboard/page.tsx",
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1170,17 +1182,19 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 26dbb85 fix(api): allow internal dashboard requests to vouchers endpoint while blocking public url access",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-16 6b1da29 fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors",
+    "statusSummary": "1 modified, 2 untrackeds",
+    "changedFileCount": 3,
     "statusLines": [
-      "M app/api/vouchers/route.ts"
+      "M app/privacy/page.tsx",
+      "?? \"public/assets/Logo Thomas de Gier donkerblauw.svg\"",
+      "?? public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 60c5b41 by Bas van Dooremalen on 2026-11-16\n  security(api): protect vouchers endpoint to prevent public data exposure and unauthorized access\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6b1da29 by Bas van Dooremalen on 2026-11-16\n  fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
