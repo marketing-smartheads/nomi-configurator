@@ -120,6 +120,8 @@ export default function StepTwoDesign({
           pakkettenLijst.map((pakket: any, index: number) => {
             const pakketId = pakket.pakketId || pakket.pakket_id || `pakket-${index}`;
             const pakketTitel = pakket.pakketTitel || pakket.pakket_titel || '';
+            
+            // Haal de omschrijving zuiver uit het CMS veld (zonder hardcoded fallback)
             const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || '';
             
             const actueelGekozen = designPakket || (typeof window !== 'undefined' ? localStorage.getItem('selected_designPakket') : '');
@@ -157,7 +159,12 @@ export default function StepTwoDesign({
                   </span>
                   
                   <h3 className="text-3xl font-serif text-dark mb-3">{pakketTitel}</h3>
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">{pakketOmschrijving}</p>
+                  
+                  {pakketOmschrijving && (
+                    <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
+                      {pakketOmschrijving}
+                    </p>
+                  )}
 
                   {materialen.length > 0 && (
                     <div className="mb-8 bg-[#F9F6F0] p-5 rounded-2xl border border-dark/5">

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T13:40:12.604Z
+Generated: 2026-11-16T13:52:56.227Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T13:40:10.038Z
+- Last activity: 2026-11-16T13:52:53.594Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/verify-voucher/route.ts (5), lib/cms.ts (4)
+- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (6), app/api/verify-voucher/route.ts (5), lib/cms.ts (4)
 - Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepTwoDesign.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 212 lines | 9434 chars | hash 2d7e4427fb95
-  Last snapshot: 2026-11-16T13:40:10.038Z
+- components/configurator/StepTwoDesign.tsx | 219 lines | 9671 chars | hash 2161041e64cf
+  Last snapshot: 2026-11-16T13:52:53.594Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
   Last snapshot: 2026-11-16T13:17:48.708Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T13:52:53.594Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 123: replaced 38 lines with 45 lines.
+- Before: 212 lines | 9,434 chars | hash 2d7e4427fb95 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,671 chars | hash 2161041e64cf | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- Previous fragment: "const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || ''; / const actueelGekozen = designPakket || (typeof window !== 'undefined' ? localStorage...."
+- Current fragment: "// Haal de omschrijving zuiver uit het CMS veld (zonder hardcoded fallback) / const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || ''; / const a..."
+
 ### 2026-11-16T13:40:10.038Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 72: replaced 4 lines with 9 lines.
 - Before: 207 lines | 9,312 chars | hash bd7debac65d2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -153,26 +160,20 @@ Structured manifest: workspace.json
 - Previous fragment: "'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'nomi-..."
 - Current fragment: "// Type A verhuur vouchers / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a023', 'no..."
 
-### 2026-11-11T15:13:12.682Z | saved | app/dashboard/page.tsx
-- Summary: Line 345: removed 1 line.
-- Before: 397 lines | 19,811 chars | hash c6c46a934ccb | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-- After: 397 lines | 19,782 chars | hash f472d95f0ee7 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van huurvouchers die we uit het dashboard willen f..."
-- Previous fragment: "in ? null : sortedVouchers.ma"
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
-- app/dashboard/page.tsx (7 tracked changes)
+- app/dashboard/page.tsx (6 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
 - lib/cms.ts (4 tracked changes)
 - app/api/auth/login/route.ts (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
-- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 e8b75e2 remove unwanted text
+- HEAD: 2026-11-16 ea79c3f fix(step2): prevent duplicate design packages using a normalized Map filter
 - Working tree summary: 1 modified
 - M components/configurator/StepTwoDesign.tsx
 
@@ -182,8 +183,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e8b75e2 by Bas van Dooremalen on 2026-11-16
-  remove unwanted text
+- ea79c3f by Bas van Dooremalen on 2026-11-16
+  fix(step2): prevent duplicate design packages using a normalized Map filter
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
