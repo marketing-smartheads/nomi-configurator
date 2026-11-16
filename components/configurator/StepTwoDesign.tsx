@@ -23,6 +23,9 @@ export default function StepTwoDesign({
   const [opgeslagenWoning, setOpgeslagenWoning] = useState(woningType || '');
   const [opgeslagenIndeling, setOpgeslagenIndeling] = useState('');
 
+  // Lightbox / Zoom state
+  const [lightboxImage, setLightboxImage] = useState<{ url: string; title: string } | null>(null);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -44,10 +47,18 @@ export default function StepTwoDesign({
     }
   }, [woningType]);
 
+  // Sluit lightbox met Escape toets
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxImage(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const normWoning = (opgeslagenWoning || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // STRIKTE FILTERING: Alleen rijen die exact matchen met het opgeslagen woningtype en indeling
   const matchendeWoningRijen = woningTypenLijst.filter((w: any) => {
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -69,7 +80,6 @@ export default function StepTwoDesign({
     });
   });
 
-  // WATERDICHTE DUBBELEN-FILTER: Sorteer en filter op unieke titel/id via een Map
   const uniekePakketMap = new Map();
   alleVerzameldePakketten.forEach((pakket) => {
     const schoneNaam = (pakket.pakketTitel || pakket.pakket_titel || pakket.pakketId || pakket.pakket_id || '').trim().toLowerCase();
@@ -120,8 +130,6 @@ export default function StepTwoDesign({
           pakkettenLijst.map((pakket: any, index: number) => {
             const pakketId = pakket.pakketId || pakket.pakket_id || `pakket-${index}`;
             const pakketTitel = pakket.pakketTitel || pakket.pakket_titel || '';
-            
-            // Haal de omschrijving zuiver uit het CMS veld (zonder hardcoded fallback)
             const pakketOmschrijving = pakket.pakketOmschrijving || pakket.pakket_omschrijving || '';
             
             const actueelGekozen = designPakket || (typeof window !== 'undefined' ? localStorage.getItem('selected_designPakket') : '');
@@ -136,19 +144,32 @@ export default function StepTwoDesign({
             return (
               <div
                 key={pakketId + index}
-                className={`bg-white p-7 rounded-[2.5rem] cursor-pointer border transition-all duration-300 flex flex-col justify-between shadow-lg ${
+                className={`bg-white p-7 rounded-[2.5rem] border transition-all duration-300 flex flex-col justify-between shadow-lg ${
                   isSelected ? 'border-primary ring-1 ring-primary shadow-md' : 'border-dark/10 hover:border-primary/50'
                 }`}
               >
                 <div>
-                  <div className="w-full h-72 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-dark/5">
+                  {/* Klikbare afbeelding met vergrootglas */}
+                  <div 
+                    onClick={() => imageUrl && setLightboxImage({ url: imageUrl, title: pakketTitel })}
+                    className={`w-full h-72 bg-secondary rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center border border-dark/5 group ${imageUrl ? 'cursor-pointer' : ''}`}
+                    title="Klik om te vergroten"
+                  >
                     {imageUrl ? (
-                      <Image 
-                        src={imageUrl} 
-                        alt={pakketTitel || 'Moodboard'} 
-                        fill 
-                        className="object-cover"
-                      />
+                      <>
+                        <Image 
+                          src={imageUrl} 
+                          alt={pakketTitel || 'Moodboard'} 
+                          fill 
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* Vergrootglas Overlay Knop */}
+                        <div className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-dark/75 backdrop-blur-md flex items-center justify-center text-white shadow-lg opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                        </div>
+                      </>
                     ) : (
                       <span className="text-xs text-muted">[ Afbeelding {pakketTitel} ]</span>
                     )}
@@ -214,6 +235,38 @@ export default function StepTwoDesign({
           </div>
         )}
       </div>
+
+      {/* Fancybox / Lightbox Modal */}
+      {lightboxImage && (
+        <div 
+          onClick={() => setLightboxImage(null)}
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 animate-fadeIn cursor-zoom-out"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()} 
+            className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6 space-y-4"
+          >
+            <div className="flex items-center justify-between">
+              <h4 className="font-serif text-xl sm:text-2xl text-dark">{lightboxImage.title}</h4>
+              <button 
+                onClick={() => setLightboxImage(null)}
+                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-dark hover:bg-dark hover:text-white transition cursor-pointer"
+                aria-label="Sluiten"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden bg-secondary">
+              <Image 
+                src={lightboxImage.url} 
+                alt={lightboxImage.title} 
+                fill 
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

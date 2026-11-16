@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T14:08:53.250Z",
-  "generatedAtEpochMs": 1794838133250,
+  "generatedAt": "2026-11-16T14:21:37.057Z",
+  "generatedAtEpochMs": 1794838897057,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,8 +24,8 @@
     "suggestedStartingPoints": [
       "components/configurator/StepTwoDesign.tsx",
       "app/download/page.tsx",
-      "app/dashboard/page.tsx",
       "app/api/verify-voucher/route.ts",
+      "app/dashboard/page.tsx",
       "lib/cms.ts",
       "app/api/auth/login/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T14:08:50.327Z",
+    "lastActivityAt": "2026-11-16T14:21:35.241Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794838130327,
-      "lineCount": 219,
-      "charCount": 9662,
-      "hash": "76facdd6978d",
+      "updatedAt": 1794838895241,
+      "lineCount": 272,
+      "charCount": 12311,
+      "hash": "2dfe6999bb5f",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
@@ -652,6 +652,56 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-16T14:21:35.241Z",
+      "recordedAtEpochMs": 1794838895241,
+      "before": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 12311,
+        "hash": "2dfe6999bb5f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838895241
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 12311,
+        "hash": "2dfe6999bb5f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838895241
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-16T14:21:32.259Z",
+      "recordedAtEpochMs": 1794838892259,
+      "before": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9662,
+        "hash": "76facdd6978d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838892259
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 219,
+        "charCount": 9662,
+        "hash": "76facdd6978d",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794838892259
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1060,49 +1110,6 @@
         "beforeFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower...",
         "afterFragment": "const data = configuratorData?.configurator || configuratorData; / const stappenBalk = data?.stappenBalk || data?.stappen_balk || []; / const stap1Omschrijving = stappenBalk[0]?..."
       }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "",
-      "recordedAt": "2026-11-12T10:34:56.696Z",
-      "recordedAtEpochMs": 1794479696696,
-      "before": null,
-      "after": null,
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/dashboard/page.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 415 lines.",
-      "recordedAt": "2026-11-12T06:52:19.528Z",
-      "recordedAtEpochMs": 1794466339528,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1794466339528
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 415,
-        "charCount": 20693,
-        "hash": "04b3d6a61487",
-        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will...",
-        "updatedAt": 1794466339528
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 415,
-        "summary": "Line 1: inserted 415 lines.",
-        "beforeFragment": "",
-        "afterFragment": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuu..."
-      }
     }
   ],
   "hotFiles": [
@@ -1112,14 +1119,14 @@
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 7
-    },
-    {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 6
+      "count": 9
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
+      "count": 5
+    },
+    {
+      "filePath": "app/dashboard/page.tsx",
       "count": 5
     },
     {
@@ -1128,7 +1135,7 @@
     },
     {
       "filePath": "app/api/auth/login/route.ts",
-      "count": 3
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
@@ -1142,7 +1149,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 ff2c621 fix(step2): ensure unique cms package descriptions are correctly rendered per card",
+    "headSummary": "2026-11-16 929fae6 style(step2): align step description font size with step 1 and step 3",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
@@ -1155,7 +1162,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ff2c621 by Bas van Dooremalen on 2026-11-16\n  fix(step2): ensure unique cms package descriptions are correctly rendered per card\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 929fae6 by Bas van Dooremalen on 2026-11-16\n  style(step2): align step description font size with step 1 and step 3\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T14:08:53.250Z
+Generated: 2026-11-16T14:21:37.057Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T14:08:50.327Z
+- Last activity: 2026-11-16T14:21:35.241Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepTwoDesign.tsx
-- Hottest files right now: app/download/page.tsx (10), components/configurator/StepTwoDesign.tsx (7), app/dashboard/page.tsx (6), app/api/verify-voucher/route.ts (5)
-- Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
+- Hottest files right now: app/download/page.tsx (10), components/configurator/StepTwoDesign.tsx (9), app/api/verify-voucher/route.ts (5), app/dashboard/page.tsx (5)
+- Suggested starting points: components/configurator/StepTwoDesign.tsx, app/download/page.tsx, app/api/verify-voucher/route.ts, app/dashboard/page.tsx, lib/cms.ts, app/api/auth/login/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepTwoDesign.tsx
 - Tracked files in snapshot: 71
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepTwoDesign.tsx | 219 lines | 9662 chars | hash 76facdd6978d
-  Last snapshot: 2026-11-16T14:08:50.327Z
+- components/configurator/StepTwoDesign.tsx | 272 lines | 12311 chars | hash 2dfe6999bb5f
+  Last snapshot: 2026-11-16T14:21:35.241Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
 - components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
   Last snapshot: 2026-11-16T13:17:48.708Z
@@ -65,6 +65,16 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T14:21:35.241Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Saved without a textual diff.
+- Before: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 272 lines | 12,311 chars | hash 2dfe6999bb5f | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+
+### 2026-11-16T14:21:32.259Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Saved without a textual diff.
+- Before: 219 lines | 9,662 chars | hash 76facdd6978d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+- After: 219 lines | 9,662 chars | hash 76facdd6978d | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
+
 ### 2026-11-16T14:08:50.327Z | saved | components/configurator/StepTwoDesign.tsx
 - Summary: Line 112: inserted 1 line.
 - Before: 219 lines | 9,651 chars | hash 95f84782fc37 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
@@ -149,28 +159,20 @@ Structured manifest: workspace.json
 - Previous fragment: "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower..."
 - Current fragment: "const data = configuratorData?.configurator || configuratorData; / const stappenBalk = data?.stappenBalk || data?.stappen_balk || []; / const stap1Omschrijving = stappenBalk[0]?..."
 
-### 2026-11-12T10:34:56.696Z | saved | lib/cms.ts
-
-### 2026-11-12T06:52:19.528Z | saved | app/dashboard/page.tsx
-- Summary: Line 1: inserted 415 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 415 lines | 20,693 chars | hash 04b3d6a61487 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
-- Current fragment: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuu..."
-
 
 ## Hot Files
 - app/download/page.tsx (10 tracked changes)
-- components/configurator/StepTwoDesign.tsx (7 tracked changes)
-- app/dashboard/page.tsx (6 tracked changes)
+- components/configurator/StepTwoDesign.tsx (9 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
+- app/dashboard/page.tsx (5 tracked changes)
 - lib/cms.ts (4 tracked changes)
-- app/api/auth/login/route.ts (3 tracked changes)
+- app/api/auth/login/route.ts (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
 - components/configurator/StepOnewoning.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 ff2c621 fix(step2): ensure unique cms package descriptions are correctly rendered per card
+- HEAD: 2026-11-16 929fae6 style(step2): align step description font size with step 1 and step 3
 - Working tree summary: 4 modifieds
 - M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -183,8 +185,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- ff2c621 by Bas van Dooremalen on 2026-11-16
-  fix(step2): ensure unique cms package descriptions are correctly rendered per card
+- 929fae6 by Bas van Dooremalen on 2026-11-16
+  style(step2): align step description font size with step 1 and step 3
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
