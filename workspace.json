@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T14:21:37.057Z",
-  "generatedAtEpochMs": 1794838897057,
+  "generatedAt": "2026-11-16T14:25:36.243Z",
+  "generatedAtEpochMs": 1794839136243,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -27,9 +27,9 @@
       "app/api/verify-voucher/route.ts",
       "app/dashboard/page.tsx",
       "lib/cms.ts",
-      "app/api/auth/login/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "app/api/auth/login/route.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T14:21:35.241Z",
+    "lastActivityAt": "2026-11-16T14:25:34.510Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -588,10 +588,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794838895241,
+      "updatedAt": 1794839134510,
       "lineCount": 272,
-      "charCount": 12311,
-      "hash": "2dfe6999bb5f",
+      "charCount": 12314,
+      "hash": "19f36b2caade",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 193: inserted 1 line.",
+      "recordedAt": "2026-11-16T14:25:34.510Z",
+      "recordedAtEpochMs": 1794839134510,
+      "before": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 12311,
+        "hash": "2dfe6999bb5f",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794839134510
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 272,
+        "charCount": 12314,
+        "hash": "19f36b2caade",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,...",
+        "updatedAt": 1794839134510
+      },
+      "diff": {
+        "lineStart": 193,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 193: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "sm:"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1078,38 +1110,6 @@
         "beforeFragment": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default...",
         "afterFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 11: replaced 49 lines with 54 lines.",
-      "recordedAt": "2026-11-12T10:38:57.892Z",
-      "recordedAtEpochMs": 1794479937892,
-      "before": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5571,
-        "hash": "7c52c9f0546f",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const gefilterdeLijst = woningType / ?...",
-        "updatedAt": 1794479937892
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 127,
-        "charCount": 5726,
-        "hash": "a94e30c9f639",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
-        "updatedAt": 1794479937892
-      },
-      "diff": {
-        "lineStart": 11,
-        "removedLines": 49,
-        "addedLines": 54,
-        "summary": "Line 11: replaced 49 lines with 54 lines.",
-        "beforeFragment": "const gefilterdeLijst = woningType / ? woningTypenLijst.filter((item: any) => { / const typeNaam = item.typeNaam || item.type_naam || item.titel || ''; / return typeNaam.toLower...",
-        "afterFragment": "const data = configuratorData?.configurator || configuratorData; / const stappenBalk = data?.stappenBalk || data?.stappen_balk || []; / const stap1Omschrijving = stappenBalk[0]?..."
-      }
     }
   ],
   "hotFiles": [
@@ -1119,7 +1119,7 @@
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 9
+      "count": 10
     },
     {
       "filePath": "app/api/verify-voucher/route.ts",
@@ -1134,29 +1134,26 @@
       "count": 4
     },
     {
-      "filePath": "app/api/auth/login/route.ts",
-      "count": 2
-    },
-    {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 2
+    },
+    {
+      "filePath": "app/api/auth/login/route.ts",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 929fae6 style(step2): align step description font size with step 1 and step 3",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-16 8d1d65a feat(step2): add zoom magnifying glass icon and fancybox lightbox modal for package images",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepTwoDesign.tsx"
     ],
     "error": ""
   },
