@@ -6,6 +6,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
 
+// Vaste partnergegevens volgens de instructies van Thomas de Gier
+const PARTNER_NAAM = 'Aanhuis Spijk';
+const PARTNER_CONTACT = 'Tobias';
+const PARTNER_EMAIL = process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'Tobias@aanhuis-spijk.nl';
+const PARTNER_TELEFOON = '030 - 600 82 40';
+
 interface StepFourConfirmationProps {
   stepTitle: string;
   configuratorData: any;
@@ -138,13 +144,6 @@ export default function StepFourConfirmation({
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
   const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
 
-  const primairePartner = partners[0] || {};
-  const PARTNER_NAAM = primairePartner.partnerNaam || primairePartner.partner_naam || 'Aanhuis Spijk';
-  const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl';
-  // Correcte scheiding tussen contactpersoon (of rol als fallback)
-  const PARTNER_CONTACT = primairePartner.partnerContactpersoon || primairePartner.partner_contactpersoon || primairePartner.partnerRol || primairePartner.partner_rol || 'Tobias';
-  const PARTNER_TELEFOON = primairePartner.partnerTelefoon || primairePartner.partner_telefoon || '030 - 600 82 40';
-
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
   const omschrijving = data?.bevestigingOmschrijving || data?.bevestiging_omschrijving;
@@ -179,6 +178,7 @@ export default function StepFourConfirmation({
       partners,
       bestanden: storedWoning?.downloadCategorie || storedWoning?.download_categorieen || [],
       toestemmingPartner: toestemming,
+      partnerEmailTarget: PARTNER_EMAIL, // Richting Tobias@aanhuis-spijk.nl
     };
 
     try {
@@ -354,7 +354,7 @@ export default function StepFourConfirmation({
         </div>
       )}
 
-      {/* POP-UP MET CORRECTE CONTACTPERSOON (Tobias / Partnergegevens) */}
+      {/* POP-UP VOLGENS THOMAS DE GIER (Scenario 1 & 2 met correcte partner Aanhuis Spijk / Tobias) */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
@@ -366,16 +366,16 @@ export default function StepFourConfirmation({
               <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === true} onChange={() => setAgreedPartner(true)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
                 <div className="text-sm text-dark space-y-0.5">
-                  <strong className="block font-semibold">Ja, delen met de partner</strong>
-                  <span className="text-xs text-muted block leading-relaxed">De partner ontvangt uw gegevens en neemt vrijblijvend contact met u op.</span>
+                  <strong className="block font-semibold">Scenario 1: Wel akkoord (Automatisch)</strong>
+                  <span className="text-xs text-muted block leading-relaxed">Deel mijn gegevens met {PARTNER_NAAM} zodat Tobias automatisch contact kan opnemen en ik direct toegang krijg tot de downloadpagina.</span>
                 </div>
               </label>
 
               <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">
                 <input type="radio" name="partnerAkkoord" checked={agreedPartner === false} onChange={() => setAgreedPartner(false)} className="mt-1 w-4 h-4 accent-[#C5A880]" />
                 <div className="text-sm text-dark space-y-0.5">
-                  <strong className="block font-semibold">Nee, niet delen (zelf contact opnemen)</strong>
-                  <span className="text-xs text-muted block leading-relaxed">Uw gegevens worden niet gedeeld. U houdt het in eigen hand en neemt zelf contact op.</span>
+                  <strong className="block font-semibold">Scenario 2: Geen akkoord (Handmatig)</strong>
+                  <span className="text-xs text-muted block leading-relaxed">Deel mijn gegevens niet automatisch. Ik wil zelf contact opnemen met {PARTNER_NAAM} om de documentatielijst te bemachtigen.</span>
                 </div>
               </label>
 
