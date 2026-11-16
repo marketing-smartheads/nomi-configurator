@@ -52,7 +52,7 @@ export default function StepOneWoning({
     <div className="space-y-12">
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
-          {`Stap 1 · ${stepTitle}`}
+          {`${stepTitle}`}
         </p>
         <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">
           {data?.titelStap1 || data?.stap1Titel || 'Kies uw gewenste indeling'}

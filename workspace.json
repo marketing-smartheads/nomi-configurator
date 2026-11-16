@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T13:09:19.226Z",
-  "generatedAtEpochMs": 1794834559226,
+  "generatedAt": "2026-11-16T13:17:51.188Z",
+  "generatedAtEpochMs": 1794835071188,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/api/verify-voucher/route.ts",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/api/verify-voucher/route.ts",
+      "components/configurator/StepOnewoning.tsx",
       "app/download/page.tsx",
       "app/dashboard/page.tsx",
-      "app/api/auth/login/route.ts",
+      "app/api/verify-voucher/route.ts",
       "lib/cms.ts",
+      "app/api/auth/login/route.ts",
       "app/api/vouchers/route.ts",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepOnewoning.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -575,7 +575,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T13:09:16.604Z",
+    "lastActivityAt": "2026-11-16T13:17:48.708Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -586,6 +586,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1794835068708,
+      "lineCount": 127,
+      "charCount": 5717,
+      "hash": "62bafaf91d9e",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
+    },
     {
       "filePath": "app/api/verify-voucher/route.ts",
       "updatedAt": 1794834556604,
@@ -619,14 +627,6 @@
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794479937892,
-      "lineCount": 127,
-      "charCount": 5726,
-      "hash": "a94e30c9f639",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
-    },
-    {
       "filePath": "app/dashboard/page.tsx",
       "updatedAt": 1794466339528,
       "lineCount": 415,
@@ -652,6 +652,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 55: removed 1 line.",
+      "recordedAt": "2026-11-16T13:17:48.708Z",
+      "recordedAtEpochMs": 1794835068708,
+      "before": {
+        "kind": "text",
+        "lineCount": 127,
+        "charCount": 5726,
+        "hash": "a94e30c9f639",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
+        "updatedAt": 1794835068708
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 127,
+        "charCount": 5717,
+        "hash": "62bafaf91d9e",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
+        "updatedAt": 1794835068708
+      },
+      "diff": {
+        "lineStart": 55,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 55: removed 1 line.",
+        "beforeFragment": "Stap 1 ·",
+        "afterFragment": ""
+      }
+    },
     {
       "type": "save",
       "path": "app/api/verify-voucher/route.ts",
@@ -1071,38 +1103,6 @@
         "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]...",
         "afterFragment": "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/verify-voucher/route.ts",
-      "toPath": "",
-      "summary": "Line 7: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-11T15:00:35.551Z",
-      "recordedAtEpochMs": 1794409235551,
-      "before": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7270,
-        "hash": "ceae6ca859f8",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794409235550
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 217,
-        "charCount": 7296,
-        "hash": "29f0ec9ff7a4",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /...",
-        "updatedAt": 1794409235551
-      },
-      "diff": {
-        "lineStart": 7,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 7: replaced 1 line with 1 line.",
-        "beforeFragment": "3",
-        "afterFragment": "2', 'nomi-a003', 'nomi-a004"
-      }
     }
   ],
   "hotFiles": [
@@ -1119,12 +1119,12 @@
       "count": 5
     },
     {
-      "filePath": "app/api/auth/login/route.ts",
+      "filePath": "lib/cms.ts",
       "count": 4
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 4
+      "filePath": "app/api/auth/login/route.ts",
+      "count": 3
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1136,26 +1136,23 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 1
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-12 53a9e53 same style for paragraph in confirmation step",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-16 97b5dd4 fix(auth): strictly block rental vouchers in GET verify route with 403 response",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M app/api/verify-voucher/route.ts",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 53a9e53 by Bas van Dooremalen on 2026-11-12\n  same style for paragraph in confirmation step\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 97b5dd4 by Bas van Dooremalen on 2026-11-16\n  fix(auth): strictly block rental vouchers in GET verify route with 403 response\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

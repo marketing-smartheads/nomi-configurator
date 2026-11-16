@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T13:09:19.226Z
+Generated: 2026-11-16T13:17:51.188Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T13:09:16.604Z
+- Last activity: 2026-11-16T13:17:48.708Z
 ## Workspace Focus
-- Active file in focus: app/api/verify-voucher/route.ts
-- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/verify-voucher/route.ts (5), app/api/auth/login/route.ts (4)
-- Suggested starting points: app/api/verify-voucher/route.ts, app/download/page.tsx, app/dashboard/page.tsx, app/api/auth/login/route.ts, lib/cms.ts, app/api/vouchers/route.ts
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: app/download/page.tsx (13), app/dashboard/page.tsx (7), app/api/verify-voucher/route.ts (5), lib/cms.ts (4)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, app/download/page.tsx, app/dashboard/page.tsx, app/api/verify-voucher/route.ts, lib/cms.ts, app/api/auth/login/route.ts
 ## Current Workspace
-- Active file: app/api/verify-voucher/route.ts
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 71
 - Top-level areas: public (21), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .ts (11), .svg (9), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 127 lines | 5717 chars | hash 62bafaf91d9e
+  Last snapshot: 2026-11-16T13:17:48.708Z
+  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
 - app/api/verify-voucher/route.ts | 218 lines | 7299 chars | hash 4cc859d6c53a
   Last snapshot: 2026-11-16T13:09:16.604Z
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -51,9 +54,6 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 207 lines | 9312 chars | hash bd7debac65d2
   Last snapshot: 2026-11-12T10:39:16.276Z
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- components/configurator/StepOnewoning.tsx | 127 lines | 5726 chars | hash a94e30c9f639
-  Last snapshot: 2026-11-12T10:38:57.892Z
-  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
 - app/dashboard/page.tsx | 415 lines | 20693 chars | hash 04b3d6a61487
   Last snapshot: 2026-11-12T06:52:19.528Z
   Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard will..."
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
 
 ## Recent Changes
+### 2026-11-16T13:17:48.708Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 55: removed 1 line.
+- Before: 127 lines | 5,726 chars | hash a94e30c9f639 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
+- After: 127 lines | 5,717 chars | hash 62bafaf91d9e | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
+- Previous fragment: "Stap 1 ·"
+
 ### 2026-11-16T13:09:16.604Z | saved | app/api/verify-voucher/route.ts
 - Summary: Line 28: replaced 9 lines with 7 lines.
 - Before: 220 lines | 7,360 chars | hash ce975addae9c | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
@@ -153,32 +159,22 @@ Structured manifest: workspace.json
 - Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [username, setUsername] = useState(''); / const [password, setPassword]..."
 - Current fragment: "// Lijst van huurvouchers die we uit het dashboard willen filteren voor de makelaar / const VERHUUR_VOUCHERS_SET = new Set([ / 'nomi-a001', 'nomi-a002', 'nomi-a003', 'nomi-a004'..."
 
-### 2026-11-11T15:00:35.551Z | saved | app/api/verify-voucher/route.ts
-- Summary: Line 7: replaced 1 line with 1 line.
-- Before: 217 lines | 7,270 chars | hash ceae6ca859f8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- After: 217 lines | 7,296 chars | hash 29f0ec9ff7a4 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 32 Verhuur-bouwnummers (Jongerius) die in de code en het dashboard geblokkeerd zijn / const VERHUUR_VOUCHERS = new Set([ /..."
-- Previous fragment: "3"
-- Current fragment: "2', 'nomi-a003', 'nomi-a004"
-
 
 ## Hot Files
 - app/download/page.tsx (13 tracked changes)
 - app/dashboard/page.tsx (7 tracked changes)
 - app/api/verify-voucher/route.ts (5 tracked changes)
-- app/api/auth/login/route.ts (4 tracked changes)
 - lib/cms.ts (4 tracked changes)
+- app/api/auth/login/route.ts (3 tracked changes)
 - app/api/vouchers/route.ts (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
-- components/configurator/StepOnewoning.tsx (1 tracked changes)
+- components/configurator/StepOnewoning.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-12 53a9e53 same style for paragraph in confirmation step
-- Working tree summary: 4 modifieds
-- M app/api/verify-voucher/route.ts
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- HEAD: 2026-11-16 97b5dd4 fix(auth): strictly block rental vouchers in GET verify route with 403 response
+- Working tree summary: 1 modified
+- M components/configurator/StepOnewoning.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 53a9e53 by Bas van Dooremalen on 2026-11-12
-  same style for paragraph in confirmation step
+- 97b5dd4 by Bas van Dooremalen on 2026-11-16
+  fix(auth): strictly block rental vouchers in GET verify route with 403 response
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
