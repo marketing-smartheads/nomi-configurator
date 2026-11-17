@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T19:36:19.434Z",
-  "generatedAtEpochMs": 1794944179434,
+  "generatedAt": "2026-11-17T19:44:10.619Z",
+  "generatedAtEpochMs": 1794944650619,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -603,7 +603,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T19:36:16.980Z",
+    "lastActivityAt": "2026-11-17T19:44:08.137Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -616,10 +616,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794944176980,
-      "lineCount": 673,
-      "charCount": 32478,
-      "hash": "af064df92edb",
+      "updatedAt": 1794944648137,
+      "lineCount": 692,
+      "charCount": 32539,
+      "hash": "a7ec3823ad38",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -680,6 +680,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 147: replaced 319 lines with 338 lines.",
+      "recordedAt": "2026-11-17T19:44:08.137Z",
+      "recordedAtEpochMs": 1794944648137,
+      "before": {
+        "kind": "text",
+        "lineCount": 673,
+        "charCount": 32478,
+        "hash": "af064df92edb",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794944648137
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 692,
+        "charCount": 32539,
+        "hash": "a7ec3823ad38",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794944648137
+      },
+      "diff": {
+        "lineStart": 147,
+        "removedLines": 319,
+        "addedLines": 338,
+        "summary": "Line 147: replaced 319 lines with 338 lines.",
+        "beforeFragment": "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A...",
+        "afterFragment": "1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1085,38 +1117,6 @@
         "beforeFragment": "1",
         "afterFragment": "3"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 374: replaced 3 lines with 3 lines.",
-      "recordedAt": "2026-11-17T19:19:09.265Z",
-      "recordedAtEpochMs": 1794943149265,
-      "before": {
-        "kind": "text",
-        "lineCount": 596,
-        "charCount": 27168,
-        "hash": "16893f39cd93",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794943149265
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 596,
-        "charCount": 27168,
-        "hash": "b7d1939d1640",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794943149265
-      },
-      "diff": {
-        "lineStart": 374,
-        "removedLines": 3,
-        "addedLines": 3,
-        "summary": "Line 374: replaced 3 lines with 3 lines.",
-        "beforeFragment": "4 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h4",
-        "afterFragment": "3 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h3"
-      }
     }
   ],
   "hotFiles": [
@@ -1140,20 +1140,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 2e511c9 feat(step4): add moodboard image gallery and materials list block below top cards",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-17 e54b55a fix(step4): resolve moodboard images query, correct material fields and match step 3 styling",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2e511c9 by Bas van Dooremalen on 2026-11-17\n  feat(step4): add moodboard image gallery and materials list block below top cards\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e54b55a by Bas van Dooremalen on 2026-11-17\n  fix(step4): resolve moodboard images query, correct material fields and match step 3 styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

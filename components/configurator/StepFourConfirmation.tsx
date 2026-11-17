@@ -144,16 +144,16 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // Robuuste ophaalmethode voor materialenlijst uit Stap 3
-  const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
-  const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
-  const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
-
-  // Robuuste ophaalmethode voor moodboard / pakket afbeeldingen
-  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || rawVisuals || [];
+  // 1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater
+  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || [];
   const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
     ? rawPakketAfb 
     : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
+
+  // 2. Strikte ophaalmethode voor materialenlijst uit het pakket
+  const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
+  const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
+  const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
 
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
@@ -398,25 +398,33 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* MOODBOARD & MATERIALEN BLOK (Exact in stijl van Stap 3) */}
+          {/* MOODBOARD & MATERIALEN BLOK (Exact aangepast naar de HTML van Stap 3) */}
           <div className="max-w-4xl mx-auto mb-14">
-            <div className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-sm border border-dark/5 space-y-10">
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-12 shadow-sm border border-dark/5 space-y-8">
               <div>
-                <span className="inline-block px-3 py-1 bg-[#F3F0EA] rounded-full text-[10px] font-bold tracking-[0.15em] text-muted uppercase mb-3">
-                  MOODBOARD {pakketNaam.toUpperCase()}
+                <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
+                  {pakketNaam}
                 </span>
-                <h3 className="text-3xl font-serif text-dark">Materialen in dit pakket</h3>
+                <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
                 <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
               </div>
 
-              {/* Moodboard afbeeldingen grid */}
+              {/* Moodboard foto's (Pakket Afbeelding repeater) */}
               {pakketAfbeeldingen.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-6 border-b border-[#F0EBE1]">
                   {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
-                    const imgUrl = item?.sourceUrl || item?.node?.sourceUrl || item?.mediaItemUrl || item?.node?.mediaItemUrl || (typeof item === 'string' ? item : null);
+                    const imgUrl = 
+                      item?.sourceUrl || 
+                      item?.node?.sourceUrl || 
+                      item?.mediaItemUrl || 
+                      item?.node?.mediaItemUrl || 
+                      item?.afbeelding?.sourceUrl || 
+                      item?.afbeelding?.node?.sourceUrl || 
+                      (typeof item === 'string' ? item : null);
+
                     if (!imgUrl) return null;
                     return (
-                      <div key={imgIdx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#F3F0EA]">
+                      <div key={imgIdx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E8E2D5]">
                         <Image src={imgUrl} alt={`Moodboard ${imgIdx + 1}`} fill className="object-cover object-center" />
                       </div>
                     );
@@ -424,45 +432,56 @@ export default function StepFourConfirmation({
                 </div>
               )}
 
-              {/* Materialen lijst exact zoals in Stap 3 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pt-4 border-t border-dark/10">
+              {/* Materialen lijst exact in de stijl van Stap 3 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-12 pt-2">
                 {materialenLijst.length > 0 ? (
                   materialenLijst.map((mat: any, mIdx: number) => {
-                    const matNaam = mat?.materiaalNaam || mat?.materiaal_naam || mat?.titel || mat?.title || mat?.naam || mat;
-                    const matIcon = mat?.materiaalAfbeelding?.node?.sourceUrl || mat?.materiaal_afbeelding?.sourceUrl || mat?.afbeelding?.sourceUrl || mat?.materiaalAfbeelding || null;
+                    const matNaam = 
+                      mat?.materiaalNaam || 
+                      mat?.materiaal_naam || 
+                      mat?.titel || 
+                      mat?.title || 
+                      mat?.naam || 
+                      mat?.text || 
+                      (typeof mat === 'string' ? mat : '');
+
+                    const matIcon = 
+                      mat?.materiaalAfbeelding?.node?.sourceUrl || 
+                      mat?.materiaal_afbeelding?.sourceUrl || 
+                      mat?.afbeelding?.sourceUrl || 
+                      mat?.materiaalAfbeelding || 
+                      null;
 
                     return (
-                      <div key={mIdx} className="flex items-center gap-4 py-3 border-b border-dark/5">
-                        <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] relative overflow-hidden shrink-0 border border-dark/10 flex items-center justify-center">
+                      <div key={mIdx} className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                        <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0 relative overflow-hidden flex items-center justify-center">
                           {matIcon && typeof matIcon === 'string' ? (
-                            <Image src={matIcon} alt={typeof matNaam === 'string' ? matNaam : 'Materiaal'} fill className="object-cover" />
-                          ) : (
-                            <div className="w-4 h-4 rounded-full bg-[#D9D3CB]" />
-                          )}
+                            <Image src={matIcon} alt={matNaam || 'Materiaal'} fill className="object-cover" />
+                          ) : null}
                         </div>
-                        <span className="text-sm font-medium text-dark">
-                          {typeof matNaam === 'string' ? matNaam : (matNaam?.materiaalNaam || `Materiaal ${mIdx + 1}`)}
+                        <span className="text-xs sm:text-sm font-normal text-dark">
+                          {matNaam || `Materiaal ${mIdx + 1}`}
                         </span>
                       </div>
                     );
                   })
                 ) : (
                   <>
-                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
-                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Travertin look</span>
+                    <div className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                      <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0"></div>
+                      <span className="text-xs sm:text-sm font-normal text-dark">Travertin look</span>
                     </div>
-                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
-                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Eiken hout</span>
+                    <div className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                      <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0"></div>
+                      <span className="text-xs sm:text-sm font-normal text-dark">Beton cement</span>
                     </div>
-                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
-                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Gun metal</span>
+                    <div className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                      <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0"></div>
+                      <span className="text-xs sm:text-sm font-normal text-dark">Eiken hout</span>
                     </div>
-                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
-                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Beton cement</span>
+                    <div className="flex items-center space-x-4 py-3.5 border-b border-[#F0EBE1]">
+                      <div className="w-10 h-10 rounded-xl bg-[#E8E2D5] shrink-0"></div>
+                      <span className="text-xs sm:text-sm font-normal text-dark">Gun metal</span>
                     </div>
                   </>
                 )}

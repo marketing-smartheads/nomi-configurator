@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T19:36:19.434Z
+Generated: 2026-11-17T19:44:10.619Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T19:36:16.980Z
+- Last activity: 2026-11-17T19:44:08.137Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
 - Hottest files right now: components/configurator/StepFourConfirmation.tsx (31), components/ConfiguratorScreen.tsx (7), components/configurator/StepThreeVisuals.tsx (1), components/LoginScreen.tsx (1)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 673 lines | 32478 chars | hash af064df92edb
-  Last snapshot: 2026-11-17T19:36:16.980Z
+- components/configurator/StepFourConfirmation.tsx | 692 lines | 32539 chars | hash a7ec3823ad38
+  Last snapshot: 2026-11-17T19:44:08.137Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepThreeVisuals.tsx | 500 lines | 20266 chars | hash 9697bd178c53
   Last snapshot: 2026-11-17T19:30:09.618Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-17T19:44:08.137Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 147: replaced 319 lines with 338 lines.
+- Before: 673 lines | 32,478 chars | hash af064df92edb | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 692 lines | 32,539 chars | hash a7ec3823ad38 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A..."
+- Current fragment: "1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding..."
+
 ### 2026-11-17T19:36:16.980Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 147: replaced 325 lines with 319 lines.
 - Before: 679 lines | 32,748 chars | hash 85eec528e622 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -148,13 +155,6 @@ Structured manifest: workspace.json
 - Previous fragment: "1"
 - Current fragment: "3"
 
-### 2026-11-17T19:19:09.265Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 374: replaced 3 lines with 3 lines.
-- Before: 596 lines | 27,168 chars | hash 16893f39cd93 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 596 lines | 27,168 chars | hash b7d1939d1640 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "4 className="text-2xl sm:text-3xl font-serif text-dark"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h4"
-- Current fragment: "3 className="text-2xl sm:text-3xl font-serif text-dark"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h3"
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (31 tracked changes)
@@ -164,12 +164,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 2e511c9 feat(step4): add moodboard image gallery and materials list block below top cards
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-17 e54b55a fix(step4): resolve moodboard images query, correct material fields and match step 3 styling
+- Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -177,8 +174,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 2e511c9 by Bas van Dooremalen on 2026-11-17
-  feat(step4): add moodboard image gallery and materials list block below top cards
+- e54b55a by Bas van Dooremalen on 2026-11-17
+  fix(step4): resolve moodboard images query, correct material fields and match step 3 styling
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
