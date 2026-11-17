@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T18:56:23.823Z
+Generated: 2026-11-17T19:09:49.657Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T18:56:21.728Z
+- Last activity: 2026-11-17T19:09:46.238Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
 - Hottest files right now: components/configurator/StepFourConfirmation.tsx (22), components/ConfiguratorScreen.tsx (10), components/configurator/StepThreeVisuals.tsx (4), components/configurator/StepTwoDesign.tsx (2)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 596 lines | 27154 chars | hash 6538241a581a
-  Last snapshot: 2026-11-17T18:56:21.728Z
+- components/configurator/StepFourConfirmation.tsx | 596 lines | 27201 chars | hash 040dc7aceac8
+  Last snapshot: 2026-11-17T19:09:46.238Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/LoginScreen.tsx | 280 lines | 9944 chars | hash 0900a7d9f405
   Last snapshot: 2026-11-17T18:20:19.767Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-17T19:09:46.238Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 343: replaced 47 lines with 47 lines.
+- Before: 596 lines | 27,154 chars | hash 6538241a581a | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 596 lines | 27,201 chars | hash 040dc7aceac8 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "text-muted leading-relaxed pt-1"> / {pakketOmschrijving} / </p> / )} / </div> / </div> / <div className="md:col-span-5 flex flex-col justify-between h-full gap-6"> / {/* Gekozen..."
+- Current fragment: "sm:text-sm text-muted leading-relaxed pt-1"> / {pakketOmschrijving} / </p> / )} / </div> / </div> / <div className="md:col-span-5 flex flex-col h-full gap-6"> / {/* Gekozen inde..."
+
 ### 2026-11-17T18:56:21.728Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 352: removed 1 line.
 - Before: 596 lines | 27,170 chars | hash 958cbe400d9c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -152,13 +159,6 @@ Structured manifest: workspace.json
 - Previous fragment: "const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?.in..."
 - Current fragment: "// Veilige filter controle zodat .filter() nooit op undefined kan crashen / const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => { / cons..."
 
-### 2026-11-17T17:29:46.178Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 6: replaced 2 lines with 2 lines.
-- Before: 131 lines | 5,126 chars | hash af5d7e4cff12 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './StepTwoDesign'; / import StepThreeVis..."
-- After: 131 lines | 5,152 chars | hash 52285c4723da | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
-- Previous fragment: "StepTwoDesign'; / import StepThreeVisuals from '."
-- Current fragment: "configurator/StepTwoDesign'; / import StepThreeVisuals from './configurator"
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (22 tracked changes)
@@ -170,12 +170,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 fd6644b added some styling to fonts
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-17 87cf4b6 changed some styling
+- Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -183,8 +180,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- fd6644b by Bas van Dooremalen on 2026-11-17
-  added some styling to fonts
+- 87cf4b6 by Bas van Dooremalen on 2026-11-17
+  changed some styling
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

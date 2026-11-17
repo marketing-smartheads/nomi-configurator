@@ -340,16 +340,16 @@ export default function StepFourConfirmation({
                   {pakketNaam}
                 </h3>
                 {pakketOmschrijving && (
-                  <p className="text-xs text-muted leading-relaxed pt-1">
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1">
                     {pakketOmschrijving}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="md:col-span-5 flex flex-col justify-between h-full gap-6">
-              {/* Gekozen indeling kaart: compact en strak aangesloten */}
-              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-3 flex-1 flex flex-col">
+            <div className="md:col-span-5 flex flex-col h-full gap-6">
+              {/* Gekozen indeling kaart: behoudt eigen natuurlijke hoogte */}
+              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5">
                 <div className="space-y-3">
                   <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
                     GEKOZEN INDELING
@@ -370,7 +370,7 @@ export default function StepFourConfirmation({
                   </div>
                 </div>
 
-                <div className="pt-1">
+                <div className="pt-3">
                   <h4 className="text-xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
                   </h4>
@@ -380,13 +380,13 @@ export default function StepFourConfirmation({
                 </div>
               </div>
 
-              {/* Jouw samenvatting: exact gelijke hoogte als linkerblok */}
-              <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg flex flex-col justify-center shrink-0">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+              {/* Jouw samenvatting: flex-1 zorgt ervoor dat dit zwarte blok de resterende hoogte automatisch opvult */}
+              <div className="bg-[#1A1A1A] text-white rounded-[2rem] px-7 py-8 shadow-lg flex flex-col justify-center flex-1">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif mb-2">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs text-white leading-relaxed pt-1">
-                  1 indeling - 1 stijl - {visualsAantal} ruimtes gevisualiseerd - {materialenAantal} materialen
+                <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
+                  1 indeling · 1 stijl · {visualsAantal} aanzichten gevisualiseerd · {materialenAantal} materialen
                 </p>
               </div>
             </div>

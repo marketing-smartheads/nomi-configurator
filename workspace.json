@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T18:56:23.823Z",
-  "generatedAtEpochMs": 1794941783823,
+  "generatedAt": "2026-11-17T19:09:49.657Z",
+  "generatedAtEpochMs": 1794942589657,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T18:56:21.728Z",
+    "lastActivityAt": "2026-11-17T19:09:46.238Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794941781728,
+      "updatedAt": 1794942586238,
       "lineCount": 596,
-      "charCount": 27154,
-      "hash": "6538241a581a",
+      "charCount": 27201,
+      "hash": "040dc7aceac8",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 343: replaced 47 lines with 47 lines.",
+      "recordedAt": "2026-11-17T19:09:46.238Z",
+      "recordedAtEpochMs": 1794942586238,
+      "before": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27154,
+        "hash": "6538241a581a",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794942586238
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27201,
+        "hash": "040dc7aceac8",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794942586238
+      },
+      "diff": {
+        "lineStart": 343,
+        "removedLines": 47,
+        "addedLines": 47,
+        "summary": "Line 343: replaced 47 lines with 47 lines.",
+        "beforeFragment": "text-muted leading-relaxed pt-1\"> / {pakketOmschrijving} / </p> / )} / </div> / </div> / <div className=\"md:col-span-5 flex flex-col justify-between h-full gap-6\"> / {/* Gekozen...",
+        "afterFragment": "sm:text-sm text-muted leading-relaxed pt-1\"> / {pakketOmschrijving} / </p> / )} / </div> / </div> / <div className=\"md:col-span-5 flex flex-col h-full gap-6\"> / {/* Gekozen inde..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1094,38 +1126,6 @@
         "beforeFragment": "const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?.in...",
         "afterFragment": "// Veilige filter controle zodat .filter() nooit op undefined kan crashen / const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => { / cons..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 6: replaced 2 lines with 2 lines.",
-      "recordedAt": "2026-11-17T17:29:46.178Z",
-      "recordedAtEpochMs": 1794936586178,
-      "before": {
-        "kind": "text",
-        "lineCount": 131,
-        "charCount": 5126,
-        "hash": "af5d7e4cff12",
-        "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './StepTwoDesign'; / import StepThreeVis...",
-        "updatedAt": 1794936586178
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 131,
-        "charCount": 5152,
-        "hash": "52285c4723da",
-        "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import...",
-        "updatedAt": 1794936586178
-      },
-      "diff": {
-        "lineStart": 6,
-        "removedLines": 2,
-        "addedLines": 2,
-        "summary": "Line 6: replaced 2 lines with 2 lines.",
-        "beforeFragment": "StepTwoDesign'; / import StepThreeVisuals from '.",
-        "afterFragment": "configurator/StepTwoDesign'; / import StepThreeVisuals from './configurator"
-      }
     }
   ],
   "hotFiles": [
@@ -1157,20 +1157,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 fd6644b added some styling to fonts",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-17 87cf4b6 changed some styling",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- fd6644b by Bas van Dooremalen on 2026-11-17\n  added some styling to fonts\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 87cf4b6 by Bas van Dooremalen on 2026-11-17\n  changed some styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
