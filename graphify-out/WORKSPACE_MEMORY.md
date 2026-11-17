@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T20:36:56.938Z
+Generated: 2026-11-17T20:41:11.717Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T20:36:54.153Z
+- Last activity: 2026-11-17T20:41:09.754Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
 - Hottest files right now: components/configurator/StepFourConfirmation.tsx (39), components/configurator/StepThreeVisuals.tsx (1)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 711 lines | 33108 chars | hash 8d4d597f0471
-  Last snapshot: 2026-11-17T20:36:54.153Z
+- components/configurator/StepFourConfirmation.tsx | 692 lines | 32170 chars | hash 90df63b66172
+  Last snapshot: 2026-11-17T20:41:09.754Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepThreeVisuals.tsx | 500 lines | 20266 chars | hash 9697bd178c53
   Last snapshot: 2026-11-17T19:30:09.618Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-17T20:41:09.754Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 147: replaced 304 lines with 285 lines.
+- Before: 711 lines | 33,108 chars | hash 8d4d597f0471 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 692 lines | 32,170 chars | hash 90df63b66172 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "Uitgebreide ophaalmethode voor ACF Galerij (pakket_aabeelding / pakketAfbeelding) / const extractMediaList = (field: any) => { / if (!field) return []; / if (Array.isArray(field..."
+- Current fragment: "Ophalen van de enkele pakket_aabeelding (met 'aabeelding') / const rawPakketAfb = / storedPakket?.pakket_aabeelding || / storedPakket?.pakketAabeelding || / storedPakket?.pakket..."
+
 ### 2026-11-17T20:36:54.153Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 147: replaced 286 lines with 293 lines.
 - Before: 704 lines | 32,844 chars | hash dcab45a1eeae | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -161,8 +168,6 @@ Structured manifest: workspace.json
 - Previous fragment: "Materialen lijst ophalen / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = Array.isArray(rawMaterialen) ?..."
 - Current fragment: "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A..."
 
-### 2026-11-17T19:34:08.485Z | saved | components/configurator/StepFourConfirmation.tsx
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (39 tracked changes)
@@ -170,7 +175,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 fb4eec8 fix(step4): include pakketAabeelding and pakket_aabeelding for moodboard gallery retrieval
+- HEAD: 2026-11-17 87e526a fix(step4): parse pakket_aabeelding gallery array properly and render moodboard images above materials list
 - Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
 

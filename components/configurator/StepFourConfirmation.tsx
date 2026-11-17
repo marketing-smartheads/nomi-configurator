@@ -144,27 +144,21 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // Uitgebreide ophaalmethode voor ACF Galerij (pakket_aabeelding / pakketAfbeelding)
-  const extractMediaList = (field: any) => {
-    if (!field) return [];
-    if (Array.isArray(field)) return field;
-    if (field?.nodes && Array.isArray(field.nodes)) return field.nodes;
-    if (field?.edges && Array.isArray(field.edges)) return field.edges.map((e: any) => e?.node || e);
-    // Als het een enkele media object / URL is
-    if (field?.sourceUrl || field?.mediaItemUrl || typeof field === 'string') return [field];
-    return [];
-  };
-
+  // Ophalen van de enkele pakket_aabeelding (met 'aabeelding')
   const rawPakketAfb = 
     storedPakket?.pakket_aabeelding || 
     storedPakket?.pakketAabeelding || 
     storedPakket?.pakketAfbeelding || 
     storedPakket?.pakket_afbeelding || 
-    storedPakket?.pakketAfbeeldingen || 
-    storedPakket?.pakket_afbeeldingen || 
-    [];
+    null;
 
-  const pakketAfbeeldingen = extractMediaList(rawPakketAfb);
+  const moodboardAfbeeldingUrl = 
+    rawPakketAfb?.sourceUrl || 
+    rawPakketAfb?.node?.sourceUrl || 
+    rawPakketAfb?.mediaItemUrl || 
+    rawPakketAfb?.node?.mediaItemUrl || 
+    rawPakketAfb?.url || 
+    (typeof rawPakketAfb === 'string' ? rawPakketAfb : null);
 
   // Ophaalmethode voor materialenlijst
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
@@ -419,35 +413,22 @@ export default function StepFourConfirmation({
           {/* MOODBOARD & MATERIALEN BLOK */}
           <div className="max-w-4xl mx-auto mb-14">
             <div className="bg-white rounded-[2.5rem] p-6 sm:p-12 shadow-sm border border-dark/5 space-y-8">
+              {/* Tag (bijv. MODERN RAW) boven de moodboard afbeelding */}
               <div>
                 <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
                   {pakketNaam}
                 </span>
+
+                {/* Enkele Pakket Afbeelding (Moodboard) */}
+                {moodboardAfbeeldingUrl && (
+                  <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#E8E2D5] mb-6">
+                    <Image src={moodboardAfbeeldingUrl} alt={pakketNaam} fill className="object-cover object-center" />
+                  </div>
+                )}
+
                 <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
                 <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
               </div>
-
-              {/* Moodboard foto's (pakket_aabeelding galerij) */}
-              {pakketAfbeeldingen.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-6 border-b border-[#F0EBE1]">
-                  {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
-                    const imgUrl = 
-                      item?.sourceUrl || 
-                      item?.node?.sourceUrl || 
-                      item?.mediaItemUrl || 
-                      item?.node?.mediaItemUrl || 
-                      item?.url || 
-                      (typeof item === 'string' ? item : null);
-
-                    if (!imgUrl) return null;
-                    return (
-                      <div key={imgIdx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E8E2D5]">
-                        <Image src={imgUrl} alt={`Moodboard ${imgIdx + 1}`} fill className="object-cover object-center" />
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
 
               {/* Materialen lijst */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-12 pt-2">

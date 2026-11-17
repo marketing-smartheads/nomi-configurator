@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T20:36:56.938Z",
-  "generatedAtEpochMs": 1794947816938,
+  "generatedAt": "2026-11-17T20:41:11.717Z",
+  "generatedAtEpochMs": 1794948071717,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -601,7 +601,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T20:36:54.153Z",
+    "lastActivityAt": "2026-11-17T20:41:09.754Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -614,10 +614,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794947814153,
-      "lineCount": 711,
-      "charCount": 33108,
-      "hash": "8d4d597f0471",
+      "updatedAt": 1794948069754,
+      "lineCount": 692,
+      "charCount": 32170,
+      "hash": "90df63b66172",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -678,6 +678,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 147: replaced 304 lines with 285 lines.",
+      "recordedAt": "2026-11-17T20:41:09.754Z",
+      "recordedAtEpochMs": 1794948069754,
+      "before": {
+        "kind": "text",
+        "lineCount": 711,
+        "charCount": 33108,
+        "hash": "8d4d597f0471",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794948069754
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 692,
+        "charCount": 32170,
+        "hash": "90df63b66172",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794948069754
+      },
+      "diff": {
+        "lineStart": 147,
+        "removedLines": 304,
+        "addedLines": 285,
+        "summary": "Line 147: replaced 304 lines with 285 lines.",
+        "beforeFragment": "Uitgebreide ophaalmethode voor ACF Galerij (pakket_aabeelding / pakketAfbeelding) / const extractMediaList = (field: any) => { / if (!field) return []; / if (Array.isArray(field...",
+        "afterFragment": "Ophalen van de enkele pakket_aabeelding (met 'aabeelding') / const rawPakketAfb = / storedPakket?.pakket_aabeelding || / storedPakket?.pakketAabeelding || / storedPakket?.pakket..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1125,17 +1157,6 @@
         "beforeFragment": "Materialen lijst ophalen / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = Array.isArray(rawMaterialen) ?...",
         "afterFragment": "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "",
-      "recordedAt": "2026-11-17T19:34:08.485Z",
-      "recordedAtEpochMs": 1794944048485,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
@@ -1151,7 +1172,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 fb4eec8 fix(step4): include pakketAabeelding and pakket_aabeelding for moodboard gallery retrieval",
+    "headSummary": "2026-11-17 87e526a fix(step4): parse pakket_aabeelding gallery array properly and render moodboard images above materials list",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
