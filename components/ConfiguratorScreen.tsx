@@ -134,23 +134,31 @@ export default function ConfiguratorScreen({
   return (
     <section className="relative w-full bg-secondary min-h-screen overflow-hidden">
       
-      {/* Linker achtergrond-element: sluit direct aan tegen de zwarte header en linker schermrand */}
-      <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-        <img 
-          src="/assets/Nomi achtergrond element patroon.svg" 
-          alt="Nomi patroon" 
-          className="w-full h-full object-cover object-left-top" 
-        />
-      </div>
-
-      {/* Rechter achtergrond-element: sluit direct aan tegen de zwarte header en rechter schermrand */}
-      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-        <img 
-          src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
-          alt="Thomas de Gier patroon" 
-          className="w-full h-full object-cover object-right-top" 
-        />
-      </div>
+      {/* Achtergrondpatronen als CSS background voor stap 1 t/m 3 (bij stap 4 staan ze onder de hero banner) */}
+      {currentStep !== 4 && (
+        <>
+          <div
+            aria-hidden="true"
+            className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"
+            style={{
+              backgroundImage: "url('/assets/Nomi achtergrond element patroon.svg')",
+              backgroundRepeat: 'repeat-y',
+              backgroundPosition: 'left top',
+              backgroundSize: '100% auto',
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"
+            style={{
+              backgroundImage: "url('/assets/Patroon logo Thomas de Gier achtergrond.svg')",
+              backgroundRepeat: 'repeat-y',
+              backgroundPosition: 'right top',
+              backgroundSize: '100% auto',
+            }}
+          />
+        </>
+      )}
 
       <div className={`relative z-10 w-full mx-auto flex flex-col justify-between min-h-screen ${
         currentStep === 4 ? 'px-0' : 'max-w-6xl py-28'

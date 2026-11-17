@@ -244,114 +244,140 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
-        <div className="space-y-3">
-          {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
-          {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
-          {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
-        </div>
+      {/* Onderste sectie met decoratieve achtergrondpatronen direct onder de hero-banner */}
+      <div className="relative w-full overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"
+          style={{
+            backgroundImage: "url('/assets/Nomi achtergrond element patroon.svg')",
+            backgroundRepeat: 'repeat-y',
+            backgroundPosition: 'left top',
+            backgroundSize: '100% auto',
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"
+          style={{
+            backgroundImage: "url('/assets/Patroon logo Thomas de Gier achtergrond.svg')",
+            backgroundRepeat: 'repeat-y',
+            backgroundPosition: 'right top',
+            backgroundSize: '100% auto',
+          }}
+        />
 
-        {errorMessage && (
-          <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
-            {errorMessage}
-          </div>
-        )}
+        <div className="relative z-10">
+          <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
+            <div className="space-y-3">
+              {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
+              {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
+              {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
+            </div>
 
-        <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
-          <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
-          <div>
-            <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam *</label>
-            <input
-              id="klantNaam"
-              type="text"
-              value={klantNaam}
-              onChange={(e) => setKlantNaam(e.target.value)}
-              placeholder="Bijv. Fam. de Vries"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="klantEmail" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">E-mailadres</label>
-            <input
-              id="klantEmail"
-              type="email"
-              value={klantEmail}
-              onChange={(e) => setKlantEmail(e.target.value)}
-              placeholder="naam@voorbeeld.nl"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
-            />
-          </div>
-          <div>
-            <label htmlFor="klantTelefoon" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Telefoonnummer</label>
-            <input
-              id="klantTelefoon"
-              type="tel"
-              value={klantTelefoon}
-              onChange={(e) => setKlantTelefoon(e.target.value)}
-              placeholder="06 12345678"
-              className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
-            />
-          </div>
-        </div>
+            {errorMessage && (
+              <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
+                {errorMessage}
+              </div>
+            )}
 
-        <div className="flex items-center justify-center gap-8 pt-2">
-          <Button
-            onClick={() => {
-              if (!klantNaam.trim()) {
-                setErrorMessage('Vul eerst uw volledige naam in.');
-                return;
-              }
-              setShowPopup(true);
-            }}
-            disabled={!klantNaam.trim() || loading}
-            loading={loading}
-            className="px-10 py-4"
-          >
-            BEVESTIG KEUZE
-          </Button>
-          <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
-            TERUG
-          </button>
+            <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
+              <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
+              <div>
+                <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam *</label>
+                <input
+                  id="klantNaam"
+                  type="text"
+                  value={klantNaam}
+                  onChange={(e) => setKlantNaam(e.target.value)}
+                  placeholder="Bijv. Fam. de Vries"
+                  className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="klantEmail" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">E-mailadres</label>
+                <input
+                  id="klantEmail"
+                  type="email"
+                  value={klantEmail}
+                  onChange={(e) => setKlantEmail(e.target.value)}
+                  placeholder="naam@voorbeeld.nl"
+                  className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="klantTelefoon" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Telefoonnummer</label>
+                <input
+                  id="klantTelefoon"
+                  type="tel"
+                  value={klantTelefoon}
+                  onChange={(e) => setKlantTelefoon(e.target.value)}
+                  placeholder="06 12345678"
+                  className="w-full h-12 px-4 rounded-lg bg-white border border-dark/15 text-dark focus:outline-none text-sm"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-8 pt-2">
+              <Button
+                onClick={() => {
+                  if (!klantNaam.trim()) {
+                    setErrorMessage('Vul eerst uw volledige naam in.');
+                    return;
+                  }
+                  setShowPopup(true);
+                }}
+                disabled={!klantNaam.trim() || loading}
+                loading={loading}
+                className="px-10 py-4"
+              >
+                BEVESTIG KEUZE
+              </Button>
+              <button type="button" onClick={onBack} className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition">
+                TERUG
+              </button>
+            </div>
+          </div>
+
+          {/* GESELECTEERDE PARTNERS SECTIE */}
+          {partners.length > 0 && (
+            <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10">
+              <div className="space-y-3 max-w-xl mx-auto">
+                <h3 className="text-3xl md:text-5xl font-serif text-dark font-normal">{partnersSectieTitel}</h3>
+                {partnersSectieOmschrijving && (
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    {partnersSectieOmschrijving}
+                  </p>
+                )}
+              </div>
+              <div className="text-left divide-y divide-[#E6E1D6]">
+                {partners.map((partner: any, pIdx: number) => {
+                  const pNaam = partner.partnerNaam || partner.partner_naam || '';
+                  const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
+                  const pRol = partner.partnerRol || partner.partner_rol || '';
+                  return (
+                    <div key={pIdx} className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
+                      <div className="flex items-center gap-5">
+                        <div className="w-12 h-12 rounded-2xl bg-[#D9D3CB] shrink-0" />
+                        <div>
+                          <h4 className="font-serif text-xl text-dark">{pNaam}</h4>
+                          {pOmschrijving && <p className="text-xs text-muted mt-1">{pOmschrijving}</p>}
+                        </div>
+                      </div>
+                      {pRol && (
+                        <span className="self-start sm:self-center px-5 py-2 rounded-full bg-[#E8E2D5] text-dark text-[10px] tracking-[0.2em] uppercase font-semibold">
+                          {pRol}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* GESELECTEERDE PARTNERS SECTIE */}
-      {partners.length > 0 && (
-        <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10">
-          <div className="space-y-3 max-w-xl mx-auto">
-            <h3 className="text-3xl md:text-5xl font-serif text-dark font-normal">{partnersSectieTitel}</h3>
-            {partnersSectieOmschrijving && (
-              <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                {partnersSectieOmschrijving}
-              </p>
-            )}
-          </div>
-          <div className="text-left divide-y divide-[#E6E1D6]">
-            {partners.map((partner: any, pIdx: number) => {
-              const pNaam = partner.partnerNaam || partner.partner_naam || '';
-              const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
-              const pRol = partner.partnerRol || partner.partner_rol || '';
-              return (
-                <div key={pIdx} className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
-                  <div className="flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-[#D9D3CB] shrink-0" />
-                    <div>
-                      <h4 className="font-serif text-xl text-dark">{pNaam}</h4>
-                      {pOmschrijving && <p className="text-xs text-muted mt-1">{pOmschrijving}</p>}
-                    </div>
-                  </div>
-                  {pRol && (
-                    <span className="self-start sm:self-center px-5 py-2 rounded-full bg-[#E8E2D5] text-dark text-[10px] tracking-[0.2em] uppercase font-semibold">
-                      {pRol}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
 
       {/* POP-UP TOESTEMMING CONTACTGEGEVENS */}
       {showPopup && (
