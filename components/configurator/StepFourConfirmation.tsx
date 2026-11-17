@@ -376,7 +376,7 @@ export default function StepFourConfirmation({
                 </div>
 
                 <div className="pt-3">
-                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase pb-3">
                     GEKOZEN INDELING
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-serif text-dark">
@@ -392,6 +392,9 @@ export default function StepFourConfirmation({
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   JOUW SAMENVATTING
                 </span>
+                 <h3 className="text-2xl sm:text-3xl font-serif text-white">
+                    Concept
+                  </h3>
                 <p className="text-xs sm:text-sm text-white leading-relaxed pt-3">
                   1 indeling · 1 stijl · {visualsAantal} aanzichten gevisualiseerd · {materialenAantal} materialen
                 </p>
