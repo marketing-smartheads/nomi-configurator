@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T19:44:10.619Z
+Generated: 2026-11-17T19:58:37.759Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T19:44:08.137Z
+- Last activity: 2026-11-17T19:58:36.016Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (31), components/ConfiguratorScreen.tsx (7), components/configurator/StepThreeVisuals.tsx (1), components/LoginScreen.tsx (1)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (34), components/ConfiguratorScreen.tsx (4), components/configurator/StepThreeVisuals.tsx (1), components/LoginScreen.tsx (1)
 - Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepThreeVisuals.tsx, components/LoginScreen.tsx, .gitignore, AGENTS.md
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 692 lines | 32539 chars | hash a7ec3823ad38
-  Last snapshot: 2026-11-17T19:44:08.137Z
+- components/configurator/StepFourConfirmation.tsx | 693 lines | 32547 chars | hash c6d2e11b03bf
+  Last snapshot: 2026-11-17T19:58:36.016Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepThreeVisuals.tsx | 500 lines | 20266 chars | hash 9697bd178c53
   Last snapshot: 2026-11-17T19:30:09.618Z
@@ -65,6 +65,34 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-17T19:58:36.016Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 395: replaced 1 line with 1 line.
+- Before: 693 lines | 32,547 chars | hash 005a0759b127 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 693 lines | 32,547 chars | hash c6d2e11b03bf | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "muted leading-relaxed pt-1"
+- Current fragment: "white leading-relaxed pt-3"
+
+### 2026-11-17T19:58:26.913Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 392: replaced 4 lines with 4 lines.
+- Before: 693 lines | 32,571 chars | hash 64e87137c62d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 693 lines | 32,547 chars | hash 005a0759b127 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "[#C5A880] uppercase font-serif mb-2"> / JOUW SAMENVATTING / </span> / <p className="text-xs sm:text-sm text-white leading-relaxed font-serif"
+- Current fragment: "primary uppercase"> / JOUW SAMENVATTING / </span> / <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1"
+
+### 2026-11-17T19:58:06.578Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 361: replaced 20 lines with 21 lines.
+- Before: 692 lines | 32,550 chars | hash fcd7fe64d5d4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 693 lines | 32,571 chars | hash 64e87137c62d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "<span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase"> / GEKOZEN INDELING / </span> / <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2x..."
+- Current fragment: "<div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5"> / {plattegrondUrl ? ( / <img..."
+
+### 2026-11-17T19:57:42.403Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 381: replaced 5 lines with 5 lines.
+- Before: 692 lines | 32,539 chars | hash a7ec3823ad38 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 692 lines | 32,550 chars | hash fcd7fe64d5d4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "4 className="text-xl font-serif text-dark"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h4> / {metrage && ( / <p className="text-xs text-muted mt-0.5"
+- Current fragment: "3 className="text-2xl sm:text-3xl font-serif text-dark"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h3> / {metrage && ( / <p className="text-xs text-muted pt-3"
+
 ### 2026-11-17T19:44:08.137Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 147: replaced 319 lines with 338 lines.
 - Before: 673 lines | 32,478 chars | hash af064df92edb | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -133,40 +161,21 @@ Structured manifest: workspace.json
 - After: 500 lines | 20,266 chars | hash 9697bd178c53 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - Previous fragment: "Moodboard"
 
-### 2026-11-17T19:24:20.367Z | saved | components/configurator/StepFourConfirmation.tsx
-
-### 2026-11-17T19:24:17.789Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: inserted 596 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 596 lines | 27,166 chars | hash db930b5b8eae | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Current fragment: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from..."
-
-### 2026-11-17T19:21:54.125Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 388: replaced 1 line with 1 line.
-- Before: 596 lines | 27,168 chars | hash b912f97649b0 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 596 lines | 27,168 chars | hash 96a4db7fafb8 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "1"
-- Current fragment: "3"
-
-### 2026-11-17T19:21:42.075Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 343: replaced 1 line with 1 line.
-- Before: 596 lines | 27,168 chars | hash b7d1939d1640 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 596 lines | 27,168 chars | hash b912f97649b0 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "1"
-- Current fragment: "3"
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (31 tracked changes)
-- components/ConfiguratorScreen.tsx (7 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (34 tracked changes)
+- components/ConfiguratorScreen.tsx (4 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 - components/LoginScreen.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 e54b55a fix(step4): resolve moodboard images query, correct material fields and match step 3 styling
-- Working tree summary: 1 modified
+- HEAD: 2026-11-17 4506729 fix(step4): fix pakketAfbeelding moodboard query, material names and match exact step 3 styling
+- Working tree summary: 4 modifieds
 - M components/configurator/StepFourConfirmation.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -174,8 +183,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e54b55a by Bas van Dooremalen on 2026-11-17
-  fix(step4): resolve moodboard images query, correct material fields and match step 3 styling
+- 4506729 by Bas van Dooremalen on 2026-11-17
+  fix(step4): fix pakketAfbeelding moodboard query, material names and match exact step 3 styling
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

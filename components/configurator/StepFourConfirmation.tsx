@@ -358,9 +358,7 @@ export default function StepFourConfirmation({
             <div className="md:col-span-5 flex flex-col h-full gap-6">
               <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5">
                 <div className="space-y-3">
-                  <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
-                    GEKOZEN INDELING
-                  </span>
+                  
 
                   <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
                     {plattegrondUrl ? (
@@ -378,20 +376,23 @@ export default function StepFourConfirmation({
                 </div>
 
                 <div className="pt-3">
-                  <h4 className="text-xl font-serif text-dark">
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                    GEKOZEN INDELING
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
-                  </h4>
+                  </h3>
                   {metrage && (
-                    <p className="text-xs text-muted mt-0.5">{metrage}</p>
+                    <p className="text-xs text-muted pt-3">{metrage}</p>
                   )}
                 </div>
               </div>
 
               <div className="bg-[#1A1A1A] text-white rounded-[2rem] px-7 py-8 shadow-lg flex flex-col justify-center flex-1">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif mb-2">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
+                <p className="text-xs sm:text-sm text-white leading-relaxed pt-3">
                   1 indeling · 1 stijl · {visualsAantal} aanzichten gevisualiseerd · {materialenAantal} materialen
                 </p>
               </div>
