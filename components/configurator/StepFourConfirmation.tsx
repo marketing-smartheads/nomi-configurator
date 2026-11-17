@@ -144,19 +144,27 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // Waterdichte ophaalmethode inclusief de ontdekte typefout 'pakketAabeelding' / 'pakket_aabeelding'
+  // Uitgebreide ophaalmethode voor ACF Galerij (pakket_aabeelding / pakketAfbeelding)
+  const extractMediaList = (field: any) => {
+    if (!field) return [];
+    if (Array.isArray(field)) return field;
+    if (field?.nodes && Array.isArray(field.nodes)) return field.nodes;
+    if (field?.edges && Array.isArray(field.edges)) return field.edges.map((e: any) => e?.node || e);
+    // Als het een enkele media object / URL is
+    if (field?.sourceUrl || field?.mediaItemUrl || typeof field === 'string') return [field];
+    return [];
+  };
+
   const rawPakketAfb = 
-    storedPakket?.pakketAabeelding || 
     storedPakket?.pakket_aabeelding || 
+    storedPakket?.pakketAabeelding || 
     storedPakket?.pakketAfbeelding || 
     storedPakket?.pakket_afbeelding || 
     storedPakket?.pakketAfbeeldingen || 
     storedPakket?.pakket_afbeeldingen || 
     [];
 
-  const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
-    ? rawPakketAfb 
-    : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
+  const pakketAfbeeldingen = extractMediaList(rawPakketAfb);
 
   // Ophaalmethode voor materialenlijst
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
@@ -419,7 +427,7 @@ export default function StepFourConfirmation({
                 <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
               </div>
 
-              {/* Moodboard foto's (Pakket Afbeelding / pakketAabeelding repeater) */}
+              {/* Moodboard foto's (pakket_aabeelding galerij) */}
               {pakketAfbeeldingen.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-6 border-b border-[#F0EBE1]">
                   {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
@@ -428,8 +436,7 @@ export default function StepFourConfirmation({
                       item?.node?.sourceUrl || 
                       item?.mediaItemUrl || 
                       item?.node?.mediaItemUrl || 
-                      item?.afbeelding?.sourceUrl || 
-                      item?.afbeelding?.node?.sourceUrl || 
+                      item?.url || 
                       (typeof item === 'string' ? item : null);
 
                     if (!imgUrl) return null;
