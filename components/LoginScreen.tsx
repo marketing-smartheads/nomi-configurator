@@ -208,10 +208,10 @@ export default function LoginScreen({
             Exclusieve Toegang
           </p>
           <h1 className="font-serif font-bold text-3xl sm:text-4xl text-dark mb-3">
-            Tot uw nieuwe<br />interieur
+            Tot jouw nieuwe<br />interieur
           </h1>
           <p className="text-sm text-dark">
-            Voer uw unieke vouchercode en e-mailadres in om uw interieurreis te starten.
+            Voer jouw unieke vouchercode en e-mailadres in om jouw interieurreis te starten.
           </p>
         </div>
 
@@ -270,7 +270,7 @@ export default function LoginScreen({
           </Button>
 
           <p className="text-xs text-dark text-center leading-relaxed">
-            Geen toegangscode ontvangen? Neem contact op met uw projectbegeleider. Voor vragen of meer informatie; neem contact op met De Keizer Makelaarsgroep via 030-600 82 40 of mail naar <a href="mailto:nieuwbouw@dekeizer.nl" className="underline hover:opacity-80">nieuwbouw@dekeizer.nl</a>.
+            Geen toegangscode ontvangen? Neem contact op met jouw projectbegeleider. Voor vragen of meer informatie; neem contact op met De Keizer Makelaarsgroep via 030-600 82 40 of mail naar <a href="mailto:nieuwbouw@dekeizer.nl" className="underline hover:opacity-80">nieuwbouw@dekeizer.nl</a>.
           </p>
         </div>
 
