@@ -375,7 +375,7 @@ export default function StepFourConfirmation({
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
                   </h3>
                   {metrage && (
-                    <p className="text-xs text-muted mt-0.5">{metrage}</p>
+                    <p className="text-xs text-muted pt-3">{metrage}</p>
                   )}
                 </div>
               </div>
