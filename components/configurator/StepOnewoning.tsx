@@ -42,20 +42,12 @@ export default function StepOneWoning({
 
   if (!woningType && woningTypenLijst.length > 0) {
     return (
-      <div className="relative w-screen left-1/2 -translate-x-1/2 min-h-[400px] flex flex-col justify-center items-center overflow-hidden">
+      <div className="relative min-h-[400px] flex flex-col justify-center items-center overflow-hidden">
         <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-          <img 
-            src="/assets/Nomi achtergrond element patroon.svg" 
-            alt="" 
-            className="w-full h-full object-cover object-left-top" 
-          />
+          <img src="/assets/Nomi achtergrond element patroon.svg" alt="" className="w-full h-full object-cover object-left-top" />
         </div>
         <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-          <img 
-            src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
-            alt="" 
-            className="w-full h-full object-cover object-right-top" 
-          />
+          <img src="/assets/Patroon logo Thomas de Gier achtergrond.svg" alt="" className="w-full h-full object-cover object-right-top" />
         </div>
 
         <p className="text-xs text-muted tracking-widest uppercase animate-pulse z-10">
@@ -66,9 +58,9 @@ export default function StepOneWoning({
   }
 
   return (
-    <div className="relative w-screen left-1/2 -translate-x-1/2 py-8 px-4 sm:px-8 overflow-hidden">
+    <div className="relative w-full -mt-16 pt-16 pb-16 px-4 sm:px-8 overflow-hidden">
       
-      {/* Linker vaste achtergrond-element (100% kleur, niet fixed, strak tegen de linker browserrand) */}
+      {/* Linker patroon: start direct onder de zwarte header tegen de linkerbrowser-rand */}
       <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
         <img 
           src="/assets/Nomi achtergrond element patroon.svg" 
@@ -77,7 +69,7 @@ export default function StepOneWoning({
         />
       </div>
 
-      {/* Rechter vaste achtergrond-element (100% kleur, niet fixed, strak tegen de rechter browserrand) */}
+      {/* Rechter patroon: start direct onder de zwarte header tegen de rechterbrowser-rand */}
       <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
         <img 
           src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 

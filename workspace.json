@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T08:27:18.705Z",
-  "generatedAtEpochMs": 1794904038705,
+  "generatedAt": "2026-11-17T08:31:18.001Z",
+  "generatedAtEpochMs": 1794904278001,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T08:27:16.987Z",
+    "lastActivityAt": "2026-11-17T08:31:15.665Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794904036987,
-      "lineCount": 197,
-      "charCount": 8613,
-      "hash": "501cf29af6c2",
+      "updatedAt": 1794904275665,
+      "lineCount": 189,
+      "charCount": 8430,
+      "hash": "96a1e0889a89",
       "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
     },
     {
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 45: replaced 36 lines with 28 lines.",
+      "recordedAt": "2026-11-17T08:31:15.665Z",
+      "recordedAtEpochMs": 1794904275665,
+      "before": {
+        "kind": "text",
+        "lineCount": 197,
+        "charCount": 8613,
+        "hash": "501cf29af6c2",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794904275665
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 189,
+        "charCount": 8430,
+        "hash": "96a1e0889a89",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794904275665
+      },
+      "diff": {
+        "lineStart": 45,
+        "removedLines": 36,
+        "addedLines": 28,
+        "summary": "Line 45: replaced 36 lines with 28 lines.",
+        "beforeFragment": "w-screen left-1/2 -translate-x-1/2 min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / <div className=\"hidden lg:block absolute left-0 top-0 bottom-0 w-4...",
+        "afterFragment": "min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / <div className=\"hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none selec..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1129,38 +1161,6 @@
         "beforeFragment": "// Vaste partnergegevens volgens de instructies van Thomas de Gier / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.en...",
         "afterFragment": "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = 'Tobias@aanhuis-spijk.nl'; / const PARTNER_TELEFOON = '030 - 600 82 40'; / inte..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 242: inserted 166 lines.",
-      "recordedAt": "2026-11-16T15:49:53.011Z",
-      "recordedAtEpochMs": 1794844193011,
-      "before": {
-        "kind": "text",
-        "lineCount": 242,
-        "charCount": 11115,
-        "hash": "52e2518b5bb8",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794844193011
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 407,
-        "charCount": 20495,
-        "hash": "a4464314b6cc",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794844193011
-      },
-      "diff": {
-        "lineStart": 242,
-        "removedLines": 0,
-        "addedLines": 166,
-        "summary": "Line 242: inserted 166 lines.",
-        "beforeFragment": "",
-        "afterFragment": "pakketNaam || 'Niet geselecteerd'}</span> / </div> / </div> / </div> / </div> / <div className=\"max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16\"> / <div className=\"spac..."
-      }
     }
   ],
   "hotFiles": [
@@ -1170,11 +1170,11 @@
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 10
+      "count": 9
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 5
+      "count": 6
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1200,7 +1200,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 866bd58 fix(step1): fix svg pattern positioning to fixed flush against browser screen edges",
+    "headSummary": "2026-11-17 f51217d style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1210,7 +1210,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 9f970b8 by Bas van Dooremalen on 2026-11-17\n  fix(step1): anchor background svg patterns flush to browser edges and enlarge branding logos\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f51217d by Bas van Dooremalen on 2026-11-17\n  style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

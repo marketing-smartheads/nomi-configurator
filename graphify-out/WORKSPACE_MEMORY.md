@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T08:27:18.705Z
+Generated: 2026-11-17T08:31:18.001Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T08:27:16.987Z
+- Last activity: 2026-11-17T08:31:15.665Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), components/configurator/StepOnewoning.tsx (5), app/api/vouchers/route.ts (3)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (9), components/configurator/StepOnewoning.tsx (6), app/api/vouchers/route.ts (3)
 - Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx, app/api/confirm/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepOnewoning.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 197 lines | 8613 chars | hash 501cf29af6c2
-  Last snapshot: 2026-11-17T08:27:16.987Z
+- components/configurator/StepOnewoning.tsx | 189 lines | 8430 chars | hash 96a1e0889a89
+  Last snapshot: 2026-11-17T08:31:15.665Z
   Preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
 - app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
   Last snapshot: 2026-11-16T18:41:14.101Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-17T08:31:15.665Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 45: replaced 36 lines with 28 lines.
+- Before: 197 lines | 8,613 chars | hash 501cf29af6c2 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+- After: 189 lines | 8,430 chars | hash 96a1e0889a89 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+- Previous fragment: "w-screen left-1/2 -translate-x-1/2 min-h-[400px] flex flex-col justify-center items-center overflow-hidden"> / <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-4..."
+- Current fragment: "min-h-[400px] flex flex-col justify-center items-center overflow-hidden"> / <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none selec..."
+
 ### 2026-11-17T08:27:16.987Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 45: replaced 69 lines with 73 lines.
 - Before: 193 lines | 8,789 chars | hash ea2fdb4402e8 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
@@ -160,17 +167,11 @@ Structured manifest: workspace.json
 - Previous fragment: "// Vaste partnergegevens volgens de instructies van Thomas de Gier / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.en..."
 - Current fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = 'Tobias@aanhuis-spijk.nl'; / const PARTNER_TELEFOON = '030 - 600 82 40'; / inte..."
 
-### 2026-11-16T15:49:53.011Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 242: inserted 166 lines.
-- Before: 242 lines | 11,115 chars | hash 52e2518b5bb8 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 407 lines | 20,495 chars | hash a4464314b6cc | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Current fragment: "pakketNaam || 'Niet geselecteerd'}</span> / </div> / </div> / </div> / </div> / <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16"> / <div className="spac..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
-- components/configurator/StepTwoDesign.tsx (10 tracked changes)
-- components/configurator/StepOnewoning.tsx (5 tracked changes)
+- components/configurator/StepTwoDesign.tsx (9 tracked changes)
+- components/configurator/StepOnewoning.tsx (6 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
@@ -179,7 +180,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 866bd58 fix(step1): fix svg pattern positioning to fixed flush against browser screen edges
+- HEAD: 2026-11-17 f51217d style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity
 - Working tree summary: 1 modified
 - M components/configurator/StepOnewoning.tsx
 
@@ -189,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 9f970b8 by Bas van Dooremalen on 2026-11-17
-  fix(step1): anchor background svg patterns flush to browser edges and enlarge branding logos
+- f51217d by Bas van Dooremalen on 2026-11-17
+  style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
