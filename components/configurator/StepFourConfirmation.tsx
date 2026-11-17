@@ -348,9 +348,10 @@ export default function StepFourConfirmation({
             </div>
 
             <div className="md:col-span-5 flex flex-col justify-between h-full gap-6">
-              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-4 flex-1 flex flex-col justify-between">
-                <div>
-                  <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase mb-3">
+              {/* Gekozen indeling kaart: compact en strak aangesloten */}
+              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-3 flex-1 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
                     GEKOZEN INDELING
                   </span>
 
@@ -369,19 +370,19 @@ export default function StepFourConfirmation({
                   </div>
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-1">
                   <h4 className="text-xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
                   </h4>
                   {metrage && (
-                    <p className="text-xs text-muted mt-1">{metrage}</p>
+                    <p className="text-xs text-muted mt-0.5">{metrage}</p>
                   )}
                 </div>
               </div>
 
-              {/* Aangepast: "JOUW SAMENVATTING" heeft nu font-serif en de tekst eronder is wit */}
-              <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg space-y-2 shrink-0">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif">
+              {/* Jouw samenvatting: exact gelijke hoogte als linkerblok */}
+              <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg flex flex-col justify-center shrink-0">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif mb-1">
                   JOUW SAMENVATTING
                 </span>
                 <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
