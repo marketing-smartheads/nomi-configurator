@@ -144,13 +144,13 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // Materialen lijst ophalen
+  // Robuuste ophaalmethode voor materialenlijst uit Stap 3
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
   const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
-  const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 6;
+  const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
 
-  // Moodboard afbeeldingen ophalen uit pakketAfbeelding repeater / galerij
-  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || [];
+  // Robuuste ophaalmethode voor moodboard / pakket afbeeldingen
+  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || rawVisuals || [];
   const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
     ? rawPakketAfb 
     : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
@@ -398,7 +398,7 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* NIEUW BLOK: Moodboard & Materialenlijst onder de 3 blokken */}
+          {/* MOODBOARD & MATERIALEN BLOK (Exact in stijl van Stap 3) */}
           <div className="max-w-4xl mx-auto mb-14">
             <div className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-sm border border-dark/5 space-y-10">
               <div>
@@ -409,7 +409,7 @@ export default function StepFourConfirmation({
                 <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
               </div>
 
-              {/* Moodboard foto's / grid */}
+              {/* Moodboard afbeeldingen grid */}
               {pakketAfbeeldingen.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
@@ -424,27 +424,25 @@ export default function StepFourConfirmation({
                 </div>
               )}
 
-              {/* Materialen lijst (zoals in Stap 3) */}
+              {/* Materialen lijst exact zoals in Stap 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pt-4 border-t border-dark/10">
                 {materialenLijst.length > 0 ? (
                   materialenLijst.map((mat: any, mIdx: number) => {
                     const matNaam = mat?.materiaalNaam || mat?.materiaal_naam || mat?.titel || mat?.title || mat?.naam || mat;
-                    const matIcon = mat?.materiaalAfbeelding?.node?.sourceUrl || mat?.materiaal_afbeelding?.sourceUrl || mat?.afbeelding?.sourceUrl || null;
+                    const matIcon = mat?.materiaalAfbeelding?.node?.sourceUrl || mat?.materiaal_afbeelding?.sourceUrl || mat?.afbeelding?.sourceUrl || mat?.materiaalAfbeelding || null;
 
                     return (
-                      <div key={mIdx} className="flex items-center justify-between py-3 border-b border-dark/5">
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] relative overflow-hidden shrink-0 border border-dark/10 flex items-center justify-center">
-                            {matIcon ? (
-                              <Image src={matIcon} alt={typeof matNaam === 'string' ? matNaam : 'Materiaal'} fill className="object-cover" />
-                            ) : (
-                              <div className="w-4 h-4 rounded-full bg-[#D9D3CB]" />
-                            )}
-                          </div>
-                          <span className="text-sm font-medium text-dark">
-                            {typeof matNaam === 'string' ? matNaam : `Materiaal ${mIdx + 1}`}
-                          </span>
+                      <div key={mIdx} className="flex items-center gap-4 py-3 border-b border-dark/5">
+                        <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] relative overflow-hidden shrink-0 border border-dark/10 flex items-center justify-center">
+                          {matIcon && typeof matIcon === 'string' ? (
+                            <Image src={matIcon} alt={typeof matNaam === 'string' ? matNaam : 'Materiaal'} fill className="object-cover" />
+                          ) : (
+                            <div className="w-4 h-4 rounded-full bg-[#D9D3CB]" />
+                          )}
                         </div>
+                        <span className="text-sm font-medium text-dark">
+                          {typeof matNaam === 'string' ? matNaam : (matNaam?.materiaalNaam || `Materiaal ${mIdx + 1}`)}
+                        </span>
                       </div>
                     );
                   })
@@ -452,23 +450,19 @@ export default function StepFourConfirmation({
                   <>
                     <div className="flex items-center gap-4 py-3 border-b border-dark/5">
                       <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Brons</span>
+                      <span className="text-sm font-medium text-dark">Travertin look</span>
                     </div>
                     <div className="flex items-center gap-4 py-3 border-b border-dark/5">
                       <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Visgraat eiken</span>
+                      <span className="text-sm font-medium text-dark">Eiken hout</span>
                     </div>
                     <div className="flex items-center gap-4 py-3 border-b border-dark/5">
                       <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Suede</span>
+                      <span className="text-sm font-medium text-dark">Gun metal</span>
                     </div>
                     <div className="flex items-center gap-4 py-3 border-b border-dark/5">
                       <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Beige / zand</span>
-                    </div>
-                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
-                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
-                      <span className="text-sm font-medium text-dark">Marmer look</span>
+                      <span className="text-sm font-medium text-dark">Beton cement</span>
                     </div>
                   </>
                 )}
