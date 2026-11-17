@@ -144,8 +144,16 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  const materialenLijst = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
+  // Materialen lijst ophalen
+  const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
+  const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
   const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 6;
+
+  // Moodboard afbeeldingen ophalen uit pakketAfbeelding repeater / galerij
+  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || [];
+  const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
+    ? rawPakketAfb 
+    : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
 
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
@@ -312,7 +320,7 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch mt-12 mb-14 text-left">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch mt-12 mb-8 text-left">
             <div className="md:col-span-7 bg-white rounded-[2rem] overflow-hidden shadow-sm border border-dark/5 flex flex-col justify-between">
               <div className="relative w-full aspect-[4/3] bg-[#3E372F]">
                 {heroImage ? (
@@ -340,7 +348,7 @@ export default function StepFourConfirmation({
                   {pakketNaam}
                 </h3>
                 {pakketOmschrijving && (
-                  <p className="text-xs text-muted leading-relaxed pt-3">
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1">
                     {pakketOmschrijving}
                   </p>
                 )}
@@ -348,7 +356,6 @@ export default function StepFourConfirmation({
             </div>
 
             <div className="md:col-span-5 flex flex-col h-full gap-6">
-              {/* Gekozen indeling kaart: behoudt eigen natuurlijke hoogte */}
               <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5">
                 <div className="space-y-3">
                   <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
@@ -371,26 +378,102 @@ export default function StepFourConfirmation({
                 </div>
 
                 <div className="pt-3">
-                  <h3 className="text-2xl sm:text-3xl font-serif text-dark">
+                  <h4 className="text-xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
-                  </h3>
+                  </h4>
                   {metrage && (
-                    <p className="text-xs text-muted pt-3">{metrage}</p>
+                    <p className="text-xs text-muted mt-0.5">{metrage}</p>
                   )}
                 </div>
               </div>
 
-              {/* Jouw samenvatting: flex-1 zorgt ervoor dat dit zwarte blok de resterende hoogte automatisch opvult */}
               <div className="bg-[#1A1A1A] text-white rounded-[2rem] px-7 py-8 shadow-lg flex flex-col justify-center flex-1">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif mb-2">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs text-white leading-relaxed pt-3">
+                <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
                   1 indeling · 1 stijl · {visualsAantal} aanzichten gevisualiseerd · {materialenAantal} materialen
                 </p>
               </div>
             </div>
+          </div>
 
+          {/* NIEUW BLOK: Moodboard & Materialenlijst onder de 3 blokken */}
+          <div className="max-w-4xl mx-auto mb-14">
+            <div className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-sm border border-dark/5 space-y-10">
+              <div>
+                <span className="inline-block px-3 py-1 bg-[#F3F0EA] rounded-full text-[10px] font-bold tracking-[0.15em] text-muted uppercase mb-3">
+                  MOODBOARD {pakketNaam.toUpperCase()}
+                </span>
+                <h3 className="text-3xl font-serif text-dark">Materialen in dit pakket</h3>
+                <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
+              </div>
+
+              {/* Moodboard foto's / grid */}
+              {pakketAfbeeldingen.length > 0 && (
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
+                    const imgUrl = item?.sourceUrl || item?.node?.sourceUrl || item?.mediaItemUrl || item?.node?.mediaItemUrl || (typeof item === 'string' ? item : null);
+                    if (!imgUrl) return null;
+                    return (
+                      <div key={imgIdx} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#F3F0EA]">
+                        <Image src={imgUrl} alt={`Moodboard ${imgIdx + 1}`} fill className="object-cover object-center" />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Materialen lijst (zoals in Stap 3) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 pt-4 border-t border-dark/10">
+                {materialenLijst.length > 0 ? (
+                  materialenLijst.map((mat: any, mIdx: number) => {
+                    const matNaam = mat?.materiaalNaam || mat?.materiaal_naam || mat?.titel || mat?.title || mat?.naam || mat;
+                    const matIcon = mat?.materiaalAfbeelding?.node?.sourceUrl || mat?.materiaal_afbeelding?.sourceUrl || mat?.afbeelding?.sourceUrl || null;
+
+                    return (
+                      <div key={mIdx} className="flex items-center justify-between py-3 border-b border-dark/5">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] relative overflow-hidden shrink-0 border border-dark/10 flex items-center justify-center">
+                            {matIcon ? (
+                              <Image src={matIcon} alt={typeof matNaam === 'string' ? matNaam : 'Materiaal'} fill className="object-cover" />
+                            ) : (
+                              <div className="w-4 h-4 rounded-full bg-[#D9D3CB]" />
+                            )}
+                          </div>
+                          <span className="text-sm font-medium text-dark">
+                            {typeof matNaam === 'string' ? matNaam : `Materiaal ${mIdx + 1}`}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <>
+                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
+                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
+                      <span className="text-sm font-medium text-dark">Brons</span>
+                    </div>
+                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
+                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
+                      <span className="text-sm font-medium text-dark">Visgraat eiken</span>
+                    </div>
+                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
+                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
+                      <span className="text-sm font-medium text-dark">Suede</span>
+                    </div>
+                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
+                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
+                      <span className="text-sm font-medium text-dark">Beige / zand</span>
+                    </div>
+                    <div className="flex items-center gap-4 py-3 border-b border-dark/5">
+                      <div className="w-10 h-10 rounded-xl bg-[#F3F0EA] shrink-0 border border-dark/10 flex items-center justify-center"><div className="w-4 h-4 rounded-full bg-[#D9D3CB]" /></div>
+                      <span className="text-sm font-medium text-dark">Marmer look</span>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="max-w-xl mx-auto text-center space-y-8">

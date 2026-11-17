@@ -472,7 +472,7 @@ export default function StepThreeVisuals({
         <div className="p-6 sm:p-12 space-y-8">
           <div>
             <span className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
-              {`Moodboard ${pakketTitel}`}
+              {`${pakketTitel}`}
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
             <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
