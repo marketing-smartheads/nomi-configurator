@@ -144,13 +144,19 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // Uitgebreide en correcte ophaalmethode voor de echte pakketAfbeeldingen (moodboard) repeater
-  const rawPakketAfb = storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || [];
+  // 1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS
+  const rawPakketAfb = 
+    storedPakket?.pakketAfbeelding || 
+    storedPakket?.pakket_afbeelding || 
+    storedPakket?.pakketAfbeeldingen || 
+    storedPakket?.pakket_afbeeldingen || 
+    [];
+
   const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
     ? rawPakketAfb 
     : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
 
-  // Uitgebreide ophaalmethode voor materialenlijst
+  // 2. Strikte ophaalmethode voor materialenlijst
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
   const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
   const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
@@ -358,8 +364,6 @@ export default function StepFourConfirmation({
             <div className="md:col-span-5 flex flex-col h-full gap-6">
               <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5">
                 <div className="space-y-3">
-                  
-
                   <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
                     {plattegrondUrl ? (
                       <img
