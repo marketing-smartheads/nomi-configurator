@@ -340,7 +340,7 @@ export default function StepFourConfirmation({
                   {pakketNaam}
                 </h3>
                 {pakketOmschrijving && (
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1">
+                  <p className="text-xs text-muted leading-relaxed pt-1">
                     {pakketOmschrijving}
                   </p>
                 )}
@@ -382,11 +382,11 @@ export default function StepFourConfirmation({
 
               {/* Jouw samenvatting: exact gelijke hoogte als linkerblok */}
               <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg flex flex-col justify-center shrink-0">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif mb-1">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
-                  1 indeling · 1 stijl · {visualsAantal} ruimtes gevisualiseerd · {materialenAantal} materialen
+                <p className="text-xs text-white leading-relaxed">
+                  1 indeling - 1 stijl - {visualsAantal} ruimtes gevisualiseerd - {materialenAantal} materialen
                 </p>
               </div>
             </div>
