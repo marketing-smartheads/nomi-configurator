@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16T18:41:16.635Z",
-  "generatedAtEpochMs": 1794854476635,
+  "generatedAt": "2026-11-17T08:14:37.249Z",
+  "generatedAtEpochMs": 1794903277249,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/privacy/page.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,25 +22,25 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/privacy/page.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "app/api/vouchers/route.ts",
       "components/configurator/StepThreeVisuals.tsx",
-      "app/dashboard/page.tsx",
-      "components/configurator/StepOnewoning.tsx",
       "lib/cms.ts",
       "app/api/confirm/route.ts",
+      "app/api/verify-voucher/route.ts",
       ".gitignore",
       "AGENTS.md",
-      "README.md"
+      "README.md",
+      "package-lock.json"
     ],
     "stats": {
-      "totalFiles": 73,
+      "totalFiles": 76,
       "topLevelAreas": [
         {
           "name": "public",
-          "count": 23
+          "count": 26
         },
         {
           "name": "components",
@@ -66,7 +66,7 @@
         },
         {
           "name": ".svg",
-          "count": 11
+          "count": 14
         },
         {
           "name": ".ts",
@@ -427,6 +427,18 @@
           "isKeyFile": false
         },
         {
+          "path": "public/assets/Nomi achtergrond element patroon.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/Patroon logo Thomas de Gier achtergrond.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/x-symbol-white.svg",
           "topLevelArea": "public",
           "extension": ".svg",
@@ -440,6 +452,12 @@
         },
         {
           "path": "public/assets/x-symbol.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/X.svg",
           "topLevelArea": "public",
           "extension": ".svg",
           "isKeyFile": false
@@ -587,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-16T18:41:14.101Z",
+    "lastActivityAt": "2026-11-17T08:14:34.893Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -598,6 +616,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1794903274893,
+      "lineCount": 192,
+      "charCount": 8611,
+      "hash": "4d3d976fb70f",
+      "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+    },
     {
       "filePath": "app/privacy/page.tsx",
       "updatedAt": 1794854474101,
@@ -653,17 +679,41 @@
       "charCount": 19362,
       "hash": "faf34aeee9fa",
       "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794845258565,
-      "lineCount": 452,
-      "charCount": 21190,
-      "hash": "1af2672256b8",
-      "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 121 lines with 186 lines.",
+      "recordedAt": "2026-11-17T08:14:34.893Z",
+      "recordedAtEpochMs": 1794903274893,
+      "before": {
+        "kind": "text",
+        "lineCount": 127,
+        "charCount": 5717,
+        "hash": "62bafaf91d9e",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
+        "updatedAt": 1794903274893
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 192,
+        "charCount": 8611,
+        "hash": "4d3d976fb70f",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794903274893
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 121,
+        "addedLines": 186,
+        "summary": "Line 3: replaced 121 lines with 186 lines.",
+        "beforeFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = c...",
+        "afterFragment": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedInd..."
+      }
+    },
     {
       "type": "save",
       "path": "app/privacy/page.tsx",
@@ -1111,38 +1161,6 @@
         "beforeFragment": "// Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_part...",
         "afterFragment": "const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partners_titel || / 'Geselecteerde partners'; / const partnersSectieOmschrijving =..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 128: replaced 228 lines with 228 lines.",
-      "recordedAt": "2026-11-16T15:31:53.031Z",
-      "recordedAtEpochMs": 1794843113031,
-      "before": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 20088,
-        "hash": "e69f90a5ab8d",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794843113031
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 20008,
-        "hash": "65733ad4b8cc",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794843113031
-      },
-      "diff": {
-        "lineStart": 128,
-        "removedLines": 228,
-        "addedLines": 228,
-        "summary": "Line 128: replaced 228 lines with 228 lines.",
-        "beforeFragment": "Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselectee...",
-        "afterFragment": "Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partner..."
-      }
     }
   ],
   "hotFiles": [
@@ -1159,16 +1177,12 @@
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 3
     },
     {
-      "filePath": "app/dashboard/page.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 2
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 3
     },
     {
       "filePath": "lib/cms.ts",
@@ -1177,24 +1191,32 @@
     {
       "filePath": "app/api/confirm/route.ts",
       "count": 1
+    },
+    {
+      "filePath": "app/api/verify-voucher/route.ts",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 6b1da29 fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors",
-    "statusSummary": "1 modified, 2 untrackeds",
-    "changedFileCount": 3,
+    "headSummary": "2026-11-16 c44546b fix(privacy): accurately document CMS data storage for customer details and session persistence",
+    "statusSummary": "4 modifieds, 3 untrackeds",
+    "changedFileCount": 7,
     "statusLines": [
-      "M app/privacy/page.tsx",
-      "?? \"public/assets/Logo Thomas de Gier donkerblauw.svg\"",
-      "?? public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg"
+      "M components/configurator/StepOnewoning.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md",
+      "?? \"public/assets/Nomi achtergrond element patroon.svg\"",
+      "?? \"public/assets/Patroon logo Thomas de Gier achtergrond.svg\"",
+      "?? public/assets/X.svg"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6b1da29 by Bas van Dooremalen on 2026-11-16\n  fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c44546b by Bas van Dooremalen on 2026-11-16\n  fix(privacy): accurately document CMS data storage for customer details and session persistence\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

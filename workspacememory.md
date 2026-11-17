@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-16T18:41:16.635Z
+Generated: 2026-11-17T08:14:37.249Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-16T18:41:14.101Z
+- Last activity: 2026-11-17T08:14:34.893Z
 ## Workspace Focus
-- Active file in focus: app/privacy/page.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/vouchers/route.ts (3), components/configurator/StepThreeVisuals.tsx (3)
-- Suggested starting points: app/privacy/page.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx, app/dashboard/page.tsx
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (10), app/api/vouchers/route.ts (3), components/configurator/StepOnewoning.tsx (3)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx, lib/cms.ts
 ## Current Workspace
-- Active file: app/privacy/page.tsx
-- Tracked files in snapshot: 73
-- Top-level areas: public (23), components (18), [root] (15), app (14), lib (3)
-- Primary file types: .tsx (24), .svg (11), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
+- Active file: components/configurator/StepOnewoning.tsx
+- Tracked files in snapshot: 76
+- Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
+- Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified, 2 untrackeds
+- Working tree summary: 4 modifieds, 3 untrackeds
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 192 lines | 8611 chars | hash 4d3d976fb70f
+  Last snapshot: 2026-11-17T08:14:34.893Z
+  Preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
 - app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
   Last snapshot: 2026-11-16T18:41:14.101Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -60,11 +63,15 @@ Structured manifest: workspace.json
 - components/configurator/StepThreeVisuals.tsx | 472 lines | 19362 chars | hash faf34aeee9fa
   Last snapshot: 2026-11-16T16:18:20.984Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- components/configurator/StepFourConfirmation.tsx | 452 lines | 21190 chars | hash 1af2672256b8
-  Last snapshot: 2026-11-16T16:07:38.565Z
-  Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 
 ## Recent Changes
+### 2026-11-17T08:14:34.893Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 3: replaced 121 lines with 186 lines.
+- Before: 127 lines | 5,717 chars | hash 62bafaf91d9e | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
+- After: 192 lines | 8,611 chars | hash 4d3d976fb70f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+- Previous fragment: "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = c..."
+- Current fragment: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedInd..."
+
 ### 2026-11-16T18:41:14.101Z | saved | app/privacy/page.tsx
 - Summary: Line 26: replaced 100 lines with 92 lines.
 - Before: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -159,31 +166,28 @@ Structured manifest: workspace.json
 - Previous fragment: "// Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_part..."
 - Current fragment: "const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partners_titel || / 'Geselecteerde partners'; / const partnersSectieOmschrijving =..."
 
-### 2026-11-16T15:31:53.031Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 128: replaced 228 lines with 228 lines.
-- Before: 399 lines | 20,088 chars | hash e69f90a5ab8d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 399 lines | 20,008 chars | hash 65733ad4b8cc | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "Haal de partners sectie titel en omschrijving exact op uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselectee..."
-- Current fragment: "Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partner..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (12 tracked changes)
 - components/configurator/StepTwoDesign.tsx (10 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
+- components/configurator/StepOnewoning.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (3 tracked changes)
-- app/dashboard/page.tsx (2 tracked changes)
-- components/configurator/StepOnewoning.tsx (2 tracked changes)
 - lib/cms.ts (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
+- app/api/verify-voucher/route.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-16 6b1da29 fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors
-- Working tree summary: 1 modified, 2 untrackeds
-- M app/privacy/page.tsx
-- ?? "public/assets/Logo Thomas de Gier donkerblauw.svg"
-- ?? public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg
+- HEAD: 2026-11-16 c44546b fix(privacy): accurately document CMS data storage for customer details and session persistence
+- Working tree summary: 4 modifieds, 3 untrackeds
+- M components/configurator/StepOnewoning.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
+- ?? "public/assets/Nomi achtergrond element patroon.svg"
+- ?? "public/assets/Patroon logo Thomas de Gier achtergrond.svg"
+- ?? public/assets/X.svg
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -191,8 +195,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 6b1da29 by Bas van Dooremalen on 2026-11-16
-  fix(api): return empty array gracefully for non-dashboard requests to eliminate console errors
+- c44546b by Bas van Dooremalen on 2026-11-16
+  fix(privacy): accurately document CMS data storage for customer details and session persistence
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
