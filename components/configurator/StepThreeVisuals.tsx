@@ -288,7 +288,7 @@ export default function StepThreeVisuals({
                 3D Visuals
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Visuals en sferen</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van uw gekozen designpakket.</p>
+              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van jouw gekozen designpakket.</p>
             </div>
 
             <div 
@@ -414,7 +414,7 @@ export default function StepThreeVisuals({
                 360° Beleving
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Interactieve 360° ruimte</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar uw gekozen stijl in een interactieve panorama weergave.</p>
+              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar jouw gekozen stijl in een interactieve panorama weergave.</p>
             </div>
 
             {isVideo ? (
@@ -447,7 +447,7 @@ export default function StepThreeVisuals({
               {`Moodboard ${pakketTitel}`}
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif text-dark">Materialen in dit pakket</h3>
-            <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit uw ontwerp is opgebouwd.</p>
+            <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-12 pt-2">

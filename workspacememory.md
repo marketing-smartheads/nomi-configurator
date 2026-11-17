@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T09:33:41.059Z
+Generated: 2026-11-17T09:50:55.096Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T09:33:38.591Z
+- Last activity: 2026-11-17T09:50:53.246Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepTwoDesign.tsx (8), components/configurator/StepOnewoning.tsx (6), components/configurator/StepThreeVisuals.tsx (4)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/ConfiguratorScreen.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepThreeVisuals.tsx (7), components/configurator/StepOnewoning.tsx (6), components/configurator/StepTwoDesign.tsx (5)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/ConfiguratorScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 76
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 472 lines | 19371 chars | hash 6360f6334ef8
-  Last snapshot: 2026-11-17T09:33:38.591Z
+- components/configurator/StepThreeVisuals.tsx | 472 lines | 19377 chars | hash 46967eb226c9
+  Last snapshot: 2026-11-17T09:50:53.246Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - components/ConfiguratorScreen.tsx | 269 lines | 10525 chars | hash 0fe1a42f9892
   Last snapshot: 2026-11-17T08:41:27.751Z
@@ -65,6 +65,24 @@ Structured manifest: workspace.json
   Preview: "import { useState, useEffect } from 'react'; / import Hero from './Hero'; / import Story from './Story'; / import Cta from './Cta'; / import Faq from './Faq'; / import { getPageData } from '../lib/cms'; / export defau..."
 
 ## Recent Changes
+### 2026-11-17T09:50:53.246Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 291: inserted 1 line.
+- Before: 472 lines | 19,375 chars | hash 660e876370f8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Current fragment: "jo"
+
+### 2026-11-17T09:50:35.904Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 450: inserted 1 line.
+- Before: 472 lines | 19,373 chars | hash 066bb04109fc | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 472 lines | 19,375 chars | hash 660e876370f8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Current fragment: "jo"
+
+### 2026-11-17T09:50:24.211Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 417: inserted 1 line.
+- Before: 472 lines | 19,371 chars | hash 6360f6334ef8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 472 lines | 19,373 chars | hash 066bb04109fc | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Current fragment: "jo"
+
 ### 2026-11-17T09:33:38.591Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 82: replaced 189 lines with 189 lines.
 - Before: 472 lines | 19,353 chars | hash 88f4cd37a120 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -138,33 +156,12 @@ Structured manifest: workspace.json
 - Previous fragment: "gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-..."
 - Current fragment: "opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-white pt..."
 
-### 2026-11-16T18:34:33.145Z | saved | app/api/vouchers/route.ts
-- Summary: Line 16: replaced 13 lines with 9 lines.
-- Before: 84 lines | 3,030 chars | hash bdaba5dab9ef | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
-- After: 80 lines | 2,922 chars | hash dac1e1e8ab6f | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
-- Previous fragment: "// Check of het verzoek van het interne dashboard komt via een speciale header / const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.AD..."
-- Current fragment: "const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier'; / const referer = request.headers.get..."
-
-### 2026-11-16T18:31:09.181Z | saved | app/api/vouchers/route.ts
-- Summary: Line 5: replaced 66 lines with 64 lines.
-- Before: 86 lines | 3,361 chars | hash 177755a9b846 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
-- After: 84 lines | 3,030 chars | hash bdaba5dab9ef | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
-- Previous fragment: "// 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003',..."
-- Current fragment: "const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a0..."
-
-### 2026-11-16T18:23:27.210Z | saved | app/api/vouchers/route.ts
-- Summary: Line 17: replaced 44 lines with 58 lines.
-- Before: 72 lines | 2,656 chars | hash 792080aa23e8 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
-- After: 86 lines | 3,361 chars | hash 177755a9b846 | preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_..."
-- Previous fragment: "const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPa..."
-- Current fragment: "// BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien / const authHeader = request.headers.get('authorization'); /..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (11 tracked changes)
-- components/configurator/StepTwoDesign.tsx (8 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (7 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (4 tracked changes)
+- components/configurator/StepTwoDesign.tsx (5 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
 - components/ConfiguratorScreen.tsx (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
@@ -172,7 +169,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 b6ae469 style(configurator): render side patterns as repeating CSS backgrounds and place below hero banner on step 4
+- HEAD: 2026-11-17 38d228c fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl
 - Working tree summary: 4 modifieds
 - M components/configurator/StepThreeVisuals.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -185,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- b6ae469 by Bas van Dooremalen on 2026-11-17
-  style(configurator): render side patterns as repeating CSS backgrounds and place below hero banner on step 4
+- 38d228c by Bas van Dooremalen on 2026-11-17
+  fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

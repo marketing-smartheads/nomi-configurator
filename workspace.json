@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T09:33:41.059Z",
-  "generatedAtEpochMs": 1794908021059,
+  "generatedAt": "2026-11-17T09:50:55.096Z",
+  "generatedAtEpochMs": 1794909055096,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,8 +24,8 @@
     "suggestedStartingPoints": [
       "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "app/api/vouchers/route.ts",
       "components/ConfiguratorScreen.tsx",
       "app/api/confirm/route.ts",
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T09:33:38.591Z",
+    "lastActivityAt": "2026-11-17T09:50:53.246Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1794908018591,
+      "updatedAt": 1794909053246,
       "lineCount": 472,
-      "charCount": 19371,
-      "hash": "6360f6334ef8",
+      "charCount": 19377,
+      "hash": "46967eb226c9",
       "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
     },
     {
@@ -682,6 +682,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 291: inserted 1 line.",
+      "recordedAt": "2026-11-17T09:50:53.246Z",
+      "recordedAtEpochMs": 1794909053246,
+      "before": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19375,
+        "hash": "660e876370f8",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909053246
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19377,
+        "hash": "46967eb226c9",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909053246
+      },
+      "diff": {
+        "lineStart": 291,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 291: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "jo"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 450: inserted 1 line.",
+      "recordedAt": "2026-11-17T09:50:35.904Z",
+      "recordedAtEpochMs": 1794909035904,
+      "before": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19373,
+        "hash": "066bb04109fc",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909035904
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19375,
+        "hash": "660e876370f8",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909035904
+      },
+      "diff": {
+        "lineStart": 450,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 450: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "jo"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 417: inserted 1 line.",
+      "recordedAt": "2026-11-17T09:50:24.211Z",
+      "recordedAtEpochMs": 1794909024211,
+      "before": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19371,
+        "hash": "6360f6334ef8",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909024210
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19373,
+        "hash": "066bb04109fc",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1794909024211
+      },
+      "diff": {
+        "lineStart": 417,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 417: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "jo"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1023,102 +1119,6 @@
         "beforeFragment": "gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag. / </p> / </section> / <div className=\"space-y-3\"> / <h2 className=\"text-lg sm:text-xl font-serif text-...",
         "afterFragment": "opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag. / </p> / </section> / <div className=\"space-y-3\"> / <h2 className=\"text-lg sm:text-xl font-serif text-white pt..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 16: replaced 13 lines with 9 lines.",
-      "recordedAt": "2026-11-16T18:34:33.145Z",
-      "recordedAtEpochMs": 1794854073145,
-      "before": {
-        "kind": "text",
-        "lineCount": 84,
-        "charCount": 3030,
-        "hash": "bdaba5dab9ef",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',...",
-        "updatedAt": 1794854073145
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 80,
-        "charCount": 2922,
-        "hash": "dac1e1e8ab6f",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',...",
-        "updatedAt": 1794854073145
-      },
-      "diff": {
-        "lineStart": 16,
-        "removedLines": 13,
-        "addedLines": 9,
-        "summary": "Line 16: replaced 13 lines with 9 lines.",
-        "beforeFragment": "// Check of het verzoek van het interne dashboard komt via een speciale header / const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.AD...",
-        "afterFragment": "const secretKey = request.headers.get('x-admin-secret'); / const expectedSecret = process.env.ADMIN_SECRET_KEY || 'veiligheids-token-hier'; / const referer = request.headers.get..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 5: replaced 66 lines with 64 lines.",
-      "recordedAt": "2026-11-16T18:31:09.181Z",
-      "recordedAtEpochMs": 1794853869181,
-      "before": {
-        "kind": "text",
-        "lineCount": 86,
-        "charCount": 3361,
-        "hash": "177755a9b846",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_...",
-        "updatedAt": 1794853869181
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 84,
-        "charCount": 3030,
-        "hash": "bdaba5dab9ef",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',...",
-        "updatedAt": 1794853869181
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 66,
-        "addedLines": 64,
-        "summary": "Line 5: replaced 66 lines with 64 lines.",
-        "beforeFragment": "// 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003',...",
-        "afterFragment": "const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019', 'nomi-a020', 'nomi-a021', 'nomi-a022', 'nomi-a0..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/api/vouchers/route.ts",
-      "toPath": "",
-      "summary": "Line 17: replaced 44 lines with 58 lines.",
-      "recordedAt": "2026-11-16T18:23:27.210Z",
-      "recordedAtEpochMs": 1794853407210,
-      "before": {
-        "kind": "text",
-        "lineCount": 72,
-        "charCount": 2656,
-        "hash": "792080aa23e8",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_...",
-        "updatedAt": 1794853407210
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 86,
-        "charCount": 3361,
-        "hash": "177755a9b846",
-        "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / // 🛑 Strenge set van de 32 verhuur-bouwnummers (Jongerius) die strikt uit het dashboard moeten worden gefilterd / const VERHUUR_...",
-        "updatedAt": 1794853407210
-      },
-      "diff": {
-        "lineStart": 17,
-        "removedLines": 44,
-        "addedLines": 58,
-        "summary": "Line 17: replaced 44 lines with 58 lines.",
-        "beforeFragment": "const endpoint = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT || 'https://cms.nomi-configurator.nl/graphql'; / const wpUser = process.env.WORDPRESS_AUTH_USER; / const wpPa...",
-        "afterFragment": "// BEVEILIGINGSCHECK: Controleer op eengeheime header of token zodat willekeurige bezoekers geen data kunnen inzien / const authHeader = request.headers.get('authorization'); /..."
-      }
     }
   ],
   "hotFiles": [
@@ -1127,16 +1127,16 @@
       "count": 11
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 8
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 7
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 6
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 4
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 5
     },
     {
       "filePath": "app/api/vouchers/route.ts",
@@ -1158,7 +1158,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 b6ae469 style(configurator): render side patterns as repeating CSS backgrounds and place below hero banner on step 4",
+    "headSummary": "2026-11-17 38d228c fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
@@ -1171,7 +1171,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b6ae469 by Bas van Dooremalen on 2026-11-17\n  style(configurator): render side patterns as repeating CSS backgrounds and place below hero banner on step 4\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 38d228c by Bas van Dooremalen on 2026-11-17\n  fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
