@@ -349,7 +349,7 @@ export default function StepFourConfirmation({
 
             <div className="md:col-span-5 flex flex-col justify-between h-full gap-6">
               {/* Gekozen indeling kaart: compact en strak aangesloten */}
-              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-3 flex-1 flex flex-col justify-between">
+              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-3 flex-1 flex flex-col">
                 <div className="space-y-3">
                   <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
                     GEKOZEN INDELING
@@ -385,7 +385,7 @@ export default function StepFourConfirmation({
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs text-white leading-relaxed">
+                <p className="text-xs text-white leading-relaxed pt-1">
                   1 indeling - 1 stijl - {visualsAantal} ruimtes gevisualiseerd - {materialenAantal} materialen
                 </p>
               </div>
