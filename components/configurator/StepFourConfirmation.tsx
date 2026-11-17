@@ -66,12 +66,13 @@ export default function StepFourConfirmation({
   const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
 
   let opgeslagenIndeling = '';
+  let parsedIndelingObj: any = null;
   try {
     const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : '';
     if (rawInd) {
       if (rawInd.startsWith('{')) {
-        const parsed = JSON.parse(rawInd);
-        opgeslagenIndeling = parsed?.indelingTitel || parsed?.indeling_titel || '';
+        parsedIndelingObj = JSON.parse(rawInd);
+        opgeslagenIndeling = parsedIndelingObj?.indelingTitel || parsedIndelingObj?.indeling_titel || '';
       } else {
         opgeslagenIndeling = rawInd;
       }
@@ -115,8 +116,18 @@ export default function StepFourConfirmation({
 
   const storedWoning = gebruikteRijen[0] || woningTypenLijst[0] || {};
 
-  const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || woningType || '';
+  const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || parsedIndelingObj?.typeNaam || parsedIndelingObj?.type_naam || woningType || '';
+  const indelingTitel = storedWoning?.indelingTitel || storedWoning?.indeling_titel || opgeslagenIndeling || 'Gekozen indeling';
+  const metrage = storedWoning?.metrage || parsedIndelingObj?.metrage || '';
+  const plattegrondUrl =
+    storedWoning?.plattegrond?.node?.sourceUrl ||
+    storedWoning?.plattegrond?.sourceUrl ||
+    parsedIndelingObj?.plattegrond?.node?.sourceUrl ||
+    parsedIndelingObj?.plattegrond?.sourceUrl ||
+    null;
+
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || actiefPakket;
+  const pakketOmschrijving = storedPakket?.pakketOmschrijving || storedPakket?.pakket_omschrijving || '';
 
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
@@ -248,15 +259,16 @@ export default function StepFourConfirmation({
           }}
         />
 
-        <div className="relative z-10">
-          <div className="max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16">
+        <div className="relative z-10 py-16 px-4 sm:px-6">
+          {/* Titel, omschrijving en logo's */}
+          <div className="max-w-xl mx-auto text-center space-y-8">
             <div className="space-y-3">
               {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
               {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
               {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
             </div>
 
-            {/* Logo's toegevoegd onder de omschrijving */}
+            {/* Logo's */}
             <div className="flex items-center justify-center gap-6 sm:gap-8 py-2">
               <div className="relative h-8 sm:h-10 w-36 sm:w-44">
                 <Image 
@@ -283,7 +295,81 @@ export default function StepFourConfirmation({
                 />
               </div>
             </div>
+          </div>
 
+          {/* Overzicht gekozen stijl (blok 1) & gekozen indeling (blok 2) */}
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-12 mb-14 text-left">
+            
+            {/* Blok 1: Gekozen stijl met herofoto */}
+            <div className="md:col-span-7 bg-white rounded-[2rem] overflow-hidden shadow-sm border border-dark/5">
+              <div className="relative w-full aspect-[4/3] bg-[#3E372F]">
+                {heroImage ? (
+                  <Image
+                    src={heroImage}
+                    alt={pakketNaam}
+                    fill
+                    className="object-cover object-center"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-white/60 text-xs">
+                    Hoofdvisual · {pakketNaam}
+                  </div>
+                )}
+                <span className="absolute top-4 left-4 bg-white text-dark text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full shadow-sm">
+                  JOUW INTERIEUR
+                </span>
+              </div>
+
+              <div className="p-6 sm:p-8 space-y-2">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                  GEKOZEN STIJL
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif text-dark">
+                  {pakketNaam}
+                </h3>
+                {pakketOmschrijving && (
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1">
+                    {pakketOmschrijving}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Blok 2: Gekozen indeling met plattegrond uit stap 1 */}
+            <div className="md:col-span-5 flex flex-col gap-6">
+              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-4">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
+                  GEKOZEN INDELING
+                </span>
+
+                <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
+                  {plattegrondUrl ? (
+                    <img
+                      src={plattegrondUrl}
+                      alt={indelingTitel}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-xs text-muted text-center">
+                      [ Plattegrond {indelingTitel} ]
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-serif text-dark">
+                    {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
+                  </h4>
+                  {metrage && (
+                    <p className="text-xs text-muted mt-1">{metrage}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Formulier & Actieknoppen */}
+          <div className="max-w-xl mx-auto text-center space-y-8">
             {errorMessage && (
               <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
                 {errorMessage}
