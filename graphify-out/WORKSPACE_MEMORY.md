@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T10:39:06.466Z
+Generated: 2026-11-17T10:43:20.292Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T10:39:04.036Z
+- Last activity: 2026-11-17T10:43:18.403Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (14), components/configurator/StepOnewoning.tsx (7), components/configurator/StepThreeVisuals.tsx (7), app/api/vouchers/route.ts (3)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/ConfiguratorScreen.tsx, app/api/confirm/route.ts
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
+- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
 - Tracked files in snapshot: 76
@@ -37,13 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 472 lines | 19377 chars | hash 46967eb226c9
-  Last snapshot: 2026-11-17T10:39:04.036Z
+- components/configurator/StepThreeVisuals.tsx | 500 lines | 20272 chars | hash 4b0a002ce7da
+  Last snapshot: 2026-11-17T10:43:18.403Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- components/configurator/StepTwoDesign.tsx | 273 lines | 12360 chars | hash b4fa3adfccd3
-  Last snapshot: 2026-11-17T10:38:49.276Z
+- components/configurator/StepTwoDesign.tsx | 301 lines | 13253 chars | hash 6d55e2e61897
+  Last snapshot: 2026-11-17T10:43:09.499Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - components/configurator/StepOnewoning.tsx | 163 lines | 7027 chars | hash 83a38aaa8934
   Last snapshot: 2026-11-17T10:34:00.860Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
 
 ## Recent Changes
+### 2026-11-17T10:43:18.403Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 282: inserted 29 lines.
+- Before: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 500 lines | 20,272 chars | hash 4b0a002ce7da | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Current fragment: "Logo's boven de visuals/content */} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Image / src..."
+
+### 2026-11-17T10:43:09.499Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 129: inserted 29 lines.
+- Before: 273 lines | 12,360 chars | hash b4fa3adfccd3 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 301 lines | 13,253 chars | hash 6d55e2e61897 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Current fragment: "{/* Logo's boven de pakketblokken */} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Image / s..."
+
 ### 2026-11-17T10:39:04.036Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Saved without a textual diff.
 - Before: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -140,35 +152,22 @@ Structured manifest: workspace.json
 
 ### 2026-11-17T08:55:21.484Z | saved | components/configurator/StepFourConfirmation.tsx
 
-### 2026-11-17T08:41:27.751Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 135: replaced 2 lines with 21 lines.
-- Before: 250 lines | 9,599 chars | hash 6af3f7e817b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 269 lines | 10,525 chars | hash 0fe1a42f9892 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- Previous fragment: "w-full bg-secondary min-h-screen"> / <div className={`"
-- Current fragment: "relative w-full bg-secondary min-h-screen overflow-hidden"> / {/* Linker achtergrond-element: sluit direct aan tegen de zwarte header en linker schermrand */} / <div className="..."
-
-### 2026-11-17T08:39:17.868Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 45: replaced 36 lines with 10 lines.
-- Before: 189 lines | 8,430 chars | hash 96a1e0889a89 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- After: 163 lines | 6,963 chars | hash 9a1b0f990d1f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- Previous fragment: "overflow-hidden"> / <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"> / <img src="/assets/Nomi achtergrond elemen..."
-- Current fragment: ""> / <p className="text-xs text-muted tracking-widest uppercase animate-pulse z-10"> / Uw woningtype wordt geladen... / </p> / </div> / ); / } / return ( / <div className="relat..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (14 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (12 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (8 tracked changes)
 - components/configurator/StepOnewoning.tsx (7 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (7 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 - components/ConfiguratorScreen.tsx (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - app/privacy/page.tsx (1 tracked changes)
-- components/configurator/StepTwoDesign.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 9dfa256 fix(step1): use correct nomi gradient logo and X asset symbols in step 1 branding header
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-17 7fa198a fix(steps): remove step prefix numbers from step 2 and step 3 header subtitles
+- Working tree summary: 5 modifieds
+- M components/configurator/StepThreeVisuals.tsx
 - M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json

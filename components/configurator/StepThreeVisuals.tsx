@@ -279,6 +279,34 @@ export default function StepThreeVisuals({
         )}
       </div>
 
+      {/* Logo's boven de visuals/content */}
+      <div className="flex items-center justify-center gap-6 sm:gap-8 py-2">
+        <div className="relative h-8 sm:h-10 w-36 sm:w-44">
+          <Image 
+            src="/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg" 
+            alt="Nomi Logo" 
+            fill 
+            className="object-contain object-right"
+          />
+        </div>
+        <div className="relative h-4 w-4">
+          <Image 
+            src="/assets/X.svg" 
+            alt="X" 
+            fill 
+            className="object-contain"
+          />
+        </div>
+        <div className="relative h-8 sm:h-10 w-40 sm:w-48">
+          <Image 
+            src="/assets/logo-tdg.svg" 
+            alt="Thomas de Gier Logo" 
+            fill 
+            className="object-contain object-left"
+          />
+        </div>
+      </div>
+
       {/* 1. 3D Visuals Slider + Thumbnails (Nu bovenaan) */}
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="relative">
