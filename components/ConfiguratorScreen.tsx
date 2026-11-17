@@ -132,8 +132,27 @@ export default function ConfiguratorScreen({
   };
 
   return (
-    <section className="w-full bg-secondary min-h-screen">
-      <div className={`w-full mx-auto flex flex-col justify-between min-h-screen ${
+    <section className="relative w-full bg-secondary min-h-screen overflow-hidden">
+      
+      {/* Linker achtergrond-element: sluit direct aan tegen de zwarte header en linker schermrand */}
+      <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
+        <img 
+          src="/assets/Nomi achtergrond element patroon.svg" 
+          alt="Nomi patroon" 
+          className="w-full h-full object-cover object-left-top" 
+        />
+      </div>
+
+      {/* Rechter achtergrond-element: sluit direct aan tegen de zwarte header en rechter schermrand */}
+      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
+        <img 
+          src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
+          alt="Thomas de Gier patroon" 
+          className="w-full h-full object-cover object-right-top" 
+        />
+      </div>
+
+      <div className={`relative z-10 w-full mx-auto flex flex-col justify-between min-h-screen ${
         currentStep === 4 ? 'px-0' : 'max-w-6xl py-28'
       }`}>
         

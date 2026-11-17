@@ -42,14 +42,7 @@ export default function StepOneWoning({
 
   if (!woningType && woningTypenLijst.length > 0) {
     return (
-      <div className="relative min-h-[400px] flex flex-col justify-center items-center overflow-hidden">
-        <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-          <img src="/assets/Nomi achtergrond element patroon.svg" alt="" className="w-full h-full object-cover object-left-top" />
-        </div>
-        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-          <img src="/assets/Patroon logo Thomas de Gier achtergrond.svg" alt="" className="w-full h-full object-cover object-right-top" />
-        </div>
-
+      <div className="relative min-h-[400px] flex flex-col justify-center items-center">
         <p className="text-xs text-muted tracking-widest uppercase animate-pulse z-10">
           Uw woningtype wordt geladen...
         </p>
@@ -58,26 +51,7 @@ export default function StepOneWoning({
   }
 
   return (
-    <div className="relative w-full -mt-16 pt-16 pb-16 px-4 sm:px-8 overflow-hidden">
-      
-      {/* Linker patroon: start direct onder de zwarte header tegen de linkerbrowser-rand */}
-      <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-        <img 
-          src="/assets/Nomi achtergrond element patroon.svg" 
-          alt="Nomi patroon" 
-          className="w-full h-full object-cover object-left-top" 
-        />
-      </div>
-
-      {/* Rechter patroon: start direct onder de zwarte header tegen de rechterbrowser-rand */}
-      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0">
-        <img 
-          src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
-          alt="Thomas de Gier patroon" 
-          className="w-full h-full object-cover object-right-top" 
-        />
-      </div>
-
+    <div className="relative w-full py-16 px-4 sm:px-8">
       {/* Hoofdinhoud */}
       <div className="relative z-10 space-y-10 max-w-5xl mx-auto w-full">
         

@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T08:31:18.001Z
+Generated: 2026-11-17T08:41:29.646Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T08:31:15.665Z
+- Last activity: 2026-11-17T08:41:27.751Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepTwoDesign.tsx (9), components/configurator/StepOnewoning.tsx (6), app/api/vouchers/route.ts (3)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx, app/api/confirm/route.ts
+- Active file in focus: components/ConfiguratorScreen.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepTwoDesign.tsx (9), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
+- Suggested starting points: components/ConfiguratorScreen.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/ConfiguratorScreen.tsx
 - Tracked files in snapshot: 76
 - Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,10 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 1 modified
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 189 lines | 8430 chars | hash 96a1e0889a89
-  Last snapshot: 2026-11-17T08:31:15.665Z
+- components/ConfiguratorScreen.tsx | 269 lines | 10525 chars | hash 0fe1a42f9892
+  Last snapshot: 2026-11-17T08:41:27.751Z
+  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- components/configurator/StepOnewoning.tsx | 163 lines | 6963 chars | hash 9a1b0f990d1f
+  Last snapshot: 2026-11-17T08:39:17.868Z
   Preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
 - app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
   Last snapshot: 2026-11-16T18:41:14.101Z
@@ -60,11 +63,22 @@ Structured manifest: workspace.json
 - components/Faq.tsx | 73 lines | 2892 chars | hash 383bd60b41f2
   Last snapshot: 2026-11-16T16:44:34.274Z
   Preview: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: string; / vragen:..."
-- components/configurator/StepThreeVisuals.tsx | 472 lines | 19362 chars | hash faf34aeee9fa
-  Last snapshot: 2026-11-16T16:18:20.984Z
-  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 
 ## Recent Changes
+### 2026-11-17T08:41:27.751Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 135: replaced 2 lines with 21 lines.
+- Before: 250 lines | 9,599 chars | hash 6af3f7e817b2 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- After: 269 lines | 10,525 chars | hash 0fe1a42f9892 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
+- Previous fragment: "w-full bg-secondary min-h-screen"> / <div className={`"
+- Current fragment: "relative w-full bg-secondary min-h-screen overflow-hidden"> / {/* Linker achtergrond-element: sluit direct aan tegen de zwarte header en linker schermrand */} / <div className="..."
+
+### 2026-11-17T08:39:17.868Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 45: replaced 36 lines with 10 lines.
+- Before: 189 lines | 8,430 chars | hash 96a1e0889a89 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+- After: 163 lines | 6,963 chars | hash 9a1b0f990d1f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+- Previous fragment: "overflow-hidden"> / <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-44 xl:w-56 pointer-events-none select-none z-0"> / <img src="/assets/Nomi achtergrond elemen..."
+- Current fragment: ""> / <p className="text-xs text-muted tracking-widest uppercase animate-pulse z-10"> / Uw woningtype wordt geladen... / </p> / </div> / ); / } / return ( / <div className="relat..."
+
 ### 2026-11-17T08:31:15.665Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 45: replaced 36 lines with 28 lines.
 - Before: 197 lines | 8,613 chars | hash 501cf29af6c2 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
@@ -153,36 +167,26 @@ Structured manifest: workspace.json
 - Previous fragment: "'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subtitel: string; / titel: st..."
 - Current fragment: "// components/Faq.tsx / 'use client'; / import { useState } from 'react'; / interface FaqItem { / vraag: string; / antwoord: string; / } / interface FaqProps { / data: { / subti..."
 
-### 2026-11-16T16:18:20.984Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 96: replaced 396 lines with 373 lines.
-- Before: 495 lines | 20,323 chars | hash 21d3217c9bba | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 472 lines | 19,362 chars | hash faf34aeee9fa | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "const rawMoodboard = huidigPakketObj?.moodboardGallery || huidigPakketObj?.moodboard_gallery; / let moodboardGallery: any[] = []; / if (Array.isArray(rawMoodboard)) { / moodboar..."
-- Current fragment: "// Pannellum 360° logica / const [isPannellumLoaded, setIsPannellumLoaded] = useState<boolean>(false); / useEffect(() => { / if (typeof window !== 'undefined' && (window as any)..."
-
-### 2026-11-16T16:07:38.565Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 9: replaced 391 lines with 436 lines.
-- Before: 407 lines | 20,495 chars | hash a4464314b6cc | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 452 lines | 21,190 chars | hash 1af2672256b8 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "// Vaste partnergegevens volgens de instructies van Thomas de Gier / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.en..."
-- Current fragment: "const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = 'Tobias@aanhuis-spijk.nl'; / const PARTNER_TELEFOON = '030 - 600 82 40'; / inte..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (12 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
 - components/configurator/StepTwoDesign.tsx (9 tracked changes)
-- components/configurator/StepOnewoning.tsx (6 tracked changes)
+- components/configurator/StepOnewoning.tsx (7 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - app/api/verify-voucher/route.ts (1 tracked changes)
 - app/privacy/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 f51217d style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity
-- Working tree summary: 1 modified
+- HEAD: 2026-11-17 1acf49e fix(step1): remove horizontal scrollbar and attach svg side patterns flush to black header
+- Working tree summary: 5 modifieds
+- M components/ConfiguratorScreen.tsx
 - M components/configurator/StepOnewoning.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -190,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- f51217d by Bas van Dooremalen on 2026-11-17
-  style(step1): position solid side svg patterns flush to viewport edges without fixed or opacity
+- 1acf49e by Bas van Dooremalen on 2026-11-17
+  fix(step1): remove horizontal scrollbar and attach svg side patterns flush to black header
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
