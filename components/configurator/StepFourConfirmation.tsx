@@ -144,13 +144,13 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // 1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater
-  const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || [];
+  // Uitgebreide en correcte ophaalmethode voor de echte pakketAfbeeldingen (moodboard) repeater
+  const rawPakketAfb = storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbeeldingen || storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding || [];
   const pakketAfbeeldingen = Array.isArray(rawPakketAfb) 
     ? rawPakketAfb 
     : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
 
-  // 2. Strikte ophaalmethode voor materialenlijst uit het pakket
+  // Uitgebreide ophaalmethode voor materialenlijst
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
   const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
   const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
@@ -402,7 +402,7 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* MOODBOARD & MATERIALEN BLOK (Exact aangepast naar de HTML van Stap 3) */}
+          {/* MOODBOARD & MATERIALEN BLOK (Exact volgens de opmaak van Stap 3) */}
           <div className="max-w-4xl mx-auto mb-14">
             <div className="bg-white rounded-[2.5rem] p-6 sm:p-12 shadow-sm border border-dark/5 space-y-8">
               <div>
@@ -443,6 +443,8 @@ export default function StepFourConfirmation({
                     const matNaam = 
                       mat?.materiaalNaam || 
                       mat?.materiaal_naam || 
+                      mat?.materiaalTitel || 
+                      mat?.materiaal_titel || 
                       mat?.titel || 
                       mat?.title || 
                       mat?.naam || 
