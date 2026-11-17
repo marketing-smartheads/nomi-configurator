@@ -43,11 +43,11 @@ export default function StepOneWoning({
   if (!woningType && woningTypenLijst.length > 0) {
     return (
       <div className="relative min-h-[400px] flex flex-col justify-center items-center overflow-hidden">
-        {/* Achtergrondpatronen strak tegen de randen */}
-        <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center">
+        {/* Achtergrondpatronen strak tegen de browser randen */}
+        <div className="fixed left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-25 pointer-events-none select-none overflow-hidden flex items-center z-0">
           <Image src="/assets/Nomi achtergrond element patroon.svg" alt="" width={400} height={1200} className="w-full h-full object-cover object-left" />
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center">
+        <div className="fixed right-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-25 pointer-events-none select-none overflow-hidden flex items-center z-0">
           <Image src="/assets/Patroon logo Thomas de Gier achtergrond.svg" alt="" width={400} height={1200} className="w-full h-full object-cover object-right" />
         </div>
 
@@ -59,10 +59,10 @@ export default function StepOneWoning({
   }
 
   return (
-    <div className="relative min-h-screen py-16 px-4 sm:px-8 overflow-hidden flex flex-col justify-between">
+    <div className="relative min-h-screen py-16 px-4 sm:px-8 overflow-x-hidden flex flex-col justify-between">
       
-      {/* 1. Decoratieve achtergrondpatronen strak tegen de linker- en rechterrand van de browser */}
-      <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-72 md:w-96 opacity-20 pointer-events-none select-none z-0 overflow-hidden flex items-center">
+      {/* 1. Decoratieve achtergrondpatronen vastgezet met FIXED strak tegen de linker- en rechterrand van het scherm */}
+      <div className="fixed left-0 top-0 bottom-0 w-40 sm:w-64 md:w-80 lg:w-96 opacity-25 pointer-events-none select-none z-0 overflow-hidden flex items-center">
         <Image 
           src="/assets/Nomi achtergrond element patroon.svg" 
           alt="Nomi patroon" 
@@ -72,7 +72,7 @@ export default function StepOneWoning({
         />
       </div>
 
-      <div className="absolute right-0 top-0 bottom-0 w-48 sm:w-72 md:w-96 opacity-20 pointer-events-none select-none z-0 overflow-hidden flex items-center">
+      <div className="fixed right-0 top-0 bottom-0 w-40 sm:w-64 md:w-80 lg:w-96 opacity-25 pointer-events-none select-none z-0 overflow-hidden flex items-center">
         <Image 
           src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
           alt="Thomas de Gier patroon" 
@@ -82,7 +82,7 @@ export default function StepOneWoning({
         />
       </div>
 
-      {/* Hoofdinhoud */}
+      {/* Hoofdinhoud (z-10 zodat het netjes boven de achtergrond zweeft) */}
       <div className="relative z-10 space-y-12 max-w-5xl mx-auto w-full">
         
         {/* Titel & Omschrijving */}
@@ -100,7 +100,7 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* 2. Logo's vergroot en strak uitgelijnd met de X ertussen */}
+        {/* 2. Logo's */}
         <div className="flex items-center justify-center gap-6 sm:gap-8 py-4">
           <div className="relative h-8 sm:h-10 w-36 sm:w-44">
             <Image 
