@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T08:25:05.830Z",
-  "generatedAtEpochMs": 1794903905830,
+  "generatedAt": "2026-11-17T08:27:18.705Z",
+  "generatedAtEpochMs": 1794904038705,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T08:25:03.135Z",
+    "lastActivityAt": "2026-11-17T08:27:16.987Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794903903135,
-      "lineCount": 193,
-      "charCount": 8789,
-      "hash": "ea2fdb4402e8",
+      "updatedAt": 1794904036987,
+      "lineCount": 197,
+      "charCount": 8613,
+      "hash": "501cf29af6c2",
       "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
     },
     {
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 45: replaced 69 lines with 73 lines.",
+      "recordedAt": "2026-11-17T08:27:16.987Z",
+      "recordedAtEpochMs": 1794904036987,
+      "before": {
+        "kind": "text",
+        "lineCount": 193,
+        "charCount": 8789,
+        "hash": "ea2fdb4402e8",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794904036987
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 197,
+        "charCount": 8613,
+        "hash": "501cf29af6c2",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794904036987
+      },
+      "diff": {
+        "lineStart": 45,
+        "removedLines": 69,
+        "addedLines": 73,
+        "summary": "Line 45: replaced 69 lines with 73 lines.",
+        "beforeFragment": "min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / {/* Achtergrondpatronen strak tegen de browser randen */} / <div className=\"fixed left-0 top-0 bottom...",
+        "afterFragment": "w-screen left-1/2 -translate-x-1/2 min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / <div className=\"hidden lg:block absolute left-0 top-0 bottom-0 w-4..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1129,38 +1161,6 @@
         "beforeFragment": "",
         "afterFragment": "pakketNaam || 'Niet geselecteerd'}</span> / </div> / </div> / </div> / </div> / <div className=\"max-w-xl max-sm:px-4 mx-auto text-center space-y-8 py-16\"> / <div className=\"spac..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 9: replaced 399 lines with 234 lines.",
-      "recordedAt": "2026-11-16T15:49:43.301Z",
-      "recordedAtEpochMs": 1794844183301,
-      "before": {
-        "kind": "text",
-        "lineCount": 407,
-        "charCount": 20675,
-        "hash": "68789188bcc4",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794844183301
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 242,
-        "charCount": 11115,
-        "hash": "52e2518b5bb8",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794844183301
-      },
-      "diff": {
-        "lineStart": 9,
-        "removedLines": 399,
-        "addedLines": 234,
-        "summary": "Line 9: replaced 399 lines with 234 lines.",
-        "beforeFragment": "interface StepFourConfirmationProps { / stepTitle: string; / configuratorData: any; / woningType: string | null; / designPakket: string | null; / onBack: () => void; / onConfirm...",
-        "afterFragment": "// Vaste partnergegevens volgens de instructies van Thomas de Gier / const PARTNER_NAAM = 'Aanhuis Spijk'; / const PARTNER_CONTACT = 'Tobias'; / const PARTNER_EMAIL = process.en..."
-      }
     }
   ],
   "hotFiles": [
@@ -1200,7 +1200,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 9f970b8 fix(step1): anchor background svg patterns flush to browser edges and enlarge branding logos",
+    "headSummary": "2026-11-17 866bd58 fix(step1): fix svg pattern positioning to fixed flush against browser screen edges",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
