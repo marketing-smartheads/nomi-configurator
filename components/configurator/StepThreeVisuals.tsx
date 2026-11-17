@@ -79,7 +79,7 @@ export default function StepThreeVisuals({
   }) || allePakketten[0] || {};
 
   const pakketTitel = huidigPakketObj?.pakketTitel || huidigPakketObj?.pakket_titel || actiefPakket;
-  const stapTitel = `Uw gekozen stijl: ${pakketTitel}`;
+  const stapTitel = `Jouw gekozen stijl: ${pakketTitel}`;
   const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || '';
 
   const rawVisuals = huidigPakketObj?.visualsSlider || huidigPakketObj?.visuals_slider;
@@ -267,7 +267,7 @@ export default function StepThreeVisuals({
     <div className="space-y-16">
       <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
-          {`Stap 3 · ${stepTitle}`}
+          {stepTitle || 'Visueel Ontwerp'}
         </p>
         <h2 className="text-3xl sm:text-5xl font-serif text-dark font-normal">
           {stapTitel}
