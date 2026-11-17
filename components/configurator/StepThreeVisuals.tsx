@@ -316,7 +316,7 @@ export default function StepThreeVisuals({
                 3D Visuals
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Visuals en sferen</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van jouw gekozen designpakket.</p>
+              <p className="text-xs sm:text-sm text-muted mt-1">Bekijk de visuals van jouw gekozen designconcept.</p>
             </div>
 
             <div 
@@ -442,7 +442,7 @@ export default function StepThreeVisuals({
                 360° Beleving
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-dark">Interactieve 360° ruimte</h3>
-              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar jouw gekozen stijl in een interactieve panorama weergave.</p>
+              <p className="text-xs sm:text-sm text-muted mt-1">Ervaar jouw gekozen indeling in een interactieve panorama weergave.</p>
             </div>
 
             {isVideo ? (

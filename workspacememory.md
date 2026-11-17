@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T10:43:20.292Z
+Generated: 2026-11-17T15:39:58.363Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T10:43:18.403Z
+- Last activity: 2026-11-17T15:39:56.569Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (12), components/configurator/StepThreeVisuals.tsx (8), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepThreeVisuals.tsx (10), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
 - Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
 - Active file: components/configurator/StepThreeVisuals.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 5 modifieds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepThreeVisuals.tsx | 500 lines | 20272 chars | hash 4b0a002ce7da
-  Last snapshot: 2026-11-17T10:43:18.403Z
+- components/configurator/StepThreeVisuals.tsx | 500 lines | 20276 chars | hash ec1f4947d2eb
+  Last snapshot: 2026-11-17T15:39:56.569Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - components/configurator/StepTwoDesign.tsx | 301 lines | 13253 chars | hash 6d55e2e61897
   Last snapshot: 2026-11-17T10:43:09.499Z
@@ -65,6 +65,18 @@ Structured manifest: workspace.json
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
 
 ## Recent Changes
+### 2026-11-17T15:39:56.569Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 445: replaced 1 line with 1 line.
+- Before: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 500 lines | 20,276 chars | hash ec1f4947d2eb | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Previous fragment: "stijl"
+- Current fragment: "indeling"
+
+### 2026-11-17T15:39:36.502Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Saved without a textual diff.
+- Before: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+
 ### 2026-11-17T10:43:18.403Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 282: inserted 29 lines.
 - Before: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -148,14 +160,10 @@ Structured manifest: workspace.json
 - After: 472 lines | 19,353 chars | hash 88f4cd37a120 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - Previous fragment: "Stap 3 ·"
 
-### 2026-11-17T08:55:21.763Z | saved | components/ConfiguratorScreen.tsx
-
-### 2026-11-17T08:55:21.484Z | saved | components/configurator/StepFourConfirmation.tsx
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (12 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (8 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (10 tracked changes)
 - components/configurator/StepOnewoning.tsx (7 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
 - components/configurator/StepTwoDesign.tsx (2 tracked changes)
@@ -165,10 +173,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 7fa198a fix(steps): remove step prefix numbers from step 2 and step 3 header subtitles
-- Working tree summary: 5 modifieds
+- HEAD: 2026-11-17 d9060f1 feat(steps): add nomi and thomas de gier brand logos to step 2 and step 3 headers
+- Working tree summary: 4 modifieds
 - M components/configurator/StepThreeVisuals.tsx
-- M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -179,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 9dfa256 by Bas van Dooremalen on 2026-11-17
-  fix(step1): use correct nomi gradient logo and X asset symbols in step 1 branding header
+- d9060f1 by Bas van Dooremalen on 2026-11-17
+  feat(steps): add nomi and thomas de gier brand logos to step 2 and step 3 headers
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
