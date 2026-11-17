@@ -61,9 +61,11 @@ export default function StepFourConfirmation({
     }
   }, []);
 
-  const data = configuratorData?.configurator || configuratorData;
+  const data = configuratorData?.configurator || configuratorData || {};
   const rawWoningTypen = data?.woningTypen || data?.woning_typen || [];
-  const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || [];
+  const woningTypenLijst = Array.isArray(rawWoningTypen) 
+    ? rawWoningTypen 
+    : (rawWoningTypen?.nodes || rawWoningTypen?.edges || []);
 
   let opgeslagenIndeling = '';
   let parsedIndelingObj: any = null;
@@ -85,36 +87,40 @@ export default function StepFourConfirmation({
   }
 
   const sessionPakket = typeof window !== 'undefined' ? (sessionStorage.getItem('geselecteerdPakket') || localStorage.getItem('selected_designPakket')) : '';
-  const actiefPakket = designPakket || sessionPakket || 'Modern Raw';
+  const actiefPakket = designPakket || sessionPakket || 'Hotel Chic';
 
   const normWoning = (woningType || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  const matchendeRijen = woningTypenLijst.filter((w: any) => {
+  // 100% veilige array check om de filter crash definitief te voorkomen
+  const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => {
+    if (!w) return false;
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const indTitel = (w?.indelingTitel || w?.indeling_titel || '').toLowerCase().replace(/[^a-z0-9]/g, '');
     const typeMatch = !normWoning || naam.includes(normWoning) || normWoning.includes(naam);
     const indelingMatch = !normIndeling || indTitel.includes(normIndeling) || normIndeling.includes(indTitel);
     return typeMatch && indelingMatch;
-  });
+  }) : [];
 
-  const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : woningTypenLijst;
+  const gebruikteRijen = matchendeRijen.length > 0 ? matchendeRijen : (Array.isArray(woningTypenLijst) ? woningTypenLijst : []);
 
   const allePakketten: any[] = [];
   gebruikteRijen.forEach((rij: any) => {
     const rawP = rij?.designPakketten || rij?.design_pakketten || [];
-    const pakketLijst = Array.isArray(rawP) ? rawP : rawP?.nodes || [];
-    pakketLijst.forEach((p: any) => allePakketten.push(p));
+    const pakketLijst = Array.isArray(rawP) ? rawP : (rawP?.nodes || rawP?.edges || []);
+    if (Array.isArray(pakketLijst)) {
+      pakketLijst.forEach((p: any) => { if (p) allePakketten.push(p); });
+    }
   });
 
   const storedPakket = allePakketten.find((p: any) => {
     const pId = (p?.pakketId || p?.pakket_id || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const pTitel = (p?.pakketTitel || p?.pakket_titel || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-    return pId === normPakket || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
+    return pId === normWoning || pTitel === normPakket || pId.includes(normPakket) || normPakket.includes(pId) || pTitel.includes(normPakket) || normPakket.includes(pTitel);
   }) || allePakketten[0] || {};
 
-  const storedWoning = gebruikteRijen[0] || woningTypenLijst[0] || {};
+  const storedWoning = gebruikteRijen[0] || {};
 
   const woningNaam = storedWoning?.typeNaam || storedWoning?.type_naam || parsedIndelingObj?.typeNaam || parsedIndelingObj?.type_naam || woningType || '';
   const indelingTitel = storedWoning?.indelingTitel || storedWoning?.indeling_titel || opgeslagenIndeling || 'Gekozen indeling';
@@ -128,6 +134,19 @@ export default function StepFourConfirmation({
 
   const pakketNaam = storedPakket?.pakketTitel || storedPakket?.pakket_titel || actiefPakket;
   const pakketOmschrijving = storedPakket?.pakketOmschrijving || storedPakket?.pakket_omschrijving || '';
+
+  const rawVisuals = storedPakket?.visualsSlider || storedPakket?.visuals_slider;
+  let visualsAantal = 4;
+  if (Array.isArray(rawVisuals)) {
+    visualsAantal = rawVisuals.length;
+  } else if (rawVisuals?.nodes) {
+    visualsAantal = rawVisuals.nodes.length;
+  } else if (rawVisuals?.edges) {
+    visualsAantal = rawVisuals.edges.length;
+  }
+
+  const materialenLijst = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
+  const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 6;
 
   const bevData = storedPakket?.bevestigingStap || storedPakket?.bevestiging_stap || {};
   const rawImage = bevData?.bannerAfbeelding || bevData?.banner_afbeelding;
@@ -149,15 +168,15 @@ export default function StepFourConfirmation({
   const partnersSectieOmschrijving = 
     bevData?.geselecteerdePartnersOmschrijving || 
     bevData?.geselecteerde_partners_omschrijving || 
-    'Onze partners ontvangen uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.';
+    'Onze partners ontvangen jouw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met je op om je te informeren over de mogelijkheden.';
 
   const rawPartners = storedWoning?.partnerLijst || storedWoning?.partner_lijst || data?.partnerLijst || data?.partner_lijst || [];
-  const partners = Array.isArray(rawPartners) ? rawPartners : rawPartners?.nodes || [];
+  const partners = Array.isArray(rawPartners) ? rawPartners : (rawPartners?.nodes || rawPartners?.edges || []);
 
   const sectieTitel = data?.bevestigingTitel || data?.bevestiging_titel;
   const subtitel = data?.bevestigingSubtitel || data?.bevestiging_subtitel;
   const omschrijving = data?.bevestigingOmschrijving || data?.bevestiging_omschrijving;
-  const waarschuwingTekst = data?.bevestigingWaarschuwingTekst || data?.bevestiging_waarschuwing || "Let op: na het bevestigen kunt u niet meer terug naar de vorige stappen. Controleer daarom uw keuzes hierboven goed.";
+  const waarschuwingTekst = data?.bevestigingWaarschuwingTekst || data?.bevestiging_waarschuwing || "Let op: na het bevestigen kun je niet meer terug naar de vorige stappen. Controleer daarom jouw keuzes hierboven goed.";
 
   const emailGeldig = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(klantEmail.trim());
   const telefoonGeldig = klantTelefoon.replace(/\D/g, '').length >= 8;
@@ -236,7 +255,6 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      {/* Onderste sectie met decoratieve achtergrondpatronen direct onder de hero-banner */}
       <div className="relative w-full overflow-hidden">
         <div
           aria-hidden="true"
@@ -260,7 +278,6 @@ export default function StepFourConfirmation({
         />
 
         <div className="relative z-10 py-16 px-4 sm:px-6">
-          {/* Titel, omschrijving en logo's */}
           <div className="max-w-xl mx-auto text-center space-y-8">
             <div className="space-y-3">
               {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
@@ -268,7 +285,6 @@ export default function StepFourConfirmation({
               {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
             </div>
 
-            {/* Logo's */}
             <div className="flex items-center justify-center gap-6 sm:gap-8 py-2">
               <div className="relative h-8 sm:h-10 w-36 sm:w-44">
                 <Image 
@@ -297,11 +313,8 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* Overzicht gekozen stijl (blok 1) & gekozen indeling (blok 2) */}
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-12 mb-14 text-left">
-            
-            {/* Blok 1: Gekozen stijl met herofoto */}
-            <div className="md:col-span-7 bg-white rounded-[2rem] overflow-hidden shadow-sm border border-dark/5">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch mt-12 mb-14 text-left">
+            <div className="md:col-span-7 bg-white rounded-[2rem] overflow-hidden shadow-sm border border-dark/5 flex flex-col justify-between">
               <div className="relative w-full aspect-[4/3] bg-[#3E372F]">
                 {heroImage ? (
                   <Image
@@ -320,7 +333,7 @@ export default function StepFourConfirmation({
                 </span>
               </div>
 
-              <div className="p-6 sm:p-8 space-y-2">
+              <div className="p-6 sm:p-8 space-y-2 flex-1 flex flex-col justify-center">
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   GEKOZEN STIJL
                 </span>
@@ -335,28 +348,29 @@ export default function StepFourConfirmation({
               </div>
             </div>
 
-            {/* Blok 2: Gekozen indeling met plattegrond uit stap 1 */}
-            <div className="md:col-span-5 flex flex-col gap-6">
-              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-4">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase">
-                  GEKOZEN INDELING
-                </span>
+            <div className="md:col-span-5 flex flex-col justify-between h-full gap-6">
+              <div className="bg-white rounded-[2rem] p-6 sm:p-7 shadow-sm border border-dark/5 space-y-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-muted uppercase mb-3">
+                    GEKOZEN INDELING
+                  </span>
 
-                <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
-                  {plattegrondUrl ? (
-                    <img
-                      src={plattegrondUrl}
-                      alt={indelingTitel}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  ) : (
-                    <span className="text-xs text-muted text-center">
-                      [ Plattegrond {indelingTitel} ]
-                    </span>
-                  )}
+                  <div className="w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
+                    {plattegrondUrl ? (
+                      <img
+                        src={plattegrondUrl}
+                        alt={indelingTitel}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-xs text-muted text-center">
+                        [ Plattegrond {indelingTitel} ]
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                <div>
+                <div className="pt-2">
                   <h4 className="text-xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
                   </h4>
@@ -365,10 +379,19 @@ export default function StepFourConfirmation({
                   )}
                 </div>
               </div>
+
+              <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg space-y-2 shrink-0">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
+                  JOUW SAMENVATTING
+                </span>
+                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-serif">
+                  1 indeling · 1 stijl · {visualsAantal} ruimtes gevisualiseerd · {materialenAantal} materialen
+                </p>
+              </div>
             </div>
+
           </div>
 
-          {/* Formulier & Actieknoppen */}
           <div className="max-w-xl mx-auto text-center space-y-8">
             {errorMessage && (
               <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-lg">
@@ -418,7 +441,7 @@ export default function StepFourConfirmation({
               <Button
                 onClick={() => {
                   if (!klantNaam.trim()) {
-                    setErrorMessage('Vul eerst uw volledige naam in.');
+                    setErrorMessage('Vul eerst jouw volledige naam in.');
                     return;
                   }
                   setShowPopup(true);
@@ -435,7 +458,6 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* GESELECTEERDE PARTNERS SECTIE */}
           {partners.length > 0 && (
             <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10">
               <div className="space-y-3 max-w-xl mx-auto">
@@ -475,13 +497,12 @@ export default function StepFourConfirmation({
         </div>
       </div>
 
-      {/* POP-UP TOESTEMMING CONTACTGEGEVENS */}
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl space-y-6 text-left relative">
             <h3 className="text-2xl font-serif text-dark">Toestemming contactgegevens</h3>
             <p className="text-sm text-muted leading-relaxed">
-              Wilt u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u kunnen opnemen om de mogelijkheden te bespreken?
+              Wil je dat we jouw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met je kunnen opnemen om de mogelijkheden te bespreken?
             </p>
             <div className="space-y-3 pt-1">
               <label className="flex items-start gap-3 cursor-pointer p-4 rounded-xl bg-[#F9F6F0] border border-dark/10 hover:border-dark/20 transition">

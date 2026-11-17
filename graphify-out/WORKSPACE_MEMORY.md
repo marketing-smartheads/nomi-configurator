@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T16:09:30.487Z
+Generated: 2026-11-17T18:11:37.110Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T16:09:28.611Z
+- Last activity: 2026-11-17T18:11:33.943Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepThreeVisuals.tsx (10), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (15), components/ConfiguratorScreen.tsx (12), components/configurator/StepThreeVisuals.tsx (9), components/configurator/StepOnewoning.tsx (2)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, .gitignore
 ## Current Workspace
 - Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 76
@@ -37,11 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 574 lines | 26601 chars | hash 0d835bb6205d
-  Last snapshot: 2026-11-17T16:09:28.611Z
+- components/configurator/StepFourConfirmation.tsx | 595 lines | 27086 chars | hash 5bfa6afb5a26
+  Last snapshot: 2026-11-17T18:11:33.943Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- components/ConfiguratorScreen.tsx | 131 lines | 5152 chars | hash 52285c4723da
+  Last snapshot: 2026-11-17T17:40:22.102Z
+  Preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
 - components/configurator/StepThreeVisuals.tsx | 500 lines | 20276 chars | hash ec1f4947d2eb
   Last snapshot: 2026-11-17T15:39:56.569Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -51,9 +54,6 @@ Structured manifest: workspace.json
 - components/configurator/StepOnewoning.tsx | 163 lines | 7027 chars | hash 83a38aaa8934
   Last snapshot: 2026-11-17T10:34:00.860Z
   Preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- components/ConfiguratorScreen.tsx | 269 lines | 10525 chars | hash 0fe1a42f9892
-  Last snapshot: 2026-11-17T08:41:27.751Z
-  Preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
 - app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
   Last snapshot: 2026-11-16T18:41:14.101Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
@@ -65,119 +65,119 @@ Structured manifest: workspace.json
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
 
 ## Recent Changes
-### 2026-11-17T16:09:28.611Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 433: inserted 142 lines.
-- Before: 433 lines | 19,410 chars | hash 0f78a46219a5 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 574 lines | 26,601 chars | hash 0d835bb6205d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Current fragment: "</button> / </div> / </div> / {/* GESELECTEERDE PARTNERS SECTIE */} / {partners.length > 0 && ( / <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-10"> / <div cl..."
+### 2026-11-17T18:11:33.943Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 566: inserted 30 lines.
+- Before: 566 lines | 26,025 chars | hash 9ab0752733da | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 595 lines | 27,086 chars | hash 5bfa6afb5a26 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Current fragment: "ame="mt-0.5 w-4 h-4 accent-dark rounded" / /> / <span className="text-[11px] font-bold text-primary uppercase tracking-wide leading-snug"> / {waarschuwingTekst} / </span> / </la..."
 
-### 2026-11-17T16:09:17.959Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 69: replaced 420 lines with 365 lines.
-- Before: 488 lines | 22,539 chars | hash 87a197527ab4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 433 lines | 19,410 chars | hash 0f78a46219a5 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "try { / const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeling')) : ''; / if (rawInd) { / if (raw..."
-- Current fragment: "let parsedIndelingObj: any = null; / try { / const rawInd = typeof window !== 'undefined' ? (localStorage.getItem('selected_indeling') || sessionStorage.getItem('selected_indeli..."
-
-### 2026-11-17T15:59:26.732Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: inserted 488 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 488 lines | 22,539 chars | hash 87a197527ab4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Current fragment: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from..."
-
-### 2026-11-17T15:55:29.353Z | saved | components/configurator/StepFourConfirmation.tsx
+### 2026-11-17T17:40:22.102Z | saved | components/ConfiguratorScreen.tsx
 - Summary: Saved without a textual diff.
-- Before: 488 lines | 22,537 chars | hash 80363421aa66 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 488 lines | 22,537 chars | hash 80363421aa66 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Before: 131 lines | 5,152 chars | hash 52285c4723da | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
+- After: 131 lines | 5,152 chars | hash 52285c4723da | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
 
-### 2026-11-17T15:39:56.569Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 445: replaced 1 line with 1 line.
-- Before: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 500 lines | 20,276 chars | hash ec1f4947d2eb | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "stijl"
-- Current fragment: "indeling"
+### 2026-11-17T17:36:47.963Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 64: replaced 443 lines with 436 lines.
+- Before: 602 lines | 28,156 chars | hash 1204167a697a | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 595 lines | 27,642 chars | hash 7b09db57b537 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray(rawWoningTypen) ? rawWoningTypen : rawWoningTypen?.nodes || []..."
+- Current fragment: "|| {}; / const rawWoningTypen = data?.woningTypen || data?.woning_typen || []; / const woningTypenLijst = Array.isArray(rawWoningTypen) / ? rawWoningTypen / : (rawWoningTypen?.n..."
 
-### 2026-11-17T15:39:36.502Z | saved | components/configurator/StepThreeVisuals.tsx
+### 2026-11-17T17:33:48.119Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 94: replaced 24 lines with 25 lines.
+- Before: 601 lines | 28,022 chars | hash b1f24751b3f3 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 602 lines | 28,156 chars | hash 1204167a697a | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "const matchendeRijen = woningTypenLijst.filter((w: any) => { / const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, ''); / const indTitel = (w?.in..."
+- Current fragment: "// Veilige filter controle zodat .filter() nooit op undefined kan crashen / const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => { / cons..."
+
+### 2026-11-17T17:29:46.178Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 6: replaced 2 lines with 2 lines.
+- Before: 131 lines | 5,126 chars | hash af5d7e4cff12 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './StepTwoDesign'; / import StepThreeVis..."
+- After: 131 lines | 5,152 chars | hash 52285c4723da | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
+- Previous fragment: "StepTwoDesign'; / import StepThreeVisuals from '."
+- Current fragment: "configurator/StepTwoDesign'; / import StepThreeVisuals from './configurator"
+
+### 2026-11-17T17:27:41.822Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 1: replaced 598 lines with 128 lines.
+- Before: 601 lines | 27,476 chars | hash c601ec4cc066 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 131 lines | 5,126 chars | hash af5d7e4cff12 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './StepTwoDesign'; / import StepThreeVis..."
+- Previous fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
+- Current fragment: "ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './StepTwoDesi..."
+
+### 2026-11-17T17:23:28.924Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 30: replaced 118 lines with 120 lines.
+- Before: 165 lines | 6,527 chars | hash 4ba5250ee896 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign..."
+- After: 167 lines | 6,688 chars | hash 9d21b31f7f64 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign..."
+- Previous fragment: "// Onthoud de actieve stap bij een refresh via sessionStorage (valt terug op stap 1) / const [currentStep, setCurrentStep] = useState<number>(() => { / if (typeof window !== 'un..."
+- Current fragment: "const data = configuratorData?.configurator || configuratorData; / const rawStappen = data?.stappenBalk || data?.stappen_balk || []; / const stappenBalk = Array.isArray(rawStapp..."
+
+### 2026-11-17T17:20:19.369Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 14: replaced 19 lines with 34 lines.
+- Before: 150 lines | 5,810 chars | hash c18cfa19aec8 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign..."
+- After: 165 lines | 6,527 chars | hash 4ba5250ee896 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign..."
+- Previous fragment: "} / export default function ConfiguratorScreen({ / configuratorData, / initialWoningType, / initialDesignPakket, / }: ConfiguratorScreenProps) { / // Onthoud de actieve stap bij..."
+- Current fragment: "woningType?: string | null; / setWoningType?: (type: string | null) => void; / designPakket?: string | null; / setDesignPakket?: (pakket: string | null) => void; / [key: string]..."
+
+### 2026-11-17T17:18:43.605Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 5: replaced 3 lines with 3 lines.
+- Before: 150 lines | 5,831 chars | hash d09aaa275840 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juiste bestandsnaam / import S..."
+- After: 150 lines | 5,810 chars | hash c18cfa19aec8 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign..."
+- Previous fragment: "// Let op de kleine 'w' of juiste bestandsnaam / import StepTwoDesign from './StepTwoDesign'; / import StepThreeVisuals from '."
+- Current fragment: "import StepTwoDesign from './configurator/StepTwoDesign'; / import StepThreeVisuals from './configurator"
+
+### 2026-11-17T17:16:09.470Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 5: replaced 1 line with 1 line.
+- Before: 150 lines | 5,784 chars | hash c6b183ef0fdb | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOneWoning'; / import StepTwoDesign from './StepTwoDesign'; / import S..."
+- After: 150 lines | 5,831 chars | hash d09aaa275840 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juiste bestandsnaam / import S..."
+- Previous fragment: "Woning';"
+- Current fragment: "woning'; // Let op de kleine 'w' of juiste bestandsnaam"
+
+### 2026-11-17T17:15:59.127Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 1: replaced 147 lines with 598 lines.
+- Before: 150 lines | 5,831 chars | hash d09aaa275840 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juiste bestandsnaam / import S..."
+- After: 601 lines | 28,022 chars | hash b1f24751b3f3 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juis..."
+- Current fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
+
+### 2026-11-17T17:15:54.240Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 1: replaced 598 lines with 147 lines.
+- Before: 601 lines | 28,022 chars | hash b1f24751b3f3 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 150 lines | 5,831 chars | hash d09aaa275840 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juiste bestandsnaam / import S..."
+- Previous fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
+- Current fragment: "ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; // Let op de kleine 'w' of juis..."
+
+### 2026-11-17T17:11:31.082Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 166: replaced 344 lines with 346 lines.
+- Before: 599 lines | 27,839 chars | hash dabcea409f0f | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 601 lines | 28,022 chars | hash b1f24751b3f3 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "uw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met u op om u te informeren over de mogelijkheden.'; / const rawPartners = storedWoning?.partnerLijst..."
+- Current fragment: "jouw keuze en werken volgens onze richtlijnen. Zij nemen vrijblijvend contact met je op om je te informeren over de mogelijkheden.'; / const rawPartners = storedWoning?.partnerL..."
+
+### 2026-11-17T17:02:30.993Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 1: replaced 598 lines with 147 lines.
+- Before: 601 lines | 28,076 chars | hash c7c4aa266ff2 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 150 lines | 5,784 chars | hash c6b183ef0fdb | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOneWoning'; / import StepTwoDesign from './StepTwoDesign'; / import S..."
+- Previous fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
+- Current fragment: "ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import StepOneWoning from './configurator/StepOneWoning'; / import StepTwoDesign from './..."
+
+### 2026-11-17T17:01:03.382Z | saved | components/ConfiguratorScreen.tsx
 - Summary: Saved without a textual diff.
-- Before: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 500 lines | 20,273 chars | hash a727505f7d29 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-
-### 2026-11-17T10:43:18.403Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 282: inserted 29 lines.
-- Before: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 500 lines | 20,272 chars | hash 4b0a002ce7da | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Current fragment: "Logo's boven de visuals/content */} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Image / src..."
-
-### 2026-11-17T10:43:09.499Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 129: inserted 29 lines.
-- Before: 273 lines | 12,360 chars | hash b4fa3adfccd3 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 301 lines | 13,253 chars | hash 6d55e2e61897 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Current fragment: "{/* Logo's boven de pakketblokken */} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Image / s..."
-
-### 2026-11-17T10:39:04.036Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Saved without a textual diff.
-- Before: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-
-### 2026-11-17T10:38:49.276Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 1: replaced 116 lines with 117 lines.
-- Before: 272 lines | 12,314 chars | hash 19f36b2caade | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, / configuratorData, / designPakket,..."
-- After: 273 lines | 12,360 chars | hash b4fa3adfccd3 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTi..."
-- Current fragment: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default..."
-
-### 2026-11-17T10:34:00.860Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 73: replaced 13 lines with 13 lines.
-- Before: 163 lines | 6,963 chars | hash 9a1b0f990d1f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- After: 163 lines | 7,027 chars | hash 83a38aaa8934 | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- Previous fragment: "*/} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Image / src="/assets/logo-nomi.svg" / alt="..."
-- Current fragment: "(Met de juiste assets uit public/assets) */} / <div className="flex items-center justify-center gap-6 sm:gap-8 py-2"> / <div className="relative h-8 sm:h-10 w-36 sm:w-44"> / <Im..."
-
-### 2026-11-17T10:17:55.518Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 285: replaced 104 lines with 105 lines.
-- Before: 478 lines | 22,695 chars | hash e80ca2817d48 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 479 lines | 22,786 chars | hash f4e57e90644a | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "Jouw contactgegevens voor de bevestiging</h3> / <div> / <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naa..."
-- Current fragment: "Uw contactgegevens voor de bevestiging</h3> / <div> / <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam..."
-
-### 2026-11-17T09:57:28.159Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 388: replaced 1 line with 1 line.
-- Before: 478 lines | 22,690 chars | hash af9ee2080d3c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 478 lines | 22,695 chars | hash e80ca2817d48 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "t u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u"
-- Current fragment: "je dat we jouw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met jouw"
-
-### 2026-11-17T09:54:47.357Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 285: replaced 1 line with 1 line.
-- Before: 478 lines | 22,688 chars | hash 414d48a175a2 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 478 lines | 22,690 chars | hash af9ee2080d3c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "U"
-- Current fragment: "Jou"
-
-### 2026-11-17T09:50:53.246Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 291: inserted 1 line.
-- Before: 472 lines | 19,375 chars | hash 660e876370f8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 472 lines | 19,377 chars | hash 46967eb226c9 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Current fragment: "jo"
+- Before: 601 lines | 28,076 chars | hash c7c4aa266ff2 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 601 lines | 28,076 chars | hash c7c4aa266ff2 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (10 tracked changes)
-- components/configurator/StepOnewoning.tsx (7 tracked changes)
-- app/api/vouchers/route.ts (3 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (15 tracked changes)
+- components/ConfiguratorScreen.tsx (12 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (9 tracked changes)
+- components/configurator/StepOnewoning.tsx (2 tracked changes)
 - components/configurator/StepTwoDesign.tsx (2 tracked changes)
-- components/ConfiguratorScreen.tsx (2 tracked changes)
-- app/api/confirm/route.ts (1 tracked changes)
-- app/privacy/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 f707ef2 sentence adjusted
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-17 802d6ef feat(step4): add selected style hero card and floorplan layout card above confirmation form
+- Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -185,8 +185,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- f707ef2 by Bas van Dooremalen on 2026-11-17
-  sentence adjusted
+- 802d6ef by Bas van Dooremalen on 2026-11-17
+  feat(step4): add selected style hero card and floorplan layout card above confirmation form
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
