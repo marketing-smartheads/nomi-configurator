@@ -1,3 +1,4 @@
+// components/StepTwoDesign.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -113,7 +114,7 @@ export default function StepTwoDesign({
     <div className="space-y-12">
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
-          {`${stepTitle}`}
+          {stepTitle || 'Designpakket'}
         </p>
         <h2 className="text-4xl sm:text-5xl font-serif text-dark font-normal">
           {titel}
