@@ -375,8 +375,8 @@ export default function StepFourConfirmation({
                   </div>
                 </div>
 
-                <div className="pt-3">
-                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase pb-3">
+                <div className="py-6 sm:py-8 space-y-2 flex-1 flex flex-col justify-center">
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                     GEKOZEN INDELING
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-serif text-dark">
@@ -389,7 +389,7 @@ export default function StepFourConfirmation({
               </div>
 
               <div className="bg-[#1A1A1A] text-white rounded-[2rem] px-7 py-8 shadow-lg flex flex-col justify-center flex-1">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase pb-3">
                   JOUW SAMENVATTING
                 </span>
                  <h3 className="text-2xl sm:text-3xl font-serif text-white">
