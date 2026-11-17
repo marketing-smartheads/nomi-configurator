@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T15:39:58.363Z",
-  "generatedAtEpochMs": 1794929998363,
+  "generatedAt": "2026-11-17T15:55:31.921Z",
+  "generatedAtEpochMs": 1794930931921,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepThreeVisuals.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepOnewoning.tsx",
       "app/api/vouchers/route.ts",
       "components/configurator/StepTwoDesign.tsx",
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T15:39:56.569Z",
+    "lastActivityAt": "2026-11-17T15:55:29.353Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -616,6 +616,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1794930929353,
+      "lineCount": 488,
+      "charCount": 22537,
+      "hash": "80363421aa66",
+      "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+    },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "updatedAt": 1794929996569,
@@ -639,14 +647,6 @@
       "charCount": 7027,
       "hash": "83a38aaa8934",
       "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794910675518,
-      "lineCount": 479,
-      "charCount": 22786,
-      "hash": "f4e57e90644a",
-      "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -682,6 +682,31 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-11-17T15:55:29.353Z",
+      "recordedAtEpochMs": 1794930929353,
+      "before": {
+        "kind": "text",
+        "lineCount": 488,
+        "charCount": 22537,
+        "hash": "80363421aa66",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794930929352
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 488,
+        "charCount": 22537,
+        "hash": "80363421aa66",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794930929353
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepThreeVisuals.tsx",
@@ -1115,38 +1140,6 @@
         "beforeFragment": "Uw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj?....",
         "afterFragment": "Jouw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 270: removed 1 line.",
-      "recordedAt": "2026-11-17T09:16:28.219Z",
-      "recordedAtEpochMs": 1794906988219,
-      "before": {
-        "kind": "text",
-        "lineCount": 472,
-        "charCount": 19362,
-        "hash": "faf34aeee9fa",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1794906988219
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 472,
-        "charCount": 19353,
-        "hash": "88f4cd37a120",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1794906988219
-      },
-      "diff": {
-        "lineStart": 270,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 270: removed 1 line.",
-        "beforeFragment": "Stap 3 ·",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1186,20 +1179,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 d9060f1 feat(steps): add nomi and thomas de gier brand logos to step 2 and step 3 headers",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-17 b444fef changed sentences",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- d9060f1 by Bas van Dooremalen on 2026-11-17\n  feat(steps): add nomi and thomas de gier brand logos to step 2 and step 3 headers\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- b444fef by Bas van Dooremalen on 2026-11-17\n  changed sentences\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
