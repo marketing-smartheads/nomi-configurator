@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T08:14:37.249Z",
-  "generatedAtEpochMs": 1794903277249,
+  "generatedAt": "2026-11-17T08:19:43.642Z",
+  "generatedAtEpochMs": 1794903583642,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T08:14:34.893Z",
+    "lastActivityAt": "2026-11-17T08:19:41.216Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794903274893,
-      "lineCount": 192,
-      "charCount": 8611,
-      "hash": "4d3d976fb70f",
+      "updatedAt": 1794903581216,
+      "lineCount": 193,
+      "charCount": 8742,
+      "hash": "53efe51703bc",
       "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
     },
     {
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 46: replaced 75 lines with 76 lines.",
+      "recordedAt": "2026-11-17T08:19:41.216Z",
+      "recordedAtEpochMs": 1794903581216,
+      "before": {
+        "kind": "text",
+        "lineCount": 192,
+        "charCount": 8611,
+        "hash": "4d3d976fb70f",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794903581216
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 193,
+        "charCount": 8742,
+        "hash": "53efe51703bc",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794903581216
+      },
+      "diff": {
+        "lineStart": 46,
+        "removedLines": 75,
+        "addedLines": 76,
+        "summary": "Line 46: replaced 75 lines with 76 lines.",
+        "beforeFragment": "Decoratieve achtergrond elementen links en rechts */} / <div className=\"absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 opacity-20 pointer-events-none select-none\"> / <Ima...",
+        "afterFragment": "Achtergrondpatronen strak tegen de randen */} / <div className=\"absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden fl..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1129,38 +1161,6 @@
         "beforeFragment": "Nomi Utrecht'; / const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'info@nomi-configurator.nl'; / c...",
         "afterFragment": "Aanhuis Spijk'; / const PARTNER_EMAIL = primairePartner.partnerEMail || primairePartner.partner_email || process.env.NEXT_PUBLIC_PARTNER_EMAIL || 'tobias@aanhuis-spijk.nl'; / //..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 128: replaced 264 lines with 271 lines.",
-      "recordedAt": "2026-11-16T15:39:57.815Z",
-      "recordedAtEpochMs": 1794843597815,
-      "before": {
-        "kind": "text",
-        "lineCount": 399,
-        "charCount": 20008,
-        "hash": "65733ad4b8cc",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794843597815
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 406,
-        "charCount": 20526,
-        "hash": "3eb9a9a89ad1",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794843597815
-      },
-      "diff": {
-        "lineStart": 128,
-        "removedLines": 264,
-        "addedLines": 271,
-        "summary": "Line 128: replaced 264 lines with 271 lines.",
-        "beforeFragment": "// Dynamische partner koptekst en omschrijving uit de bevestiging_stap groep / const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_part...",
-        "afterFragment": "const partnersSectieTitel = / bevData?.geselecteerdePartnersTitel || / bevData?.geselecteerde_partners_titel || / 'Geselecteerde partners'; / const partnersSectieOmschrijving =..."
-      }
     }
   ],
   "hotFiles": [
@@ -1173,11 +1173,11 @@
       "count": 10
     },
     {
-      "filePath": "app/api/vouchers/route.ts",
-      "count": 3
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 4
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
+      "filePath": "app/api/vouchers/route.ts",
       "count": 3
     },
     {
@@ -1200,23 +1200,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-16 c44546b fix(privacy): accurately document CMS data storage for customer details and session persistence",
-    "statusSummary": "4 modifieds, 3 untrackeds",
-    "changedFileCount": 7,
+    "headSummary": "2026-11-17 3087204 feat(step1): add decorative background svg patterns on left and right sides and place branding logos above layout cards",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md",
-      "?? \"public/assets/Nomi achtergrond element patroon.svg\"",
-      "?? \"public/assets/Patroon logo Thomas de Gier achtergrond.svg\"",
-      "?? public/assets/X.svg"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c44546b by Bas van Dooremalen on 2026-11-16\n  fix(privacy): accurately document CMS data storage for customer details and session persistence\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 3087204 by Bas van Dooremalen on 2026-11-17\n  feat(step1): add decorative background svg patterns on left and right sides and place branding logos above layout cards\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

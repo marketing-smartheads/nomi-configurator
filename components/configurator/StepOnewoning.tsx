@@ -43,12 +43,12 @@ export default function StepOneWoning({
   if (!woningType && woningTypenLijst.length > 0) {
     return (
       <div className="relative min-h-[400px] flex flex-col justify-center items-center overflow-hidden">
-        {/* Decoratieve achtergrond elementen links en rechts */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 opacity-20 pointer-events-none select-none">
-          <Image src="/assets/Nomi achtergrond element patroon.svg" alt="" width={200} height={600} className="w-full h-auto object-contain" />
+        {/* Achtergrondpatronen strak tegen de randen */}
+        <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center">
+          <Image src="/assets/Nomi achtergrond element patroon.svg" alt="" width={400} height={1200} className="w-full h-full object-cover object-left" />
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-48 opacity-20 pointer-events-none select-none">
-          <Image src="/assets/Patroon logo Thomas de Gier achtergrond.svg" alt="" width={200} height={600} className="w-full h-auto object-contain" />
+        <div className="absolute right-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center">
+          <Image src="/assets/Patroon logo Thomas de Gier achtergrond.svg" alt="" width={400} height={1200} className="w-full h-full object-cover object-right" />
         </div>
 
         <p className="text-xs text-muted tracking-widest uppercase animate-pulse z-10">
@@ -59,25 +59,26 @@ export default function StepOneWoning({
   }
 
   return (
-    <div className="relative min-h-screen py-12 px-4 sm:px-8 overflow-hidden flex flex-col justify-between">
-      {/* 1. Decoratieve achtergrondpatronen links en rechts over de hele configurator */}
-      <div className="absolute left-0 top-0 bottom-0 w-36 sm:w-56 md:w-72 opacity-15 pointer-events-none select-none z-0 flex items-center overflow-hidden">
+    <div className="relative min-h-screen py-16 px-4 sm:px-8 overflow-hidden flex flex-col justify-between">
+      
+      {/* 1. Decoratieve achtergrondpatronen strak tegen de linker- en rechterrand van de browser */}
+      <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-72 md:w-96 opacity-20 pointer-events-none select-none z-0 overflow-hidden flex items-center">
         <Image 
           src="/assets/Nomi achtergrond element patroon.svg" 
           alt="Nomi patroon" 
-          width={300} 
-          height={1000} 
-          className="w-full h-auto object-cover" 
+          width={500} 
+          height={1400} 
+          className="w-full h-full object-cover object-left" 
         />
       </div>
 
-      <div className="absolute right-0 top-0 bottom-0 w-36 sm:w-56 md:w-72 opacity-15 pointer-events-none select-none z-0 flex items-center overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-0 w-48 sm:w-72 md:w-96 opacity-20 pointer-events-none select-none z-0 overflow-hidden flex items-center">
         <Image 
           src="/assets/Patroon logo Thomas de Gier achtergrond.svg" 
           alt="Thomas de Gier patroon" 
-          width={300} 
-          height={1000} 
-          className="w-full h-auto object-cover" 
+          width={500} 
+          height={1400} 
+          className="w-full h-full object-cover object-right" 
         />
       </div>
 
@@ -99,9 +100,9 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* 2. Logo's boven de indelingsblokken (NOMI x Thomas de Gier) */}
-        <div className="flex items-center justify-center gap-6 py-2">
-          <div className="relative h-6 sm:h-7 w-28 sm:w-32">
+        {/* 2. Logo's vergroot en strak uitgelijnd met de X ertussen */}
+        <div className="flex items-center justify-center gap-6 sm:gap-8 py-4">
+          <div className="relative h-8 sm:h-10 w-36 sm:w-44">
             <Image 
               src="/assets/logo-nomi.svg" 
               alt="Nomi Logo" 
@@ -109,7 +110,7 @@ export default function StepOneWoning({
               className="object-contain object-right"
             />
           </div>
-          <div className="relative h-3 w-3 opacity-50">
+          <div className="relative h-4 w-4 opacity-60">
             <Image 
               src="/assets/x-symbol.svg" 
               alt="X" 
@@ -117,7 +118,7 @@ export default function StepOneWoning({
               className="object-contain"
             />
           </div>
-          <div className="relative h-6 sm:h-7 w-32 sm:w-36">
+          <div className="relative h-8 sm:h-10 w-40 sm:w-48">
             <Image 
               src="/assets/logo-tdg.svg" 
               alt="Thomas de Gier Logo" 
