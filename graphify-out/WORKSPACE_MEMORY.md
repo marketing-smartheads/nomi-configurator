@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T15:55:31.921Z
+Generated: 2026-11-17T15:59:28.524Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T15:55:29.353Z
+- Last activity: 2026-11-17T15:59:26.732Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepFourConfirmation.tsx
 - Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepThreeVisuals.tsx (10), components/configurator/StepOnewoning.tsx (7), app/api/vouchers/route.ts (3)
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepFourConfirmation.tsx | 488 lines | 22537 chars | hash 80363421aa66
-  Last snapshot: 2026-11-17T15:55:29.353Z
+- components/configurator/StepFourConfirmation.tsx | 488 lines | 22539 chars | hash 87a197527ab4
+  Last snapshot: 2026-11-17T15:59:26.732Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepThreeVisuals.tsx | 500 lines | 20276 chars | hash ec1f4947d2eb
   Last snapshot: 2026-11-17T15:39:56.569Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "// components/CookieBanner.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { LiaCookieSolid } from 'react-icons/lia'; / // Hulpfunctie om een echte cookie te zetten / const setCookie = (nam..."
 
 ## Recent Changes
+### 2026-11-17T15:59:26.732Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 1: inserted 488 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 488 lines | 22,539 chars | hash 87a197527ab4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Current fragment: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from..."
+
 ### 2026-11-17T15:55:29.353Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Saved without a textual diff.
 - Before: 488 lines | 22,537 chars | hash 80363421aa66 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -152,13 +158,6 @@ Structured manifest: workspace.json
 - After: 472 lines | 19,373 chars | hash 066bb04109fc | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
 - Current fragment: "jo"
 
-### 2026-11-17T09:33:38.591Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 82: replaced 189 lines with 189 lines.
-- Before: 472 lines | 19,353 chars | hash 88f4cd37a120 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 472 lines | 19,371 chars | hash 6360f6334ef8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Previous fragment: "Uw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj?...."
-- Current fragment: "Jouw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj..."
-
 
 ## Hot Files
 - components/configurator/StepFourConfirmation.tsx (11 tracked changes)
@@ -172,7 +171,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 b444fef changed sentences
+- HEAD: 2026-11-17 077a5a8 style(step4): remove info bar and add brand logos under description in confirmation step
 - Working tree summary: 1 modified
 - M components/configurator/StepFourConfirmation.tsx
 

@@ -291,7 +291,7 @@ export default function StepFourConfirmation({
             )}
 
             <div className="space-y-4 text-left border-t border-b border-dark/10 py-8">
-              <h3 className="font-serif text-dark text-base">Uw contactgegevens voor de bevestiging</h3>
+              <h3 className="font-serif text-dark text-base">Jouw contactgegevens voor de bevestiging</h3>
               <div>
                 <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam / Familienaam *</label>
                 <input

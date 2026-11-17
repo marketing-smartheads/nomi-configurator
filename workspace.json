@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T15:55:31.921Z",
-  "generatedAtEpochMs": 1794930931921,
+  "generatedAt": "2026-11-17T15:59:28.524Z",
+  "generatedAtEpochMs": 1794931168524,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T15:55:29.353Z",
+    "lastActivityAt": "2026-11-17T15:59:26.732Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -618,10 +618,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794930929353,
+      "updatedAt": 1794931166732,
       "lineCount": 488,
-      "charCount": 22537,
-      "hash": "80363421aa66",
+      "charCount": 22539,
+      "hash": "87a197527ab4",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 1: inserted 488 lines.",
+      "recordedAt": "2026-11-17T15:59:26.732Z",
+      "recordedAtEpochMs": 1794931166732,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1794931166732
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 488,
+        "charCount": 22539,
+        "hash": "87a197527ab4",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794931166732
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 488,
+        "summary": "Line 1: inserted 488 lines.",
+        "beforeFragment": "",
+        "afterFragment": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1108,38 +1140,6 @@
         "beforeFragment": "",
         "afterFragment": "jo"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepThreeVisuals.tsx",
-      "toPath": "",
-      "summary": "Line 82: replaced 189 lines with 189 lines.",
-      "recordedAt": "2026-11-17T09:33:38.591Z",
-      "recordedAtEpochMs": 1794908018591,
-      "before": {
-        "kind": "text",
-        "lineCount": 472,
-        "charCount": 19353,
-        "hash": "88f4cd37a120",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1794908018591
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 472,
-        "charCount": 19371,
-        "hash": "6360f6334ef8",
-        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
-        "updatedAt": 1794908018591
-      },
-      "diff": {
-        "lineStart": 82,
-        "removedLines": 189,
-        "addedLines": 189,
-        "summary": "Line 82: replaced 189 lines with 189 lines.",
-        "beforeFragment": "Uw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj?....",
-        "afterFragment": "Jouw gekozen stijl: ${pakketTitel}`; / const stapOmschrijving = stappenBalk[2]?.stapOmschrijving || stappenBalk[2]?.stap_omschrijving || ''; / const rawVisuals = huidigPakketObj..."
-      }
     }
   ],
   "hotFiles": [
@@ -1179,7 +1179,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 b444fef changed sentences",
+    "headSummary": "2026-11-17 077a5a8 style(step4): remove info bar and add brand logos under description in confirmation step",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
