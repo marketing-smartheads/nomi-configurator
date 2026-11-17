@@ -144,8 +144,10 @@ export default function StepFourConfirmation({
     visualsAantal = rawVisuals.edges.length;
   }
 
-  // 1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS
+  // Waterdichte ophaalmethode inclusief de ontdekte typefout 'pakketAabeelding' / 'pakket_aabeelding'
   const rawPakketAfb = 
+    storedPakket?.pakketAabeelding || 
+    storedPakket?.pakket_aabeelding || 
     storedPakket?.pakketAfbeelding || 
     storedPakket?.pakket_afbeelding || 
     storedPakket?.pakketAfbeeldingen || 
@@ -156,7 +158,7 @@ export default function StepFourConfirmation({
     ? rawPakketAfb 
     : (rawPakketAfb?.nodes || rawPakketAfb?.edges || []);
 
-  // 2. Strikte ophaalmethode voor materialenlijst
+  // Ophaalmethode voor materialenlijst
   const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || [];
   const materialenLijst = Array.isArray(rawMaterialen) ? rawMaterialen : (rawMaterialen?.nodes || rawMaterialen?.edges || []);
   const materialenAantal = materialenLijst.length > 0 ? materialenLijst.length : 5;
@@ -406,7 +408,7 @@ export default function StepFourConfirmation({
             </div>
           </div>
 
-          {/* MOODBOARD & MATERIALEN BLOK (Exact volgens de opmaak van Stap 3) */}
+          {/* MOODBOARD & MATERIALEN BLOK */}
           <div className="max-w-4xl mx-auto mb-14">
             <div className="bg-white rounded-[2.5rem] p-6 sm:p-12 shadow-sm border border-dark/5 space-y-8">
               <div>
@@ -417,7 +419,7 @@ export default function StepFourConfirmation({
                 <p className="text-xs sm:text-sm text-muted mt-1">De materialen en texturen waaruit jouw ontwerp is opgebouwd.</p>
               </div>
 
-              {/* Moodboard foto's (Pakket Afbeelding repeater) */}
+              {/* Moodboard foto's (Pakket Afbeelding / pakketAabeelding repeater) */}
               {pakketAfbeeldingen.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pb-6 border-b border-[#F0EBE1]">
                   {pakketAfbeeldingen.map((item: any, imgIdx: number) => {
@@ -440,7 +442,7 @@ export default function StepFourConfirmation({
                 </div>
               )}
 
-              {/* Materialen lijst exact in de stijl van Stap 3 */}
+              {/* Materialen lijst */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-12 pt-2">
                 {materialenLijst.length > 0 ? (
                   materialenLijst.map((mat: any, mIdx: number) => {

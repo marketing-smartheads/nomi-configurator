@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T20:19:37.562Z",
-  "generatedAtEpochMs": 1794946777562,
+  "generatedAt": "2026-11-17T20:30:33.793Z",
+  "generatedAtEpochMs": 1794947433793,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -602,7 +602,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T20:19:35.772Z",
+    "lastActivityAt": "2026-11-17T20:30:31.248Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -615,10 +615,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794946775772,
-      "lineCount": 702,
-      "charCount": 32832,
-      "hash": "be07876351fd",
+      "updatedAt": 1794947431248,
+      "lineCount": 704,
+      "charCount": 32844,
+      "hash": "dcab45a1eeae",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -679,6 +679,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 147: replaced 297 lines with 299 lines.",
+      "recordedAt": "2026-11-17T20:30:31.248Z",
+      "recordedAtEpochMs": 1794947431248,
+      "before": {
+        "kind": "text",
+        "lineCount": 702,
+        "charCount": 32832,
+        "hash": "be07876351fd",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794947431248
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 704,
+        "charCount": 32844,
+        "hash": "dcab45a1eeae",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794947431248
+      },
+      "diff": {
+        "lineStart": 147,
+        "removedLines": 297,
+        "addedLines": 299,
+        "summary": "Line 147: replaced 297 lines with 299 lines.",
+        "beforeFragment": "1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS / const rawPakketAfb = / storedPakket?.pakketAfbeelding || / storedPak...",
+        "afterFragment": "Waterdichte ophaalmethode inclusief de ontdekte typefout 'pakketAabeelding' / 'pakket_aabeelding' / const rawPakketAfb = / storedPakket?.pakketAabeelding || / storedPakket?.pakk..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1105,38 +1137,6 @@
         "beforeFragment": "sm:text-sm",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 409: removed 1 line.",
-      "recordedAt": "2026-11-17T19:33:31.017Z",
-      "recordedAtEpochMs": 1794944011017,
-      "before": {
-        "kind": "text",
-        "lineCount": 679,
-        "charCount": 32759,
-        "hash": "8bc6eb6e3b80",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944011017
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 679,
-        "charCount": 32748,
-        "hash": "85eec528e622",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944011017
-      },
-      "diff": {
-        "lineStart": 409,
-        "removedLines": 1,
-        "addedLines": 0,
-        "summary": "Line 409: removed 1 line.",
-        "beforeFragment": "sm:text-sm",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1156,7 +1156,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 bd6cfe8 fix(step4): correct graphql field resolution for pakketAfbeeldingen and material titles",
+    "headSummary": "2026-11-17 ff8d08e fix(step4): resolve pakketAfbeelding moodboard gallery and ensure correct material properties",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
@@ -1166,7 +1166,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 6908b1d by Bas van Dooremalen on 2026-11-17\n  some style improvements\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ff8d08e by Bas van Dooremalen on 2026-11-17\n  fix(step4): resolve pakketAfbeelding moodboard gallery and ensure correct material properties\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
