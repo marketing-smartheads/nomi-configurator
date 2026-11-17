@@ -93,7 +93,6 @@ export default function StepFourConfirmation({
   const normIndeling = (opgeslagenIndeling || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const normPakket = (actiefPakket || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // 100% veilige array check om de filter crash definitief te voorkomen
   const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => {
     if (!w) return false;
     const naam = (w?.typeNaam || w?.typenaam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -380,11 +379,12 @@ export default function StepFourConfirmation({
                 </div>
               </div>
 
+              {/* Aangepast: "JOUW SAMENVATTING" heeft nu font-serif en de tekst eronder is wit */}
               <div className="bg-[#1A1A1A] text-white rounded-[2rem] p-6 sm:p-7 shadow-lg space-y-2 shrink-0">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase font-serif">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-serif">
+                <p className="text-xs sm:text-sm text-white leading-relaxed font-serif">
                   1 indeling · 1 stijl · {visualsAantal} ruimtes gevisualiseerd · {materialenAantal} materialen
                 </p>
               </div>
