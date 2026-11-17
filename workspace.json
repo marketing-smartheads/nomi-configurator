@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T19:14:13.694Z",
-  "generatedAtEpochMs": 1794942853694,
+  "generatedAt": "2026-11-17T19:21:55.898Z",
+  "generatedAtEpochMs": 1794943315898,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -25,7 +25,6 @@
       "components/configurator/StepFourConfirmation.tsx",
       "components/ConfiguratorScreen.tsx",
       "components/configurator/StepThreeVisuals.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       "components/LoginScreen.tsx",
       ".gitignore",
       "AGENTS.md",
@@ -604,7 +603,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T19:14:11.647Z",
+    "lastActivityAt": "2026-11-17T19:21:54.125Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -617,10 +616,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794942851647,
+      "updatedAt": 1794943314125,
       "lineCount": 596,
       "charCount": 27168,
-      "hash": "16893f39cd93",
+      "hash": "96a4db7fafb8",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
@@ -681,6 +680,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 388: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-17T19:21:54.125Z",
+      "recordedAtEpochMs": 1794943314125,
+      "before": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "b912f97649b0",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943314125
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "96a4db7fafb8",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943314125
+      },
+      "diff": {
+        "lineStart": 388,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 388: replaced 1 line with 1 line.",
+        "beforeFragment": "1",
+        "afterFragment": "3"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 343: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-17T19:21:42.075Z",
+      "recordedAtEpochMs": 1794943302075,
+      "before": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "b7d1939d1640",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943302075
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "b912f97649b0",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943302075
+      },
+      "diff": {
+        "lineStart": 343,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 343: replaced 1 line with 1 line.",
+        "beforeFragment": "1",
+        "afterFragment": "3"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 374: replaced 3 lines with 3 lines.",
+      "recordedAt": "2026-11-17T19:19:09.265Z",
+      "recordedAtEpochMs": 1794943149265,
+      "before": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "16893f39cd93",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943149265
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 596,
+        "charCount": 27168,
+        "hash": "b7d1939d1640",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1794943149265
+      },
+      "diff": {
+        "lineStart": 374,
+        "removedLines": 3,
+        "addedLines": 3,
+        "summary": "Line 374: replaced 3 lines with 3 lines.",
+        "beforeFragment": "4 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h4",
+        "afterFragment": "3 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h3"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1036,101 +1131,12 @@
         "beforeFragment": "// 100% veilige array check om de filter crash definitief te voorkomen / const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => { / if (!w)...",
         "afterFragment": "const matchendeRijen = Array.isArray(woningTypenLijst) ? woningTypenLijst.filter((w: any) => { / if (!w) return false; / const naam = (w?.typeNaam || w?.typenaam || '').toLowerC..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 211: replaced 63 lines with 63 lines.",
-      "recordedAt": "2026-11-17T18:20:19.767Z",
-      "recordedAtEpochMs": 1794939619767,
-      "before": {
-        "kind": "text",
-        "lineCount": 280,
-        "charCount": 9936,
-        "hash": "7dfb1719bf66",
-        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
-        "updatedAt": 1794939619767
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 280,
-        "charCount": 9944,
-        "hash": "0900a7d9f405",
-        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
-        "updatedAt": 1794939619767
-      },
-      "diff": {
-        "lineStart": 211,
-        "removedLines": 63,
-        "addedLines": 63,
-        "summary": "Line 211: replaced 63 lines with 63 lines.",
-        "beforeFragment": "uw nieuwe<br />interieur / </h1> / <p className=\"text-sm text-dark\"> / Voer uw unieke vouchercode en e-mailadres in om uw interieurreis te starten. / </p> / </div> / <div classN...",
-        "afterFragment": "jouw nieuwe<br />interieur / </h1> / <p className=\"text-sm text-dark\"> / Voer jouw unieke vouchercode en e-mailadres in om jouw interieurreis te starten. / </p> / </div> / <div..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 566: inserted 30 lines.",
-      "recordedAt": "2026-11-17T18:11:33.943Z",
-      "recordedAtEpochMs": 1794939093943,
-      "before": {
-        "kind": "text",
-        "lineCount": 566,
-        "charCount": 26025,
-        "hash": "9ab0752733da",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794939093943
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 595,
-        "charCount": 27086,
-        "hash": "5bfa6afb5a26",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794939093943
-      },
-      "diff": {
-        "lineStart": 566,
-        "removedLines": 0,
-        "addedLines": 30,
-        "summary": "Line 566: inserted 30 lines.",
-        "beforeFragment": "",
-        "afterFragment": "ame=\"mt-0.5 w-4 h-4 accent-dark rounded\" / /> / <span className=\"text-[11px] font-bold text-primary uppercase tracking-wide leading-snug\"> / {waarschuwingTekst} / </span> / </la..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-17T17:40:22.102Z",
-      "recordedAtEpochMs": 1794937222102,
-      "before": {
-        "kind": "text",
-        "lineCount": 131,
-        "charCount": 5152,
-        "hash": "52285c4723da",
-        "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import...",
-        "updatedAt": 1794937222101
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 131,
-        "charCount": 5152,
-        "hash": "52285c4723da",
-        "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import...",
-        "updatedAt": 1794937222102
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 23
+      "count": 26
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1138,11 +1144,7 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 4
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -1152,7 +1154,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 c2a59d6 fix(step4): allow floorplan card natural height and let summary card fill remaining height via flex-1",
+    "headSummary": "2026-11-17 51ac895 some style changes",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
@@ -1165,7 +1167,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 87cf4b6 by Bas van Dooremalen on 2026-11-17\n  changed some styling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 51ac895 by Bas van Dooremalen on 2026-11-17\n  some style changes\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

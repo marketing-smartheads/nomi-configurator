@@ -340,7 +340,7 @@ export default function StepFourConfirmation({
                   {pakketNaam}
                 </h3>
                 {pakketOmschrijving && (
-                  <p className="text-xs text-muted leading-relaxed pt-1">
+                  <p className="text-xs text-muted leading-relaxed pt-3">
                     {pakketOmschrijving}
                   </p>
                 )}
@@ -371,9 +371,9 @@ export default function StepFourConfirmation({
                 </div>
 
                 <div className="pt-3">
-                  <h4 className="text-2xl sm:text-3xl font-serif text-dark">
+                  <h3 className="text-2xl sm:text-3xl font-serif text-dark">
                     {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''}
-                  </h4>
+                  </h3>
                   {metrage && (
                     <p className="text-xs text-muted mt-0.5">{metrage}</p>
                   )}
@@ -385,7 +385,7 @@ export default function StepFourConfirmation({
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
                   JOUW SAMENVATTING
                 </span>
-                <p className="text-xs text-white leading-relaxed pt-1">
+                <p className="text-xs text-white leading-relaxed pt-3">
                   1 indeling · 1 stijl · {visualsAantal} aanzichten gevisualiseerd · {materialenAantal} materialen
                 </p>
               </div>
