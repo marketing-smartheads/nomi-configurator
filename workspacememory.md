@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-17T09:50:55.096Z
+Generated: 2026-11-17T10:17:57.909Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-17T09:50:53.246Z
+- Last activity: 2026-11-17T10:17:55.518Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepThreeVisuals.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (11), components/configurator/StepThreeVisuals.tsx (7), components/configurator/StepOnewoning.tsx (6), components/configurator/StepTwoDesign.tsx (5)
-- Suggested starting points: components/configurator/StepThreeVisuals.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, app/api/vouchers/route.ts, components/ConfiguratorScreen.tsx
+- Active file in focus: components/configurator/StepFourConfirmation.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (14), components/configurator/StepThreeVisuals.tsx (7), components/configurator/StepOnewoning.tsx (6), app/api/vouchers/route.ts (3)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx, app/api/vouchers/route.ts, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
-- Active file: components/configurator/StepThreeVisuals.tsx
+- Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 76
 - Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,6 +39,9 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/configurator/StepFourConfirmation.tsx | 479 lines | 22786 chars | hash f4e57e90644a
+  Last snapshot: 2026-11-17T10:17:55.518Z
+  Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepThreeVisuals.tsx | 472 lines | 19377 chars | hash 46967eb226c9
   Last snapshot: 2026-11-17T09:50:53.246Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -60,11 +63,29 @@ Structured manifest: workspace.json
 - app/api/confirm/route.ts | 298 lines | 11232 chars | hash 8705fe271979
   Last snapshot: 2026-11-16T18:14:37.532Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- components/WelcomeScreen.tsx | 46 lines | 1424 chars | hash 14a8ac3eab2d
-  Last snapshot: 2026-11-16T18:13:19.803Z
-  Preview: "import { useState, useEffect } from 'react'; / import Hero from './Hero'; / import Story from './Story'; / import Cta from './Cta'; / import Faq from './Faq'; / import { getPageData } from '../lib/cms'; / export defau..."
 
 ## Recent Changes
+### 2026-11-17T10:17:55.518Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 285: replaced 104 lines with 105 lines.
+- Before: 478 lines | 22,695 chars | hash e80ca2817d48 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 479 lines | 22,786 chars | hash f4e57e90644a | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "Jouw contactgegevens voor de bevestiging</h3> / <div> / <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naa..."
+- Current fragment: "Uw contactgegevens voor de bevestiging</h3> / <div> / <label htmlFor="klantNaam" className="block text-[11px] font-bold uppercase tracking-wider text-muted mb-2">Volledige naam..."
+
+### 2026-11-17T09:57:28.159Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 388: replaced 1 line with 1 line.
+- Before: 478 lines | 22,690 chars | hash af9ee2080d3c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 478 lines | 22,695 chars | hash e80ca2817d48 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "t u dat we uw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met u"
+- Current fragment: "je dat we jouw gegevens en gekozen configuratie delen met <strong>{PARTNER_NAAM}</strong>, zodat zij vrijblijvend contact met jouw"
+
+### 2026-11-17T09:54:47.357Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 285: replaced 1 line with 1 line.
+- Before: 478 lines | 22,688 chars | hash 414d48a175a2 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 478 lines | 22,690 chars | hash af9ee2080d3c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "U"
+- Current fragment: "Jou"
+
 ### 2026-11-17T09:50:53.246Z | saved | components/configurator/StepThreeVisuals.tsx
 - Summary: Line 291: inserted 1 line.
 - Before: 472 lines | 19,375 chars | hash 660e876370f8 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -135,43 +156,22 @@ Structured manifest: workspace.json
 - Previous fragment: "randen */} / <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center"> / <Image src="/as..."
 - Current fragment: "browser randen */} / <div className="fixed left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-25 pointer-events-none select-none overflow-hidden flex items-center z-0"> / <Image..."
 
-### 2026-11-17T08:19:41.216Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 46: replaced 75 lines with 76 lines.
-- Before: 192 lines | 8,611 chars | hash 4d3d976fb70f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- After: 193 lines | 8,742 chars | hash 53efe51703bc | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- Previous fragment: "Decoratieve achtergrond elementen links en rechts */} / <div className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 opacity-20 pointer-events-none select-none"> / <Ima..."
-- Current fragment: "Achtergrondpatronen strak tegen de randen */} / <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden fl..."
-
-### 2026-11-17T08:14:34.893Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 3: replaced 121 lines with 186 lines.
-- Before: 127 lines | 5,717 chars | hash 62bafaf91d9e | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
-- After: 192 lines | 8,611 chars | hash 4d3d976fb70f | preview: "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
-- Previous fragment: "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = c..."
-- Current fragment: "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedInd..."
-
-### 2026-11-16T18:41:14.101Z | saved | app/privacy/page.tsx
-- Summary: Line 26: replaced 100 lines with 92 lines.
-- Before: 135 lines | 8,229 chars | hash 1fa058bba875 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 127 lines | 7,550 chars | hash e35fdd4c7a5a | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: "gebruiken en hoe wij omgaan met cookies, session storage en lokale opslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-..."
-- Current fragment: "opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag. / </p> / </section> / <div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-white pt..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (11 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (14 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (7 tracked changes)
 - components/configurator/StepOnewoning.tsx (6 tracked changes)
-- components/configurator/StepTwoDesign.tsx (5 tracked changes)
 - app/api/vouchers/route.ts (3 tracked changes)
+- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 - components/ConfiguratorScreen.tsx (2 tracked changes)
 - app/api/confirm/route.ts (1 tracked changes)
 - app/privacy/page.tsx (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 38d228c fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl
+- HEAD: 2026-11-17 ed2d974 changed speakinglanguage to you/your
 - Working tree summary: 4 modifieds
-- M components/configurator/StepThreeVisuals.tsx
+- M components/configurator/StepFourConfirmation.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -182,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 38d228c by Bas van Dooremalen on 2026-11-17
-  fix(step3): remove step prefix from subtitle and change heading text to jouw gekozen stijl
+- ed2d974 by Bas van Dooremalen on 2026-11-17
+  changed speakinglanguage to you/your
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

@@ -353,9 +353,10 @@ export default function StepFourConfirmation({
               </div>
               <div className="text-left divide-y divide-[#E6E1D6]">
                 {partners.map((partner: any, pIdx: number) => {
-                  const pNaam = partner.partnerNaam || partner.partner_naam || '';
-                  const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || '';
-                  const pRol = partner.partnerRol || partner.partner_rol || '';
+                  const pNaam = partner.partnerNaam || partner.partner_naam || partner.naam || '';
+                  const pOmschrijving = partner.partnerOmschrijving || partner.partner_omschrijving || partner.omschrijving || '';
+                  const pRol = partner.partnerRol || partner.partner_rol || partner.rol || partner.partnerRole || '';
+                  
                   return (
                     <div key={pIdx} className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 first:pt-0 last:pb-0">
                       <div className="flex items-center gap-5">
