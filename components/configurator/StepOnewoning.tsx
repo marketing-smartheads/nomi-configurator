@@ -70,11 +70,11 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* Logo's boven de indelingsblokken */}
+        {/* Logo's boven de indelingsblokken (Met de juiste assets uit public/assets) */}
         <div className="flex items-center justify-center gap-6 sm:gap-8 py-2">
           <div className="relative h-8 sm:h-10 w-36 sm:w-44">
             <Image 
-              src="/assets/logo-nomi.svg" 
+              src="/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg" 
               alt="Nomi Logo" 
               fill 
               className="object-contain object-right"
@@ -82,7 +82,7 @@ export default function StepOneWoning({
           </div>
           <div className="relative h-4 w-4">
             <Image 
-              src="/assets/x-symbol.svg" 
+              src="/assets/X.svg" 
               alt="X" 
               fill 
               className="object-contain"

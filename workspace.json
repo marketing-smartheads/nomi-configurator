@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T10:17:57.909Z",
-  "generatedAtEpochMs": 1794910677909,
+  "generatedAt": "2026-11-17T10:34:03.241Z",
+  "generatedAtEpochMs": 1794911643241,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
-      "components/configurator/StepOnewoning.tsx",
       "app/api/vouchers/route.ts",
-      "components/configurator/StepTwoDesign.tsx",
       "components/ConfiguratorScreen.tsx",
       "app/api/confirm/route.ts",
       "app/privacy/page.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -605,7 +605,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T10:17:55.518Z",
+    "lastActivityAt": "2026-11-17T10:34:00.860Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -616,6 +616,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1794911640860,
+      "lineCount": 163,
+      "charCount": 7027,
+      "hash": "83a38aaa8934",
+      "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1794910675518,
@@ -639,14 +647,6 @@
       "charCount": 10525,
       "hash": "0fe1a42f9892",
       "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794904757868,
-      "lineCount": 163,
-      "charCount": 6963,
-      "hash": "9a1b0f990d1f",
-      "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
     },
     {
       "filePath": "app/privacy/page.tsx",
@@ -682,6 +682,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 73: replaced 13 lines with 13 lines.",
+      "recordedAt": "2026-11-17T10:34:00.860Z",
+      "recordedAtEpochMs": 1794911640860,
+      "before": {
+        "kind": "text",
+        "lineCount": 163,
+        "charCount": 6963,
+        "hash": "9a1b0f990d1f",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794911640860
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 163,
+        "charCount": 7027,
+        "hash": "83a38aaa8934",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1794911640860
+      },
+      "diff": {
+        "lineStart": 73,
+        "removedLines": 13,
+        "addedLines": 13,
+        "summary": "Line 73: replaced 13 lines with 13 lines.",
+        "beforeFragment": "*/} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / src=\"/assets/logo-nomi.svg\" / alt=\"...",
+        "afterFragment": "(Met de juiste assets uit public/assets) */} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Im..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1087,38 +1119,6 @@
         "beforeFragment": "min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / {/* Achtergrondpatronen strak tegen de browser randen */} / <div className=\"fixed left-0 top-0 bottom...",
         "afterFragment": "w-screen left-1/2 -translate-x-1/2 min-h-[400px] flex flex-col justify-center items-center overflow-hidden\"> / <div className=\"hidden lg:block absolute left-0 top-0 bottom-0 w-4..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 46: replaced 58 lines with 58 lines.",
-      "recordedAt": "2026-11-17T08:25:03.135Z",
-      "recordedAtEpochMs": 1794903903135,
-      "before": {
-        "kind": "text",
-        "lineCount": 193,
-        "charCount": 8742,
-        "hash": "53efe51703bc",
-        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
-        "updatedAt": 1794903903135
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 193,
-        "charCount": 8789,
-        "hash": "ea2fdb4402e8",
-        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
-        "updatedAt": 1794903903135
-      },
-      "diff": {
-        "lineStart": 46,
-        "removedLines": 58,
-        "addedLines": 58,
-        "summary": "Line 46: replaced 58 lines with 58 lines.",
-        "beforeFragment": "randen */} / <div className=\"absolute left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-20 pointer-events-none select-none overflow-hidden flex items-center\"> / <Image src=\"/as...",
-        "afterFragment": "browser randen */} / <div className=\"fixed left-0 top-0 bottom-0 w-48 sm:w-64 md:w-80 opacity-25 pointer-events-none select-none overflow-hidden flex items-center z-0\"> / <Image..."
-      }
     }
   ],
   "hotFiles": [
@@ -1127,20 +1127,16 @@
       "count": 14
     },
     {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 7
+    },
+    {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 7
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 6
-    },
-    {
       "filePath": "app/api/vouchers/route.ts",
       "count": 3
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 2
     },
     {
       "filePath": "components/ConfiguratorScreen.tsx",
@@ -1153,25 +1149,26 @@
     {
       "filePath": "app/privacy/page.tsx",
       "count": 1
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 ed2d974 changed speakinglanguage to you/your",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-17 e41c8b6 fix(partners): support multiple property variants for partner role rendering on confirmation step",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- ed2d974 by Bas van Dooremalen on 2026-11-17\n  changed speakinglanguage to you/your\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e41c8b6 by Bas van Dooremalen on 2026-11-17\n  fix(partners): support multiple property variants for partner role rendering on confirmation step\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
