@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T20:41:11.717Z",
-  "generatedAtEpochMs": 1794948071717,
+  "generatedAt": "2026-11-18T18:34:40.237Z",
+  "generatedAtEpochMs": 1795026880237,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -24,6 +24,8 @@
     "suggestedStartingPoints": [
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
+      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -601,7 +603,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-17T20:41:09.754Z",
+    "lastActivityAt": "2026-11-18T18:34:38.235Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -614,19 +616,35 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1794948069754,
-      "lineCount": 692,
-      "charCount": 32170,
-      "hash": "90df63b66172",
+      "updatedAt": 1795026878235,
+      "lineCount": 665,
+      "charCount": 31193,
+      "hash": "89d5541e2877",
       "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1794943809618,
-      "lineCount": 500,
-      "charCount": 20266,
-      "hash": "9697bd178c53",
+      "updatedAt": 1795026790366,
+      "lineCount": 472,
+      "charCount": 19371,
+      "hash": "1e3076199a8e",
       "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1795026777112,
+      "lineCount": 273,
+      "charCount": 12360,
+      "hash": "b4fa3adfccd3",
+      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+    },
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1795026762331,
+      "lineCount": 133,
+      "charCount": 6001,
+      "hash": "855ee3eff854",
+      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -643,22 +661,6 @@
       "charCount": 5152,
       "hash": "52285c4723da",
       "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState } from 'react'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / import..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1794912189499,
-      "lineCount": 301,
-      "charCount": 13253,
-      "hash": "6d55e2e61897",
-      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1794911640860,
-      "lineCount": 163,
-      "charCount": 7027,
-      "hash": "83a38aaa8934",
-      "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons..."
     },
     {
       "filePath": "app/privacy/page.tsx",
@@ -678,6 +680,134 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 304: removed 28 lines.",
+      "recordedAt": "2026-11-18T18:34:38.235Z",
+      "recordedAtEpochMs": 1795026878235,
+      "before": {
+        "kind": "text",
+        "lineCount": 692,
+        "charCount": 32170,
+        "hash": "90df63b66172",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1795026878234
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 665,
+        "charCount": 31193,
+        "hash": "89d5541e2877",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1795026878235
+      },
+      "diff": {
+        "lineStart": 304,
+        "removedLines": 28,
+        "addedLines": 0,
+        "summary": "Line 304: removed 28 lines.",
+        "beforeFragment": "<div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / src=\"/assets/imgi_1_Logo_NOMI_LANDSCAPE_G...",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepThreeVisuals.tsx",
+      "toPath": "",
+      "summary": "Line 282: removed 29 lines.",
+      "recordedAt": "2026-11-18T18:33:10.366Z",
+      "recordedAtEpochMs": 1795026790366,
+      "before": {
+        "kind": "text",
+        "lineCount": 500,
+        "charCount": 20266,
+        "hash": "9697bd178c53",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1795026790366
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 472,
+        "charCount": 19371,
+        "hash": "1e3076199a8e",
+        "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig...",
+        "updatedAt": 1795026790366
+      },
+      "diff": {
+        "lineStart": 282,
+        "removedLines": 29,
+        "addedLines": 0,
+        "summary": "Line 282: removed 29 lines.",
+        "beforeFragment": "Logo's boven de visuals/content */} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / src...",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 129: removed 29 lines.",
+      "recordedAt": "2026-11-18T18:32:57.112Z",
+      "recordedAtEpochMs": 1795026777112,
+      "before": {
+        "kind": "text",
+        "lineCount": 301,
+        "charCount": 13253,
+        "hash": "6d55e2e61897",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795026777112
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 273,
+        "charCount": 12360,
+        "hash": "b4fa3adfccd3",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795026777112
+      },
+      "diff": {
+        "lineStart": 129,
+        "removedLines": 29,
+        "addedLines": 0,
+        "summary": "Line 129: removed 29 lines.",
+        "beforeFragment": "{/* Logo's boven de pakketblokken */} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / s...",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 3: replaced 96 lines with 66 lines.",
+      "recordedAt": "2026-11-18T18:32:42.331Z",
+      "recordedAtEpochMs": 1795026762331,
+      "before": {
+        "kind": "text",
+        "lineCount": 163,
+        "charCount": 7027,
+        "hash": "83a38aaa8934",
+        "preview": "'use client'; / import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / cons...",
+        "updatedAt": 1795026762331
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 133,
+        "charCount": 6001,
+        "hash": "855ee3eff854",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
+        "updatedAt": 1795026762331
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 96,
+        "addedLines": 66,
+        "summary": "Line 3: replaced 96 lines with 66 lines.",
+        "beforeFragment": "import Image from 'next/image'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedInd...",
+        "afterFragment": "export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = c..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1029,160 +1159,46 @@
         "beforeFragment": "[#C5A880] uppercase font-serif mb-2\"> / JOUW SAMENVATTING / </span> / <p className=\"text-xs sm:text-sm text-white leading-relaxed font-serif",
         "afterFragment": "primary uppercase\"> / JOUW SAMENVATTING / </span> / <p className=\"text-xs sm:text-sm text-muted leading-relaxed pt-1"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 361: replaced 20 lines with 21 lines.",
-      "recordedAt": "2026-11-17T19:58:06.578Z",
-      "recordedAtEpochMs": 1794945486578,
-      "before": {
-        "kind": "text",
-        "lineCount": 692,
-        "charCount": 32550,
-        "hash": "fcd7fe64d5d4",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945486578
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32571,
-        "hash": "64e87137c62d",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945486578
-      },
-      "diff": {
-        "lineStart": 361,
-        "removedLines": 20,
-        "addedLines": 21,
-        "summary": "Line 361: replaced 20 lines with 21 lines.",
-        "beforeFragment": "<span className=\"block text-[10px] font-bold tracking-[0.2em] text-muted uppercase\"> / GEKOZEN INDELING / </span> / <div className=\"w-full aspect-[16/10] bg-[#F3F0EA] rounded-2x...",
-        "afterFragment": "<div className=\"w-full aspect-[16/10] bg-[#F3F0EA] rounded-2xl relative overflow-hidden flex items-center justify-center p-4 border border-dark/5\"> / {plattegrondUrl ? ( / <img..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 381: replaced 5 lines with 5 lines.",
-      "recordedAt": "2026-11-17T19:57:42.403Z",
-      "recordedAtEpochMs": 1794945462403,
-      "before": {
-        "kind": "text",
-        "lineCount": 692,
-        "charCount": 32539,
-        "hash": "a7ec3823ad38",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945462403
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 692,
-        "charCount": 32550,
-        "hash": "fcd7fe64d5d4",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945462403
-      },
-      "diff": {
-        "lineStart": 381,
-        "removedLines": 5,
-        "addedLines": 5,
-        "summary": "Line 381: replaced 5 lines with 5 lines.",
-        "beforeFragment": "4 className=\"text-xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h4> / {metrage && ( / <p className=\"text-xs text-muted mt-0.5",
-        "afterFragment": "3 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / {indelingTitel}{woningNaam ? ` · ${woningNaam}` : ''} / </h3> / {metrage && ( / <p className=\"text-xs text-muted pt-3"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 147: replaced 319 lines with 338 lines.",
-      "recordedAt": "2026-11-17T19:44:08.137Z",
-      "recordedAtEpochMs": 1794944648137,
-      "before": {
-        "kind": "text",
-        "lineCount": 673,
-        "charCount": 32478,
-        "hash": "af064df92edb",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944648137
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 692,
-        "charCount": 32539,
-        "hash": "a7ec3823ad38",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944648137
-      },
-      "diff": {
-        "lineStart": 147,
-        "removedLines": 319,
-        "addedLines": 338,
-        "summary": "Line 147: replaced 319 lines with 338 lines.",
-        "beforeFragment": "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A...",
-        "afterFragment": "1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 147: replaced 325 lines with 319 lines.",
-      "recordedAt": "2026-11-17T19:36:16.980Z",
-      "recordedAtEpochMs": 1794944176980,
-      "before": {
-        "kind": "text",
-        "lineCount": 679,
-        "charCount": 32748,
-        "hash": "85eec528e622",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944176980
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 673,
-        "charCount": 32478,
-        "hash": "af064df92edb",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794944176980
-      },
-      "diff": {
-        "lineStart": 147,
-        "removedLines": 325,
-        "addedLines": 319,
-        "summary": "Line 147: replaced 325 lines with 319 lines.",
-        "beforeFragment": "Materialen lijst ophalen / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = Array.isArray(rawMaterialen) ?...",
-        "afterFragment": "Robuuste ophaalmethode voor materialenlijst uit Stap 3 / const rawMaterialen = storedPakket?.materialenLijst || storedPakket?.materialen_lijst || []; / const materialenLijst = A..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 39
+      "count": 36
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 1
+    },
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 87e526a fix(step4): parse pakket_aabeelding gallery array properly and render moodboard images above materials list",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-17 bed77b5 fix(step4): render single pakket_aabeelding moodboard image above material list with style tag",
+    "statusSummary": "7 modifieds",
+    "changedFileCount": 7,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M components/configurator/StepFourConfirmation.tsx",
+      "M components/configurator/StepOnewoning.tsx",
+      "M components/configurator/StepThreeVisuals.tsx",
+      "M components/configurator/StepTwoDesign.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- fb4eec8 by Bas van Dooremalen on 2026-11-17\n  fix(step4): include pakketAabeelding and pakket_aabeelding for moodboard gallery retrieval\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- bed77b5 by Bas van Dooremalen on 2026-11-17\n  fix(step4): render single pakket_aabeelding moodboard image above material list with style tag\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

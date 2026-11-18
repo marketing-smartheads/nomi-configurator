@@ -301,33 +301,6 @@ export default function StepFourConfirmation({
               {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
               {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
             </div>
-
-            <div className="flex items-center justify-center gap-6 sm:gap-8 py-2">
-              <div className="relative h-8 sm:h-10 w-36 sm:w-44">
-                <Image 
-                  src="/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg" 
-                  alt="Nomi Logo" 
-                  fill 
-                  className="object-contain object-right"
-                />
-              </div>
-              <div className="relative h-4 w-4">
-                <Image 
-                  src="/assets/X.svg" 
-                  alt="X" 
-                  fill 
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative h-8 sm:h-10 w-40 sm:w-48">
-                <Image 
-                  src="/assets/logo-tdg.svg" 
-                  alt="Thomas de Gier Logo" 
-                  fill 
-                  className="object-contain object-left"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch mt-12 mb-8 text-left">
