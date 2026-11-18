@@ -140,10 +140,10 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* De Keizer Makelaarsgroep (Zonder invert filter, netjes opgelicht via opacity) */}
+                        {/* De Keizer Makelaarsgroep (Zonder achtergrondbox) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
-                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
+                            <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg" 
                                     alt="De Keizer Makelaarsgroep" 
@@ -154,10 +154,10 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* Courage Architecten (Zonder invert filter) */}
+                        {/* Courage Architecten (Zonder achtergrondbox) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
-                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
+                            <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
                                     alt="Courage Architecten" 
@@ -182,15 +182,15 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* SmartHeads (Zonder invert filter) */}
+                        {/* SmartHeads (Kleiner gemaakt en iets laten zakken via pt-1) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
-                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
+                            <div className="h-10 flex items-center justify-center pt-1">
                                 <Image 
                                     src="/assets/images.png" 
                                     alt="SmartHeads" 
-                                    width={85} 
-                                    height={28} 
+                                    width={65} 
+                                    height={22} 
                                     className="object-contain opacity-80 group-hover:opacity-100 transition"
                                 />
                             </div>
