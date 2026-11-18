@@ -173,8 +173,8 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* Consistente Navigatiesectie onderaan met professionele SVG-iconen */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full">
+        {/* Consistente en duidelijke navigatieknoppen onderaan */}
+        <div className="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
           {onBack ? (
             <button
               type="button"
