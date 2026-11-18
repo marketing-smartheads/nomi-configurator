@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T19:42:40.056Z",
-  "generatedAtEpochMs": 1795030960056,
+  "generatedAt": "2026-11-18T20:16:46.611Z",
+  "generatedAtEpochMs": 1795033006611,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/configurator/StepTwoDesign.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,10 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
-      "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepThreeVisuals.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
@@ -604,7 +604,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T19:42:37.402Z",
+    "lastActivityAt": "2026-11-18T20:16:44.791Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -615,6 +615,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "updatedAt": 1795033004791,
+      "lineCount": 273,
+      "charCount": 12368,
+      "hash": "6c0aa94c4d43",
+      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1795030957402,
@@ -638,14 +646,6 @@
       "charCount": 19371,
       "hash": "1e3076199a8e",
       "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1795026777112,
-      "lineCount": 273,
-      "charCount": 12360,
-      "hash": "b4fa3adfccd3",
-      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -681,6 +681,70 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 193: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-18T20:16:44.791Z",
+      "recordedAtEpochMs": 1795033004791,
+      "before": {
+        "kind": "text",
+        "lineCount": 273,
+        "charCount": 12361,
+        "hash": "898c669a2c73",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795033004791
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 273,
+        "charCount": 12368,
+        "hash": "6c0aa94c4d43",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795033004791
+      },
+      "diff": {
+        "lineStart": 193,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 193: replaced 1 line with 1 line.",
+        "beforeFragment": "pakke",
+        "afterFragment": "designconcep"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepTwoDesign.tsx",
+      "toPath": "",
+      "summary": "Line 180: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-18T20:16:36.012Z",
+      "recordedAtEpochMs": 1795032996012,
+      "before": {
+        "kind": "text",
+        "lineCount": 273,
+        "charCount": 12360,
+        "hash": "b4fa3adfccd3",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795032996012
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 273,
+        "charCount": 12361,
+        "hash": "898c669a2c73",
+        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
+        "updatedAt": 1795032996012
+      },
+      "diff": {
+        "lineStart": 180,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 180: replaced 1 line with 1 line.",
+        "beforeFragment": "pakke",
+        "afterFragment": "concep"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1075,88 +1139,24 @@
         "beforeFragment": "t-3\"> / <span className=\"block text-[10px] font-bold tracking-[0.2em] text-primary uppercase pb-3\"> / GEKOZEN INDELING / </span> / <h3 className=\"text-2xl sm:text-3xl font-serif...",
         "afterFragment": "y-6 sm:py-8 space-y-2 flex-1 flex flex-col justify-center\"> / <span className=\"block text-[10px] font-bold tracking-[0.2em] text-primary uppercase\"> / GEKOZEN INDELING / </span>..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 395: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-17T20:03:41.386Z",
-      "recordedAtEpochMs": 1794945821386,
-      "before": {
-        "kind": "text",
-        "lineCount": 696,
-        "charCount": 32680,
-        "hash": "03447b287b4c",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945821386
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 696,
-        "charCount": 32681,
-        "hash": "7f01bf1ddce9",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945821386
-      },
-      "diff": {
-        "lineStart": 395,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 395: replaced 1 line with 1 line.",
-        "beforeFragment": "dark",
-        "afterFragment": "white"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 395: inserted 4 lines.",
-      "recordedAt": "2026-11-17T20:03:38.058Z",
-      "recordedAtEpochMs": 1794945818058,
-      "before": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32552,
-        "hash": "cf193fd662bc",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945818058
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 696,
-        "charCount": 32680,
-        "hash": "03447b287b4c",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945818058
-      },
-      "diff": {
-        "lineStart": 395,
-        "removedLines": 0,
-        "addedLines": 4,
-        "summary": "Line 395: inserted 4 lines.",
-        "beforeFragment": "",
-        "afterFragment": "<h3 className=\"text-2xl sm:text-3xl font-serif text-dark\"> / Concept / </h3>"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 33
+      "count": 31
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 3
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 3
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 1
+      "filePath": "components/configurator/StepThreeVisuals.tsx",
+      "count": 2
     },
     {
       "filePath": "lib/cms.ts",
@@ -1166,17 +1166,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 e52f456 feat(step1): add interactive floor plan lightbox zoom and popup description (toelichting)",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-18 cb80838 refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepTwoDesign.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e52f456 by Bas van Dooremalen on 2026-11-18\n  feat(step1): add interactive floor plan lightbox zoom and popup description (toelichting)\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cb80838 by Bas van Dooremalen on 2026-11-18\n  refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

@@ -177,7 +177,7 @@ export default function StepTwoDesign({
                   </div>
 
                   <span className="text-[10px] tracking-widest uppercase px-3.5 py-1.5 rounded-full bg-[#D9D3CB] text-dark inline-block mb-3 font-medium">
-                    Designpakket
+                    Designconcept
                   </span>
                   
                   <h3 className="text-3xl font-serif text-dark mb-3">{pakketTitel}</h3>
@@ -190,7 +190,7 @@ export default function StepTwoDesign({
 
                   {materialen.length > 0 && (
                     <div className="mb-8 bg-[#F9F6F0] p-5 rounded-2xl border border-dark/5">
-                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-dark mb-3">De materialen in dit pakket:</h4>
+                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-dark mb-3">De materialen in dit designconcept:</h4>
                       <ul className="grid sm:grid-cols-2 gap-2">
                         {materialen.map((mat: any, mIdx: number) => (
                           <li key={mIdx} className="text-xs text-muted flex items-center gap-2">
