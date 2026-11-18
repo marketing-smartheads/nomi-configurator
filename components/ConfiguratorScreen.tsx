@@ -1,3 +1,4 @@
+// components/ConfiguratorScreen.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -250,25 +251,32 @@ export default function ConfiguratorScreen({
 
         {/* ONDERSTE NAVIGATIE BALK */}
         {currentStep !== 4 && (
-          <div className="px-6 flex flex-col-reverse sm:flex-row justify-between items-center gap-4 sm:gap-0 pt-12 mt-16 border-t border-dark/15">
-            <button 
-              onClick={handlePrevious} 
-              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-3 sm:py-0 w-full sm:w-auto text-center sm:text-left"
+          <div className="max-w-5xl mx-auto px-6 py-12 mt-16 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
+            <button
+              type="button"
+              onClick={handlePrevious}
               disabled={loading}
+              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm w-full sm:w-auto justify-center"
             >
-              TERUG
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Vorige stap
             </button>
 
-            <div className="w-full sm:w-auto">
-              <Button 
-                onClick={handleNext}
-                disabled={!isCurrentStepValid()}
-                loading={loading}
-                className="w-fit m-auto sm:w-auto"
-              >
-                {`VOLGENDE: ${steps[currentStep - 1]?.nextTitle || 'BEVESTIGEN'}`}
-              </Button>
-            </div>
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={!isCurrentStepValid() || loading}
+              className={`cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md w-full sm:w-auto justify-center ${
+                !isCurrentStepValid() ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+            >
+              {`VOLGENDE: ${steps[currentStep - 1]?.nextTitle || 'BEVESTIGEN'}`}
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         )}
       </div>
