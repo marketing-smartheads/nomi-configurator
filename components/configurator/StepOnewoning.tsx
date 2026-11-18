@@ -174,49 +174,51 @@ export default function StepOneWoning({
         </div>
       </div>
 
-      {/* Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */}
+      {/* Mobiel-geoptimaliseerde Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */}
       {lightboxImage && (
         <div 
           onClick={() => setLightboxImage(null)}
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 animate-fadeIn cursor-zoom-out"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8 animate-fadeIn cursor-zoom-out"
         >
           <div 
             onClick={(e) => e.stopPropagation()} 
-            className="relative max-w-4xl w-full bg-white rounded-[2rem] overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6 text-left cursor-default"
+            className="relative w-full sm:max-w-4xl max-h-[92vh] sm:max-h-[85vh] bg-white rounded-t-[2.5rem] sm:rounded-[2rem] overflow-hidden shadow-2xl p-5 sm:p-8 space-y-4 sm:space-y-6 text-left cursor-default flex flex-col"
           >
-            <div className="flex items-center justify-between border-b border-dark/10 pb-4">
-              <h4 className="font-serif text-2xl text-dark">{lightboxImage.title}</h4>
+            <div className="flex items-center justify-between border-b border-dark/10 pb-3 sm:pb-4 shrink-0">
+              <h4 className="font-serif text-xl sm:text-2xl text-dark pr-4 truncate">{lightboxImage.title}</h4>
               <button 
                 onClick={() => setLightboxImage(null)}
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-dark hover:bg-dark hover:text-white transition cursor-pointer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-secondary flex items-center justify-center text-dark hover:bg-dark hover:text-white transition cursor-pointer shrink-0"
                 aria-label="Sluiten"
               >
                 ✕
               </button>
             </div>
 
-            <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden bg-[#F9F6F0] border border-dark/5 p-4 flex items-center justify-center">
-              <img 
-                src={lightboxImage.url} 
-                alt={lightboxImage.title} 
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-
-            {lightboxImage.toelichting ? (
-              <div className="bg-[#F9F6F0] p-6 rounded-2xl border border-dark/10 space-y-2">
-                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
-                  Inhoudelijk interieuradvies
-                </span>
-                <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                  {lightboxImage.toelichting}
-                </p>
+            <div className="overflow-y-auto space-y-4 pr-1">
+              <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden bg-[#F9F6F0] border border-dark/5 p-3 sm:p-4 flex items-center justify-center shrink-0">
+                <img 
+                  src={lightboxImage.url} 
+                  alt={lightboxImage.title} 
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-            ) : (
-              <p className="text-xs text-muted italic text-center py-2">
-                Geen aanvullende toelichting beschikbaar voor deze indeling.
-              </p>
-            )}
+
+              {lightboxImage.toelichting ? (
+                <div className="bg-[#F9F6F0] p-4 sm:p-6 rounded-2xl border border-dark/10 space-y-1.5 sm:space-y-2">
+                  <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                    Inhoudelijk interieuradvies
+                  </span>
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                    {lightboxImage.toelichting}
+                  </p>
+                </div>
+              ) : (
+                <p className="text-xs text-muted italic text-center py-2">
+                  Geen aanvullende toelichting beschikbaar voor deze indeling.
+                </p>
+              )}
+            </div>
           </div>
         </div>
       )}
