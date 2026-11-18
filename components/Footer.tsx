@@ -108,7 +108,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                     </div>
                 </div>
 
-                {/* BETROKKEN PROJECTPARTIJEN (Logo's in een rustige, uniforme witte balk) */}
+                {/* BETROKKEN PROJECTPARTIJEN */}
                 <div className="py-12 border-b border-white/15">
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
                         
@@ -119,8 +119,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                                 <Image 
                                     src="/assets/jongerius-invest-HQ-2.png" 
                                     alt="Jongerius Invest" 
-                                    width={120} 
-                                    height={36} 
+                                    width={110} 
+                                    height={32} 
                                     className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
                                 />
                             </div>
@@ -133,8 +133,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                                 <Image 
                                     src="/assets/TIB_Logo-01-2.svg" 
                                     alt="Thuis in Bouwen" 
-                                    width={120} 
-                                    height={36} 
+                                    width={110} 
+                                    height={32} 
                                     className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
                                 />
                             </div>
@@ -161,8 +161,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                                 <Image 
                                     src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
                                     alt="Courage Architecten" 
-                                    width={36} 
-                                    height={36} 
+                                    width={34} 
+                                    height={34} 
                                     className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
                                 />
                             </div>
@@ -175,8 +175,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                                 <Image 
                                     src="/assets/logo-tdg-white.svg" 
                                     alt="THOMASDEGIER" 
-                                    width={110} 
-                                    height={30} 
+                                    width={100} 
+                                    height={28} 
                                     className="object-contain opacity-75 group-hover:opacity-100 transition"
                                 />
                             </div>
@@ -189,8 +189,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                                 <Image 
                                     src="/assets/images.png" 
                                     alt="SmartHeads" 
-                                    width={36} 
-                                    height={36} 
+                                    width={95} 
+                                    height={30} 
                                     className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
                                 />
                             </div>
