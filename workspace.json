@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:36:04.740Z",
-  "generatedAtEpochMs": 1795041364740,
+  "generatedAt": "2026-11-18T22:49:05.077Z",
+  "generatedAtEpochMs": 1795042145077,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -641,7 +641,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T22:36:01.876Z",
+    "lastActivityAt": "2026-11-18T22:49:02.693Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -654,10 +654,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/Footer.tsx",
-      "updatedAt": 1795041361876,
+      "updatedAt": 1795042142693,
       "lineCount": 214,
-      "charCount": 11076,
-      "hash": "83a1ee39ca2b",
+      "charCount": 11201,
+      "hash": "a01bfb5db0a5",
       "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
     },
     {
@@ -718,6 +718,134 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 117: replaced 71 lines with 71 lines.",
+      "recordedAt": "2026-11-18T22:49:02.693Z",
+      "recordedAtEpochMs": 1795042142693,
+      "before": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11051,
+        "hash": "d36b1208ce76",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795042142693
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11201,
+        "hash": "a01bfb5db0a5",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795042142693
+      },
+      "diff": {
+        "lineStart": 117,
+        "removedLines": 71,
+        "addedLines": 71,
+        "summary": "Line 117: replaced 71 lines with 71 lines.",
+        "beforeFragment": "text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">Ontwikkelaar</span> / <div className=\"h-10 flex items-center justify-center\"> / <Image / src=\"/assets/jongerius-in...",
+        "afterFragment": "font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2\">Ontwikkelaar</span> / <div className=\"h-10 flex items-center justify-center\"> / <Image /..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 143: replaced 51 lines with 51 lines.",
+      "recordedAt": "2026-11-18T22:45:59.411Z",
+      "recordedAtEpochMs": 1795041959411,
+      "before": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11145,
+        "hash": "813874daacbf",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041959411
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11051,
+        "hash": "d36b1208ce76",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041959411
+      },
+      "diff": {
+        "lineStart": 143,
+        "removedLines": 51,
+        "addedLines": 51,
+        "summary": "Line 143: replaced 51 lines with 51 lines.",
+        "beforeFragment": "invert filter, netjes opgelicht via opacity) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] upper...",
+        "afterFragment": "achtergrondbox) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 143: replaced 52 lines with 52 lines.",
+      "recordedAt": "2026-11-18T22:43:19.159Z",
+      "recordedAtEpochMs": 1795041799159,
+      "before": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11031,
+        "hash": "55453a4f394e",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041799158
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11145,
+        "hash": "813874daacbf",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041799159
+      },
+      "diff": {
+        "lineStart": 143,
+        "removedLines": 52,
+        "addedLines": 52,
+        "summary": "Line 143: replaced 52 lines with 52 lines.",
+        "beforeFragment": "*/} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">Makelaar</span>...",
+        "afterFragment": "(Zonder invert filter, netjes opgelicht via opacity) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2e..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 111: replaced 83 lines with 83 lines.",
+      "recordedAt": "2026-11-18T22:41:32.667Z",
+      "recordedAtEpochMs": 1795041692667,
+      "before": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11076,
+        "hash": "83a1ee39ca2b",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041692667
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11031,
+        "hash": "55453a4f394e",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041692667
+      },
+      "diff": {
+        "lineStart": 111,
+        "removedLines": 83,
+        "addedLines": 83,
+        "summary": "Line 111: replaced 83 lines with 83 lines.",
+        "beforeFragment": "(Logo's in een rustige, uniforme witte balk) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-...",
+        "afterFragment": "*/} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center\"> / {/* Jongerius..."
+      }
+    },
     {
       "type": "save",
       "path": "components/Footer.tsx",
@@ -1062,152 +1190,24 @@
         "beforeFragment": "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /...",
         "afterFragment": "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 659 lines with 218 lines.",
-      "recordedAt": "2026-11-18T21:16:44.220Z",
-      "recordedAtEpochMs": 1795036604220,
-      "before": {
-        "kind": "text",
-        "lineCount": 665,
-        "charCount": 31193,
-        "hash": "89d5541e2877",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1795036604219
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 224,
-        "charCount": 10414,
-        "hash": "9953ab57cc2c",
-        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795036604220
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 659,
-        "addedLines": 218,
-        "summary": "Line 1: replaced 659 lines with 218 lines.",
-        "beforeFragment": "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati...",
-        "afterFragment": "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 193: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-18T20:16:44.791Z",
-      "recordedAtEpochMs": 1795033004791,
-      "before": {
-        "kind": "text",
-        "lineCount": 273,
-        "charCount": 12361,
-        "hash": "898c669a2c73",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795033004791
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 273,
-        "charCount": 12368,
-        "hash": "6c0aa94c4d43",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795033004791
-      },
-      "diff": {
-        "lineStart": 193,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 193: replaced 1 line with 1 line.",
-        "beforeFragment": "pakke",
-        "afterFragment": "designconcep"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 180: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-18T20:16:36.012Z",
-      "recordedAtEpochMs": 1795032996012,
-      "before": {
-        "kind": "text",
-        "lineCount": 273,
-        "charCount": 12360,
-        "hash": "b4fa3adfccd3",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795032996012
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 273,
-        "charCount": 12361,
-        "hash": "898c669a2c73",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795032996012
-      },
-      "diff": {
-        "lineStart": 180,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 180: replaced 1 line with 1 line.",
-        "beforeFragment": "pakke",
-        "afterFragment": "concep"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 153: replaced 72 lines with 56 lines.",
-      "recordedAt": "2026-11-18T19:42:37.402Z",
-      "recordedAtEpochMs": 1795030957402,
-      "before": {
-        "kind": "text",
-        "lineCount": 240,
-        "charCount": 11344,
-        "hash": "349e42f5280c",
-        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795030957402
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 224,
-        "charCount": 10637,
-        "hash": "cfbb07adedbd",
-        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795030957402
-      },
-      "diff": {
-        "lineStart": 153,
-        "removedLines": 72,
-        "addedLines": 56,
-        "summary": "Line 153: replaced 72 lines with 56 lines.",
-        "beforeFragment": "between pt-4 mt-4 border-t border-dark/5\"> / <button / type=\"button\" / onClick={() => { / if (imageUrl) { / setLightboxImage({ / url: imageUrl, / title: `${typeNaam} · ${indelin...",
-        "afterFragment": "end pt-4 mt-4 border-t border-dark/5\"> / <button / type=\"button\" / onClick={() => handleSelectIndeling(item, indelingTitel)} / className={`cursor-pointer px-5 py-2.5 rounded-ful..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 22
+      "count": 18
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 10
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 3
+      "filePath": "components/Footer.tsx",
+      "count": 6
     },
     {
-      "filePath": "components/Footer.tsx",
-      "count": 2
+      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1225,26 +1225,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 cccab92 feat(footer): add project partners in a clean uniform white badge bar above copyright",
-    "statusSummary": "4 modifieds, 6 untrackeds",
-    "changedFileCount": 10,
+    "headSummary": "2026-11-18 25864a6 style(footer): remove background boxes and adjust size and positioning for SmartHeads logo",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
       "M components/Footer.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
-      "M workspacememory.md",
-      "?? public/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png",
-      "?? public/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg",
-      "?? public/assets/TIB_Logo-01-2.svg",
-      "?? public/assets/images.jpg",
-      "?? public/assets/images.png",
-      "?? public/assets/jongerius-invest-HQ-2.png"
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cccab92 by Bas van Dooremalen on 2026-11-18\n  feat(footer): add project partners in a clean uniform white badge bar above copyright\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 25864a6 by Bas van Dooremalen on 2026-11-18\n  style(footer): remove background boxes and adjust size and positioning for SmartHeads logo\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

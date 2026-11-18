@@ -114,7 +114,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                         
                         {/* Jongerius Invest */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Ontwikkelaar</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/jongerius-invest-HQ-2.png" 
@@ -128,7 +128,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* Thuis in Bouwen */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Hoofdaannemer</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Hoofdaannemer</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/TIB_Logo-01-2.svg" 
@@ -142,7 +142,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* De Keizer Makelaarsgroep (Zonder achtergrondbox) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Makelaar</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg" 
@@ -156,7 +156,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* Courage Architecten (Zonder achtergrondbox) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Architect</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
@@ -170,7 +170,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* THOMASDEGIER */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Interieurarchitect</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Interieurarchitect</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/logo-tdg-white.svg" 
@@ -184,7 +184,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* SmartHeads (Kleiner gemaakt en iets laten zakken via pt-1) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
+                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Marketingbureau</span>
                             <div className="h-10 flex items-center justify-center pt-1">
                                 <Image 
                                     src="/assets/images.png" 

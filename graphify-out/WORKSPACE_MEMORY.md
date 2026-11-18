@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T22:36:04.740Z
+Generated: 2026-11-18T22:49:05.077Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T22:36:01.876Z
+- Last activity: 2026-11-18T22:49:02.693Z
 ## Workspace Focus
 - Active file in focus: components/Footer.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (22), components/configurator/StepOnewoning.tsx (10), components/configurator/StepTwoDesign.tsx (3), components/Footer.tsx (2)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (6), components/configurator/StepTwoDesign.tsx (3)
 - Suggested starting points: components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
 - Active file: components/Footer.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds, 6 untrackeds
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/Footer.tsx | 214 lines | 11076 chars | hash 83a1ee39ca2b
-  Last snapshot: 2026-11-18T22:36:01.876Z
+- components/Footer.tsx | 214 lines | 11201 chars | hash a01bfb5db0a5
+  Last snapshot: 2026-11-18T22:49:02.693Z
   Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
 - components/configurator/StepOnewoning.tsx | 225 lines | 10657 chars | hash 3a95686cf2cf
   Last snapshot: 2026-11-18T22:21:38.576Z
@@ -65,6 +65,34 @@ Structured manifest: workspace.json
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
 
 ## Recent Changes
+### 2026-11-18T22:49:02.693Z | saved | components/Footer.tsx
+- Summary: Line 117: replaced 71 lines with 71 lines.
+- Before: 214 lines | 11,051 chars | hash d36b1208ce76 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 214 lines | 11,201 chars | hash a01bfb5db0a5 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span> / <div className="h-10 flex items-center justify-center"> / <Image / src="/assets/jongerius-in..."
+- Current fragment: "font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Ontwikkelaar</span> / <div className="h-10 flex items-center justify-center"> / <Image /..."
+
+### 2026-11-18T22:45:59.411Z | saved | components/Footer.tsx
+- Summary: Line 143: replaced 51 lines with 51 lines.
+- Before: 214 lines | 11,145 chars | hash 813874daacbf | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 214 lines | 11,051 chars | hash d36b1208ce76 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "invert filter, netjes opgelicht via opacity) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] upper..."
+- Current fragment: "achtergrondbox) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">..."
+
+### 2026-11-18T22:43:19.159Z | saved | components/Footer.tsx
+- Summary: Line 143: replaced 52 lines with 52 lines.
+- Before: 214 lines | 11,031 chars | hash 55453a4f394e | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 214 lines | 11,145 chars | hash 813874daacbf | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "*/} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>..."
+- Current fragment: "(Zonder invert filter, netjes opgelicht via opacity) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2e..."
+
+### 2026-11-18T22:41:32.667Z | saved | components/Footer.tsx
+- Summary: Line 111: replaced 83 lines with 83 lines.
+- Before: 214 lines | 11,076 chars | hash 83a1ee39ca2b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 214 lines | 11,031 chars | hash 55453a4f394e | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "(Logo's in een rustige, uniforme witte balk) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-..."
+- Current fragment: "*/} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"> / {/* Jongerius..."
+
 ### 2026-11-18T22:36:01.876Z | saved | components/Footer.tsx
 - Summary: Line 111: replaced 38 lines with 86 lines.
 - Before: 166 lines | 8,713 chars | hash 80b04addaf3b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
@@ -139,58 +167,24 @@ Structured manifest: workspace.json
 - Previous fragment: "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /..."
 - Current fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
 
-### 2026-11-18T21:16:44.220Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: replaced 659 lines with 218 lines.
-- Before: 665 lines | 31,193 chars | hash 89d5541e2877 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 224 lines | 10,414 chars | hash 9953ab57cc2c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
-- Current fragment: "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /..."
-
-### 2026-11-18T20:16:44.791Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 193: replaced 1 line with 1 line.
-- Before: 273 lines | 12,361 chars | hash 898c669a2c73 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 273 lines | 12,368 chars | hash 6c0aa94c4d43 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "pakke"
-- Current fragment: "designconcep"
-
-### 2026-11-18T20:16:36.012Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 180: replaced 1 line with 1 line.
-- Before: 273 lines | 12,360 chars | hash b4fa3adfccd3 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 273 lines | 12,361 chars | hash 898c669a2c73 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Previous fragment: "pakke"
-- Current fragment: "concep"
-
-### 2026-11-18T19:42:37.402Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 153: replaced 72 lines with 56 lines.
-- Before: 240 lines | 11,344 chars | hash 349e42f5280c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 224 lines | 10,637 chars | hash cfbb07adedbd | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "between pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => { / if (imageUrl) { / setLightboxImage({ / url: imageUrl, / title: `${typeNaam} · ${indelin..."
-- Current fragment: "end pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => handleSelectIndeling(item, indelingTitel)} / className={`cursor-pointer px-5 py-2.5 rounded-ful..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (22 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (18 tracked changes)
 - components/configurator/StepOnewoning.tsx (10 tracked changes)
+- components/Footer.tsx (6 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
-- components/Footer.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 - components/ConfiguratorScreen.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 cccab92 feat(footer): add project partners in a clean uniform white badge bar above copyright
-- Working tree summary: 4 modifieds, 6 untrackeds
+- HEAD: 2026-11-18 25864a6 style(footer): remove background boxes and adjust size and positioning for SmartHeads logo
+- Working tree summary: 4 modifieds
 - M components/Footer.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
-- ?? public/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png
-- ?? public/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg
-- ?? public/assets/TIB_Logo-01-2.svg
-- ?? public/assets/images.jpg
-- ?? public/assets/images.png
-- ?? public/assets/jongerius-invest-HQ-2.png
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -198,8 +192,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- cccab92 by Bas van Dooremalen on 2026-11-18
-  feat(footer): add project partners in a clean uniform white badge bar above copyright
+- 25864a6 by Bas van Dooremalen on 2026-11-18
+  style(footer): remove background boxes and adjust size and positioning for SmartHeads logo
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
