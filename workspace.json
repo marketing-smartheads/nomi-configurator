@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T20:16:46.611Z",
-  "generatedAtEpochMs": 1795033006611,
+  "generatedAt": "2026-11-18T21:16:46.819Z",
+  "generatedAtEpochMs": 1795036606819,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepTwoDesign.tsx",
+    "activeFile": "components/configurator/StepFourConfirmation.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,9 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
       ".gitignore",
@@ -604,7 +604,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T20:16:44.791Z",
+    "lastActivityAt": "2026-11-18T21:16:44.220Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -615,6 +615,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "updatedAt": 1795036604220,
+      "lineCount": 224,
+      "charCount": 10414,
+      "hash": "9953ab57cc2c",
+      "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+    },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "updatedAt": 1795033004791,
@@ -630,14 +638,6 @@
       "charCount": 10637,
       "hash": "cfbb07adedbd",
       "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-    },
-    {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1795026878235,
-      "lineCount": 665,
-      "charCount": 31193,
-      "hash": "89d5541e2877",
-      "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -681,6 +681,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepFourConfirmation.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 659 lines with 218 lines.",
+      "recordedAt": "2026-11-18T21:16:44.220Z",
+      "recordedAtEpochMs": 1795036604220,
+      "before": {
+        "kind": "text",
+        "lineCount": 665,
+        "charCount": 31193,
+        "hash": "89d5541e2877",
+        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
+        "updatedAt": 1795036604219
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 224,
+        "charCount": 10414,
+        "hash": "9953ab57cc2c",
+        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795036604220
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 659,
+        "addedLines": 218,
+        "summary": "Line 1: replaced 659 lines with 218 lines.",
+        "beforeFragment": "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati...",
+        "afterFragment": "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepTwoDesign.tsx",
@@ -1107,38 +1139,6 @@
         "beforeFragment": "1. Strikte en correcte ophaalmethode voor de echte pakketAfbeelding (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeelding || storedPakket?.pakket_afbeelding...",
         "afterFragment": "Uitgebreide en correcte ophaalmethode voor de echte pakketAfbeeldingen (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbee..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 378: replaced 15 lines with 15 lines.",
-      "recordedAt": "2026-11-17T20:07:34.139Z",
-      "recordedAtEpochMs": 1794946054139,
-      "before": {
-        "kind": "text",
-        "lineCount": 696,
-        "charCount": 32681,
-        "hash": "7f01bf1ddce9",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794946054139
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 696,
-        "charCount": 32735,
-        "hash": "e67a73ee35bf",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794946054139
-      },
-      "diff": {
-        "lineStart": 378,
-        "removedLines": 15,
-        "addedLines": 15,
-        "summary": "Line 378: replaced 15 lines with 15 lines.",
-        "beforeFragment": "t-3\"> / <span className=\"block text-[10px] font-bold tracking-[0.2em] text-primary uppercase pb-3\"> / GEKOZEN INDELING / </span> / <h3 className=\"text-2xl sm:text-3xl font-serif...",
-        "afterFragment": "y-6 sm:py-8 space-y-2 flex-1 flex flex-col justify-center\"> / <span className=\"block text-[10px] font-bold tracking-[0.2em] text-primary uppercase\"> / GEKOZEN INDELING / </span>..."
-      }
     }
   ],
   "hotFiles": [
@@ -1166,20 +1166,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 cb80838 refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-18 df4163a sentences adjusted",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepTwoDesign.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepFourConfirmation.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cb80838 by Bas van Dooremalen on 2026-11-18\n  refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- df4163a by Bas van Dooremalen on 2026-11-18\n  sentences adjusted\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
