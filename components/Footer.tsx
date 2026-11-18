@@ -73,7 +73,8 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                         />                        
                     </div>
 
-                    <div className="md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 justify-end">
+                    {/* Navigatie & Configurator rechts uitgelijnd */}
+                    <div className="md:col-span-6 flex flex-col md:flex-row justify-end gap-16">
 
                         <div className="flex flex-col space-y-4">
                             <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">
@@ -110,11 +111,11 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                 {/* BETROKKEN PROJECTPARTIJEN */}
                 <div className="py-12 border-b border-white/15">
-                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
                         
                         {/* Jongerius Invest */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Ontwikkelaar</span>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/jongerius-invest-HQ-2.png" 
@@ -128,7 +129,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* Thuis in Bouwen */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Hoofdaannemer</span>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Hoofdaannemer</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/TIB_Logo-01-2.svg" 
@@ -140,9 +141,9 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* De Keizer Makelaarsgroep (Zonder achtergrondbox) */}
+                        {/* De Keizer Makelaarsgroep */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Makelaar</span>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg" 
@@ -154,9 +155,9 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* Courage Architecten (Zonder achtergrondbox) */}
+                        {/* Courage Architecten */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Architect</span>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
@@ -170,7 +171,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                         {/* THOMASDEGIER */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Interieurarchitect</span>
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Interieurarchitect</span>
                             <div className="h-10 flex items-center justify-center">
                                 <Image 
                                     src="/assets/logo-tdg-white.svg" 
@@ -182,15 +183,15 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* SmartHeads (Kleiner gemaakt en iets laten zakken via pt-1) */}
-                        <div className="flex flex-col items-center text-center space-y-3 group">
-                            <span className="font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Marketingbureau</span>
-                            <div className="h-10 flex items-center justify-center pt-1">
+                        {/* SmartHeads (Extra ruimte tussen label en logo) */}
+                        <div className="flex flex-col items-center text-center space-y-4 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
+                            <div className="h-10 flex items-center justify-center pt-2">
                                 <Image 
                                     src="/assets/images.png" 
                                     alt="SmartHeads" 
-                                    width={65} 
-                                    height={22} 
+                                    width={60} 
+                                    height={20} 
                                     className="object-contain opacity-80 group-hover:opacity-100 transition"
                                 />
                             </div>
