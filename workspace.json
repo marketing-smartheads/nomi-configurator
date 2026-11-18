@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:07:49.402Z",
-  "generatedAtEpochMs": 1795039669402,
+  "generatedAt": "2026-11-18T22:12:13.033Z",
+  "generatedAtEpochMs": 1795039933033,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -604,7 +604,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T22:07:47.633Z",
+    "lastActivityAt": "2026-11-18T22:12:11.257Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -617,10 +617,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795039667633,
-      "lineCount": 255,
-      "charCount": 12284,
-      "hash": "39735c0904f8",
+      "updatedAt": 1795039931257,
+      "lineCount": 268,
+      "charCount": 13348,
+      "hash": "a5107feef067",
       "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
     },
     {
@@ -681,6 +681,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 176: replaced 28 lines with 41 lines.",
+      "recordedAt": "2026-11-18T22:12:11.257Z",
+      "recordedAtEpochMs": 1795039931257,
+      "before": {
+        "kind": "text",
+        "lineCount": 255,
+        "charCount": 12284,
+        "hash": "39735c0904f8",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795039931257
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 268,
+        "charCount": 13348,
+        "hash": "a5107feef067",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795039931257
+      },
+      "diff": {
+        "lineStart": 176,
+        "removedLines": 28,
+        "addedLines": 41,
+        "summary": "Line 176: replaced 28 lines with 41 lines.",
+        "beforeFragment": "Consistente en duidelijke navigatieknoppen onderaan */} / <div className=\"max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between it...",
+        "afterFragment": "Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */} / <nav / aria-label=\"Stappennavigatie\" / className=\"max-w-4xl mx-auto px-4 pt-12 mt-12 bord..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1100,38 +1132,6 @@
         "beforeFragment": "Logo's boven de visuals/content */} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / src...",
         "afterFragment": ""
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepTwoDesign.tsx",
-      "toPath": "",
-      "summary": "Line 129: removed 29 lines.",
-      "recordedAt": "2026-11-18T18:32:57.112Z",
-      "recordedAtEpochMs": 1795026777112,
-      "before": {
-        "kind": "text",
-        "lineCount": 301,
-        "charCount": 13253,
-        "hash": "6d55e2e61897",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795026777112
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 273,
-        "charCount": 12360,
-        "hash": "b4fa3adfccd3",
-        "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /...",
-        "updatedAt": 1795026777112
-      },
-      "diff": {
-        "lineStart": 129,
-        "removedLines": 29,
-        "addedLines": 0,
-        "summary": "Line 129: removed 29 lines.",
-        "beforeFragment": "{/* Logo's boven de pakketblokken */} / <div className=\"flex items-center justify-center gap-6 sm:gap-8 py-2\"> / <div className=\"relative h-8 sm:h-10 w-36 sm:w-44\"> / <Image / s...",
-        "afterFragment": ""
-      }
     }
   ],
   "hotFiles": [
@@ -1141,7 +1141,7 @@
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 8
+      "count": 9
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1149,7 +1149,7 @@
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 2
+      "count": 1
     },
     {
       "filePath": "lib/cms.ts",
@@ -1159,14 +1159,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 fc5aca4 style(step1): replace text arrows with clean professional SVG icons in bottom navigation",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-18 012f1b3 style(step1): redesign bottom navigation with prominent pill buttons and professional svg arrows",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },

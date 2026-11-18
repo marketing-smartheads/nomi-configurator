@@ -173,34 +173,47 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* Consistente en duidelijke navigatieknoppen onderaan */}
-        <div className="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
-          {onBack ? (
-            <button
-              type="button"
-              onClick={onBack}
-              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm w-full sm:w-auto justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              Vorige stap
-            </button>
-          ) : <div />}
+        {/* Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */}
+        <nav
+          aria-label="Stappennavigatie"
+          className="max-w-4xl mx-auto px-4 pt-12 mt-12 border-t border-dark/15 w-full"
+        >
+          <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+            {onBack ? (
+              <button
+                type="button"
+                onClick={onBack}
+                className="cursor-pointer flex items-center justify-center gap-3 w-full sm:w-auto rounded-full py-[1.125rem] px-8 text-[11px] font-bold tracking-[0.25em] uppercase border-2 border-dark text-dark bg-transparent hover:bg-dark hover:text-white transition-all duration-300 ease-in-out active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Vorige stap
+              </button>
+            ) : <div className="hidden sm:block" />}
 
-          {onNext && (
-            <button
-              type="button"
-              onClick={onNext}
-              className="cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md w-full sm:w-auto justify-center"
-            >
-              Volgende stap
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          )}
-        </div>
+            {onNext && (
+              <div className="w-full sm:w-auto flex flex-col items-center sm:items-end gap-2">
+                <button
+                  type="button"
+                  onClick={onNext}
+                  disabled={!selectedIndeling}
+                  className="cursor-pointer flex items-center justify-center gap-3 w-full sm:w-auto rounded-full py-[1.125rem] px-8 text-[11px] font-bold tracking-[0.25em] uppercase border-2 border-dark bg-dark text-white shadow-md hover:bg-primary hover:border-primary transition-all duration-300 ease-in-out active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none"
+                >
+                  Volgende stap
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+                {!selectedIndeling && (
+                  <p className="text-[11px] text-muted" role="status">
+                    Selecteer eerst een indeling
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        </nav>
 
       </div>
 
