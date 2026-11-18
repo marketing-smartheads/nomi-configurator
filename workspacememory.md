@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T22:49:05.077Z
+Generated: 2026-11-18T22:58:47.977Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,11 +16,11 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T22:49:02.693Z
+- Last activity: 2026-11-18T22:58:46.169Z
 ## Workspace Focus
 - Active file in focus: components/Footer.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (18), components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (6), components/configurator/StepTwoDesign.tsx (3)
-- Suggested starting points: components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, components/ConfiguratorScreen.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (15), components/configurator/StepOnewoning.tsx (11), components/Footer.tsx (7), components/configurator/StepTwoDesign.tsx (3)
+- Suggested starting points: components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepThreeVisuals.tsx
 ## Current Workspace
 - Active file: components/Footer.tsx
 - Tracked files in snapshot: 82
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/Footer.tsx | 214 lines | 11201 chars | hash a01bfb5db0a5
-  Last snapshot: 2026-11-18T22:49:02.693Z
+- components/Footer.tsx | 214 lines | 11204 chars | hash 38c9c7dfe5d9
+  Last snapshot: 2026-11-18T22:58:46.169Z
   Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- components/configurator/StepOnewoning.tsx | 225 lines | 10657 chars | hash 3a95686cf2cf
-  Last snapshot: 2026-11-18T22:21:38.576Z
-  Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- components/ConfiguratorScreen.tsx | 285 lines | 11307 chars | hash 11f07c1ed0b0
-  Last snapshot: 2026-11-18T22:17:57.172Z
+- components/ConfiguratorScreen.tsx | 285 lines | 11414 chars | hash 1ef6ecbe6bc4
+  Last snapshot: 2026-11-18T22:56:51.050Z
   Preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
+- components/configurator/StepOnewoning.tsx | 227 lines | 11009 chars | hash 7fb5f40fd071
+  Last snapshot: 2026-11-18T22:52:05.411Z
+  Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepFourConfirmation.tsx | 793 lines | 35622 chars | hash 0e2c3d0d1461
   Last snapshot: 2026-11-18T21:36:52.488Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -65,6 +65,25 @@ Structured manifest: workspace.json
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
 
 ## Recent Changes
+### 2026-11-18T22:58:46.169Z | saved | components/Footer.tsx
+- Summary: Line 1: inserted 214 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 214 lines | 11,204 chars | hash 38c9c7dfe5d9 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Current fragment: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
+
+### 2026-11-18T22:56:51.050Z | saved | components/ConfiguratorScreen.tsx
+- Summary: Line 1: inserted 285 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 285 lines | 11,414 chars | hash 1ef6ecbe6bc4 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
+- Current fragment: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
+
+### 2026-11-18T22:52:05.411Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 177: replaced 43 lines with 45 lines.
+- Before: 225 lines | 10,657 chars | hash 3a95686cf2cf | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 227 lines | 11,009 chars | hash 7fb5f40fd071 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className="fixed inset-0 z-50 bg-blac..."
+- Current fragment: "Mobiel-geoptimaliseerde Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className="fi..."
+
 ### 2026-11-18T22:49:02.693Z | saved | components/Footer.tsx
 - Summary: Line 117: replaced 71 lines with 71 lines.
 - Before: 214 lines | 11,051 chars | hash d36b1208ce76 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
@@ -146,40 +165,19 @@ Structured manifest: workspace.json
 - Previous fragment: "*/} / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack ? ( / <button / type="button..."
 - Current fragment: "met professionele SVG-iconen */} / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack..."
 
-### 2026-11-18T21:53:43.288Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 177: replaced 23 lines with 21 lines.
-- Before: 251 lines | 11,820 chars | hash 24fff1f5e112 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 249 lines | 11,768 chars | hash 6ec998528a21 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "{(onBack || onNext) && ( / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack ? ( / <..."
-- Current fragment: "<div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack ? ( / <button / type="button" / on..."
-
-### 2026-11-18T21:46:45.672Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 1: replaced 172 lines with 199 lines.
-- Before: 224 lines | 10,637 chars | hash cfbb07adedbd | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 251 lines | 11,820 chars | hash 24fff1f5e112 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning..."
-- Current fragment: "Woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning..."
-
-### 2026-11-18T21:36:52.488Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 1: replaced 218 lines with 787 lines.
-- Before: 224 lines | 10,414 chars | hash 9953ab57cc2c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 793 lines | 35,622 chars | hash 0e2c3d0d1461 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, /..."
-- Current fragment: "configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigati..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (18 tracked changes)
-- components/configurator/StepOnewoning.tsx (10 tracked changes)
-- components/Footer.tsx (6 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (15 tracked changes)
+- components/configurator/StepOnewoning.tsx (11 tracked changes)
+- components/Footer.tsx (7 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
+- components/ConfiguratorScreen.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (1 tracked changes)
-- components/ConfiguratorScreen.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 25864a6 style(footer): remove background boxes and adjust size and positioning for SmartHeads logo
+- HEAD: 2026-11-18 64096da style(configurator): refine navigation buttons with polished padding, transition and clean iconography
 - Working tree summary: 4 modifieds
 - M components/Footer.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -192,8 +190,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 25864a6 by Bas van Dooremalen on 2026-11-18
-  style(footer): remove background boxes and adjust size and positioning for SmartHeads logo
+- 573cbf7 by Bas van Dooremalen on 2026-11-18
+  style(step1): optimize lightbox modal for mobile screens with bottom sheet layout and scrolling
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

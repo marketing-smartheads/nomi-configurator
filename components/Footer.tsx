@@ -110,7 +110,7 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
 
                 {/* BETROKKEN PROJECTPARTIJEN */}
                 <div className="py-12 border-b border-white/15">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
                         
                         {/* Jongerius Invest */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
