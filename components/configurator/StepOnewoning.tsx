@@ -173,7 +173,7 @@ export default function StepOneWoning({
           )}
         </div>
 
-        {/* Consistente Navigatiesectie onderaan */}
+        {/* Consistente Navigatiesectie onderaan met professionele SVG-iconen */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full">
           {onBack ? (
             <button
@@ -181,7 +181,10 @@ export default function StepOneWoning({
               onClick={onBack}
               className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm w-full sm:w-auto justify-center"
             >
-              <span>←</span> Vorige stap
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Vorige stap
             </button>
           ) : <div />}
 
@@ -191,7 +194,10 @@ export default function StepOneWoning({
               onClick={onNext}
               className="cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md w-full sm:w-auto justify-center"
             >
-              Volgende stap <span>→</span>
+              Volgende stap
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           )}
         </div>
