@@ -1,3 +1,4 @@
+// app/download/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -192,7 +193,7 @@ export default function DownloadPage() {
     };
   }).filter((cat: any) => (cat?.bestandenLijst || []).length > 0);
 
-  const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download uw designpakket';
+  const downloadTitel = downloadSectie?.downloadTitel || downloadSectie?.download_titel || 'Download jouw designpakket';
   const formattedIntro = `Alle designbestanden voor ${woningType} — ${designPakket}. Download losse bestanden of alles in één keer.`;
 
   const getFileUrl = (bestand: any) => {
@@ -308,7 +309,7 @@ export default function DownloadPage() {
             <div>
               <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVEILIGDE PAGINA</span>
               <h2 className="text-3xl font-serif text-dark mt-2">Geen actieve configuratie</h2>
-              <p className="text-[#666] text-sm mt-2 leading-relaxed">U heeft de configuratie nog niet doorlopen en bevestigd. Voltooi eerst alle stappen in de configurator om uw downloads te ontgrendelen.</p>
+              <p className="text-[#666] text-sm mt-2 leading-relaxed">Je hebt de configuratie nog niet doorlopen en bevestigd. Voltooi eerst alle stappen in de configurator om jouw downloads te ontgrendelen.</p>
             </div>
             <button 
               onClick={() => router.push('/')}
@@ -338,7 +339,7 @@ export default function DownloadPage() {
       <main className="grow bg-[#F9F6F0]">
         <div className="relative w-full pt-16 pb-12 px-6 sm:px-12 flex flex-col items-center">        
           <div className="relative z-20 text-center max-w-3xl mx-auto pt-6">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVESTIGD • UW PAKKET STAAT KLAAR</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase">BEVESTIGD • JOUW PAKKET STAAT KLAAR</span>
             <h1 className="text-4xl md:text-6xl font-serif mt-3 text-dark">{downloadTitel}</h1>
             <p className="text-[#666] text-base md:text-lg leading-relaxed pt-4 mx-auto">{formattedIntro}</p>
           </div>
