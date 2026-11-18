@@ -150,23 +150,7 @@ export default function StepOneWoning({
                     <p className="text-xs text-muted py-2">{metrage}</p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 mt-4 border-t border-dark/5">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (imageUrl) {
-                          setLightboxImage({ 
-                            url: imageUrl, 
-                            title: `${typeNaam} · ${indelingTitel}`, 
-                            toelichting: toelichtingTekst 
-                          });
-                        }
-                      }}
-                      className="text-[11px] font-semibold tracking-wider text-muted hover:text-primary transition uppercase"
-                    >
-                      BEKIJK PLATTEGROND ↗
-                    </button>
-
+                  <div className="flex items-center justify-end pt-4 mt-4 border-t border-dark/5">
                     <button
                       type="button"
                       onClick={() => handleSelectIndeling(item, indelingTitel)}
@@ -189,7 +173,7 @@ export default function StepOneWoning({
 
       </div>
 
-      {/* Fancybox / Lightbox Modal inclusief Inhoudelijk Interieuradvies (Toelichting) */}
+      {/* Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */}
       {lightboxImage && (
         <div 
           onClick={() => setLightboxImage(null)}
@@ -221,7 +205,7 @@ export default function StepOneWoning({
             {lightboxImage.toelichting ? (
               <div className="bg-[#F9F6F0] p-6 rounded-2xl border border-dark/10 space-y-2">
                 <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
-                  Inhoudelijk interieuradvies & USP's
+                  Inhoudelijk interieuradvies
                 </span>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
                   {lightboxImage.toelichting}

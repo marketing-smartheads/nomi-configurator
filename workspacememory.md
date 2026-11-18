@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T19:07:32.677Z
+Generated: 2026-11-18T19:42:40.056Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T19:07:30.415Z
+- Last activity: 2026-11-18T19:42:37.402Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (34), components/configurator/StepOnewoning.tsx (2), components/configurator/StepThreeVisuals.tsx (2), components/configurator/StepTwoDesign.tsx (1)
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (33), components/configurator/StepOnewoning.tsx (3), components/configurator/StepThreeVisuals.tsx (2), components/configurator/StepTwoDesign.tsx (1)
 - Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
 - Active file: components/configurator/StepOnewoning.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 240 lines | 11344 chars | hash 349e42f5280c
-  Last snapshot: 2026-11-18T19:07:30.415Z
+- components/configurator/StepOnewoning.tsx | 224 lines | 10637 chars | hash cfbb07adedbd
+  Last snapshot: 2026-11-18T19:42:37.402Z
   Preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepFourConfirmation.tsx | 665 lines | 31193 chars | hash 89d5541e2877
   Last snapshot: 2026-11-18T18:34:38.235Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-18T19:42:37.402Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 153: replaced 72 lines with 56 lines.
+- Before: 240 lines | 11,344 chars | hash 349e42f5280c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 224 lines | 10,637 chars | hash cfbb07adedbd | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "between pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => { / if (imageUrl) { / setLightboxImage({ / url: imageUrl, / title: `${typeNaam} · ${indelin..."
+- Current fragment: "end pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => handleSelectIndeling(item, indelingTitel)} / className={`cursor-pointer px-5 py-2.5 rounded-ful..."
+
 ### 2026-11-18T19:07:30.415Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 1: replaced 130 lines with 237 lines.
 - Before: 133 lines | 6,001 chars | hash 855ee3eff854 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
@@ -154,29 +161,19 @@ Structured manifest: workspace.json
 - After: 696 lines | 32,680 chars | hash 03447b287b4c | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - Current fragment: "<h3 className="text-2xl sm:text-3xl font-serif text-dark"> / Concept / </h3>"
 
-### 2026-11-17T20:03:04.843Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 379: inserted 1 line.
-- Before: 693 lines | 32,547 chars | hash c6d2e11b03bf | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 693 lines | 32,552 chars | hash cf193fd662bc | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Current fragment: "pb-3"
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (34 tracked changes)
-- components/configurator/StepOnewoning.tsx (2 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (33 tracked changes)
+- components/configurator/StepOnewoning.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - components/configurator/StepTwoDesign.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 a5037f2 refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps
-- Working tree summary: 5 modifieds
+- HEAD: 2026-11-18 e52f456 feat(step1): add interactive floor plan lightbox zoom and popup description (toelichting)
+- Working tree summary: 1 modified
 - M components/configurator/StepOnewoning.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M lib/cms.ts
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -184,8 +181,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- a5037f2 by Bas van Dooremalen on 2026-11-18
-  refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps
+- e52f456 by Bas van Dooremalen on 2026-11-18
+  feat(step1): add interactive floor plan lightbox zoom and popup description (toelichting)
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
