@@ -249,16 +249,16 @@ export default function ConfiguratorScreen({
           )}
         </div>
 
-        {/* ONDERSTE NAVIGATIE BALK */}
+        {/* ONDERSTE NAVIGATIE BALK (Verfijnd en optimaal uitgelijnd) */}
         {currentStep !== 4 && (
           <div className="max-w-5xl mx-auto px-6 py-12 mt-16 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
             <button
               type="button"
               onClick={handlePrevious}
               disabled={loading}
-              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm w-full sm:w-auto justify-center"
+              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition-all duration-300 py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm hover:shadow w-full sm:w-auto justify-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
               Vorige stap
@@ -268,12 +268,12 @@ export default function ConfiguratorScreen({
               type="button"
               onClick={handleNext}
               disabled={!isCurrentStepValid() || loading}
-              className={`cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md w-full sm:w-auto justify-center ${
-                !isCurrentStepValid() ? 'opacity-50 cursor-not-allowed' : ''
+              className={`cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition-all duration-300 py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md hover:shadow-lg w-full sm:w-auto justify-center ${
+                !isCurrentStepValid() ? 'opacity-50 cursor-not-allowed hover:bg-dark' : ''
               }`}
             >
               {`VOLGENDE: ${steps[currentStep - 1]?.nextTitle || 'BEVESTIGEN'}`}
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
