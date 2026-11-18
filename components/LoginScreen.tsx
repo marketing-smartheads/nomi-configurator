@@ -74,6 +74,14 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
+      // Strenge e-mailvalidatie check (vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(ingevoerdeEmailClean)) {
+        setCustomError('Voer een geldig e-mailadres in (inclusief @ en domeinextensie).');
+        setIsChecking(false);
+        return;
+      }
+
       // Aanroep naar onze stabiele API-route
       const response = await fetch('/api/verify-voucher', {
         method: 'POST',
@@ -221,7 +229,7 @@ export default function LoginScreen({
               Vouchercode
             </label>
             <input
-              type="text"
+              type="email"
               value={localCode}
               onChange={handleVouchercodeChange}
               placeholder="XX-XXXX-X"
