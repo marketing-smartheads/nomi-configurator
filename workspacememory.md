@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T22:21:40.317Z
+Generated: 2026-11-18T22:36:04.740Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T22:21:38.576Z
+- Last activity: 2026-11-18T22:36:01.876Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (24), components/configurator/StepOnewoning.tsx (10), components/configurator/StepTwoDesign.tsx (3), components/configurator/StepThreeVisuals.tsx (1)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, components/ConfiguratorScreen.tsx, lib/cms.ts
+- Active file in focus: components/Footer.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (22), components/configurator/StepOnewoning.tsx (10), components/configurator/StepTwoDesign.tsx (3), components/Footer.tsx (2)
+- Suggested starting points: components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, components/ConfiguratorScreen.tsx
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
-- Tracked files in snapshot: 76
-- Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
-- Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
+- Active file: components/Footer.tsx
+- Tracked files in snapshot: 82
+- Top-level areas: public (32), components (18), [root] (15), app (14), lib (3)
+- Primary file types: .tsx (24), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Working tree summary: 4 modifieds, 6 untrackeds
 ## Tracked Snapshots
+- components/Footer.tsx | 214 lines | 11076 chars | hash 83a1ee39ca2b
+  Last snapshot: 2026-11-18T22:36:01.876Z
+  Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
 - components/configurator/StepOnewoning.tsx | 225 lines | 10657 chars | hash 3a95686cf2cf
   Last snapshot: 2026-11-18T22:21:38.576Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -60,11 +63,22 @@ Structured manifest: workspace.json
 - app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
   Last snapshot: 2026-11-16T18:41:14.101Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- app/api/vouchers/route.ts | 80 lines | 2922 chars | hash dac1e1e8ab6f
-  Last snapshot: 2026-11-16T18:34:33.145Z
-  Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-18T22:36:01.876Z | saved | components/Footer.tsx
+- Summary: Line 111: replaced 38 lines with 86 lines.
+- Before: 166 lines | 8,713 chars | hash 80b04addaf3b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 214 lines | 11,076 chars | hash 83a1ee39ca2b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "Op de aangegeven rode lijn / scheiding) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-cente..."
+- Current fragment: "Logo's in een rustige, uniforme witte balk) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-c..."
+
+### 2026-11-18T22:30:52.199Z | saved | components/Footer.tsx
+- Summary: Line 1: replaced 104 lines with 148 lines.
+- Before: 122 lines | 5,388 chars | hash cc53b02a612e | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
+- After: 166 lines | 8,713 chars | hash 80b04addaf3b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: numbe..."
+- Current fragment: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
+
 ### 2026-11-18T22:21:38.576Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 175: removed 44 lines.
 - Before: 268 lines | 13,348 chars | hash a5107feef067 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -153,32 +167,30 @@ Structured manifest: workspace.json
 - Previous fragment: "between pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => { / if (imageUrl) { / setLightboxImage({ / url: imageUrl, / title: `${typeNaam} · ${indelin..."
 - Current fragment: "end pt-4 mt-4 border-t border-dark/5"> / <button / type="button" / onClick={() => handleSelectIndeling(item, indelingTitel)} / className={`cursor-pointer px-5 py-2.5 rounded-ful..."
 
-### 2026-11-18T19:07:30.415Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 1: replaced 130 lines with 237 lines.
-- Before: 133 lines | 6,001 chars | hash 855ee3eff854 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
-- After: 240 lines | 11,344 chars | hash 349e42f5280c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
-- Current fragment: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / wonin..."
-
-### 2026-11-18T19:07:19.185Z | saved | lib/cms.ts
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (24 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (22 tracked changes)
 - components/configurator/StepOnewoning.tsx (10 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
+- components/Footer.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (1 tracked changes)
 - components/ConfiguratorScreen.tsx (1 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 1e5c9e6 style(configurator): update global bottom navigation with prominent pill buttons and professional svg arrows
-- Working tree summary: 4 modifieds
-- M components/configurator/StepOnewoning.tsx
+- HEAD: 2026-11-18 cccab92 feat(footer): add project partners in a clean uniform white badge bar above copyright
+- Working tree summary: 4 modifieds, 6 untrackeds
+- M components/Footer.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
+- ?? public/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png
+- ?? public/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg
+- ?? public/assets/TIB_Logo-01-2.svg
+- ?? public/assets/images.jpg
+- ?? public/assets/images.png
+- ?? public/assets/jongerius-invest-HQ-2.png
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +198,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c3a085c by Bas van Dooremalen on 2026-11-18
-  feat(configurator): maak stapnavigatie duidelijker met twee herkenbare knoppen
+- cccab92 by Bas van Dooremalen on 2026-11-18
+  feat(footer): add project partners in a clean uniform white badge bar above copyright
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

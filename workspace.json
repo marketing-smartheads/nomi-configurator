@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:21:40.317Z",
-  "generatedAtEpochMs": 1795040500317,
+  "generatedAt": "2026-11-18T22:36:04.740Z",
+  "generatedAtEpochMs": 1795041364740,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepOnewoning.tsx",
+    "activeFile": "components/Footer.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,9 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepOnewoning.tsx",
+      "components/Footer.tsx",
       "components/configurator/StepFourConfirmation.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "components/ConfiguratorScreen.tsx",
@@ -32,15 +33,14 @@
       "AGENTS.md",
       "README.md",
       "package-lock.json",
-      "package.json",
-      "tsconfig.json"
+      "package.json"
     ],
     "stats": {
-      "totalFiles": 76,
+      "totalFiles": 82,
       "topLevelAreas": [
         {
           "name": "public",
-          "count": 26
+          "count": 32
         },
         {
           "name": "components",
@@ -66,11 +66,15 @@
         },
         {
           "name": ".svg",
-          "count": 14
+          "count": 15
         },
         {
           "name": ".ts",
           "count": 11
+        },
+        {
+          "name": ".png",
+          "count": 6
         },
         {
           "name": ".json",
@@ -87,10 +91,6 @@
         {
           "name": ".woff2",
           "count": 4
-        },
-        {
-          "name": ".png",
-          "count": 3
         }
       ],
       "keyFiles": [
@@ -379,15 +379,45 @@
           "isKeyFile": false
         },
         {
+          "path": "public/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/images.jpg",
+          "topLevelArea": "public",
+          "extension": ".jpg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/images.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/imgi_1_Logo_NOMI_LANDSCAPE_GRADIENT-RGB.svg",
           "topLevelArea": "public",
           "extension": ".svg",
           "isKeyFile": false
         },
         {
+          "path": "public/assets/jongerius-invest-HQ-2.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/assets/Logo Thomas de Gier donkerblauw.svg",
           "topLevelArea": "public",
           "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg",
+          "topLevelArea": "public",
+          "extension": ".jpg",
           "isKeyFile": false
         },
         {
@@ -434,6 +464,12 @@
         },
         {
           "path": "public/assets/Patroon logo Thomas de Gier achtergrond.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/assets/TIB_Logo-01-2.svg",
           "topLevelArea": "public",
           "extension": ".svg",
           "isKeyFile": false
@@ -605,7 +641,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T22:21:38.576Z",
+    "lastActivityAt": "2026-11-18T22:36:01.876Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -616,6 +652,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/Footer.tsx",
+      "updatedAt": 1795041361876,
+      "lineCount": 214,
+      "charCount": 11076,
+      "hash": "83a1ee39ca2b",
+      "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+    },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
       "updatedAt": 1795040498576,
@@ -671,17 +715,73 @@
       "charCount": 7550,
       "hash": "e35fdd4c7a5a",
       "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
-    },
-    {
-      "filePath": "app/api/vouchers/route.ts",
-      "updatedAt": 1794854073145,
-      "lineCount": 80,
-      "charCount": 2922,
-      "hash": "dac1e1e8ab6f",
-      "preview": "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 111: replaced 38 lines with 86 lines.",
+      "recordedAt": "2026-11-18T22:36:01.876Z",
+      "recordedAtEpochMs": 1795041361876,
+      "before": {
+        "kind": "text",
+        "lineCount": 166,
+        "charCount": 8713,
+        "hash": "80b04addaf3b",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041361876
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11076,
+        "hash": "83a1ee39ca2b",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041361876
+      },
+      "diff": {
+        "lineStart": 111,
+        "removedLines": 38,
+        "addedLines": 86,
+        "summary": "Line 111: replaced 38 lines with 86 lines.",
+        "beforeFragment": "Op de aangegeven rode lijn / scheiding) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-cente...",
+        "afterFragment": "Logo's in een rustige, uniforme witte balk) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-c..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 104 lines with 148 lines.",
+      "recordedAt": "2026-11-18T22:30:52.199Z",
+      "recordedAtEpochMs": 1795041052199,
+      "before": {
+        "kind": "text",
+        "lineCount": 122,
+        "charCount": 5388,
+        "hash": "cc53b02a612e",
+        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
+        "updatedAt": 1795041052199
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 166,
+        "charCount": 8713,
+        "hash": "80b04addaf3b",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795041052199
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 104,
+        "addedLines": 148,
+        "summary": "Line 1: replaced 104 lines with 148 lines.",
+        "beforeFragment": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: numbe...",
+        "afterFragment": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1090,55 +1190,12 @@
         "beforeFragment": "between pt-4 mt-4 border-t border-dark/5\"> / <button / type=\"button\" / onClick={() => { / if (imageUrl) { / setLightboxImage({ / url: imageUrl, / title: `${typeNaam} · ${indelin...",
         "afterFragment": "end pt-4 mt-4 border-t border-dark/5\"> / <button / type=\"button\" / onClick={() => handleSelectIndeling(item, indelingTitel)} / className={`cursor-pointer px-5 py-2.5 rounded-ful..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 130 lines with 237 lines.",
-      "recordedAt": "2026-11-18T19:07:30.415Z",
-      "recordedAtEpochMs": 1795028850415,
-      "before": {
-        "kind": "text",
-        "lineCount": 133,
-        "charCount": 6001,
-        "hash": "855ee3eff854",
-        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
-        "updatedAt": 1795028850415
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 240,
-        "charCount": 11344,
-        "hash": "349e42f5280c",
-        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795028850415
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 130,
-        "addedLines": 237,
-        "summary": "Line 1: replaced 130 lines with 237 lines.",
-        "beforeFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {...",
-        "afterFragment": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / wonin..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "lib/cms.ts",
-      "toPath": "",
-      "summary": "",
-      "recordedAt": "2026-11-18T19:07:19.185Z",
-      "recordedAtEpochMs": 1795028839185,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 24
+      "count": 22
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
@@ -1147,6 +1204,10 @@
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
+    },
+    {
+      "filePath": "components/Footer.tsx",
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -1164,20 +1225,26 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 1e5c9e6 style(configurator): update global bottom navigation with prominent pill buttons and professional svg arrows",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-18 cccab92 feat(footer): add project partners in a clean uniform white badge bar above copyright",
+    "statusSummary": "4 modifieds, 6 untrackeds",
+    "changedFileCount": 10,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx",
+      "M components/Footer.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
-      "M workspacememory.md"
+      "M workspacememory.md",
+      "?? public/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png",
+      "?? public/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg",
+      "?? public/assets/TIB_Logo-01-2.svg",
+      "?? public/assets/images.jpg",
+      "?? public/assets/images.png",
+      "?? public/assets/jongerius-invest-HQ-2.png"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c3a085c by Bas van Dooremalen on 2026-11-18\n  feat(configurator): maak stapnavigatie duidelijker met twee herkenbare knoppen\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- cccab92 by Bas van Dooremalen on 2026-11-18\n  feat(footer): add project partners in a clean uniform white badge bar above copyright\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
