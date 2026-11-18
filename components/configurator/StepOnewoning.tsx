@@ -1,4 +1,7 @@
+// components/StepOnewoning.tsx
 'use client';
+
+import { useState, useEffect } from 'react';
 
 export default function StepOneWoning({ 
   stepTitle, 
@@ -12,6 +15,18 @@ export default function StepOneWoning({
   const stappenBalk = data?.stappenBalk || data?.stappen_balk || [];
   const stap1Omschrijving = stappenBalk[0]?.stapOmschrijving || stappenBalk[0]?.stap_omschrijving || '';
   
+  // Lightbox / Zoom state voor plattegrond & inhoudelijk interieuradvies
+  const [lightboxImage, setLightboxImage] = useState<{ url: string; title: string; toelichting?: string } | null>(null);
+
+  // Sluit lightbox met Escape toets
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxImage(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const gefilterdeLijst = woningType 
     ? woningTypenLijst.filter((item: any) => {
         const typeNaam = item.typeNaam || item.type_naam || item.titel || '';
@@ -76,6 +91,7 @@ export default function StepOneWoning({
               const indelingTitel = item.indelingTitel || item.indeling_titel || `Indeling 0${index + 1}`;
               const metrage = item.metrage || '';
               const imageUrl = item.plattegrond?.node?.sourceUrl || item.plattegrond?.sourceUrl;
+              const toelichtingTekst = item.toelichting || '';
               
               const geselecteerdeTitel = selectedIndeling?.indelingTitel || selectedIndeling?.indeling_titel || selectedIndeling;
               const isSelected = selectedIndeling && (
@@ -84,22 +100,42 @@ export default function StepOneWoning({
               );
 
               return (
-                <button
+                <div
                   key={`indeling-${index}-${indelingTitel}`}
-                  type="button"
-                  onClick={() => handleSelectIndeling(item, indelingTitel)}
-                  className={`bg-white p-6 rounded-[2.5rem] cursor-pointer text-left transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-md border ${
+                  className={`bg-white p-6 rounded-[2.5rem] transition-all duration-300 flex flex-col justify-between shadow-lg border ${
                     isSelected ? 'border-primary ring-2 ring-primary' : 'border-dark/15 hover:border-primary/50'
                   }`}
                 >
                   <div>
-                    <div className="w-full aspect-16/10 bg-white rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-4 border border-dark/5">
+                    {/* Klikbare plattegrond afbeelding met vergrootglas overlay */}
+                    <div 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (imageUrl) {
+                          setLightboxImage({ 
+                            url: imageUrl, 
+                            title: `${typeNaam} · ${indelingTitel}`, 
+                            toelichting: toelichtingTekst 
+                          });
+                        }
+                      }}
+                      className={`w-full aspect-16/10 bg-white rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center p-4 border border-dark/5 group ${imageUrl ? 'cursor-pointer' : ''}`}
+                      title="Klik om te vergroten"
+                    >
                       {imageUrl ? (
-                        <img 
-                          src={imageUrl} 
-                          alt={indelingTitel} 
-                          className="max-h-full max-w-full object-contain transition-transform duration-500 hover:scale-105"
-                        />
+                        <>
+                          <img 
+                            src={imageUrl} 
+                            alt={indelingTitel} 
+                            className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                          />
+                          {/* Vergrootglas Overlay Knop */}
+                          <div className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-dark/75 backdrop-blur-md flex items-center justify-center text-white shadow-lg opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </>
                       ) : (
                         <span className="text-muted/60 font-medium text-xs">
                           [ Plattegrond {indelingTitel} ]
@@ -114,10 +150,34 @@ export default function StepOneWoning({
                     <p className="text-xs text-muted py-2">{metrage}</p>
                   </div>
 
-                  <div className="text-[11px] font-semibold tracking-wider text-primary mt-4">
-                    {isSelected ? 'GESELECTEERD ✓' : 'SELECTEER →'}
+                  <div className="flex items-center justify-between pt-4 mt-4 border-t border-dark/5">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (imageUrl) {
+                          setLightboxImage({ 
+                            url: imageUrl, 
+                            title: `${typeNaam} · ${indelingTitel}`, 
+                            toelichting: toelichtingTekst 
+                          });
+                        }
+                      }}
+                      className="text-[11px] font-semibold tracking-wider text-muted hover:text-primary transition uppercase"
+                    >
+                      BEKIJK PLATTEGROND ↗
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => handleSelectIndeling(item, indelingTitel)}
+                      className={`cursor-pointer px-5 py-2.5 rounded-full text-[11px] font-semibold tracking-wider transition uppercase ${
+                        isSelected ? 'bg-primary text-white' : 'bg-dark text-white hover:bg-primary'
+                      }`}
+                    >
+                      {isSelected ? 'GESELECTEERD ✓' : 'SELECTEER'}
+                    </button>
                   </div>
-                </button>
+                </div>
               );
             })
           ) : (
@@ -128,6 +188,53 @@ export default function StepOneWoning({
         </div>
 
       </div>
+
+      {/* Fancybox / Lightbox Modal inclusief Inhoudelijk Interieuradvies (Toelichting) */}
+      {lightboxImage && (
+        <div 
+          onClick={() => setLightboxImage(null)}
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 animate-fadeIn cursor-zoom-out"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()} 
+            className="relative max-w-4xl w-full bg-white rounded-[2rem] overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6 text-left cursor-default"
+          >
+            <div className="flex items-center justify-between border-b border-dark/10 pb-4">
+              <h4 className="font-serif text-2xl text-dark">{lightboxImage.title}</h4>
+              <button 
+                onClick={() => setLightboxImage(null)}
+                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-dark hover:bg-dark hover:text-white transition cursor-pointer"
+                aria-label="Sluiten"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden bg-[#F9F6F0] border border-dark/5 p-4 flex items-center justify-center">
+              <img 
+                src={lightboxImage.url} 
+                alt={lightboxImage.title} 
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+
+            {lightboxImage.toelichting ? (
+              <div className="bg-[#F9F6F0] p-6 rounded-2xl border border-dark/10 space-y-2">
+                <span className="block text-[10px] font-bold tracking-[0.2em] text-primary uppercase">
+                  Inhoudelijk interieuradvies & USP's
+                </span>
+                <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  {lightboxImage.toelichting}
+                </p>
+              </div>
+            ) : (
+              <p className="text-xs text-muted italic text-center py-2">
+                Geen aanvullende toelichting beschikbaar voor deze indeling.
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

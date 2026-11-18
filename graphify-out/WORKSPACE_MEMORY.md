@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T18:34:40.237Z
+Generated: 2026-11-18T19:07:32.677Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T18:34:38.235Z
+- Last activity: 2026-11-18T19:07:30.415Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (36), components/configurator/StepThreeVisuals.tsx (2), components/configurator/StepOnewoning.tsx (1), components/configurator/StepTwoDesign.tsx (1)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, .gitignore, AGENTS.md
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (34), components/configurator/StepOnewoning.tsx (2), components/configurator/StepThreeVisuals.tsx (2), components/configurator/StepTwoDesign.tsx (1)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepThreeVisuals.tsx, components/configurator/StepTwoDesign.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 76
 - Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -37,8 +37,11 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 47
-- Working tree summary: 7 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 240 lines | 11344 chars | hash 349e42f5280c
+  Last snapshot: 2026-11-18T19:07:30.415Z
+  Preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepFourConfirmation.tsx | 665 lines | 31193 chars | hash 89d5541e2877
   Last snapshot: 2026-11-18T18:34:38.235Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -48,9 +51,6 @@ Structured manifest: workspace.json
 - components/configurator/StepTwoDesign.tsx | 273 lines | 12360 chars | hash b4fa3adfccd3
   Last snapshot: 2026-11-18T18:32:57.112Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/configurator/StepOnewoning.tsx | 133 lines | 6001 chars | hash 855ee3eff854
-  Last snapshot: 2026-11-18T18:32:42.331Z
-  Preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
 - components/LoginScreen.tsx | 280 lines | 9944 chars | hash 0900a7d9f405
   Last snapshot: 2026-11-17T18:20:19.767Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -65,6 +65,15 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-18T19:07:30.415Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 1: replaced 130 lines with 237 lines.
+- Before: 133 lines | 6,001 chars | hash 855ee3eff854 | preview: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
+- After: 240 lines | 11,344 chars | hash 349e42f5280c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {..."
+- Current fragment: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / wonin..."
+
+### 2026-11-18T19:07:19.185Z | saved | lib/cms.ts
+
 ### 2026-11-18T18:34:38.235Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 304: removed 28 lines.
 - Before: 692 lines | 32,170 chars | hash 90df63b66172 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
@@ -151,36 +160,21 @@ Structured manifest: workspace.json
 - After: 693 lines | 32,552 chars | hash cf193fd662bc | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - Current fragment: "pb-3"
 
-### 2026-11-17T19:58:36.016Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 395: replaced 1 line with 1 line.
-- Before: 693 lines | 32,547 chars | hash 005a0759b127 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 693 lines | 32,547 chars | hash c6d2e11b03bf | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "muted leading-relaxed pt-1"
-- Current fragment: "white leading-relaxed pt-3"
-
-### 2026-11-17T19:58:26.913Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 392: replaced 4 lines with 4 lines.
-- Before: 693 lines | 32,571 chars | hash 64e87137c62d | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 693 lines | 32,547 chars | hash 005a0759b127 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "[#C5A880] uppercase font-serif mb-2"> / JOUW SAMENVATTING / </span> / <p className="text-xs sm:text-sm text-white leading-relaxed font-serif"
-- Current fragment: "primary uppercase"> / JOUW SAMENVATTING / </span> / <p className="text-xs sm:text-sm text-muted leading-relaxed pt-1"
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (36 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (34 tracked changes)
+- components/configurator/StepOnewoning.tsx (2 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
-- components/configurator/StepOnewoning.tsx (1 tracked changes)
 - components/configurator/StepTwoDesign.tsx (1 tracked changes)
+- lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-17 bed77b5 fix(step4): render single pakket_aabeelding moodboard image above material list with style tag
-- Working tree summary: 7 modifieds
-- M components/configurator/StepFourConfirmation.tsx
+- HEAD: 2026-11-18 a5037f2 refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps
+- Working tree summary: 5 modifieds
 - M components/configurator/StepOnewoning.tsx
-- M components/configurator/StepThreeVisuals.tsx
-- M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
+- M lib/cms.ts
 - M workspace.json
 - M workspacememory.md
 
@@ -190,8 +184,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- bed77b5 by Bas van Dooremalen on 2026-11-17
-  fix(step4): render single pakket_aabeelding moodboard image above material list with style tag
+- a5037f2 by Bas van Dooremalen on 2026-11-18
+  refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

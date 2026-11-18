@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T18:34:40.237Z",
-  "generatedAtEpochMs": 1795026880237,
+  "generatedAt": "2026-11-18T19:07:32.677Z",
+  "generatedAtEpochMs": 1795028852677,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,10 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepThreeVisuals.tsx",
-      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -603,7 +604,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T18:34:38.235Z",
+    "lastActivityAt": "2026-11-18T19:07:30.415Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -614,6 +615,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1795028850415,
+      "lineCount": 240,
+      "charCount": 11344,
+      "hash": "349e42f5280c",
+      "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1795026878235,
@@ -637,14 +646,6 @@
       "charCount": 12360,
       "hash": "b4fa3adfccd3",
       "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795026762331,
-      "lineCount": 133,
-      "charCount": 6001,
-      "hash": "855ee3eff854",
-      "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu..."
     },
     {
       "filePath": "components/LoginScreen.tsx",
@@ -680,6 +681,49 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 130 lines with 237 lines.",
+      "recordedAt": "2026-11-18T19:07:30.415Z",
+      "recordedAtEpochMs": 1795028850415,
+      "before": {
+        "kind": "text",
+        "lineCount": 133,
+        "charCount": 6001,
+        "hash": "855ee3eff854",
+        "preview": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) { / const data = configuratorData?.configu...",
+        "updatedAt": 1795028850415
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 240,
+        "charCount": 11344,
+        "hash": "349e42f5280c",
+        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795028850415
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 130,
+        "addedLines": 237,
+        "summary": "Line 1: replaced 130 lines with 237 lines.",
+        "beforeFragment": "'use client'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedIndeling, / setSelectedIndeling / }: any) {...",
+        "afterFragment": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / wonin..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "lib/cms.ts",
+      "toPath": "",
+      "summary": "",
+      "recordedAt": "2026-11-18T19:07:19.185Z",
+      "recordedAtEpochMs": 1795028839185,
+      "before": null,
+      "after": null,
+      "diff": null
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1095,102 +1139,40 @@
         "beforeFragment": "",
         "afterFragment": "pb-3"
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 395: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-17T19:58:36.016Z",
-      "recordedAtEpochMs": 1794945516016,
-      "before": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32547,
-        "hash": "005a0759b127",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945516016
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32547,
-        "hash": "c6d2e11b03bf",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945516016
-      },
-      "diff": {
-        "lineStart": 395,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 395: replaced 1 line with 1 line.",
-        "beforeFragment": "muted leading-relaxed pt-1",
-        "afterFragment": "white leading-relaxed pt-3"
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 392: replaced 4 lines with 4 lines.",
-      "recordedAt": "2026-11-17T19:58:26.913Z",
-      "recordedAtEpochMs": 1794945506913,
-      "before": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32571,
-        "hash": "64e87137c62d",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945506913
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 693,
-        "charCount": 32547,
-        "hash": "005a0759b127",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794945506913
-      },
-      "diff": {
-        "lineStart": 392,
-        "removedLines": 4,
-        "addedLines": 4,
-        "summary": "Line 392: replaced 4 lines with 4 lines.",
-        "beforeFragment": "[#C5A880] uppercase font-serif mb-2\"> / JOUW SAMENVATTING / </span> / <p className=\"text-xs sm:text-sm text-white leading-relaxed font-serif",
-        "afterFragment": "primary uppercase\"> / JOUW SAMENVATTING / </span> / <p className=\"text-xs sm:text-sm text-muted leading-relaxed pt-1"
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 36
+      "count": 34
+    },
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 2
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
       "count": 2
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
+      "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 1
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
+      "filePath": "lib/cms.ts",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-17 bed77b5 fix(step4): render single pakket_aabeelding moodboard image above material list with style tag",
-    "statusSummary": "7 modifieds",
-    "changedFileCount": 7,
+    "headSummary": "2026-11-18 a5037f2 refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx",
       "M components/configurator/StepOnewoning.tsx",
-      "M components/configurator/StepThreeVisuals.tsx",
-      "M components/configurator/StepTwoDesign.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
+      "M lib/cms.ts",
       "M workspace.json",
       "M workspacememory.md"
     ],
@@ -1198,7 +1180,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- bed77b5 by Bas van Dooremalen on 2026-11-17\n  fix(step4): render single pakket_aabeelding moodboard image above material list with style tag\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- a5037f2 by Bas van Dooremalen on 2026-11-18\n  refactor(configurator): remove NOMI X THOMASDEGIER logos across all steps\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

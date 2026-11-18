@@ -51,6 +51,7 @@ export async function getPageData() {
               typeNaam
               indelingTitel
               metrage
+              toelichting
               plattegrond {
                 node {
                   sourceUrl
