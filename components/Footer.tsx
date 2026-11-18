@@ -1,3 +1,4 @@
+// components/Footer.tsx
 'use client';
 
 import Image from 'next/image';
@@ -102,6 +103,49 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             >
                                 Type woning
                             </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* BETROKKEN PROJECTPARTIJEN (Op de aangegeven rode lijn / scheiding) */}
+                <div className="py-12 border-b border-white/15">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+                        
+                        {/* Jongerius Invest */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span>
+                            <span className="font-serif text-sm tracking-wider text-white font-semibold group-hover:text-primary transition">JONGERIUS INVEST</span>
+                        </div>
+
+                        {/* Thuis in Bouwen */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Hoofdaannemer</span>
+                            <span className="font-sans text-xs tracking-widest uppercase text-white font-bold group-hover:text-primary transition">THUIS IN BOUWEN</span>
+                        </div>
+
+                        {/* De Keizer Makelaarsgroep */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
+                            <span className="font-serif text-xs tracking-wider uppercase text-white font-semibold group-hover:text-primary transition">DE KEIZER</span>
+                        </div>
+
+                        {/* Courage Architecten */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
+                            <span className="font-sans text-xs tracking-[0.25em] uppercase text-white font-semibold group-hover:text-primary transition">COURAGE</span>
+                        </div>
+
+                        {/* THOMASDEGIER */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Interieurarchitect</span>
+                            <span className="font-sans text-xs tracking-[0.15em] uppercase text-white font-semibold group-hover:text-primary transition">THOMASDEGIER</span>
+                        </div>
+
+                        {/* SmartHeads */}
+                        <div className="flex flex-col items-center text-center space-y-2 group">
+                            <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
+                            <span className="font-sans text-xs tracking-wider uppercase text-white font-semibold group-hover:text-primary transition">SMARTHEADS</span>
                         </div>
 
                     </div>
