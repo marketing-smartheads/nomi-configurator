@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T21:36:55.039Z
+Generated: 2026-11-18T21:46:48.099Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T21:36:52.488Z
+- Last activity: 2026-11-18T21:46:45.672Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepFourConfirmation.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (31), components/configurator/StepOnewoning.tsx (3), components/configurator/StepTwoDesign.tsx (3), components/configurator/StepThreeVisuals.tsx (2)
-- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, .gitignore
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: components/configurator/StepFourConfirmation.tsx (30), components/configurator/StepOnewoning.tsx (4), components/configurator/StepTwoDesign.tsx (3), components/configurator/StepThreeVisuals.tsx (2)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, lib/cms.ts, .gitignore
 ## Current Workspace
-- Active file: components/configurator/StepFourConfirmation.tsx
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 76
 - Top-level areas: public (26), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .svg (14), .ts (11), .json (4), .md (4), .woff (4), .woff2 (4), .png (3)
@@ -39,15 +39,15 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 1 modified
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 251 lines | 11820 chars | hash 24fff1f5e112
+  Last snapshot: 2026-11-18T21:46:45.672Z
+  Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepFourConfirmation.tsx | 793 lines | 35622 chars | hash 0e2c3d0d1461
   Last snapshot: 2026-11-18T21:36:52.488Z
   Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - components/configurator/StepTwoDesign.tsx | 273 lines | 12368 chars | hash 6c0aa94c4d43
   Last snapshot: 2026-11-18T20:16:44.791Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/configurator/StepOnewoning.tsx | 224 lines | 10637 chars | hash cfbb07adedbd
-  Last snapshot: 2026-11-18T19:42:37.402Z
-  Preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepThreeVisuals.tsx | 472 lines | 19371 chars | hash 1e3076199a8e
   Last snapshot: 2026-11-18T18:33:10.366Z
   Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / export const dynamic = 'force-dynamic'; / const VERHUUR_VOUCHERS = new Set([ / 'nomi-a001', 'nomi-a003', 'nomi-a005', 'nomi-a006', 'nomi-a007', 'nomi-a013', / 'nomi-a019',..."
 
 ## Recent Changes
+### 2026-11-18T21:46:45.672Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 1: replaced 172 lines with 199 lines.
+- Before: 224 lines | 10,637 chars | hash cfbb07adedbd | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 251 lines | 11,820 chars | hash 24fff1f5e112 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning..."
+- Current fragment: "Woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning..."
+
 ### 2026-11-18T21:36:52.488Z | saved | components/configurator/StepFourConfirmation.tsx
 - Summary: Line 1: replaced 218 lines with 787 lines.
 - Before: 224 lines | 10,414 chars | hash 9953ab57cc2c | preview: "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -155,26 +162,19 @@ Structured manifest: workspace.json
 - Previous fragment: "1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS / const rawPakketAfb = / storedPakket?.pakketAfbeelding || / storedPak..."
 - Current fragment: "Waterdichte ophaalmethode inclusief de ontdekte typefout 'pakketAabeelding' / 'pakket_aabeelding' / const rawPakketAfb = / storedPakket?.pakketAabeelding || / storedPakket?.pakk..."
 
-### 2026-11-17T20:19:35.772Z | saved | components/configurator/StepFourConfirmation.tsx
-- Summary: Line 147: replaced 216 lines with 220 lines.
-- Before: 698 lines | 32,812 chars | hash ba049d251aa4 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- After: 702 lines | 32,832 chars | hash be07876351fd | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- Previous fragment: "Uitgebreide en correcte ophaalmethode voor de echte pakketAfbeeldingen (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbee..."
-- Current fragment: "1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS / const rawPakketAfb = / storedPakket?.pakketAfbeelding || / storedPak..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (31 tracked changes)
-- components/configurator/StepOnewoning.tsx (3 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (30 tracked changes)
+- components/configurator/StepOnewoning.tsx (4 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - components/configurator/StepThreeVisuals.tsx (2 tracked changes)
 - lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 b91bd80 refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies
+- HEAD: 2026-11-18 2e0bceb feat(step4): integrate interactive 360 panorama viewer under Jouw interieur
 - Working tree summary: 1 modified
-- M components/configurator/StepFourConfirmation.tsx
+- M components/configurator/StepOnewoning.tsx
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- df4163a by Bas van Dooremalen on 2026-11-18
-  sentences adjusted
+- 2e0bceb by Bas van Dooremalen on 2026-11-18
+  feat(step4): integrate interactive 360 panorama viewer under Jouw interieur
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

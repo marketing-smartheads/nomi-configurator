@@ -1,4 +1,4 @@
-// components/StepOnewoning.tsx
+// components/StepOneWoning.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,7 +9,9 @@ export default function StepOneWoning({
   woningTypenLijst, 
   woningType, 
   selectedIndeling, 
-  setSelectedIndeling 
+  setSelectedIndeling,
+  onNext,
+  onBack 
 }: any) {
   const data = configuratorData?.configurator || configuratorData;
   const stappenBalk = data?.stappenBalk || data?.stappen_balk || [];
@@ -170,6 +172,31 @@ export default function StepOneWoning({
             </div>
           )}
         </div>
+
+        {/* Consistente Navigatiesectie onderaan */}
+        {(onBack || onNext) && (
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full">
+            {onBack ? (
+              <button
+                type="button"
+                onClick={onBack}
+                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-3 px-6 rounded-full bg-[#E8E2D5]/50 hover:bg-[#E8E2D5] flex items-center gap-2 w-full sm:w-auto justify-center"
+              >
+                ← Vorige stap
+              </button>
+            ) : <div />}
+
+            {onNext && (
+              <button
+                type="button"
+                onClick={onNext}
+                className="cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-3 px-8 rounded-full bg-dark hover:bg-primary flex items-center gap-2 w-full sm:w-auto justify-center shadow-md"
+              >
+                Volgende stap →
+              </button>
+            )}
+          </div>
+        )}
 
       </div>
 

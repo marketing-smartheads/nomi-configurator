@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T21:36:55.039Z",
-  "generatedAtEpochMs": 1795037815039,
+  "generatedAt": "2026-11-18T21:46:48.099Z",
+  "generatedAtEpochMs": 1795038408099,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/configurator/StepFourConfirmation.tsx",
+    "activeFile": "components/configurator/StepOnewoning.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,8 +22,8 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepOnewoning.tsx",
+      "components/configurator/StepFourConfirmation.tsx",
       "components/configurator/StepTwoDesign.tsx",
       "components/configurator/StepThreeVisuals.tsx",
       "lib/cms.ts",
@@ -604,7 +604,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T21:36:52.488Z",
+    "lastActivityAt": "2026-11-18T21:46:45.672Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -615,6 +615,14 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "updatedAt": 1795038405672,
+      "lineCount": 251,
+      "charCount": 11820,
+      "hash": "24fff1f5e112",
+      "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+    },
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "updatedAt": 1795037812488,
@@ -630,14 +638,6 @@
       "charCount": 12368,
       "hash": "6c0aa94c4d43",
       "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-    },
-    {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795030957402,
-      "lineCount": 224,
-      "charCount": 10637,
-      "hash": "cfbb07adedbd",
-      "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
     },
     {
       "filePath": "components/configurator/StepThreeVisuals.tsx",
@@ -681,6 +681,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 172 lines with 199 lines.",
+      "recordedAt": "2026-11-18T21:46:45.672Z",
+      "recordedAtEpochMs": 1795038405672,
+      "before": {
+        "kind": "text",
+        "lineCount": 224,
+        "charCount": 10637,
+        "hash": "cfbb07adedbd",
+        "preview": "// components/StepOnewoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795038405672
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 251,
+        "charCount": 11820,
+        "hash": "24fff1f5e112",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795038405672
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 172,
+        "addedLines": 199,
+        "summary": "Line 1: replaced 172 lines with 199 lines.",
+        "beforeFragment": "woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning...",
+        "afterFragment": "Woning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woning..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepFourConfirmation.tsx",
@@ -1107,48 +1139,16 @@
         "beforeFragment": "1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS / const rawPakketAfb = / storedPakket?.pakketAfbeelding || / storedPak...",
         "afterFragment": "Waterdichte ophaalmethode inclusief de ontdekte typefout 'pakketAabeelding' / 'pakket_aabeelding' / const rawPakketAfb = / storedPakket?.pakketAabeelding || / storedPakket?.pakk..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepFourConfirmation.tsx",
-      "toPath": "",
-      "summary": "Line 147: replaced 216 lines with 220 lines.",
-      "recordedAt": "2026-11-17T20:19:35.772Z",
-      "recordedAtEpochMs": 1794946775772,
-      "before": {
-        "kind": "text",
-        "lineCount": 698,
-        "charCount": 32812,
-        "hash": "ba049d251aa4",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794946775772
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 702,
-        "charCount": 32832,
-        "hash": "be07876351fd",
-        "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from...",
-        "updatedAt": 1794946775772
-      },
-      "diff": {
-        "lineStart": 147,
-        "removedLines": 216,
-        "addedLines": 220,
-        "summary": "Line 147: replaced 216 lines with 220 lines.",
-        "beforeFragment": "Uitgebreide en correcte ophaalmethode voor de echte pakketAfbeeldingen (moodboard) repeater / const rawPakketAfb = storedPakket?.pakketAfbeeldingen || storedPakket?.pakket_afbee...",
-        "afterFragment": "1. Waterdichte ophaalmethode voor exact de 'pakketAfbeelding' of 'pakketAfbeeldingen' repeater uit het CMS / const rawPakketAfb = / storedPakket?.pakketAfbeelding || / storedPak..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 31
+      "count": 30
     },
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
@@ -1166,17 +1166,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 b91bd80 refactor(step1): remove view floor plan text link and rename lightbox header to Inhoudelijk interieuradvies",
+    "headSummary": "2026-11-18 2e0bceb feat(step4): integrate interactive 360 panorama viewer under Jouw interieur",
     "statusSummary": "1 modified",
     "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepFourConfirmation.tsx"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- df4163a by Bas van Dooremalen on 2026-11-18\n  sentences adjusted\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2e0bceb by Bas van Dooremalen on 2026-11-18\n  feat(step4): integrate interactive 360 panorama viewer under Jouw interieur\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
