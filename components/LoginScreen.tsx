@@ -74,10 +74,10 @@ export default function LoginScreen({
       const ingevoerdeCodeClean = localCode.trim().toUpperCase();
       const ingevoerdeEmailClean = localEmail.trim();
 
-      // Strenge e-mailvalidatie check (vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com)
+      // Strenge e-mailvalidatie check op het e-mailadres veld
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(ingevoerdeEmailClean)) {
-        setCustomError('Voer een geldig e-mailadres in (inclusief @ en domeinextensie).');
+        setCustomError('Voer een geldig e-mailadres in (inclusief @ en domeinextensie zoals .nl).');
         setIsChecking(false);
         return;
       }
@@ -229,7 +229,7 @@ export default function LoginScreen({
               Vouchercode
             </label>
             <input
-              type="email"
+              type="text"
               value={localCode}
               onChange={handleVouchercodeChange}
               placeholder="XX-XXXX-X"
