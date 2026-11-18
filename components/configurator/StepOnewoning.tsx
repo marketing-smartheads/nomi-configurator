@@ -174,29 +174,27 @@ export default function StepOneWoning({
         </div>
 
         {/* Consistente Navigatiesectie onderaan */}
-        {(onBack || onNext) && (
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full">
-            {onBack ? (
-              <button
-                type="button"
-                onClick={onBack}
-                className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-3 px-6 rounded-full bg-[#E8E2D5]/50 hover:bg-[#E8E2D5] flex items-center gap-2 w-full sm:w-auto justify-center"
-              >
-                ← Vorige stap
-              </button>
-            ) : <div />}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full">
+          {onBack ? (
+            <button
+              type="button"
+              onClick={onBack}
+              className="cursor-pointer text-dark hover:text-primary text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-8 rounded-full bg-[#E8E2D5] hover:bg-[#D9D3CB] flex items-center gap-3 shadow-sm w-full sm:w-auto justify-center"
+            >
+              <span>←</span> Vorige stap
+            </button>
+          ) : <div />}
 
-            {onNext && (
-              <button
-                type="button"
-                onClick={onNext}
-                className="cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-3 px-8 rounded-full bg-dark hover:bg-primary flex items-center gap-2 w-full sm:w-auto justify-center shadow-md"
-              >
-                Volgende stap →
-              </button>
-            )}
-          </div>
-        )}
+          {onNext && (
+            <button
+              type="button"
+              onClick={onNext}
+              className="cursor-pointer text-white text-[11px] font-bold tracking-[0.25em] uppercase transition py-4 px-10 rounded-full bg-dark hover:bg-primary flex items-center gap-3 shadow-md w-full sm:w-auto justify-center"
+            >
+              Volgende stap <span>→</span>
+            </button>
+          )}
+        </div>
 
       </div>
 
