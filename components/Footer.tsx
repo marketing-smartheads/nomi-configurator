@@ -140,30 +140,30 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* De Keizer Makelaarsgroep */}
+                        {/* De Keizer Makelaarsgroep (Zonder invert filter, netjes opgelicht via opacity) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
-                            <div className="h-10 flex items-center justify-center">
+                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
                                 <Image 
                                     src="/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg" 
                                     alt="De Keizer Makelaarsgroep" 
-                                    width={120} 
-                                    height={36} 
-                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                    width={100} 
+                                    height={30} 
+                                    className="object-contain opacity-80 group-hover:opacity-100 transition"
                                 />
                             </div>
                         </div>
 
-                        {/* Courage Architecten */}
+                        {/* Courage Architecten (Zonder invert filter) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
-                            <div className="h-10 flex items-center justify-center">
+                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
                                 <Image 
                                     src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
                                     alt="Courage Architecten" 
-                                    width={34} 
-                                    height={34} 
-                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                    width={32} 
+                                    height={32} 
+                                    className="object-contain opacity-80 group-hover:opacity-100 transition"
                                 />
                             </div>
                         </div>
@@ -182,16 +182,16 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                             </div>
                         </div>
 
-                        {/* SmartHeads */}
+                        {/* SmartHeads (Zonder invert filter) */}
                         <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
-                            <div className="h-10 flex items-center justify-center">
+                            <div className="h-10 flex items-center justify-center bg-white/5 px-3 py-1 rounded-xl">
                                 <Image 
                                     src="/assets/images.png" 
                                     alt="SmartHeads" 
-                                    width={95} 
-                                    height={30} 
-                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                    width={85} 
+                                    height={28} 
+                                    className="object-contain opacity-80 group-hover:opacity-100 transition"
                                 />
                             </div>
                         </div>
