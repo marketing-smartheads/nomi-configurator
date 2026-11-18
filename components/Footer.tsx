@@ -108,44 +108,92 @@ export default function Footer({ onNavigateHome, onNavigateConfigurator }: Foote
                     </div>
                 </div>
 
-                {/* BETROKKEN PROJECTPARTIJEN (Op de aangegeven rode lijn / scheiding) */}
+                {/* BETROKKEN PROJECTPARTIJEN (Logo's in een rustige, uniforme witte balk) */}
                 <div className="py-12 border-b border-white/15">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
                         
                         {/* Jongerius Invest */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span>
-                            <span className="font-serif text-sm tracking-wider text-white font-semibold group-hover:text-primary transition">JONGERIUS INVEST</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/jongerius-invest-HQ-2.png" 
+                                    alt="Jongerius Invest" 
+                                    width={120} 
+                                    height={36} 
+                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                         {/* Thuis in Bouwen */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Hoofdaannemer</span>
-                            <span className="font-sans text-xs tracking-widest uppercase text-white font-bold group-hover:text-primary transition">THUIS IN BOUWEN</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/TIB_Logo-01-2.svg" 
+                                    alt="Thuis in Bouwen" 
+                                    width={120} 
+                                    height={36} 
+                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                         {/* De Keizer Makelaarsgroep */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>
-                            <span className="font-serif text-xs tracking-wider uppercase text-white font-semibold group-hover:text-primary transition">DE KEIZER</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/Logo-De-Keizer-874C-en-Process-Black-C.jpg" 
+                                    alt="De Keizer Makelaarsgroep" 
+                                    width={120} 
+                                    height={36} 
+                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                         {/* Courage Architecten */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Architect</span>
-                            <span className="font-sans text-xs tracking-[0.25em] uppercase text-white font-semibold group-hover:text-primary transition">COURAGE</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/COU-logo-C-met-courage-in-kader-edit-300x300.png" 
+                                    alt="Courage Architecten" 
+                                    width={36} 
+                                    height={36} 
+                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                         {/* THOMASDEGIER */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Interieurarchitect</span>
-                            <span className="font-sans text-xs tracking-[0.15em] uppercase text-white font-semibold group-hover:text-primary transition">THOMASDEGIER</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/logo-tdg-white.svg" 
+                                    alt="THOMASDEGIER" 
+                                    width={110} 
+                                    height={30} 
+                                    className="object-contain opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                         {/* SmartHeads */}
-                        <div className="flex flex-col items-center text-center space-y-2 group">
+                        <div className="flex flex-col items-center text-center space-y-3 group">
                             <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Marketingbureau</span>
-                            <span className="font-sans text-xs tracking-wider uppercase text-white font-semibold group-hover:text-primary transition">SMARTHEADS</span>
+                            <div className="h-10 flex items-center justify-center">
+                                <Image 
+                                    src="/assets/images.png" 
+                                    alt="SmartHeads" 
+                                    width={36} 
+                                    height={36} 
+                                    className="object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition"
+                                />
+                            </div>
                         </div>
 
                     </div>
