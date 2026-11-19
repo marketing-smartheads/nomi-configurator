@@ -53,9 +53,18 @@ const VOUCHER_NAAR_BOUWNUMMER: Record<string, string> = {
   'nomi-c005': 'BNR 89',
 };
 
+interface LoggedInUser {
+  firstName: string;
+  email: string;
+}
+
 export default function DashboardPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin');
+  const [loggedInUser, setLoggedInUser] = useState<LoggedInUser>({
+    firstName: '',
+    email: '',
+  });
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -73,6 +82,20 @@ export default function DashboardPage() {
   useEffect(() => {
     const savedAuth = sessionStorage.getItem('nomi_dashboard_auth');
     const savedRole = sessionStorage.getItem('nomi_dashboard_role');
+    const savedUser = sessionStorage.getItem('nomi_dashboard_user');
+
+    if (savedUser) {
+      try {
+        const parsed = JSON.parse(savedUser);
+        setLoggedInUser({
+          firstName: parsed.firstName || '',
+          email: parsed.email || '',
+        });
+      } catch {
+        // negeer ongeldige JSON
+      }
+    }
+
     if (savedAuth === 'true') {
       setIsLoggedIn(true);
       setUserRole(savedRole === 'makelaar' ? 'makelaar' : 'admin');
@@ -105,10 +128,36 @@ export default function DashboardPage() {
 
         const resolvedRole: 'admin' | 'makelaar' = isMakelaar ? 'makelaar' : 'admin';
 
+        const wpUserObj = data.user || data.data || {};
+        const resolvedFirstName =
+          data.firstName ||
+          data.voornaam ||
+          data.first_name ||
+          wpUserObj.firstName ||
+          wpUserObj.voornaam ||
+          wpUserObj.first_name ||
+          username.trim();
+
+        const resolvedEmail =
+          data.email ||
+          data.userEmail ||
+          data.user_email ||
+          wpUserObj.email ||
+          wpUserObj.userEmail ||
+          wpUserObj.user_email ||
+          (username.includes('@') ? username.trim() : '');
+
+        const userInfo = {
+          firstName: String(resolvedFirstName || '').trim(),
+          email: String(resolvedEmail || '').trim(),
+        };
+
+        setLoggedInUser(userInfo);
         setIsLoggedIn(true);
         setUserRole(resolvedRole);
         sessionStorage.setItem('nomi_dashboard_auth', 'true');
         sessionStorage.setItem('nomi_dashboard_role', resolvedRole);
+        sessionStorage.setItem('nomi_dashboard_user', JSON.stringify(userInfo));
         fetchVouchers();
       } else {
         setLoginError(data.error || 'Inloggen mislukt.');
@@ -165,7 +214,6 @@ export default function DashboardPage() {
     if (!rawCode) return;
     const nextValue = !currentValue;
 
-    // Optimistische UI-update zodat het vinkje direct reageert
     setVouchers((prev) =>
       prev.map((item) => {
         const itemCode = String(item.voucherVelden?.toegangscode || item.title || '').trim();
@@ -199,7 +247,6 @@ export default function DashboardPage() {
       }
     } catch (err) {
       console.error('Kon uitgegeven status niet opslaan in WordPress:', err);
-      // Draai terug bij fout
       setVouchers((prev) =>
         prev.map((item) => {
           const itemCode = String(item.voucherVelden?.toegangscode || item.title || '').trim();
@@ -430,7 +477,7 @@ export default function DashboardPage() {
         ) : (
           <div className="max-w-7xl mx-auto px-6 sm:px-12 py-12">
             
-            <div className="flex justify-between items-start mb-8">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
               <div>
                 <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A880] uppercase block mb-2">
                   {userRole === 'makelaar' ? 'DE KEIZER MAKELAARSGROEP • OVERZICHT' : 'INTERN • OVERZICHT (KOOPWONINGEN)'}
@@ -445,16 +492,40 @@ export default function DashboardPage() {
                 </p>
               </div>
 
-              <button 
-                onClick={() => {
-                  sessionStorage.removeItem('nomi_dashboard_auth');
-                  sessionStorage.removeItem('nomi_dashboard_role');
-                  setIsLoggedIn(false);
-                }}
-                className="bg-transparent border border-dark/20 text-dark px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-dark hover:text-white transition cursor-pointer"
-              >
-                Uitloggen
-              </button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full md:w-auto">
+                {/* Blok ingelogde WordPress gebruiker */}
+                <div className="bg-white px-4 py-3 rounded-2xl border border-[#E5E2DD] shadow-sm flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#F3EFE8] text-dark font-serif font-bold text-sm flex items-center justify-center shrink-0">
+                    {(loggedInUser.firstName || loggedInUser.email || 'W').charAt(0).toUpperCase()}
+                  </div>
+                  <div className="text-left min-w-0">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#888]">
+                      Ingelogd als
+                    </div>
+                    <div className="text-xs font-bold text-dark truncate">
+                      {loggedInUser.firstName || 'WordPress gebruiker'}
+                    </div>
+                    {loggedInUser.email && (
+                      <div className="text-[11px] text-[#666] truncate">
+                        {loggedInUser.email}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <button 
+                  onClick={() => {
+                    sessionStorage.removeItem('nomi_dashboard_auth');
+                    sessionStorage.removeItem('nomi_dashboard_role');
+                    sessionStorage.removeItem('nomi_dashboard_user');
+                    setLoggedInUser({ firstName: '', email: '' });
+                    setIsLoggedIn(false);
+                  }}
+                  className="bg-transparent border border-dark/20 text-dark px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-dark hover:text-white transition cursor-pointer self-start sm:self-center"
+                >
+                  Uitloggen
+                </button>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -480,11 +551,16 @@ export default function DashboardPage() {
             </div>
 
             <div className="bg-white rounded-2xl border border-[#E5E2DD] shadow-sm overflow-hidden">
-              <div className="p-6 border-b border-[#E5E2DD] flex justify-between items-center">
-                <h3 className="m-0 text-lg font-serif text-dark">Koopwoningen overzicht</h3>
+              <div className="p-6 border-b border-[#E5E2DD] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                <div>
+                  <h3 className="m-0 text-lg font-serif text-dark">Koopwoningen overzicht</h3>
+                  <p className="text-xs text-[#666] mt-1 mb-0">
+                    Klik op <strong className="text-dark">Deel code</strong> om een kant-en-klare tekst met bouwnummer, vouchercode en link te kopiëren voor de koper.
+                  </p>
+                </div>
                 <button 
                   onClick={handleExportCsv}
-                  className="bg-transparent border-none text-dark text-xs font-bold cursor-pointer uppercase tracking-wider hover:text-[#C5A880] transition"
+                  className="bg-transparent border-none text-dark text-xs font-bold cursor-pointer uppercase tracking-wider hover:text-[#C5A880] transition self-start sm:self-auto"
                 >
                   Exporteer ↓
                 </button>
@@ -521,7 +597,7 @@ export default function DashboardPage() {
                       <th onClick={() => handleSort('uitgegeven')} className="py-4 px-6 cursor-pointer hover:text-dark select-none">
                         Uitgegeven {sortField === 'uitgegeven' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}
                       </th>
-                      <th className="py-4 px-6 select-none">
+                      <th className="py-4 px-6 select-none" title="Kopieert een bericht met bouwnummer, vouchercode en link naar het klembord">
                         Delen
                       </th>
                     </tr>
@@ -607,13 +683,19 @@ export default function DashboardPage() {
                             </td>
                             <td className="py-4 px-6 whitespace-nowrap">
                               {rawCode ? (
-                                <button
-                                  type="button"
-                                  onClick={() => handleShareVoucher(rawCode, bouwnummerLabel === '—' ? '' : bouwnummerLabel)}
-                                  className="px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#F3EFE8] hover:bg-dark hover:text-white text-dark transition cursor-pointer"
-                                >
-                                  {isCopied ? 'Gekopieerd ✓' : 'Deel code'}
-                                </button>
+                                <div className="flex flex-col items-start gap-1">
+                                  <button
+                                    type="button"
+                                    onClick={() => handleShareVoucher(rawCode, bouwnummerLabel === '—' ? '' : bouwnummerLabel)}
+                                    title="Kopieer deeltektst met bouwnummer, vouchercode en link"
+                                    className="px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-[#F3EFE8] hover:bg-dark hover:text-white text-dark transition cursor-pointer"
+                                  >
+                                    {isCopied ? 'Gekopieerd ✓' : 'Deel code'}
+                                  </button>
+                                  <span className="text-[10px] text-[#888] leading-tight">
+                                    Kopieert code & link
+                                  </span>
+                                </div>
                               ) : (
                                 <span className="text-[#999]">—</span>
                               )}
