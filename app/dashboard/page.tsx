@@ -118,16 +118,6 @@ export default function DashboardPage() {
       const data = await res.json();
 
       if (res.ok && data.success) {
-        const cleanUser = username.trim().toLowerCase();
-        const isMakelaar =
-          data.role === 'makelaar' ||
-          cleanUser.includes('makelaar') ||
-          cleanUser.includes('dekeizer') ||
-          cleanUser.includes('woudenberg') ||
-          cleanUser === 'mark';
-
-        const resolvedRole: 'admin' | 'makelaar' = isMakelaar ? 'makelaar' : 'admin';
-
         const wpUserObj = data.user || data.data || {};
         const resolvedFirstName =
           data.firstName ||
@@ -136,6 +126,7 @@ export default function DashboardPage() {
           wpUserObj.firstName ||
           wpUserObj.voornaam ||
           wpUserObj.first_name ||
+          wpUserObj.name ||
           username.trim();
 
         const resolvedEmail =
@@ -146,6 +137,17 @@ export default function DashboardPage() {
           wpUserObj.userEmail ||
           wpUserObj.user_email ||
           (username.includes('@') ? username.trim() : '');
+
+        const cleanUser = username.trim().toLowerCase();
+        const isMakelaar =
+          data.role === 'makelaar' ||
+          cleanUser.includes('makelaar') ||
+          cleanUser.includes('dekeizer') ||
+          cleanUser.includes('woudenberg') ||
+          cleanUser.includes('mark') ||
+          String(resolvedEmail).toLowerCase().includes('dekeizer.nl');
+
+        const resolvedRole: 'admin' | 'makelaar' = isMakelaar ? 'makelaar' : 'admin';
 
         const userInfo = {
           firstName: String(resolvedFirstName || '').trim(),
@@ -499,17 +501,12 @@ export default function DashboardPage() {
                     {(loggedInUser.firstName || loggedInUser.email || 'W').charAt(0).toUpperCase()}
                   </div>
                   <div className="text-left min-w-0">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#888]">
-                      Ingelogd als
-                    </div>
                     <div className="text-xs font-bold text-dark truncate">
-                      {loggedInUser.firstName || 'WordPress gebruiker'}
+                      {loggedInUser.firstName || '—'}
                     </div>
-                    {loggedInUser.email && (
-                      <div className="text-[11px] text-[#666] truncate">
-                        {loggedInUser.email}
-                      </div>
-                    )}
+                    <div className="text-[11px] text-[#666] truncate">
+                      {loggedInUser.email || '—'}
+                    </div>
                   </div>
                 </div>
 
