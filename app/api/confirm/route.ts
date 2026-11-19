@@ -3,10 +3,23 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen,
+// maar wel uitgebreid te loggen in de console. Zet op false wanneer je live wilt sturen.
+const DRY_RUN_PARTNER_EMAILS = true;
+
+function splitEmails(rawEmail: unknown): string[] {
+  if (!rawEmail || typeof rawEmail !== 'string') return [];
+
+  return rawEmail
+    .split(/[,;\n]+/)
+    .map((addr) => addr.trim())
+    .filter((addr) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(addr));
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    
+
     let toegangscode = body.toegangscode || body.voucherCode || '';
     let klantNaam = body.klantNaam || body.naam;
     let klantEmail = body.klantEmail || body.email;
@@ -120,10 +133,11 @@ export async function POST(request: Request) {
 
       const rawWpPartners = wpJson?.data?.page?.homePaginaVelden?.partnerLijst;
       if (Array.isArray(rawWpPartners)) {
-        fallbackPartners = rawWpPartners.map((p: any) => ({
-          naam: p?.partnerNaam || p?.partner_naam || 'Partner',
-          email: p?.partnerEMail || p?.partnerEmail || p?.email
-        })).filter((p: any) => p.email);
+        fallbackPartners = rawWpPartners.flatMap((p: any) => {
+          const naam = p?.partnerNaam || p?.partner_naam || 'Partner';
+          const ruweEmail = p?.partnerEMail || p?.partnerEmail || p?.email || '';
+          return splitEmails(ruweEmail).map((email) => ({ naam, email }));
+        });
       }
 
       if (voucherNode) {
@@ -172,24 +186,42 @@ export async function POST(request: Request) {
     }
 
     let frontendPartners = Array.isArray(partners) ? partners : [];
-    
-    const allePartnersMap = new Map();
+
+    const allePartnersMap = new Map<string, { naam: string; email: string }>();
     [...frontendPartners, ...fallbackPartners].forEach((p: any) => {
-      const email = p?.partnerEMail || p?.partnerEmail || p?.email || (typeof p === 'string' && p.includes('@') ? p : '');
-      const naam = p?.partnerNaam || p?.partner_naam || p?.naam || (typeof p === 'string' && !p.includes('@') ? p : 'Partner');
-      if (email) {
-        allePartnersMap.set(email.toLowerCase(), { naam, email });
-      }
+      const ruweEmail =
+        p?.partnerEMail ||
+        p?.partnerEmail ||
+        p?.email ||
+        (typeof p === 'string' && p.includes('@') ? p : '');
+      const naam =
+        p?.partnerNaam ||
+        p?.partner_naam ||
+        p?.naam ||
+        (typeof p === 'string' && !p.includes('@') ? p : 'Partner');
+
+      splitEmails(ruweEmail).forEach((email) => {
+        const key = email.toLowerCase();
+        if (!allePartnersMap.has(key)) {
+          allePartnersMap.set(key, { naam, email });
+        }
+      });
     });
 
     const uniekePartners = Array.from(allePartnersMap.values());
     const schonePartnersEmails = uniekePartners
-      .map(p => p.email)
-      .filter((email) => typeof email === 'string' && email.trim() !== '' && email.toLowerCase() !== klantEmailClean.toLowerCase());
+      .map((p) => p.email)
+      .filter(
+        (email) =>
+          typeof email === 'string' &&
+          email.trim() !== '' &&
+          email.toLowerCase() !== klantEmailClean.toLowerCase()
+      );
 
-    const partnersNamenString = uniekePartners.length > 0
-      ? uniekePartners.map(p => p.naam).join(' • ')
-      : 'Nomi Utrecht • Thomas de Gier';
+    const partnersNamenString =
+      uniekePartners.length > 0
+        ? Array.from(new Set(uniekePartners.map((p) => p.naam))).join(' • ')
+        : 'Nomi Utrecht • Thomas de Gier';
 
     const nu = new Date();
     const datumString = nu.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -224,6 +256,8 @@ export async function POST(request: Request) {
       if (response.error) {
         throw new Error(response.error.message);
       }
+
+      console.log(`✅ E-mail verzonden naar: ${ontvangerEmail} (${aanhefTekst})`);
       return response;
     };
 
@@ -275,11 +309,25 @@ export async function POST(request: Request) {
       if (response.error) {
         throw new Error(response.error.message);
       }
+
+      console.log(`✅ Documentatie-aanvraag verzonden naar: ${PARTNER_ONTVANGER}`);
       return response;
     };
 
     const testModus = process.env.MAIL_TEST_MODE === 'true';
-    const partnerBevestigingen = testModus ? [] : schonePartnersEmails;
+
+    console.log('📋 Gevonden unieke partners (na komma-split):', uniekePartners);
+    console.log('📨 Partnerbevestigingen ontvangers:', schonePartnersEmails);
+
+    if (DRY_RUN_PARTNER_EMAILS) {
+      console.log(
+        '🧪 [DRY RUN / TEST] Partnerbevestigingen NIET rechtstreeks naar externe partners gestuurd. Zouden zijn verstuurd naar:',
+        schonePartnersEmails
+      );
+    }
+
+    const partnerBevestigingen =
+      testModus || DRY_RUN_PARTNER_EMAILS ? [] : schonePartnersEmails;
 
     const finalEmailPromises = [
       ...(klantEmailGeldig ? [stuurResendMail(klantEmailClean, `Beste ${klantNaam},`)] : []),
@@ -289,7 +337,12 @@ export async function POST(request: Request) {
 
     await Promise.all(finalEmailPromises);
 
-    return NextResponse.json({ success: true, message: 'Alles succesvol verzonden!' });
+    return NextResponse.json({
+      success: true,
+      message: 'Alles succesvol verzonden!',
+      dryRunPartnerEmails: DRY_RUN_PARTNER_EMAILS,
+      partnerRecipients: schonePartnersEmails,
+    });
 
   } catch (error: any) {
     console.error('❌ Resend & API server critical error:', error);
