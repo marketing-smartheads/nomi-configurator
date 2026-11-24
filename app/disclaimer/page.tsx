@@ -43,6 +43,30 @@ export default function DisclaimerPage() {
               Verzoeken tot aanpassing van de indeling kunnen na 7 december niet meer in de uitvoering worden verwerkt.
             </p>
           </div>
+
+          <div className="space-y-3">
+            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">
+              3. Elektra- en lichtplan
+            </h2>
+            <p className="text-sm sm:text-base">
+              Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december.
+            </p>
+            <p className="text-sm sm:text-base">
+              Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">
+              4. Sluitingsdatum wijzigingen en bestellen materialen
+            </h2>
+            <p className="text-sm sm:text-base">
+              Onze sluitingsdatum voor het aanleveren van wijzigingen is vastgesteld op 7 december. Tot die datum kunnen wijzigingen met betrekking tot onder andere elektra en loodgieterswerk worden doorgegeven, zoals lichtpunten, elektrapunten, afvoeren en wateraansluitingen.
+            </p>
+            <p className="text-sm sm:text-base">
+              Het bouwbedrijf start begin januari met het bestellen van vloeren en overige materialen. Vanaf dat moment kunnen er geen wijzigingen meer worden verwerkt.
+            </p>
+          </div>
         </div>
       </main>
 
