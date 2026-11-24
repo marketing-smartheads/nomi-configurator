@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:58:47.977Z",
-  "generatedAtEpochMs": 1795042727977,
+  "generatedAt": "2026-11-24T08:28:51.949Z",
+  "generatedAtEpochMs": 1795508931949,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,26 +14,26 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "components/Footer.tsx",
-    "refreshReason": "tracked-change",
+    "activeFile": "app/api/confirm/route.ts",
+    "refreshReason": "startup",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
       "markdownMirror": "workspacememory.md",
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "app/api/confirm/route.ts",
+      "components/configurator/StepOnewoning.tsx",
       "components/Footer.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepOnewoning.tsx",
       "components/configurator/StepTwoDesign.tsx",
+      "app/dashboard/page.tsx",
+      "app/layout.tsx",
       "components/ConfiguratorScreen.tsx",
-      "components/configurator/StepThreeVisuals.tsx",
-      "lib/cms.ts",
       ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "package.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 82,
@@ -641,7 +641,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-18T22:58:46.169Z",
+    "lastActivityAt": "2026-11-19T22:05:56.243Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 47,
     "changeTypeCounts": {
@@ -653,71 +653,487 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "components/Footer.tsx",
-      "updatedAt": 1795042726169,
-      "lineCount": 214,
-      "charCount": 11204,
-      "hash": "38c9c7dfe5d9",
-      "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+      "filePath": "app/layout.tsx",
+      "updatedAt": 1795125956243,
+      "lineCount": 81,
+      "charCount": 1593,
+      "hash": "ed08bbfcc175",
+      "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
-      "updatedAt": 1795042611050,
-      "lineCount": 285,
-      "charCount": 11414,
-      "hash": "1ef6ecbe6bc4",
-      "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
+      "filePath": ".env.local",
+      "updatedAt": 1795125930250,
+      "lineCount": 12,
+      "charCount": 423,
+      "hash": "19cb3d3fc1cd",
+      "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795042325411,
-      "lineCount": 227,
-      "charCount": 11009,
-      "hash": "7fb5f40fd071",
-      "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+      "filePath": "app/api/confirm/route.ts",
+      "updatedAt": 1795123931513,
+      "lineCount": 362,
+      "charCount": 13222,
+      "hash": "5fe756e677ee",
+      "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
     },
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "updatedAt": 1795037812488,
-      "lineCount": 793,
-      "charCount": 35622,
-      "hash": "0e2c3d0d1461",
-      "preview": "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+      "filePath": "app/dashboard/page.tsx",
+      "updatedAt": 1795120162682,
+      "lineCount": 716,
+      "charCount": 33443,
+      "hash": "a4090c4728ac",
+      "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
     },
     {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "updatedAt": 1795033004791,
-      "lineCount": 273,
-      "charCount": 12368,
-      "hash": "6c0aa94c4d43",
-      "preview": "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-    },
-    {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "updatedAt": 1795026790366,
-      "lineCount": 472,
-      "charCount": 19371,
-      "hash": "1e3076199a8e",
-      "preview": "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-    },
-    {
-      "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1794939619767,
-      "lineCount": 280,
-      "charCount": 9944,
-      "hash": "0900a7d9f405",
-      "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+      "filePath": "app/api/auth/login/route.ts",
+      "updatedAt": 1795119942124,
+      "lineCount": 186,
+      "charCount": 5783,
+      "hash": "095d3e8a3b71",
+      "preview": "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
     },
     {
       "filePath": "app/privacy/page.tsx",
-      "updatedAt": 1794854474101,
-      "lineCount": 127,
-      "charCount": 7550,
-      "hash": "e35fdd4c7a5a",
+      "updatedAt": 1795076296042,
+      "lineCount": 120,
+      "charCount": 7556,
+      "hash": "1205b84156b3",
       "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
+    },
+    {
+      "filePath": "app/download/page.tsx",
+      "updatedAt": 1795043962291,
+      "lineCount": 419,
+      "charCount": 20138,
+      "hash": "3b3996f5e235",
+      "preview": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+    },
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1795043191465,
+      "lineCount": 288,
+      "charCount": 10278,
+      "hash": "9d09484a36c4",
+      "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 58: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-19T22:05:56.243Z",
+      "recordedAtEpochMs": 1795125956243,
+      "before": {
+        "kind": "text",
+        "lineCount": 81,
+        "charCount": 1592,
+        "hash": "3db586e03830",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1795125956243
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 81,
+        "charCount": 1593,
+        "hash": "ed08bbfcc175",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1795125956243
+      },
+      "diff": {
+        "lineStart": 58,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 58: replaced 1 line with 1 line.",
+        "beforeFragment": "tru",
+        "afterFragment": "fals"
+      }
+    },
+    {
+      "type": "save",
+      "path": ".env.local",
+      "toPath": "",
+      "summary": "Line 5: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-19T22:05:30.250Z",
+      "recordedAtEpochMs": 1795125930250,
+      "before": {
+        "kind": "text",
+        "lineCount": 12,
+        "charCount": 432,
+        "hash": "a1ea6608e103",
+        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl...",
+        "updatedAt": 1795125930250
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 12,
+        "charCount": 423,
+        "hash": "19cb3d3fc1cd",
+        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE...",
+        "updatedAt": 1795125930250
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 5: replaced 1 line with 1 line.",
+        "beforeFragment": "webmaster@marketingsmartheads",
+        "afterFragment": "tobias@aanhuis-spijk"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/layout.tsx",
+      "toPath": "",
+      "summary": "Line 58: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-19T21:46:08.019Z",
+      "recordedAtEpochMs": 1795124768019,
+      "before": {
+        "kind": "text",
+        "lineCount": 81,
+        "charCount": 1593,
+        "hash": "ed08bbfcc175",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1795124768019
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 81,
+        "charCount": 1592,
+        "hash": "3db586e03830",
+        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
+        "updatedAt": 1795124768019
+      },
+      "diff": {
+        "lineStart": 58,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 58: replaced 1 line with 1 line.",
+        "beforeFragment": "fals",
+        "afterFragment": "tru"
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 6: replaced 339 lines with 350 lines.",
+      "recordedAt": "2026-11-19T21:32:11.513Z",
+      "recordedAtEpochMs": 1795123931513,
+      "before": {
+        "kind": "text",
+        "lineCount": 351,
+        "charCount": 12842,
+        "hash": "0cd50a6bea2b",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter...",
+        "updatedAt": 1795123931513
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 362,
+        "charCount": 13222,
+        "hash": "5fe756e677ee",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de...",
+        "updatedAt": 1795123931513
+      },
+      "diff": {
+        "lineStart": 6,
+        "removedLines": 339,
+        "addedLines": 350,
+        "summary": "Line 6: replaced 339 lines with 350 lines.",
+        "beforeFragment": "Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je live...",
+        "afterFragment": "Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de adressen uit PARTNER_EMAILS_BY_NAME / const DRY_RUN_PARTNER_EMAILS = false; / // E-mailadressen gekop..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/confirm/route.ts",
+      "toPath": "",
+      "summary": "Line 6: replaced 287 lines with 340 lines.",
+      "recordedAt": "2026-11-19T20:44:59.359Z",
+      "recordedAtEpochMs": 1795121099359,
+      "before": {
+        "kind": "text",
+        "lineCount": 298,
+        "charCount": 11232,
+        "hash": "8705fe271979",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req...",
+        "updatedAt": 1795121099358
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 351,
+        "charCount": 12842,
+        "hash": "0cd50a6bea2b",
+        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter...",
+        "updatedAt": 1795121099359
+      },
+      "diff": {
+        "lineStart": 6,
+        "removedLines": 287,
+        "addedLines": 340,
+        "summary": "Line 6: replaced 287 lines with 340 lines.",
+        "beforeFragment": "export async function POST(request: Request) { / try { / const body = await request.json(); / let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = b...",
+        "afterFragment": "// Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je l..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 121: replaced 392 lines with 389 lines.",
+      "recordedAt": "2026-11-19T20:29:22.682Z",
+      "recordedAtEpochMs": 1795120162682,
+      "before": {
+        "kind": "text",
+        "lineCount": 719,
+        "charCount": 33586,
+        "hash": "a3997340e337",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt...",
+        "updatedAt": 1795120162682
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 716,
+        "charCount": 33443,
+        "hash": "a4090c4728ac",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt...",
+        "updatedAt": 1795120162682
+      },
+      "diff": {
+        "lineStart": 121,
+        "removedLines": 392,
+        "addedLines": 389,
+        "summary": "Line 121: replaced 392 lines with 389 lines.",
+        "beforeFragment": "cleanUser = username.trim().toLowerCase(); / const isMakelaar = / data.role === 'makelaar' || / cleanUser.includes('makelaar') || / cleanUser.includes('dekeizer') || / cleanUser...",
+        "afterFragment": "wpUserObj = data.user || data.data || {}; / const resolvedFirstName = / data.firstName || / data.voornaam || / data.first_name || / wpUserObj.firstName || / wpUserObj.voornaam |..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/api/auth/login/route.ts",
+      "toPath": "",
+      "summary": "Line 3: replaced 46 lines with 175 lines.",
+      "recordedAt": "2026-11-19T20:25:42.124Z",
+      "recordedAtEpochMs": 1795119942124,
+      "before": {
+        "kind": "text",
+        "lineCount": 57,
+        "charCount": 2010,
+        "hash": "7282b64cb271",
+        "preview": "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /...",
+        "updatedAt": 1795119942124
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 186,
+        "charCount": 5783,
+        "hash": "095d3e8a3b71",
+        "preview": "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude...",
+        "updatedAt": 1795119942124
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 46,
+        "addedLines": 175,
+        "summary": "Line 3: replaced 46 lines with 175 lines.",
+        "beforeFragment": "export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { err...",
+        "afterFragment": "const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoudenberg@..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/dashboard/page.tsx",
+      "toPath": "",
+      "summary": "Line 56: replaced 561 lines with 643 lines.",
+      "recordedAt": "2026-11-19T20:20:25.626Z",
+      "recordedAtEpochMs": 1795119625626,
+      "before": {
+        "kind": "text",
+        "lineCount": 637,
+        "charCount": 29934,
+        "hash": "e6d63c4a0772",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt...",
+        "updatedAt": 1795119625625
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 719,
+        "charCount": 33586,
+        "hash": "a3997340e337",
+        "preview": "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt...",
+        "updatedAt": 1795119625626
+      },
+      "diff": {
+        "lineStart": 56,
+        "removedLines": 561,
+        "addedLines": 643,
+        "summary": "Line 56: replaced 561 lines with 643 lines.",
+        "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin'); / con...",
+        "afterFragment": "interface LoggedInUser { / firstName: string; / email: string; / } / export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [us..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/privacy/page.tsx",
+      "toPath": "",
+      "summary": "Line 19: replaced 100 lines with 93 lines.",
+      "recordedAt": "2026-11-19T08:18:16.042Z",
+      "recordedAtEpochMs": 1795076296042,
+      "before": {
+        "kind": "text",
+        "lineCount": 127,
+        "charCount": 7550,
+        "hash": "e35fdd4c7a5a",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1795076296042
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 120,
+        "charCount": 7556,
+        "hash": "1205b84156b3",
+        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
+        "updatedAt": 1795076296042
+      },
+      "diff": {
+        "lineStart": 19,
+        "removedLines": 100,
+        "addedLines": 93,
+        "summary": "Line 19: replaced 100 lines with 93 lines.",
+        "beforeFragment": "juni 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2xl s...",
+        "afterFragment": "november 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "app/download/page.tsx",
+      "toPath": "",
+      "summary": "Line 1: replaced 341 lines with 342 lines.",
+      "recordedAt": "2026-11-18T23:19:22.291Z",
+      "recordedAtEpochMs": 1795043962291,
+      "before": {
+        "kind": "text",
+        "lineCount": 418,
+        "charCount": 20106,
+        "hash": "172d883371d9",
+        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
+        "updatedAt": 1795043962291
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 419,
+        "charCount": 20138,
+        "hash": "3b3996f5e235",
+        "preview": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo...",
+        "updatedAt": 1795043962291
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 341,
+        "addedLines": 342,
+        "summary": "Line 1: replaced 341 lines with 342 lines.",
+        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c...",
+        "afterFragment": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 77: replaced 156 lines with 156 lines.",
+      "recordedAt": "2026-11-18T23:06:31.465Z",
+      "recordedAtEpochMs": 1795043191465,
+      "before": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10311,
+        "hash": "d5e18238d7a0",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795043191465
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10278,
+        "hash": "9d09484a36c4",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795043191465
+      },
+      "diff": {
+        "lineStart": 77,
+        "removedLines": 156,
+        "addedLines": 156,
+        "summary": "Line 77: replaced 156 lines with 156 lines.",
+        "beforeFragment": "(vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomE...",
+        "afterFragment": "op het e-mailadres veld / const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomError('Voer een geldig e-mailadres in (incl..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 77: replaced 148 lines with 156 lines.",
+      "recordedAt": "2026-11-18T23:04:32.703Z",
+      "recordedAtEpochMs": 1795043072703,
+      "before": {
+        "kind": "text",
+        "lineCount": 280,
+        "charCount": 9944,
+        "hash": "0900a7d9f405",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795043072703
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10311,
+        "hash": "d5e18238d7a0",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795043072703
+      },
+      "diff": {
+        "lineStart": 77,
+        "removedLines": 148,
+        "addedLines": 156,
+        "summary": "Line 77: replaced 148 lines with 156 lines.",
+        "beforeFragment": "Aanroep naar onze stabiele API-route / const response = await fetch('/api/verify-voucher', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.st...",
+        "afterFragment": "Strenge e-mailvalidatie check (vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; / if (!emailRegex.test(ingevoe..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 76: replaced 118 lines with 119 lines.",
+      "recordedAt": "2026-11-18T23:01:09.050Z",
+      "recordedAtEpochMs": 1795042869050,
+      "before": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 11204,
+        "hash": "38c9c7dfe5d9",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795042869050
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 11058,
+        "hash": "8fbc57033a19",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795042869050
+      },
+      "diff": {
+        "lineStart": 76,
+        "removedLines": 118,
+        "addedLines": 119,
+        "summary": "Line 76: replaced 118 lines with 119 lines.",
+        "beforeFragment": "<div className=\"md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 justify-end\"> / <div className=\"flex flex-col space-y-4\"> / <span className=\"font-poppins font-semibold text-...",
+        "afterFragment": "{/* Navigatie & Configurator rechts uitgelijnd */} / <div className=\"md:col-span-6 flex flex-col md:flex-row justify-end gap-16\"> / <div className=\"flex flex-col space-y-4\"> / <..."
+      }
+    },
     {
       "type": "save",
       "path": "components/Footer.tsx",
@@ -781,464 +1197,59 @@
         "beforeFragment": "",
         "afterFragment": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
       }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 177: replaced 43 lines with 45 lines.",
-      "recordedAt": "2026-11-18T22:52:05.411Z",
-      "recordedAtEpochMs": 1795042325411,
-      "before": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 10657,
-        "hash": "3a95686cf2cf",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795042325411
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 227,
-        "charCount": 11009,
-        "hash": "7fb5f40fd071",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795042325411
-      },
-      "diff": {
-        "lineStart": 177,
-        "removedLines": 43,
-        "addedLines": 45,
-        "summary": "Line 177: replaced 43 lines with 45 lines.",
-        "beforeFragment": "Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className=\"fixed inset-0 z-50 bg-blac...",
-        "afterFragment": "Mobiel-geoptimaliseerde Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className=\"fi..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 117: replaced 71 lines with 71 lines.",
-      "recordedAt": "2026-11-18T22:49:02.693Z",
-      "recordedAtEpochMs": 1795042142693,
-      "before": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11051,
-        "hash": "d36b1208ce76",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795042142693
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11201,
-        "hash": "a01bfb5db0a5",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795042142693
-      },
-      "diff": {
-        "lineStart": 117,
-        "removedLines": 71,
-        "addedLines": 71,
-        "summary": "Line 117: replaced 71 lines with 71 lines.",
-        "beforeFragment": "text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">Ontwikkelaar</span> / <div className=\"h-10 flex items-center justify-center\"> / <Image / src=\"/assets/jongerius-in...",
-        "afterFragment": "font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2\">Ontwikkelaar</span> / <div className=\"h-10 flex items-center justify-center\"> / <Image /..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 143: replaced 51 lines with 51 lines.",
-      "recordedAt": "2026-11-18T22:45:59.411Z",
-      "recordedAtEpochMs": 1795041959411,
-      "before": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11145,
-        "hash": "813874daacbf",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041959411
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11051,
-        "hash": "d36b1208ce76",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041959411
-      },
-      "diff": {
-        "lineStart": 143,
-        "removedLines": 51,
-        "addedLines": 51,
-        "summary": "Line 143: replaced 51 lines with 51 lines.",
-        "beforeFragment": "invert filter, netjes opgelicht via opacity) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] upper...",
-        "afterFragment": "achtergrondbox) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 143: replaced 52 lines with 52 lines.",
-      "recordedAt": "2026-11-18T22:43:19.159Z",
-      "recordedAtEpochMs": 1795041799159,
-      "before": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11031,
-        "hash": "55453a4f394e",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041799158
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11145,
-        "hash": "813874daacbf",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041799159
-      },
-      "diff": {
-        "lineStart": 143,
-        "removedLines": 52,
-        "addedLines": 52,
-        "summary": "Line 143: replaced 52 lines with 52 lines.",
-        "beforeFragment": "*/} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2em] uppercase text-muted font-medium\">Makelaar</span>...",
-        "afterFragment": "(Zonder invert filter, netjes opgelicht via opacity) */} / <div className=\"flex flex-col items-center text-center space-y-3 group\"> / <span className=\"text-[10px] tracking-[0.2e..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 111: replaced 83 lines with 83 lines.",
-      "recordedAt": "2026-11-18T22:41:32.667Z",
-      "recordedAtEpochMs": 1795041692667,
-      "before": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11076,
-        "hash": "83a1ee39ca2b",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041692667
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11031,
-        "hash": "55453a4f394e",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041692667
-      },
-      "diff": {
-        "lineStart": 111,
-        "removedLines": 83,
-        "addedLines": 83,
-        "summary": "Line 111: replaced 83 lines with 83 lines.",
-        "beforeFragment": "(Logo's in een rustige, uniforme witte balk) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-...",
-        "afterFragment": "*/} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center\"> / {/* Jongerius..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 111: replaced 38 lines with 86 lines.",
-      "recordedAt": "2026-11-18T22:36:01.876Z",
-      "recordedAtEpochMs": 1795041361876,
-      "before": {
-        "kind": "text",
-        "lineCount": 166,
-        "charCount": 8713,
-        "hash": "80b04addaf3b",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041361876
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 214,
-        "charCount": 11076,
-        "hash": "83a1ee39ca2b",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041361876
-      },
-      "diff": {
-        "lineStart": 111,
-        "removedLines": 38,
-        "addedLines": 86,
-        "summary": "Line 111: replaced 38 lines with 86 lines.",
-        "beforeFragment": "Op de aangegeven rode lijn / scheiding) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-cente...",
-        "afterFragment": "Logo's in een rustige, uniforme witte balk) */} / <div className=\"py-12 border-b border-white/15\"> / <div className=\"grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-c..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/Footer.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 104 lines with 148 lines.",
-      "recordedAt": "2026-11-18T22:30:52.199Z",
-      "recordedAtEpochMs": 1795041052199,
-      "before": {
-        "kind": "text",
-        "lineCount": 122,
-        "charCount": 5388,
-        "hash": "cc53b02a612e",
-        "preview": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio...",
-        "updatedAt": 1795041052199
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 166,
-        "charCount": 8713,
-        "hash": "80b04addaf3b",
-        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
-        "updatedAt": 1795041052199
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 104,
-        "addedLines": 148,
-        "summary": "Line 1: replaced 104 lines with 148 lines.",
-        "beforeFragment": "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: numbe...",
-        "afterFragment": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 175: removed 44 lines.",
-      "recordedAt": "2026-11-18T22:21:38.576Z",
-      "recordedAtEpochMs": 1795040498576,
-      "before": {
-        "kind": "text",
-        "lineCount": 268,
-        "charCount": 13348,
-        "hash": "a5107feef067",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795040498576
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 225,
-        "charCount": 10657,
-        "hash": "3a95686cf2cf",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795040498576
-      },
-      "diff": {
-        "lineStart": 175,
-        "removedLines": 44,
-        "addedLines": 0,
-        "summary": "Line 175: removed 44 lines.",
-        "beforeFragment": "{/* Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */} / <nav / aria-label=\"Stappennavigatie\" / className=\"max-w-4xl mx-auto px-4 pt-12 mt-12...",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/ConfiguratorScreen.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 271 lines with 279 lines.",
-      "recordedAt": "2026-11-18T22:17:57.172Z",
-      "recordedAtEpochMs": 1795040277172,
-      "before": {
-        "kind": "text",
-        "lineCount": 277,
-        "charCount": 10450,
-        "hash": "aab20599af10",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i...",
-        "updatedAt": 1795040277172
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 285,
-        "charCount": 11307,
-        "hash": "11f07c1ed0b0",
-        "preview": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f...",
-        "updatedAt": 1795040277172
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 271,
-        "addedLines": 279,
-        "summary": "Line 1: replaced 271 lines with 279 lines.",
-        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign...",
-        "afterFragment": "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 176: replaced 28 lines with 41 lines.",
-      "recordedAt": "2026-11-18T22:12:11.257Z",
-      "recordedAtEpochMs": 1795039931257,
-      "before": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12284,
-        "hash": "39735c0904f8",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039931257
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 268,
-        "charCount": 13348,
-        "hash": "a5107feef067",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039931257
-      },
-      "diff": {
-        "lineStart": 176,
-        "removedLines": 28,
-        "addedLines": 41,
-        "summary": "Line 176: replaced 28 lines with 41 lines.",
-        "beforeFragment": "Consistente en duidelijke navigatieknoppen onderaan */} / <div className=\"max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between it...",
-        "afterFragment": "Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */} / <nav / aria-label=\"Stappennavigatie\" / className=\"max-w-4xl mx-auto px-4 pt-12 mt-12 bord..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-11-18T22:07:47.633Z",
-      "recordedAtEpochMs": 1795039667633,
-      "before": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12284,
-        "hash": "39735c0904f8",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039667633
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12284,
-        "hash": "39735c0904f8",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039667633
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 176: replaced 2 lines with 2 lines.",
-      "recordedAt": "2026-11-18T22:07:40.658Z",
-      "recordedAtEpochMs": 1795039660658,
-      "before": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12286,
-        "hash": "eaf1f60dba97",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039660658
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12284,
-        "hash": "39735c0904f8",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039660658
-      },
-      "diff": {
-        "lineStart": 176,
-        "removedLines": 2,
-        "addedLines": 2,
-        "summary": "Line 176: replaced 2 lines with 2 lines.",
-        "beforeFragment": "Navigatiesectie onderaan met professionele SVG-iconen */} / <div className=\"flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl m...",
-        "afterFragment": "en duidelijke navigatieknoppen onderaan */} / <div className=\"max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center g..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/configurator/StepOnewoning.tsx",
-      "toPath": "",
-      "summary": "Line 176: replaced 19 lines with 25 lines.",
-      "recordedAt": "2026-11-18T22:01:58.706Z",
-      "recordedAtEpochMs": 1795039318706,
-      "before": {
-        "kind": "text",
-        "lineCount": 249,
-        "charCount": 11768,
-        "hash": "6ec998528a21",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039318706
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 255,
-        "charCount": 12286,
-        "hash": "eaf1f60dba97",
-        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
-        "updatedAt": 1795039318706
-      },
-      "diff": {
-        "lineStart": 176,
-        "removedLines": 19,
-        "addedLines": 25,
-        "summary": "Line 176: replaced 19 lines with 25 lines.",
-        "beforeFragment": "*/} / <div className=\"flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full\"> / {onBack ? ( / <button / type=\"button...",
-        "afterFragment": "met professionele SVG-iconen */} / <div className=\"flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full\"> / {onBack..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/configurator/StepFourConfirmation.tsx",
-      "count": 15
-    },
-    {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 11
+      "count": 10
     },
     {
       "filePath": "components/Footer.tsx",
-      "count": 7
+      "count": 8
+    },
+    {
+      "filePath": "components/configurator/StepFourConfirmation.tsx",
+      "count": 3
     },
     {
       "filePath": "components/configurator/StepTwoDesign.tsx",
       "count": 3
     },
     {
-      "filePath": "components/ConfiguratorScreen.tsx",
+      "filePath": "app/api/confirm/route.ts",
       "count": 2
     },
     {
-      "filePath": "components/configurator/StepThreeVisuals.tsx",
-      "count": 1
+      "filePath": "app/dashboard/page.tsx",
+      "count": 2
     },
     {
-      "filePath": "lib/cms.ts",
-      "count": 1
+      "filePath": "app/layout.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "components/ConfiguratorScreen.tsx",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-18 64096da style(configurator): refine navigation buttons with polished padding, transition and clean iconography",
+    "headSummary": "2026-11-19 019e27e feat(confirm): map partner emails by partner name in code and send via Resend",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
-      "M components/Footer.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M app/api/confirm/route.ts",
+      "M  graphify-out/WORKSPACE_MEMORY.md",
+      "M  workspace.json",
+      "M  workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 573cbf7 by Bas van Dooremalen on 2026-11-18\n  style(step1): optimize lightbox modal for mobile screens with bottom sheet layout and scrolling\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 019e27e by Bas van Dooremalen on 2026-11-19\n  feat(confirm): map partner emails by partner name in code and send via Resend\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

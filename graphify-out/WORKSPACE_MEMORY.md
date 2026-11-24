@@ -1,9 +1,9 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-18T22:58:47.977Z
+Generated: 2026-11-24T08:28:51.949Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
-Refresh reason: tracked-change
+Refresh reason: startup
 Output path: graphify-out/WORKSPACE_MEMORY.md
 Shared mirror: workspacememory.md
 Structured manifest: workspace.json
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-18T22:58:46.169Z
+- Last activity: 2026-11-19T22:05:56.243Z
 ## Workspace Focus
-- Active file in focus: components/Footer.tsx
-- Hottest files right now: components/configurator/StepFourConfirmation.tsx (15), components/configurator/StepOnewoning.tsx (11), components/Footer.tsx (7), components/configurator/StepTwoDesign.tsx (3)
-- Suggested starting points: components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/ConfiguratorScreen.tsx, components/configurator/StepThreeVisuals.tsx
+- Active file in focus: app/api/confirm/route.ts
+- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), components/configurator/StepFourConfirmation.tsx (3), components/configurator/StepTwoDesign.tsx (3)
+- Suggested starting points: app/api/confirm/route.ts, components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx
 ## Current Workspace
-- Active file: components/Footer.tsx
+- Active file: app/api/confirm/route.ts
 - Tracked files in snapshot: 82
 - Top-level areas: public (32), components (18), [root] (15), app (14), lib (3)
 - Primary file types: .tsx (24), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
@@ -39,32 +39,123 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 47
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/Footer.tsx | 214 lines | 11204 chars | hash 38c9c7dfe5d9
-  Last snapshot: 2026-11-18T22:58:46.169Z
-  Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- components/ConfiguratorScreen.tsx | 285 lines | 11414 chars | hash 1ef6ecbe6bc4
-  Last snapshot: 2026-11-18T22:56:51.050Z
-  Preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
-- components/configurator/StepOnewoning.tsx | 227 lines | 11009 chars | hash 7fb5f40fd071
-  Last snapshot: 2026-11-18T22:52:05.411Z
-  Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- components/configurator/StepFourConfirmation.tsx | 793 lines | 35622 chars | hash 0e2c3d0d1461
-  Last snapshot: 2026-11-18T21:36:52.488Z
-  Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
-- components/configurator/StepTwoDesign.tsx | 273 lines | 12368 chars | hash 6c0aa94c4d43
-  Last snapshot: 2026-11-18T20:16:44.791Z
-  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/configurator/StepThreeVisuals.tsx | 472 lines | 19371 chars | hash 1e3076199a8e
-  Last snapshot: 2026-11-18T18:33:10.366Z
-  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- components/LoginScreen.tsx | 280 lines | 9944 chars | hash 0900a7d9f405
-  Last snapshot: 2026-11-17T18:20:19.767Z
-  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- app/privacy/page.tsx | 127 lines | 7550 chars | hash e35fdd4c7a5a
-  Last snapshot: 2026-11-16T18:41:14.101Z
+- app/layout.tsx | 81 lines | 1593 chars | hash ed08bbfcc175
+  Last snapshot: 2026-11-19T22:05:56.243Z
+  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- .env.local | 12 lines | 423 chars | hash 19cb3d3fc1cd
+  Last snapshot: 2026-11-19T22:05:30.250Z
+  Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
+- app/api/confirm/route.ts | 362 lines | 13222 chars | hash 5fe756e677ee
+  Last snapshot: 2026-11-19T21:32:11.513Z
+  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
+- app/dashboard/page.tsx | 716 lines | 33443 chars | hash a4090c4728ac
+  Last snapshot: 2026-11-19T20:29:22.682Z
+  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
+- app/api/auth/login/route.ts | 186 lines | 5783 chars | hash 095d3e8a3b71
+  Last snapshot: 2026-11-19T20:25:42.124Z
+  Preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
+- app/privacy/page.tsx | 120 lines | 7556 chars | hash 1205b84156b3
+  Last snapshot: 2026-11-19T08:18:16.042Z
   Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- app/download/page.tsx | 419 lines | 20138 chars | hash 3b3996f5e235
+  Last snapshot: 2026-11-18T23:19:22.291Z
+  Preview: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- components/LoginScreen.tsx | 288 lines | 10278 chars | hash 9d09484a36c4
+  Last snapshot: 2026-11-18T23:06:31.465Z
+  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-19T22:05:56.243Z | saved | app/layout.tsx
+- Summary: Line 58: replaced 1 line with 1 line.
+- Before: 81 lines | 1,592 chars | hash 3db586e03830 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Previous fragment: "tru"
+- Current fragment: "fals"
+
+### 2026-11-19T22:05:30.250Z | saved | .env.local
+- Summary: Line 5: replaced 1 line with 1 line.
+- Before: 12 lines | 432 chars | hash a1ea6608e103 | preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
+- After: 12 lines | 423 chars | hash 19cb3d3fc1cd | preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
+- Previous fragment: "webmaster@marketingsmartheads"
+- Current fragment: "tobias@aanhuis-spijk"
+
+### 2026-11-19T21:46:08.019Z | saved | app/layout.tsx
+- Summary: Line 58: replaced 1 line with 1 line.
+- Before: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 81 lines | 1,592 chars | hash 3db586e03830 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- Previous fragment: "fals"
+- Current fragment: "tru"
+
+### 2026-11-19T21:32:11.513Z | saved | app/api/confirm/route.ts
+- Summary: Line 6: replaced 339 lines with 350 lines.
+- Before: 351 lines | 12,842 chars | hash 0cd50a6bea2b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter..."
+- After: 362 lines | 13,222 chars | hash 5fe756e677ee | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
+- Previous fragment: "Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je live..."
+- Current fragment: "Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de adressen uit PARTNER_EMAILS_BY_NAME / const DRY_RUN_PARTNER_EMAILS = false; / // E-mailadressen gekop..."
+
+### 2026-11-19T20:44:59.359Z | saved | app/api/confirm/route.ts
+- Summary: Line 6: replaced 287 lines with 340 lines.
+- Before: 298 lines | 11,232 chars | hash 8705fe271979 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
+- After: 351 lines | 12,842 chars | hash 0cd50a6bea2b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter..."
+- Previous fragment: "export async function POST(request: Request) { / try { / const body = await request.json(); / let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = b..."
+- Current fragment: "// Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je l..."
+
+### 2026-11-19T20:29:22.682Z | saved | app/dashboard/page.tsx
+- Summary: Line 121: replaced 392 lines with 389 lines.
+- Before: 719 lines | 33,586 chars | hash a3997340e337 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
+- After: 716 lines | 33,443 chars | hash a4090c4728ac | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
+- Previous fragment: "cleanUser = username.trim().toLowerCase(); / const isMakelaar = / data.role === 'makelaar' || / cleanUser.includes('makelaar') || / cleanUser.includes('dekeizer') || / cleanUser..."
+- Current fragment: "wpUserObj = data.user || data.data || {}; / const resolvedFirstName = / data.firstName || / data.voornaam || / data.first_name || / wpUserObj.firstName || / wpUserObj.voornaam |..."
+
+### 2026-11-19T20:25:42.124Z | saved | app/api/auth/login/route.ts
+- Summary: Line 3: replaced 46 lines with 175 lines.
+- Before: 57 lines | 2,010 chars | hash 7282b64cb271 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
+- After: 186 lines | 5,783 chars | hash 095d3e8a3b71 | preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
+- Previous fragment: "export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { err..."
+- Current fragment: "const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoudenberg@..."
+
+### 2026-11-19T20:20:25.626Z | saved | app/dashboard/page.tsx
+- Summary: Line 56: replaced 561 lines with 643 lines.
+- Before: 637 lines | 29,934 chars | hash e6d63c4a0772 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
+- After: 719 lines | 33,586 chars | hash a3997340e337 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
+- Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin'); / con..."
+- Current fragment: "interface LoggedInUser { / firstName: string; / email: string; / } / export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [us..."
+
+### 2026-11-19T08:18:16.042Z | saved | app/privacy/page.tsx
+- Summary: Line 19: replaced 100 lines with 93 lines.
+- Before: 127 lines | 7,550 chars | hash e35fdd4c7a5a | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- After: 120 lines | 7,556 chars | hash 1205b84156b3 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- Previous fragment: "juni 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2xl s..."
+- Current fragment: "november 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2..."
+
+### 2026-11-18T23:19:22.291Z | saved | app/download/page.tsx
+- Summary: Line 1: replaced 341 lines with 342 lines.
+- Before: 418 lines | 20,106 chars | hash 172d883371d9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
+- After: 419 lines | 20,138 chars | hash 3b3996f5e235 | preview: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
+- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
+- Current fragment: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'..."
+
+### 2026-11-18T23:06:31.465Z | saved | components/LoginScreen.tsx
+- Summary: Line 77: replaced 156 lines with 156 lines.
+- Before: 288 lines | 10,311 chars | hash d5e18238d7a0 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- After: 288 lines | 10,278 chars | hash 9d09484a36c4 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- Previous fragment: "(vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomE..."
+- Current fragment: "op het e-mailadres veld / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomError('Voer een geldig e-mailadres in (incl..."
+
+### 2026-11-18T23:04:32.703Z | saved | components/LoginScreen.tsx
+- Summary: Line 77: replaced 148 lines with 156 lines.
+- Before: 280 lines | 9,944 chars | hash 0900a7d9f405 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- After: 288 lines | 10,311 chars | hash d5e18238d7a0 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- Previous fragment: "Aanroep naar onze stabiele API-route / const response = await fetch('/api/verify-voucher', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.st..."
+- Current fragment: "Strenge e-mailvalidatie check (vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoe..."
+
+### 2026-11-18T23:01:09.050Z | saved | components/Footer.tsx
+- Summary: Line 76: replaced 118 lines with 119 lines.
+- Before: 214 lines | 11,204 chars | hash 38c9c7dfe5d9 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 215 lines | 11,058 chars | hash 8fbc57033a19 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "<div className="md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 justify-end"> / <div className="flex flex-col space-y-4"> / <span className="font-poppins font-semibold text-..."
+- Current fragment: "{/* Navigatie & Configurator rechts uitgelijnd */} / <div className="md:col-span-6 flex flex-col md:flex-row justify-end gap-16"> / <div className="flex flex-col space-y-4"> / <..."
+
 ### 2026-11-18T22:58:46.169Z | saved | components/Footer.tsx
 - Summary: Line 1: inserted 214 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -77,112 +168,25 @@ Structured manifest: workspace.json
 - After: 285 lines | 11,414 chars | hash 1ef6ecbe6bc4 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
 - Current fragment: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
 
-### 2026-11-18T22:52:05.411Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 177: replaced 43 lines with 45 lines.
-- Before: 225 lines | 10,657 chars | hash 3a95686cf2cf | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 227 lines | 11,009 chars | hash 7fb5f40fd071 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className="fixed inset-0 z-50 bg-blac..."
-- Current fragment: "Mobiel-geoptimaliseerde Fancybox / Lightbox Modal inclusief Inhoudelijk interieuradvies */} / {lightboxImage && ( / <div / onClick={() => setLightboxImage(null)} / className="fi..."
-
-### 2026-11-18T22:49:02.693Z | saved | components/Footer.tsx
-- Summary: Line 117: replaced 71 lines with 71 lines.
-- Before: 214 lines | 11,051 chars | hash d36b1208ce76 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 214 lines | 11,201 chars | hash a01bfb5db0a5 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Ontwikkelaar</span> / <div className="h-10 flex items-center justify-center"> / <Image / src="/assets/jongerius-in..."
-- Current fragment: "font-poppins font-semibold text-[12px] tracking-[0.06em] text-secondary uppercase mb-2">Ontwikkelaar</span> / <div className="h-10 flex items-center justify-center"> / <Image /..."
-
-### 2026-11-18T22:45:59.411Z | saved | components/Footer.tsx
-- Summary: Line 143: replaced 51 lines with 51 lines.
-- Before: 214 lines | 11,145 chars | hash 813874daacbf | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 214 lines | 11,051 chars | hash d36b1208ce76 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "invert filter, netjes opgelicht via opacity) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] upper..."
-- Current fragment: "achtergrondbox) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">..."
-
-### 2026-11-18T22:43:19.159Z | saved | components/Footer.tsx
-- Summary: Line 143: replaced 52 lines with 52 lines.
-- Before: 214 lines | 11,031 chars | hash 55453a4f394e | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 214 lines | 11,145 chars | hash 813874daacbf | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "*/} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2em] uppercase text-muted font-medium">Makelaar</span>..."
-- Current fragment: "(Zonder invert filter, netjes opgelicht via opacity) */} / <div className="flex flex-col items-center text-center space-y-3 group"> / <span className="text-[10px] tracking-[0.2e..."
-
-### 2026-11-18T22:41:32.667Z | saved | components/Footer.tsx
-- Summary: Line 111: replaced 83 lines with 83 lines.
-- Before: 214 lines | 11,076 chars | hash 83a1ee39ca2b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 214 lines | 11,031 chars | hash 55453a4f394e | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "(Logo's in een rustige, uniforme witte balk) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-..."
-- Current fragment: "*/} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"> / {/* Jongerius..."
-
-### 2026-11-18T22:36:01.876Z | saved | components/Footer.tsx
-- Summary: Line 111: replaced 38 lines with 86 lines.
-- Before: 166 lines | 8,713 chars | hash 80b04addaf3b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 214 lines | 11,076 chars | hash 83a1ee39ca2b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "Op de aangegeven rode lijn / scheiding) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-cente..."
-- Current fragment: "Logo's in een rustige, uniforme witte balk) */} / <div className="py-12 border-b border-white/15"> / <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-c..."
-
-### 2026-11-18T22:30:52.199Z | saved | components/Footer.tsx
-- Summary: Line 1: replaced 104 lines with 148 lines.
-- Before: 122 lines | 5,388 chars | hash cc53b02a612e | preview: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; / } / export default functio..."
-- After: 166 lines | 8,713 chars | hash 80b04addaf3b | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: numbe..."
-- Current fragment: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
-
-### 2026-11-18T22:21:38.576Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 175: removed 44 lines.
-- Before: 268 lines | 13,348 chars | hash a5107feef067 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 225 lines | 10,657 chars | hash 3a95686cf2cf | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "{/* Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */} / <nav / aria-label="Stappennavigatie" / className="max-w-4xl mx-auto px-4 pt-12 mt-12..."
-
-### 2026-11-18T22:17:57.172Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 1: replaced 271 lines with 279 lines.
-- Before: 277 lines | 10,450 chars | hash aab20599af10 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign from './configurator/StepTwoDesign'; / i..."
-- After: 285 lines | 11,307 chars | hash 11f07c1ed0b0 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign..."
-- Current fragment: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
-
-### 2026-11-18T22:12:11.257Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 176: replaced 28 lines with 41 lines.
-- Before: 255 lines | 12,284 chars | hash 39735c0904f8 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 268 lines | 13,348 chars | hash a5107feef067 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "Consistente en duidelijke navigatieknoppen onderaan */} / <div className="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between it..."
-- Current fragment: "Navigatieknoppen onderaan: twee herkenbare knoppen met pijlen en duidelijke tekst */} / <nav / aria-label="Stappennavigatie" / className="max-w-4xl mx-auto px-4 pt-12 mt-12 bord..."
-
-### 2026-11-18T22:07:47.633Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Saved without a textual diff.
-- Before: 255 lines | 12,284 chars | hash 39735c0904f8 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 255 lines | 12,284 chars | hash 39735c0904f8 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-
-### 2026-11-18T22:07:40.658Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 176: replaced 2 lines with 2 lines.
-- Before: 255 lines | 12,286 chars | hash eaf1f60dba97 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 255 lines | 12,284 chars | hash 39735c0904f8 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "Navigatiesectie onderaan met professionele SVG-iconen */} / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl m..."
-- Current fragment: "en duidelijke navigatieknoppen onderaan */} / <div className="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-dark/15 flex flex-col sm:flex-row justify-between items-center g..."
-
-### 2026-11-18T22:01:58.706Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 176: replaced 19 lines with 25 lines.
-- Before: 249 lines | 11,768 chars | hash 6ec998528a21 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 255 lines | 12,286 chars | hash eaf1f60dba97 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Previous fragment: "*/} / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack ? ( / <button / type="button..."
-- Current fragment: "met professionele SVG-iconen */} / <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-dark/10 max-w-4xl mx-auto w-full"> / {onBack..."
-
 
 ## Hot Files
-- components/configurator/StepFourConfirmation.tsx (15 tracked changes)
-- components/configurator/StepOnewoning.tsx (11 tracked changes)
-- components/Footer.tsx (7 tracked changes)
+- components/configurator/StepOnewoning.tsx (10 tracked changes)
+- components/Footer.tsx (8 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
 - components/configurator/StepTwoDesign.tsx (3 tracked changes)
+- app/api/confirm/route.ts (2 tracked changes)
+- app/dashboard/page.tsx (2 tracked changes)
+- app/layout.tsx (2 tracked changes)
 - components/ConfiguratorScreen.tsx (2 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (1 tracked changes)
-- lib/cms.ts (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-18 64096da style(configurator): refine navigation buttons with polished padding, transition and clean iconography
+- HEAD: 2026-11-19 019e27e feat(confirm): map partner emails by partner name in code and send via Resend
 - Working tree summary: 4 modifieds
-- M components/Footer.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
+- M app/api/confirm/route.ts
+- M  graphify-out/WORKSPACE_MEMORY.md
+- M  workspace.json
+- M  workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -190,8 +194,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 573cbf7 by Bas van Dooremalen on 2026-11-18
-  style(step1): optimize lightbox modal for mobile screens with bottom sheet layout and scrolling
+- 019e27e by Bas van Dooremalen on 2026-11-19
+  feat(confirm): map partner emails by partner name in code and send via Resend
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

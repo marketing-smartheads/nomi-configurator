@@ -13,7 +13,7 @@ const PARTNER_EMAILS_BY_NAME: Record<string, string[]> = {
     'j.spruijtenburg@thuisinbouwen.nl',
   ],
   'bruynzeel keukens': [
-    'jdommanschet@bruynzeelkeukens.nl',
+    'jvdheuvel2@bruynzeelkeukens.nl',
   ],
 };
 
