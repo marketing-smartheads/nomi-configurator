@@ -279,6 +279,8 @@ export default function LoginScreen({
 
           <p className="text-xs text-dark text-center leading-relaxed">
             Geen toegangscode ontvangen? Neem contact op met jouw projectbegeleider. Voor vragen of meer informatie; neem contact op met De Keizer Makelaarsgroep via 030-600 82 40 of mail naar <a href="mailto:nieuwbouw@dekeizer.nl" className="underline hover:opacity-80">nieuwbouw@dekeizer.nl</a>.
+            <br/>
+            <a href="/disclaimer" className="underline hover:opacity-80">Disclaimer</a>
           </p>
         </div>
 

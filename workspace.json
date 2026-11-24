@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T12:19:56.800Z",
-  "generatedAtEpochMs": 1795522796800,
+  "generatedAt": "2026-11-24T12:25:38.448Z",
+  "generatedAtEpochMs": 1795523138448,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "tg-configurator",
     "root": "c:\\Projects\\NextJS\\tg-configurator",
-    "activeFile": "app/disclaimer/page.tsx",
+    "activeFile": "components/LoginScreen.tsx",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,14 +22,14 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "app/disclaimer/page.tsx",
-      "components/configurator/StepOnewoning.tsx",
+      "components/LoginScreen.tsx",
       "components/Footer.tsx",
+      "components/configurator/StepOnewoning.tsx",
       "app/api/confirm/route.ts",
       "app/dashboard/page.tsx",
+      "app/disclaimer/page.tsx",
       "app/layout.tsx",
       "components/configurator/StepFourConfirmation.tsx",
-      "components/configurator/StepTwoDesign.tsx",
       ".gitignore",
       "AGENTS.md",
       "README.md",
@@ -647,7 +647,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-24T12:19:54.913Z",
+    "lastActivityAt": "2026-11-24T12:25:36.123Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 48,
     "changeTypeCounts": {
@@ -658,6 +658,22 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "updatedAt": 1795523136123,
+      "lineCount": 290,
+      "charCount": 10386,
+      "hash": "94b4a2eabb02",
+      "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+    },
+    {
+      "filePath": "components/Footer.tsx",
+      "updatedAt": 1795522972501,
+      "lineCount": 215,
+      "charCount": 11067,
+      "hash": "fd0a4a00f8f4",
+      "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+    },
     {
       "filePath": "app/disclaimer/page.tsx",
       "updatedAt": 1795522794913,
@@ -705,25 +721,73 @@
       "charCount": 5783,
       "hash": "095d3e8a3b71",
       "preview": "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
-    },
-    {
-      "filePath": "app/privacy/page.tsx",
-      "updatedAt": 1795076296042,
-      "lineCount": 120,
-      "charCount": 7556,
-      "hash": "1205b84156b3",
-      "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#..."
-    },
-    {
-      "filePath": "app/download/page.tsx",
-      "updatedAt": 1795043962291,
-      "lineCount": 419,
-      "charCount": 20138,
-      "hash": "3b3996f5e235",
-      "preview": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 282: inserted 3 lines.",
+      "recordedAt": "2026-11-24T12:25:36.123Z",
+      "recordedAtEpochMs": 1795523136123,
+      "before": {
+        "kind": "text",
+        "lineCount": 288,
+        "charCount": 10278,
+        "hash": "9d09484a36c4",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795523136123
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 290,
+        "charCount": 10386,
+        "hash": "94b4a2eabb02",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795523136123
+      },
+      "diff": {
+        "lineStart": 282,
+        "removedLines": 0,
+        "addedLines": 3,
+        "summary": "Line 282: inserted 3 lines.",
+        "beforeFragment": "",
+        "afterFragment": "<br/> / <a href=\"/disclaimer\" className=\"underline hover:opacity-80\">Disclaimer</a>"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/Footer.tsx",
+      "toPath": "",
+      "summary": "Line 209: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-24T12:22:52.501Z",
+      "recordedAtEpochMs": 1795522972501,
+      "before": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 11058,
+        "hash": "8fbc57033a19",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795522972501
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 215,
+        "charCount": 11067,
+        "hash": "fd0a4a00f8f4",
+        "preview": "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /...",
+        "updatedAt": 1795522972501
+      },
+      "diff": {
+        "lineStart": 209,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 209: replaced 1 line with 1 line.",
+        "beforeFragment": "#\" className=\"hover:text-white transition-colors\">Voorwaarden",
+        "afterFragment": "/disclaimer\" className=\"hover:text-white transition-colors\">Disclaimer"
+      }
+    },
     {
       "type": "save",
       "path": "app/disclaimer/page.tsx",
@@ -1103,80 +1167,20 @@
         "beforeFragment": "juni 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2xl s...",
         "afterFragment": "november 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/download/page.tsx",
-      "toPath": "",
-      "summary": "Line 1: replaced 341 lines with 342 lines.",
-      "recordedAt": "2026-11-18T23:19:22.291Z",
-      "recordedAtEpochMs": 1795043962291,
-      "before": {
-        "kind": "text",
-        "lineCount": 418,
-        "charCount": 20106,
-        "hash": "172d883371d9",
-        "preview": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat...",
-        "updatedAt": 1795043962291
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 419,
-        "charCount": 20138,
-        "hash": "3b3996f5e235",
-        "preview": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo...",
-        "updatedAt": 1795043962291
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 341,
-        "addedLines": 342,
-        "summary": "Line 1: replaced 341 lines with 342 lines.",
-        "beforeFragment": "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c...",
-        "afterFragment": "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "components/LoginScreen.tsx",
-      "toPath": "",
-      "summary": "Line 77: replaced 156 lines with 156 lines.",
-      "recordedAt": "2026-11-18T23:06:31.465Z",
-      "recordedAtEpochMs": 1795043191465,
-      "before": {
-        "kind": "text",
-        "lineCount": 288,
-        "charCount": 10311,
-        "hash": "d5e18238d7a0",
-        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
-        "updatedAt": 1795043191465
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 288,
-        "charCount": 10278,
-        "hash": "9d09484a36c4",
-        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
-        "updatedAt": 1795043191465
-      },
-      "diff": {
-        "lineStart": 77,
-        "removedLines": 156,
-        "addedLines": 156,
-        "summary": "Line 77: replaced 156 lines with 156 lines.",
-        "beforeFragment": "(vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomE...",
-        "afterFragment": "op het e-mailadres veld / const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomError('Voer een geldig e-mailadres in (incl..."
-      }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
-      "count": 10
+      "filePath": "components/Footer.tsx",
+      "count": 9
     },
     {
-      "filePath": "components/Footer.tsx",
+      "filePath": "components/configurator/StepOnewoning.tsx",
       "count": 8
+    },
+    {
+      "filePath": "components/LoginScreen.tsx",
+      "count": 3
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -1197,29 +1201,26 @@
     {
       "filePath": "components/configurator/StepFourConfirmation.tsx",
       "count": 2
-    },
-    {
-      "filePath": "components/configurator/StepTwoDesign.tsx",
-      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-24 8f12c5f chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2",
-    "statusSummary": "3 modifieds, 1 untracked",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-24 4feb524 feat(disclaimer): add disclaimer page and housing layout deadline notice",
+    "statusSummary": "5 modifieds",
+    "changedFileCount": 5,
     "statusLines": [
+      "M components/Footer.tsx",
+      "M components/LoginScreen.tsx",
       "M graphify-out/WORKSPACE_MEMORY.md",
       "M workspace.json",
-      "M workspacememory.md",
-      "?? app/disclaimer/"
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 8f12c5f by Bas van Dooremalen on 2026-11-24\n  chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 4feb524 by Bas van Dooremalen on 2026-11-24\n  feat(disclaimer): add disclaimer page and housing layout deadline notice\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

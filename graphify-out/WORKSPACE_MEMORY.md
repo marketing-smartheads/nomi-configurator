@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-24T12:19:56.800Z
+Generated: 2026-11-24T12:25:38.448Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-24T12:19:54.913Z
+- Last activity: 2026-11-24T12:25:36.123Z
 ## Workspace Focus
-- Active file in focus: app/disclaimer/page.tsx
-- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), app/api/confirm/route.ts (2), app/dashboard/page.tsx (2)
-- Suggested starting points: app/disclaimer/page.tsx, components/configurator/StepOnewoning.tsx, components/Footer.tsx, app/api/confirm/route.ts, app/dashboard/page.tsx, app/layout.tsx
+- Active file in focus: components/LoginScreen.tsx
+- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (3), app/api/confirm/route.ts (2)
+- Suggested starting points: components/LoginScreen.tsx, components/Footer.tsx, components/configurator/StepOnewoning.tsx, app/api/confirm/route.ts, app/dashboard/page.tsx, app/disclaimer/page.tsx
 ## Current Workspace
-- Active file: app/disclaimer/page.tsx
+- Active file: components/LoginScreen.tsx
 - Tracked files in snapshot: 83
 - Top-level areas: public (32), components (18), [root] (15), app (15), lib (3)
 - Primary file types: .tsx (25), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
@@ -37,8 +37,14 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 3 modifieds, 1 untracked
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
+- components/LoginScreen.tsx | 290 lines | 10386 chars | hash 94b4a2eabb02
+  Last snapshot: 2026-11-24T12:25:36.123Z
+  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- components/Footer.tsx | 215 lines | 11067 chars | hash fd0a4a00f8f4
+  Last snapshot: 2026-11-24T12:22:52.501Z
+  Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
 - app/disclaimer/page.tsx | 52 lines | 2486 chars | hash 376487bd87c7
   Last snapshot: 2026-11-24T12:19:54.913Z
   Preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
@@ -57,14 +63,21 @@ Structured manifest: workspace.json
 - app/api/auth/login/route.ts | 186 lines | 5783 chars | hash 095d3e8a3b71
   Last snapshot: 2026-11-19T20:25:42.124Z
   Preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
-- app/privacy/page.tsx | 120 lines | 7556 chars | hash 1205b84156b3
-  Last snapshot: 2026-11-19T08:18:16.042Z
-  Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- app/download/page.tsx | 419 lines | 20138 chars | hash 3b3996f5e235
-  Last snapshot: 2026-11-18T23:19:22.291Z
-  Preview: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
 
 ## Recent Changes
+### 2026-11-24T12:25:36.123Z | saved | components/LoginScreen.tsx
+- Summary: Line 282: inserted 3 lines.
+- Before: 288 lines | 10,278 chars | hash 9d09484a36c4 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- After: 290 lines | 10,386 chars | hash 94b4a2eabb02 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- Current fragment: "<br/> / <a href="/disclaimer" className="underline hover:opacity-80">Disclaimer</a>"
+
+### 2026-11-24T12:22:52.501Z | saved | components/Footer.tsx
+- Summary: Line 209: replaced 1 line with 1 line.
+- Before: 215 lines | 11,058 chars | hash 8fbc57033a19 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- After: 215 lines | 11,067 chars | hash fd0a4a00f8f4 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
+- Previous fragment: "#" className="hover:text-white transition-colors">Voorwaarden"
+- Current fragment: "/disclaimer" className="hover:text-white transition-colors">Disclaimer"
+
 ### 2026-11-24T12:19:54.913Z | saved | app/disclaimer/page.tsx
 - Summary: Line 1: inserted 52 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -146,39 +159,26 @@ Structured manifest: workspace.json
 - Previous fragment: "juni 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2xl s..."
 - Current fragment: "november 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2..."
 
-### 2026-11-18T23:19:22.291Z | saved | app/download/page.tsx
-- Summary: Line 1: replaced 341 lines with 342 lines.
-- Before: 418 lines | 20,106 chars | hash 172d883371d9 | preview: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / import { getPageDat..."
-- After: 419 lines | 20,138 chars | hash 3b3996f5e235 | preview: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
-- Previous fragment: "'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/c..."
-- Current fragment: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'..."
-
-### 2026-11-18T23:06:31.465Z | saved | components/LoginScreen.tsx
-- Summary: Line 77: replaced 156 lines with 156 lines.
-- Before: 288 lines | 10,311 chars | hash d5e18238d7a0 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- After: 288 lines | 10,278 chars | hash 9d09484a36c4 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- Previous fragment: "(vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomE..."
-- Current fragment: "op het e-mailadres veld / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomError('Voer een geldig e-mailadres in (incl..."
-
 
 ## Hot Files
-- components/configurator/StepOnewoning.tsx (10 tracked changes)
-- components/Footer.tsx (8 tracked changes)
+- components/Footer.tsx (9 tracked changes)
+- components/configurator/StepOnewoning.tsx (8 tracked changes)
+- components/LoginScreen.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/dashboard/page.tsx (2 tracked changes)
 - app/disclaimer/page.tsx (2 tracked changes)
 - app/layout.tsx (2 tracked changes)
 - components/configurator/StepFourConfirmation.tsx (2 tracked changes)
-- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-24 8f12c5f chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2
-- Working tree summary: 3 modifieds, 1 untracked
+- HEAD: 2026-11-24 4feb524 feat(disclaimer): add disclaimer page and housing layout deadline notice
+- Working tree summary: 5 modifieds
+- M components/Footer.tsx
+- M components/LoginScreen.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
-- ?? app/disclaimer/
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -186,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 8f12c5f by Bas van Dooremalen on 2026-11-24
-  chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2
+- 4feb524 by Bas van Dooremalen on 2026-11-24
+  feat(disclaimer): add disclaimer page and housing layout deadline notice
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
