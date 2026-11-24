@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from 'next/script';
 import localFont from 'next/font/local';
 import "./globals.css";
 
@@ -50,6 +51,8 @@ const inter = localFont({
   display: 'swap',
 });
 
+const GA_MEASUREMENT_ID = 'G-GDV4J55M5X';
+
 export const metadata: Metadata = {
   title: "Interieur & Design Configurator",
   description: "Exclusieve designpakketten en woonstijlen configureren en downloaden.",
@@ -71,10 +74,25 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="nl"
       className={`${poppins.variable} ${playfair.variable} ${roboto.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        {children}
+        
+      </body>
     </html>
   );
 } 

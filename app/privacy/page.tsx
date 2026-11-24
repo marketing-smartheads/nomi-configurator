@@ -7,10 +7,9 @@ import Footer from '@/components/Footer';
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-[#111115] text-zinc-100 font-sans flex flex-col justify-between selection:bg-white selection:text-[#111115]">
-      <Header currentScreen="welcome" onStart={() => window.location.href = '/'} />
+      <Header currentScreen="welcome" onStart={() => (window.location.href = '/')} />
 
       <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12">
-        
         <div className="space-y-2 sm:space-y-3">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white tracking-tight">
             Privacy- en Cookieverklaring
@@ -23,7 +22,7 @@ export default function PrivacyPage() {
         <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed">
           <section className="space-y-3 p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#1a1a20] border border-zinc-800/80 shadow-lg text-sm">
             <p>
-              Welkom bij de interieur- en designconfigurator van NOMI in samenwerking met Thomas de Gier. Wij respecteren de privacy van al onze gebruikers en dragen er zorg voor dat de persoonlijke informatie die je met ons deelt strikt vertrouwelijk wordt behandeld. In deze privacy- en cookieverklaring leggen wij uit welke gegevens wij verzamelen, waarom wij deze opslaan in ons CMS en hoe wij omgaan met sessie- en browseropslag.
+              Welkom bij de interieur- en designconfigurator van NOMI in samenwerking met Thomas de Gier. Wij respecteren de privacy van al onze gebruikers en dragen er zorg voor dat de persoonlijke informatie die je met ons deelt strikt vertrouwelijk wordt behandeld. In deze privacy- en cookieverklaring leggen wij uit welke gegevens wij verzamelen, waarom wij deze opslaan in ons CMS en hoe wij omgaan met sessie-, browseropslag en statistieken.
             </p>
           </section>
 
@@ -42,33 +41,41 @@ export default function PrivacyPage() {
           <div className="space-y-3">
             <h2 className="text-lg sm:text-xl font-serif text-white pt-2">2. Waarom verwerken en bewaren wij deze gegevens?</h2>
             <p className="text-sm sm:text-base">
-              Wij gebruiken en bewaren deze gegevens uitsluitend voor het functioneren van de configurator:
+              Wij gebruiken en bewaren deze gegevens uitsluitend voor het functioneren en verbeteren van de configurator:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm text-zinc-400">
               <li>Het verifiëren van jouw unieke toegangscode en gekoppelde e-mailadres via onze beveiligde backend.</li>
               <li>Het mogelijk maken van jouw persoonlijke interieurconfiguratie en het tussentijds onthouden van jouw stappen.</li>
               <li>Het vastleggen van jouw definitieve keuzes in ons CMS zodat jouw persoonlijke downloadpakket (inclusief tekeningen en specificaties) direct beschikbaar wordt gesteld.</li>
+              <li>Het analyseren van geaggregeerd websitegebruik via Google Analytics om de configurator te optimaliseren.</li>
             </ul>
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">3. Geen verstrekking aan derden</h2>
+            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">3. Verstrekking aan derden en verwerking</h2>
             <p className="text-sm sm:text-base">
-              Jouw gegevens en samengestelde configuratie worden binnen deze applicatie niet gedeeld met externe partners of derden en worden niet gebruikt voor commerciële benadering.
+              Jouw configuratiegegevens en persoonsgegevens worden niet verkocht en niet gebruikt voor commerciële benadering buiten het project. Voor het meten van bezoekersstatistieken maken wij gebruik van Google Analytics (<code className="text-white bg-zinc-800 px-1 py-0.5 rounded">G-GDV4J55M5X</code>), waarbij gebruiksgegevens geaggregeerd worden verwerkt.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">4. Over Browseropslag (Session Storage & Local Storage)</h2>
+            <h2 className="text-lg sm:text-xl font-serif text-white pt-2">4. Browseropslag, Cookies & Analytics</h2>
             <p className="text-sm sm:text-base">
-              Onze webapplicatie maakt uitsluitend gebruik van strikt noodzakelijke, functionele browsertechnologieën om jouw sessie soepel te laten verlopen:
+              Onze webapplicatie combineert strikt noodzakelijke browseropslag met statistische analyse via Google Analytics:
             </p>
-            
+
             <div className="space-y-3 pt-2">
               <div className="p-4 rounded-xl sm:rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1">
                 <p className="text-sm font-medium text-white">Noodzakelijke Sessie- en Lokale Opslag</p>
                 <p className="text-xs text-zinc-400">
-                  We gebruiken <code className="text-white bg-zinc-800 px-1 py-0.5 rounded">sessionStorage</code> en <code className="text-white bg-zinc-800 px-1 py-0.5 rounded">localStorage</code> om jouw actieve sessiestatus, ingevoerde vouchercode en gekozen stappen tijdelijk lokaal op jouw apparaat te bewaren tijdens jouw bezoek. Hiervoor worden geen tracking- of marketingcookies geplaatst.
+                  We gebruiken <code className="text-white bg-zinc-800 px-1 py-0.5 rounded">sessionStorage</code> en <code className="text-white bg-zinc-800 px-1 py-0.5 rounded">localStorage</code> om jouw actieve sessiestatus, ingevoerde vouchercode en gekozen stappen tijdelijk lokaal op jouw apparaat te bewaren tijdens jouw bezoek.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl sm:rounded-2xl bg-zinc-900/50 border border-zinc-800 space-y-1">
+                <p className="text-sm font-medium text-white">Statistieken (Google Analytics)</p>
+                <p className="text-xs text-zinc-400">
+                  Via Google Analytics (<code className="text-white bg-zinc-800 px-1 py-0.5 rounded">G-GDV4J55M5X</code>) meten wij bezoekersaantallen, paginaweergaven en algemene interacties om inzicht te krijgen in het gebruik van de configurator.
                 </p>
               </div>
             </div>
@@ -99,6 +106,12 @@ export default function PrivacyPage() {
                     <td className="p-3 sm:p-4">Tijdelijk onthouden van keuzes en stappen tijdens het configureren.</td>
                     <td className="p-3 sm:p-4">Tijdens browsersessie / tot wissen van browsergegevens</td>
                   </tr>
+                  <tr>
+                    <td className="p-3 sm:p-4 font-mono text-white">Analytics- & Sessie-events</td>
+                    <td className="p-3 sm:p-4">Google Analytics (G-GDV4J55M5X)</td>
+                    <td className="p-3 sm:p-4">Meten van websitebezoek en gebruiksstatistieken.</td>
+                    <td className="p-3 sm:p-4">Volgens instellingen in Google Analytics</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -110,7 +123,6 @@ export default function PrivacyPage() {
               Op grond van de Algemene Verordening Gegevensbescherming (AVG) heb je het recht om jouw persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen uit ons systeem. Via deze online configurator worden geen directe contactkanalen aangeboden; eventuele verzoeken lopen uitsluitend via jouw eigen projectbegeleider.
             </p>
           </div>
-
         </div>
       </main>
 
