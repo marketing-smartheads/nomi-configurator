@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T12:25:38.448Z",
-  "generatedAtEpochMs": 1795523138448,
+  "generatedAt": "2026-11-24T12:30:33.180Z",
+  "generatedAtEpochMs": 1795523433180,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -647,7 +647,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-24T12:25:36.123Z",
+    "lastActivityAt": "2026-11-24T12:30:31.441Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 48,
     "changeTypeCounts": {
@@ -660,10 +660,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/LoginScreen.tsx",
-      "updatedAt": 1795523136123,
+      "updatedAt": 1795523431441,
       "lineCount": 290,
-      "charCount": 10386,
-      "hash": "94b4a2eabb02",
+      "charCount": 10423,
+      "hash": "dec1932e7178",
       "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
     },
     {
@@ -724,6 +724,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/LoginScreen.tsx",
+      "toPath": "",
+      "summary": "Line 283: inserted 1 line.",
+      "recordedAt": "2026-11-24T12:30:31.441Z",
+      "recordedAtEpochMs": 1795523431441,
+      "before": {
+        "kind": "text",
+        "lineCount": 290,
+        "charCount": 10386,
+        "hash": "94b4a2eabb02",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795523431441
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 290,
+        "charCount": 10423,
+        "hash": "dec1932e7178",
+        "preview": "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr...",
+        "updatedAt": 1795523431441
+      },
+      "diff": {
+        "lineStart": 283,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 283: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "flex justify-center mt-1.5 font-bold"
+      }
+    },
     {
       "type": "save",
       "path": "components/LoginScreen.tsx",
@@ -1135,38 +1167,6 @@
         "beforeFragment": "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin'); / con...",
         "afterFragment": "interface LoggedInUser { / firstName: string; / email: string; / } / export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [us..."
       }
-    },
-    {
-      "type": "save",
-      "path": "app/privacy/page.tsx",
-      "toPath": "",
-      "summary": "Line 19: replaced 100 lines with 93 lines.",
-      "recordedAt": "2026-11-19T08:18:16.042Z",
-      "recordedAtEpochMs": 1795076296042,
-      "before": {
-        "kind": "text",
-        "lineCount": 127,
-        "charCount": 7550,
-        "hash": "e35fdd4c7a5a",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1795076296042
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 120,
-        "charCount": 7556,
-        "hash": "1205b84156b3",
-        "preview": "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className=\"min-h-screen bg-[#...",
-        "updatedAt": 1795076296042
-      },
-      "diff": {
-        "lineStart": 19,
-        "removedLines": 100,
-        "addedLines": 93,
-        "summary": "Line 19: replaced 100 lines with 93 lines.",
-        "beforeFragment": "juni 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2xl s...",
-        "afterFragment": "november 2026 / </p> / </div> / <div className=\"space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed\"> / <section className=\"space-y-3 p-5 sm:p-6 rounded-2..."
-      }
     }
   ],
   "hotFiles": [
@@ -1180,7 +1180,7 @@
     },
     {
       "filePath": "components/LoginScreen.tsx",
-      "count": 3
+      "count": 4
     },
     {
       "filePath": "app/api/confirm/route.ts",
@@ -1206,15 +1206,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-24 4feb524 feat(disclaimer): add disclaimer page and housing layout deadline notice",
-    "statusSummary": "5 modifieds",
-    "changedFileCount": 5,
+    "headSummary": "2026-11-24 0dfeb46 feat(ui): add disclaimer link to footer and login screen",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/Footer.tsx",
-      "M components/LoginScreen.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/LoginScreen.tsx"
     ],
     "error": ""
   },

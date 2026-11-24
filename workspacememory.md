@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-24T12:25:38.448Z
+Generated: 2026-11-24T12:30:33.180Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-24T12:25:36.123Z
+- Last activity: 2026-11-24T12:30:31.441Z
 ## Workspace Focus
 - Active file in focus: components/LoginScreen.tsx
-- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (3), app/api/confirm/route.ts (2)
+- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/api/confirm/route.ts (2)
 - Suggested starting points: components/LoginScreen.tsx, components/Footer.tsx, components/configurator/StepOnewoning.tsx, app/api/confirm/route.ts, app/dashboard/page.tsx, app/disclaimer/page.tsx
 ## Current Workspace
 - Active file: components/LoginScreen.tsx
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 5 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/LoginScreen.tsx | 290 lines | 10386 chars | hash 94b4a2eabb02
-  Last snapshot: 2026-11-24T12:25:36.123Z
+- components/LoginScreen.tsx | 290 lines | 10423 chars | hash dec1932e7178
+  Last snapshot: 2026-11-24T12:30:31.441Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 - components/Footer.tsx | 215 lines | 11067 chars | hash fd0a4a00f8f4
   Last snapshot: 2026-11-24T12:22:52.501Z
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
 
 ## Recent Changes
+### 2026-11-24T12:30:31.441Z | saved | components/LoginScreen.tsx
+- Summary: Line 283: inserted 1 line.
+- Before: 290 lines | 10,386 chars | hash 94b4a2eabb02 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- After: 290 lines | 10,423 chars | hash dec1932e7178 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
+- Current fragment: "flex justify-center mt-1.5 font-bold"
+
 ### 2026-11-24T12:25:36.123Z | saved | components/LoginScreen.tsx
 - Summary: Line 282: inserted 3 lines.
 - Before: 288 lines | 10,278 chars | hash 9d09484a36c4 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -152,18 +158,11 @@ Structured manifest: workspace.json
 - Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin'); / con..."
 - Current fragment: "interface LoggedInUser { / firstName: string; / email: string; / } / export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [us..."
 
-### 2026-11-19T08:18:16.042Z | saved | app/privacy/page.tsx
-- Summary: Line 19: replaced 100 lines with 93 lines.
-- Before: 127 lines | 7,550 chars | hash e35fdd4c7a5a | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- After: 120 lines | 7,556 chars | hash 1205b84156b3 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
-- Previous fragment: "juni 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2xl s..."
-- Current fragment: "november 2026 / </p> / </div> / <div className="space-y-8 sm:space-y-10 text-sm sm:text-base text-zinc-300 leading-relaxed"> / <section className="space-y-3 p-5 sm:p-6 rounded-2..."
-
 
 ## Hot Files
 - components/Footer.tsx (9 tracked changes)
 - components/configurator/StepOnewoning.tsx (8 tracked changes)
-- components/LoginScreen.tsx (3 tracked changes)
+- components/LoginScreen.tsx (4 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/dashboard/page.tsx (2 tracked changes)
 - app/disclaimer/page.tsx (2 tracked changes)
@@ -172,13 +171,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-24 4feb524 feat(disclaimer): add disclaimer page and housing layout deadline notice
-- Working tree summary: 5 modifieds
-- M components/Footer.tsx
+- HEAD: 2026-11-24 0dfeb46 feat(ui): add disclaimer link to footer and login screen
+- Working tree summary: 1 modified
 - M components/LoginScreen.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
