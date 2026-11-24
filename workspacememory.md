@@ -1,9 +1,9 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-24T08:28:51.949Z
+Generated: 2026-11-24T12:19:56.800Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
-Refresh reason: startup
+Refresh reason: tracked-change
 Output path: graphify-out/WORKSPACE_MEMORY.md
 Shared mirror: workspacememory.md
 Structured manifest: workspace.json
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-19T22:05:56.243Z
+- Last activity: 2026-11-24T12:19:54.913Z
 ## Workspace Focus
-- Active file in focus: app/api/confirm/route.ts
-- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), components/configurator/StepFourConfirmation.tsx (3), components/configurator/StepTwoDesign.tsx (3)
-- Suggested starting points: app/api/confirm/route.ts, components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/configurator/StepFourConfirmation.tsx, components/configurator/StepTwoDesign.tsx, app/dashboard/page.tsx
+- Active file in focus: app/disclaimer/page.tsx
+- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), app/api/confirm/route.ts (2), app/dashboard/page.tsx (2)
+- Suggested starting points: app/disclaimer/page.tsx, components/configurator/StepOnewoning.tsx, components/Footer.tsx, app/api/confirm/route.ts, app/dashboard/page.tsx, app/layout.tsx
 ## Current Workspace
-- Active file: app/api/confirm/route.ts
-- Tracked files in snapshot: 82
-- Top-level areas: public (32), components (18), [root] (15), app (14), lib (3)
-- Primary file types: .tsx (24), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
+- Active file: app/disclaimer/page.tsx
+- Tracked files in snapshot: 83
+- Top-level areas: public (32), components (18), [root] (15), app (15), lib (3)
+- Primary file types: .tsx (25), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: tg-configurator v0.1.0
@@ -35,10 +35,13 @@ Structured manifest: workspace.json
 - Dev dependencies: @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, eslint, eslint-config-next, tailwindcss, typescript
 ## Current Stack
 - Logged change events: 40
-- Change mix: save (40)
-- Remembered file snapshots: 47
-- Working tree summary: 4 modifieds
+- Change mix: save (37), create (2), rename (1)
+- Remembered file snapshots: 48
+- Working tree summary: 3 modifieds, 1 untracked
 ## Tracked Snapshots
+- app/disclaimer/page.tsx | 52 lines | 2486 chars | hash 376487bd87c7
+  Last snapshot: 2026-11-24T12:19:54.913Z
+  Preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
 - app/layout.tsx | 81 lines | 1593 chars | hash ed08bbfcc175
   Last snapshot: 2026-11-19T22:05:56.243Z
   Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
@@ -60,11 +63,26 @@ Structured manifest: workspace.json
 - app/download/page.tsx | 419 lines | 20138 chars | hash 3b3996f5e235
   Last snapshot: 2026-11-18T23:19:22.291Z
   Preview: "// app/download/page.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import { useRouter } from 'next/navigation'; / import Header from '@/components/Header'; / import Footer from '@/components/Foo..."
-- components/LoginScreen.tsx | 288 lines | 10278 chars | hash 9d09484a36c4
-  Last snapshot: 2026-11-18T23:06:31.465Z
-  Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-24T12:19:54.913Z | saved | app/disclaimer/page.tsx
+- Summary: Line 1: inserted 52 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 52 lines | 2,486 chars | hash 376487bd87c7 | preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
+- Current fragment: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { /..."
+
+### 2026-11-24T12:19:53.313Z | renamed | app/disclaimer/page.ts -> app/disclaimer/page.tsx
+- Summary: Renamed file.
+- Before: 0 lines | 0 chars | hash empty
+- After: 0 lines | 0 chars | hash empty
+
+### 2026-11-24T12:19:48.648Z | created | app/disclaimer/page.ts
+- Summary: Created file.
+- After: 0 lines | 0 chars | hash empty
+
+### 2026-11-24T12:19:44.271Z | created | app/disclaimer
+- Summary: Created file.
+
 ### 2026-11-19T22:05:56.243Z | saved | app/layout.tsx
 - Summary: Line 58: replaced 1 line with 1 line.
 - Before: 81 lines | 1,592 chars | hash 3db586e03830 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
@@ -142,51 +160,25 @@ Structured manifest: workspace.json
 - Previous fragment: "(vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomE..."
 - Current fragment: "op het e-mailadres veld / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoerdeEmailClean)) { / setCustomError('Voer een geldig e-mailadres in (incl..."
 
-### 2026-11-18T23:04:32.703Z | saved | components/LoginScreen.tsx
-- Summary: Line 77: replaced 148 lines with 156 lines.
-- Before: 280 lines | 9,944 chars | hash 0900a7d9f405 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- After: 288 lines | 10,311 chars | hash d5e18238d7a0 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- Previous fragment: "Aanroep naar onze stabiele API-route / const response = await fetch('/api/verify-voucher', { / method: 'POST', / headers: { 'Content-Type': 'application/json' }, / body: JSON.st..."
-- Current fragment: "Strenge e-mailvalidatie check (vereist o.a. een @ en een geldige domeinextensie zoals .nl/.com) / const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; / if (!emailRegex.test(ingevoe..."
-
-### 2026-11-18T23:01:09.050Z | saved | components/Footer.tsx
-- Summary: Line 76: replaced 118 lines with 119 lines.
-- Before: 214 lines | 11,204 chars | hash 38c9c7dfe5d9 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 215 lines | 11,058 chars | hash 8fbc57033a19 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "<div className="md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 justify-end"> / <div className="flex flex-col space-y-4"> / <span className="font-poppins font-semibold text-..."
-- Current fragment: "{/* Navigatie & Configurator rechts uitgelijnd */} / <div className="md:col-span-6 flex flex-col md:flex-row justify-end gap-16"> / <div className="flex flex-col space-y-4"> / <..."
-
-### 2026-11-18T22:58:46.169Z | saved | components/Footer.tsx
-- Summary: Line 1: inserted 214 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 214 lines | 11,204 chars | hash 38c9c7dfe5d9 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Current fragment: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateC..."
-
-### 2026-11-18T22:56:51.050Z | saved | components/ConfiguratorScreen.tsx
-- Summary: Line 1: inserted 285 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 285 lines | 11,414 chars | hash 1ef6ecbe6bc4 | preview: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/StepOnewoning'; / import StepTwoDesign f..."
-- Current fragment: "// components/ConfiguratorScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Button from './Button'; / import StepOneWoning from './configurator/..."
-
 
 ## Hot Files
 - components/configurator/StepOnewoning.tsx (10 tracked changes)
 - components/Footer.tsx (8 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (3 tracked changes)
-- components/configurator/StepTwoDesign.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/dashboard/page.tsx (2 tracked changes)
+- app/disclaimer/page.tsx (2 tracked changes)
 - app/layout.tsx (2 tracked changes)
-- components/ConfiguratorScreen.tsx (2 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
+- components/configurator/StepTwoDesign.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-19 019e27e feat(confirm): map partner emails by partner name in code and send via Resend
-- Working tree summary: 4 modifieds
-- M app/api/confirm/route.ts
-- M  graphify-out/WORKSPACE_MEMORY.md
-- M  workspace.json
-- M  workspacememory.md
+- HEAD: 2026-11-24 8f12c5f chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2
+- Working tree summary: 3 modifieds, 1 untracked
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
+- ?? app/disclaimer/
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -194,8 +186,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 019e27e by Bas van Dooremalen on 2026-11-19
-  feat(confirm): map partner emails by partner name in code and send via Resend
+- 8f12c5f by Bas van Dooremalen on 2026-11-24
+  chore(confirm): update Bruynzeel Keukens partner email to jvdheuvel2
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
