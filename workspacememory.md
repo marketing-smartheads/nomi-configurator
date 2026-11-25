@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-25T09:23:07.501Z
+Generated: 2026-11-25T09:31:36.204Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-25T09:23:05.790Z
+- Last activity: 2026-11-25T09:31:34.476Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/LoginScreen.tsx, app/disclaimer/page.tsx, app/layout.tsx, app/api/confirm/route.ts
+- Active file in focus: components/configurator/StepTwoDesign.tsx
+- Hottest files right now: components/configurator/StepOnewoning.tsx (12), components/Footer.tsx (4), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
+- Suggested starting points: components/configurator/StepTwoDesign.tsx, components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/LoginScreen.tsx, app/disclaimer/page.tsx, app/layout.tsx
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/configurator/StepTwoDesign.tsx
 - Tracked files in snapshot: 83
 - Top-level areas: public (32), components (18), [root] (15), app (15), lib (3)
 - Primary file types: .tsx (25), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
@@ -37,10 +37,13 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 4 modifieds
+- Working tree summary: 5 modifieds
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 239 lines | 12035 chars | hash c5f14f22e3eb
-  Last snapshot: 2026-11-25T09:23:05.790Z
+- components/configurator/StepTwoDesign.tsx | 284 lines | 13429 chars | hash 6d81768d35df
+  Last snapshot: 2026-11-25T09:31:34.476Z
+  Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- components/configurator/StepOnewoning.tsx | 239 lines | 12105 chars | hash 87d837015a0a
+  Last snapshot: 2026-11-25T09:30:31.906Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
   Last snapshot: 2026-11-24T15:43:16.327Z
@@ -60,11 +63,32 @@ Structured manifest: workspace.json
 - .env.local | 12 lines | 423 chars | hash 19cb3d3fc1cd
   Last snapshot: 2026-11-19T22:05:30.250Z
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
-- app/api/confirm/route.ts | 362 lines | 13222 chars | hash 5fe756e677ee
-  Last snapshot: 2026-11-19T21:32:11.513Z
-  Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
 
 ## Recent Changes
+### 2026-11-25T09:31:34.476Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 241: inserted 11 lines.
+- Before: 274 lines | 12,546 chars | hash 80940f00b5bc | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 284 lines | 13,429 chars | hash 6d81768d35df | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Current fragment: "Disclaimer Elektra- en lichtplan */} / <div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibo..."
+
+### 2026-11-25T09:31:01.138Z | saved | components/configurator/StepTwoDesign.tsx
+- Summary: Line 124: inserted 2 lines.
+- Before: 273 lines | 12,368 chars | hash 6c0aa94c4d43 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- After: 274 lines | 12,546 chars | hash 80940f00b5bc | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
+- Current fragment: "<br/> / <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>."
+
+### 2026-11-25T09:30:31.906Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 184: inserted 1 line.
+- Before: 239 lines | 12,070 chars | hash fc2fb2afbbf5 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 239 lines | 12,105 chars | hash 87d837015a0a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Current fragment: "title="Disclaimer, t/m 7 december""
+
+### 2026-11-25T09:30:09.737Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 85: inserted 1 line.
+- Before: 239 lines | 12,035 chars | hash c5f14f22e3eb | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 239 lines | 12,070 chars | hash fc2fb2afbbf5 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Current fragment: "title="Disclaimer, t/m 7 december""
+
 ### 2026-11-25T09:23:05.790Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 84: replaced 1 line with 2 lines.
 - Before: 238 lines | 12,012 chars | hash 608fe07ed89a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -137,36 +161,10 @@ Structured manifest: workspace.json
 - Previous fragment: "window.location.href = '/'} /> / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / <div className="space-y-2 sm..."
 - Current fragment: "(window.location.href = '/')} /> / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / <div className="space-y-2..."
 
-### 2026-11-24T12:41:48.321Z | saved | app/layout.tsx
-- Summary: Line 2: replaced 76 lines with 94 lines.
-- Before: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 99 lines | 2,153 chars | hash 30c4a3950746 | preview: "import type { Metadata } from "next"; / import Script from 'next/script'; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppin..."
-- Previous fragment: "localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600', / style..."
-- Current fragment: "Script from 'next/script'; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiB..."
-
-### 2026-11-24T12:30:31.441Z | saved | components/LoginScreen.tsx
-- Summary: Line 283: inserted 1 line.
-- Before: 290 lines | 10,386 chars | hash 94b4a2eabb02 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- After: 290 lines | 10,423 chars | hash dec1932e7178 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- Current fragment: "flex justify-center mt-1.5 font-bold"
-
-### 2026-11-24T12:25:36.123Z | saved | components/LoginScreen.tsx
-- Summary: Line 282: inserted 3 lines.
-- Before: 288 lines | 10,278 chars | hash 9d09484a36c4 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- After: 290 lines | 10,386 chars | hash 94b4a2eabb02 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
-- Current fragment: "<br/> / <a href="/disclaimer" className="underline hover:opacity-80">Disclaimer</a>"
-
-### 2026-11-24T12:22:52.501Z | saved | components/Footer.tsx
-- Summary: Line 209: replaced 1 line with 1 line.
-- Before: 215 lines | 11,058 chars | hash 8fbc57033a19 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- After: 215 lines | 11,067 chars | hash fd0a4a00f8f4 | preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- Previous fragment: "#" className="hover:text-white transition-colors">Voorwaarden"
-- Current fragment: "/disclaimer" className="hover:text-white transition-colors">Disclaimer"
-
 
 ## Hot Files
-- components/configurator/StepOnewoning.tsx (10 tracked changes)
-- components/Footer.tsx (8 tracked changes)
+- components/configurator/StepOnewoning.tsx (12 tracked changes)
+- components/Footer.tsx (4 tracked changes)
 - components/LoginScreen.tsx (4 tracked changes)
 - app/disclaimer/page.tsx (3 tracked changes)
 - app/layout.tsx (3 tracked changes)
@@ -176,9 +174,10 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-25 c9baa01 styled disclaimer link
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-25 05ff0e2 small change to styling disclaimer link
+- Working tree summary: 5 modifieds
 - M components/configurator/StepOnewoning.tsx
+- M components/configurator/StepTwoDesign.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
 - M workspace.json
 - M workspacememory.md
@@ -189,8 +188,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c9baa01 by Bas van Dooremalen on 2026-11-25
-  styled disclaimer link
+- 05ff0e2 by Bas van Dooremalen on 2026-11-25
+  small change to styling disclaimer link
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

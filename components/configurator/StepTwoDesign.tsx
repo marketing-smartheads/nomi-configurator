@@ -121,7 +121,8 @@ export default function StepTwoDesign({
         </h2>
         {omschrijving && (
           <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
-            {omschrijving}
+            {omschrijving}<br/>
+              <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
           </p>
         )}
       </div>
@@ -235,6 +236,16 @@ export default function StepTwoDesign({
             Geen designpakketten beschikbaar voor dit type woning.
           </div>
         )}
+      </div>
+
+      {/* Disclaimer Elektra- en lichtplan */}
+      <div className="text-center space-y-4 max-w-3xl mx-auto">
+        <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">Disclaimer</p>
+        <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">Elektra- en lichtplan</h2>
+        <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+          Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december. Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.
+          <br/><a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
+        </p>
       </div>
 
       {/* Fancybox / Lightbox Modal */}

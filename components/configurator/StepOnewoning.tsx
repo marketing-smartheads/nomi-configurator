@@ -82,7 +82,7 @@ export default function StepOneWoning({
             <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
               {stap1Omschrijving} 
               <br/>
-              <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline">Meer informatie</a>.
+              <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
             </p>
           )}
         </div>
@@ -181,7 +181,7 @@ export default function StepOneWoning({
           <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">Elektra- en lichtplan</h2>
           <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
             Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december. Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.
-            <br/><a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline">Meer informatie</a>.
+            <br/><a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
           </p>
         </div>
       </div>
