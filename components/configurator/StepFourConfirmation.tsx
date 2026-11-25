@@ -410,7 +410,9 @@ export default function StepFourConfirmation({
             <div className="space-y-3">
               {sectieTitel && <h2 className="text-3xl md:text-4xl font-serif text-dark m-0">{sectieTitel}</h2>}
               {subtitel && <h2 className="text-2xl md:text-3xl font-serif text-primary">{subtitel}</h2>}
-              {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}</p>}
+              {omschrijving && <p className="text-xs sm:text-sm text-muted leading-relaxed">{omschrijving}
+                <br/>
+              <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.</p>}
             </div>
           </div>
 
@@ -692,6 +694,16 @@ export default function StepFourConfirmation({
               </div>
             </div>
           )}
+
+           {/* Disclaimer Elektra- en lichtplan */}
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+              <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">Disclaimer</p>
+              <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">Elektra- en lichtplan</h2>
+              <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+                Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december. Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.
+                <br/><a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
+              </p>
+            </div>
         </div>
       </div>
 
