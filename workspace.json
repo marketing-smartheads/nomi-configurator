@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T09:14:06.692Z",
-  "generatedAtEpochMs": 1795598046692,
+  "generatedAt": "2026-11-25T09:19:00.777Z",
+  "generatedAtEpochMs": 1795598340777,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -647,7 +647,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-25T09:14:04.187Z",
+    "lastActivityAt": "2026-11-25T09:18:59.041Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 48,
     "changeTypeCounts": {
@@ -660,10 +660,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795598044187,
-      "lineCount": 241,
-      "charCount": 11993,
-      "hash": "2de026706938",
+      "updatedAt": 1795598339041,
+      "lineCount": 238,
+      "charCount": 12010,
+      "hash": "ff0f9d952bcd",
       "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
     },
     {
@@ -724,6 +724,102 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 183: replaced 4 lines with 1 line.",
+      "recordedAt": "2026-11-25T09:18:59.041Z",
+      "recordedAtEpochMs": 1795598339041,
+      "before": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 12053,
+        "hash": "93e96dfec300",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598339041
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12010,
+        "hash": "ff0f9d952bcd",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598339041
+      },
+      "diff": {
+        "lineStart": 183,
+        "removedLines": 4,
+        "addedLines": 1,
+        "summary": "Line 183: replaced 4 lines with 1 line.",
+        "beforeFragment": "Meer informatie / </a>",
+        "afterFragment": "Meer informatie</a>"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 183: inserted 1 line.",
+      "recordedAt": "2026-11-25T09:18:50.697Z",
+      "recordedAtEpochMs": 1795598330697,
+      "before": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 12024,
+        "hash": "dd65ee98f41c",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598330697
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 12053,
+        "hash": "93e96dfec300",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598330697
+      },
+      "diff": {
+        "lineStart": 183,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 183: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "text-xs sm:text-sm font-bold"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 84: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-25T09:18:33.107Z",
+      "recordedAtEpochMs": 1795598313107,
+      "before": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 11993,
+        "hash": "2de026706938",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598313107
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 12024,
+        "hash": "dd65ee98f41c",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598313107
+      },
+      "diff": {
+        "lineStart": 84,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 84: replaced 1 line with 1 line.",
+        "beforeFragment": "underline hover:underline\">Meer informatie</a>",
+        "afterFragment": "text-xs sm:text-sm font-bold underline hover:underline\"> Meer informatie</a>."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1071,102 +1167,6 @@
       "before": null,
       "after": null,
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "app/layout.tsx",
-      "toPath": "",
-      "summary": "Line 58: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-19T22:05:56.243Z",
-      "recordedAtEpochMs": 1795125956243,
-      "before": {
-        "kind": "text",
-        "lineCount": 81,
-        "charCount": 1592,
-        "hash": "3db586e03830",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1795125956243
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 81,
-        "charCount": 1593,
-        "hash": "ed08bbfcc175",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1795125956243
-      },
-      "diff": {
-        "lineStart": 58,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 58: replaced 1 line with 1 line.",
-        "beforeFragment": "tru",
-        "afterFragment": "fals"
-      }
-    },
-    {
-      "type": "save",
-      "path": ".env.local",
-      "toPath": "",
-      "summary": "Line 5: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-19T22:05:30.250Z",
-      "recordedAtEpochMs": 1795125930250,
-      "before": {
-        "kind": "text",
-        "lineCount": 12,
-        "charCount": 432,
-        "hash": "a1ea6608e103",
-        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl...",
-        "updatedAt": 1795125930250
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 12,
-        "charCount": 423,
-        "hash": "19cb3d3fc1cd",
-        "preview": "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE...",
-        "updatedAt": 1795125930250
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 5: replaced 1 line with 1 line.",
-        "beforeFragment": "webmaster@marketingsmartheads",
-        "afterFragment": "tobias@aanhuis-spijk"
-      }
-    },
-    {
-      "type": "save",
-      "path": "app/layout.tsx",
-      "toPath": "",
-      "summary": "Line 58: replaced 1 line with 1 line.",
-      "recordedAt": "2026-11-19T21:46:08.019Z",
-      "recordedAtEpochMs": 1795124768019,
-      "before": {
-        "kind": "text",
-        "lineCount": 81,
-        "charCount": 1593,
-        "hash": "ed08bbfcc175",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1795124768019
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 81,
-        "charCount": 1592,
-        "hash": "3db586e03830",
-        "preview": "import type { Metadata } from \"next\"; / import localFont from 'next/font/local'; / import \"./globals.css\"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',...",
-        "updatedAt": 1795124768019
-      },
-      "diff": {
-        "lineStart": 58,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 58: replaced 1 line with 1 line.",
-        "beforeFragment": "fals",
-        "afterFragment": "tru"
-      }
     }
   ],
   "hotFiles": [
@@ -1206,11 +1206,14 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-25 96a7595 ädded diclaimer electra and lichtplan to configurator",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-11-25 efc20e0 fix(configurator): close unclosed div tag in StepOneWoning disclaimer",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx"
+      "M components/configurator/StepOnewoning.tsx",
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },

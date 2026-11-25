@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-25T09:14:06.692Z
+Generated: 2026-11-25T09:19:00.777Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-25T09:14:04.187Z
+- Last activity: 2026-11-25T09:18:59.041Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
 - Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 241 lines | 11993 chars | hash 2de026706938
-  Last snapshot: 2026-11-25T09:14:04.187Z
+- components/configurator/StepOnewoning.tsx | 238 lines | 12010 chars | hash ff0f9d952bcd
+  Last snapshot: 2026-11-25T09:18:59.041Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
   Last snapshot: 2026-11-24T15:43:16.327Z
@@ -65,6 +65,26 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
 
 ## Recent Changes
+### 2026-11-25T09:18:59.041Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 183: replaced 4 lines with 1 line.
+- Before: 241 lines | 12,053 chars | hash 93e96dfec300 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 238 lines | 12,010 chars | hash ff0f9d952bcd | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "Meer informatie / </a>"
+- Current fragment: "Meer informatie</a>"
+
+### 2026-11-25T09:18:50.697Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 183: inserted 1 line.
+- Before: 241 lines | 12,024 chars | hash dd65ee98f41c | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 241 lines | 12,053 chars | hash 93e96dfec300 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Current fragment: "text-xs sm:text-sm font-bold"
+
+### 2026-11-25T09:18:33.107Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 84: replaced 1 line with 1 line.
+- Before: 241 lines | 11,993 chars | hash 2de026706938 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 241 lines | 12,024 chars | hash dd65ee98f41c | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "underline hover:underline">Meer informatie</a>"
+- Current fragment: "text-xs sm:text-sm font-bold underline hover:underline"> Meer informatie</a>."
+
 ### 2026-11-25T09:14:04.187Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 83: replaced 103 lines with 106 lines.
 - Before: 238 lines | 11,819 chars | hash a617efc2dd6a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -135,27 +155,6 @@ Structured manifest: workspace.json
 ### 2026-11-24T12:19:44.271Z | created | app/disclaimer
 - Summary: Created file.
 
-### 2026-11-19T22:05:56.243Z | saved | app/layout.tsx
-- Summary: Line 58: replaced 1 line with 1 line.
-- Before: 81 lines | 1,592 chars | hash 3db586e03830 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- Previous fragment: "tru"
-- Current fragment: "fals"
-
-### 2026-11-19T22:05:30.250Z | saved | .env.local
-- Summary: Line 5: replaced 1 line with 1 line.
-- Before: 12 lines | 432 chars | hash a1ea6608e103 | preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=webmaster@marketingsmartheads.nl..."
-- After: 12 lines | 423 chars | hash 19cb3d3fc1cd | preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
-- Previous fragment: "webmaster@marketingsmartheads"
-- Current fragment: "tobias@aanhuis-spijk"
-
-### 2026-11-19T21:46:08.019Z | saved | app/layout.tsx
-- Summary: Line 58: replaced 1 line with 1 line.
-- Before: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- After: 81 lines | 1,592 chars | hash 3db586e03830 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
-- Previous fragment: "fals"
-- Current fragment: "tru"
-
 
 ## Hot Files
 - components/Footer.tsx (9 tracked changes)
@@ -169,9 +168,12 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-25 96a7595 ädded diclaimer electra and lichtplan to configurator
-- Working tree summary: 1 modified
+- HEAD: 2026-11-25 efc20e0 fix(configurator): close unclosed div tag in StepOneWoning disclaimer
+- Working tree summary: 4 modifieds
 - M components/configurator/StepOnewoning.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
