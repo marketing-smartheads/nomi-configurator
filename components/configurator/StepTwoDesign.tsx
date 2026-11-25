@@ -238,14 +238,32 @@ export default function StepTwoDesign({
         )}
       </div>
 
-      {/* Disclaimer Elektra- en lichtplan */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">Disclaimer</p>
-        <h2 className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] text-dark font-normal">Elektra- en lichtplan</h2>
-        <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
-          Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december. Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.
-          <br/><a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>.
-        </p>
+      {/* Disclaimer Woningindeling & Elektra-/lichtplan */}
+      <div className="text-center space-y-6 max-w-3xl mx-auto pt-4">
+        <div className="space-y-3">
+          <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold">
+            Disclaimer
+          </p>
+          <h2 className="font-serif text-[clamp(2rem,2.5vw+1rem,2.75rem)] text-dark font-normal">
+            Woningindeling
+          </h2>
+          <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+            Tot en met 7 december bestaat de gelegenheid om, in overleg met uw kopersadviseur, een wijzigingsverzoek in te dienen voor de reeds besproken woningindeling. De eventuele definitieve meerkosten die voortvloeien uit de gewenste aanpassing zullen vervolgens door ThuisinBouwen aan u kenbaar worden gemaakt. Voor kopers die na deze datum een woning aankopen, is het niet mogelijk de woningindeling te wijzigen. Verzoeken tot aanpassing van de indeling kunnen na 7 december niet meer in de uitvoering worden verwerkt.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2 border-t border-dark/10">
+          <h3 className="font-serif text-xl sm:text-2xl text-dark font-normal">
+            Elektra- en lichtplan
+          </h3>
+          <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto">
+            Aanpassingen in het elektra-/lichtplan kunnen ook niet meer worden doorgevoerd na 7 december. Ook bij het “verplaatsen” van het kookeiland, zithoek en eethoek kan het lichtpunt niet meer worden gecentreerd boven de tafel en/of het eiland.{' '}
+            <a href="/disclaimer" className="text-dark underline hover:opacity-80">
+              Meer informatie
+            </a>
+            .
+          </p>
+        </div>
       </div>
 
       {/* Fancybox / Lightbox Modal */}
