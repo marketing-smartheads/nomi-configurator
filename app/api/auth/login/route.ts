@@ -16,6 +16,21 @@ const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; rol
     email: 'mark.vanwoudenberg@dekeizer.nl',
     role: 'makelaar',
   },
+  'rene nc': {
+    firstName: 'René',
+    email: 'r.helderop@thuisinbouwen.nl',
+    role: 'admin',
+  },
+  'rene': {
+    firstName: 'René',
+    email: 'r.helderop@thuisinbouwen.nl',
+    role: 'admin',
+  },
+  'r.helderop@thuisinbouwen.nl': {
+    firstName: 'René',
+    email: 'r.helderop@thuisinbouwen.nl',
+    role: 'admin',
+  },
   'thomas nc': {
     firstName: 'Thomas',
     email: 'thomas@thomasdegier.com',
