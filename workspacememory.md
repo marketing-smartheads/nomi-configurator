@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-25T09:02:59.465Z
+Generated: 2026-11-25T09:14:06.692Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,7 +16,7 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-25T09:02:57.076Z
+- Last activity: 2026-11-25T09:14:04.187Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
 - Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
@@ -37,10 +37,10 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 4 modifieds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 238 lines | 11819 chars | hash a617efc2dd6a
-  Last snapshot: 2026-11-25T09:02:57.076Z
+- components/configurator/StepOnewoning.tsx | 241 lines | 11993 chars | hash 2de026706938
+  Last snapshot: 2026-11-25T09:14:04.187Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
   Last snapshot: 2026-11-24T15:43:16.327Z
@@ -65,6 +65,13 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
 
 ## Recent Changes
+### 2026-11-25T09:14:04.187Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 83: replaced 103 lines with 106 lines.
+- Before: 238 lines | 11,819 chars | hash a617efc2dd6a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 241 lines | 11,993 chars | hash 2de026706938 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "</p> / )} / </div> / {/* Indelingen Grid */} / <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full"> / {uniekeIndelingen.length > 0 ? ( / uniekeIndeli..."
+- Current fragment: "<a href="/disclaimer" className="text-dark underline hover:underline">Meer informatie</a> / </p> / )} / </div> / {/* Indelingen Grid */} / <div className="grid grid-cols-1 md:gr..."
+
 ### 2026-11-25T09:02:57.076Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 175: inserted 12 lines.
 - Before: 227 lines | 11,009 chars | hash 7fb5f40fd071 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -149,13 +156,6 @@ Structured manifest: workspace.json
 - Previous fragment: "fals"
 - Current fragment: "tru"
 
-### 2026-11-19T21:32:11.513Z | saved | app/api/confirm/route.ts
-- Summary: Line 6: replaced 339 lines with 350 lines.
-- Before: 351 lines | 12,842 chars | hash 0cd50a6bea2b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter..."
-- After: 362 lines | 13,222 chars | hash 5fe756e677ee | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
-- Previous fragment: "Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je live..."
-- Current fragment: "Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de adressen uit PARTNER_EMAILS_BY_NAME / const DRY_RUN_PARTNER_EMAILS = false; / // E-mailadressen gekop..."
-
 
 ## Hot Files
 - components/Footer.tsx (9 tracked changes)
@@ -169,12 +169,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-24 c8c318a feat(disclaimer): add electrical, lighting, and material ordering deadlines
-- Working tree summary: 4 modifieds
+- HEAD: 2026-11-25 96a7595 ädded diclaimer electra and lichtplan to configurator
+- Working tree summary: 1 modified
 - M components/configurator/StepOnewoning.tsx
-- M graphify-out/WORKSPACE_MEMORY.md
-- M workspace.json
-- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -182,8 +179,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- c8c318a by Bas van Dooremalen on 2026-11-24
-  feat(disclaimer): add electrical, lighting, and material ordering deadlines
+- 96a7595 by Bas van Dooremalen on 2026-11-25
+  ädded diclaimer electra and lichtplan to configurator
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 

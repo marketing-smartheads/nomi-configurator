@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T09:02:59.465Z",
-  "generatedAtEpochMs": 1795597379465,
+  "generatedAt": "2026-11-25T09:14:06.692Z",
+  "generatedAtEpochMs": 1795598046692,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -647,7 +647,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-25T09:02:57.076Z",
+    "lastActivityAt": "2026-11-25T09:14:04.187Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 48,
     "changeTypeCounts": {
@@ -660,10 +660,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795597377076,
-      "lineCount": 238,
-      "charCount": 11819,
-      "hash": "a617efc2dd6a",
+      "updatedAt": 1795598044187,
+      "lineCount": 241,
+      "charCount": 11993,
+      "hash": "2de026706938",
       "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
     },
     {
@@ -724,6 +724,38 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 83: replaced 103 lines with 106 lines.",
+      "recordedAt": "2026-11-25T09:14:04.187Z",
+      "recordedAtEpochMs": 1795598044187,
+      "before": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 11819,
+        "hash": "a617efc2dd6a",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598044187
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 241,
+        "charCount": 11993,
+        "hash": "2de026706938",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598044187
+      },
+      "diff": {
+        "lineStart": 83,
+        "removedLines": 103,
+        "addedLines": 106,
+        "summary": "Line 83: replaced 103 lines with 106 lines.",
+        "beforeFragment": "</p> / )} / </div> / {/* Indelingen Grid */} / <div className=\"grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full\"> / {uniekeIndelingen.length > 0 ? ( / uniekeIndeli...",
+        "afterFragment": "<a href=\"/disclaimer\" className=\"text-dark underline hover:underline\">Meer informatie</a> / </p> / )} / </div> / {/* Indelingen Grid */} / <div className=\"grid grid-cols-1 md:gr..."
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1135,38 +1167,6 @@
         "beforeFragment": "fals",
         "afterFragment": "tru"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/api/confirm/route.ts",
-      "toPath": "",
-      "summary": "Line 6: replaced 339 lines with 350 lines.",
-      "recordedAt": "2026-11-19T21:32:11.513Z",
-      "recordedAtEpochMs": 1795123931513,
-      "before": {
-        "kind": "text",
-        "lineCount": 351,
-        "charCount": 12842,
-        "hash": "0cd50a6bea2b",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter...",
-        "updatedAt": 1795123931513
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 362,
-        "charCount": 13222,
-        "hash": "5fe756e677ee",
-        "preview": "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de...",
-        "updatedAt": 1795123931513
-      },
-      "diff": {
-        "lineStart": 6,
-        "removedLines": 339,
-        "addedLines": 350,
-        "summary": "Line 6: replaced 339 lines with 350 lines.",
-        "beforeFragment": "Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je live...",
-        "afterFragment": "Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de adressen uit PARTNER_EMAILS_BY_NAME / const DRY_RUN_PARTNER_EMAILS = false; / // E-mailadressen gekop..."
-      }
     }
   ],
   "hotFiles": [
@@ -1206,20 +1206,17 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-24 c8c318a feat(disclaimer): add electrical, lighting, and material ordering deadlines",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-11-25 96a7595 ädded diclaimer electra and lichtplan to configurator",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M components/configurator/StepOnewoning.tsx",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M components/configurator/StepOnewoning.tsx"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c8c318a by Bas van Dooremalen on 2026-11-24\n  feat(disclaimer): add electrical, lighting, and material ordering deadlines\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 96a7595 by Bas van Dooremalen on 2026-11-25\n  ädded diclaimer electra and lichtplan to configurator\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,
