@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-24T12:30:33.180Z
+Generated: 2026-11-25T09:02:59.465Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-24T12:30:31.441Z
+- Last activity: 2026-11-25T09:02:57.076Z
 ## Workspace Focus
-- Active file in focus: components/LoginScreen.tsx
-- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/api/confirm/route.ts (2)
-- Suggested starting points: components/LoginScreen.tsx, components/Footer.tsx, components/configurator/StepOnewoning.tsx, app/api/confirm/route.ts, app/dashboard/page.tsx, app/disclaimer/page.tsx
+- Active file in focus: components/configurator/StepOnewoning.tsx
+- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
+- Suggested starting points: components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/LoginScreen.tsx, app/disclaimer/page.tsx, app/layout.tsx, app/api/confirm/route.ts
 ## Current Workspace
-- Active file: components/LoginScreen.tsx
+- Active file: components/configurator/StepOnewoning.tsx
 - Tracked files in snapshot: 83
 - Top-level areas: public (32), components (18), [root] (15), app (15), lib (3)
 - Primary file types: .tsx (25), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
@@ -37,34 +37,60 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (37), create (2), rename (1)
 - Remembered file snapshots: 48
-- Working tree summary: 1 modified
+- Working tree summary: 4 modifieds
 ## Tracked Snapshots
+- components/configurator/StepOnewoning.tsx | 238 lines | 11819 chars | hash a617efc2dd6a
+  Last snapshot: 2026-11-25T09:02:57.076Z
+  Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
+  Last snapshot: 2026-11-24T15:43:16.327Z
+  Preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
+- app/privacy/page.tsx | 132 lines | 8760 chars | hash 3c1e47077271
+  Last snapshot: 2026-11-24T12:43:02.654Z
+  Preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- app/layout.tsx | 99 lines | 2153 chars | hash 30c4a3950746
+  Last snapshot: 2026-11-24T12:41:48.321Z
+  Preview: "import type { Metadata } from "next"; / import Script from 'next/script'; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppin..."
 - components/LoginScreen.tsx | 290 lines | 10423 chars | hash dec1932e7178
   Last snapshot: 2026-11-24T12:30:31.441Z
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 - components/Footer.tsx | 215 lines | 11067 chars | hash fd0a4a00f8f4
   Last snapshot: 2026-11-24T12:22:52.501Z
   Preview: "// components/Footer.tsx / 'use client'; / import Image from 'next/image'; / import Link from 'next/link'; / interface FooterProps { / onNavigateHome?: () => void; / onNavigateConfigurator?: (step?: number) => void; /..."
-- app/disclaimer/page.tsx | 52 lines | 2486 chars | hash 376487bd87c7
-  Last snapshot: 2026-11-24T12:19:54.913Z
-  Preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
-- app/layout.tsx | 81 lines | 1593 chars | hash ed08bbfcc175
-  Last snapshot: 2026-11-19T22:05:56.243Z
-  Preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
 - .env.local | 12 lines | 423 chars | hash 19cb3d3fc1cd
   Last snapshot: 2026-11-19T22:05:30.250Z
   Preview: "NEXT_PUBLIC_WORDPRESS_GRAPHQL_ENDPOINT=http://tg-backend.development/graphql / NEXT_PUBLIC_LIVE_WORDPRESS_ENDPOINT=https://cms.nomi-configurator.nl/graphql / NEXT_PUBLIC_PARTNER_EMAIL=tobias@aanhuis-spijk.nl / WORDPRE..."
 - app/api/confirm/route.ts | 362 lines | 13222 chars | hash 5fe756e677ee
   Last snapshot: 2026-11-19T21:32:11.513Z
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
-- app/dashboard/page.tsx | 716 lines | 33443 chars | hash a4090c4728ac
-  Last snapshot: 2026-11-19T20:29:22.682Z
-  Preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
-- app/api/auth/login/route.ts | 186 lines | 5783 chars | hash 095d3e8a3b71
-  Last snapshot: 2026-11-19T20:25:42.124Z
-  Preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
 
 ## Recent Changes
+### 2026-11-25T09:02:57.076Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 175: inserted 12 lines.
+- Before: 227 lines | 11,009 chars | hash 7fb5f40fd071 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 238 lines | 11,819 chars | hash a617efc2dd6a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Current fragment: "<div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibold"> Disclaimer </p> / <h2 className="f..."
+
+### 2026-11-24T15:43:16.327Z | saved | app/disclaimer/page.tsx
+- Summary: Line 46: inserted 25 lines.
+- Before: 52 lines | 2,486 chars | hash 376487bd87c7 | preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
+- After: 76 lines | 3,893 chars | hash de208b5b7d08 | preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
+- Current fragment: "<div className="space-y-3"> / <h2 className="text-lg sm:text-xl font-serif text-white pt-2"> / 3. Elektra- en lichtplan / </h2> / <p className="text-sm sm:text-base"> / Aanpassi..."
+
+### 2026-11-24T12:43:02.654Z | saved | app/privacy/page.tsx
+- Summary: Line 10: replaced 104 lines with 116 lines.
+- Before: 120 lines | 7,556 chars | hash 1205b84156b3 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- After: 132 lines | 8,760 chars | hash 3c1e47077271 | preview: "// app/privacy/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function PrivacyPage() { / return ( / <div className="min-h-screen bg-[#..."
+- Previous fragment: "window.location.href = '/'} /> / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / <div className="space-y-2 sm..."
+- Current fragment: "(window.location.href = '/')} /> / <main className="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-8 sm:space-y-12"> / <div className="space-y-2..."
+
+### 2026-11-24T12:41:48.321Z | saved | app/layout.tsx
+- Summary: Line 2: replaced 76 lines with 94 lines.
+- Before: 81 lines | 1,593 chars | hash ed08bbfcc175 | preview: "import type { Metadata } from "next"; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600',..."
+- After: 99 lines | 2,153 chars | hash 30c4a3950746 | preview: "import type { Metadata } from "next"; / import Script from 'next/script'; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppin..."
+- Previous fragment: "localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiBold.woff2', / weight: '600', / style..."
+- Current fragment: "Script from 'next/script'; / import localFont from 'next/font/local'; / import "./globals.css"; / const poppins = localFont({ / src: [ / { / path: '../public/fonts/Poppins-SemiB..."
+
 ### 2026-11-24T12:30:31.441Z | saved | components/LoginScreen.tsx
 - Summary: Line 283: inserted 1 line.
 - Before: 290 lines | 10,386 chars | hash 94b4a2eabb02 | preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
@@ -130,50 +156,25 @@ Structured manifest: workspace.json
 - Previous fragment: "Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je live..."
 - Current fragment: "Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de adressen uit PARTNER_EMAILS_BY_NAME / const DRY_RUN_PARTNER_EMAILS = false; / // E-mailadressen gekop..."
 
-### 2026-11-19T20:44:59.359Z | saved | app/api/confirm/route.ts
-- Summary: Line 6: replaced 287 lines with 340 lines.
-- Before: 298 lines | 11,232 chars | hash 8705fe271979 | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / export async function POST(request: Request) { / try { / const body = await req..."
-- After: 351 lines | 12,842 chars | hash 0cd50a6bea2b | preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de exter..."
-- Previous fragment: "export async function POST(request: Request) { / try { / const body = await request.json(); / let toegangscode = body.toegangscode || body.voucherCode || ''; / let klantNaam = b..."
-- Current fragment: "// Zet op true om partnermails lokaal/tijdelijk NIET rechtstreeks naar de externe partners te sturen, / // maar wel uitgebreid te loggen in de console. Zet op false wanneer je l..."
-
-### 2026-11-19T20:29:22.682Z | saved | app/dashboard/page.tsx
-- Summary: Line 121: replaced 392 lines with 389 lines.
-- Before: 719 lines | 33,586 chars | hash a3997340e337 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
-- After: 716 lines | 33,443 chars | hash a4090c4728ac | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
-- Previous fragment: "cleanUser = username.trim().toLowerCase(); / const isMakelaar = / data.role === 'makelaar' || / cleanUser.includes('makelaar') || / cleanUser.includes('dekeizer') || / cleanUser..."
-- Current fragment: "wpUserObj = data.user || data.data || {}; / const resolvedFirstName = / data.firstName || / data.voornaam || / data.first_name || / wpUserObj.firstName || / wpUserObj.voornaam |..."
-
-### 2026-11-19T20:25:42.124Z | saved | app/api/auth/login/route.ts
-- Summary: Line 3: replaced 46 lines with 175 lines.
-- Before: 57 lines | 2,010 chars | hash 7282b64cb271 | preview: "import { NextResponse } from 'next/server'; / export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( /..."
-- After: 186 lines | 5,783 chars | hash 095d3e8a3b71 | preview: "import { NextResponse } from 'next/server'; / const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoude..."
-- Previous fragment: "export async function POST(request: Request) { / try { / const { username, password } = await request.json(); / if (!username || !password) { / return NextResponse.json( / { err..."
-- Current fragment: "const BEKENDE_GEBRUIKERS: Record<string, { firstName: string; email: string; role?: 'admin' | 'makelaar' }> = { / 'mark nc': { / firstName: 'Mark', / email: 'mark.vanwoudenberg@..."
-
-### 2026-11-19T20:20:25.626Z | saved | app/dashboard/page.tsx
-- Summary: Line 56: replaced 561 lines with 643 lines.
-- Before: 637 lines | 29,934 chars | hash e6d63c4a0772 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
-- After: 719 lines | 33,586 chars | hash a3997340e337 | preview: "'use client'; / import React, { useState, useEffect } from 'react'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / // Lijst van verhuur-vouchers die we uit het dashboard filt..."
-- Previous fragment: "export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [userRole, setUserRole] = useState<'admin' | 'makelaar'>('admin'); / con..."
-- Current fragment: "interface LoggedInUser { / firstName: string; / email: string; / } / export default function DashboardPage() { / const [isLoggedIn, setIsLoggedIn] = useState(false); / const [us..."
-
 
 ## Hot Files
 - components/Footer.tsx (9 tracked changes)
 - components/configurator/StepOnewoning.tsx (8 tracked changes)
 - components/LoginScreen.tsx (4 tracked changes)
+- app/disclaimer/page.tsx (3 tracked changes)
+- app/layout.tsx (3 tracked changes)
 - app/api/confirm/route.ts (2 tracked changes)
 - app/dashboard/page.tsx (2 tracked changes)
-- app/disclaimer/page.tsx (2 tracked changes)
-- app/layout.tsx (2 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (2 tracked changes)
+- app/privacy/page.tsx (2 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-24 0dfeb46 feat(ui): add disclaimer link to footer and login screen
-- Working tree summary: 1 modified
-- M components/LoginScreen.tsx
+- HEAD: 2026-11-24 c8c318a feat(disclaimer): add electrical, lighting, and material ordering deadlines
+- Working tree summary: 4 modifieds
+- M components/configurator/StepOnewoning.tsx
+- M graphify-out/WORKSPACE_MEMORY.md
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: marketing-smartheads/nomi-configurator
@@ -181,8 +182,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 4feb524 by Bas van Dooremalen on 2026-11-24
-  feat(disclaimer): add disclaimer page and housing layout deadline notice
+- c8c318a by Bas van Dooremalen on 2026-11-24
+  feat(disclaimer): add electrical, lighting, and material ordering deadlines
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
