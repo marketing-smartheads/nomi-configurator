@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-25T09:19:00.777Z",
-  "generatedAtEpochMs": 1795598340777,
+  "generatedAt": "2026-11-25T09:23:07.501Z",
+  "generatedAtEpochMs": 1795598587501,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -647,7 +647,7 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-11-25T09:18:59.041Z",
+    "lastActivityAt": "2026-11-25T09:23:05.790Z",
     "trackedChangeCount": 40,
     "trackedFileSnapshotCount": 48,
     "changeTypeCounts": {
@@ -660,10 +660,10 @@
   "trackedSnapshots": [
     {
       "filePath": "components/configurator/StepOnewoning.tsx",
-      "updatedAt": 1795598339041,
-      "lineCount": 238,
-      "charCount": 12010,
-      "hash": "ff0f9d952bcd",
+      "updatedAt": 1795598585790,
+      "lineCount": 239,
+      "charCount": 12035,
+      "hash": "c5f14f22e3eb",
       "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
     },
     {
@@ -724,6 +724,134 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 84: replaced 1 line with 2 lines.",
+      "recordedAt": "2026-11-25T09:23:05.790Z",
+      "recordedAtEpochMs": 1795598585790,
+      "before": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12012,
+        "hash": "608fe07ed89a",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598585790
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 239,
+        "charCount": 12035,
+        "hash": "c5f14f22e3eb",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598585790
+      },
+      "diff": {
+        "lineStart": 84,
+        "removedLines": 1,
+        "addedLines": 2,
+        "summary": "Line 84: replaced 1 line with 2 lines.",
+        "beforeFragment": "a href=\"/disclaimer\" className=\"text-dark text-xs sm:text-sm font-bold underline hover:underline\">",
+        "afterFragment": "br/> / <a href=\"/disclaimer\" className=\"text-dark text-xs sm:text-sm font-bold underline hover:no-underline\">"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 182: removed 1 line.",
+      "recordedAt": "2026-11-25T09:22:49.507Z",
+      "recordedAtEpochMs": 1795598569507,
+      "before": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12017,
+        "hash": "9b4e83958692",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598569507
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12012,
+        "hash": "608fe07ed89a",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598569507
+      },
+      "diff": {
+        "lineStart": 182,
+        "removedLines": 1,
+        "addedLines": 0,
+        "summary": "Line 182: removed 1 line.",
+        "beforeFragment": "{' '}",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 183: inserted 1 line.",
+      "recordedAt": "2026-11-25T09:22:29.685Z",
+      "recordedAtEpochMs": 1795598549685,
+      "before": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12012,
+        "hash": "b89e29454ff6",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598549685
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12017,
+        "hash": "9b4e83958692",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598549685
+      },
+      "diff": {
+        "lineStart": 183,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 183: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "br/><"
+      }
+    },
+    {
+      "type": "save",
+      "path": "components/configurator/StepOnewoning.tsx",
+      "toPath": "",
+      "summary": "Line 183: replaced 1 line with 1 line.",
+      "recordedAt": "2026-11-25T09:22:08.589Z",
+      "recordedAtEpochMs": 1795598528589,
+      "before": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12010,
+        "hash": "ff0f9d952bcd",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598528589
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 238,
+        "charCount": 12012,
+        "hash": "b89e29454ff6",
+        "preview": "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd...",
+        "updatedAt": 1795598528589
+      },
+      "diff": {
+        "lineStart": 183,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 183: replaced 1 line with 1 line.",
+        "beforeFragment": "underline\">",
+        "afterFragment": "no-underline\">"
+      }
+    },
     {
       "type": "save",
       "path": "components/configurator/StepOnewoning.tsx",
@@ -1075,107 +1203,15 @@
         "beforeFragment": "#\" className=\"hover:text-white transition-colors\">Voorwaarden",
         "afterFragment": "/disclaimer\" className=\"hover:text-white transition-colors\">Disclaimer"
       }
-    },
-    {
-      "type": "save",
-      "path": "app/disclaimer/page.tsx",
-      "toPath": "",
-      "summary": "Line 1: inserted 52 lines.",
-      "recordedAt": "2026-11-24T12:19:54.913Z",
-      "recordedAtEpochMs": 1795522794913,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1795522794913
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 52,
-        "charCount": 2486,
-        "hash": "376487bd87c7",
-        "preview": "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className=\"min-h-screen...",
-        "updatedAt": 1795522794913
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 52,
-        "summary": "Line 1: inserted 52 lines.",
-        "beforeFragment": "",
-        "afterFragment": "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { /..."
-      }
-    },
-    {
-      "type": "rename",
-      "path": "app/disclaimer/page.ts",
-      "toPath": "app/disclaimer/page.tsx",
-      "summary": "Renamed file.",
-      "recordedAt": "2026-11-24T12:19:53.313Z",
-      "recordedAtEpochMs": 1795522793313,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1795522788640.7712,
-        "extension": ".ts",
-        "sizeBytes": 0
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1795522788640.7712,
-        "extension": ".tsx",
-        "sizeBytes": 0
-      },
-      "diff": null
-    },
-    {
-      "type": "create",
-      "path": "app/disclaimer/page.ts",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-24T12:19:48.648Z",
-      "recordedAtEpochMs": 1795522788648,
-      "before": null,
-      "after": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1795522788640.7712,
-        "extension": ".ts",
-        "sizeBytes": 0
-      },
-      "diff": null
-    },
-    {
-      "type": "create",
-      "path": "app/disclaimer",
-      "toPath": "",
-      "summary": "Created file.",
-      "recordedAt": "2026-11-24T12:19:44.271Z",
-      "recordedAtEpochMs": 1795522784271,
-      "before": null,
-      "after": null,
-      "diff": null
     }
   ],
   "hotFiles": [
     {
-      "filePath": "components/Footer.tsx",
-      "count": 9
+      "filePath": "components/configurator/StepOnewoning.tsx",
+      "count": 10
     },
     {
-      "filePath": "components/configurator/StepOnewoning.tsx",
+      "filePath": "components/Footer.tsx",
       "count": 8
     },
     {
@@ -1206,7 +1242,7 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-11-25 efc20e0 fix(configurator): close unclosed div tag in StepOneWoning disclaimer",
+    "headSummary": "2026-11-25 c9baa01 styled disclaimer link",
     "statusSummary": "4 modifieds",
     "changedFileCount": 4,
     "statusLines": [
@@ -1219,7 +1255,7 @@
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 96a7595 by Bas van Dooremalen on 2026-11-25\n  ädded diclaimer electra and lichtplan to configurator\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
+    "summary": "GitHub Repository: marketing-smartheads/nomi-configurator\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c9baa01 by Bas van Dooremalen on 2026-11-25\n  styled disclaimer link\n\nURL: https://github.com/marketing-smartheads/nomi-configurator"
   },
   "graphify": {
     "reportAvailable": false,

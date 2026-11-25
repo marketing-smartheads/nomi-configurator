@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-25T09:19:00.777Z
+Generated: 2026-11-25T09:23:07.501Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-25T09:18:59.041Z
+- Last activity: 2026-11-25T09:23:05.790Z
 ## Workspace Focus
 - Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/Footer.tsx (9), components/configurator/StepOnewoning.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
+- Hottest files right now: components/configurator/StepOnewoning.tsx (10), components/Footer.tsx (8), components/LoginScreen.tsx (4), app/disclaimer/page.tsx (3)
 - Suggested starting points: components/configurator/StepOnewoning.tsx, components/Footer.tsx, components/LoginScreen.tsx, app/disclaimer/page.tsx, app/layout.tsx, app/api/confirm/route.ts
 ## Current Workspace
 - Active file: components/configurator/StepOnewoning.tsx
@@ -39,8 +39,8 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 48
 - Working tree summary: 4 modifieds
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 238 lines | 12010 chars | hash ff0f9d952bcd
-  Last snapshot: 2026-11-25T09:18:59.041Z
+- components/configurator/StepOnewoning.tsx | 239 lines | 12035 chars | hash c5f14f22e3eb
+  Last snapshot: 2026-11-25T09:23:05.790Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
   Last snapshot: 2026-11-24T15:43:16.327Z
@@ -65,6 +65,32 @@ Structured manifest: workspace.json
   Preview: "import { NextResponse } from 'next/server'; / import { Resend } from 'resend'; / const resend = new Resend(process.env.RESEND_API_KEY); / // Staat op false zodat Resend de partnermails daadwerkelijk verstuurt naar de..."
 
 ## Recent Changes
+### 2026-11-25T09:23:05.790Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 84: replaced 1 line with 2 lines.
+- Before: 238 lines | 12,012 chars | hash 608fe07ed89a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 239 lines | 12,035 chars | hash c5f14f22e3eb | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:underline">"
+- Current fragment: "br/> / <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline">"
+
+### 2026-11-25T09:22:49.507Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 182: removed 1 line.
+- Before: 238 lines | 12,017 chars | hash 9b4e83958692 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 238 lines | 12,012 chars | hash 608fe07ed89a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "{' '}"
+
+### 2026-11-25T09:22:29.685Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 183: inserted 1 line.
+- Before: 238 lines | 12,012 chars | hash b89e29454ff6 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 238 lines | 12,017 chars | hash 9b4e83958692 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Current fragment: "br/><"
+
+### 2026-11-25T09:22:08.589Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 183: replaced 1 line with 1 line.
+- Before: 238 lines | 12,010 chars | hash ff0f9d952bcd | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 238 lines | 12,012 chars | hash b89e29454ff6 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "underline">"
+- Current fragment: "no-underline">"
+
 ### 2026-11-25T09:18:59.041Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 183: replaced 4 lines with 1 line.
 - Before: 241 lines | 12,053 chars | hash 93e96dfec300 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
@@ -137,28 +163,10 @@ Structured manifest: workspace.json
 - Previous fragment: "#" className="hover:text-white transition-colors">Voorwaarden"
 - Current fragment: "/disclaimer" className="hover:text-white transition-colors">Disclaimer"
 
-### 2026-11-24T12:19:54.913Z | saved | app/disclaimer/page.tsx
-- Summary: Line 1: inserted 52 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 52 lines | 2,486 chars | hash 376487bd87c7 | preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
-- Current fragment: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { /..."
-
-### 2026-11-24T12:19:53.313Z | renamed | app/disclaimer/page.ts -> app/disclaimer/page.tsx
-- Summary: Renamed file.
-- Before: 0 lines | 0 chars | hash empty
-- After: 0 lines | 0 chars | hash empty
-
-### 2026-11-24T12:19:48.648Z | created | app/disclaimer/page.ts
-- Summary: Created file.
-- After: 0 lines | 0 chars | hash empty
-
-### 2026-11-24T12:19:44.271Z | created | app/disclaimer
-- Summary: Created file.
-
 
 ## Hot Files
-- components/Footer.tsx (9 tracked changes)
-- components/configurator/StepOnewoning.tsx (8 tracked changes)
+- components/configurator/StepOnewoning.tsx (10 tracked changes)
+- components/Footer.tsx (8 tracked changes)
 - components/LoginScreen.tsx (4 tracked changes)
 - app/disclaimer/page.tsx (3 tracked changes)
 - app/layout.tsx (3 tracked changes)
@@ -168,7 +176,7 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-25 efc20e0 fix(configurator): close unclosed div tag in StepOneWoning disclaimer
+- HEAD: 2026-11-25 c9baa01 styled disclaimer link
 - Working tree summary: 4 modifieds
 - M components/configurator/StepOnewoning.tsx
 - M graphify-out/WORKSPACE_MEMORY.md
@@ -181,8 +189,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 96a7595 by Bas van Dooremalen on 2026-11-25
-  ädded diclaimer electra and lichtplan to configurator
+- c9baa01 by Bas van Dooremalen on 2026-11-25
+  styled disclaimer link
 
 URL: https://github.com/marketing-smartheads/nomi-configurator
 
