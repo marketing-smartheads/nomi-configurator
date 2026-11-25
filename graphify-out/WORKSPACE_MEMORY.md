@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-11-25T10:42:01.213Z
+Generated: 2026-11-25T10:45:39.438Z
 Workspace: tg-configurator
 Workspace root: c:\Projects\NextJS\tg-configurator
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-11-25T10:41:59.440Z
+- Last activity: 2026-11-25T10:45:37.693Z
 ## Workspace Focus
-- Active file in focus: components/configurator/StepOnewoning.tsx
-- Hottest files right now: components/configurator/StepOnewoning.tsx (12), components/configurator/StepTwoDesign.tsx (5), components/configurator/StepFourConfirmation.tsx (4), app/disclaimer/page.tsx (3)
-- Suggested starting points: components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepFourConfirmation.tsx, app/disclaimer/page.tsx, app/layout.tsx, components/configurator/StepThreeVisuals.tsx
+- Active file in focus: components/configurator/StepFourConfirmation.tsx
+- Hottest files right now: components/configurator/StepOnewoning.tsx (14), components/configurator/StepTwoDesign.tsx (6), components/configurator/StepFourConfirmation.tsx (5), components/configurator/StepThreeVisuals.tsx (4)
+- Suggested starting points: components/configurator/StepFourConfirmation.tsx, components/configurator/StepOnewoning.tsx, components/configurator/StepTwoDesign.tsx, components/configurator/StepThreeVisuals.tsx, app/disclaimer/page.tsx, app/layout.tsx
 ## Current Workspace
-- Active file: components/configurator/StepOnewoning.tsx
+- Active file: components/configurator/StepFourConfirmation.tsx
 - Tracked files in snapshot: 83
 - Top-level areas: public (32), components (18), [root] (15), app (15), lib (3)
 - Primary file types: .tsx (25), .svg (15), .ts (11), .png (6), .json (4), .md (4), .woff (4), .woff2 (4)
@@ -39,18 +39,18 @@ Structured manifest: workspace.json
 - Remembered file snapshots: 48
 - Working tree summary: 7 modifieds
 ## Tracked Snapshots
-- components/configurator/StepOnewoning.tsx | 257 lines | 13099 chars | hash c8e25f1b118c
-  Last snapshot: 2026-11-25T10:41:59.440Z
+- components/configurator/StepFourConfirmation.tsx | 823 lines | 37712 chars | hash ecfcca3a6367
+  Last snapshot: 2026-11-25T10:45:37.693Z
+  Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- components/configurator/StepThreeVisuals.tsx | 501 lines | 21417 chars | hash 42d0290bd78b
+  Last snapshot: 2026-11-25T10:45:31.351Z
+  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- components/configurator/StepOnewoning.tsx | 257 lines | 13076 chars | hash 906609ae6e66
+  Last snapshot: 2026-11-25T10:45:15.544Z
   Preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
 - components/configurator/StepTwoDesign.tsx | 302 lines | 14389 chars | hash 5f85fcefca51
   Last snapshot: 2026-11-25T10:41:47.930Z
   Preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- components/configurator/StepThreeVisuals.tsx | 501 lines | 21441 chars | hash 84f06adb3c6c
-  Last snapshot: 2026-11-25T10:41:33.159Z
-  Preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- components/configurator/StepFourConfirmation.tsx | 823 lines | 37736 chars | hash 8cb0c5c682ce
-  Last snapshot: 2026-11-25T10:41:28.890Z
-  Preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
 - app/disclaimer/page.tsx | 76 lines | 3893 chars | hash de208b5b7d08
   Last snapshot: 2026-11-24T15:43:16.327Z
   Preview: "// app/disclaimer/page.tsx / 'use client'; / import Header from '@/components/Header'; / import Footer from '@/components/Footer'; / export default function DisclaimerPage() { / return ( / <div className="min-h-screen..."
@@ -65,6 +65,31 @@ Structured manifest: workspace.json
   Preview: "// components/LoginScreen.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / import Button from './Button'; / import { useRouter } fr..."
 
 ## Recent Changes
+### 2026-11-25T10:45:37.693Z | saved | components/configurator/StepFourConfirmation.tsx
+- Summary: Line 712: removed 1 line.
+- Before: 823 lines | 37,736 chars | hash 8cb0c5c682ce | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- After: 823 lines | 37,712 chars | hash ecfcca3a6367 | preview: "// components/configurator/StepFourConfirmation.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import { useRouter } from 'next/navigation'; / import Button from..."
+- Previous fragment: "border-t border-dark/10"
+
+### 2026-11-25T10:45:31.351Z | saved | components/configurator/StepThreeVisuals.tsx
+- Summary: Line 486: removed 1 line.
+- Before: 501 lines | 21,441 chars | hash 84f06adb3c6c | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- After: 501 lines | 21,417 chars | hash 42d0290bd78b | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
+- Previous fragment: "border-t border-dark/10"
+
+### 2026-11-25T10:45:21.465Z | saved | components/configurator/StepTwoDesign.tsx
+
+### 2026-11-25T10:45:15.544Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Saved without a textual diff.
+- Before: 257 lines | 13,076 chars | hash 906609ae6e66 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 257 lines | 13,076 chars | hash 906609ae6e66 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+
+### 2026-11-25T10:44:44.887Z | saved | components/configurator/StepOnewoning.tsx
+- Summary: Line 192: removed 1 line.
+- Before: 257 lines | 13,099 chars | hash c8e25f1b118c | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- After: 257 lines | 13,076 chars | hash 906609ae6e66 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
+- Previous fragment: "border-t border-dark/10"
+
 ### 2026-11-25T10:41:59.440Z | saved | components/configurator/StepOnewoning.tsx
 - Summary: Line 1: inserted 257 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -126,50 +151,20 @@ Structured manifest: workspace.json
 - Before: 284 lines | 13,429 chars | hash 6d81768d35df | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 - After: 284 lines | 13,429 chars | hash 6d81768d35df | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
 
-### 2026-11-25T09:35:17.410Z | saved | components/configurator/StepThreeVisuals.tsx
-- Summary: Line 470: inserted 11 lines.
-- Before: 472 lines | 19,371 chars | hash 1e3076199a8e | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- After: 482 lines | 20,254 chars | hash dfd48a0b5774 | preview: "// components/StepThreeVisuals.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / export default function StepThreeVisuals({ / stepTitle, / configuratorData, / desig..."
-- Current fragment: "{/* Disclaimer Elektra- en lichtplan */} / <div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-se..."
-
-### 2026-11-25T09:31:34.476Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 241: inserted 11 lines.
-- Before: 274 lines | 12,546 chars | hash 80940f00b5bc | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 284 lines | 13,429 chars | hash 6d81768d35df | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Current fragment: "Disclaimer Elektra- en lichtplan */} / <div className="text-center space-y-4 max-w-3xl mx-auto"> / <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-semibo..."
-
-### 2026-11-25T09:31:01.138Z | saved | components/configurator/StepTwoDesign.tsx
-- Summary: Line 124: inserted 2 lines.
-- Before: 273 lines | 12,368 chars | hash 6c0aa94c4d43 | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- After: 274 lines | 12,546 chars | hash 80940f00b5bc | preview: "// components/StepTwoDesign.tsx / 'use client'; / import { useState, useEffect } from 'react'; / import Image from 'next/image'; / import Link from 'next/link'; / export default function StepTwoDesign({ / stepTitle, /..."
-- Current fragment: "<br/> / <a href="/disclaimer" className="text-dark text-xs sm:text-sm font-bold underline hover:no-underline" title="Disclaimer, t/m 7 december">Meer informatie</a>."
-
-### 2026-11-25T09:30:31.906Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 184: inserted 1 line.
-- Before: 239 lines | 12,070 chars | hash fc2fb2afbbf5 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 239 lines | 12,105 chars | hash 87d837015a0a | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Current fragment: "title="Disclaimer, t/m 7 december""
-
-### 2026-11-25T09:30:09.737Z | saved | components/configurator/StepOnewoning.tsx
-- Summary: Line 85: inserted 1 line.
-- Before: 239 lines | 12,035 chars | hash c5f14f22e3eb | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- After: 239 lines | 12,070 chars | hash fc2fb2afbbf5 | preview: "// components/StepOneWoning.tsx / 'use client'; / import { useState, useEffect } from 'react'; / export default function StepOneWoning({ / stepTitle, / configuratorData, / woningTypenLijst, / woningType, / selectedInd..."
-- Current fragment: "title="Disclaimer, t/m 7 december""
-
 
 ## Hot Files
-- components/configurator/StepOnewoning.tsx (12 tracked changes)
-- components/configurator/StepTwoDesign.tsx (5 tracked changes)
-- components/configurator/StepFourConfirmation.tsx (4 tracked changes)
+- components/configurator/StepOnewoning.tsx (14 tracked changes)
+- components/configurator/StepTwoDesign.tsx (6 tracked changes)
+- components/configurator/StepFourConfirmation.tsx (5 tracked changes)
+- components/configurator/StepThreeVisuals.tsx (4 tracked changes)
 - app/disclaimer/page.tsx (3 tracked changes)
-- app/layout.tsx (3 tracked changes)
-- components/configurator/StepThreeVisuals.tsx (3 tracked changes)
-- app/api/confirm/route.ts (2 tracked changes)
+- app/layout.tsx (2 tracked changes)
 - components/LoginScreen.tsx (2 tracked changes)
+- app/disclaimer (1 tracked changes)
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-11-25 4bfd769 added disclaimer to all steps
+- HEAD: 2026-11-25 12f205f feat(configurator): show housing layout disclaimer before electrical and lighting plan
 - Working tree summary: 7 modifieds
 - M components/configurator/StepFourConfirmation.tsx
 - M components/configurator/StepOnewoning.tsx

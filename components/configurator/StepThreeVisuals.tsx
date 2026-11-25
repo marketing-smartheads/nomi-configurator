@@ -483,7 +483,7 @@ export default function StepThreeVisuals({
             </p>
           </div>
 
-          <div className="space-y-3 pt-2 border-t border-dark/10">
+          <div className="space-y-3 pt-2">
             <h3 className="font-serif text-xl sm:text-2xl text-dark font-normal">
               Elektra- en lichtplan
             </h3>
